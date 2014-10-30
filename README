@@ -1,0 +1,18 @@
+//////////////////////////////README//////////////////////////////
+
+********** To get our project imported into Netbeans **********
+
+1. Download and install Netbeans 8 (just google it)
+2. Download latest code from the Git repo here -> https://github.com/t4kmode/CSE110FA14
+3. Put everything that you download from the repo into one central folder
+4. Open Netbeans, and right click in the Project Pane on the left hand side.
+5. Select "Open Project"
+6. In the explorer window that pops up, navigate to the central folder that
+   we created which houses the project. Select that folder and press "Open Project"
+   in the bottom right corner
+7. Now the project should open up in the project pane and be ready to go
+
+******************** To run our GUI in Netbeans ********************
+
+1. Right click on GUI.java in the project pane on the left
+2. Select "run"
