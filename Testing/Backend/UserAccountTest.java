@@ -1,9 +1,5 @@
 package Backend;
 
-import Backend.BankAccount;
-import Backend.CheckingAccount;
-import Backend.SavingsAccount;
-import Backend.UserAccount;
 import org.junit.*;
 import static org.junit.Assert.*;
 

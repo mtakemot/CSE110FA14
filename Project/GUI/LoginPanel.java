@@ -12,8 +12,7 @@ File Name:      LoginPanel.java
 Description:    This class will define what our Login Page will look like and 
                 how it will behave.
  ****************************************************************************/
-       
-import GUI.GUI;
+
 import javax.swing.*;
 import java.awt.*;
 
