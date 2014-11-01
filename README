@@ -1,6 +1,6 @@
 //////////////////////////////README//////////////////////////////
 
-********** To get our project imported into Netbeans **********
+******************** To get our project imported into Netbeans ********************
 
 1. Download and install Netbeans 8 (just google it)
 2. Download latest code from the Git repo here -> https://github.com/t4kmode/CSE110FA14
@@ -12,7 +12,17 @@
    in the bottom right corner
 7. Now the project should open up in the project pane and be ready to go
 
-******************** To run our GUI in Netbeans ********************
+****************************** To run our GUI in Netbeans ******************************
 
-1. Right click on GUI.java in the project pane on the left
+1. Right click on GUI.java in the project pane on the left under Source Packages > GUI
+2. Select "run"
+
+******************** To run our the terminal verion in Netbeans ********************
+
+1. Right click on Main.java in the project pane on the left under Source Packages > Backend
+2. Select "run"
+
+******************** To run our JUnit Tests in Netbeans ********************
+
+1. Right click on UserAccountTest.java in the project pane on the left under Source Packages > Testing > Backend 
 2. Select "run"
