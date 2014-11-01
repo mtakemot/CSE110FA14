@@ -15,6 +15,7 @@ Description:    This file contains the implementation for the object that
                 hold basic information about the user, and must have a unique
                 userName. Each UserAccount will also contain a linked list of
                 BankAccounts which will be either checking or savings.
+TODO:           Implement a deleteBankAccount function
  ****************************************************************************/
 public class UserAccount
 {
@@ -278,10 +279,4 @@ public class UserAccount
     {
         this.location = location;
     }
-
-    String firstName() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-
 }

@@ -163,29 +163,44 @@ public class UserAccountTest {
     public void testFindBankAccount() {
         System.out.println("findBankAccount");
         String name = "find_test";
+        String name2 = "duplicate_test";
         
-        // add 100 bank accounts and 100 checking accounts
+        // Make sure duplicate inserts return null
+        instance.insertBankAccount(0, name2, "Checking");
+        for(int i=0;i<10000;i++) {
+          BankAccount expResult = null;
+          BankAccount result = instance.insertBankAccount(0, name2, "Checking");
+          assertEquals(expResult, result);
+        } 
+        
+        // add 10000 bank accounts and 10000 checking accounts
+        // The number in "name + number + i" on the second line of this loop
+        // has to be the same as the upper bound for i.
+        
+        // Before, I had the upper bound for i at 10000 while 'number' on the
+        // second line was 100. That wouldn't work because then only 100 savings
+        // accounts were being inserted instead of 10000.
         for(int i=0;i<10000;i++) {
           instance.insertBankAccount(i, name + i, "Checking");
-          instance.insertBankAccount(i, name + 100 + i, "Savings");
+          instance.insertBankAccount(i, name + 10000 + i, "Savings");
         }
         
         //check name and balance fields for checking accounts to see if found
         //accounts match
         for(int i=0;i<10000;i++) {
-          BankAccount expResult = new CheckingAccount(i,name+i);
-          BankAccount result = instance.findBankAccount(name+i);
+          BankAccount expResult = new CheckingAccount(i,name + i);
+          BankAccount result = instance.findBankAccount(name + i);
           assertEquals(expResult.getAccountName(), result.getAccountName());
-          assertEquals(expResult.getBalance(), result.getBalance(),i);
+          assertEquals(expResult.getBalance(), result.getBalance(),0);
         }
         
         //check name and balance fields of savings accounts to see if found
         //accounts match
         for(int i=0;i<10000;i++) {
-          BankAccount expResult = new SavingsAccount(i,name+ 100 +i);
-          BankAccount result = instance.findBankAccount(name+ 100 +i);
-          assertEquals(expResult.getAccountName(), result.getAccountName());
-          assertEquals(expResult.getBalance(), result.getBalance(),0);
+          BankAccount expResult2 = new SavingsAccount(i,name + 10000 + i);
+          BankAccount result2 = instance.findBankAccount(name + 10000 + i);
+          assertEquals(expResult2.getAccountName(), result2.getAccountName());
+          assertEquals(expResult2.getBalance(), result2.getBalance(),0);
         }
     }
 }
