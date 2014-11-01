@@ -75,8 +75,8 @@ public class UserAccountTest {
         String name = "c_test1";
         String type = "Checking";
         
-        //create and insert 100 checking accounts
-        for(int i=0;i<100;i++) {         
+        //create and insert 10000 checking accounts
+        for(int i=0;i<10000;i++) {         
           
           BankAccount expResult = new CheckingAccount(i,name+i);
           BankAccount result = instance.insertBankAccount(i, name+i, type);
