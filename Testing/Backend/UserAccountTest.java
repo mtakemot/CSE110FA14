@@ -100,7 +100,7 @@ public class UserAccountTest {
         String name = "s_test";
         String type = "Savings";
         
-        for(int i=0;i<100;i++) {
+        for(int i=0;i<10000;i++) {
         
         BankAccount expResult = new SavingsAccount(i,name+i);
         BankAccount result = instance.insertBankAccount(i, name+i, type);
@@ -124,12 +124,12 @@ public class UserAccountTest {
         String type = "Savings";
         
         //insert 100 Savings accounts
-        for(int i=0;i<100;i++) {  
+        for(int i=0;i<10000;i++) {  
           instance.insertBankAccount(i, name+i, type);
         }
         
         //reinsert the accounts
-        for(int i=0;i<100;i++) {
+        for(int i=0;i<10000;i++) {
           BankAccount result = instance.insertBankAccount(i, name+i, type);
           assertEquals(result, null);
         }
@@ -147,12 +147,12 @@ public class UserAccountTest {
         String type = "Checking";
         
         //insert 100 Checking accounts
-        for(int i=0;i<100;i++) {  
+        for(int i=0;i<10000;i++) {  
           instance.insertBankAccount(i, name+i, type);
         }
         
         //reinsert the accounts
-        for(int i=0;i<100;i++) {
+        for(int i=0;i<10000;i++) {
           BankAccount result = instance.insertBankAccount(i, name+i, type);
           assertEquals(result, null);
         }
@@ -169,23 +169,23 @@ public class UserAccountTest {
         String name = "find_test";
         
         // add 100 bank accounts and 100 checking accounts
-        for(int i=0;i<100;i++) {
+        for(int i=0;i<10000;i++) {
           instance.insertBankAccount(i, name + i, "Checking");
           instance.insertBankAccount(i, name + 100 + i, "Savings");
         }
         
         //check name and balance fields for checking accounts to see if found
         //accounts match
-        for(int i=0;i<100;i++) {
+        for(int i=0;i<10000;i++) {
           BankAccount expResult = new CheckingAccount(i,name+i);
           BankAccount result = instance.findBankAccount(name+i);
           assertEquals(expResult.getAccountName(), result.getAccountName());
-          assertEquals(expResult.getBalance(), result.getBalance(),0);
+          assertEquals(expResult.getBalance(), result.getBalance(),i);
         }
         
         //check name and balance fields of savings accounts to see if found
         //accounts match
-        for(int i=0;i<100;i++) {
+        for(int i=0;i<10000;i++) {
           BankAccount expResult = new SavingsAccount(i,name+ 100 +i);
           BankAccount result = instance.findBankAccount(name+ 100 +i);
           assertEquals(expResult.getAccountName(), result.getAccountName());
