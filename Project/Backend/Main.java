@@ -1,3 +1,5 @@
+package Backend;
+
 
 /**
  * **************************************************************************
@@ -12,6 +14,8 @@
  * is not a high priority.
  * **************************************************************************
  */
+import Backend.UserAccount;
+import Backend.HashTable;
 import java.util.*;
 import java.io.*;
 

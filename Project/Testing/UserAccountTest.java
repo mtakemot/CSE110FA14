@@ -1,9 +1,11 @@
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import static org.junit.Assert.*;
+package Testing;
+
+import Backend.BankAccount;
+import Backend.CheckingAccount;
+import Backend.SavingsAccount;
+import Backend.UserAccount;
+import org.junit.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  *
@@ -80,10 +82,10 @@ public class UserAccountTest {
           BankAccount result = instance.insertBankAccount(i, name+i, type);
           
           //check to see if every field matches
-          assertEquals(expResult.accountName, result.accountName);
-          assertEquals(expResult.balance, result.balance,0);
-          assertEquals(expResult.next, result.next);
-          assertEquals(expResult.accountType, result.accountType);
+          assertEquals(expResult.getAccountName(), result.getAccountName());
+          assertEquals(expResult.getBalance(), result.getBalance(),0);
+          assertEquals(expResult.getNext(), result.getNext());
+          assertEquals(expResult.getAccountType(), result.getAccountType());
         }
     }
     
@@ -103,10 +105,10 @@ public class UserAccountTest {
         BankAccount expResult = new SavingsAccount(i,name+i);
         BankAccount result = instance.insertBankAccount(i, name+i, type);
         
-        assertEquals(expResult.accountName, result.accountName);
-        assertEquals(expResult.balance, result.balance,0);
-        assertEquals(expResult.next, result.next);
-        assertEquals(expResult.accountType, result.accountType);
+        assertEquals(expResult.getAccountName(), result.getAccountName());
+        assertEquals(expResult.getBalance(), result.getBalance(),0);
+        assertEquals(expResult.getNext(), result.getNext());
+        assertEquals(expResult.getAccountType(), result.getAccountType());
         }
     }
     
@@ -177,8 +179,8 @@ public class UserAccountTest {
         for(int i=0;i<100;i++) {
           BankAccount expResult = new CheckingAccount(i,name+i);
           BankAccount result = instance.findBankAccount(name+i);
-          assertEquals(expResult.accountName, result.accountName);
-          assertEquals(expResult.balance, result.balance,0);
+          assertEquals(expResult.getAccountName(), result.getAccountName());
+          assertEquals(expResult.getBalance(), result.getBalance(),0);
         }
         
         //check name and balance fields of savings accounts to see if found
@@ -186,8 +188,8 @@ public class UserAccountTest {
         for(int i=0;i<100;i++) {
           BankAccount expResult = new SavingsAccount(i,name+ 100 +i);
           BankAccount result = instance.findBankAccount(name+ 100 +i);
-          assertEquals(expResult.accountName, result.accountName);
-          assertEquals(expResult.balance, result.balance,0);
+          assertEquals(expResult.getAccountName(), result.getAccountName());
+          assertEquals(expResult.getBalance(), result.getBalance(),0);
         }
     }
 }

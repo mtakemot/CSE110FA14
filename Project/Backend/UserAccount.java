@@ -1,3 +1,9 @@
+package Backend;
+
+
+import Backend.SavingsAccount;
+import Backend.BankAccount;
+
 /****************************************************************************
 
                                                         Ryan Bridges
@@ -34,10 +40,10 @@ public class UserAccount
     private BankAccount BankAccHead;
 
     // Default constructor
-    UserAccount() { }
+    public UserAccount() { }
 
     // Constructor initializes basic member variables
-    UserAccount(String first, String last, String user, String pass,
+    public UserAccount(String first, String last, String user, String pass,
                 String email, String phone, int loc)
     {
         this.firstName = first;
@@ -54,7 +60,7 @@ public class UserAccount
     // This constructor is for usage with the find/insert/delete functions.
     // The user will pass in a userName that they wish to operate on. Then a new
     // UserAccount can be created from the userName that the user passes in.
-    UserAccount(String name)
+    public UserAccount(String name)
     {
         this.userName = name;
     }

@@ -1,3 +1,8 @@
+package Backend;
+
+
+import Backend.BankAccount;
+
 
 /**
  * **************************************************************************
@@ -21,7 +26,7 @@ public class HashTable
 
     // Constructor for the HashTable creates an array of size SIZE and
     // initializes every element in the array to null. Also initializes occ
-    HashTable()
+    public HashTable()
     {
         this.occ = 0;
         Table = new UserAccount[SIZE];

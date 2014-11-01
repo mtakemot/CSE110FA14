@@ -1,3 +1,8 @@
+package Backend;
+
+
+import Backend.BankAccount;
+
 /****************************************************************************
 
                                                         Ryan Bridges
@@ -6,23 +11,25 @@
 
                                 Team 42
 
-File Name:      CheckingAccount.java
+File Name:      SavingsAccount.java
 Description:    This file extends BankAccount and will be the object that is
-                created every time a user wants to create a new checking
-                account. This type of BankAccount WILL NOT gain interest or
+                created every time a user wants to create a new savings
+                account. This type of BankAccount WILL gain interest and
                 lose funds as a result of not having a high enough balance.
+TODO:           Implement functions that will add interest or subtract funds
+                based on the balance and the age of the account
  ****************************************************************************/
-public class CheckingAccount extends BankAccount
+public class SavingsAccount extends BankAccount
 {
-    CheckingAccount() { }
-    CheckingAccount(String name)
+    public SavingsAccount() { }
+    public SavingsAccount(String name)
     {
         this.accountName = name;
     }
-    CheckingAccount(double bal, String name)
+    public SavingsAccount(double bal, String name)
     {
         this.balance = bal;
         this.accountName = name;
-        this.accountType = "Checking Account";
+        this.accountType = "Savings Account";
     }
 }
