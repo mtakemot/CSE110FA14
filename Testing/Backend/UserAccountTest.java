@@ -163,7 +163,7 @@ public class UserAccountTest {
     public void testFindBankAccount() {
         System.out.println("findBankAccount");
         String name = "find_test";
-        String name2 = "duplicate_test1";
+        String name2 = "duplicates_test";
         
         // Make sure duplicate inserts return null
         instance.insertBankAccount(0, name2, "Checking");
