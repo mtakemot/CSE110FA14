@@ -17,7 +17,7 @@
 1. Right click on GUI.java in the project pane on the left under Source Packages > GUI
 2. Select "run"
 
-******************** To run our the terminal verion in Netbeans ********************
+******************** To run the terminal verion in Netbeans ********************
 
 1. Right click on Main.java in the project pane on the left under Source Packages > Backend
 2. Select "run"
