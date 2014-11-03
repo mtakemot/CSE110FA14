@@ -1,8 +1,9 @@
 /**
  * **************************************************************************
  *
- * Ryan Bridges CSE 110, Fall 2014 Last Updated: October 19, 2014 Tahereh
- * Masoumi , Last Updated: November 3, 2014 Team 42
+ * Ryan Bridges CSE 110, Fall 2014 Last Updated: October 19, 2014
+ * Tahereh Masoumi , Last Updated: November 3, 2014
+ * Team 42
  *
  * File Name: Main.java Description: This is a crude and simple file that will
  * test very basic functionality of our program. It is primitive because we
