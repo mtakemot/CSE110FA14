@@ -1,10 +1,8 @@
-package Backend;
 /**
  * **************************************************************************
  *
- * Ryan Bridges CSE 110, Fall 2014 Last Updated: October 19, 2014
- *
- * Team 42
+ * Ryan Bridges CSE 110, Fall 2014 Last Updated: October 19, 2014 Tahereh
+ * Masoumi , Last Updated: November 3, 2014 Team 42
  *
  * File Name: Main.java Description: This is a crude and simple file that will
  * test very basic functionality of our program. It is primitive because we
@@ -12,208 +10,130 @@ package Backend;
  * is not a high priority.
  * **************************************************************************
  */
+package Backend;
+
 import java.util.*;
 import java.io.*;
 
-public class Main
-{
+public class Main {
 
-    public static void main(String[] args)
-    {
-
-        HashTable theTable= new HashTable();
+    public static void main(String[] args) {
+        HashTable MasterTable = new HashTable();
         Scanner input = new Scanner(System.in);
-        String action1, action2, action, action3;
-       /* String first= "";
-        String last = "";*/
-        
-        while (true)
-        {   
-            action1=action2= action = action3= null;
-            boolean temp = false;
-            System.out.println("\n----------MAIN MENU--------------");
-            System.out.println("Hello, what would you like to do?\n");
-            System.out.println("    1. Create a new User Account.");
-            System.out.println("    2. Login to an existing User Account.\n");
-            System.out.print("Please select an action by inputting the number \n"
-                              +"    of your choice followed by the ENTER button: ");
-            action =action1= input.nextLine();
-            if (action.equals("1"))
-            {
-                System.out.print("\nPlease enter a unique username: ");
-                action2 = input.nextLine();
-                System.out.print("\n\n             TEST                    \n\n");
-                UserAccount newUser = theTable.insertUserAccount(action2);
-                System.out.print("\n\n             TEST 1                   \n\n");
-                while (newUser == null)
-                {/*
+        String action;
+        String action2;
+        boolean login = false;
+        while (!login) {
+            System.out.println("Please select an action by inputting the number "
+                    + "next to your choice: ");
+            System.out.println("1. Create a new User Account.");
+            System.out.println("2. Login to an existing User Account.");
+            action = input.nextLine();
+            if (action.equals("1")) {
+                System.out.print("Please enter a unique username: ");
+                UserAccount newUser = MasterTable.insertUserAccount(input.nextLine());
+                while (newUser == null) {
                     System.out.println("Failure! The username that you have "
-                                       + "chosen is already in use.");
-                    System.out.print("Please enter a different user name: ");
-                    newUser = theTable.insertUserAccount(input.nextLine());*/
-                    
-                    //editing to let user get back to menu
-                   // action2= null;
-                    System.out.print("\n\n             TEST    2                \n\n");
-                    System.out.println("\nThe username that you have "
-                                       + "chosen is already in use.\n");
-                    System.out.print("    Please select 1 to try again. \n"
-                                   + "    Please select 2 to reach the main menu: ");
-                    action1 = input.nextLine();
-                    temp = true;
-                    //re-enter a user name
-                    if(action1.equals("1"))
-                    {
-                            
-                            System.out.print("\n\nPlease enter a different username: ");
-                            
-                            action3 = input.nextLine();
-                            newUser = theTable.insertUserAccount(action3);
-                    }
-                    
-                    //exit to menu
-                    else 
-                    {   
-                        //invalid entry
-                        if (!action1.equals("2"))
-                        {
-                            System.out.println ("\n    Invalid entry. Returning "
-                                        + "to MAIN MENU");
-                        }
-                        
-                            break;  //break out of useraccount while loop
-                    }
-                    
-                    
-                    
-                    
+                            + "chosen is already in use.");
+                    System.out.print("Please enter a new one: ");
+                    newUser = MasterTable.insertUserAccount(input.nextLine());
                 }
-                if (temp){
-                if (action1.equals("2"))
-                    continue;
-                
-                    temp = false;
-                }
-                
-                System.out.print("\nPlease enter a password for your new account: ");
-                
+                System.out.println("Success! Your new User Account has been "
+                        + "created");
+                System.out.print("Please enter a password for your new "
+                        + "account: ");
                 newUser.setPassword(input.nextLine());
-                System.out.println("\n    Success! Your new User Account has been "
-                                   + "created");
-                
-                
                 // Ask user for other info like phone number/email if desired
-            }
-            else if (action.equals("2"))// this will prevent other entries besides "1" and "2"
-            {
-                action1=action2 = null;
-                System.out.println("\nPlease enter your login credentials below.");
-                System.out.print("\nUsername: ");
-                action2=input.nextLine();
-                UserAccount currUser = theTable.findUserAccount(action2);
-                
-                while (currUser == null)
-                {
-                    action1 = null;
-                    System.out.println("\nThe username that you entered does not exist.\n");
-                    System.out.print("    Please select 1 to try again. \n"
-                                   + "    Please select 2 to reach the main menu: ");
-                    action1=input.nextLine();
-                    temp = true;
+            } else {
+                System.out.println("Please enter your login credentials.");
+                System.out.print("Username: ");
+                UserAccount currUser = MasterTable.findUserAccount(input.nextLine());
+                while (currUser == null) {
+                    System.out.println("The username that you entered does not exist.");
+                    System.out.print("Please enter a valid username: ");
+                    currUser = MasterTable.findUserAccount(input.nextLine());
+                }
+                System.out.print("Password: ");
+                while (!(currUser.validatePassword(input.nextLine()))) {
+                    System.out.println("The password that you entered was invalid. ");
+                    System.out.print("Please try again: ");
+                }
+                login = true;
+                System.out.println("You are now logged in! Please select an option: ");
+                while (login) {
+                    Scanner input2 = new Scanner(System.in);
+                    System.out.println("1. Create a new Bank Account.");
+                    System.out.println("2. Print all accounts.");
+                    System.out.println("3. Credit Account. ");
+                    System.out.println("4. Debit Account.");
+                    System.out.println("5. Logout.");
+                    action2 = input2.nextLine();
                     
-                    if(action1.equals("1"))
-                    {
-                        action2 = null;
-                        System.out.print("\nPlease enter a different username: ");
-                        action2 = input.nextLine();
-                        currUser = theTable.findUserAccount(action2);
-                    }
-                    //exit to menu
-                    else 
-                    {   
-                        //invalid entry
-                        if (!action1.equals("2"))
-                        {
-                            System.out.println ("\n    Invalid entry. Returning "
-                                        + "to MAIN MENU");
+                    if (action2.equals("1")) {
+                        System.out.print("Bank Account Name:");
+                        String name = input2.nextLine();
+                        while (currUser.findBankAccount(name) != null) {
+                            System.out.print("Account name already exists, please enter a new name: ");
+                            name = input2.nextLine();
                         }
-                        
-                        break;  //break out of useraccount while loop
-                    }
-                    
-                    
-                }
-                
-                if(temp){
-                    if(action1.equals("2"))
-                     {
-                        continue;
-                    }
-                
-                    temp = false;
-                }
-                
-                action2 = null;
-                System.out.print("\nPassword: ");
-                
-                //declare local boolean for better while loop logic
-                action2 = input.nextLine();
-                boolean result = currUser.validatePassword(action2);
-                
-                while (!result)
-                {
-                    action1=action2 = null;
-                    System.out.println("\nThe password that you entered was invalid. ");
-                    System.out.print("    Please select 1 to try again. \n"
-                                   + "    Please select 2 to reach the main menu: ");
-                    action1 = input.nextLine();
-                    temp = true;
-                    
-                    if(action1.equals("1"))
-                    {
-                        System.out.print("\nPlease enter the password: ");
-                        action2=input.nextLine();
-                        result = currUser.validatePassword(action2);
-                    }
-                    //exit to menu
-                    else 
-                    {   
-                        //invalid entry
-                        if (!action1.equals("2"))
-                        {
-                            System.out.println ("\n    Invalid entry. Returning "
-                                        + "to MAIN MENU");
+                        System.out.println("Bank Account type:");
+                        System.out.println("1. Checking ");
+                        System.out.println("2. Savings ");
+                        String type = input2.nextLine();
+                        System.out.print("Balance (double): ");
+                        double bal = input2.nextDouble();
+                        if (type.equals("1")) {
+                            BankAccount newBA = currUser.insertBankAccount(bal, name, "Checking");
+                            System.out.println("You have successfully created a bank account!\n ");
+                        } else if (type.equals("2")) {
+                            BankAccount newBA = currUser.insertBankAccount(bal, name, "Savings");
+                            System.out.println("You have successfully created a bank account!\n ");
                         }
-                        
-                            break;  //break out of useraccount while loop
+
+                    }
+
+                    else if (action2.equals("2")) {
+                        currUser.printAllBankAccounts();
+                    }
+                    else if (action2.equals("3")) {
+                        System.out.print("Please Enter an accouont name to deposit to: ");
+                        String accountName = input2.nextLine();
+                        BankAccount bAcc = currUser.findBankAccount(accountName);
+                        while (bAcc == null) {
+                            System.out.print("Please Enter an existing account name: ");
+                            accountName = input2.nextLine();
+                            bAcc = currUser.findBankAccount(accountName);
+                        }
+                        System.out.print("Please enter a deposit amount(double): ");
+                        bAcc.addToBalance(input2.nextDouble());
+                        System.out.println("Deposit Successful! ");
+                    }
+
+                    else if (action2.equals("4")) {
+                        System.out.print("Please Enter an account name to debit from: ");
+                        String bName = input2.nextLine();
+                        BankAccount found = currUser.findBankAccount(bName);
+                        while (found == null) {
+                            System.out.print("Please Enter an existing account name: ");
+                            bName = input2.nextLine();
+                            found = currUser.findBankAccount(bName);
+                        }
+                        System.out.print("Please enter a debit amount(double): ");
+                        double amount = input2.nextDouble();
+                        while (!found.subFromBalance(amount)) {
+                            System.out.println("Please Enter a valid amount: ");
+                            amount = input2.nextDouble();
+                        }
+                        System.out.println("Debit Successfyl! ");
+
+                    }
+                    else if (action2.equals("5")) {
+                        System.out.println("You are now logged out! \n");
+                        login = false;
                     }
                 }
-                if (temp){
-                if(action1.equals("2"))
-                {
-                    continue;
-                }
-                temp = false;
-                }
-                //if it reaches here, the password was correct
-                //action1=action2 = null;
-               /* first +=currUser.getFirstName();
-                last = currUser.getLastName();*/
-                break;
-                
             }
-            // input other than "1 or 2"
-            else
-            {
-               System.out.println ("\n    Invalid entry. Returning "
-                                        + "to MAIN MENU");
-            }
+
         }
-        
-        System.out.println("\n    Welcome back!\n"
-                                    +"    Currently, any services other than the user account log in\n"
-                                    +"    are still under development.\n"
-                                  +"\n    We sincerely apologize for any inconveniences, and will \n"
-                                    +"    provide updates momentarily. Thank you!\n\n");
     }
 }
