@@ -16,52 +16,63 @@ package Backend;
 import java.util.*;
 import java.io.*;
 
-public class Main {
+public class Main
+{
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
+
         HashTable MasterTable = new HashTable();
         Scanner input = new Scanner(System.in);
         String action;
         String action2;
         boolean login = false;
-        while (!login) {
+        while (!login)
+        {
             System.out.println("Please select an action by inputting the number "
-                    + "next to your choice: ");
+                               + "next to your choice: ");
             System.out.println("1. Create a new User Account.");
             System.out.println("2. Login to an existing User Account.");
             action = input.nextLine();
-            if (action.equals("1")) {
+            if (action.equals("1"))
+            {
                 System.out.print("Please enter a unique username: ");
                 UserAccount newUser = MasterTable.insertUserAccount(input.nextLine());
-                while (newUser == null) {
+                while (newUser == null)
+                {
                     System.out.println("Failure! The username that you have "
-                            + "chosen is already in use.");
+                                       + "chosen is already in use.");
                     System.out.print("Please enter a new one: ");
                     newUser = MasterTable.insertUserAccount(input.nextLine());
                 }
                 System.out.println("Success! Your new User Account has been "
-                        + "created");
+                                   + "created");
                 System.out.print("Please enter a password for your new "
-                        + "account: ");
+                                 + "account: ");
                 newUser.setPassword(input.nextLine());
                 // Ask user for other info like phone number/email if desired
-            } else {
+            }
+            else
+            {
                 System.out.println("Please enter your login credentials.");
                 System.out.print("Username: ");
                 UserAccount currUser = MasterTable.findUserAccount(input.nextLine());
-                while (currUser == null) {
+                while (currUser == null)
+                {
                     System.out.println("The username that you entered does not exist.");
                     System.out.print("Please enter a valid username: ");
                     currUser = MasterTable.findUserAccount(input.nextLine());
                 }
                 System.out.print("Password: ");
-                while (!(currUser.validatePassword(input.nextLine()))) {
+                while (!(currUser.validatePassword(input.nextLine())))
+                {
                     System.out.println("The password that you entered was invalid. ");
                     System.out.print("Please try again: ");
                 }
                 login = true;
                 System.out.println("You are now logged in! Please select an option: ");
-                while (login) {
+                while (login)
+                {
                     Scanner input2 = new Scanner(System.in);
                     System.out.println("1. Create a new Bank Account.");
                     System.out.println("2. Print all accounts.");
@@ -69,11 +80,13 @@ public class Main {
                     System.out.println("4. Debit Account.");
                     System.out.println("5. Logout.");
                     action2 = input2.nextLine();
-                    
-                    if (action2.equals("1")) {
+
+                    if (action2.equals("1"))
+                    {
                         System.out.print("Bank Account Name:");
                         String name = input2.nextLine();
-                        while (currUser.findBankAccount(name) != null) {
+                        while (currUser.findBankAccount(name) != null)
+                        {
                             System.out.print("Account name already exists, please enter a new name: ");
                             name = input2.nextLine();
                         }
@@ -83,24 +96,30 @@ public class Main {
                         String type = input2.nextLine();
                         System.out.print("Balance (double): ");
                         double bal = input2.nextDouble();
-                        if (type.equals("1")) {
+                        if (type.equals("1"))
+                        {
                             BankAccount newBA = currUser.insertBankAccount(bal, name, "Checking");
                             System.out.println("You have successfully created a bank account!\n ");
-                        } else if (type.equals("2")) {
+                        }
+                        else if (type.equals("2"))
+                        {
                             BankAccount newBA = currUser.insertBankAccount(bal, name, "Savings");
                             System.out.println("You have successfully created a bank account!\n ");
                         }
 
                     }
 
-                    else if (action2.equals("2")) {
+                    else if (action2.equals("2"))
+                    {
                         currUser.printAllBankAccounts();
                     }
-                    else if (action2.equals("3")) {
+                    else if (action2.equals("3"))
+                    {
                         System.out.print("Please Enter an accouont name to deposit to: ");
                         String accountName = input2.nextLine();
                         BankAccount bAcc = currUser.findBankAccount(accountName);
-                        while (bAcc == null) {
+                        while (bAcc == null)
+                        {
                             System.out.print("Please Enter an existing account name: ");
                             accountName = input2.nextLine();
                             bAcc = currUser.findBankAccount(accountName);
@@ -110,25 +129,29 @@ public class Main {
                         System.out.println("Deposit Successful! ");
                     }
 
-                    else if (action2.equals("4")) {
+                    else if (action2.equals("4"))
+                    {
                         System.out.print("Please Enter an account name to debit from: ");
                         String bName = input2.nextLine();
                         BankAccount found = currUser.findBankAccount(bName);
-                        while (found == null) {
+                        while (found == null)
+                        {
                             System.out.print("Please Enter an existing account name: ");
                             bName = input2.nextLine();
                             found = currUser.findBankAccount(bName);
                         }
                         System.out.print("Please enter a debit amount(double): ");
                         double amount = input2.nextDouble();
-                        while (!found.subFromBalance(amount)) {
+                        while (!found.subFromBalance(amount))
+                        {
                             System.out.println("Please Enter a valid amount: ");
                             amount = input2.nextDouble();
                         }
                         System.out.println("Debit Successfyl! ");
 
                     }
-                    else if (action2.equals("5")) {
+                    else if (action2.equals("5"))
+                    {
                         System.out.println("You are now logged out! \n");
                         login = false;
                     }
