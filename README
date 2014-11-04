@@ -3,8 +3,7 @@
 ******************** To Import Our Project Into Netbeans With Git ********************
 
 1. Download and install Netbeans 8 (just google it)
-2. Open Netbeans. If you have any projects that you previously opened on the left hand side in the projects pane,
-   rightclick on them and select "Close"
+2. Open Netbeans. If you have any projects that you previously opened on the left hand side in the projects pane, rightclick on them and select "Close"
 3. Now go to Team > Git > Clone in the top menu bar
 4. In the repository URL box, paste -> https://github.com/t4kmode/CSE110FA14.git
 5. Enter your user and password
@@ -12,16 +11,14 @@
 7. Press next
 8. Check the box next to "master*"
 9. Press next
-10. Make sure that "Scan for Netbeans projects after clone" is checked on the next page, 
-    everything else should be fine as default.
+10. Make sure that "Scan for Netbeans projects after clone" is checked on the next page, everything else should be fine as default.
 11. Press finish. The project has now been successfully imported.
 
 ******************** To Upload Changes to Git With Netbeans ********************
 
 1. To upload changes, right click on the project on the left hand side in the project pane
 2. Select Git > Commit
-3. Add a descriptive message in the top box. Select which files you wish to commit. You can view what changes will
-   be made to a given file in the repo by right clicking on it and selecting "Diff"
+3. Add a descriptive message in the top box. Select which files you wish to commit. You can view what changes will be made to a given file in the repo by right clicking on it and selecting "Diff"
 4. Press the Commit button
 5. Right click again on the project on the left hand side in the project pane
 6. Select Git > Remote > Push
@@ -30,8 +27,7 @@
 9. In "Repository URL" box, paste -> https://github.com/t4kmode/CSE110FA14.git
 10. Enter your user and password
 11. Press next
-12. Check the box next to master -> master. If the icon next to master -> master is red, you must do a pull before
-    committing your most recent changes. If it is blue, you are good to go.
+12. Check the box next to master -> master. If the icon next to master -> master is red, you must do a pull before committing your most recent changes. If it is blue, you are good to go.
 13. Press next
 14. Check the box next to master -> origin/master
 15. Finish
