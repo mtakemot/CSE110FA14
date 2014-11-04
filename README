@@ -8,8 +8,7 @@
 3. Now go to Team > Git > Clone in the top menu bar
 4. In the repository URL box, paste -> https://github.com/t4kmode/CSE110FA14.git
 5. Enter your user and password
-6. Specify the destination folder. This directory will be the parent directory of your project and will 
-   contain your main project folder
+6. Specify the destination folder. This directory will be the parent directory of your project and will contain your main project folder
 7. Press next
 8. Check the box next to "master*"
 9. Press next
