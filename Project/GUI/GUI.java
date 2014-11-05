@@ -67,13 +67,13 @@ public class GUI extends javax.swing.JFrame
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         MainPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        MainPanel.setName(""); // NOI18N
         MainPanel.setPreferredSize(new java.awt.Dimension(1024, 768));
         MainPanel.setLayout(new java.awt.CardLayout());
 
@@ -81,11 +81,11 @@ public class GUI extends javax.swing.JFrame
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 825, Short.MAX_VALUE)
+            .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 535, Short.MAX_VALUE)
+            .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -143,6 +143,10 @@ public class GUI extends javax.swing.JFrame
                 LoginPanel Login = new LoginPanel(cardHolder);
                 // This creates a new AccList Panel and passes in the MainPanel
                 AccountsListPanel AccList = new AccountsListPanel(cardHolder);
+                
+                //creates a new CreateAccountPanel and passes in the Main Panel
+                CreateAccountPanel CreateAcc = new CreateAccountPanel(cardHolder);
+                
                 // This addes the LoginPanel and AccountsListPanel that we just
                 // created to the MainPanel. It also assigns a name to each of
                 // the panels so that we can reference them easily when we want 
@@ -154,6 +158,7 @@ public class GUI extends javax.swing.JFrame
                 // layout.show(MainPanel, "AccList");
                 cardHolder.add(Login, "Login");
                 cardHolder.add(AccList, "AccList");
+                cardHolder.add(CreateAcc, "CreateAcc");
                 
                 // These two lines show the MainPanel. Without these 2 lines 
                 // the GUI would not show up at all. Just leave them alone.

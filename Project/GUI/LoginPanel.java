@@ -2,9 +2,9 @@ package GUI;
 
 /****************************************************************************
 
-                                                        Ryan Bridges
+                                                        Michio Takemoto
                                                         CSE 110, Fall 2014
-                                          Last Updated: October 30, 2014
+                                          Last Updated: November 3, 2014
 
                                 Team 42
 
@@ -46,8 +46,7 @@ public class LoginPanel extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         UsernameField = new javax.swing.JTextField();
         PasswordField = new javax.swing.JTextField();
@@ -55,30 +54,39 @@ public class LoginPanel extends javax.swing.JPanel
         LoginButton = new javax.swing.JButton();
 
         UsernameField.setText("Username");
-        UsernameField.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        UsernameField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                UsernameFieldMouseClicked(evt);
+            }
+        });
+        UsernameField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UsernameFieldActionPerformed(evt);
             }
         });
 
         PasswordField.setText("Password");
-        PasswordField.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        PasswordField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PasswordFieldMouseClicked(evt);
+            }
+        });
+        PasswordField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PasswordFieldActionPerformed(evt);
             }
         });
 
         CreateAccButton.setText("Create Account");
+        CreateAccButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CreateAccButtonMouseClicked(evt);
+            }
+        });
 
         LoginButton.setText("Login");
-        LoginButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        LoginButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LoginButtonMouseClicked(evt);
             }
         });
@@ -146,6 +154,24 @@ public class LoginPanel extends javax.swing.JPanel
         // to it everywhere.
         GUI.MasterTable.findUserAccount(UsernameField.getText());
     }//GEN-LAST:event_LoginButtonMouseClicked
+        
+    private void UsernameFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UsernameFieldMouseClicked
+        UsernameField.setText("");
+    }//GEN-LAST:event_UsernameFieldMouseClicked
+
+    private void PasswordFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PasswordFieldMouseClicked
+        PasswordField.setText("");
+    }//GEN-LAST:event_PasswordFieldMouseClicked
+
+    private void CreateAccButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CreateAccButtonMouseClicked
+        
+        //retrieve MainPanel to transfer it's layout to CreateAccountPanel
+        CardLayout layout = (CardLayout) (MainPanel.getLayout());
+        
+         //send the layout of MainPanel to new display of JPanel "CreateAcc"
+        layout.show(MainPanel, "CreateAcc");
+        
+    }//GEN-LAST:event_CreateAccButtonMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
