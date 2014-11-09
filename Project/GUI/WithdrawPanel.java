@@ -204,6 +204,7 @@ public class WithdrawPanel extends javax.swing.JPanel {
         {
             GUI.currentBankAccount.subFromBalance(amount);
             // Give the user a message saying success
+            // test
         }
     }//GEN-LAST:event_WithdrawButtonMouseClicked
 
