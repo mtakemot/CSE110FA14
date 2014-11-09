@@ -1,5 +1,5 @@
 package Backend;
-
+import java.io.Serializable;
 /****************************************************************************
 
                                                         Ryan Bridges
@@ -17,7 +17,7 @@ Description:    This file contains the implementation for the object that
                 BankAccounts which will be either checking or savings.
 TODO:           Implement a deleteBankAccount function
  ****************************************************************************/
-public class UserAccount
+public class UserAccount implements Serializable
 {
     private String firstName;
     private String lastName;

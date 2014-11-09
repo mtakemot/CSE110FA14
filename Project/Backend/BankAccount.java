@@ -1,5 +1,5 @@
 package Backend;
-
+import java.io.Serializable;
 /****************************************************************************
 
                                                         Ryan Bridges
@@ -14,7 +14,7 @@ Description:    This is the super class for the different types of
                 information about the bank account. It also contains a next
                 field which will hold the next BankAccount owned by the user.
  ****************************************************************************/
-public class BankAccount
+public class BankAccount implements Serializable
 {
     // making changes
     protected double balance;
