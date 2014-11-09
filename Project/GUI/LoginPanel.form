@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <Properties>
+    <Property name="opaque" type="boolean" value="false"/>
+  </Properties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -20,13 +23,14 @@
               <EmptySpace min="-2" pref="317" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="CreateAccButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="LoginButton" min="-2" max="-2" attributes="0"/>
+                      <Component id="CreateAccButton" min="-2" pref="222" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="LoginButton" min="-2" pref="204" max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" alignment="0" groupAlignment="2" attributes="0">
-                      <Component id="UsernameField" alignment="2" max="32767" attributes="0"/>
-                      <Component id="PasswordField" alignment="2" min="-2" pref="188" max="-2" attributes="0"/>
+                      <Component id="UsernameField" alignment="2" min="-2" pref="456" max="-2" attributes="0"/>
+                      <Component id="PasswordField" alignment="2" min="-2" pref="456" max="-2" attributes="0"/>
+                      <Component id="jLabel1" alignment="2" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="340" max="-2" attributes="0"/>
@@ -35,17 +39,19 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="354" max="32767" attributes="0"/>
-              <Component id="UsernameField" min="-2" pref="35" max="-2" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="149" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+              <Component id="UsernameField" min="-2" pref="45" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="PasswordField" min="-2" pref="35" max="-2" attributes="0"/>
+              <Component id="PasswordField" min="-2" pref="41" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="CreateAccButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="LoginButton" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="CreateAccButton" max="32767" attributes="0"/>
+                  <Component id="LoginButton" min="-2" pref="49" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
+              <EmptySpace pref="168" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -84,6 +90,14 @@
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="LoginButtonMouseClicked"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="DejaVu Sans" size="48" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Bank 42"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

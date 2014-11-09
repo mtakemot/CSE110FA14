@@ -73,6 +73,8 @@ public class GUI extends javax.swing.JFrame
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        MainPanel.setBackground(new java.awt.Color(198, 118, 38));
+        MainPanel.setMaximumSize(new java.awt.Dimension(1000, 1000));
         MainPanel.setName(""); // NOI18N
         MainPanel.setPreferredSize(new java.awt.Dimension(1024, 768));
         MainPanel.setLayout(new java.awt.CardLayout());
@@ -81,11 +83,11 @@ public class GUI extends javax.swing.JFrame
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -146,7 +148,7 @@ public class GUI extends javax.swing.JFrame
                 
                 //creates a new CreateAccountPanel and passes in the Main Panel
                 CreateAccountPanel CreateAcc = new CreateAccountPanel(cardHolder);
-                
+               
                 // This addes the LoginPanel and AccountsListPanel that we just
                 // created to the MainPanel. It also assigns a name to each of
                 // the panels so that we can reference them easily when we want 
@@ -159,11 +161,12 @@ public class GUI extends javax.swing.JFrame
                 cardHolder.add(Login, "Login");
                 cardHolder.add(AccList, "AccList");
                 cardHolder.add(CreateAcc, "CreateAcc");
-                
                 // These two lines show the MainPanel. Without these 2 lines 
                 // the GUI would not show up at all. Just leave them alone.
                 mainGUI.pack();
-                mainGUI.setVisible(true);            
+                mainGUI.setVisible(true);        
+                
+                mainGUI.setResizable(false);
             }
         });
     }

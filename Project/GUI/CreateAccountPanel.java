@@ -1,44 +1,27 @@
 package GUI;
-/****************************************************************************
 
-                                                        Michio Takemoto
-                                                        CSE 110, Fall 2014
-                                          Last Updated: November 4, 2014
+import Backend.UserAccount;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
-                                Team 42
-
-File Name:      CreateAccountPanel.java
-Description:    This class will define what our account creation page will look
-*               like. Place holder page for NOW. Just making sure LoginPanel.java
-*               links correctly. 
- ****************************************************************************/
-import javax.swing.*;
-import java.awt.*;
-
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 /**
  *
- * @author Michio
+ * @author asharda
  */
 public class CreateAccountPanel extends javax.swing.JPanel {
-
-    //send the MainPanel back through so that we retain old data
+    
     private JPanel MainPanel;
-    
-    
-    //default blank constructor
-     public CreateAccountPanel() {
+    /**
+     * Creates new form CreateAccount
+     */
+    public CreateAccountPanel() {
         initComponents();
-    } 
-    
-    // constructor taking in the JPanel from GUI.java which contains all
-    //intial constructive information
-    public CreateAccountPanel(JPanel MainPanel) {
-        
-        this.MainPanel = MainPanel;
-        initComponents();
-    } 
-    
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -49,33 +32,180 @@ public class CreateAccountPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        firstName = new javax.swing.JTextField();
+        password = new javax.swing.JPasswordField();
+        createUserAccount = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        dismissView = new javax.swing.JButton();
+        username = new javax.swing.JTextField();
+        lastName = new javax.swing.JTextField();
+        confirmPassword = new javax.swing.JPasswordField();
+        email = new javax.swing.JTextField();
+        phone = new javax.swing.JTextField();
 
-        setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
-        setPreferredSize(new java.awt.Dimension(1024, 768));
+        setOpaque(false);
 
-        jLabel1.setText("Account creation choices shown here");
+        firstName.setText("First Name");
+
+        password.setText("Password");
+
+        createUserAccount.setText("Create User Account");
+        createUserAccount.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createUserAccountActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Already have an account? Sign in");
+
+        jLabel1.setText("Bank 42");
+
+        dismissView.setText("Back");
+
+        username.setText("Username");
+
+        lastName.setText("Last Name");
+
+        confirmPassword.setText("Password");
+
+        email.setText("Email");
+
+        phone.setText("Phone");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(dismissView)
+                        .addGap(242, 242, 242)
+                        .addComponent(jLabel1)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(94, 94, 94)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(createUserAccount, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(phone, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(username)
+                            .addComponent(firstName)
+                            .addComponent(lastName)
+                            .addComponent(password)
+                            .addComponent(email)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(confirmPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addGap(165, 165, 165))
             .addGroup(layout.createSequentialGroup()
-                .addGap(250, 250, 250)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(495, Short.MAX_VALUE))
+                .addGap(185, 185, 185)
+                .addComponent(jButton2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(426, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(310, 310, 310))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addComponent(dismissView))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(firstName, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(13, 13, 13)
+                .addComponent(lastName, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(confirmPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(phone, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(createUserAccount, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton2)
+                .addGap(6, 6, 6))
         );
     }// </editor-fold>//GEN-END:initComponents
+    public CreateAccountPanel(JPanel MainPanel) {
+        
+        this.MainPanel = MainPanel;
+        initComponents();
+    } 
+    
+    private void createUserAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserAccountActionPerformed
+        
+        boolean operationSuccessful = false;
+        
+        if (firstName.getText().length() > 0)
+        {
+           if (lastName.getText().length() > 0)
+           {
+             if (username.getText().length() > 0)
+              {
+                 if ((password.getText().length() > 0) && (password.getText().equals(confirmPassword.getText())))
+                 {
+                    if ((email.getText().length() > 0) && (isValidEmailAddress(email.getText())))
+                    {
+                         if (validatePhoneNumber(phone.getText()))
+                        {
+                            operationSuccessful = true;
+                            //currentUserAccount = new UserAccount(firstName.getText(),lastName.getText(),username.getText(),password.getText(),email.getText(), phone.getText(), "");
+                        }
+                    }
+                 }
+              } 
+           }
+        } 
+        
+        if (!operationSuccessful)
+        {
+            System.out.println("Error creating an account!");
+            JOptionPane.showMessageDialog(null, "Error creating an account!", "Error", JOptionPane.INFORMATION_MESSAGE);
+        }
+        
+    }//GEN-LAST:event_createUserAccountActionPerformed
 
-
+    private static boolean validatePhoneNumber(String phoneNo) {
+        //validate phone numbers of format "1234567890"
+        if (phoneNo.matches("\\d{10}")) return true;
+        
+        //validating phone number with -, . or spaces
+        else if(phoneNo.matches("\\d{3}[-\\.\\s]\\d{3}[-\\.\\s]\\d{4}")) return true;
+        
+        //validating phone number with extension length from 3 to 5
+        else if(phoneNo.matches("\\d{3}-\\d{3}-\\d{4}\\s(x|(ext))\\d{3,5}")) return true;
+        
+        //validating phone number where area code is in braces ()
+        else if(phoneNo.matches("\\(\\d{3}\\)-\\d{3}-\\d{4}")) return true;
+        
+        //return false if nothing matches the input
+        else return false;        
+    }
+ 
+    private static boolean isValidEmailAddress(String email) {
+           String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
+           java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
+           java.util.regex.Matcher m = p.matcher(email);
+           return m.matches();
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPasswordField confirmPassword;
+    private javax.swing.JButton createUserAccount;
+    private javax.swing.JButton dismissView;
+    private javax.swing.JTextField email;
+    private javax.swing.JTextField firstName;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField lastName;
+    private javax.swing.JPasswordField password;
+    private javax.swing.JTextField phone;
+    private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
 }
