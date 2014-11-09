@@ -1,17 +1,34 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/* TODO:      **please update todo's here if you are working on this file
+ *  -11/8 (Michio Takemoto):
+    runtime database will sync (IMPORT) to previously created 
+ *  database by importing from a Data.ser file that will
+ *  be placed in your CSE110FA14 folder (where the README
+ *  file that Ryan wrote is found. After user information is edite, AND while 
+ *  the user is still logged in, There is an option for the USER to export changes
+ *  which will export the runtime database to Data.ser
+ **1) What I want to do is, test efficiency of exporting database after every
+ *  data change (NOT when data is viewed, but ACTUALLY change like user being created
+ *  bank account created, $ transferred, account deleted, etc
+ **2) See if we can import/export Data.ser to github.com for potentially centralizing
+ *  data base with other clients
+ ***a) In such case, build algorithm to insert time stamps into the Data.ser
+ ***b) Compare time stamps before committing to see if you need to repull, merge
+ *     changes, then commit
+ **3) Test flexibility of serialization for .exe file. If we just put a .exe file on
+ *    random cpu and run it, will the Data.ser be inside the .exe, in a temporary
+ *    windows folder, or will the program not work properly due to Data.ser not 
+ *    working right in .exe form
+ *
  */
 package Backend;
 
-import java.io.Serializable;
-import java.util.*;
 import java.io.*;
 
 /**
  *
- * @author Michio
+ * @author Michio Takemoto 
+ * ****Data.ser currently has one user: mike with password: 123
+ * user account mike has 1 savings account and 1 checking account.
  */
 public class ImportExport {
     
@@ -25,8 +42,7 @@ public class ImportExport {
      * @return 
      */
     public HashTable importDB (HashTable MasterTable){
-        boolean result = false;
-        
+                
         try{
             FileInputStream fileIn = new FileInputStream("Data.ser");
             ObjectInputStream in = new ObjectInputStream(fileIn);
@@ -79,9 +95,8 @@ public class ImportExport {
              result = true;
             }catch (IOException i){
                 //error for bad or non existing output file
-                i.printStackTrace();
                 System.err.println("\n\n\nEXPORT FAILED!\n\n");
-                result = false;
+                
             }
          
             return result;

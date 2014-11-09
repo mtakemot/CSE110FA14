@@ -175,6 +175,10 @@ public class Main
                                     + " Data.ser\n");
 
                         }
+                        else
+                        {
+                            System.err.println("\n\nCould not export, ERROR\n\n");
+                        }
                     }
                 }
             }
