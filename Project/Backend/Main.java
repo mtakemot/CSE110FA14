@@ -29,6 +29,17 @@ public class Main
         String action;
         String action2;
         boolean login = false;
+        ImportExport datain = new ImportExport();
+        ImportExport dataout = new ImportExport();
+
+       /* if(datain.importDB(MasterTable))
+        {
+            System.out.println ("\n\n\nImported data successfully\n\n\n");
+        }*/
+
+        MasterTable = datain.importDB(MasterTable);
+
+
         while (!login)
         {
             System.out.println("Please select an action by inputting the number "
@@ -81,6 +92,7 @@ public class Main
                     System.out.println("3. Credit Account. ");
                     System.out.println("4. Debit Account.");
                     System.out.println("5. Logout.");
+                    System.out.println("6. EXPORT.");
                     action2 = input2.nextLine();
 
                     if (action2.equals("1"))
@@ -156,6 +168,19 @@ public class Main
                     {
                         System.out.println("You are now logged out! \n");
                         login = false;
+                    }
+
+                    else if (action2.equals("6"))
+                    {
+                        if(dataout.exportDB(MasterTable)){
+                            System.out.println("\nExported file to local source file"
+                                    + " Data.ser\n");
+
+                        }
+                        else
+                        {
+                            System.err.println("\n\nCould not export, ERROR\n\n");
+                        }
                     }
                 }
             }

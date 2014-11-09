@@ -2,7 +2,7 @@ package Backend;
 
 
 import Backend.BankAccount;
-
+import java.io.Serializable;
 
 /**
  * **************************************************************************
@@ -16,12 +16,12 @@ import Backend.BankAccount;
  * Each bucket in the Hash Table will hold a linked list of UserAccounts.
  * **************************************************************************
  */
-public class HashTable
+public class HashTable implements Serializable
 {
 
     // Chose a prime number for the size of the table for more efficient hashing
     private final static int SIZE = 251;
-    private int occ; // Total number of UserAccounts that the table is holding
+    public int occ; // Total number of UserAccounts that the table is holding
     UserAccount[] Table; // The hash table
 
     // Constructor for the HashTable creates an array of size SIZE and
