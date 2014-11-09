@@ -2,9 +2,9 @@ package GUI;
 
 /****************************************************************************
 
-                                                        Michio Takemoto
+                                                        Ryan Bridges
                                                         CSE 110, Fall 2014
-                                          Last Updated: November 3, 2014
+                                          Last Updated: Michio Takemoto, November 3, 2014
 
                                 Team 42
 
@@ -46,7 +46,8 @@ public class LoginPanel extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         UsernameField = new javax.swing.JTextField();
         PasswordField = new javax.swing.JTextField();
@@ -54,39 +55,51 @@ public class LoginPanel extends javax.swing.JPanel
         LoginButton = new javax.swing.JButton();
 
         UsernameField.setText("Username");
-        UsernameField.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        UsernameField.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 UsernameFieldMouseClicked(evt);
             }
         });
-        UsernameField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        UsernameField.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 UsernameFieldActionPerformed(evt);
             }
         });
 
         PasswordField.setText("Password");
-        PasswordField.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        PasswordField.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 PasswordFieldMouseClicked(evt);
             }
         });
-        PasswordField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        PasswordField.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 PasswordFieldActionPerformed(evt);
             }
         });
 
         CreateAccButton.setText("Create Account");
-        CreateAccButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        CreateAccButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 CreateAccButtonMouseClicked(evt);
             }
         });
 
         LoginButton.setText("Login");
-        LoginButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        LoginButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 LoginButtonMouseClicked(evt);
             }
         });
