@@ -1,6 +1,7 @@
 package GUI;
 
 import Backend.UserAccount;
+import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -62,6 +63,11 @@ public class CreateAccountPanel extends javax.swing.JPanel {
         jLabel1.setText("Bank 42");
 
         dismissView.setText("Back");
+        dismissView.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                dismissViewMouseClicked(evt);
+            }
+        });
 
         username.setText("Username");
 
@@ -170,6 +176,14 @@ public class CreateAccountPanel extends javax.swing.JPanel {
         }
         
     }//GEN-LAST:event_createUserAccountActionPerformed
+
+    private void dismissViewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dismissViewMouseClicked
+         //retrieve MainPanel to transfer it's layout to CreateAccountPanel
+        CardLayout layout = (CardLayout) (MainPanel.getLayout());
+        
+         //send the layout of MainPanel to new display of JPanel "CreateAcc"
+        layout.previous(MainPanel);
+    }//GEN-LAST:event_dismissViewMouseClicked
 
     private static boolean validatePhoneNumber(String phoneNo) {
         //validate phone numbers of format "1234567890"
