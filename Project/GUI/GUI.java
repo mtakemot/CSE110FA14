@@ -34,13 +34,13 @@ public class GUI extends javax.swing.JFrame
 {
 
     // Static HashTable allows us to access the table in any element of our GUI
-    static HashTable MasterTable = new HashTable();
+    public static HashTable MasterTable = new HashTable();
     // Static UserAccount allows us to store a UserAccount after a user logs in
     // so that we can manipulate it in other panels of our GUI
-    static UserAccount currentUserAccount;
+    public static UserAccount currentUserAccount;
     // Static BankAccount allows us to store a UserAccount after a user selects
     // it so that we can manipulate it in other panels of our GUI
-    static BankAccount currentBankAccount;
+    public static BankAccount currentBankAccount;
     
     public GUI()
     {
@@ -150,6 +150,7 @@ public class GUI extends javax.swing.JFrame
                 
                 //creates a new CreateAccountPanel and passes in the Main Panel
                 CreateAccountPanel CreateAcc = new CreateAccountPanel(cardHolder);
+                MainMenuPanel mainMenu = new MainMenuPanel(cardHolder);
                
                 // This addes the LoginPanel and AccountsListPanel that we just
                 // created to the MainPanel. It also assigns a name to each of
@@ -164,6 +165,7 @@ public class GUI extends javax.swing.JFrame
                 cardHolder.add(AccList, "AccList");
                 cardHolder.add(CreateAcc, "CreateAcc");
                 cardHolder.add(Settings, "Settings");
+                cardHolder.add(mainMenu, "MainMenu");
                 // These two lines show the MainPanel. Without these 2 lines 
                 // the GUI would not show up at all. Just leave them alone.
                 mainGUI.pack();

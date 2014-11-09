@@ -153,7 +153,6 @@ public class Settings extends javax.swing.JPanel
         GUI.currentUserAccount = null;
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
         layout.show(MainPanel, "Login");
-
     }//GEN-LAST:event_LogoutButtonMouseClicked
 
 
