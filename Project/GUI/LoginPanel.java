@@ -83,11 +83,21 @@ public class LoginPanel extends javax.swing.JPanel
                 CreateAccButtonMouseClicked(evt);
             }
         });
+        CreateAccButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CreateAccButtonActionPerformed(evt);
+            }
+        });
 
         LoginButton.setText("Login");
         LoginButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LoginButtonMouseClicked(evt);
+            }
+        });
+        LoginButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LoginButtonActionPerformed(evt);
             }
         });
 
@@ -172,6 +182,14 @@ public class LoginPanel extends javax.swing.JPanel
         layout.show(MainPanel, "CreateAcc");
         
     }//GEN-LAST:event_CreateAccButtonMouseClicked
+
+    private void CreateAccButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateAccButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CreateAccButtonActionPerformed
+
+    private void LoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LoginButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
