@@ -70,7 +70,6 @@ public class GUI extends javax.swing.JFrame
     private void initComponents() {
 
         MainPanel = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -79,9 +78,6 @@ public class GUI extends javax.swing.JFrame
         MainPanel.setName(""); // NOI18N
         MainPanel.setPreferredSize(new java.awt.Dimension(1024, 768));
         MainPanel.setLayout(new java.awt.CardLayout());
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/Background.png"))); // NOI18N
-        MainPanel.add(jLabel1, "card2");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -180,6 +176,5 @@ public class GUI extends javax.swing.JFrame
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel MainPanel;
-    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
