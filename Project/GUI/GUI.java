@@ -145,6 +145,8 @@ public class GUI extends javax.swing.JFrame
                 LoginPanel Login = new LoginPanel(cardHolder);
                 // This creates a new AccList Panel and passes in the MainPanel
                 AccountsListPanel AccList = new AccountsListPanel(cardHolder);
+                //This creates a new Settings Panel and passes in the MainPanel
+                Settings Settings = new Settings(cardHolder);
                 
                 //creates a new CreateAccountPanel and passes in the Main Panel
                 CreateAccountPanel CreateAcc = new CreateAccountPanel(cardHolder);
@@ -161,6 +163,7 @@ public class GUI extends javax.swing.JFrame
                 cardHolder.add(Login, "Login");
                 cardHolder.add(AccList, "AccList");
                 cardHolder.add(CreateAcc, "CreateAcc");
+                cardHolder.add(Settings, "Settings");
                 // These two lines show the MainPanel. Without these 2 lines 
                 // the GUI would not show up at all. Just leave them alone.
                 mainGUI.pack();

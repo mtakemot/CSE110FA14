@@ -55,6 +55,8 @@ public class AccountsListPanel extends javax.swing.JPanel
         Settings = new javax.swing.JButton();
         Logout = new javax.swing.JButton();
 
+        setOpaque(false);
+
         jLabel2.setText("Account Name");
 
         jLabel3.setText("Account Type");
@@ -65,6 +67,11 @@ public class AccountsListPanel extends javax.swing.JPanel
         jLabel5.setText("Bank 42");
 
         Settings.setText("Settings");
+        Settings.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SettingsMouseClicked(evt);
+            }
+        });
         Settings.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SettingsActionPerformed(evt);
@@ -92,9 +99,9 @@ public class AccountsListPanel extends javax.swing.JPanel
                     .addGroup(layout.createSequentialGroup()
                         .addGap(95, 95, 95)
                         .addComponent(jLabel2)
-                        .addGap(133, 133, 133)
+                        .addGap(110, 110, 110)
                         .addComponent(jLabel3)
-                        .addGap(56, 56, 56)
+                        .addGap(79, 79, 79)
                         .addComponent(jLabel4)
                         .addGap(0, 143, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
@@ -131,12 +138,18 @@ public class AccountsListPanel extends javax.swing.JPanel
     }//GEN-LAST:event_LogoutActionPerformed
 
     private void LogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoutMouseClicked
-        //retrieve MainPanel to transfer it's layout to CreateAccountPanel
+        //retrieve MainPanel to transfer it's layout to AccountListPanel
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
         
-         //send the layout of MainPanel to new display of JPanel "CreateAcc"
+         //send the layout of MainPanel to new display of JPanel "Login"
         layout.show(MainPanel, "Login");
     }//GEN-LAST:event_LogoutMouseClicked
+
+    private void SettingsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingsMouseClicked
+        CardLayout layout = (CardLayout) (MainPanel.getLayout());
+        
+        layout.show(MainPanel, "Settings");
+    }//GEN-LAST:event_SettingsMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

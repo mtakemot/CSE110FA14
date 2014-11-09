@@ -1,5 +1,8 @@
 package GUI;
 
+import javax.swing.*;
+import java.awt.*;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -14,7 +17,15 @@ public class Settings extends javax.swing.JPanel {
     /**
      * Creates new form Settings
      */
+    private JPanel MainPanel;
+    
     public Settings() {
+        initComponents();
+    }
+    
+    public Settings(JPanel MainPanel)
+    {
+        this.MainPanel = MainPanel;
         initComponents();
     }
 
