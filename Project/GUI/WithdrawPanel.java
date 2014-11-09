@@ -67,11 +67,6 @@ public class WithdrawPanel extends javax.swing.JPanel {
                 SettingsButtonMouseClicked(evt);
             }
         });
-        SettingsButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SettingsButtonActionPerformed(evt);
-            }
-        });
 
         BankNamePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -190,10 +185,6 @@ public class WithdrawPanel extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
         layout.show(MainPanel, "Settings");
     }//GEN-LAST:event_SettingsButtonMouseClicked
-
-    private void SettingsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SettingsButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SettingsButtonActionPerformed
 
     private void LogoutButttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoutButttonMouseClicked
         GUI.currentBankAccount = null;
