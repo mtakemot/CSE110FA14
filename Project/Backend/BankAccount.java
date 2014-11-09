@@ -16,6 +16,7 @@ Description:    This is the super class for the different types of
  ****************************************************************************/
 public class BankAccount
 {
+    // making changes
     protected double balance;
     protected String accountName;
     protected BankAccount next;
