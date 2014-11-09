@@ -40,14 +40,12 @@ public class MainMenuPanel extends javax.swing.JPanel {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         LogoutButtton = new javax.swing.JButton();
         BankNamePanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        AccountOwnerText = new javax.swing.JTextField();
-        AccountBalanceText = new javax.swing.JTextField();
-        BankAccountTypeText = new javax.swing.JTextField();
         MakeDepositButton = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
@@ -61,8 +59,10 @@ public class MainMenuPanel extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1024, 768));
 
         LogoutButtton.setText("Logout");
-        LogoutButtton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        LogoutButtton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 LogoutButttonMouseClicked(evt);
             }
         });
@@ -87,42 +87,38 @@ public class MainMenuPanel extends javax.swing.JPanel {
             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        AccountOwnerText.setText(GUI.currentUserAccount.getFirstName()+"'s " + GUI.currentBankAccount.getAccountType() + " Account");
-        AccountOwnerText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AccountOwnerTextActionPerformed(evt);
-            }
-        });
-
-        AccountBalanceText.setEditable(false);
-        AccountBalanceText.setText(String.valueOf(GUI.currentBankAccount.getBalance()));
-
-        BankAccountTypeText.setText(GUI.currentBankAccount.getAccountType());
-
         MakeDepositButton.setText("Make Deposit");
         MakeDepositButton.setMaximumSize(new java.awt.Dimension(115, 25));
         MakeDepositButton.setMinimumSize(new java.awt.Dimension(115, 25));
-        MakeDepositButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        MakeDepositButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 MakeDepositButtonMouseClicked(evt);
             }
         });
-        MakeDepositButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        MakeDepositButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 MakeDepositButtonActionPerformed(evt);
             }
         });
 
         jButton7.setText("Exit");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jButton7.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 jButton7ActionPerformed(evt);
             }
         });
 
         jButton8.setText("Back");
-        jButton8.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        jButton8.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 jButton8MouseClicked(evt);
             }
         });
@@ -130,13 +126,17 @@ public class MainMenuPanel extends javax.swing.JPanel {
         jButton9.setText("Finish");
 
         SettingsButton.setText("Settings");
-        SettingsButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        SettingsButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 SettingsButtonMouseClicked(evt);
             }
         });
-        SettingsButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        SettingsButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 SettingsButtonActionPerformed(evt);
             }
         });
@@ -144,13 +144,17 @@ public class MainMenuPanel extends javax.swing.JPanel {
         TransferFundsButton.setText("Transfer Funds");
         TransferFundsButton.setMaximumSize(new java.awt.Dimension(115, 25));
         TransferFundsButton.setMinimumSize(new java.awt.Dimension(115, 25));
-        TransferFundsButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        TransferFundsButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 TransferFundsButtonMouseClicked(evt);
             }
         });
-        TransferFundsButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        TransferFundsButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 TransferFundsButtonActionPerformed(evt);
             }
         });
@@ -158,13 +162,17 @@ public class MainMenuPanel extends javax.swing.JPanel {
         MakeWithdrawalButton.setText("Make Withdrawal");
         MakeWithdrawalButton.setMaximumSize(new java.awt.Dimension(115, 25));
         MakeWithdrawalButton.setMinimumSize(new java.awt.Dimension(115, 25));
-        MakeWithdrawalButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        MakeWithdrawalButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 MakeWithdrawalButtonMouseClicked(evt);
             }
         });
-        MakeWithdrawalButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        MakeWithdrawalButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 MakeWithdrawalButtonActionPerformed(evt);
             }
         });
@@ -172,13 +180,17 @@ public class MainMenuPanel extends javax.swing.JPanel {
         DeleteAccountButton.setText("Delete Account");
         DeleteAccountButton.setMaximumSize(new java.awt.Dimension(115, 25));
         DeleteAccountButton.setMinimumSize(new java.awt.Dimension(115, 25));
-        DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 DeleteAccountButtonMouseClicked(evt);
             }
         });
-        DeleteAccountButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        DeleteAccountButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 DeleteAccountButtonActionPerformed(evt);
             }
         });
@@ -191,20 +203,11 @@ public class MainMenuPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(SettingsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(BankNamePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(BankAccountTypeText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(AccountOwnerText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(224, 224, 224)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LogoutButtton, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(AccountBalanceText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(SettingsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BankNamePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LogoutButtton, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(MakeDepositButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(73, 73, 73)
@@ -213,18 +216,14 @@ public class MainMenuPanel extends javax.swing.JPanel {
                         .addComponent(TransferFundsButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(76, 76, 76)
                         .addComponent(DeleteAccountButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(74, 74, 74)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton8)
+                        .addGap(74, 74, 74))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(208, 208, 208)
+                        .addComponent(jButton8)
+                        .addGap(278, 278, 278)
                         .addComponent(jButton7)
-                        .addGap(201, 201, 201)
+                        .addGap(319, 319, 319)
                         .addComponent(jButton9)))
-                .addGap(143, 143, 143))
+                .addContainerGap(204, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {DeleteAccountButton, MakeDepositButton, MakeWithdrawalButton, TransferFundsButton});
@@ -236,29 +235,19 @@ public class MainMenuPanel extends javax.swing.JPanel {
                     .addComponent(BankNamePanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(LogoutButtton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(SettingsButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(AccountOwnerText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(AccountBalanceText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BankAccountTypeText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(88, 88, 88)
+                .addGap(114, 114, 114)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(MakeDepositButton, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(MakeWithdrawalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TransferFundsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(DeleteAccountButton, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(64, 64, 64)
+                .addGap(83, 83, 83)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton7)
                     .addComponent(jButton8)
-                    .addComponent(jButton9))
-                .addContainerGap())
+                    .addComponent(jButton7)
+                    .addComponent(jButton9)))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void AccountOwnerTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AccountOwnerTextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_AccountOwnerTextActionPerformed
 
     private void MakeDepositButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MakeDepositButtonActionPerformed
         // TODO add your handling code here:
@@ -321,9 +310,6 @@ public class MainMenuPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField AccountBalanceText;
-    private javax.swing.JTextField AccountOwnerText;
-    private javax.swing.JTextField BankAccountTypeText;
     private javax.swing.JPanel BankNamePanel;
     private javax.swing.JButton DeleteAccountButton;
     private javax.swing.JButton LogoutButtton;

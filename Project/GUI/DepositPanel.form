@@ -53,24 +53,11 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="SettingsButton" min="-2" pref="146" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="BankNamePanel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="BankAccountTypeText" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="AccountOwnerText" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="224" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="LogoutButtton" alignment="0" min="-2" pref="146" max="-2" attributes="0"/>
-                      <Component id="AccountBalanceText" alignment="0" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="SettingsButton" min="-2" pref="146" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="BankNamePanel" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="LogoutButtton" min="-2" pref="146" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -83,13 +70,7 @@
                       <Component id="LogoutButtton" alignment="1" max="32767" attributes="0"/>
                       <Component id="SettingsButton" alignment="0" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="AccountOwnerText" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="AccountBalanceText" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="BankAccountTypeText" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="423" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="449" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -140,40 +121,6 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JTextField" name="AccountOwnerText">
-          <Properties>
-            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="GUI.currentUserAccount.getFirstName()+&quot;&apos;s &quot; + GUI.currentBankAccount.getAccountType() + &quot; Account&quot;" type="code"/>
-            </Property>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AccountOwnerTextActionPerformed"/>
-          </Events>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JTextField()"/>
-          </AuxValues>
-        </Component>
-        <Component class="javax.swing.JTextField" name="AccountBalanceText">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="String.valueOf(GUI.currentBankAccount.getBalance())" type="code"/>
-            </Property>
-          </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JTextField()"/>
-          </AuxValues>
-        </Component>
-        <Component class="javax.swing.JTextField" name="BankAccountTypeText">
-          <Properties>
-            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="GUI.currentBankAccount.getAccountType()" type="code"/>
-            </Property>
-          </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JTextField()"/>
-          </AuxValues>
-        </Component>
         <Component class="javax.swing.JButton" name="SettingsButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="Settings"/>
