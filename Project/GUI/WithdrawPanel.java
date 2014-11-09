@@ -11,12 +11,12 @@ import javax.swing.JPanel;
  *
  * @author Zack
  */
-public class MakeWithdrawPanel extends javax.swing.JPanel {
+public class WithdrawPanel extends javax.swing.JPanel {
 
     
     private JPanel MainPanel;
     
-    public MakeWithdrawPanel(JPanel MainPanel)
+    public WithdrawPanel(JPanel MainPanel)
     {
         this.MainPanel = MainPanel;
         initComponents();
@@ -24,7 +24,7 @@ public class MakeWithdrawPanel extends javax.swing.JPanel {
     /**
      * Creates new form MakeWithdrawPanel
      */
-    public MakeWithdrawPanel() {
+    public WithdrawPanel() {
         initComponents();
     }
 
@@ -35,7 +35,8 @@ public class MakeWithdrawPanel extends javax.swing.JPanel {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

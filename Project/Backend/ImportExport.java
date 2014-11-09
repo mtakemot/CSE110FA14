@@ -3,7 +3,7 @@
     runtime database will sync (IMPORT) to previously created 
  *  database by importing from a Data.ser file that will
  *  be placed in your CSE110FA14 folder (where the README
- *  file that Ryan wrote is found. After user information is edite, AND while 
+ *  file that Ryan wrote is found. After user information is edited, AND while 
  *  the user is still logged in, There is an option for the USER to export changes
  *  which will export the runtime database to Data.ser
  **1) What I want to do is, test efficiency of exporting database after every
