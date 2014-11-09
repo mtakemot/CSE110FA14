@@ -12,17 +12,19 @@ import java.awt.*;
  *
  * @author asharda
  */
-public class Settings extends javax.swing.JPanel {
+public class Settings extends javax.swing.JPanel
+{
 
     /**
      * Creates new form Settings
      */
     private JPanel MainPanel;
-    
-    public Settings() {
+
+    public Settings()
+    {
         initComponents();
     }
-    
+
     public Settings(JPanel MainPanel)
     {
         this.MainPanel = MainPanel;
@@ -36,7 +38,8 @@ public class Settings extends javax.swing.JPanel {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         jLabel1 = new javax.swing.JLabel();
         usernameLabel = new javax.swing.JLabel();
@@ -47,13 +50,12 @@ public class Settings extends javax.swing.JPanel {
         changeUsername = new javax.swing.JButton();
         changePhone = new javax.swing.JButton();
         changeFirstName = new javax.swing.JButton();
-        logout = new javax.swing.JButton();
+        LogoutButton = new javax.swing.JButton();
 
         jLabel1.setText("Bank 42");
 
         usernameLabel.setText("Aryaman Sharda");
 
-        jButton1.setIcon(new javax.swing.ImageIcon("/home/linux/ieng6/oce/6k/asharda/Desktop/avatar-icon.png")); // NOI18N
         jButton1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);
@@ -72,7 +74,14 @@ public class Settings extends javax.swing.JPanel {
 
         changeFirstName.setText("Change First Name");
 
-        logout.setText("Logout");
+        LogoutButton.setText("Logout");
+        LogoutButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                LogoutButtonMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -105,7 +114,7 @@ public class Settings extends javax.swing.JPanel {
                             .addGap(406, 406, 406)
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(logout)
+                .addComponent(LogoutButton)
                 .addGap(43, 43, 43))
         );
         layout.setVerticalGroup(
@@ -114,7 +123,7 @@ public class Settings extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(logout))
+                    .addComponent(LogoutButton))
                 .addGap(48, 48, 48)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -138,8 +147,18 @@ public class Settings extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void LogoutButtonMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_LogoutButtonMouseClicked
+    {//GEN-HEADEREND:event_LogoutButtonMouseClicked
+        GUI.currentBankAccount = null;
+        GUI.currentUserAccount = null;
+        CardLayout layout = (CardLayout) (MainPanel.getLayout());
+        layout.show(MainPanel, "Login");
+
+    }//GEN-LAST:event_LogoutButtonMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton LogoutButton;
     private javax.swing.JButton changeEmail;
     private javax.swing.JButton changeFirstName;
     private javax.swing.JButton changeLastName;
@@ -148,7 +167,6 @@ public class Settings extends javax.swing.JPanel {
     private javax.swing.JButton changeUsername;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JButton logout;
     private javax.swing.JLabel usernameLabel;
     // End of variables declaration//GEN-END:variables
 }
