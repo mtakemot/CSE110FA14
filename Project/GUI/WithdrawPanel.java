@@ -229,49 +229,6 @@ public class WithdrawPanel extends javax.swing.JPanel {
         layout.show(MainPanel, "MainMenu");
     }//GEN-LAST:event_BackButtonMouseClicked
 
-    private void SettingsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingsButtonMouseClicked
-        CardLayout layout = (CardLayout) (MainPanel.getLayout());
-        layout.show(MainPanel, "Settings");
-    }//GEN-LAST:event_SettingsButtonMouseClicked
-
-    private void SettingsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SettingsButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SettingsButtonActionPerformed
-
-    private void LogoutButttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoutButttonMouseClicked
-        GUI.currentBankAccount = null;
-        GUI.currentUserAccount = null;
-        CardLayout layout = (CardLayout) (MainPanel.getLayout());
-        layout.show(MainPanel, "Login");
-    }//GEN-LAST:event_LogoutButttonMouseClicked
-
-    private void WithdrawButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WithdrawButtonMouseClicked
-        double amount = Integer.parseInt(AmountField.getText());
-        if(amount > GUI.currentBankAccount.getBalance())
-        {
-            AmountField.setText("");
-            // Error box/message
-        }
-        else
-        {
-            GUI.currentBankAccount.subFromBalance(amount);
-            // Give the user a message saying success
-        }
-    }//GEN-LAST:event_WithdrawButtonMouseClicked
-
-    private void AmountFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AmountFieldMouseClicked
-        AmountField.setText("");
-    }//GEN-LAST:event_AmountFieldMouseClicked
-
-    private void AmountFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AmountFieldKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_AmountFieldKeyTyped
-
-    private void BackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButtonMouseClicked
-        CardLayout layout = (CardLayout) (MainPanel.getLayout());
-        layout.show(MainPanel, "MainMenu");
-    }//GEN-LAST:event_BackButtonMouseClicked
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField AmountField;

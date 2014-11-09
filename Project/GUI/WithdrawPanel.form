@@ -99,10 +99,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Settings"/>
       </Properties>
-      <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="SettingsButtonMouseClicked"/>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SettingsButtonActionPerformed"/>
-      </Events>
     </Component>
     <Container class="javax.swing.JPanel" name="BankNamePanel">
       <Properties>
