@@ -76,7 +76,10 @@ public class Main
                     System.out.print("Please enter a valid username: ");
                     currUser = MasterTable.findUserAccount(input.nextLine());
                 }
+                
+                System.out.println("currUser PASS: " + currUser.getPassword() + "\n");
                 System.out.print("Password: ");
+                
                 while (!(currUser.validatePassword(input.nextLine())))
                 {
                     System.out.println("The password that you entered was invalid. ");

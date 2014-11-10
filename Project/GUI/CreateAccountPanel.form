@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <NonVisualComponents>
+    <Menu class="java.awt.PopupMenu" name="ERRORPOP">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="CreateAccountPanel_ERRORPOP"/>
+      </AuxValues>
+    </Menu>
+  </NonVisualComponents>
   <Properties>
     <Property name="opaque" type="boolean" value="false"/>
   </Properties>
@@ -90,6 +97,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="First Name"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="firstNameMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JPasswordField" name="password">
       <Properties>
@@ -123,11 +133,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Username"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="usernameMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="lastName">
       <Properties>
         <Property name="text" type="java.lang.String" value="Last Name"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lastNameMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JPasswordField" name="confirmPassword">
       <Properties>
@@ -138,11 +154,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Email"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="emailMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="phone">
       <Properties>
         <Property name="text" type="java.lang.String" value="Phone"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="phoneMouseClicked"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

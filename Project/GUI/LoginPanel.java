@@ -2,9 +2,9 @@ package GUI;
 
 /****************************************************************************
 
-                                                        Ryan Bridges
+                                                        Michio Takemoto
                                                         CSE 110, Fall 2014
-                                          Last Updated: Michio Takemoto, November 3, 2014
+                                          Last Updated: November 3, 2014
 
                                 Team 42
 
@@ -22,6 +22,7 @@ public class LoginPanel extends javax.swing.JPanel
     // VERY IMPORTANT !! YOU MUST MAKE SURE THAT YOU GIVE EACH NEW PANEL THAT 
     // YOU DECLARE A PRIVATE VARIABLE THAT WILL STORE THE MAIN PANEL FROM GUI 
     private JPanel MainPanel;
+    
     
     public LoginPanel()
     {
@@ -97,11 +98,6 @@ public class LoginPanel extends javax.swing.JPanel
                 CreateAccButtonMouseClicked(evt);
             }
         });
-        CreateAccButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CreateAccButtonActionPerformed(evt);
-            }
-        });
 
         LoginButton.setText("Login");
         LoginButton.addMouseListener(new java.awt.event.MouseAdapter()
@@ -109,11 +105,6 @@ public class LoginPanel extends javax.swing.JPanel
             public void mouseClicked(java.awt.event.MouseEvent evt)
             {
                 LoginButtonMouseClicked(evt);
-            }
-        });
-        LoginButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LoginButtonActionPerformed(evt);
             }
         });
 

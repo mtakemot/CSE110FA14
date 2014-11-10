@@ -22,22 +22,27 @@ Description:    This will be the main controller class for our entire GUI.
                 because of the static definition near the top of this class. To
                 run the program and see the GUI, run this file, GUI.java. 
  ****************************************************************************/
-
+/*
 import Backend.UserAccount;
 import Backend.HashTable;
-import Backend.BankAccount;
+import Backend.BankAccount;*/
+
+//11/8 michio takemoto seeing if just backend.* is fine 
+//need to add backend.ImportExport if not
+import Backend.*;
 import javax.swing.*;
 import java.awt.*;
 import java.util.*;
 
 public class GUI extends javax.swing.JFrame
 {
+    static int counter = 0;
 
     // Static HashTable allows us to access the table in any element of our GUI
     public static HashTable MasterTable = new HashTable();
     // Static UserAccount allows us to store a UserAccount after a user logs in
     // so that we can manipulate it in other panels of our GUI
-    public static UserAccount currentUserAccount;
+    static UserAccount currentUserAccount;
     // Static BankAccount allows us to store a UserAccount after a user selects
     // it so that we can manipulate it in other panels of our GUI
     public static BankAccount currentBankAccount;
@@ -83,11 +88,17 @@ public class GUI extends javax.swing.JFrame
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -96,6 +107,13 @@ public class GUI extends javax.swing.JFrame
 
     public static void main(String args[])
     {
+        
+        
+        
+      
+        
+        
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -134,6 +152,13 @@ public class GUI extends javax.swing.JFrame
             @Override
             public void run()
             {
+                /*********testing import export**********/
+                ImportExport datain = new ImportExport();
+                ImportExport dataout = new ImportExport();
+              
+                
+                MasterTable = datain.importDB(MasterTable);
+                System.out.println("GUI.java imported table has: " + MasterTable.occ + " users\n");
                 // This creates the MainPanel that is referenced above. All of 
                 // our other panels will go on top of this one and be shown or 
                 // hidden depending on the state of our program
@@ -172,6 +197,21 @@ public class GUI extends javax.swing.JFrame
                 mainGUI.setVisible(true);        
                 
                 mainGUI.setResizable(false);
+                
+                if(dataout.exportDB(MasterTable)){
+                            System.err.println ("\nExported file to local source file"
+                                    + " Data.ser\n"
+                                    + "\n\nFrom run() in GUI.java");
+                           
+                }
+                
+                else{
+                    System.err.println ("\n\nCould not export, ERROR\n\n");
+                    
+                }
+               
+                 System.out.println ("\nrun() has ran: " +  counter + " times\n");
+                
             }
         });
     }
