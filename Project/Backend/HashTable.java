@@ -23,6 +23,9 @@ public class HashTable implements Serializable
     private final static int SIZE = 251;
     public int occ; // Total number of UserAccounts that the table is holding
     UserAccount[] Table; // The hash table
+    
+    //testing
+    UserAccount rootUser;
 
     // Constructor for the HashTable creates an array of size SIZE and
     // initializes every element in the array to null. Also initializes occ
@@ -34,6 +37,10 @@ public class HashTable implements Serializable
         {
             Table[zod] = null;
         }
+        
+        // testing      
+        rootUser = insertUserAccount("root");
+        rootUser.insertBankAccount(20, "acc1", "Checking");
     }
 
     /**
