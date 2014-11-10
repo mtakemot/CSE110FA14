@@ -63,7 +63,7 @@ public class HashTable implements Serializable
             current = Table[index];
             // Traverse the linked list to find the insertion point
             while (current.getNext() != null
-                    && !(current.getUserName().equals(userName)))
+                    && !((current.getUserName()).equals(userName)))
             {
                 current = current.getNext();
             }
@@ -108,7 +108,7 @@ public class HashTable implements Serializable
             UserAccount current = Table[index];
             // Traverse the linked list until the UserAccount is found or we
             // reach the end of the linked list
-            while (current != null && !(current.getUserName().equals(userName)))
+            while (current != null && !((current.getUserName()).equals(userName)))
             {
                 current = current.getNext();
             }

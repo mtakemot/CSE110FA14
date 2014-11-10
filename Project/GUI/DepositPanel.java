@@ -5,7 +5,6 @@
  */
 package GUI;
 
-
 import java.awt.*;
 import javax.swing.*;
 
@@ -13,21 +12,22 @@ import javax.swing.*;
  *
  * @author Zack
  */
-public class DepositPanel extends javax.swing.JPanel {
+public class DepositPanel extends javax.swing.JPanel
+{
 
     /**
      * Creates new form DepositPanel
      */
-    
     private JPanel MainPanel;
-    
+
     public DepositPanel(JPanel MainPanel)
     {
         this.MainPanel = MainPanel;
         initComponents();
     }
-    
-    public DepositPanel() {
+
+    public DepositPanel()
+    {
         initComponents();
     }
 

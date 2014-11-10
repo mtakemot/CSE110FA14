@@ -66,6 +66,7 @@ public class UserAccount implements Serializable
     // log in is correct
     public boolean validatePassword(String pass)
     {
+        //System.out.println("PASS ERROR");
         return (this.password.equals(pass));
     }
 
@@ -217,6 +218,7 @@ public class UserAccount implements Serializable
 
     public void setPassword(String password)
     {
+        
         this.password = password;
     }
 

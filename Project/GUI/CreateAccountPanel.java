@@ -1,26 +1,36 @@
 package GUI;
 
+import Backend.ImportExport;
+import Backend.HashTable;
 import Backend.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * 11/9 Michio Takemoto
+ * Uses import/export now, but we have a FEW issues
+ ** 1) When invalid input, we have to reset all the buttons or reset the page itself 
+ that all the fields will reset as well. As of now, if we tried to submit something
+ invalid, but we correct it and submit, it will still be invalid as the old data
+ doesn't leave
+
  */
 /**
  *
  * @author asharda
  */
-public class CreateAccountPanel extends javax.swing.JPanel {
-    
+public class CreateAccountPanel extends javax.swing.JPanel
+{
+
     private JPanel MainPanel;
+
     /**
      * Creates new form CreateAccount
      */
-    public CreateAccountPanel() {
+    public CreateAccountPanel()
+    {
         initComponents();
     }
 
@@ -31,8 +41,10 @@ public class CreateAccountPanel extends javax.swing.JPanel {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
+        ERRORPOP = new java.awt.PopupMenu();
         firstName = new javax.swing.JTextField();
         password = new javax.swing.JPasswordField();
         createUserAccount = new javax.swing.JButton();
@@ -48,12 +60,28 @@ public class CreateAccountPanel extends javax.swing.JPanel {
         setOpaque(false);
 
         firstName.setText("First Name");
+        firstName.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
+                firstNameFocusGained(evt);
+            }
+        });
 
         password.setText("Password");
+        password.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
+                passwordFocusGained(evt);
+            }
+        });
 
         createUserAccount.setText("Create User Account");
-        createUserAccount.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        createUserAccount.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 createUserAccountActionPerformed(evt);
             }
         });
@@ -63,21 +91,51 @@ public class CreateAccountPanel extends javax.swing.JPanel {
         jLabel1.setText("Bank 42");
 
         dismissView.setText("Back");
-        dismissView.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                dismissViewMouseClicked(evt);
+
+        username.setText("Username");
+        username.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
+                usernameFocusGained(evt);
             }
         });
 
-        username.setText("Username");
-
         lastName.setText("Last Name");
+        lastName.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
+                lastNameFocusGained(evt);
+            }
+        });
 
         confirmPassword.setText("Password");
+        confirmPassword.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
+                confirmPasswordFocusGained(evt);
+            }
+        });
 
         email.setText("Email");
+        email.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
+                emailFocusGained(evt);
+            }
+        });
 
         phone.setText("Phone");
+        phone.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
+                phoneFocusGained(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -138,78 +196,206 @@ public class CreateAccountPanel extends javax.swing.JPanel {
                 .addGap(6, 6, 6))
         );
     }// </editor-fold>//GEN-END:initComponents
-    public CreateAccountPanel(JPanel MainPanel) {
-        
+    public CreateAccountPanel(JPanel MainPanel)
+    {
+
         this.MainPanel = MainPanel;
         initComponents();
-    } 
-    
+    }
+
     private void createUserAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserAccountActionPerformed
-        
+
         boolean operationSuccessful = false;
-        
-        if (firstName.getText().length() > 0)
+
+        String name1 = firstName.getText();
+        String name2 = lastName.getText();
+        String user = username.getText();
+        char[] input1 = password.getPassword();
+        String pass1 = new String(input1);
+        char[] input2 = confirmPassword.getPassword();
+        String input3 = email.getText();
+        String pass2 = new String(input2);
+
+        if (name1.length() > 0)
         {
-           if (lastName.getText().length() > 0)
-           {
-             if (username.getText().length() > 0)
-              {
-                 if ((password.getText().length() > 0) && (password.getText().equals(confirmPassword.getText())))
-                 {
-                    if ((email.getText().length() > 0) && (isValidEmailAddress(email.getText())))
+            if (name2.length() > 0)
+            {
+                if (user.length() > 0)
+                {
+
+                    // if (((password.getText().length()) > 0) && ((password.getText()).equals(confirmPassword.())))
+                    if (((pass1.length()) > 0) && (pass1.equals(pass2)))
                     {
-                         if (validatePhoneNumber(phone.getText()))
+                        System.out.println("test1");
+                        if ((input3.length() > 0) && (isValidEmailAddress(input3)))
                         {
-                            operationSuccessful = true;
-                            //currentUserAccount = new UserAccount(firstName.getText(),lastName.getText(),username.getText(),password.getText(),email.getText(), phone.getText(), "");
+                            System.out.println("test2");
+
+                            if (validatePhoneNumber(phone.getText()))
+                            {
+                                System.out.println("test3");
+                                operationSuccessful = true;
+                                System.out.println("test4");
+
+                                UserAccount newUser = GUI.MasterTable.insertUserAccount(user);
+                                if (newUser != null)
+                                {
+
+                                    newUser.setFirstName(firstName.getText());
+                                    newUser.setLastName(name2);
+                                    newUser.setUserName(user);
+                                    newUser.setPassword(pass1);
+                                    newUser.setEmail(input3);
+                                    newUser.setPhone(phone.getText());
+                                }
+                                /*   UserAccount retVal = GUI.MasterTable.findUserAccount(username.getText());
+                                 if (retVal == null){
+                                
+                                 UserAccount newUser = new UserAccount();
+                               
+                                 newUser.setFirstName(firstName.getText());
+                                 newUser.setLastName(name2);
+                                 newUser.setUserName(user);
+                                 //newUser.setPassword(password.getText());
+                                 newUser.setPassword(pass1);
+                                 newUser.setEmail(input3);
+                                 newUser.setPhone(phone.getText());
+                                 newUser = GUI.MasterTable.insertUserAccount(user);*/
+                                //  System.out.print("\nnewUser pass inserting to MasterTable: " newUser.getPassword()+ "\n");
+                                if (newUser != null)
+                                {
+
+                                    System.out.println("123123123You have successfully created your user account!");
+                                    JOptionPane.showMessageDialog(null, "You have successfully created your user account!", "Success!",
+                                            JOptionPane.INFORMATION_MESSAGE);
+                                }
+
+                                System.out.println("You have successfully created your user account!");
+                                JOptionPane.showMessageDialog(null, "You have successfully created your user account!", "Success!",
+                                        JOptionPane.INFORMATION_MESSAGE);
+
+                            }
+                            else
+                            {
+                                //print a pop up error
+                                System.out.println("Error creating an account!");
+                                JOptionPane.showMessageDialog(null, "USER NAME in use. Pick again", "IN USE",
+                                        JOptionPane.INFORMATION_MESSAGE);
+                                initComponents();
+
+                            }
+
+                            //UserAccount currentUserAccount = new UserAccount(firstName.getText(),lastName.getText(),username.getText(),password.getText(),email.getText(), phone.getText(), "");
                         }
                     }
-                 }
-              } 
-           }
-        } 
-        
+                }
+            }
+        }
+        //}
+
         if (!operationSuccessful)
         {
-            System.out.println("Error creating an account!");
-            JOptionPane.showMessageDialog(null, "Error creating an account!", "Error", JOptionPane.INFORMATION_MESSAGE);
+            System.out.println("Error with input format!");
+            JOptionPane.showMessageDialog(null, "Error creating an account! INVALID FORMAT", "INVALID FORMAT", JOptionPane.INFORMATION_MESSAGE);
+            initComponents();
         }
-        
+
+        //If we reach here, user name was 100% successfully inserted into table.
+        //ANY TIME THERE's DATA CHANGING (viewing information doesn't count as changing EXPORT!
+        else
+        {
+            ImportExport dataout = new ImportExport();
+            if (dataout.exportDB(GUI.MasterTable))
+            {
+                System.out.println("\nExported file to local source file"
+                        + " THROUGH CREATE ACCOUNT GUI\n");
+
+            }
+            else
+            {
+                System.err.println("\n\nCould not export THROUGH CREATE ACCOUNT GUI, ERROR\n\n");
+            }
+
+        }
+
     }//GEN-LAST:event_createUserAccountActionPerformed
 
     private void dismissViewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dismissViewMouseClicked
-         //retrieve MainPanel to transfer it's layout to CreateAccountPanel
+        //retrieve MainPanel to transfer it's layout to CreateAccountPanel
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
-        
-         //send the layout of MainPanel to new display of JPanel "CreateAcc"
+
+        //send the layout of MainPanel to new display of JPanel "CreateAcc"
         layout.previous(MainPanel);
     }//GEN-LAST:event_dismissViewMouseClicked
 
-    private static boolean validatePhoneNumber(String phoneNo) {
+    private void firstNameFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_firstNameFocusGained
+    {//GEN-HEADEREND:event_firstNameFocusGained
+        firstName.setText("");
+    }//GEN-LAST:event_firstNameFocusGained
+
+    private void lastNameFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_lastNameFocusGained
+    {//GEN-HEADEREND:event_lastNameFocusGained
+        lastName.setText("");
+    }//GEN-LAST:event_lastNameFocusGained
+
+    private void usernameFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_usernameFocusGained
+    {//GEN-HEADEREND:event_usernameFocusGained
+        username.setText("");
+    }//GEN-LAST:event_usernameFocusGained
+
+    private void passwordFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_passwordFocusGained
+    {//GEN-HEADEREND:event_passwordFocusGained
+        password.setText("");
+    }//GEN-LAST:event_passwordFocusGained
+
+    private void confirmPasswordFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_confirmPasswordFocusGained
+    {//GEN-HEADEREND:event_confirmPasswordFocusGained
+        confirmPassword.setText("");
+    }//GEN-LAST:event_confirmPasswordFocusGained
+
+    private void emailFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_emailFocusGained
+    {//GEN-HEADEREND:event_emailFocusGained
+        email.setText("");
+    }//GEN-LAST:event_emailFocusGained
+
+    private void phoneFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_phoneFocusGained
+    {//GEN-HEADEREND:event_phoneFocusGained
+        phone.setText("");
+    }//GEN-LAST:event_phoneFocusGained
+
+    private static boolean validatePhoneNumber(String phoneNo)
+    {
         //validate phone numbers of format "1234567890"
-        if (phoneNo.matches("\\d{10}")) return true;
-        
+        if (phoneNo.matches("\\d{10}"))
+            return true;
+
         //validating phone number with -, . or spaces
-        else if(phoneNo.matches("\\d{3}[-\\.\\s]\\d{3}[-\\.\\s]\\d{4}")) return true;
-        
+        else if (phoneNo.matches("\\d{3}[-\\.\\s]\\d{3}[-\\.\\s]\\d{4}"))
+            return true;
+
         //validating phone number with extension length from 3 to 5
-        else if(phoneNo.matches("\\d{3}-\\d{3}-\\d{4}\\s(x|(ext))\\d{3,5}")) return true;
-        
+        else if (phoneNo.matches("\\d{3}-\\d{3}-\\d{4}\\s(x|(ext))\\d{3,5}"))
+            return true;
+
         //validating phone number where area code is in braces ()
-        else if(phoneNo.matches("\\(\\d{3}\\)-\\d{3}-\\d{4}")) return true;
-        
+        else if (phoneNo.matches("\\(\\d{3}\\)-\\d{3}-\\d{4}"))
+            return true;
+
         //return false if nothing matches the input
-        else return false;        
+        else
+            return false;
     }
- 
-    private static boolean isValidEmailAddress(String email) {
-           String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
-           java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
-           java.util.regex.Matcher m = p.matcher(email);
-           return m.matches();
+
+    private static boolean isValidEmailAddress(String email)
+    {
+        String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
+        java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
+        java.util.regex.Matcher m = p.matcher(email);
+        return m.matches();
     }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private java.awt.PopupMenu ERRORPOP;
     private javax.swing.JPasswordField confirmPassword;
     private javax.swing.JButton createUserAccount;
     private javax.swing.JButton dismissView;
