@@ -42,7 +42,7 @@ public class GUI extends javax.swing.JFrame
     public static HashTable MasterTable = new HashTable();
     // Static UserAccount allows us to store a UserAccount after a user logs in
     // so that we can manipulate it in other panels of our GUI
-    static UserAccount currentUserAccount;
+    public static UserAccount currentUserAccount;
     // Static BankAccount allows us to store a UserAccount after a user selects
     // it so that we can manipulate it in other panels of our GUI
     public static BankAccount currentBankAccount;
