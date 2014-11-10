@@ -11,20 +11,22 @@ import javax.swing.JPanel;
  *
  * @author Zack
  */
-public class DeleteAccountPanel extends javax.swing.JPanel {
+public class DeleteAccountPanel extends javax.swing.JPanel
+{
 
-    
     private JPanel MainPanel;
-    
+
     public DeleteAccountPanel(JPanel MainPanel)
     {
         this.MainPanel = MainPanel;
         initComponents();
     }
+
     /**
      * Creates new form DeleteAccountPanel
      */
-    public DeleteAccountPanel() {
+    public DeleteAccountPanel()
+    {
         initComponents();
     }
 

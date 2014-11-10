@@ -98,13 +98,16 @@
         <Property name="text" type="java.lang.String" value="First Name"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="firstNameMouseClicked"/>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="firstNameFocusGained"/>
       </Events>
     </Component>
     <Component class="javax.swing.JPasswordField" name="password">
       <Properties>
         <Property name="text" type="java.lang.String" value="Password"/>
       </Properties>
+      <Events>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="passwordFocusGained"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="createUserAccount">
       <Properties>
@@ -134,7 +137,7 @@
         <Property name="text" type="java.lang.String" value="Username"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="usernameMouseClicked"/>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="usernameFocusGained"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="lastName">
@@ -142,20 +145,23 @@
         <Property name="text" type="java.lang.String" value="Last Name"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lastNameMouseClicked"/>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="lastNameFocusGained"/>
       </Events>
     </Component>
     <Component class="javax.swing.JPasswordField" name="confirmPassword">
       <Properties>
         <Property name="text" type="java.lang.String" value="Password"/>
       </Properties>
+      <Events>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="confirmPasswordFocusGained"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="email">
       <Properties>
         <Property name="text" type="java.lang.String" value="Email"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="emailMouseClicked"/>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="emailFocusGained"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="phone">
@@ -163,7 +169,7 @@
         <Property name="text" type="java.lang.String" value="Phone"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="phoneMouseClicked"/>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="phoneFocusGained"/>
       </Events>
     </Component>
   </SubComponents>
