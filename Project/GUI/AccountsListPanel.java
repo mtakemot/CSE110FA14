@@ -18,6 +18,8 @@ import javax.swing.*;
 import java.awt.*;
 import javax.swing.table.*;
 
+//for debug
+//import java.io.*;
 public class AccountsListPanel extends javax.swing.JPanel
 {
 
@@ -48,8 +50,7 @@ public class AccountsListPanel extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
@@ -57,7 +58,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         Logout = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         AccountsTable = new javax.swing.JTable();
-        ConfirmButton = new javax.swing.JButton();
+        GoToAcc = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
 
@@ -67,56 +68,60 @@ public class AccountsListPanel extends javax.swing.JPanel
         jLabel5.setText("Bank 42");
 
         Settings.setText("Settings");
-        Settings.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        Settings.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 SettingsMouseClicked(evt);
             }
         });
 
         Logout.setText("Logout");
-        Logout.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        Logout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LogoutMouseClicked(evt);
             }
         });
 
+        AccountsTable.setAutoCreateRowSorter(true);
         AccountsTable.setModel(new TableModel(GUI.currentUserAccount));
-        AccountsTable.setColumnSelectionAllowed(true);
+        AccountsTable.setColumnSelectionAllowed(false);
         AccountsTable.getTableHeader().setResizingAllowed(false);
         AccountsTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(AccountsTable);
         AccountsTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
-        ConfirmButton.setText("Confirm");
+        GoToAcc.setText("Goto Account");
+        GoToAcc.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                GoToAccMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(Settings)
-                        .addGap(203, 203, 203)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 223, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Settings)
+                                .addGap(203, 203, 203)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 223, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(Logout))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(Logout)))
+                        .addGap(101, 101, 101)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(101, 101, 101)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(275, 275, 275)
+                .addComponent(GoToAcc)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(ConfirmButton)
-                .addGap(79, 79, 79))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,9 +132,9 @@ public class AccountsListPanel extends javax.swing.JPanel
                     .addComponent(Logout))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(135, 135, 135)
-                .addComponent(ConfirmButton)
-                .addContainerGap(140, Short.MAX_VALUE))
+                .addGap(33, 33, 33)
+                .addComponent(GoToAcc)
+                .addContainerGap(240, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -147,10 +152,33 @@ public class AccountsListPanel extends javax.swing.JPanel
         layout.show(MainPanel, "Settings");
     }//GEN-LAST:event_SettingsMouseClicked
 
+    private void GoToAccMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GoToAccMouseClicked
+        if (AccountsTable.getSelectedRowCount() > 0)
+        {
+            //first, retrieve the row index of selection        
+            int row = AccountsTable.getSelectedRow();
+            String user = (String) AccountsTable.getValueAt(row, 0);
+            System.out.print("\nTESTING retrieve selected row index: ");
+            System.out.print(row);
+            //next, retrieve the user account for the selection ( row , column0) = (x,y)
+            System.out.print("\n Value at index: " + row + ", 0 is: " + user + "\n");
+
+            //setting the current bank account
+            GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(user);
+
+            System.out.print("\n GUI.currentBankAcc Name:  " + GUI.currentBankAccount.getAccountName() + "\n");
+
+            CardLayout layout = (CardLayout) (MainPanel.getLayout());
+            layout.show(MainPanel, "MainMenu");
+        }
+
+
+    }//GEN-LAST:event_GoToAccMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable AccountsTable;
-    private javax.swing.JButton ConfirmButton;
+    private javax.swing.JButton GoToAcc;
     private javax.swing.JButton Logout;
     private javax.swing.JButton Settings;
     private javax.swing.JButton jButton1;

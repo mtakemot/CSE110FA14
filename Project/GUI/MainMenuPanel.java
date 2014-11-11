@@ -9,30 +9,31 @@ package GUI;
  *
  * @author Zack
  */
-
-import Backend.UserAccount;
-//import Backend.HashTable;
-import Backend.BankAccount;
 import javax.swing.*;
 import java.awt.*;
+import java.io.*;
 
-public class MainMenuPanel extends javax.swing.JPanel {
+public class MainMenuPanel extends javax.swing.JPanel
+{
 
     private JPanel MainPanel;
-    
+
     public MainMenuPanel(JPanel MainPanel)
     {
+
         this.MainPanel = MainPanel;
         initComponents();
     }
-    
+
     /**
      * Creates new form MainMenuPanel
      */
-    public MainMenuPanel() {
+    public MainMenuPanel()
+    {
+
         initComponents();
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -47,13 +48,14 @@ public class MainMenuPanel extends javax.swing.JPanel {
         BankNamePanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         MakeDepositButton = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
+        ExitButton = new javax.swing.JButton();
+        BackButton = new javax.swing.JButton();
+        FinishButton = new javax.swing.JButton();
         SettingsButton = new javax.swing.JButton();
         TransferFundsButton = new javax.swing.JButton();
         MakeWithdrawalButton = new javax.swing.JButton();
         DeleteAccountButton = new javax.swing.JButton();
+        CurrentBAName = new javax.swing.JLabel();
 
         setOpaque(false);
         setPreferredSize(new java.awt.Dimension(1024, 768));
@@ -97,33 +99,19 @@ public class MainMenuPanel extends javax.swing.JPanel {
                 MakeDepositButtonMouseClicked(evt);
             }
         });
-        MakeDepositButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                MakeDepositButtonActionPerformed(evt);
-            }
-        });
 
-        jButton7.setText("Exit");
-        jButton7.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                jButton7ActionPerformed(evt);
-            }
-        });
+        ExitButton.setText("Exit");
 
-        jButton8.setText("Back");
-        jButton8.addMouseListener(new java.awt.event.MouseAdapter()
+        BackButton.setText("Back");
+        BackButton.addMouseListener(new java.awt.event.MouseAdapter()
         {
             public void mouseClicked(java.awt.event.MouseEvent evt)
             {
-                jButton8MouseClicked(evt);
+                BackButtonMouseClicked(evt);
             }
         });
 
-        jButton9.setText("Finish");
+        FinishButton.setText("Finish");
 
         SettingsButton.setText("Settings");
         SettingsButton.addMouseListener(new java.awt.event.MouseAdapter()
@@ -131,13 +119,6 @@ public class MainMenuPanel extends javax.swing.JPanel {
             public void mouseClicked(java.awt.event.MouseEvent evt)
             {
                 SettingsButtonMouseClicked(evt);
-            }
-        });
-        SettingsButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                SettingsButtonActionPerformed(evt);
             }
         });
 
@@ -151,13 +132,6 @@ public class MainMenuPanel extends javax.swing.JPanel {
                 TransferFundsButtonMouseClicked(evt);
             }
         });
-        TransferFundsButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                TransferFundsButtonActionPerformed(evt);
-            }
-        });
 
         MakeWithdrawalButton.setText("Make Withdrawal");
         MakeWithdrawalButton.setMaximumSize(new java.awt.Dimension(115, 25));
@@ -167,13 +141,6 @@ public class MainMenuPanel extends javax.swing.JPanel {
             public void mouseClicked(java.awt.event.MouseEvent evt)
             {
                 MakeWithdrawalButtonMouseClicked(evt);
-            }
-        });
-        MakeWithdrawalButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                MakeWithdrawalButtonActionPerformed(evt);
             }
         });
 
@@ -187,13 +154,8 @@ public class MainMenuPanel extends javax.swing.JPanel {
                 DeleteAccountButtonMouseClicked(evt);
             }
         });
-        DeleteAccountButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                DeleteAccountButtonActionPerformed(evt);
-            }
-        });
+
+        CurrentBAName.setText(GUI.currentBankAccount.getAccountName());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -218,12 +180,15 @@ public class MainMenuPanel extends javax.swing.JPanel {
                         .addComponent(DeleteAccountButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(74, 74, 74))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton8)
+                        .addComponent(BackButton)
                         .addGap(278, 278, 278)
-                        .addComponent(jButton7)
-                        .addGap(319, 319, 319)
-                        .addComponent(jButton9)))
-                .addContainerGap(204, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(CurrentBAName)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(ExitButton)
+                                .addGap(319, 319, 319)
+                                .addComponent(FinishButton)))))
+                .addContainerGap(188, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {DeleteAccountButton, MakeDepositButton, MakeWithdrawalButton, TransferFundsButton});
@@ -235,7 +200,9 @@ public class MainMenuPanel extends javax.swing.JPanel {
                     .addComponent(BankNamePanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(LogoutButtton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(SettingsButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(114, 114, 114)
+                .addGap(18, 18, 18)
+                .addComponent(CurrentBAName)
+                .addGap(82, 82, 82)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(MakeDepositButton, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(MakeWithdrawalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -243,83 +210,63 @@ public class MainMenuPanel extends javax.swing.JPanel {
                     .addComponent(DeleteAccountButton, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(83, 83, 83)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton8)
-                    .addComponent(jButton7)
-                    .addComponent(jButton9)))
+                    .addComponent(BackButton)
+                    .addComponent(ExitButton)
+                    .addComponent(FinishButton)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void MakeDepositButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MakeDepositButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_MakeDepositButtonActionPerformed
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
-
-    private void TransferFundsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TransferFundsButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TransferFundsButtonActionPerformed
-
-    private void MakeWithdrawalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MakeWithdrawalButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_MakeWithdrawalButtonActionPerformed
-
-    private void DeleteAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteAccountButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_DeleteAccountButtonActionPerformed
-
-    private void SettingsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SettingsButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SettingsButtonActionPerformed
-
     private void SettingsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingsButtonMouseClicked
-      CardLayout layout = (CardLayout) (MainPanel.getLayout());
-      layout.show(MainPanel, "Settings");
+        CardLayout layout = (CardLayout) (MainPanel.getLayout());
+        layout.show(MainPanel, "Settings");
     }//GEN-LAST:event_SettingsButtonMouseClicked
 
     private void LogoutButttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoutButttonMouseClicked
-      CardLayout layout = (CardLayout) (MainPanel.getLayout());
-      layout.show(MainPanel, "Login");
+        CardLayout layout = (CardLayout) (MainPanel.getLayout());
+        layout.show(MainPanel, "Login");
     }//GEN-LAST:event_LogoutButttonMouseClicked
 
     private void MakeDepositButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MakeDepositButtonMouseClicked
-      CardLayout layout = (CardLayout) (MainPanel.getLayout());
-      layout.show(MainPanel, "Deposit");
+        CardLayout layout = (CardLayout) (MainPanel.getLayout());
+        layout.show(MainPanel, "Deposit");
     }//GEN-LAST:event_MakeDepositButtonMouseClicked
 
     private void MakeWithdrawalButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MakeWithdrawalButtonMouseClicked
-      CardLayout layout = (CardLayout) (MainPanel.getLayout());
-      layout.show(MainPanel, "Withdraw");
+        CardLayout layout = (CardLayout) (MainPanel.getLayout());
+        layout.show(MainPanel, "Withdraw");
     }//GEN-LAST:event_MakeWithdrawalButtonMouseClicked
 
     private void TransferFundsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TransferFundsButtonMouseClicked
-      CardLayout layout = (CardLayout) (MainPanel.getLayout());
-      layout.show(MainPanel, "TransferFunds");
+        CardLayout layout = (CardLayout) (MainPanel.getLayout());
+        layout.show(MainPanel, "TransferFunds");
     }//GEN-LAST:event_TransferFundsButtonMouseClicked
 
     private void DeleteAccountButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteAccountButtonMouseClicked
-      CardLayout layout = (CardLayout) (MainPanel.getLayout());
-      layout.show(MainPanel, "DeleteAccount");
+        CardLayout layout = (CardLayout) (MainPanel.getLayout());
+        layout.show(MainPanel, "DeleteAccount");
     }//GEN-LAST:event_DeleteAccountButtonMouseClicked
 
-    private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
-      CardLayout layout = (CardLayout) (MainPanel.getLayout());
-      layout.show(MainPanel, "AccList");
-    }//GEN-LAST:event_jButton8MouseClicked
+    private void BackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButtonMouseClicked
+        // test
+        GUI.currentBankAccount.addToBalance(50);
+        
+        CardLayout layout = (CardLayout) (MainPanel.getLayout());
+        layout.show(MainPanel, "AccList");
+    }//GEN-LAST:event_BackButtonMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BackButton;
     private javax.swing.JPanel BankNamePanel;
+    private javax.swing.JLabel CurrentBAName;
     private javax.swing.JButton DeleteAccountButton;
+    private javax.swing.JButton ExitButton;
+    private javax.swing.JButton FinishButton;
     private javax.swing.JButton LogoutButtton;
     private javax.swing.JButton MakeDepositButton;
     private javax.swing.JButton MakeWithdrawalButton;
     private javax.swing.JButton SettingsButton;
     private javax.swing.JButton TransferFundsButton;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

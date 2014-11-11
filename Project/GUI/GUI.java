@@ -149,22 +149,21 @@ public class GUI extends javax.swing.JFrame
                  * *******testing import export*********
                  */
                 /*ImportExport datain = new ImportExport();
-                ImportExport dataout = new ImportExport();
+                 ImportExport dataout = new ImportExport();
 
-                MasterTable = datain.importDB(MasterTable);
-                System.out.println("GUI.java imported table has: " + MasterTable.occ + " users\n");
-                // This creates the MainPanel that is referenced above. All of 
-                // our other panels will go on top of this one and be shown or 
-                // hidden depending on the state of our program*/
-
+                 MasterTable = datain.importDB(MasterTable);
+                 System.out.println("GUI.java imported table has: " + MasterTable.occ + " users\n"); 
+                 // This creates the MainPanel that is referenced above. All of 
+                 // our other panels will go on top of this one and be shown or 
+                 // hidden depending on the state of our program*/
                 GUI mainGUI = new GUI();
 
-                //Testing
-                currentUserAccount = MasterTable.insertUserAccount("root");
-                currentUserAccount.insertBankAccount(20, "acc1", "Checking");
-                currentUserAccount.insertBankAccount(30, "acc2", "Checking");
-                currentUserAccount.insertBankAccount(25, "acc3", "Savings");
-
+                //TESTING
+                GUI.currentUserAccount = MasterTable.insertUserAccount("root");
+                GUI.currentBankAccount = GUI.currentUserAccount.insertBankAccount(20, "acc1", "Checking");
+                GUI.currentBankAccount = GUI.currentUserAccount.insertBankAccount(25, "acc3456", "Savings");
+                GUI.currentBankAccount = GUI.currentUserAccount.insertBankAccount(30, "acc2", "Checking");
+                
                 // This grabs the MainPanel and stores it in a variable so that
                 // we have easy access to it
                 JPanel cardHolder = mainGUI.getMainPanel();
@@ -200,21 +199,20 @@ public class GUI extends javax.swing.JFrame
                 mainGUI.setResizable(false);
 
                 /*if (dataout.exportDB(MasterTable))
-                {
-                    System.err.println("\nExported file to local source file"
-                            + " Data.ser\n"
-                            + "\n\nFrom run() in GUI.java");
+                 {
+                 System.err.println("\nExported file to local source file"
+                 + " Data.ser\n"
+                 + "\n\nFrom run() in GUI.java");
 
-                }
+                 }
 
-                else
-                {
-                    System.err.println("\n\nCould not export, ERROR\n\n");
+                 else
+                 {
+                 System.err.println("\n\nCould not export, ERROR\n\n");
 
-                }
+                 }
 
-                System.out.println("\nrun() has ran: " + counter + " times\n");*/
-
+                 System.out.println("\nrun() has ran: " + counter + " times\n");*/
             }
         });
     }

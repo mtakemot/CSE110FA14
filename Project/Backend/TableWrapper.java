@@ -12,21 +12,24 @@ package Backend;
 public class TableWrapper
 {
 
-    private final String[] accountNames;
-    private final String[] accountTypes;
-    private final double[] accountBalances;
+    private String[] accountNames;
+    private String[] accountTypes;
+    private double[] accountBalances;
     private int totalAccounts = 0;
-    private final UserAccount currentUA;
+    private UserAccount currentUA;
     private BankAccount currentBA;
 
     public TableWrapper(UserAccount curr)
     {
-        currentUA = curr;
-        totalAccounts = currentUA.getNumOfBankAccounts();
-        accountNames = new String[totalAccounts];
-        accountTypes = new String[totalAccounts];
-        accountBalances = new double[totalAccounts];
-        this.getAccountInfo();
+        if (curr != null)
+        {
+            currentUA = curr;
+            totalAccounts = currentUA.getNumOfBankAccounts();
+            accountNames = new String[totalAccounts];
+            accountTypes = new String[totalAccounts];
+            accountBalances = new double[totalAccounts];
+            this.getAccountInfo();
+        }
     }
 
     private void getAccountInfo()

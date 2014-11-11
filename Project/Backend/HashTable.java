@@ -1,6 +1,5 @@
 package Backend;
 
-import Backend.BankAccount;
 import java.io.Serializable;
 
 /**
@@ -32,7 +31,7 @@ public class HashTable implements Serializable
         for (int zod = 0; zod < SIZE; zod++)
         {
             Table[zod] = null;
-        }
+        }        
     }
 
     /**

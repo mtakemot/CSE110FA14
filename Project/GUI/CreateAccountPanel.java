@@ -207,21 +207,28 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
         if (name1.length() > 0)
         {
+            System.out.println ("firstname");
             if (name2.length() > 0)
             {
+                System.out.println ("lastname");
                 if (user.length() > 0)
                 {
+                    System.out.println ("username");
 
                     // if (((password.getText().length()) > 0) && ((password.getText()).equals(confirmPassword.())))
                     if (((pass1.length()) > 0) && (pass1.equals(pass2)))
+                        System.out.println ("pass1");
+                        System.out.println ("pass2");
                     {
                         System.out.println("test1");
                         if ((input3.length() > 0) && (isValidEmailAddress(input3)))
                         {
+                            System.out.println ("email");
                             System.out.println("test2");
 
                             if (validatePhoneNumber(phone.getText()))
                             {
+                                System.out.println ("phone");
                                 System.out.println("test3");
                                 operationSuccessful = true;
                                 System.out.println("test4");
