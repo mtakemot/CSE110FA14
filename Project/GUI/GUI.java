@@ -17,8 +17,8 @@ package GUI;
  * hide them at will. Our HashTable will also be accessible to all of our UI
  * regardless of where they are defined because of the static definition near
  * the top of this class. To run the program and see the GUI, run this file,
- * GUI.java. 
- ***************************************************************************
+ * GUI.java.
+ * **************************************************************************
  */
 /*
  import Backend.UserAccount;
@@ -152,10 +152,11 @@ public class GUI extends javax.swing.JFrame
                 ImportExport dataout = new ImportExport();
 
                 MasterTable = datain.importDB(MasterTable);
-                System.out.println("GUI.java imported table has: " + MasterTable.occ + " users\n"); 
+                System.out.println("GUI.java imported table has: " + MasterTable.occ + " users\n");
                 // This creates the MainPanel that is referenced above. All of 
                 // our other panels will go on top of this one and be shown or 
                 // hidden depending on the state of our program*/
+
                 GUI mainGUI = new GUI();
 
                 //Testing
@@ -163,7 +164,6 @@ public class GUI extends javax.swing.JFrame
                 currentUserAccount.insertBankAccount(20, "acc1", "Checking");
                 currentUserAccount.insertBankAccount(30, "acc2", "Checking");
                 currentUserAccount.insertBankAccount(25, "acc3", "Savings");
-                currentUserAccount = MasterTable.findUserAccount("root");
 
                 // This grabs the MainPanel and stores it in a variable so that
                 // we have easy access to it
@@ -213,7 +213,7 @@ public class GUI extends javax.swing.JFrame
 
                 }
 
-                System.out.println("\nrun() has ran: " + counter + " times\n");*/ 
+                System.out.println("\nrun() has ran: " + counter + " times\n");*/
 
             }
         });

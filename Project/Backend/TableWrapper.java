@@ -5,9 +5,6 @@
  */
 package Backend;
 
-import Backend.BankAccount;
-import Backend.UserAccount;
-
 /**
  *
  * @author rbridges

@@ -51,11 +51,15 @@ public class AccountsListPanel extends javax.swing.JPanel
     private void initComponents()
     {
 
+        jButton1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         Settings = new javax.swing.JButton();
         Logout = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         AccountsTable = new javax.swing.JTable();
+        ConfirmButton = new javax.swing.JButton();
+
+        jButton1.setText("jButton1");
 
         setOpaque(false);
 
@@ -81,10 +85,13 @@ public class AccountsListPanel extends javax.swing.JPanel
         });
 
         AccountsTable.setModel(new TableModel(GUI.currentUserAccount));
+        AccountsTable.setColumnSelectionAllowed(true);
         AccountsTable.getTableHeader().setResizingAllowed(false);
         AccountsTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(AccountsTable);
         AccountsTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+
+        ConfirmButton.setText("Confirm");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -106,6 +113,10 @@ public class AccountsListPanel extends javax.swing.JPanel
                 .addGap(101, 101, 101)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ConfirmButton)
+                .addGap(79, 79, 79))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -116,7 +127,9 @@ public class AccountsListPanel extends javax.swing.JPanel
                     .addComponent(Logout))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(298, Short.MAX_VALUE))
+                .addGap(135, 135, 135)
+                .addComponent(ConfirmButton)
+                .addContainerGap(140, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -137,8 +150,10 @@ public class AccountsListPanel extends javax.swing.JPanel
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable AccountsTable;
+    private javax.swing.JButton ConfirmButton;
     private javax.swing.JButton Logout;
     private javax.swing.JButton Settings;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables

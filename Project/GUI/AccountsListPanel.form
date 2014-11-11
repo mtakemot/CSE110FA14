@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.JButton" name="jButton1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jButton1"/>
+      </Properties>
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="opaque" type="boolean" value="false"/>
   </Properties>
@@ -40,6 +47,11 @@
               <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="ConfirmButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -52,7 +64,9 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="188" max="-2" attributes="0"/>
-              <EmptySpace pref="298" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="135" max="-2" attributes="0"/>
+              <Component id="ConfirmButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="140" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -105,5 +119,10 @@
         </Component>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JButton" name="ConfirmButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Confirm"/>
+      </Properties>
+    </Component>
   </SubComponents>
 </Form>
