@@ -47,7 +47,7 @@ public class WithdrawPanel extends javax.swing.JPanel {
         AmountField = new javax.swing.JTextField();
         BackButton = new javax.swing.JButton();
         BATypeLabel = new javax.swing.JLabel();
-        BATypeLabel1 = new javax.swing.JLabel();
+        BAUserNameLabel = new javax.swing.JLabel();
         BAAmountLabel = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
@@ -123,7 +123,7 @@ public class WithdrawPanel extends javax.swing.JPanel {
 
         BATypeLabel.setText(GUI.currentBankAccount.getAccountType());
 
-        BATypeLabel1.setText(GUI.currentBankAccount.getAccountType());
+        BAUserNameLabel.setText(GUI.currentBankAccount.getAccountName());
 
         BAAmountLabel.setText(String.valueOf(GUI.currentBankAccount.getBalance()));
 
@@ -154,7 +154,7 @@ public class WithdrawPanel extends javax.swing.JPanel {
                     .addComponent(BATypeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(218, 218, 218)
-                .addComponent(BATypeLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BAUserNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(BAAmountLabel)
                 .addGap(56, 56, 56))
@@ -169,7 +169,7 @@ public class WithdrawPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BATypeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BATypeLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BAUserNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BAAmountLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, Short.MAX_VALUE)
                 .addComponent(AmountField, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -226,7 +226,7 @@ public class WithdrawPanel extends javax.swing.JPanel {
     private javax.swing.JTextField AmountField;
     private javax.swing.JLabel BAAmountLabel;
     private javax.swing.JLabel BATypeLabel;
-    private javax.swing.JLabel BATypeLabel1;
+    private javax.swing.JLabel BAUserNameLabel;
     private javax.swing.JButton BackButton;
     private javax.swing.JPanel BankNamePanel;
     private javax.swing.JButton LogoutButtton;
