@@ -62,7 +62,7 @@
                   <Component id="BackButton" min="-2" pref="98" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="218" max="-2" attributes="0"/>
-              <Component id="BATypeLabel1" min="-2" pref="86" max="-2" attributes="0"/>
+              <Component id="BAUserNameLabel" min="-2" pref="86" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
               <Component id="BAAmountLabel" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
@@ -80,7 +80,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="BATypeLabel" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                  <Component id="BATypeLabel1" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                  <Component id="BAUserNameLabel" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                   <Component id="BAAmountLabel" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="124" max="32767" attributes="0"/>
@@ -180,10 +180,10 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="BATypeLabel1">
+    <Component class="javax.swing.JLabel" name="BAUserNameLabel">
       <Properties>
         <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="GUI.currentBankAccount.getAccountType()" type="code"/>
+          <Connection code="GUI.currentBankAccount.getAccountName()" type="code"/>
         </Property>
       </Properties>
     </Component>
