@@ -152,10 +152,10 @@ public class GUI extends javax.swing.JFrame
                 ImportExport dataout = new ImportExport();
 
                 MasterTable = datain.importDB(MasterTable);
-                System.out.println("GUI.java imported table has: " + MasterTable.occ + " users\n"); */
+                System.out.println("GUI.java imported table has: " + MasterTable.occ + " users\n"); 
                 // This creates the MainPanel that is referenced above. All of 
                 // our other panels will go on top of this one and be shown or 
-                // hidden depending on the state of our program
+                // hidden depending on the state of our program*/
                 GUI mainGUI = new GUI();
 
                 //Testing
@@ -213,7 +213,7 @@ public class GUI extends javax.swing.JFrame
 
                 }
 
-                System.out.println("\nrun() has ran: " + counter + " times\n"); */
+                System.out.println("\nrun() has ran: " + counter + " times\n");*/ 
 
             }
         });
