@@ -1,22 +1,25 @@
 package Backend;
+
 import java.io.Serializable;
-/****************************************************************************
 
-                                                        Ryan Bridges
-                                                        CSE 110, Fall 2014
-                                          Last Updated: October 17, 2014
-
-                                Team 42
-
-File Name:      BankAccount.java
-Description:    This is the super class for the different types of
-                BankAccounts that the user can create. It contains basic
-                information about the bank account. It also contains a next
-                field which will hold the next BankAccount owned by the user.
- ****************************************************************************/
+/**
+ * **************************************************************************
+ *
+ * Ryan Bridges CSE 110, Fall 2014 Last Updated: October 17, 2014
+ *
+ * Team 42
+ *
+ * File Name: BankAccount.java Description: This is the super class for the
+ * different types of BankAccounts that the user can create. It contains basic
+ * information about the bank account. It also contains a next field which will
+ * hold the next BankAccount owned by the user.
+ ***************************************************************************
+ */
 public class BankAccount implements Serializable
 {
+
     // making changes
+
     protected double balance;
     protected String accountName;
     protected BankAccount next;
@@ -24,9 +27,10 @@ public class BankAccount implements Serializable
 
     /**
      * This function will add to the account balance
+     *
      * @method addToBalance
-     * @param  amount       this is the amount to add to the balance
-     * @return              returns the new account balance
+     * @param amount this is the amount to add to the balance
+     * @return returns the new account balance
      */
     public double addToBalance(double amount)
     {
@@ -37,9 +41,10 @@ public class BankAccount implements Serializable
     /**
      * This function will subtract from the account balance, but will not allow
      * the account balance to go below 0
+     *
      * @method subFromBalance
-     * @param  amount         amount to subtrace from the balance
-     * @return                returns the new account balance
+     * @param amount amount to subtrace from the balance
+     * @return returns the new account balance
      */
     public boolean subFromBalance(double amount)
     {
@@ -59,7 +64,6 @@ public class BankAccount implements Serializable
     /////////////////////////////////////////
     // BELOW ARE JUST SETTERS AND GETTERS ///
     /////////////////////////////////////////
-
     public void setBalance(double balance)
     {
         this.balance = balance;
@@ -99,6 +103,5 @@ public class BankAccount implements Serializable
     {
         return accountType;
     }
-
 
 }

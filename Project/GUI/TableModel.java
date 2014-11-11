@@ -7,56 +7,76 @@ package GUI;
 
 import Backend.TableWrapper;
 import Backend.UserAccount;
-import javax.swing.table.AbstractTableModel;
+import javax.swing.table.*;
 
 /**
  *
  * @author rbridges
  */
-public class TableModel extends AbstractTableModel {
+public class TableModel extends AbstractTableModel
+{
 
     private int colCount = 3;
     private UserAccount current;
     private TableWrapper wrapper;
-    private String[] columnNames = {"Account Name", "Account Type",
-        "Account Balance"};
+    Class[] columns = new Class[]
+    {
+        String.class, String.class, Double.class
+    };
+    private String[] columnNames =
+    {
+        "Account Name", "Account Type",
+        "Account Balance"
+    };
 
-    public TableModel(UserAccount curr) {
+    public TableModel(UserAccount curr)
+    {
         this.current = curr;
         wrapper = new TableWrapper(this.current);
     }
 
     @Override
-    public int getRowCount() {
+    public int getRowCount()
+    {
         return current.getNumOfBankAccounts();
     }
 
     @Override
-    public int getColumnCount() {
+    public int getColumnCount()
+    {
         return colCount;
     }
 
+
+
     @Override
-    public Object getValueAt(int rowIndex, int columnIndex) {
+    public Object getValueAt(int rowIndex, int columnIndex)
+    {
         Object returnMe = null;
-        switch (columnIndex) {
-            case 3:
-                returnMe = wrapper.getAccountBalance(rowIndex);
+        switch (columnIndex)
+        {
             case 2:
-                returnMe = wrapper.getAccountType(rowIndex);
+                returnMe = wrapper.getAccountBalance(rowIndex);
+                break;
             case 1:
+                returnMe = wrapper.getAccountType(rowIndex);
+                break;
+            case 0:
                 returnMe = wrapper.getAccountName(rowIndex);
+                break;
         }
         return returnMe;
     }
 
     @Override
-    public boolean isCellEditable(int row, int col) {
+    public boolean isCellEditable(int row, int col)
+    {
         return false;
     }
 
     @Override
-    public String getColumnName(int index) {
+    public String getColumnName(int index)
+    {
         return columnNames[index];
     }
 }

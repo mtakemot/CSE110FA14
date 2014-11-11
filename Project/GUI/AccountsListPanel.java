@@ -1,18 +1,18 @@
 package GUI;
-/****************************************************************************
 
-                                                        Ryan Bridges
-                                                        CSE 110, Fall 2014
-                                          Last Updated: October 30, 2014
-
-                                Team 42
-
-File Name:      AccountsListPanel.java
-Description:    This class will define what our Login Page will look like and 
-                how it will behave. THIS CLASS IS JUST A PLACEHOLDER RIGHT
-                NOW AND DOES NOT DO ANYTHING YET OTHER THAN DISPLAY A MESSAGE
-                TELLING US WHICH PANEL IT IS SUPPOSED TO BE.
- ****************************************************************************/
+/**
+ * **************************************************************************
+ *
+ * Ryan Bridges CSE 110, Fall 2014 Last Updated: October 30, 2014
+ *
+ * Team 42
+ *
+ * File Name: AccountsListPanel.java Description: This class will define what
+ * our Login Page will look like and how it will behave. THIS CLASS IS JUST A
+ * PLACEHOLDER RIGHT NOW AND DOES NOT DO ANYTHING YET OTHER THAN DISPLAY A
+ * MESSAGE TELLING US WHICH PANEL IT IS SUPPOSED TO BE.
+ * **************************************************************************
+ */
 import Backend.*;
 import javax.swing.*;
 import java.awt.*;
@@ -24,17 +24,17 @@ public class AccountsListPanel extends javax.swing.JPanel
     // VERY IMPORTANT !! YOU MUST MAKE SURE THAT YOU GIVE EACH NEW PANEL THAT 
     // YOU DECLARE A PRIVATE VARIABLE THAT WILL STORE THE MAIN PANEL FROM GUI 
     private JPanel MainPanel;
-    
+
     public AccountsListPanel()
     {
         initComponents();
     }
-    
+
     /* THIS CONSTRUCTOR IS EXTREMELY IMPORTANT. WRITE A CONSTRUCTOR LIKE THIS
-    FOR ALL OTHER PANELS
+     FOR ALL OTHER PANELS
     
-    This constructor takes in MainPanel from GUI.java which gives us access to
-    the main panel where all of our GUI elements will eventually be located. */
+     This constructor takes in MainPanel from GUI.java which gives us access to
+     the main panel where all of our GUI elements will eventually be located. */
     public AccountsListPanel(JPanel MainPanel)
     {
         this.MainPanel = MainPanel;
@@ -48,7 +48,8 @@ public class AccountsListPanel extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         jLabel5 = new javax.swing.JLabel();
         Settings = new javax.swing.JButton();
@@ -62,20 +63,25 @@ public class AccountsListPanel extends javax.swing.JPanel
         jLabel5.setText("Bank 42");
 
         Settings.setText("Settings");
-        Settings.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        Settings.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 SettingsMouseClicked(evt);
             }
         });
 
         Logout.setText("Logout");
-        Logout.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        Logout.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 LogoutMouseClicked(evt);
             }
         });
 
         AccountsTable.setModel(new TableModel(GUI.currentUserAccount));
+        AccountsTable.getTableHeader().setResizingAllowed(false);
         AccountsTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(AccountsTable);
         AccountsTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
@@ -109,22 +115,22 @@ public class AccountsListPanel extends javax.swing.JPanel
                     .addComponent(Settings)
                     .addComponent(Logout))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(173, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(298, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void LogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoutMouseClicked
         //retrieve MainPanel to transfer it's layout to AccountListPanel
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
-        
-         //send the layout of MainPanel to new display of JPanel "Login"
+
+        //send the layout of MainPanel to new display of JPanel "Login"
         layout.show(MainPanel, "Login");
     }//GEN-LAST:event_LogoutMouseClicked
 
     private void SettingsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingsMouseClicked
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
-        
+
         layout.show(MainPanel, "Settings");
     }//GEN-LAST:event_SettingsMouseClicked
 
@@ -138,4 +144,3 @@ public class AccountsListPanel extends javax.swing.JPanel
     // End of variables declaration//GEN-END:variables
 
 }
-

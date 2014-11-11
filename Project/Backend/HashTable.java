@@ -1,6 +1,5 @@
 package Backend;
 
-
 import Backend.BankAccount;
 import java.io.Serializable;
 
@@ -23,9 +22,6 @@ public class HashTable implements Serializable
     private final static int SIZE = 251;
     public int occ; // Total number of UserAccounts that the table is holding
     UserAccount[] Table; // The hash table
-    
-    //testing
-    UserAccount rootUser;
 
     // Constructor for the HashTable creates an array of size SIZE and
     // initializes every element in the array to null. Also initializes occ
@@ -37,10 +33,6 @@ public class HashTable implements Serializable
         {
             Table[zod] = null;
         }
-        
-        // testing      
-        rootUser = insertUserAccount("root");
-        rootUser.insertBankAccount(20, "acc1", "Checking");
     }
 
     /**
@@ -64,7 +56,7 @@ public class HashTable implements Serializable
             return Table[index];
         }
         else // The bucket at index is occupied, so we insert into the linked
-            // list of UserAccounts that the bucket is holding
+        // list of UserAccounts that the bucket is holding
         {
             UserAccount current;
             current = Table[index];
@@ -80,8 +72,8 @@ public class HashTable implements Serializable
             if (current.getUserName().equals(userName))
                 return null;
             else // The end of the linked list was reached.
-                // This means that the userName that was entered is not in use
-                // so we insert here.
+            // This means that the userName that was entered is not in use
+            // so we insert here.
             {
                 current.setNext(new UserAccount(userName));
                 current.getNext().setLocation(index);
@@ -110,7 +102,7 @@ public class HashTable implements Serializable
         if (Table[index] == null)
             return null;
         else // The bucket at index was not null, so we traverse the linked list
-            // of UserAccounts inside the bucket and look for the UserAccount
+        // of UserAccounts inside the bucket and look for the UserAccount
         {
             UserAccount current = Table[index];
             // Traverse the linked list until the UserAccount is found or we
@@ -194,24 +186,23 @@ public class HashTable implements Serializable
 
     /**
      * This function will transfer funds between two BankAccounts
+     *
      * @method transferFunds
-     * @param  sendFunds     This is the UserAccount which contains the
-     *                       BankAccount that the funds will be sent from
-     * @param  receiveFunds  This is the userName of the UserAccount which
-     *                       contains the BankAccount that will receive funds
-     * @param  fromAcc       This is the name of the BankAccount which will
-     *                       have its balance subtracted from to send to another
-     *                       account
-     * @param  toAcc         This is the name of the BankAccount which will
-     *                       have its balance added to and will receive funds
-     * @param  amount        The amount of money to send
-     * @return               Returns true if the transfer was successful.
-     *                       Returns false if one of the accounts does not
-     *                       exist or if subtracting funds from fromAcc would
-     *                       result in a negative balance.
+     * @param sendFunds This is the UserAccount which contains the BankAccount
+     * that the funds will be sent from
+     * @param receiveFunds This is the userName of the UserAccount which
+     * contains the BankAccount that will receive funds
+     * @param fromAcc This is the name of the BankAccount which will have its
+     * balance subtracted from to send to another account
+     * @param toAcc This is the name of the BankAccount which will have its
+     * balance added to and will receive funds
+     * @param amount The amount of money to send
+     * @return Returns true if the transfer was successful. Returns false if one
+     * of the accounts does not exist or if subtracting funds from fromAcc would
+     * result in a negative balance.
      */
     public boolean transferFunds(UserAccount sendFunds, String receiveFunds,
-                                 String fromAcc, String toAcc, double amount)
+            String fromAcc, String toAcc, double amount)
     {
         // UserAccount which contains the BankAccount that will
         // be receiving funds

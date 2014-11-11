@@ -12,34 +12,34 @@ import Backend.UserAccount;
  *
  * @author rbridges
  */
-public class TableWrapper {
-    private String[] accountNames;
-    private String[] accountTypes;
-    private double[] accountBalances;
+public class TableWrapper
+{
+
+    private final String[] accountNames;
+    private final String[] accountTypes;
+    private final double[] accountBalances;
     private int totalAccounts = 0;
-    private UserAccount currentUA;
+    private final UserAccount currentUA;
     private BankAccount currentBA;
-    
+
     public TableWrapper(UserAccount curr)
     {
         currentUA = curr;
         totalAccounts = currentUA.getNumOfBankAccounts();
-        accountNames = new String[currentUA.getNumOfBankAccounts()];
-        accountTypes = new String[currentUA.getNumOfBankAccounts()];
-        accountBalances = new double[currentUA.getNumOfBankAccounts()];
+        accountNames = new String[totalAccounts];
+        accountTypes = new String[totalAccounts];
+        accountBalances = new double[totalAccounts];
         this.getAccountInfo();
     }
-    
+
     private void getAccountInfo()
     {
-        if(currentUA.getBankAccHead() == null)
-            return;
-        else
+        if (currentUA.getBankAccHead() != null)
         {
             currentBA = currentUA.getBankAccHead();
             // Traverse the BankAccount linked list until the account is found
             // or we reach the end of the list
-            for(int zod = 0; zod < totalAccounts; zod++)
+            for (int zod = 0; zod < totalAccounts; zod++)
             {
                 accountNames[zod] = currentBA.getAccountName();
                 accountTypes[zod] = currentBA.getAccountType();
@@ -52,29 +52,33 @@ public class TableWrapper {
     /////////////////////////////////////////
     // BELOW ARE JUST SETTERS AND GETTERS ///
     /////////////////////////////////////////
-    public String getAccountName(int index) {
+    public String getAccountName(int index)
+    {
         return accountNames[index];
     }
 
-    public String getAccountType(int index) {
+    public String getAccountType(int index)
+    {
         return accountTypes[index];
     }
 
-    public double getAccountBalance(int index) {
+    public double getAccountBalance(int index)
+    {
         return accountBalances[index];
     }
 
-    public int getTotalAccounts() {
+    public int getTotalAccounts()
+    {
         return totalAccounts;
     }
 
-    public UserAccount getCurrentUA() {
+    public UserAccount getCurrentUA()
+    {
         return currentUA;
     }
 
-    public BankAccount getCurrentBA() {
+    public BankAccount getCurrentBA()
+    {
         return currentBA;
     }
-    
-    
 }

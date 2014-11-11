@@ -1,24 +1,25 @@
 package Backend;
+
 import java.io.Serializable;
-/****************************************************************************
 
-                                                        Ryan Bridges
-                                                        CSE 110, Fall 2014
-                                          Last Updated: October 19, 2014
-
-                                Team 42
-
-File Name:      UserAccount.java
-Description:    This file contains the implementation for the object that
-                will go inside of each bucket inside of the master Hash Table
-                which is defined in HashTable.java. Each UserAccount will
-                hold basic information about the user, and must have a unique
-                userName. Each UserAccount will also contain a linked list of
-                BankAccounts which will be either checking or savings.
-TODO:           Implement a deleteBankAccount function
- ****************************************************************************/
+/**
+ * **************************************************************************
+ *
+ * Ryan Bridges CSE 110, Fall 2014 Last Updated: October 19, 2014
+ *
+ * Team 42
+ *
+ * File Name: UserAccount.java Description: This file contains the
+ * implementation for the object that will go inside of each bucket inside of
+ * the master Hash Table which is defined in HashTable.java. Each UserAccount
+ * will hold basic information about the user, and must have a unique userName.
+ * Each UserAccount will also contain a linked list of BankAccounts which will
+ * be either checking or savings. TODO: Implement a deleteBankAccount function
+ ***************************************************************************
+ */
 public class UserAccount implements Serializable
 {
+
     private String firstName;
     private String lastName;
     private String userName;
@@ -40,11 +41,13 @@ public class UserAccount implements Serializable
     private int numOfBankAccounts = 0;
 
     // Default constructor
-    public UserAccount() { }
+    public UserAccount()
+    {
+    }
 
     // Constructor initializes basic member variables
     public UserAccount(String first, String last, String user, String pass,
-                String email, String phone, int loc)
+            String email, String phone, int loc)
     {
         this.firstName = first;
         this.lastName = last;
@@ -74,16 +77,17 @@ public class UserAccount implements Serializable
     }
 
     /**
-     * This function will create a new bank account for the user of type checking
-     * or savings depending on the user's preference. It will insert the bank
-     * account into the linked list of BankAccounts inside of the UserAccount
+     * This function will create a new bank account for the user of type
+     * checking or savings depending on the user's preference. It will insert
+     * the bank account into the linked list of BankAccounts inside of the
+     * UserAccount
+     *
      * @method insertBankAccount
-     * @param  bal               Balance of the account
-     * @param  name              name of the account
-     * @param  type              type of account, either checking or savings
-     * @return                   Returns the BankAccount that was inserted
-     *                           or null if a BankAccount with the same name
-     *                           already exists under this user
+     * @param bal Balance of the account
+     * @param name name of the account
+     * @param type type of account, either checking or savings
+     * @return Returns the BankAccount that was inserted or null if a
+     * BankAccount with the same name already exists under this user
      */
     public BankAccount insertBankAccount(double bal, String name, String type)
     {
@@ -112,8 +116,8 @@ public class UserAccount implements Serializable
             current = this.BankAccHead;
             // Traverse the linked list until we find a BankAccount with the
             // same name or we get to the end of the list
-            while (current.getNext() != null &&
-                    !(current.getAccountName().equals(name)))
+            while (current.getNext() != null
+                    && !(current.getAccountName().equals(name)))
             {
                 current = current.getNext();
             }
@@ -145,10 +149,11 @@ public class UserAccount implements Serializable
      * This function will act as a bank account lookup. The user can enter the
      * name of the bank account they wish to access, and it will be returned.
      * Once it is returned we can get the balance, name and other info.
+     *
      * @method findBankAccount
-     * @param  name The name of the account
-     * @return      Returns the bank account if it is found. Returns null if not
-     *              found
+     * @param name The name of the account
+     * @return Returns the bank account if it is found. Returns null if not
+     * found
      */
     public BankAccount findBankAccount(String name)
     {
@@ -162,7 +167,9 @@ public class UserAccount implements Serializable
             // Traverse the BankAccount linked list until the account is found
             // or we reach the end of the list
             while (current != null && !(current.getAccountName().equals(name)))
+            {
                 current = current.getNext();
+            }
             if (current == null) // The end of the list was reached
                 return null;
             else // The item was found
@@ -172,6 +179,7 @@ public class UserAccount implements Serializable
 
     /**
      * Prints information about all BankAccounts that the user owns
+     *
      * @method printAllBankAccounts
      */
     public void printAllBankAccounts()
@@ -194,12 +202,12 @@ public class UserAccount implements Serializable
             System.out.println("You have no bank accounts. ");
     }
 
-    
     /**
      * Checks if two UserAccounts are equal by comparing the userName field
+     *
      * @method equals
-     * @param  item   This is the UserAccount that we want to compare
-     * @return        Returns true if they are equal, false if not
+     * @param item This is the UserAccount that we want to compare
+     * @return Returns true if they are equal, false if not
      */
     boolean equals(UserAccount item)
     {
@@ -226,7 +234,7 @@ public class UserAccount implements Serializable
 
     public void setPassword(String password)
     {
-        
+
         this.password = password;
     }
 
@@ -290,16 +298,19 @@ public class UserAccount implements Serializable
         this.location = location;
     }
 
-    public void setBankAccHead(BankAccount BankAccHead) {
+    public void setBankAccHead(BankAccount BankAccHead)
+    {
         this.BankAccHead = BankAccHead;
     }
 
-    public BankAccount getBankAccHead() {
+    public BankAccount getBankAccHead()
+    {
         return BankAccHead;
     }
 
-    public int getNumOfBankAccounts() {
+    public int getNumOfBankAccounts()
+    {
         return numOfBankAccounts;
     }
-    
+
 }
