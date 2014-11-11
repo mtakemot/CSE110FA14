@@ -35,6 +35,9 @@ public class UserAccount implements Serializable
     // that the user owns. Each BankAccount object will have a next field which
     // will point to the user's next account.
     private BankAccount BankAccHead;
+    // Keeps track of how many BankAccounts the UserAccount has. Important for
+    // the table on AccountsListPage
+    private int numOfBankAccounts = 0;
 
     // Default constructor
     public UserAccount() { }
@@ -92,12 +95,14 @@ public class UserAccount implements Serializable
             if (type.equals("Checking"))
             {
                 BankAccHead = new CheckingAccount(bal, name);
+                numOfBankAccounts++;
                 return BankAccHead;
             }
             // Create a SavingsAccount
             else
             {
                 BankAccHead = new SavingsAccount(bal, name);
+                numOfBankAccounts++;
                 return BankAccHead;
             }
         }
@@ -123,11 +128,13 @@ public class UserAccount implements Serializable
                 if (type.equals("Checking")) // Create a CheckingAccount
                 {
                     current.setNext(new CheckingAccount(bal, name));
+                    numOfBankAccounts++;
                     return current.getNext();
                 }
                 else // Create a SavingsAccount
                 {
                     current.setNext(new SavingsAccount(bal, name));
+                    numOfBankAccounts++;
                     return current.getNext();
                 }
             }
@@ -187,6 +194,7 @@ public class UserAccount implements Serializable
             System.out.println("You have no bank accounts. ");
     }
 
+    
     /**
      * Checks if two UserAccounts are equal by comparing the userName field
      * @method equals
@@ -281,4 +289,17 @@ public class UserAccount implements Serializable
     {
         this.location = location;
     }
+
+    public void setBankAccHead(BankAccount BankAccHead) {
+        this.BankAccHead = BankAccHead;
+    }
+
+    public BankAccount getBankAccHead() {
+        return BankAccHead;
+    }
+
+    public int getNumOfBankAccounts() {
+        return numOfBankAccounts;
+    }
+    
 }

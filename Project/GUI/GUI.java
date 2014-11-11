@@ -42,7 +42,7 @@ public class GUI extends javax.swing.JFrame
     public static HashTable MasterTable = new HashTable();
     // Static UserAccount allows us to store a UserAccount after a user logs in
     // so that we can manipulate it in other panels of our GUI
-    static UserAccount currentUserAccount;
+    public static UserAccount currentUserAccount;
     // Static BankAccount allows us to store a UserAccount after a user selects
     // it so that we can manipulate it in other panels of our GUI
     public static BankAccount currentBankAccount;
@@ -163,6 +163,14 @@ public class GUI extends javax.swing.JFrame
                 // our other panels will go on top of this one and be shown or 
                 // hidden depending on the state of our program
                 GUI mainGUI = new GUI();  
+                
+                //Testing
+                currentUserAccount = MasterTable.findUserAccount("root");
+                if(currentUserAccount == null)
+                    System.out.println("Account not found");
+                else 
+                    System.out.println("Account was found!");
+                
                 // This grabs the MainPanel and stores it in a variable so that
                 // we have easy access to it
                 JPanel cardHolder = mainGUI.getMainPanel();

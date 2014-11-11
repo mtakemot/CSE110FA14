@@ -41,8 +41,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         ERRORPOP = new java.awt.PopupMenu();
         firstName = new javax.swing.JTextField();
@@ -60,79 +59,69 @@ public class CreateAccountPanel extends javax.swing.JPanel
         setOpaque(false);
 
         firstName.setText("First Name");
-        firstName.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusGained(java.awt.event.FocusEvent evt)
-            {
+        firstName.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
                 firstNameFocusGained(evt);
             }
         });
 
         password.setText("Password");
-        password.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusGained(java.awt.event.FocusEvent evt)
-            {
+        password.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
                 passwordFocusGained(evt);
             }
         });
 
         createUserAccount.setText("Create User Account");
-        createUserAccount.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        createUserAccount.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 createUserAccountActionPerformed(evt);
             }
         });
 
         jButton2.setText("Already have an account? Sign in");
 
+        jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 48)); // NOI18N
         jLabel1.setText("Bank 42");
 
         dismissView.setText("Back");
+        dismissView.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                dismissViewMouseClicked(evt);
+            }
+        });
 
         username.setText("Username");
-        username.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusGained(java.awt.event.FocusEvent evt)
-            {
+        username.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
                 usernameFocusGained(evt);
             }
         });
 
         lastName.setText("Last Name");
-        lastName.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusGained(java.awt.event.FocusEvent evt)
-            {
+        lastName.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
                 lastNameFocusGained(evt);
             }
         });
 
         confirmPassword.setText("Password");
-        confirmPassword.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusGained(java.awt.event.FocusEvent evt)
-            {
+        confirmPassword.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
                 confirmPasswordFocusGained(evt);
             }
         });
 
         email.setText("Email");
-        email.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusGained(java.awt.event.FocusEvent evt)
-            {
+        email.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
                 emailFocusGained(evt);
             }
         });
 
         phone.setText("Phone");
-        phone.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusGained(java.awt.event.FocusEvent evt)
-            {
+        phone.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
                 phoneFocusGained(evt);
             }
         });
@@ -146,9 +135,9 @@ public class CreateAccountPanel extends javax.swing.JPanel
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(dismissView)
-                        .addGap(242, 242, 242)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel1)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(131, 131, 131))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(94, 94, 94)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -171,8 +160,8 @@ public class CreateAccountPanel extends javax.swing.JPanel
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(14, 14, 14)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addComponent(dismissView))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -190,7 +179,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(phone, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(createUserAccount, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                .addComponent(createUserAccount, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton2)
                 .addGap(6, 6, 6))
@@ -264,10 +253,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
                                 //  System.out.print("\nnewUser pass inserting to MasterTable: " newUser.getPassword()+ "\n");
                                 if (newUser != null)
                                 {
-
                                     System.out.println("123123123You have successfully created your user account!");
-                                    JOptionPane.showMessageDialog(null, "You have successfully created your user account!", "Success!",
-                                            JOptionPane.INFORMATION_MESSAGE);
                                 }
 
                                 System.out.println("You have successfully created your user account!");
@@ -325,7 +311,9 @@ public class CreateAccountPanel extends javax.swing.JPanel
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
 
         //send the layout of MainPanel to new display of JPanel "CreateAcc"
-        layout.previous(MainPanel);
+        //layout.removeLayoutComponent(this);
+        
+        
     }//GEN-LAST:event_dismissViewMouseClicked
 
     private void firstNameFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_firstNameFocusGained
