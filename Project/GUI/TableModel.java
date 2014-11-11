@@ -47,8 +47,6 @@ public class TableModel extends AbstractTableModel
         return colCount;
     }
 
-
-
     @Override
     public Object getValueAt(int rowIndex, int columnIndex)
     {
@@ -78,5 +76,11 @@ public class TableModel extends AbstractTableModel
     public String getColumnName(int index)
     {
         return columnNames[index];
+    }
+    
+    @Override
+    public Class getColumnClass(int columnIndex)
+    {
+        return columns[columnIndex];
     }
 }
