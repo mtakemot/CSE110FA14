@@ -71,13 +71,14 @@ public class GUI extends javax.swing.JFrame
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         MainPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        MainPanel.setBackground(new java.awt.Color(198, 118, 38));
+        MainPanel.setBackground(new java.awt.Color(0, 153, 204));
         MainPanel.setMaximumSize(new java.awt.Dimension(1000, 1000));
         MainPanel.setName(""); // NOI18N
         MainPanel.setPreferredSize(new java.awt.Dimension(1024, 768));
