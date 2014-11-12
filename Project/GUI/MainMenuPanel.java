@@ -232,12 +232,12 @@ public class MainMenuPanel extends javax.swing.JPanel
 
     private void TransferFundsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TransferFundsButtonMouseClicked
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
-        layout.show(MainPanel, "TransferFunds");
+        layout.show(MainPanel, "Transfer");
     }//GEN-LAST:event_TransferFundsButtonMouseClicked
 
     private void DeleteAccountButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteAccountButtonMouseClicked
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
-        layout.show(MainPanel, "DeleteAccount");
+        layout.show(MainPanel, "Delete");
     }//GEN-LAST:event_DeleteAccountButtonMouseClicked
 
     private void BackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButtonMouseClicked
