@@ -11,7 +11,6 @@ package GUI;
  */
 import javax.swing.*;
 import java.awt.*;
-import java.io.*;
 
 public class MainMenuPanel extends javax.swing.JPanel
 {
@@ -226,11 +225,6 @@ public class MainMenuPanel extends javax.swing.JPanel
         layout.show(MainPanel, "Login");
     }//GEN-LAST:event_LogoutButttonMouseClicked
 
-    private void MakeDepositButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MakeDepositButtonMouseClicked
-        CardLayout layout = (CardLayout) (MainPanel.getLayout());
-        layout.show(MainPanel, "Deposit");
-    }//GEN-LAST:event_MakeDepositButtonMouseClicked
-
     private void MakeWithdrawalButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MakeWithdrawalButtonMouseClicked
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
         layout.show(MainPanel, "Withdraw");
@@ -247,12 +241,15 @@ public class MainMenuPanel extends javax.swing.JPanel
     }//GEN-LAST:event_DeleteAccountButtonMouseClicked
 
     private void BackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButtonMouseClicked
-        // test
-        GUI.currentBankAccount.addToBalance(50);
-        
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
         layout.show(MainPanel, "AccList");
     }//GEN-LAST:event_BackButtonMouseClicked
+
+    private void MakeDepositButtonMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_MakeDepositButtonMouseClicked
+    {//GEN-HEADEREND:event_MakeDepositButtonMouseClicked
+        CardLayout layout = (CardLayout) (MainPanel.getLayout());
+        layout.show(MainPanel, "Deposit");
+    }//GEN-LAST:event_MakeDepositButtonMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

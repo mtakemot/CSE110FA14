@@ -13,10 +13,8 @@ package GUI;
  * MESSAGE TELLING US WHICH PANEL IT IS SUPPOSED TO BE.
  * **************************************************************************
  */
-import Backend.*;
 import javax.swing.*;
 import java.awt.*;
-import javax.swing.table.*;
 
 //for debug
 //import java.io.*;

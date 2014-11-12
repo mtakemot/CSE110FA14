@@ -59,13 +59,6 @@ public class LoginPanel extends javax.swing.JPanel
         setOpaque(false);
 
         UsernameField.setText("Username");
-        UsernameField.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                UsernameFieldMouseClicked(evt);
-            }
-        });
         UsernameField.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -75,13 +68,6 @@ public class LoginPanel extends javax.swing.JPanel
         });
 
         PasswordField.setText("Password");
-        PasswordField.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                PasswordFieldMouseClicked(evt);
-            }
-        });
         PasswordField.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -147,12 +133,12 @@ public class LoginPanel extends javax.swing.JPanel
 
     private void UsernameFieldActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_UsernameFieldActionPerformed
     {//GEN-HEADEREND:event_UsernameFieldActionPerformed
-        // TODO add your handling code here:
+        UsernameField.setText("");
     }//GEN-LAST:event_UsernameFieldActionPerformed
 
     private void PasswordFieldActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_PasswordFieldActionPerformed
     {//GEN-HEADEREND:event_PasswordFieldActionPerformed
-        // TODO add your handling code here:
+        UsernameField.setText("");
     }//GEN-LAST:event_PasswordFieldActionPerformed
     
     // Creates an event for the LoginButton that will fire any time the button
@@ -178,14 +164,6 @@ public class LoginPanel extends javax.swing.JPanel
         GUI.MasterTable.findUserAccount(UsernameField.getText());
     }//GEN-LAST:event_LoginButtonMouseClicked
         
-    private void UsernameFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UsernameFieldMouseClicked
-        UsernameField.setText("");
-    }//GEN-LAST:event_UsernameFieldMouseClicked
-
-    private void PasswordFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PasswordFieldMouseClicked
-        PasswordField.setText("");
-    }//GEN-LAST:event_PasswordFieldMouseClicked
-
     private void CreateAccButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CreateAccButtonMouseClicked
         
         //retrieve MainPanel to transfer it's layout to CreateAccountPanel
@@ -195,14 +173,6 @@ public class LoginPanel extends javax.swing.JPanel
         layout.show(MainPanel, "CreateAcc");
         
     }//GEN-LAST:event_CreateAccButtonMouseClicked
-
-    private void CreateAccButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateAccButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CreateAccButtonActionPerformed
-
-    private void LoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_LoginButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

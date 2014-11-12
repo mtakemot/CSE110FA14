@@ -5,7 +5,8 @@
  */
 package GUI;
 
-import javax.swing.JPanel;
+import java.awt.*;
+import javax.swing.*;
 
 /**
  *
@@ -35,21 +36,229 @@ public class TransferFundsPanel extends javax.swing.JPanel {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
+
+        BankNamePanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        SettingsButton = new javax.swing.JButton();
+        BAUserNameLabel = new javax.swing.JLabel();
+        LogoutButtton = new javax.swing.JButton();
+        BATypeLabel = new javax.swing.JLabel();
+        BAAmountLabel = new javax.swing.JLabel();
+        ExitButton = new javax.swing.JButton();
+        BackButton = new javax.swing.JButton();
+        AmountField = new javax.swing.JTextField();
+        usernameLabel = new javax.swing.JLabel();
+        TransferButton = new javax.swing.JButton();
+
+        BankNamePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel1.setText("             Bank 42");
+        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout BankNamePanelLayout = new javax.swing.GroupLayout(BankNamePanel);
+        BankNamePanel.setLayout(BankNamePanelLayout);
+        BankNamePanelLayout.setHorizontalGroup(
+            BankNamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BankNamePanelLayout.createSequentialGroup()
+                .addContainerGap(157, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(136, 136, 136))
+        );
+        BankNamePanelLayout.setVerticalGroup(
+            BankNamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        SettingsButton.setText("Settings");
+        SettingsButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                SettingsButtonMouseClicked(evt);
+            }
+        });
+
+        BAUserNameLabel.setText(GUI.currentBankAccount.getAccountName());
+
+        LogoutButtton.setText("Logout");
+        LogoutButtton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                LogoutButttonMouseClicked(evt);
+            }
+        });
+
+        BATypeLabel.setText(GUI.currentBankAccount.getAccountType());
+
+        BAAmountLabel.setText(String.valueOf(GUI.currentBankAccount.getBalance()));
+
+        ExitButton.setText("Exit");
+        ExitButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                ExitButtonMouseClicked(evt);
+            }
+        });
+
+        BackButton.setText("Back");
+        BackButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                BackButtonMouseClicked(evt);
+            }
+        });
+
+        AmountField.setText("Amount");
+        AmountField.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                AmountFieldMouseClicked(evt);
+            }
+        });
+        AmountField.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
+                AmountFieldKeyTyped(evt);
+            }
+        });
+
+        usernameLabel.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
+        usernameLabel.setText("How much do you want to transfer?");
+
+        TransferButton.setText("Transfer");
+        TransferButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                TransferButtonMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(BATypeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(218, 218, 218)
+                .addComponent(BAUserNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 322, Short.MAX_VALUE)
+                .addComponent(BAAmountLabel)
+                .addGap(36, 36, 36))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(153, 153, 153)
+                .addComponent(TransferButton, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(SettingsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(usernameLabel)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(BankNamePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LogoutButtton, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(247, 247, 247)
+                .addComponent(AmountField, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(BankNamePanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(LogoutButtton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SettingsButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BATypeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BAUserNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BAAmountLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
+                .addComponent(usernameLabel)
+                .addGap(37, 37, 37)
+                .addComponent(AmountField, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(135, 135, 135)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TransferButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void SettingsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingsButtonMouseClicked
+        CardLayout layout = (CardLayout) (MainPanel.getLayout());
+        layout.show(MainPanel, "Settings");
+    }//GEN-LAST:event_SettingsButtonMouseClicked
+
+    private void LogoutButttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoutButttonMouseClicked
+        GUI.currentBankAccount = null;
+        GUI.currentUserAccount = null;
+        CardLayout layout = (CardLayout) (MainPanel.getLayout());
+        layout.show(MainPanel, "Login");
+    }//GEN-LAST:event_LogoutButttonMouseClicked
+
+    private void ExitButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitButtonMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_ExitButtonMouseClicked
+
+    private void BackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButtonMouseClicked
+        CardLayout layout = (CardLayout) (MainPanel.getLayout());
+        layout.show(MainPanel, "MainMenu");
+    }//GEN-LAST:event_BackButtonMouseClicked
+
+    private void AmountFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AmountFieldMouseClicked
+        AmountField.setText("");
+    }//GEN-LAST:event_AmountFieldMouseClicked
+
+    private void AmountFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AmountFieldKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AmountFieldKeyTyped
+
+    private void TransferButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TransferButtonMouseClicked
+        double amount = Integer.parseInt(AmountField.getText());
+        if(amount > GUI.currentBankAccount.getBalance())
+        {
+            AmountField.setText("");
+            // Error box/message
+        }
+        else
+        {
+            GUI.currentBankAccount.subFromBalance(amount);
+            // Give the user a message saying success
+            // test
+        }
+    }//GEN-LAST:event_TransferButtonMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField AmountField;
+    private javax.swing.JLabel BAAmountLabel;
+    private javax.swing.JLabel BATypeLabel;
+    private javax.swing.JLabel BAUserNameLabel;
+    private javax.swing.JButton BackButton;
+    private javax.swing.JPanel BankNamePanel;
+    private javax.swing.JButton ExitButton;
+    private javax.swing.JButton LogoutButtton;
+    private javax.swing.JButton SettingsButton;
+    private javax.swing.JButton TransferButton;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel usernameLabel;
     // End of variables declaration//GEN-END:variables
 }
