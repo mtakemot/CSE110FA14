@@ -162,6 +162,7 @@ public class GUI extends javax.swing.JFrame
                 //Puts some initial values in the table to prevent null pointer 
                 // exceptions
                 currentUserAccount = MasterTable.insertUserAccount("root");
+                currentUserAccount.setPassword("root");
                 currentBankAccount = currentUserAccount.insertBankAccount(20, "acc1", "Checking");
                 currentBankAccount = currentUserAccount.insertBankAccount(25, "acc3456", "Savings");
                 currentBankAccount = currentUserAccount.insertBankAccount(30, "acc2", "Checking");
