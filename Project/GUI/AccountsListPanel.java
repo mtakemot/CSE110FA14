@@ -169,7 +169,10 @@ public class AccountsListPanel extends javax.swing.JPanel
             CardLayout layout = (CardLayout) (MainPanel.getLayout());
             layout.show(MainPanel, "MainMenu");
         }
-
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Please select an account to access!", "Error", JOptionPane.INFORMATION_MESSAGE);
+        }
 
     }//GEN-LAST:event_GoToAccMouseClicked
 

@@ -162,7 +162,6 @@ public class GUI extends javax.swing.JFrame
                 //Puts some initial values in the table to prevent null pointer 
                 // exceptions
                 currentUserAccount = MasterTable.insertUserAccount("root");
-                currentUserAccount.setPassword("root");
                 currentBankAccount = currentUserAccount.insertBankAccount(20, "acc1", "Checking");
                 currentBankAccount = currentUserAccount.insertBankAccount(25, "acc3456", "Savings");
                 currentBankAccount = currentUserAccount.insertBankAccount(30, "acc2", "Checking");
@@ -183,6 +182,7 @@ public class GUI extends javax.swing.JFrame
                 
                 TransferFundsPanel Transfer = new TransferFundsPanel(cardHolder);
                 WithdrawPanel Withdraw = new WithdrawPanel(cardHolder);
+                DepositPanel Deposit = new DepositPanel(cardHolder);
                 DeleteAccountPanel Delete = new DeleteAccountPanel(cardHolder);
 
                 // This addes the LoginPanel and AccountsListPanel that we just
@@ -201,6 +201,7 @@ public class GUI extends javax.swing.JFrame
                 
                 cardHolder.add(Transfer, "Transfer");
                 cardHolder.add(Withdraw, "Withdraw");
+                cardHolder.add(Deposit, "Deposit" );
                 cardHolder.add(Delete, "Delete");
                 // These two lines show the MainPanel. Without these 2 lines 
                 // the GUI would not show up at all. Just leave them alone.
