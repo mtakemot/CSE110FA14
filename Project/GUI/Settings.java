@@ -233,7 +233,7 @@ public class Settings extends javax.swing.JPanel
 
     private void BackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButtonMouseClicked
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
-        layout.show(MainPanel, "MainMenu");
+        layout.show(MainPanel, "AccList");
     }//GEN-LAST:event_BackButtonMouseClicked
 
     private void LogoutButttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoutButttonMouseClicked
