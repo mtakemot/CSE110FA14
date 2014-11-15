@@ -201,44 +201,57 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
         if (name1.length() > 0)
         {
-            System.out.println ("firstname");
+            System.out.println("firstname");
             if (name2.length() > 0)
             {
-                System.out.println ("lastname");
+                System.out.println("lastname");
                 if (user.length() > 0)
                 {
-                    System.out.println ("username");
+                    System.out.println("username");
 
                     // if (((password.getText().length()) > 0) && ((password.getText()).equals(confirmPassword.())))
                     if (((pass1.length()) > 0) && (pass1.equals(pass2)))
-                        System.out.println ("pass1");
-                        System.out.println ("pass2");
+                        System.out.println("pass1");
+                    System.out.println("pass2");
                     {
                         System.out.println("test1");
                         if ((input3.length() > 0) && (isValidEmailAddress(input3)))
                         {
-                            System.out.println ("email");
+                            System.out.println("email");
                             System.out.println("test2");
 
                             if (validatePhoneNumber(phone.getText()))
                             {
-                                System.out.println ("phone");
+                                System.out.println("phone");
                                 System.out.println("test3");
-                                operationSuccessful = true;
                                 System.out.println("test4");
 
-                                UserAccount newUser = GUI.MasterTable.insertUserAccount(user);
-                                if (newUser != null)
+                                GUI.currentUserAccount = GUI.MasterTable.insertUserAccount(user);
+                                if (GUI.currentUserAccount != null)
                                 {
-
-                                    newUser.setFirstName(firstName.getText());
-                                    newUser.setLastName(name2);
-                                    newUser.setUserName(user);
-                                    newUser.setPassword(pass1);
-                                    newUser.setEmail(input3);
-                                    newUser.setPhone(phone.getText());
+                                    GUI.currentUserAccount.setFirstName(firstName.getText());
+                                    GUI.currentUserAccount.setLastName(name2);
+                                    GUI.currentUserAccount.setUserName(user);
+                                    GUI.currentUserAccount.setPassword(pass1);
+                                    GUI.currentUserAccount.setEmail(input3);
+                                    GUI.currentUserAccount.setPhone(phone.getText());
+                                    System.out.println("You have successfully created your user account!");
+                                    JOptionPane.showMessageDialog(null, "You have successfully created your user account!", "Success!",
+                                            JOptionPane.INFORMATION_MESSAGE);
+                                    operationSuccessful = true;
+                                    CardLayout layout = (CardLayout) (MainPanel.getLayout());
+                                    //send the layout of MainPanel to new display of JPanel "MainMenu"
+                                    layout.show(MainPanel, "MainMenu");
                                 }
-                                /*   UserAccount retVal = GUI.MasterTable.findUserAccount(username.getText());
+                                
+                                /*else
+                                {
+                                    //print a pop up error
+                                    System.out.println("Error creating an account!");
+                                    JOptionPane.showMessageDialog(null, "Error creating an account!", "IN USE",
+                                            JOptionPane.INFORMATION_MESSAGE);
+                                }
+                                 UserAccount retVal = GUI.MasterTable.findUserAccount(username.getText());
                                  if (retVal == null){
                                 
                                  UserAccount newUser = new UserAccount();
@@ -252,29 +265,6 @@ public class CreateAccountPanel extends javax.swing.JPanel
                                  newUser.setPhone(phone.getText());
                                  newUser = GUI.MasterTable.insertUserAccount(user);*/
                                 //  System.out.print("\nnewUser pass inserting to MasterTable: " newUser.getPassword()+ "\n");
-                                if (newUser != null)
-                                {
-                                    System.out.println("123123123You have successfully created your user account!");
-                                }
-
-                                System.out.println("You have successfully created your user account!");
-                                JOptionPane.showMessageDialog(null, "You have successfully created your user account!", "Success!",
-                                        JOptionPane.INFORMATION_MESSAGE);
-                                
-                                CardLayout layout = (CardLayout) (MainPanel.getLayout());
-        
-                                //send the layout of MainPanel to new display of JPanel "MainMenu"
-                                layout.show(MainPanel, "MainMenu");
-
-                            }
-                            else
-                            {
-                                //print a pop up error
-                                System.out.println("Error creating an account!");
-                                JOptionPane.showMessageDialog(null, "USER NAME in use. Pick again", "IN USE",
-                                        JOptionPane.INFORMATION_MESSAGE);
-                                initComponents();
-
                             }
 
                             //UserAccount currentUserAccount = new UserAccount(firstName.getText(),lastName.getText(),username.getText(),password.getText(),email.getText(), phone.getText(), "");
@@ -289,34 +279,31 @@ public class CreateAccountPanel extends javax.swing.JPanel
         {
             System.out.println("Error with input format!");
             JOptionPane.showMessageDialog(null, "Error creating an account! INVALID FORMAT", "INVALID FORMAT", JOptionPane.INFORMATION_MESSAGE);
-            initComponents();
         }
 
-        //If we reach here, user name was 100% successfully inserted into table.
-        //ANY TIME THERE's DATA CHANGING (viewing information doesn't count as changing EXPORT!
-        else
-        {
-            ImportExport dataout = new ImportExport();
-            if (dataout.exportDB(GUI.MasterTable))
-            {
-                System.out.println("\nExported file to local source file"
-                        + " THROUGH CREATE ACCOUNT GUI\n");
+        /*//If we reach here, user name was 100% successfully inserted into table.
+         //ANY TIME THERE's DATA CHANGING (viewing information doesn't count as changing EXPORT!
+         else
+         {
+         ImportExport dataout = new ImportExport();
+         if (dataout.exportDB(GUI.MasterTable))
+         {
+         System.out.println("\nExported file to local source file"
+         + " THROUGH CREATE ACCOUNT GUI\n");
 
-            }
-            else
-            {
-                System.err.println("\n\nCould not export THROUGH CREATE ACCOUNT GUI, ERROR\n\n");
-            }
+         }
+         else
+         {
+         System.err.println("\n\nCould not export THROUGH CREATE ACCOUNT GUI, ERROR\n\n");
+         }
 
-        }
+         }*/
 
     }//GEN-LAST:event_createUserAccountActionPerformed
 
     private void dismissViewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dismissViewMouseClicked
-          CardLayout layout = (CardLayout) (MainPanel.getLayout());
-          layout.show(MainPanel, "Login");
-        
-        
+        CardLayout layout = (CardLayout) (MainPanel.getLayout());
+        layout.show(MainPanel, "Login");
     }//GEN-LAST:event_dismissViewMouseClicked
 
     private void firstNameFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_firstNameFocusGained
