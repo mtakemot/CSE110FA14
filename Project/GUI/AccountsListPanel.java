@@ -57,8 +57,8 @@ public class AccountsListPanel extends javax.swing.JPanel
         jScrollPane1 = new javax.swing.JScrollPane();
         AccountsTable = new javax.swing.JTable();
         GoToAcc = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        TransferFundsButton = new javax.swing.JButton();
+        DeleteAccountButton = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
 
@@ -101,9 +101,19 @@ public class AccountsListPanel extends javax.swing.JPanel
             }
         });
 
-        jButton2.setText("Transfer Funds");
+        TransferFundsButton.setText("Transfer Funds");
+        TransferFundsButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TransferFundsButtonMouseClicked(evt);
+            }
+        });
 
-        jButton3.setText("Delete Highlighted Account");
+        DeleteAccountButton.setText("Delete Highlighted Account");
+        DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DeleteAccountButtonMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -134,9 +144,9 @@ public class AccountsListPanel extends javax.swing.JPanel
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(161, 161, 161)
-                .addComponent(jButton2)
-                .addGap(138, 138, 138)
-                .addComponent(jButton3)
+                .addComponent(TransferFundsButton)
+                .addGap(88, 88, 88)
+                .addComponent(DeleteAccountButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -148,8 +158,8 @@ public class AccountsListPanel extends javax.swing.JPanel
                     .addComponent(Logout))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(TransferFundsButton)
+                    .addComponent(DeleteAccountButton))
                 .addGap(16, 16, 16)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -203,15 +213,25 @@ public class AccountsListPanel extends javax.swing.JPanel
         // TODO add your handling code here:
     }//GEN-LAST:event_GoToAccActionPerformed
 
+    private void TransferFundsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TransferFundsButtonMouseClicked
+        CardLayout layout = (CardLayout) (MainPanel.getLayout());
+        layout.show(MainPanel,"Transfer");
+    }//GEN-LAST:event_TransferFundsButtonMouseClicked
+
+    private void DeleteAccountButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteAccountButtonMouseClicked
+        CardLayout layout = (CardLayout) (MainPanel.getLayout());
+        layout.show(MainPanel,"Delete");
+    }//GEN-LAST:event_DeleteAccountButtonMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable AccountsTable;
+    private javax.swing.JButton DeleteAccountButton;
     private javax.swing.JButton GoToAcc;
     private javax.swing.JButton Logout;
     private javax.swing.JButton Settings;
+    private javax.swing.JButton TransferFundsButton;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables

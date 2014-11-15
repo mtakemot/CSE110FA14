@@ -154,10 +154,11 @@ public class LoginPanel extends javax.swing.JPanel
         {
             String username = UsernameField.getText();
             String password = PasswordField.getText();
-            if((username.equals("teller"))&&(password.equals("teller")));
+            if((username.equals("teller"))&&(password.equals("teller")))
             {
                 CardLayout layout = (CardLayout) (MainPanel.getLayout());
                 layout.show(MainPanel,"TellerMainMenu");
+                return;
             }
             
             UserAccount userSearch = GUI.MasterTable.findUserAccount(UsernameField.getText());
