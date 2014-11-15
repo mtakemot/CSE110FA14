@@ -13,8 +13,11 @@ Description:    This class will define what our Login Page will look like and
                 how it will behave.
  ****************************************************************************/
 
+import Backend.UserAccount;
 import javax.swing.*;
 import java.awt.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class LoginPanel extends javax.swing.JPanel
 {
@@ -22,7 +25,7 @@ public class LoginPanel extends javax.swing.JPanel
     // VERY IMPORTANT !! YOU MUST MAKE SURE THAT YOU GIVE EACH NEW PANEL THAT 
     // YOU DECLARE A PRIVATE VARIABLE THAT WILL STORE THE MAIN PANEL FROM GUI 
     private JPanel MainPanel;
-    
+    private static final String USERNAME_PATTERN = "^[a-z0-9_-]{1,15}$";
     
     public LoginPanel()
     {
@@ -47,8 +50,7 @@ public class LoginPanel extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         UsernameField = new javax.swing.JTextField();
         PasswordField = new javax.swing.JTextField();
@@ -59,37 +61,39 @@ public class LoginPanel extends javax.swing.JPanel
         setOpaque(false);
 
         UsernameField.setText("Username");
-        UsernameField.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        UsernameField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                UsernameFieldFocusGained(evt);
+            }
+        });
+        UsernameField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UsernameFieldActionPerformed(evt);
             }
         });
 
         PasswordField.setText("Password");
-        PasswordField.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        PasswordField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                PasswordFieldFocusGained(evt);
+            }
+        });
+        PasswordField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PasswordFieldActionPerformed(evt);
             }
         });
 
         CreateAccButton.setText("Create Account");
-        CreateAccButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        CreateAccButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 CreateAccButtonMouseClicked(evt);
             }
         });
 
         LoginButton.setText("Login");
-        LoginButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        LoginButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LoginButtonMouseClicked(evt);
             }
         });
@@ -145,23 +149,50 @@ public class LoginPanel extends javax.swing.JPanel
     // is clicked. This is just an example to get you started.
     private void LoginButtonMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_LoginButtonMouseClicked
     {//GEN-HEADEREND:event_LoginButtonMouseClicked
-        // This line grabs the layout from MainPanel from the GUI class so that
-        // we can show a new panel on it
-        CardLayout layout = (CardLayout) (MainPanel.getLayout());
-        // This will show the next panel when the button is clicked. Notice 
-        // the parameters here. MainPanel is passed in, which is the panel from 
-        // GUI.java with the CardLayout that our next panel will appear on,
-        //  and "AccList" is the name of the panel that will be shown. 
-        // "AccList" matches up to the name that we gave the AccountsListPanel
-        // in GUI.java. Giving our instance of AccountsListPanel in GUI.java
-        // this name and adding that object to MainPanel has allowed us 
-        // to access and show that panel from outside of the class as long
-        //  as we pass in MainPanel
-        layout.show(MainPanel, "AccList");
-        // This is an example of how we will access our HashTable from our 
-        // other tables. Since it is declared static in GUI.java, we have access
-        // to it everywhere.
-        GUI.MasterTable.findUserAccount(UsernameField.getText());
+        
+        if ((UsernameField.getText().length() > 0) && (PasswordField.getText().length() > 0) && (validate(UsernameField.getText())))
+        {
+            String username = UsernameField.getText();
+            String password = PasswordField.getText();
+            if((username.equals("teller"))&&(password.equals("teller")))
+            {
+                CardLayout layout = (CardLayout) (MainPanel.getLayout());
+                layout.show(MainPanel,"TellerMainMenu");
+                return;
+            }
+            
+            UserAccount userSearch = GUI.MasterTable.findUserAccount(UsernameField.getText());
+            
+            //TODO: MAKE IT VALIDATE PASSWORD, findUserAccount currently doesn't do that. 
+            
+            if (userSearch == null)
+            {
+                JOptionPane.showMessageDialog(null, "Not found!", "Error!",
+                                        JOptionPane.INFORMATION_MESSAGE);
+            }
+            else
+            {
+              //move the following code in here, for demoing and when we're done testing. 
+            }
+                // This line grabs the layout from MainPanel from the GUI class so that
+                // we can show a new panel on it
+                CardLayout layout = (CardLayout) (MainPanel.getLayout());
+                // This will show the next panel when the button is clicked. Notice 
+                // the parameters here. MainPanel is passed in, which is the panel from 
+                // GUI.java with the CardLayout that our next panel will appear on,
+                //  and "AccList" is the name of the panel that will be shown. 
+                // "AccList" matches up to the name that we gave the AccountsListPanel
+                // in GUI.java. Giving our instance of AccountsListPanel in GUI.java
+                // this name and adding that object to MainPanel has allowed us 
+                // to access and show that panel from outside of the class as long
+                //  as we pass in MainPanel
+                layout.show(MainPanel, "AccList");
+                // This is an example of how we will access our HashTable from our 
+                // other tables. Since it is declared static in GUI.java, we have access
+                // to it everywhere.
+                GUI.MasterTable.findUserAccount(UsernameField.getText());
+            
+        }
     }//GEN-LAST:event_LoginButtonMouseClicked
         
     private void CreateAccButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CreateAccButtonMouseClicked
@@ -174,6 +205,24 @@ public class LoginPanel extends javax.swing.JPanel
         
     }//GEN-LAST:event_CreateAccButtonMouseClicked
 
+    private void UsernameFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_UsernameFieldFocusGained
+         UsernameField.setText("");
+    }//GEN-LAST:event_UsernameFieldFocusGained
+
+    private void PasswordFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PasswordFieldFocusGained
+        PasswordField.setText("");
+    }//GEN-LAST:event_PasswordFieldFocusGained
+
+    public boolean validate(final String username){
+                   
+                  Pattern pattern = Pattern.compile(USERNAME_PATTERN);
+		  Matcher matcher = pattern.matcher(username);
+                  
+                  if (matcher.matches() == false)
+                      JOptionPane.showMessageDialog(null, "Your username contains illegal characters!", "Error!",
+                                        JOptionPane.INFORMATION_MESSAGE);
+		  return matcher.matches();
+	  }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CreateAccButton;

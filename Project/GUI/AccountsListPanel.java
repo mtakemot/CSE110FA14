@@ -57,6 +57,8 @@ public class AccountsListPanel extends javax.swing.JPanel
         jScrollPane1 = new javax.swing.JScrollPane();
         AccountsTable = new javax.swing.JTable();
         GoToAcc = new javax.swing.JButton();
+        TransferFundsButton = new javax.swing.JButton();
+        DeleteAccountButton = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
 
@@ -87,10 +89,29 @@ public class AccountsListPanel extends javax.swing.JPanel
         jScrollPane1.setViewportView(AccountsTable);
         AccountsTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
-        GoToAcc.setText("Goto Account");
+        GoToAcc.setText("Go to Account");
         GoToAcc.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 GoToAccMouseClicked(evt);
+            }
+        });
+        GoToAcc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GoToAccActionPerformed(evt);
+            }
+        });
+
+        TransferFundsButton.setText("Transfer Funds");
+        TransferFundsButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TransferFundsButtonMouseClicked(evt);
+            }
+        });
+
+        DeleteAccountButton.setText("Delete Highlighted Account");
+        DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DeleteAccountButtonMouseClicked(evt);
             }
         });
 
@@ -112,13 +133,20 @@ public class AccountsListPanel extends javax.swing.JPanel
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(Logout))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(101, 101, 101)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(275, 275, 275)
+                                .addComponent(GoToAcc))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(103, 103, 103)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(275, 275, 275)
-                .addComponent(GoToAcc)
+                .addGap(161, 161, 161)
+                .addComponent(TransferFundsButton)
+                .addGap(88, 88, 88)
+                .addComponent(DeleteAccountButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -128,9 +156,13 @@ public class AccountsListPanel extends javax.swing.JPanel
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Settings)
                     .addComponent(Logout))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TransferFundsButton)
+                    .addComponent(DeleteAccountButton))
+                .addGap(16, 16, 16)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(GoToAcc)
                 .addContainerGap(240, Short.MAX_VALUE))
         );
@@ -151,6 +183,7 @@ public class AccountsListPanel extends javax.swing.JPanel
     }//GEN-LAST:event_SettingsMouseClicked
 
     private void GoToAccMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GoToAccMouseClicked
+              
         if (AccountsTable.getSelectedRowCount() > 0)
         {
             //first, retrieve the row index of selection        
@@ -169,16 +202,35 @@ public class AccountsListPanel extends javax.swing.JPanel
             CardLayout layout = (CardLayout) (MainPanel.getLayout());
             layout.show(MainPanel, "MainMenu");
         }
-
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Please select an account to access!", "Error", JOptionPane.INFORMATION_MESSAGE);
+        }
 
     }//GEN-LAST:event_GoToAccMouseClicked
+
+    private void GoToAccActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GoToAccActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_GoToAccActionPerformed
+
+    private void TransferFundsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TransferFundsButtonMouseClicked
+        CardLayout layout = (CardLayout) (MainPanel.getLayout());
+        layout.show(MainPanel,"Transfer");
+    }//GEN-LAST:event_TransferFundsButtonMouseClicked
+
+    private void DeleteAccountButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteAccountButtonMouseClicked
+        CardLayout layout = (CardLayout) (MainPanel.getLayout());
+        layout.show(MainPanel,"Delete");
+    }//GEN-LAST:event_DeleteAccountButtonMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable AccountsTable;
+    private javax.swing.JButton DeleteAccountButton;
     private javax.swing.JButton GoToAcc;
     private javax.swing.JButton Logout;
     private javax.swing.JButton Settings;
+    private javax.swing.JButton TransferFundsButton;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;

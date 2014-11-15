@@ -40,8 +40,7 @@ public class MainMenuPanel extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         LogoutButtton = new javax.swing.JButton();
         BankNamePanel = new javax.swing.JPanel();
@@ -60,10 +59,8 @@ public class MainMenuPanel extends javax.swing.JPanel
         setPreferredSize(new java.awt.Dimension(1024, 768));
 
         LogoutButtton.setText("Logout");
-        LogoutButtton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        LogoutButtton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LogoutButttonMouseClicked(evt);
             }
         });
@@ -91,21 +88,22 @@ public class MainMenuPanel extends javax.swing.JPanel
         MakeDepositButton.setText("Make Deposit");
         MakeDepositButton.setMaximumSize(new java.awt.Dimension(115, 25));
         MakeDepositButton.setMinimumSize(new java.awt.Dimension(115, 25));
-        MakeDepositButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        MakeDepositButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 MakeDepositButtonMouseClicked(evt);
             }
         });
 
         ExitButton.setText("Exit");
+        ExitButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ExitButtonMouseClicked(evt);
+            }
+        });
 
         BackButton.setText("Back");
-        BackButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        BackButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BackButtonMouseClicked(evt);
             }
         });
@@ -113,10 +111,8 @@ public class MainMenuPanel extends javax.swing.JPanel
         FinishButton.setText("Finish");
 
         SettingsButton.setText("Settings");
-        SettingsButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        SettingsButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 SettingsButtonMouseClicked(evt);
             }
         });
@@ -124,10 +120,8 @@ public class MainMenuPanel extends javax.swing.JPanel
         TransferFundsButton.setText("Transfer Funds");
         TransferFundsButton.setMaximumSize(new java.awt.Dimension(115, 25));
         TransferFundsButton.setMinimumSize(new java.awt.Dimension(115, 25));
-        TransferFundsButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        TransferFundsButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 TransferFundsButtonMouseClicked(evt);
             }
         });
@@ -135,10 +129,8 @@ public class MainMenuPanel extends javax.swing.JPanel
         MakeWithdrawalButton.setText("Make Withdrawal");
         MakeWithdrawalButton.setMaximumSize(new java.awt.Dimension(115, 25));
         MakeWithdrawalButton.setMinimumSize(new java.awt.Dimension(115, 25));
-        MakeWithdrawalButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        MakeWithdrawalButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 MakeWithdrawalButtonMouseClicked(evt);
             }
         });
@@ -146,10 +138,8 @@ public class MainMenuPanel extends javax.swing.JPanel
         DeleteAccountButton.setText("Delete Account");
         DeleteAccountButton.setMaximumSize(new java.awt.Dimension(115, 25));
         DeleteAccountButton.setMinimumSize(new java.awt.Dimension(115, 25));
-        DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 DeleteAccountButtonMouseClicked(evt);
             }
         });
@@ -250,6 +240,10 @@ public class MainMenuPanel extends javax.swing.JPanel
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
         layout.show(MainPanel, "Deposit");
     }//GEN-LAST:event_MakeDepositButtonMouseClicked
+
+    private void ExitButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitButtonMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_ExitButtonMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

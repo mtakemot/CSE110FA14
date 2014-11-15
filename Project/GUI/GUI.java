@@ -182,8 +182,9 @@ public class GUI extends javax.swing.JFrame
 
                 TransferFundsPanel Transfer = new TransferFundsPanel(cardHolder);
                 WithdrawPanel Withdraw = new WithdrawPanel(cardHolder);
+                DepositPanel Deposit = new DepositPanel(cardHolder);
                 DeleteAccountPanel Delete = new DeleteAccountPanel(cardHolder);
-
+                TellerMainMenu TellerMainMenu = new TellerMainMenu(cardHolder);
                 // This addes the LoginPanel and AccountsListPanel that we just
                 // created to the MainPanel. It also assigns a name to each of
                 // the panels so that we can reference them easily when we want 
@@ -200,7 +201,9 @@ public class GUI extends javax.swing.JFrame
 
                 cardHolder.add(Transfer, "Transfer");
                 cardHolder.add(Withdraw, "Withdraw");
+                cardHolder.add(Deposit, "Deposit" );
                 cardHolder.add(Delete, "Delete");
+                cardHolder.add(TellerMainMenu,"TellerMainMenu");
                 // These two lines show the MainPanel. Without these 2 lines 
                 // the GUI would not show up at all. Just leave them alone.
                 mainGUI.pack();
