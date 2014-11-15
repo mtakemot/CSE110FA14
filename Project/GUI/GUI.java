@@ -166,7 +166,7 @@ public class GUI extends javax.swing.JFrame
                 currentBankAccount = currentUserAccount.insertBankAccount(25, "acc3456", "Savings");
                 currentBankAccount = currentUserAccount.insertBankAccount(30, "acc2", "Checking");
                 currentBankAccount = currentUserAccount.findBankAccount("acc1");
-                
+
                 // This grabs the MainPanel and stores it in a variable so that
                 // we have easy access to it
                 JPanel cardHolder = mainGUI.getMainPanel();
@@ -179,7 +179,7 @@ public class GUI extends javax.swing.JFrame
                 // Creates a new CreateAccountPanel and passes in the Main Panel
                 CreateAccountPanel CreateAcc = new CreateAccountPanel(cardHolder);
                 MainMenuPanel mainMenu = new MainMenuPanel(cardHolder);
-                
+
                 TransferFundsPanel Transfer = new TransferFundsPanel(cardHolder);
                 WithdrawPanel Withdraw = new WithdrawPanel(cardHolder);
                 DepositPanel Deposit = new DepositPanel(cardHolder);
@@ -198,7 +198,7 @@ public class GUI extends javax.swing.JFrame
                 cardHolder.add(CreateAcc, "CreateAcc");
                 cardHolder.add(Settings, "Settings");
                 cardHolder.add(mainMenu, "MainMenu");
-                
+
                 cardHolder.add(Transfer, "Transfer");
                 cardHolder.add(Withdraw, "Withdraw");
                 cardHolder.add(Deposit, "Deposit" );
