@@ -89,10 +89,15 @@ public class AccountsListPanel extends javax.swing.JPanel
         jScrollPane1.setViewportView(AccountsTable);
         AccountsTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
-        GoToAcc.setText("Goto Account");
+        GoToAcc.setText("Go to Account");
         GoToAcc.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 GoToAccMouseClicked(evt);
+            }
+        });
+        GoToAcc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GoToAccActionPerformed(evt);
             }
         });
 
@@ -168,6 +173,7 @@ public class AccountsListPanel extends javax.swing.JPanel
     }//GEN-LAST:event_SettingsMouseClicked
 
     private void GoToAccMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GoToAccMouseClicked
+              
         if (AccountsTable.getSelectedRowCount() > 0)
         {
             //first, retrieve the row index of selection        
@@ -192,6 +198,10 @@ public class AccountsListPanel extends javax.swing.JPanel
         }
 
     }//GEN-LAST:event_GoToAccMouseClicked
+
+    private void GoToAccActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GoToAccActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_GoToAccActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

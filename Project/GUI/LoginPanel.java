@@ -162,6 +162,8 @@ public class LoginPanel extends javax.swing.JPanel
             
             UserAccount userSearch = GUI.MasterTable.findUserAccount(UsernameField.getText());
             
+            //TODO: MAKE IT VALIDATE PASSWORD, findUserAccount currently doesn't do that. 
+            
             if (userSearch == null)
             {
                 JOptionPane.showMessageDialog(null, "Not found!", "Error!",
@@ -169,7 +171,8 @@ public class LoginPanel extends javax.swing.JPanel
             }
             else
             {
-            
+              //move the following code in here, for demoing and when we're done testing. 
+            }
                 // This line grabs the layout from MainPanel from the GUI class so that
                 // we can show a new panel on it
                 CardLayout layout = (CardLayout) (MainPanel.getLayout());
@@ -187,7 +190,7 @@ public class LoginPanel extends javax.swing.JPanel
                 // other tables. Since it is declared static in GUI.java, we have access
                 // to it everywhere.
                 GUI.MasterTable.findUserAccount(UsernameField.getText());
-            }
+            
         }
     }//GEN-LAST:event_LoginButtonMouseClicked
         

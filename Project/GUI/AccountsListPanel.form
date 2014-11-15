@@ -143,10 +143,11 @@
     </Container>
     <Component class="javax.swing.JButton" name="GoToAcc">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Goto Account"/>
+        <Property name="text" type="java.lang.String" value="Go to Account"/>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="GoToAccMouseClicked"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GoToAccActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButton2">

@@ -38,8 +38,7 @@ public class DeleteAccountPanel extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         BankNamePanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -76,10 +75,8 @@ public class DeleteAccountPanel extends javax.swing.JPanel
         );
 
         SettingsButton.setText("Settings");
-        SettingsButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        SettingsButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 SettingsButtonMouseClicked(evt);
             }
         });
@@ -87,10 +84,8 @@ public class DeleteAccountPanel extends javax.swing.JPanel
         BAUserNameLabel.setText(GUI.currentBankAccount.getAccountName());
 
         LogoutButtton.setText("Logout");
-        LogoutButtton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        LogoutButtton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LogoutButttonMouseClicked(evt);
             }
         });
@@ -103,10 +98,8 @@ public class DeleteAccountPanel extends javax.swing.JPanel
         usernameLabel.setText("Are you sture you want to delete your account?");
 
         AmountNameField.setText("Account Name");
-        AmountNameField.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        AmountNameField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 AmountNameFieldMouseClicked(evt);
             }
         });
@@ -114,29 +107,28 @@ public class DeleteAccountPanel extends javax.swing.JPanel
         PasswordField.setText("Password");
 
         ExitButton.setText("Exit");
-        ExitButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        ExitButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ExitButtonMouseClicked(evt);
             }
         });
 
         BackButton.setText("Back");
-        BackButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        BackButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BackButtonMouseClicked(evt);
             }
         });
 
         DeleteButton.setText("Delete");
-        DeleteButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        DeleteButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 DeleteButtonMouseClicked(evt);
+            }
+        });
+        DeleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteButtonActionPerformed(evt);
             }
         });
 
@@ -233,7 +225,7 @@ public class DeleteAccountPanel extends javax.swing.JPanel
     }//GEN-LAST:event_BackButtonMouseClicked
 
     private void DeleteButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteButtonMouseClicked
-        double amount = Integer.parseInt(AmountNameField.getText());
+        double amount = Integer.parseInt(AmountNameField.getText());//wtf? username to double?
         if(amount > GUI.currentBankAccount.getBalance())
         {
             AmountNameField.setText("");
@@ -246,6 +238,10 @@ public class DeleteAccountPanel extends javax.swing.JPanel
             // test
         }
     }//GEN-LAST:event_DeleteButtonMouseClicked
+
+    private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DeleteButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
