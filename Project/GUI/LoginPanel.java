@@ -13,6 +13,7 @@ Description:    This class will define what our Login Page will look like and
                 how it will behave.
  ****************************************************************************/
 
+import Backend.UserAccount;
 import javax.swing.*;
 import java.awt.*;
 import java.util.regex.Matcher;
@@ -151,25 +152,34 @@ public class LoginPanel extends javax.swing.JPanel
         
         if ((UsernameField.getText().length() > 0) && (PasswordField.getText().length() > 0) && (validate(UsernameField.getText())))
         {
+            UserAccount userSearch = GUI.MasterTable.findUserAccount(UsernameField.getText());
             
+            if (userSearch == null)
+            {
+                JOptionPane.showMessageDialog(null, "Not found!", "Error!",
+                                        JOptionPane.INFORMATION_MESSAGE);
+            }
+            else
+            {
             
-            // This line grabs the layout from MainPanel from the GUI class so that
-            // we can show a new panel on it
-            CardLayout layout = (CardLayout) (MainPanel.getLayout());
-            // This will show the next panel when the button is clicked. Notice 
-            // the parameters here. MainPanel is passed in, which is the panel from 
-            // GUI.java with the CardLayout that our next panel will appear on,
-            //  and "AccList" is the name of the panel that will be shown. 
-            // "AccList" matches up to the name that we gave the AccountsListPanel
-            // in GUI.java. Giving our instance of AccountsListPanel in GUI.java
-            // this name and adding that object to MainPanel has allowed us 
-            // to access and show that panel from outside of the class as long
-            //  as we pass in MainPanel
-            layout.show(MainPanel, "AccList");
-            // This is an example of how we will access our HashTable from our 
-            // other tables. Since it is declared static in GUI.java, we have access
-            // to it everywhere.
-            GUI.MasterTable.findUserAccount(UsernameField.getText());
+                // This line grabs the layout from MainPanel from the GUI class so that
+                // we can show a new panel on it
+                CardLayout layout = (CardLayout) (MainPanel.getLayout());
+                // This will show the next panel when the button is clicked. Notice 
+                // the parameters here. MainPanel is passed in, which is the panel from 
+                // GUI.java with the CardLayout that our next panel will appear on,
+                //  and "AccList" is the name of the panel that will be shown. 
+                // "AccList" matches up to the name that we gave the AccountsListPanel
+                // in GUI.java. Giving our instance of AccountsListPanel in GUI.java
+                // this name and adding that object to MainPanel has allowed us 
+                // to access and show that panel from outside of the class as long
+                //  as we pass in MainPanel
+                layout.show(MainPanel, "AccList");
+                // This is an example of how we will access our HashTable from our 
+                // other tables. Since it is declared static in GUI.java, we have access
+                // to it everywhere.
+                GUI.MasterTable.findUserAccount(UsernameField.getText());
+            }
         }
     }//GEN-LAST:event_LoginButtonMouseClicked
         
