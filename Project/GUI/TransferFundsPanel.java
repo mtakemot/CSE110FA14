@@ -135,6 +135,11 @@ public class TransferFundsPanel extends javax.swing.JPanel {
         jLabel4.setText("Or Transfer To Another User");
 
         BankAccountsList0.setModel(new javax.swing.DefaultComboBoxModel(accountlist));
+        BankAccountsList0.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                BankAccountsList0FocusGained(evt);
+            }
+        });
         BankAccountsList0.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BankAccountsList0ActionPerformed(evt);
@@ -292,6 +297,8 @@ public class TransferFundsPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_ExitButtonMouseClicked
 
     private void BackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButtonMouseClicked
+        EmailEntryField.setText("Email Address");
+        AmountField.setText("Amount");
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
         layout.show(MainPanel, "AccList");
     }//GEN-LAST:event_BackButtonMouseClicked
@@ -345,6 +352,15 @@ public class TransferFundsPanel extends javax.swing.JPanel {
     private void TransferButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TransferButton1MouseClicked
         
     }//GEN-LAST:event_TransferButton1MouseClicked
+
+    private void BankAccountsList0FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_BankAccountsList0FocusGained
+        total_accounts = wrapper.getTotalAccounts();
+        accountlist = new String[total_accounts];
+        for(int i=0; i < total_accounts; i++)
+        {
+            accountlist[i]=wrapper.getAccountName(i);
+        }
+    }//GEN-LAST:event_BankAccountsList0FocusGained
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -216,11 +216,14 @@ public class AccountsListPanel extends javax.swing.JPanel
     private void TransferFundsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TransferFundsButtonMouseClicked
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
         layout.show(MainPanel,"Transfer");
+        
     }//GEN-LAST:event_TransferFundsButtonMouseClicked
 
     private void DeleteAccountButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteAccountButtonMouseClicked
-        CardLayout layout = (CardLayout) (MainPanel.getLayout());
-        layout.show(MainPanel,"Delete");
+        int row = AccountsTable.getSelectedRow();
+        String user = (String) AccountsTable.getValueAt(row, 0);
+        GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(user);
+        //GUI.currentBankAccount.
     }//GEN-LAST:event_DeleteAccountButtonMouseClicked
 
 
