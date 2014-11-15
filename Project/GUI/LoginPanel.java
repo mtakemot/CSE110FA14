@@ -154,6 +154,8 @@ public class LoginPanel extends javax.swing.JPanel
         {
             UserAccount userSearch = GUI.MasterTable.findUserAccount(UsernameField.getText());
             
+            //TODO: MAKE IT VALIDATE PASSWORD, findUserAccount currently doesn't do that. 
+            
             if (userSearch == null)
             {
                 JOptionPane.showMessageDialog(null, "Not found!", "Error!",
