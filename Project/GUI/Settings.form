@@ -189,6 +189,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Delete Main Account"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="DeleteAccountButtonMouseClicked"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

@@ -119,6 +119,11 @@ public class Settings extends javax.swing.JPanel
         });
 
         DeleteAccountButton.setText("Delete Main Account");
+        DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DeleteAccountButtonMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -242,6 +247,11 @@ public class Settings extends javax.swing.JPanel
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
         layout.show(MainPanel, "Login");
     }//GEN-LAST:event_LogoutButttonMouseClicked
+
+    private void DeleteAccountButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteAccountButtonMouseClicked
+        CardLayout layout = (CardLayout) (MainPanel.getLayout());
+        layout.show(MainPanel, "Delete");
+    }//GEN-LAST:event_DeleteAccountButtonMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BAUserNameLabel;
