@@ -176,6 +176,35 @@ public class UserAccount implements Serializable
                 return current;
         }
     }
+    
+    public boolean deleteBankAccount(String name)
+    {
+        if (BankAccHead != null)
+        {
+            // Keep track of the previous UserAccount in the list
+            BankAccount prev = null;
+            BankAccount current = BankAccHead;
+            // Traverse the linked list inside of the bucket until the UserAccount
+            // is found or we reach the end of the linked list
+            while (current.getNext() != null
+                    && !(current.getAccountName().equals(name)))
+            {
+                prev = current;
+                current = current.getNext();
+            }
+            if (current.getAccountName().equals(name)) // The UserAccount was found
+            {
+                // The UserAccount is not the head of the linked list
+                if (prev != null)
+                    prev.setNext(current.getNext());
+                else // Remove the head of the linked list inside of the bucket
+                    BankAccHead = current.getNext();
+                return true;
+            }
+        }
+        // The bucket at index was empty so the UserAccount was not found
+        return false;
+    }
 
     /**
      * Prints information about all BankAccounts that the user owns
