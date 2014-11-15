@@ -221,9 +221,10 @@ public class AccountsListPanel extends javax.swing.JPanel
 
     private void DeleteAccountButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteAccountButtonMouseClicked
         int row = AccountsTable.getSelectedRow();
-        String user = (String) AccountsTable.getValueAt(row, 0);
-        GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(user);
-        //GUI.currentBankAccount.
+        String bankacc = (String) AccountsTable.getValueAt(row, 0);
+        GUI.currentUserAccount.deleteBankAccount(bankacc);
+        JOptionPane.showMessageDialog(null, "Bank Account " + bankacc
+                +"has been Deleted");
     }//GEN-LAST:event_DeleteAccountButtonMouseClicked
 
 

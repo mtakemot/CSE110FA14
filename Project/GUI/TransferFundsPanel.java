@@ -350,16 +350,39 @@ public class TransferFundsPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_BankAccountsList1ActionPerformed
 
     private void TransferButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TransferButton1MouseClicked
+        double amount = Integer.parseInt(AmountField.getText());
+        String email = EmailEntryField.getText();
         
+        UserAccount founduser = GUI.MasterTable.findUserAccountEmail(email);
+        GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount((String)BankAccountsList0.getSelectedItem());
+        
+        if(amount > GUI.currentBankAccount.getBalance())
+        {
+            AmountField.setText("");
+            JOptionPane.showMessageDialog(null, "Insufficient Funds"
+                    + "\nYou have " + GUI.currentBankAccount.getBalance()+ "$ available"
+                    + " in selected Bank Account");
+        }
+        else
+        {    
+            GUI.currentBankAccount.subFromBalance(amount);
+            GUI.currentBankAccount = founduser.getBankAccHead();
+            GUI.currentBankAccount.addToBalance(amount);
+            JOptionPane.showMessageDialog(null, "Funds Transfered Successfully!");
+            //GUI.MasterTable.findUserAccount();
+            // test
+        }
     }//GEN-LAST:event_TransferButton1MouseClicked
 
     private void BankAccountsList0FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_BankAccountsList0FocusGained
-        total_accounts = wrapper.getTotalAccounts();
+        TableWrapper mywrapper = new TableWrapper(GUI.currentUserAccount);
+        total_accounts = mywrapper.getTotalAccounts();
         accountlist = new String[total_accounts];
         for(int i=0; i < total_accounts; i++)
         {
-            accountlist[i]=wrapper.getAccountName(i);
+            accountlist[i]=mywrapper.getAccountName(i);
         }
+        initComponents();
     }//GEN-LAST:event_BankAccountsList0FocusGained
 
 
