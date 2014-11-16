@@ -249,7 +249,7 @@ public class MainMenuPanel extends javax.swing.JPanel
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackButton;
     private javax.swing.JPanel BankNamePanel;
-    private javax.swing.JLabel CurrentBAName;
+    public static javax.swing.JLabel CurrentBAName;
     private javax.swing.JButton DeleteAccountButton;
     private javax.swing.JButton ExitButton;
     private javax.swing.JButton FinishButton;

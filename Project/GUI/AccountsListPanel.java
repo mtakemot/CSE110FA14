@@ -221,6 +221,8 @@ public class AccountsListPanel extends javax.swing.JPanel
 
             //setting the current bank account
             GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(user);
+            MainMenuPanel.CurrentBAName.setText(GUI.currentBankAccount.getAccountName());
+            //GUI.mainMenu.CurrentBAName.setText(GUI.currentBankAccount.getAccountName());
 
             System.out.print("\n GUI.currentBankAcc Name:  " + GUI.currentBankAccount.getAccountName() + "\n");
 
@@ -250,6 +252,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         GUI.currentUserAccount.deleteBankAccount(bankacc);
         JOptionPane.showMessageDialog(null, "Bank Account " + bankacc
                 + "has been Deleted");
+        AccountsTable.setModel(new TableModel(GUI.currentUserAccount));
     }//GEN-LAST:event_DeleteAccountButtonMouseClicked
 
     private void CreateBAButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_CreateBAButtonActionPerformed
