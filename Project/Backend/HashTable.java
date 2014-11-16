@@ -121,21 +121,26 @@ public class HashTable implements Serializable
 
     public UserAccount findUserAccountEmail(String email)
     {
+        int isequal;
         for(int i =0;i<SIZE;i++)
         {
             if(Table[i]!=null) {
                 UserAccount current = Table[i];
                 String currentEmail = current.getEmail();
-                int isequal = currentEmail.compareTo(email);
-                if(isequal==0) {
-                    return current;
+                if(currentEmail!=null) {
+                    isequal = currentEmail.compareTo(email);
+                    if(isequal==0) {
+                        return current;
+                    }
                 }
                 while(current.getNext()!=null){
                     current = current.getNext();
                     currentEmail = current.getEmail();
-                    isequal = currentEmail.compareTo(email);
-                    if(isequal==0) {
-                        return current;
+                    if(currentEmail!=null) {
+                        isequal = currentEmail.compareTo(email);
+                        if(isequal==0) {
+                            return current;
+                        }
                     }
                 }
             }

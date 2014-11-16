@@ -154,6 +154,7 @@ public class LoginPanel extends javax.swing.JPanel
         {
             String username = UsernameField.getText();
             String password = PasswordField.getText();
+            
             if((username.equals("teller"))&&(password.equals("teller")))
             {
                 CardLayout layout = (CardLayout) (MainPanel.getLayout());
@@ -172,26 +173,30 @@ public class LoginPanel extends javax.swing.JPanel
             }
             else
             {
-              //move the following code in here, for demoing and when we're done testing. 
-            }
-                // This line grabs the layout from MainPanel from the GUI class so that
-                // we can show a new panel on it
-                CardLayout layout = (CardLayout) (MainPanel.getLayout());
-                // This will show the next panel when the button is clicked. Notice 
-                // the parameters here. MainPanel is passed in, which is the panel from 
-                // GUI.java with the CardLayout that our next panel will appear on,
-                //  and "AccList" is the name of the panel that will be shown. 
-                // "AccList" matches up to the name that we gave the AccountsListPanel
-                // in GUI.java. Giving our instance of AccountsListPanel in GUI.java
-                // this name and adding that object to MainPanel has allowed us 
-                // to access and show that panel from outside of the class as long
-                //  as we pass in MainPanel
-                layout.show(MainPanel, "AccList");
-                // This is an example of how we will access our HashTable from our 
-                // other tables. Since it is declared static in GUI.java, we have access
-                // to it everywhere.
-                GUI.MasterTable.findUserAccount(UsernameField.getText());
-            
+                if(password.compareTo(userSearch.getPassword())==0) {
+                    // This line grabs the layout from MainPanel from the GUI class so that
+                    // we can show a new panel on it
+                    CardLayout layout = (CardLayout) (MainPanel.getLayout());
+                    // This will show the next panel when the button is clicked. Notice 
+                    // the parameters here. MainPanel is passed in, which is the panel from 
+                    // GUI.java with the CardLayout that our next panel will appear on,
+                    //  and "AccList" is the name of the panel that will be shown. 
+                    // "AccList" matches up to the name that we gave the AccountsListPanel
+                    // in GUI.java. Giving our instance of AccountsListPanel in GUI.java
+                    // this name and adding that object to MainPanel has allowed us 
+                    // to access and show that panel from outside of the class as long
+                    //  as we pass in MainPanel
+                    layout.show(MainPanel, "AccList");
+                    // This is an example of how we will access our HashTable from our 
+                    // other tables. Since it is declared static in GUI.java, we have access
+                    // to it everywhere.
+                    GUI.MasterTable.findUserAccount(UsernameField.getText());    
+                }
+                else {
+                    JOptionPane.showMessageDialog(null, "Invalid Username Password Combination");
+                }
+                //move the following code in here, for demoing and when we're done testing. 
+            }           
         }
     }//GEN-LAST:event_LoginButtonMouseClicked
         
@@ -206,7 +211,7 @@ public class LoginPanel extends javax.swing.JPanel
     }//GEN-LAST:event_CreateAccButtonMouseClicked
 
     private void UsernameFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_UsernameFieldFocusGained
-         UsernameField.setText("");
+        UsernameField.setText("");
     }//GEN-LAST:event_UsernameFieldFocusGained
 
     private void PasswordFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PasswordFieldFocusGained

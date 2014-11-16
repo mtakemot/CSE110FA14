@@ -304,17 +304,42 @@ public class TransferFundsPanel extends javax.swing.JPanel {
         layout.show(MainPanel, "AccList");
     }//GEN-LAST:event_BackButtonMouseClicked
 
+    public static boolean isParsable(String input){
+    boolean parsable = true;
+    try{
+        Integer.parseInt(input);
+    }catch(NumberFormatException e){
+        parsable = false;
+    }
+    return parsable;
+    }
+    
     private void TransferButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TransferButtonMouseClicked
-        double amount = Integer.parseInt(AmountField.getText());
+        double amount;
+        
+        if(isParsable(AmountField.getText())) {
+            amount = Integer.parseInt(AmountField.getText());
+        }
+        
+        else {
+            JOptionPane.showMessageDialog(null,"Please Enter A Valid Amount To Transfer");
+            return;
+        }
+        
+        if(amount <= 0){
+            JOptionPane.showMessageDialog(null,"Please Enter A Valid Amount To Transfer");
+            return;  
+        }
         
         GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount((String)BankAccountsList0.getSelectedItem());
+        
         if(amount > GUI.currentBankAccount.getBalance())
         {
             AmountField.setText("");
             JOptionPane.showMessageDialog(null, "Insufficient Funds"
                     + "\nYou have " + GUI.currentBankAccount.getBalance()+ "$ available"
                     + " in selected Bank Account");
-        }
+        }            
         else
         {    
             GUI.currentBankAccount.subFromBalance(amount);
@@ -351,19 +376,20 @@ public class TransferFundsPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_BankAccountsList1ActionPerformed
 
     private void TransferButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TransferButton1MouseClicked
-        double amount = Integer.parseInt(AmountField.getText());
-        String email = EmailEntryField.getText();
-        UserAccount founduser;
-        if(email!=null)
-        {
-            founduser = GUI.MasterTable.findUserAccountEmail(email);
+        double amount;
+        if(isParsable(AmountField.getText())) {
+            amount = Integer.parseInt(AmountField.getText());
         }
-        else
-        {
-            //JOptionPane.showMessageDialog(null, "Please Enter A Valid");
+        else {
+            JOptionPane.showMessageDialog(null,"Please Enter A Valid Amount To Transfer");
             return;
         }
-            
+        
+        if(amount <= 0){
+            JOptionPane.showMessageDialog(null,"Please Enter A Valid Amount To Transfer");
+            return;  
+        }
+        
         GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount((String)BankAccountsList0.getSelectedItem());
         
         if(amount > GUI.currentBankAccount.getBalance())
@@ -372,8 +398,13 @@ public class TransferFundsPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Insufficient Funds"
                     + "\nYou have " + GUI.currentBankAccount.getBalance()+ "$ available"
                     + " in selected Bank Account");
+            return;
         }
-        else if(founduser!=null)
+        
+        String email = EmailEntryField.getText();
+        UserAccount founduser = GUI.MasterTable.findUserAccountEmail(email);
+            
+        if(founduser!=null)
         {    
             GUI.currentBankAccount.subFromBalance(amount);
             GUI.currentBankAccount = founduser.getBankAccHead();

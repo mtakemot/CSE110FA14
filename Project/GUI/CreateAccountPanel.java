@@ -241,7 +241,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
                                     operationSuccessful = true;
                                     CardLayout layout = (CardLayout) (MainPanel.getLayout());
                                     //send the layout of MainPanel to new display of JPanel "MainMenu"
-                                    layout.show(MainPanel, "MainMenu");
+                                    layout.show(MainPanel, "Login");
                                 }
                                 
                                 /*else

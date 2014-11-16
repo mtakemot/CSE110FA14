@@ -161,11 +161,27 @@ public class GUI extends javax.swing.JFrame
 
                 //Puts some initial values in the table to prevent null pointer 
                 // exceptions
-                currentUserAccount = MasterTable.insertUserAccount("root");
+                currentUserAccount = MasterTable.insertUserAccount("testaccount");
+                currentUserAccount.setFirstName("first");
+                currentUserAccount.setLastName("last");
+                currentUserAccount.setUserName("testaccount");
+                currentUserAccount.setPassword("password");
+                currentUserAccount.setEmail("email");
+                currentUserAccount.setPhone("0123456789");
                 currentBankAccount = currentUserAccount.insertBankAccount(20, "acc1", "Checking");
                 currentBankAccount = currentUserAccount.insertBankAccount(25, "acc3456", "Savings");
                 currentBankAccount = currentUserAccount.insertBankAccount(30, "acc2", "Checking");
-                currentBankAccount = currentUserAccount.findBankAccount("acc1");        
+                
+                currentUserAccount = MasterTable.insertUserAccount("testaccount2");
+                currentUserAccount.setFirstName("first2");
+                currentUserAccount.setLastName("last2");
+                currentUserAccount.setUserName("testaccount2");
+                currentUserAccount.setPassword("password2");
+                currentUserAccount.setEmail("email2");
+                currentUserAccount.setPhone("1234567890");
+                currentBankAccount = currentUserAccount.insertBankAccount(50, "2acc1", "Checking");
+                currentBankAccount = currentUserAccount.insertBankAccount(35, "2acc3456", "Savings");
+                currentBankAccount = currentUserAccount.insertBankAccount(30, "2acc2", "Checking");               
 
                 // This grabs the MainPanel and stores it in a variable so that
                 // we have easy access to it
