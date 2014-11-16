@@ -30,10 +30,13 @@ import Backend.*;
 import javax.swing.*;
 import java.awt.*;
 import java.util.*;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 
 public class GUI extends javax.swing.JFrame
 {
-
+    public static final String ITEM = "item";
+    public String item;
     static int counter = 0;
 
     // Static HashTable allows us to access the table in any element of our GUI
@@ -60,7 +63,7 @@ public class GUI extends javax.swing.JFrame
     {
         return MainPanel;
     }
-
+       
     /**
      * EXPAND THIS FUNCTION TO SEE HOW MainPanel IS INITIALIZED. ALL OF OUR
      * OTHER PANELS/PAGES WILL BE PLACED ON MainPanel WHICH IS DELCARED HERE
