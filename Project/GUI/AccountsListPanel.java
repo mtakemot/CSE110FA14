@@ -48,7 +48,8 @@ public class AccountsListPanel extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         jButton1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
@@ -59,6 +60,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         GoToAcc = new javax.swing.JButton();
         TransferFundsButton = new javax.swing.JButton();
         DeleteAccountButton = new javax.swing.JButton();
+        CreateBAButton = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
 
@@ -68,15 +70,19 @@ public class AccountsListPanel extends javax.swing.JPanel
         jLabel5.setText("Bank 42");
 
         Settings.setText("Settings");
-        Settings.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        Settings.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 SettingsMouseClicked(evt);
             }
         });
 
         Logout.setText("Logout");
-        Logout.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        Logout.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 LogoutMouseClicked(evt);
             }
         });
@@ -90,28 +96,45 @@ public class AccountsListPanel extends javax.swing.JPanel
         AccountsTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
         GoToAcc.setText("Go to Account");
-        GoToAcc.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        GoToAcc.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 GoToAccMouseClicked(evt);
             }
         });
-        GoToAcc.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        GoToAcc.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 GoToAccActionPerformed(evt);
             }
         });
 
         TransferFundsButton.setText("Transfer Funds");
-        TransferFundsButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        TransferFundsButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 TransferFundsButtonMouseClicked(evt);
             }
         });
 
         DeleteAccountButton.setText("Delete Highlighted Account");
-        DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 DeleteAccountButtonMouseClicked(evt);
+            }
+        });
+
+        CreateBAButton.setText("Create New Bank Account");
+        CreateBAButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                CreateBAButtonActionPerformed(evt);
             }
         });
 
@@ -133,13 +156,13 @@ public class AccountsListPanel extends javax.swing.JPanel
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(Logout))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(103, 103, 103)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(275, 275, 275)
+                                .addComponent(CreateBAButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(GoToAcc))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(103, 103, 103)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
@@ -163,7 +186,9 @@ public class AccountsListPanel extends javax.swing.JPanel
                 .addGap(16, 16, 16)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(GoToAcc)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(GoToAcc)
+                    .addComponent(CreateBAButton))
                 .addContainerGap(240, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -183,7 +208,7 @@ public class AccountsListPanel extends javax.swing.JPanel
     }//GEN-LAST:event_SettingsMouseClicked
 
     private void GoToAccMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GoToAccMouseClicked
-              
+
         if (AccountsTable.getSelectedRowCount() > 0)
         {
             //first, retrieve the row index of selection        
@@ -215,8 +240,8 @@ public class AccountsListPanel extends javax.swing.JPanel
 
     private void TransferFundsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TransferFundsButtonMouseClicked
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
-        layout.show(MainPanel,"Transfer");
-        
+        layout.show(MainPanel, "Transfer");
+
     }//GEN-LAST:event_TransferFundsButtonMouseClicked
 
     private void DeleteAccountButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteAccountButtonMouseClicked
@@ -224,12 +249,19 @@ public class AccountsListPanel extends javax.swing.JPanel
         String bankacc = (String) AccountsTable.getValueAt(row, 0);
         GUI.currentUserAccount.deleteBankAccount(bankacc);
         JOptionPane.showMessageDialog(null, "Bank Account " + bankacc
-                +"has been Deleted");
+                + "has been Deleted");
     }//GEN-LAST:event_DeleteAccountButtonMouseClicked
+
+    private void CreateBAButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_CreateBAButtonActionPerformed
+    {//GEN-HEADEREND:event_CreateBAButtonActionPerformed
+        CardLayout layout = (CardLayout) (MainPanel.getLayout());
+        layout.show(MainPanel, "CreateBA");
+    }//GEN-LAST:event_CreateBAButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable AccountsTable;
+    private javax.swing.JButton CreateBAButton;
     private javax.swing.JButton DeleteAccountButton;
     private javax.swing.JButton GoToAcc;
     private javax.swing.JButton Logout;

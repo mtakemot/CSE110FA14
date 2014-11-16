@@ -201,6 +201,7 @@ public class GUI extends javax.swing.JFrame
                 DepositPanel Deposit = new DepositPanel(cardHolder);
                 DeleteAccountPanel Delete = new DeleteAccountPanel(cardHolder);
                 TellerMainMenu TellerMainMenu = new TellerMainMenu(cardHolder);
+                CreateBankAccount createBA = new CreateBankAccount(cardHolder);
                 // This addes the LoginPanel and AccountsListPanel that we just
                 // created to the MainPanel. It also assigns a name to each of
                 // the panels so that we can reference them easily when we want 
@@ -220,6 +221,7 @@ public class GUI extends javax.swing.JFrame
                 cardHolder.add(Deposit, "Deposit" );
                 cardHolder.add(Delete, "Delete");
                 cardHolder.add(TellerMainMenu,"TellerMainMenu");
+                cardHolder.add(createBA, "CreateBA");
                 // These two lines show the MainPanel. Without these 2 lines 
                 // the GUI would not show up at all. Just leave them alone.
                 mainGUI.pack();
