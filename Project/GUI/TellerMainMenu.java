@@ -5,14 +5,17 @@
  */
 package GUI;
 
+import java.awt.*;
 import javax.swing.JPanel;
+import javax.swing.*;
+import Backend.*;
 
 /**
  *
  * @author Zack
  */
 public class TellerMainMenu extends javax.swing.JPanel {
-
+    
     private JPanel MainPanel;
     /**
      * Creates new form TellerMainMenu
@@ -37,19 +40,155 @@ public class TellerMainMenu extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        SettingsButton = new javax.swing.JButton();
+        BankNamePanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        LogoutButtton = new javax.swing.JButton();
+        BAAmountLabel = new javax.swing.JLabel();
+        BAUserNameLabel = new javax.swing.JLabel();
+        BATypeLabel = new javax.swing.JLabel();
+        SearchUserButton = new javax.swing.JButton();
+        InterestPenaltyButton = new javax.swing.JButton();
+
+        SettingsButton.setText("Settings");
+        SettingsButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SettingsButtonMouseClicked(evt);
+            }
+        });
+
+        BankNamePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel1.setText("             Bank 42");
+        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout BankNamePanelLayout = new javax.swing.GroupLayout(BankNamePanel);
+        BankNamePanel.setLayout(BankNamePanelLayout);
+        BankNamePanelLayout.setHorizontalGroup(
+            BankNamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BankNamePanelLayout.createSequentialGroup()
+                .addContainerGap(157, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(136, 136, 136))
+        );
+        BankNamePanelLayout.setVerticalGroup(
+            BankNamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        LogoutButtton.setText("Logout");
+        LogoutButtton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LogoutButttonMouseClicked(evt);
+            }
+        });
+
+        BAAmountLabel.setText(String.valueOf(GUI.currentBankAccount.getBalance()));
+
+        BAUserNameLabel.setText(GUI.currentBankAccount.getAccountName());
+
+        BATypeLabel.setText(GUI.currentBankAccount.getAccountType());
+
+        SearchUserButton.setText("Search For User");
+        SearchUserButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SearchUserButtonMouseClicked(evt);
+            }
+        });
+
+        InterestPenaltyButton.setText("Interest/Penalty");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(SettingsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BankNamePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LogoutButtton, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(BATypeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(218, 218, 218)
+                        .addComponent(BAUserNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 322, Short.MAX_VALUE)
+                        .addComponent(BAAmountLabel)
+                        .addGap(26, 26, 26))))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(InterestPenaltyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(358, 358, 358)
+                        .addComponent(SearchUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(BankNamePanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(LogoutButtton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SettingsButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BATypeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BAUserNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BAAmountLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(53, 53, 53)
+                .addComponent(SearchUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(InterestPenaltyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 50, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void SettingsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingsButtonMouseClicked
+        CardLayout layout = (CardLayout) (MainPanel.getLayout());
+        layout.show(MainPanel, "Settings");
+    }//GEN-LAST:event_SettingsButtonMouseClicked
+
+    private void LogoutButttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoutButttonMouseClicked
+        GUI.currentBankAccount = null;
+        GUI.currentUserAccount = null;
+        CardLayout layout = (CardLayout) (MainPanel.getLayout());
+        layout.show(MainPanel, "Login");
+    }//GEN-LAST:event_LogoutButttonMouseClicked
+
+    private void SearchUserButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SearchUserButtonMouseClicked
+        
+        String name = JOptionPane.showInputDialog(
+                        null, "Please Enter User Account: ");
+        
+        GUI.currentUserAccount = GUI.MasterTable.findUserAccount(name);
+        
+        if(GUI.currentUserAccount!=null){
+            CardLayout layout = (CardLayout) (MainPanel.getLayout());
+            layout.show(MainPanel, "TellerAP");
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "User Accout Not Found");
+        }
+    }//GEN-LAST:event_SearchUserButtonMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel BAAmountLabel;
+    private javax.swing.JLabel BATypeLabel;
+    private javax.swing.JLabel BAUserNameLabel;
+    private javax.swing.JPanel BankNamePanel;
+    private javax.swing.JButton InterestPenaltyButton;
+    private javax.swing.JButton LogoutButtton;
+    private javax.swing.JButton SearchUserButton;
+    private javax.swing.JButton SettingsButton;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
