@@ -361,7 +361,7 @@ public class TransferFundsPanel extends javax.swing.JPanel {
         else
         {
             //JOptionPane.showMessageDialog(null, "Please Enter A Valid");
-            
+            return;
         }
             
         GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount((String)BankAccountsList0.getSelectedItem());
