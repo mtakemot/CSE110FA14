@@ -114,9 +114,14 @@ public class CreateBankAccount extends javax.swing.JPanel
         if (AccountNameField.getText().length() > 0 && GUI.currentUserAccount.findBankAccount(AccountNameField.getText()) == null)
         {
             GUI.currentUserAccount.insertBankAccount(0, AccountNameField.getText(), TypeCombo.getSelectedItem().toString());
+            CardLayout layout = (CardLayout) (MainPanel.getLayout());
+            layout.show(MainPanel, "AccList");
         }
-        CardLayout layout = (CardLayout) (MainPanel.getLayout());
-        layout.show(MainPanel, "AccList");
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Invalid input");
+            AccountNameField.setText("");
+        }
     }//GEN-LAST:event_AccountNameFieldActionPerformed
 
     private void CreateButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_CreateButtonActionPerformed
