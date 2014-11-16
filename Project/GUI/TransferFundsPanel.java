@@ -230,9 +230,10 @@ public class TransferFundsPanel extends javax.swing.JPanel {
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(TransferButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGroup(layout.createSequentialGroup()
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(BankAccountsList0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(BankAccountsList1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(BankAccountsList0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(285, 285, 285))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(BankAccountsList1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGap(88, 88, 88)
                                             .addComponent(TransferButton, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
@@ -352,8 +353,17 @@ public class TransferFundsPanel extends javax.swing.JPanel {
     private void TransferButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TransferButton1MouseClicked
         double amount = Integer.parseInt(AmountField.getText());
         String email = EmailEntryField.getText();
-        
-        UserAccount founduser = GUI.MasterTable.findUserAccountEmail(email);
+        UserAccount founduser;
+        if(email!=null)
+        {
+            founduser = GUI.MasterTable.findUserAccountEmail(email);
+        }
+        else
+        {
+            //JOptionPane.showMessageDialog(null, "Please Enter A Valid");
+            
+        }
+            
         GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount((String)BankAccountsList0.getSelectedItem());
         
         if(amount > GUI.currentBankAccount.getBalance())
@@ -363,7 +373,7 @@ public class TransferFundsPanel extends javax.swing.JPanel {
                     + "\nYou have " + GUI.currentBankAccount.getBalance()+ "$ available"
                     + " in selected Bank Account");
         }
-        else
+        else if(founduser!=null)
         {    
             GUI.currentBankAccount.subFromBalance(amount);
             GUI.currentBankAccount = founduser.getBankAccHead();
@@ -372,17 +382,21 @@ public class TransferFundsPanel extends javax.swing.JPanel {
             //GUI.MasterTable.findUserAccount();
             // test
         }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Error, User Account Not Found");
+        }
     }//GEN-LAST:event_TransferButton1MouseClicked
 
     private void BankAccountsList0FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_BankAccountsList0FocusGained
-        TableWrapper mywrapper = new TableWrapper(GUI.currentUserAccount);
+        /*TableWrapper mywrapper = new TableWrapper(GUI.currentUserAccount);
         total_accounts = mywrapper.getTotalAccounts();
         accountlist = new String[total_accounts];
         for(int i=0; i < total_accounts; i++)
         {
             accountlist[i]=mywrapper.getAccountName(i);
         }
-        initComponents();
+        initComponents();*/
     }//GEN-LAST:event_BankAccountsList0FocusGained
 
 

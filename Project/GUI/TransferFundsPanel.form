@@ -63,10 +63,11 @@
                                           <Component id="TransferButton1" min="-2" pref="197" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="BankAccountsList0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="BankAccountsList1" min="-2" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="BankAccountsList0" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="285" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="BankAccountsList1" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
                                           <Component id="TransferButton" min="-2" pref="197" max="-2" attributes="0"/>
                                       </Group>
