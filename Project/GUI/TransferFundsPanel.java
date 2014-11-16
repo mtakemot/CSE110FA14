@@ -140,6 +140,11 @@ public class TransferFundsPanel extends javax.swing.JPanel {
                 TransferButtonMouseClicked(evt);
             }
         });
+        TransferButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TransferButtonActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Amount to Tranfser");
 
@@ -212,7 +217,7 @@ public class TransferFundsPanel extends javax.swing.JPanel {
                 .addComponent(BankNamePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LogoutButtton, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 108, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
@@ -335,7 +340,7 @@ public class TransferFundsPanel extends javax.swing.JPanel {
             return;  
         }
         
-        GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount((String)BankAccountsList1.getSelectedItem());
+        GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount((String)BankAccountsList2.getSelectedItem());
         
         if(amount > GUI.currentBankAccount.getBalance())
         {
@@ -422,6 +427,10 @@ public class TransferFundsPanel extends javax.swing.JPanel {
     private void BankAccountsList2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BankAccountsList2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BankAccountsList2ActionPerformed
+
+    private void TransferButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TransferButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TransferButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
