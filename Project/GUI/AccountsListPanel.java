@@ -13,6 +13,7 @@ package GUI;
  * MESSAGE TELLING US WHICH PANEL IT IS SUPPOSED TO BE.
  * **************************************************************************
  */
+import Backend.TableWrapper;
 import javax.swing.*;
 import java.awt.*;
 
@@ -48,8 +49,7 @@ public class AccountsListPanel extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
@@ -70,19 +70,15 @@ public class AccountsListPanel extends javax.swing.JPanel
         jLabel5.setText("Bank 42");
 
         Settings.setText("Settings");
-        Settings.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        Settings.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 SettingsMouseClicked(evt);
             }
         });
 
         Logout.setText("Logout");
-        Logout.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        Logout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LogoutMouseClicked(evt);
             }
         });
@@ -96,44 +92,39 @@ public class AccountsListPanel extends javax.swing.JPanel
         AccountsTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
         GoToAcc.setText("Go to Account");
-        GoToAcc.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        GoToAcc.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 GoToAccMouseClicked(evt);
             }
         });
-        GoToAcc.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        GoToAcc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GoToAccActionPerformed(evt);
             }
         });
 
         TransferFundsButton.setText("Transfer Funds");
-        TransferFundsButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        TransferFundsButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 TransferFundsButtonMouseClicked(evt);
             }
         });
 
         DeleteAccountButton.setText("Delete Highlighted Account");
-        DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 DeleteAccountButtonMouseClicked(evt);
+            }
+        });
+        DeleteAccountButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteAccountButtonActionPerformed(evt);
             }
         });
 
         CreateBAButton.setText("Create New Bank Account");
-        CreateBAButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        CreateBAButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CreateBAButtonActionPerformed(evt);
             }
         });
@@ -250,6 +241,20 @@ public class AccountsListPanel extends javax.swing.JPanel
         int row = AccountsTable.getSelectedRow();
         String bankacc = (String) AccountsTable.getValueAt(row, 0);
         GUI.currentUserAccount.deleteBankAccount(bankacc);
+        //TransferFundsPanel.updatecomboboxes();
+        
+        /*TableWrapper wrapper = new TableWrapper(GUI.currentUserAccount);
+        int total_accounts = wrapper.getTotalAccounts();
+        String[] accountlist = new String[total_accounts];
+        
+        for(int i=0; i < total_accounts; i++)
+        {
+            accountlist[i]=wrapper.getAccountName(i);
+        }
+        
+        DefaultComboBoxModel model = new DefaultComboBoxModel(accountlist);
+        //TransferFundsPanel.BankAccountsList0.setModel(model);*/
+        
         JOptionPane.showMessageDialog(null, "Bank Account " + bankacc
                 + "has been Deleted");
         AccountsTable.setModel(new TableModel(GUI.currentUserAccount));
@@ -260,6 +265,10 @@ public class AccountsListPanel extends javax.swing.JPanel
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
         layout.show(MainPanel, "CreateBA");
     }//GEN-LAST:event_CreateBAButtonActionPerformed
+
+    private void DeleteAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteAccountButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DeleteAccountButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

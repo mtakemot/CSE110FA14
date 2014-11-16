@@ -28,8 +28,21 @@ public class TransferFundsPanel extends javax.swing.JPanel {
         {
             accountlist[i]=wrapper.getAccountName(i);
         }
+        
+        //DefaultComboBoxModel model = new DefaultComboBoxModel(accountlist);
+        //BankAccountsList0.setModel(model);
+        
         initComponents();
     }
+    
+    /*public void updatecomboboxes()
+    { 
+        TableWrapper wrapper = new TableWrapper(GUI.currentUserAccount);
+        int total_accounts = wrapper.getTotalAccounts();
+        String[] accountlist = new String[total_accounts];
+        DefaultComboBoxModel model = new DefaultComboBoxModel(accountlist);
+        //BankAccountsList0.setModel(model);
+    }*/
     
     /**
      * Creates new form TransferFundsPanel
@@ -60,12 +73,12 @@ public class TransferFundsPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        BankAccountsList0 = new javax.swing.JComboBox();
         EmailEntryField = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         AmountField = new javax.swing.JTextField();
         BankAccountsList1 = new javax.swing.JComboBox();
         TransferButton1 = new javax.swing.JButton();
+        BankAccountsList2 = new javax.swing.JComboBox();
 
         BankNamePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -134,18 +147,6 @@ public class TransferFundsPanel extends javax.swing.JPanel {
 
         jLabel4.setText("Or Transfer To Another User");
 
-        BankAccountsList0.setModel(new javax.swing.DefaultComboBoxModel(accountlist));
-        BankAccountsList0.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                BankAccountsList0FocusGained(evt);
-            }
-        });
-        BankAccountsList0.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BankAccountsList0ActionPerformed(evt);
-            }
-        });
-
         EmailEntryField.setText("Email Address");
         EmailEntryField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -186,6 +187,13 @@ public class TransferFundsPanel extends javax.swing.JPanel {
             }
         });
 
+        BankAccountsList2.setModel(new javax.swing.DefaultComboBoxModel(accountlist));
+        BankAccountsList2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BankAccountsList2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -210,32 +218,28 @@ public class TransferFundsPanel extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(182, 182, 182)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel3)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addComponent(jLabel2)
+                                    .addGap(37, 37, 37)))
+                            .addComponent(jLabel4)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
-                                .addComponent(jLabel5))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel3)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                            .addComponent(jLabel2)
-                                            .addGap(37, 37, 37)))
-                                    .addComponent(jLabel4))
-                                .addGap(34, 34, 34)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(AmountField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(EmailEntryField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(TransferButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(BankAccountsList0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(285, 285, 285))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(BankAccountsList1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(88, 88, 88)
-                                            .addComponent(TransferButton, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                                .addComponent(jLabel5)))
+                        .addGap(34, 34, 34)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(BankAccountsList2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(AmountField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(EmailEntryField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(TransferButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(BankAccountsList1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(88, 88, 88)
+                                    .addComponent(TransferButton, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -257,9 +261,9 @@ public class TransferFundsPanel extends javax.swing.JPanel {
                     .addComponent(BAAmountLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BankAccountsList0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                    .addComponent(jLabel5)
+                    .addComponent(BankAccountsList2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
                     .addComponent(AmountField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -268,7 +272,7 @@ public class TransferFundsPanel extends javax.swing.JPanel {
                     .addComponent(jLabel3)
                     .addComponent(TransferButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BankAccountsList1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
+                .addGap(86, 86, 86)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(EmailEntryField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -331,7 +335,7 @@ public class TransferFundsPanel extends javax.swing.JPanel {
             return;  
         }
         
-        GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount((String)BankAccountsList0.getSelectedItem());
+        GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount((String)BankAccountsList1.getSelectedItem());
         
         if(amount > GUI.currentBankAccount.getBalance())
         {
@@ -343,7 +347,7 @@ public class TransferFundsPanel extends javax.swing.JPanel {
         else
         {    
             GUI.currentBankAccount.subFromBalance(amount);
-            GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount((String)BankAccountsList1.getSelectedItem());
+            GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount((String)BankAccountsList2.getSelectedItem());
             GUI.currentBankAccount.addToBalance(amount);
             JOptionPane.showMessageDialog(null, "Funds Transfered Successfully!");
             //GUI.MasterTable.findUserAccount();
@@ -354,10 +358,6 @@ public class TransferFundsPanel extends javax.swing.JPanel {
     private void EmailEntryFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_EmailEntryFieldFocusGained
         EmailEntryField.setText("");
     }//GEN-LAST:event_EmailEntryFieldFocusGained
-
-    private void BankAccountsList0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BankAccountsList0ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BankAccountsList0ActionPerformed
 
     private void EmailEntryFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailEntryFieldActionPerformed
         // TODO add your handling code here:
@@ -390,7 +390,7 @@ public class TransferFundsPanel extends javax.swing.JPanel {
             return;  
         }
         
-        GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount((String)BankAccountsList0.getSelectedItem());
+        GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount((String)BankAccountsList2.getSelectedItem());
         
         if(amount > GUI.currentBankAccount.getBalance())
         {
@@ -419,16 +419,9 @@ public class TransferFundsPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_TransferButton1MouseClicked
 
-    private void BankAccountsList0FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_BankAccountsList0FocusGained
-        /*TableWrapper mywrapper = new TableWrapper(GUI.currentUserAccount);
-        total_accounts = mywrapper.getTotalAccounts();
-        accountlist = new String[total_accounts];
-        for(int i=0; i < total_accounts; i++)
-        {
-            accountlist[i]=mywrapper.getAccountName(i);
-        }
-        initComponents();*/
-    }//GEN-LAST:event_BankAccountsList0FocusGained
+    private void BankAccountsList2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BankAccountsList2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BankAccountsList2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -437,8 +430,8 @@ public class TransferFundsPanel extends javax.swing.JPanel {
     private javax.swing.JLabel BATypeLabel;
     private javax.swing.JLabel BAUserNameLabel;
     private javax.swing.JButton BackButton;
-    private javax.swing.JComboBox BankAccountsList0;
     private javax.swing.JComboBox BankAccountsList1;
+    private javax.swing.JComboBox BankAccountsList2;
     private javax.swing.JPanel BankNamePanel;
     private javax.swing.JTextField EmailEntryField;
     private javax.swing.JButton ExitButton;

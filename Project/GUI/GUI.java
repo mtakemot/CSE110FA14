@@ -169,6 +169,7 @@ public class GUI extends javax.swing.JFrame
                 currentBankAccount = currentUserAccount.insertBankAccount(20, "acc1", "Checking");
                 currentBankAccount = currentUserAccount.insertBankAccount(25, "acc3456", "Savings");
                 currentBankAccount = currentUserAccount.insertBankAccount(30, "acc2", "Checking");
+                currentBankAccount = currentUserAccount.insertBankAccount(30, "0acc0", "Checking");
                 
                 currentUserAccount = MasterTable.insertUserAccount("testaccount2");
                 currentUserAccount.setFirstName("first2");
@@ -179,8 +180,10 @@ public class GUI extends javax.swing.JFrame
                 currentUserAccount.setPhone("1234567890");
                 currentBankAccount = currentUserAccount.insertBankAccount(50, "2acc1", "Checking");
                 currentBankAccount = currentUserAccount.insertBankAccount(35, "2acc3456", "Savings");
-                currentBankAccount = currentUserAccount.insertBankAccount(30, "2acc2", "Checking");               
+                currentBankAccount = currentUserAccount.insertBankAccount(30, "acc2", "Checking");               
+                currentBankAccount = currentUserAccount.insertBankAccount(30, "0acc0", "Checking");               
 
+                
                 // This grabs the MainPanel and stores it in a variable so that
                 // we have easy access to it
                 JPanel cardHolder = mainGUI.getMainPanel();
@@ -200,6 +203,8 @@ public class GUI extends javax.swing.JFrame
                 DeleteAccountPanel Delete = new DeleteAccountPanel(cardHolder);
                 TellerMainMenu TellerMainMenu = new TellerMainMenu(cardHolder);
                 CreateBankAccount createBA = new CreateBankAccount(cardHolder);
+                TellerAccountPage TellerAP = new TellerAccountPage(cardHolder);
+                
                 // This addes the LoginPanel and AccountsListPanel that we just
                 // created to the MainPanel. It also assigns a name to each of
                 // the panels so that we can reference them easily when we want 
@@ -220,6 +225,8 @@ public class GUI extends javax.swing.JFrame
                 cardHolder.add(Delete, "Delete");
                 cardHolder.add(TellerMainMenu,"TellerMainMenu");
                 cardHolder.add(createBA, "CreateBA");
+                cardHolder.add(TellerAP, "TellerAP");
+                
                 // These two lines show the MainPanel. Without these 2 lines 
                 // the GUI would not show up at all. Just leave them alone.
                 mainGUI.pack();
