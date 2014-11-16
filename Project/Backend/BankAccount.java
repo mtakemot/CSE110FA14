@@ -13,17 +13,17 @@ import java.io.Serializable;
  * different types of BankAccounts that the user can create. It contains basic
  * information about the bank account. It also contains a next field which will
  * hold the next BankAccount owned by the user.
- ***************************************************************************
+ * **************************************************************************
  */
 public class BankAccount implements Serializable
 {
 
     // making changes
-
     protected double balance;
     protected String accountName;
     protected BankAccount next;
     protected String accountType;
+    private int accountPosition;
 
     /**
      * This function will add to the account balance
@@ -102,6 +102,16 @@ public class BankAccount implements Serializable
     public String getAccountType()
     {
         return accountType;
+    }
+
+    public int getAccountPosition()
+    {
+        return accountPosition;
+    }
+
+    public void setAccountPosition(int accountPosition)
+    {
+        this.accountPosition = accountPosition;
     }
 
 }

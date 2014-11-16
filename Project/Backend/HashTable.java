@@ -31,7 +31,7 @@ public class HashTable implements Serializable
         for (int zod = 0; zod < SIZE; zod++)
         {
             Table[zod] = null;
-        }        
+        }
     }
 
     /**
@@ -44,6 +44,11 @@ public class HashTable implements Serializable
      */
     public UserAccount insertUserAccount(String userName)
     {
+        /* DEBUG uncomment to see if admin account added to every DB
+         if(userName == "admin"){
+         System.err.println("Can't create admin account");
+         return null;
+         }*/
         int index = hashCode(userName) % SIZE;
         // The bucket at index is not currently occupied, so we insert at
         // Table[index]
@@ -51,6 +56,8 @@ public class HashTable implements Serializable
         {
             Table[index] = new UserAccount(userName);
             Table[index].setLocation(index);
+            Table[index].insertBankAccount(0, "Checking1", "Checking");
+            Table[index].insertBankAccount(0, "Savings1", "Savings");
             this.occ++;
             return Table[index];
         }
@@ -76,11 +83,12 @@ public class HashTable implements Serializable
             {
                 current.setNext(new UserAccount(userName));
                 current.getNext().setLocation(index);
+                current.getNext().insertBankAccount(0, "Checking1", "Checking");
+                current.getNext().insertBankAccount(0, "Savings1", "Savings");
                 this.occ++;
                 return current.getNext();
             }
         }
-
     }
 
     // When a user attempts to log in, this function will be called to see
@@ -121,34 +129,40 @@ public class HashTable implements Serializable
 
     public UserAccount findUserAccountEmail(String email)
     {
-        int isequal;
-        for(int i =0;i<SIZE;i++)
+        int isEqual;
+        for (int i = 0; i < SIZE; i++)
         {
-            if(Table[i]!=null) {
+            if (Table[i] != null)
+            {
                 UserAccount current = Table[i];
                 String currentEmail = current.getEmail();
-                if(currentEmail!=null) {
-                    isequal = currentEmail.compareTo(email);
-                    if(isequal==0) {
+                if (currentEmail != null)
+                {
+                    isEqual = currentEmail.compareTo(email);
+                    if (isEqual == 0)
+                    {
                         return current;
                     }
                 }
-                while(current.getNext()!=null){
+                while (current.getNext() != null)
+                {
                     current = current.getNext();
                     currentEmail = current.getEmail();
-                    if(currentEmail!=null) {
-                        isequal = currentEmail.compareTo(email);
-                        if(isequal==0) {
+                    if (currentEmail != null)
+                    {
+                        isEqual = currentEmail.compareTo(email);
+                        if (isEqual == 0)
+                        {
                             return current;
                         }
                     }
                 }
             }
-                
+
         }
         return null;
     }
-    
+
     /**
      * This function will delete a UserAccount from the HashTable
      *
@@ -271,5 +285,28 @@ public class HashTable implements Serializable
         }
         return false;
 
+    }
+
+    public void adminPrintUser()
+    {
+
+        if (Table != null)
+        {
+            System.out.println("User List");
+            System.out.println("Begin:");
+            System.out.println("======================");
+            for (int i = 0; i < SIZE; i++)
+            {
+
+                if (Table[i] != null && !Table[i].getAdmin())
+                {
+                    System.out.println(i + ". " + Table[i].getUserName());
+                    System.out.println("======================");
+                }
+
+            }
+            System.out.println("END");
+
+        }
     }
 }
