@@ -190,7 +190,7 @@ public class UserAccount implements Serializable
      * @param num the position of the BankAccount we are looking for
      * @return the BankAccount if it is found. null otherwise
      */
-    public BankAccount findNumberBankAccount(int num)
+    public BankAccount findBankAccountNumber(int num)
     {
         if (this.BankAccHead == null) // The user does not have any BankAccounts
         {
@@ -229,21 +229,37 @@ public class UserAccount implements Serializable
             }
             if (current.getAccountName().equals(name)) // The UserAccount was found
             {
+                numOfBankAccounts--;
                 // The UserAccount is not the head of the linked list
                 if (prev != null)
                 {
                     prev.setNext(current.getNext());
+                    setBankAccountNumbers(current.getNext());
                     current = null;
                 }
                 else // Remove the head of the linked list inside of the bucket
-                    BankAccHead = current.getNext();
-
-                numOfBankAccounts--;
+                {
+                    BankAccHead = BankAccHead.getNext();
+                    setBankAccountNumbers(current.getNext());
+                    current = null;
+                }
                 return true;
             }
         }
         // The bucket at index was empty so the UserAccount was not found
         return false;
+    }
+    
+    public void setBankAccountNumbers(BankAccount current)
+    {
+        if (current != null) // The user does not have any BankAccounts
+        {
+            for (int zod = ((current.getAccountPosition()) - 1); zod < (numOfBankAccounts); zod++)
+            {
+                current.setAccountPosition(zod);
+                current = current.getNext();
+            }
+        }
     }
 
     /**

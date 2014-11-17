@@ -193,7 +193,14 @@ public class GUI extends javax.swing.JFrame
                 currentBankAccount = currentUserAccount.insertBankAccount(50, "2acc1", "Checking");
                 currentBankAccount = currentUserAccount.insertBankAccount(35, "2acc3456", "Savings");
                 currentBankAccount = currentUserAccount.insertBankAccount(30, "acc2", "Checking");               
-                currentBankAccount = currentUserAccount.insertBankAccount(30, "0acc0", "Checking");               
+                currentBankAccount = currentUserAccount.insertBankAccount(30, "0acc0", "Checking");
+                
+                //test
+                for (int i = 0; i < 10000; i++)
+                {
+                    currentUserAccount.insertBankAccount(i, ("acc" + i), "Checking");
+                }
+                    
 
                 
                 // This grabs the MainPanel and stores it in a variable so that

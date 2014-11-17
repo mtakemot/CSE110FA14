@@ -191,7 +191,11 @@ public class HashTable implements Serializable
             {
                 // The UserAccount is not the head of the linked list
                 if (prev != null)
+                {
                     prev.setNext(current.getNext());
+                    current.setNext(null);
+                    current = null;
+                }
                 else // Remove the head of the linked list inside of the bucket
                     Table[index] = current.getNext();
                 occ--;
@@ -301,13 +305,13 @@ public class HashTable implements Serializable
             {
                 if (Table[i] != null && !Table[i].getAdmin())
                 {
-                    System.out.println((i+count) + ". " + Table[i].getUserName());
+                    System.out.println((i + count) + ". " + Table[i].getUserName());
                     if (Table[i].getNext() != null)
                     {
                         UserAccount currUserAccount = Table[i].getNext();
                         while (currUserAccount != null)
                         {
-                            System.out.println((i+count) + ". " + currUserAccount.getUserName());
+                            System.out.println((i + count) + ". " + currUserAccount.getUserName());
                             currUserAccount = currUserAccount.getNext();
                             count++;
                         }

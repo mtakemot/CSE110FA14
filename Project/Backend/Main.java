@@ -259,7 +259,7 @@ public class Main
                                     System.out.println("Please enter a number between 1 and " + totalAccs);
                                     debit = debitAcc.nextLine();
                                 }
-                                BankAccount debitting = currUser.findNumberBankAccount(Integer.parseInt(debit));
+                                BankAccount debitting = currUser.findBankAccountNumber(Integer.parseInt(debit));
                                 /*while (debitting == null || debitting.getBalance() <= 0)
                                  {
                                  System.out.println("Please reenter a valid account with"
@@ -279,7 +279,7 @@ public class Main
                                     System.out.println("Please enter a number between 1 and " + totalAccs);
                                     credit = creditAcc.nextLine();
                                 }
-                                BankAccount crediting = currUser.findNumberBankAccount(Integer.parseInt(credit));
+                                BankAccount crediting = currUser.findBankAccountNumber(Integer.parseInt(credit));
                                 /*while (crediting == null)
                                  {
                                  System.out.println("Please reenter a valid account with");
@@ -303,9 +303,9 @@ public class Main
 
                                 if (debitting.subFromBalance(transfer))
                                 {
-                                    System.out.println("Account: " + currUser.findNumberBankAccount(Integer.parseInt(debit)).getAccountName() + " now has a balance of: "
+                                    System.out.println("Account: " + currUser.findBankAccountNumber(Integer.parseInt(debit)).getAccountName() + " now has a balance of: "
                                             + debitting.getBalance());
-                                    System.out.println("Account: " + currUser.findNumberBankAccount(Integer.parseInt(credit)).getAccountName() + " now has a balance of: "
+                                    System.out.println("Account: " + currUser.findBankAccountNumber(Integer.parseInt(credit)).getAccountName() + " now has a balance of: "
                                             + crediting.addToBalance(transfer));
                                 }
                                 else
