@@ -13,44 +13,48 @@ import Backend.*;
  *
  * @author Zack
  */
-public class TransferFundsPanel extends javax.swing.JPanel {
-    
+public class TransferFundsPanel extends javax.swing.JPanel
+{
+
     private JPanel MainPanel;
-    TableWrapper wrapper = new TableWrapper(GUI.currentUserAccount);
-    int total_accounts = wrapper.getTotalAccounts();
-    String[] accountlist = new String[total_accounts];
-    
-    public TransferFundsPanel(JPanel MainPanel)
+    private GUI mainGUI;
+    private TableWrapper wrapper;
+    private int total_accounts;
+    private String[] accountlist;
+
+    public TransferFundsPanel(JPanel MainPanel, GUI mainGUI)
     {
         this.MainPanel = MainPanel;
-        
-        for(int i=0; i < total_accounts; i++)
+        this.mainGUI = mainGUI;
+        wrapper = new TableWrapper(GUI.currentUserAccount);
+        total_accounts = wrapper.getTotalAccounts();
+        accountlist = new String[total_accounts];
+        for (int i = 0; i < total_accounts; i++)
         {
-            accountlist[i]=wrapper.getAccountName(i);
+            accountlist[i] = wrapper.getAccountName(i);
         }
-        
+
         //DefaultComboBoxModel model = new DefaultComboBoxModel(accountlist);
         //BankAccountsList0.setModel(model);
-        
         initComponents();
     }
-    
+
     /*public void updatecomboboxes()
-    { 
-        TableWrapper wrapper = new TableWrapper(GUI.currentUserAccount);
-        int total_accounts = wrapper.getTotalAccounts();
-        String[] accountlist = new String[total_accounts];
-        DefaultComboBoxModel model = new DefaultComboBoxModel(accountlist);
-        //BankAccountsList0.setModel(model);
-    }*/
-    
+     { 
+     TableWrapper wrapper = new TableWrapper(GUI.currentUserAccount);
+     int total_accounts = wrapper.getTotalAccounts();
+     String[] accountlist = new String[total_accounts];
+     DefaultComboBoxModel model = new DefaultComboBoxModel(accountlist);
+     //BankAccountsList0.setModel(model);
+     }*/
     /**
      * Creates new form TransferFundsPanel
      */
-    public TransferFundsPanel() {
+    public TransferFundsPanel()
+    {
         initComponents();
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -78,7 +82,7 @@ public class TransferFundsPanel extends javax.swing.JPanel {
         AmountField = new javax.swing.JTextField();
         BankAccountsList1 = new javax.swing.JComboBox();
         TransferButton1 = new javax.swing.JButton();
-        BankAccountsList2 = new javax.swing.JComboBox();
+        BankAccountsList0 = new javax.swing.JComboBox();
 
         BankNamePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -187,10 +191,10 @@ public class TransferFundsPanel extends javax.swing.JPanel {
             }
         });
 
-        BankAccountsList2.setModel(new javax.swing.DefaultComboBoxModel(accountlist));
-        BankAccountsList2.addActionListener(new java.awt.event.ActionListener() {
+        BankAccountsList0.setModel(new javax.swing.DefaultComboBoxModel(accountlist));
+        BankAccountsList0.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BankAccountsList2ActionPerformed(evt);
+                BankAccountsList0ActionPerformed(evt);
             }
         });
 
@@ -229,7 +233,7 @@ public class TransferFundsPanel extends javax.swing.JPanel {
                                 .addComponent(jLabel5)))
                         .addGap(34, 34, 34)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(BankAccountsList2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BankAccountsList0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(AmountField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(layout.createSequentialGroup()
@@ -262,7 +266,7 @@ public class TransferFundsPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(BankAccountsList2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BankAccountsList0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
@@ -308,46 +312,66 @@ public class TransferFundsPanel extends javax.swing.JPanel {
         layout.show(MainPanel, "AccList");
     }//GEN-LAST:event_BackButtonMouseClicked
 
-    public static boolean isParsable(String input){
-    boolean parsable = true;
-    try{
-        Integer.parseInt(input);
-    }catch(NumberFormatException e){
-        parsable = false;
+    public void update()
+    {
+        wrapper = new TableWrapper(GUI.currentUserAccount);
+        total_accounts = wrapper.getTotalAccounts();
+        accountlist = new String[total_accounts];
+        for (int i = 0; i < total_accounts; i++)
+        {
+            accountlist[i] = wrapper.getAccountName(i);
+        }
+        DefaultComboBoxModel model = new DefaultComboBoxModel(accountlist);
+        this.BankAccountsList1.setModel(model);
+        this.BankAccountsList0.setModel(model);
     }
-    return parsable;
+
+    public static boolean isParsable(String input)
+    {
+        boolean parsable = true;
+        try
+        {
+            Integer.parseInt(input);
+        } catch (NumberFormatException e)
+        {
+            parsable = false;
+        }
+        return parsable;
     }
-    
+
     private void TransferButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TransferButtonMouseClicked
         double amount;
-        
-        if(isParsable(AmountField.getText())) {
+
+        if (isParsable(AmountField.getText()))
+        {
             amount = Integer.parseInt(AmountField.getText());
         }
-        
-        else {
-            JOptionPane.showMessageDialog(null,"Please Enter A Valid Amount To Transfer");
+
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Please Enter A Valid Amount To Transfer");
             return;
         }
-        
-        if(amount <= 0){
-            JOptionPane.showMessageDialog(null,"Please Enter A Valid Amount To Transfer");
-            return;  
+
+        if (amount <= 0)
+        {
+            JOptionPane.showMessageDialog(null, "Please Enter A Valid Amount To Transfer");
+            return;
         }
-        
-        GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount((String)BankAccountsList1.getSelectedItem());
-        
-        if(amount > GUI.currentBankAccount.getBalance())
+
+        GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount((String) BankAccountsList0.getSelectedItem());
+
+        if (amount > GUI.currentBankAccount.getBalance())
         {
             AmountField.setText("");
             JOptionPane.showMessageDialog(null, "Insufficient Funds"
-                    + "\nYou have " + GUI.currentBankAccount.getBalance()+ "$ available"
+                    + "\nYou have " + GUI.currentBankAccount.getBalance() + "$ available"
                     + " in selected Bank Account");
-        }            
+        }
         else
-        {    
+        {
             GUI.currentBankAccount.subFromBalance(amount);
-            GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount((String)BankAccountsList2.getSelectedItem());
+            GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount((String) BankAccountsList1.getSelectedItem());
             GUI.currentBankAccount.addToBalance(amount);
             JOptionPane.showMessageDialog(null, "Funds Transfered Successfully!");
             //GUI.MasterTable.findUserAccount();
@@ -377,35 +401,38 @@ public class TransferFundsPanel extends javax.swing.JPanel {
 
     private void TransferButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TransferButton1MouseClicked
         double amount;
-        if(isParsable(AmountField.getText())) {
+        if (isParsable(AmountField.getText()))
+        {
             amount = Integer.parseInt(AmountField.getText());
         }
-        else {
-            JOptionPane.showMessageDialog(null,"Please Enter A Valid Amount To Transfer");
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Please Enter A Valid Amount To Transfer");
             return;
         }
-        
-        if(amount <= 0){
-            JOptionPane.showMessageDialog(null,"Please Enter A Valid Amount To Transfer");
-            return;  
+
+        if (amount <= 0)
+        {
+            JOptionPane.showMessageDialog(null, "Please Enter A Valid Amount To Transfer");
+            return;
         }
-        
-        GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount((String)BankAccountsList2.getSelectedItem());
-        
-        if(amount > GUI.currentBankAccount.getBalance())
+
+        GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount((String) BankAccountsList0.getSelectedItem());
+
+        if (amount > GUI.currentBankAccount.getBalance())
         {
             AmountField.setText("");
             JOptionPane.showMessageDialog(null, "Insufficient Funds"
-                    + "\nYou have " + GUI.currentBankAccount.getBalance()+ "$ available"
+                    + "\nYou have " + GUI.currentBankAccount.getBalance() + "$ available"
                     + " in selected Bank Account");
             return;
         }
-        
+
         String email = EmailEntryField.getText();
         UserAccount founduser = GUI.MasterTable.findUserAccountEmail(email);
-            
-        if(founduser!=null)
-        {    
+
+        if (founduser != null)
+        {
             GUI.currentBankAccount.subFromBalance(amount);
             GUI.currentBankAccount = founduser.getBankAccHead();
             GUI.currentBankAccount.addToBalance(amount);
@@ -419,9 +446,9 @@ public class TransferFundsPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_TransferButton1MouseClicked
 
-    private void BankAccountsList2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BankAccountsList2ActionPerformed
+    private void BankAccountsList0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BankAccountsList0ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BankAccountsList2ActionPerformed
+    }//GEN-LAST:event_BankAccountsList0ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -430,8 +457,8 @@ public class TransferFundsPanel extends javax.swing.JPanel {
     private javax.swing.JLabel BATypeLabel;
     private javax.swing.JLabel BAUserNameLabel;
     private javax.swing.JButton BackButton;
+    private javax.swing.JComboBox BankAccountsList0;
     private javax.swing.JComboBox BankAccountsList1;
-    private javax.swing.JComboBox BankAccountsList2;
     private javax.swing.JPanel BankNamePanel;
     private javax.swing.JTextField EmailEntryField;
     private javax.swing.JButton ExitButton;
