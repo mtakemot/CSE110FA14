@@ -202,7 +202,7 @@ public class AccountsListPanel extends javax.swing.JPanel
             String bankacc = (String) AccountsTable.getValueAt(row, 0);
             GUI.currentUserAccount.deleteBankAccount(bankacc);
             JOptionPane.showMessageDialog(null, "Bank Account " + bankacc
-                    + "has been Deleted");
+                    + " has been Deleted");
             AccountsTable.setModel(new TableModel(GUI.currentUserAccount));          
         }
     }//GEN-LAST:event_DeleteAccountButtonMouseClicked

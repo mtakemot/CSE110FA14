@@ -6,7 +6,7 @@
 package GUI;
 
 import java.awt.*;
-import javax.swing.JPanel;
+import javax.swing.*;
 
 /**
  *
@@ -33,6 +33,33 @@ public class DeleteAccountPanel extends javax.swing.JPanel
         initComponents();
     }
 
+    private void DeleteAcc()
+    {
+        if (!(AccNameField.getText().equals(GUI.currentUserAccount.getUserName())))
+        {
+            JOptionPane.showMessageDialog(null, "Incorrect User Account name!", "Error!",
+                    JOptionPane.INFORMATION_MESSAGE);
+        }
+        else
+        {
+            char[] passwordArray = jPasswordField.getPassword();
+            String password = new String(passwordArray);
+            if (!(GUI.currentUserAccount.validatePassword(password)))
+            {
+                JOptionPane.showMessageDialog(null, "Incorrect Password!", "Error!",
+                        JOptionPane.INFORMATION_MESSAGE);
+            }
+            else
+            {
+                boolean deleted = GUI.MasterTable.deleteUserAccount(GUI.currentUserAccount.getUserName());
+                GUI.currentBankAccount = null;
+                GUI.currentUserAccount = null;
+                CardLayout layout = (CardLayout) (MainPanel.getLayout());
+                layout.show(MainPanel, "Login");
+            }
+        }
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -40,7 +67,8 @@ public class DeleteAccountPanel extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         BankNamePanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -50,11 +78,11 @@ public class DeleteAccountPanel extends javax.swing.JPanel
         BATypeLabel = new javax.swing.JLabel();
         BAAmountLabel = new javax.swing.JLabel();
         usernameLabel = new javax.swing.JLabel();
-        AmountNameField = new javax.swing.JTextField();
-        PasswordField = new javax.swing.JTextField();
+        AccNameField = new javax.swing.JTextField();
         ExitButton = new javax.swing.JButton();
         BackButton = new javax.swing.JButton();
         DeleteButton = new javax.swing.JButton();
+        jPasswordField = new javax.swing.JPasswordField();
 
         BankNamePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -77,8 +105,10 @@ public class DeleteAccountPanel extends javax.swing.JPanel
         );
 
         SettingsButton.setText("Settings");
-        SettingsButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        SettingsButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 SettingsButtonMouseClicked(evt);
             }
         });
@@ -86,8 +116,10 @@ public class DeleteAccountPanel extends javax.swing.JPanel
         BAUserNameLabel.setText(GUI.currentBankAccount.getAccountName());
 
         LogoutButtton.setText("Logout");
-        LogoutButtton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        LogoutButtton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 LogoutButttonMouseClicked(evt);
             }
         });
@@ -99,38 +131,55 @@ public class DeleteAccountPanel extends javax.swing.JPanel
         usernameLabel.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         usernameLabel.setText("Are you sture you want to delete your account?");
 
-        AmountNameField.setText("Account Name");
-        AmountNameField.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                AmountNameFieldMouseClicked(evt);
+        AccNameField.setText("Account Name");
+        AccNameField.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
+                AccNameFieldFocusGained(evt);
             }
         });
 
-        PasswordField.setText("Password");
-
         ExitButton.setText("Exit");
-        ExitButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        ExitButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 ExitButtonMouseClicked(evt);
             }
         });
 
         BackButton.setText("Back");
-        BackButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        BackButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 BackButtonMouseClicked(evt);
             }
         });
 
         DeleteButton.setText("Delete");
-        DeleteButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                DeleteButtonMouseClicked(evt);
+        DeleteButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                DeleteButtonActionPerformed(evt);
             }
         });
-        DeleteButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DeleteButtonActionPerformed(evt);
+
+        jPasswordField.setText("password");
+        jPasswordField.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
+                jPasswordFieldFocusGained(evt);
+            }
+        });
+        jPasswordField.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
+                jPasswordFieldKeyPressed(evt);
             }
         });
 
@@ -152,9 +201,9 @@ public class DeleteAccountPanel extends javax.swing.JPanel
                         .addComponent(usernameLabel)
                         .addGap(101, 101, 101))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(AmountNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(PasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jPasswordField)
+                            .addComponent(AccNameField, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE))
                         .addGap(167, 167, 167))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(16, 16, 16)
@@ -188,11 +237,11 @@ public class DeleteAccountPanel extends javax.swing.JPanel
                     .addComponent(BAAmountLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(62, 62, 62)
                 .addComponent(usernameLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                .addComponent(AmountNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
-                .addComponent(PasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
+                .addGap(48, 48, 48)
+                .addComponent(AccNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -213,41 +262,41 @@ public class DeleteAccountPanel extends javax.swing.JPanel
         layout.show(MainPanel, "Login");
     }//GEN-LAST:event_LogoutButttonMouseClicked
 
-    private void AmountNameFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AmountNameFieldMouseClicked
-        AmountNameField.setText("");
-    }//GEN-LAST:event_AmountNameFieldMouseClicked
-
     private void ExitButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitButtonMouseClicked
         System.exit(0);
     }//GEN-LAST:event_ExitButtonMouseClicked
 
     private void BackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButtonMouseClicked
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
-        layout.show(MainPanel, "MainMenu");
+        layout.show(MainPanel, "Settings");
     }//GEN-LAST:event_BackButtonMouseClicked
 
-    private void DeleteButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteButtonMouseClicked
-        double amount = Integer.parseInt(AmountNameField.getText());//wtf? username to double?
-        if(amount > GUI.currentBankAccount.getBalance())
-        {
-            AmountNameField.setText("");
-            // Error box/message
-        }
-        else
-        {
-            GUI.currentBankAccount.subFromBalance(amount);
-            // Give the user a message saying success
-            // test
-        }
-    }//GEN-LAST:event_DeleteButtonMouseClicked
-
     private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
-        // TODO add your handling code here:
+        DeleteAcc();
     }//GEN-LAST:event_DeleteButtonActionPerformed
+
+    private void AccNameFieldFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_AccNameFieldFocusGained
+    {//GEN-HEADEREND:event_AccNameFieldFocusGained
+        AccNameField.setText("");
+    }//GEN-LAST:event_AccNameFieldFocusGained
+
+    private void jPasswordFieldFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_jPasswordFieldFocusGained
+    {//GEN-HEADEREND:event_jPasswordFieldFocusGained
+        jPasswordField.setText("");
+    }//GEN-LAST:event_jPasswordFieldFocusGained
+
+    private void jPasswordFieldKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_jPasswordFieldKeyPressed
+    {//GEN-HEADEREND:event_jPasswordFieldKeyPressed
+        int key = evt.getKeyCode();
+        if (key == java.awt.event.KeyEvent.VK_ENTER)
+        {
+            DeleteAcc();
+        }
+    }//GEN-LAST:event_jPasswordFieldKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField AmountNameField;
+    private javax.swing.JTextField AccNameField;
     private javax.swing.JLabel BAAmountLabel;
     private javax.swing.JLabel BATypeLabel;
     private javax.swing.JLabel BAUserNameLabel;
@@ -256,9 +305,9 @@ public class DeleteAccountPanel extends javax.swing.JPanel
     private javax.swing.JButton DeleteButton;
     private javax.swing.JButton ExitButton;
     private javax.swing.JButton LogoutButtton;
-    private javax.swing.JTextField PasswordField;
     private javax.swing.JButton SettingsButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPasswordField jPasswordField;
     private javax.swing.JLabel usernameLabel;
     // End of variables declaration//GEN-END:variables
 }

@@ -32,9 +32,9 @@
                       <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="AmountNameField" min="-2" pref="423" max="-2" attributes="0"/>
-                          <Component id="PasswordField" min="-2" pref="424" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="jPasswordField" max="32767" attributes="0"/>
+                          <Component id="AccNameField" pref="423" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="167" max="-2" attributes="0"/>
                   </Group>
@@ -79,11 +79,11 @@
               </Group>
               <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
               <Component id="usernameLabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="48" max="32767" attributes="0"/>
-              <Component id="AmountNameField" min="-2" pref="66" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-              <Component id="PasswordField" min="-2" pref="66" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+              <Component id="AccNameField" min="-2" pref="66" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPasswordField" min="-2" pref="66" max="-2" attributes="0"/>
+              <EmptySpace pref="91" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="ExitButton" alignment="3" min="-2" pref="75" max="-2" attributes="0"/>
                   <Component id="BackButton" alignment="3" min="-2" pref="75" max="-2" attributes="0"/>
@@ -177,18 +177,13 @@
         <Property name="text" type="java.lang.String" value="Are you sture you want to delete your account?"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="AmountNameField">
+    <Component class="javax.swing.JTextField" name="AccNameField">
       <Properties>
         <Property name="text" type="java.lang.String" value="Account Name"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="AmountNameFieldMouseClicked"/>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="AccNameFieldFocusGained"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JTextField" name="PasswordField">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Password"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="ExitButton">
       <Properties>
@@ -211,8 +206,16 @@
         <Property name="text" type="java.lang.String" value="Delete"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="DeleteButtonMouseClicked"/>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DeleteButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JPasswordField" name="jPasswordField">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="password"/>
+      </Properties>
+      <Events>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jPasswordFieldFocusGained"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jPasswordFieldKeyPressed"/>
       </Events>
     </Component>
   </SubComponents>

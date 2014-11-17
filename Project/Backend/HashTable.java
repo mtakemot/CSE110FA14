@@ -173,7 +173,7 @@ public class HashTable implements Serializable
      */
     public boolean deleteUserAccount(String userName)
     {
-        int index = hashCode(userName);
+        int index = hashCode(userName) % SIZE;
         if (Table[index] != null)
         {
             // Keep track of the previous UserAccount in the list

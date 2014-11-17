@@ -1,18 +1,16 @@
 package GUI;
 
-/****************************************************************************
-
-                                                        Michio Takemoto
-                                                        CSE 110, Fall 2014
-                                          Last Updated: November 3, 2014
-
-                                Team 42
-
-File Name:      LoginPanel.java
-Description:    This class will define what our Login Page will look like and 
-                how it will behave.
- ****************************************************************************/
-
+/**
+ * **************************************************************************
+ *
+ * Michio Takemoto CSE 110, Fall 2014 Last Updated: November 3, 2014
+ *
+ * Team 42
+ *
+ * File Name: LoginPanel.java Description: This class will define what our Login
+ * Page will look like and how it will behave.
+ ***************************************************************************
+ */
 import Backend.UserAccount;
 import javax.swing.*;
 import java.awt.*;
@@ -27,17 +25,17 @@ public class LoginPanel extends javax.swing.JPanel
     private JPanel MainPanel;
     private GUI mainGUI;
     private static final String USERNAME_PATTERN = "^[a-z0-9_-]{1,15}$";
-    
+
     public LoginPanel()
     {
         initComponents();
     }
-    
+
     /* THIS CONSTRUCTOR IS EXTREMELY IMPORTANT. WRITE A CONSTRUCTOR LIKE THIS
-    FOR ALL OTHER PANELS
+     FOR ALL OTHER PANELS
     
-    This constructor takes in MainPanel from GUI.java which gives us access to
-    the main panel where all of our GUI elements will eventually be located. */
+     This constructor takes in MainPanel from GUI.java which gives us access to
+     the main panel where all of our GUI elements will eventually be located. */
     public LoginPanel(JPanel MainPanel, GUI mainGUI)
     {
         this.mainGUI = mainGUI;
@@ -164,29 +162,31 @@ public class LoginPanel extends javax.swing.JPanel
                 .addContainerGap(168, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-    
-    private void Login() {
+
+    private void Login()
+    {
         String username = UsernameField.getText();
         char[] passwordarray = jPasswordField.getPassword();
         String password = new String(passwordarray);
-            
-        if((username.equals("teller"))&&(password.equals("teller")))
+
+        if ((username.equals("teller")) && (password.equals("teller")))
         {
             CardLayout layout = (CardLayout) (MainPanel.getLayout());
-            layout.show(MainPanel,"TellerMainMenu");
+            layout.show(MainPanel, "TellerMainMenu");
             return;
         }
-            
+
         GUI.currentUserAccount = GUI.MasterTable.findUserAccount(UsernameField.getText());
-            
+
         if (GUI.currentUserAccount == null)
         {
             JOptionPane.showMessageDialog(null, "Account Not found!", "Error!",
-                                    JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.INFORMATION_MESSAGE);
         }
         else
         {
-            if(password.compareTo(GUI.currentUserAccount.getPassword()) == 0) {
+            if (password.compareTo(GUI.currentUserAccount.getPassword()) == 0)
+            {
                 mainGUI.getAccList().update();
                 // This line grabs the layout from MainPanel from the GUI class so that
                 // we can show a new panel on it
@@ -200,30 +200,31 @@ public class LoginPanel extends javax.swing.JPanel
                 // this name and adding that object to MainPanel has allowed us 
                 // to access and show that panel from outside of the class as long
                 //  as we pass in MainPanel
-                layout.show(MainPanel, "AccList");    
-                }
-            else  {
+                layout.show(MainPanel, "AccList");
+            }
+            else
+            {
                 JOptionPane.showMessageDialog(null, "Invalid Username Password Combination");
             }
             //move the following code in here, for demoing and when we're done testing.   
-            }
+        }
     }
-    
+
     // Creates an event for the LoginButton that will fire any time the button
     // is clicked. This is just an example to get you started.
     private void LoginButtonMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_LoginButtonMouseClicked
     {//GEN-HEADEREND:event_LoginButtonMouseClicked
         Login();
     }//GEN-LAST:event_LoginButtonMouseClicked
-        
+
     private void CreateAccButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CreateAccButtonMouseClicked
-        
+
         //retrieve MainPanel to transfer it's layout to CreateAccountPanel
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
-        
-         //send the layout of MainPanel to new display of JPanel "CreateAcc"
+
+        //send the layout of MainPanel to new display of JPanel "CreateAcc"
         layout.show(MainPanel, "CreateAcc");
-        
+
     }//GEN-LAST:event_CreateAccButtonMouseClicked
 
     private void UsernameFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_UsernameFieldFocusGained
@@ -233,17 +234,19 @@ public class LoginPanel extends javax.swing.JPanel
     private void UsernameFieldKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_UsernameFieldKeyPressed
     {//GEN-HEADEREND:event_UsernameFieldKeyPressed
         int key = evt.getKeyCode();
-           if (key == java.awt.event.KeyEvent.VK_ENTER) {
-              Login();
-              }
+        if (key == java.awt.event.KeyEvent.VK_ENTER)
+        {
+            Login();
+        }
     }//GEN-LAST:event_UsernameFieldKeyPressed
 
     private void jPasswordFieldKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_jPasswordFieldKeyPressed
     {//GEN-HEADEREND:event_jPasswordFieldKeyPressed
         int key = evt.getKeyCode();
-           if (key == java.awt.event.KeyEvent.VK_ENTER) {
-              Login();
-              }
+        if (key == java.awt.event.KeyEvent.VK_ENTER)
+        {
+            Login();
+        }
     }//GEN-LAST:event_jPasswordFieldKeyPressed
 
     private void jPasswordFieldFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_jPasswordFieldFocusGained
@@ -251,16 +254,17 @@ public class LoginPanel extends javax.swing.JPanel
         jPasswordField.setText("");
     }//GEN-LAST:event_jPasswordFieldFocusGained
 
-    public boolean validate(final String username){
-                   
-                  Pattern pattern = Pattern.compile(USERNAME_PATTERN);
-		  Matcher matcher = pattern.matcher(username);
-                  
-                  if (matcher.matches() == false)
-                      JOptionPane.showMessageDialog(null, "Your username contains illegal characters!", "Error!",
-                                        JOptionPane.INFORMATION_MESSAGE);
-		  return matcher.matches();
-	  }
+    public boolean validate(final String username)
+    {
+
+        Pattern pattern = Pattern.compile(USERNAME_PATTERN);
+        Matcher matcher = pattern.matcher(username);
+
+        if (matcher.matches() == false)
+            JOptionPane.showMessageDialog(null, "Your username contains illegal characters!", "Error!",
+                    JOptionPane.INFORMATION_MESSAGE);
+        return matcher.matches();
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CreateAccButton;
@@ -271,5 +275,5 @@ public class LoginPanel extends javax.swing.JPanel
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPasswordField jPasswordField;
     // End of variables declaration//GEN-END:variables
-    
+
 }
