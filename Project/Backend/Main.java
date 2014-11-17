@@ -68,7 +68,7 @@ public class Main
             System.out.println("\n\n\nCreating new database\n\n\n");
             admin = MasterTable.insertUserAccount("admin");
             admin.allowAdmin();
-            admin.setPassword("team 42");
+            admin.setPassword("team42");
             System.out.println("test");
 
         }
@@ -270,7 +270,7 @@ public class Main
 
                                  }*/
                                 System.out.println("Enter the number next to the account you would like to transfer to: ");
-                                totalAccs = currUser.printBankAccountNames();                             
+                                totalAccs = currUser.printBankAccountNames();
                                 Scanner creditAcc = new Scanner(System.in);
                                 String credit = creditAcc.nextLine();
                                 while (!(Integer.parseInt(credit) > 0) && !(Integer.parseInt(credit) < totalAccs))
@@ -322,111 +322,114 @@ public class Main
                     else if (currUser.getAdmin())
                     {
                         while (login && currUser.getAdmin())
-                        {
-                            System.out.print("\n\nPlease enter the account index you wish to access: \n\n");
+                        {                            
                             Scanner input3 = new Scanner(System.in);
                             System.out.println("1. Search for User Account");
                             System.out.println("2. Interest/Penalty");
                             System.out.println("3. Logout");
+                            System.out.print("\n\nPlease enter the number next to the action you wish to perform: ");
                             action3 = input3.nextLine();
 
-                            if (action3.equals("1"))
+                            switch (action3)
                             {
-                                MasterTable.adminPrintUser();
-
-                                System.out.println("Enter User's Unique ID:");
-                                String action4;
-
-                                Scanner input4 = new Scanner(System.in);
-                                action4 = input4.nextLine();
-                                int index = Integer.parseInt(action4);
-                                System.out.println("finding the info for UNIQUE id: " + index + " .");
-                                UserAccount editUser = MasterTable.Table[index];
-                                System.out.println("\nUser: " + editUser.getUserName() + "'s Bank Accounts: ");
-                                editUser.printAllBankAccounts();
-                                System.out.println("Enter \"exit\" to logout OR ");
-                                System.out.println("Enter the account name you wish to edit: ");
-
-                                Scanner input5 = new Scanner(System.in);
-                                String action5 = input5.nextLine();
-                                if (action5.equals("exit"))
-                                {
-                                    login = false;
-                                    dataout.exportDB(MasterTable);
-                                }
-
-                                BankAccount currBA = editUser.findBankAccount(action5);
-                                System.out.println("1. Credit Account");
-                                System.out.println("2. Debit Account");
-                                System.out.println("3. Delete Account");
-                                System.out.println("4. Exit");
-                                Scanner input6 = new Scanner(System.in);
-                                String action6 = input5.nextLine();
-                                index = 0;
-                                index = Integer.parseInt(action6);
-
-                                if (index == 1)
-                                {
-                                    System.out.println("The current balance is: " + currBA.getBalance());
-                                    System.out.println("Enter the credit amount: ");
-                                    Scanner input7 = new Scanner(System.in);
-                                    String action7 = input7.nextLine();
-                                    int credit = Integer.parseInt(action7);
-                                    currBA.addToBalance(credit);
-                                    System.out.println("New balance: " + currBA.getBalance());
-                                }
-                                else if (index == 2)
-                                {
-                                    System.out.println("The current balance is: " + currBA.getBalance());
-                                    System.out.println("Enter the debit amount: ");
-                                    Scanner input8 = new Scanner(System.in);
-                                    String action8 = input8.nextLine();
-                                    int credit = Integer.parseInt(action8);
-
-                                    if (currBA.subFromBalance(credit))
+                                case "1":
+                                    if (MasterTable.adminPrintUser() != 0)
                                     {
-                                        System.out.println("New balance: " + currBA.getBalance());
+                                        
+                                        System.out.println("Enter the number next to the account you would like access: ");
+                                        String action4;                                     
+                                        Scanner input4 = new Scanner(System.in);
+                                        action4 = input4.nextLine();
+                                        int index = Integer.parseInt(action4);
+                                        System.out.println("Finding the info for UNIQUE ID: " + index + ".");
+                                        UserAccount editUser = MasterTable.Table[index];
+                                        System.out.println("\nUser: " + editUser.getUserName() + "'s Bank Accounts: ");
+                                        editUser.printAllBankAccounts();
+                                        System.out.println("Enter \"exit\" to logout OR ");
+                                        System.out.println("Enter the account name you wish to edit: ");
+                                        
+                                        Scanner input5 = new Scanner(System.in);
+                                        String action5 = input5.nextLine();
+                                        if (action5.equals("exit"))
+                                        {
+                                            login = false;
+                                            dataout.exportDB(MasterTable);
+                                        }
+                                        
+                                        BankAccount currBA = editUser.findBankAccount(action5);
+                                        System.out.println("1. Credit Account");
+                                        System.out.println("2. Debit Account");
+                                        System.out.println("3. Delete Account");
+                                        System.out.println("4. Exit");
+                                        Scanner input6 = new Scanner(System.in);
+                                        String action6 = input5.nextLine();
+                                        index = 0;
+                                        index = Integer.parseInt(action6);
+                                        
+                                        if (index == 1)
+                                        {
+                                            System.out.println("The current balance is: " + currBA.getBalance());
+                                            System.out.println("Enter the credit amount: ");
+                                            Scanner input7 = new Scanner(System.in);
+                                            String action7 = input7.nextLine();
+                                            int credit = Integer.parseInt(action7);
+                                            currBA.addToBalance(credit);
+                                            System.out.println("New balance: " + currBA.getBalance());
+                                        }
+                                        else if (index == 2)
+                                        {
+                                            System.out.println("The current balance is: " + currBA.getBalance());
+                                            System.out.println("Enter the debit amount: ");
+                                            Scanner input8 = new Scanner(System.in);
+                                            String action8 = input8.nextLine();
+                                            int credit = Integer.parseInt(action8);
+                                            
+                                            if (currBA.subFromBalance(credit))
+                                            {
+                                                System.out.println("New balance: " + currBA.getBalance());
+                                            }
+                                            
+                                            else
+                                            {
+                                                
+                                                dataout.exportDB(MasterTable);
+                                            }
+                                            login = false;
+                                        }
+                                        else if (index == 3)
+                                        {
+                                            if (editUser.deleteBankAccount(currBA.getAccountName()))
+                                            {
+                                                System.out.println("Account deleted, returning to main screen");
+                                                dataout.exportDB(MasterTable);
+                                                login = false;
+                                            }
+                                            else
+                                            {
+                                                System.out.println("ERROR processing request, returning to main screen");
+                                                dataout.exportDB(MasterTable);
+                                                login = false;
+                                            }
+                                            
+                                        }
+                                        else if (index == 4)
+                                        {
+                                            dataout.exportDB(MasterTable);
+                                            login = false;
+                                        }
                                     }
-
                                     else
-                                    {
-
-                                        dataout.exportDB(MasterTable);
-                                    }
-                                    login = false;
-                                }
-                                else if (index == 3)
-                                {
-                                    if (editUser.deleteBankAccount(currBA.getAccountName()))
-                                    {
-                                        System.out.println("Account deleted, returning to main screen");
-                                        dataout.exportDB(MasterTable);
-                                        login = false;
-                                    }
-                                    else
-                                    {
-                                        System.out.println("ERROR processing request, returning to main screen");
-                                        dataout.exportDB(MasterTable);
-                                        login = false;
-                                    }
-
-                                }
-                                else if (index == 4)
-                                {
+                                        System.out.println("ERROR. There are no existing User Accounts.");
+                                    break;
+                                case "2":
+                                    System.out.println("Sorry, this option is not available yet");
                                     dataout.exportDB(MasterTable);
                                     login = false;
-                                }
-                            }
-                            else if (action3.equals("2"))
-                            {
-                                System.out.println("Sorry, this option is not available yet");
-                                dataout.exportDB(MasterTable);
-                                login = false;
-                            }
-                            else if (action3.equals("3"))
-                            {
-                                dataout.exportDB(MasterTable);
-                                login = false;
+                                    break;
+                                case "3":
+                                    dataout.exportDB(MasterTable);
+                                    login = false;
+                                    break;
                             }
 
                         }

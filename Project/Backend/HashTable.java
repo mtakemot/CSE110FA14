@@ -194,6 +194,7 @@ public class HashTable implements Serializable
                     prev.setNext(current.getNext());
                 else // Remove the head of the linked list inside of the bucket
                     Table[index] = current.getNext();
+                occ--;
                 return true;
             }
         }
@@ -287,26 +288,38 @@ public class HashTable implements Serializable
 
     }
 
-    public void adminPrintUser()
+    public int adminPrintUser()
     {
 
-        if (Table != null)
+        if (Table != null && occ != 0)
         {
             System.out.println("User List");
             System.out.println("Begin:");
             System.out.println("======================");
+            int count = 0;
             for (int i = 0; i < SIZE; i++)
             {
-
                 if (Table[i] != null && !Table[i].getAdmin())
                 {
-                    System.out.println(i + ". " + Table[i].getUserName());
+                    System.out.println((i+count) + ". " + Table[i].getUserName());
+                    if (Table[i].getNext() != null)
+                    {
+                        UserAccount currUserAccount = Table[i].getNext();
+                        while (currUserAccount != null)
+                        {
+                            System.out.println((i+count) + ". " + currUserAccount.getUserName());
+                            currUserAccount = currUserAccount.getNext();
+                            count++;
+                        }
+                    }
+                    System.out.println();
                     System.out.println("======================");
                 }
 
             }
             System.out.println("END");
-
+            return occ;
         }
+        return 0;
     }
 }

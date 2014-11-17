@@ -13,7 +13,6 @@ package GUI;
  * MESSAGE TELLING US WHICH PANEL IT IS SUPPOSED TO BE.
  * **************************************************************************
  */
-import Backend.TableWrapper;
 import javax.swing.*;
 import java.awt.*;
 
