@@ -54,6 +54,9 @@ public class TellerDeleteAccountPanel extends javax.swing.JPanel
                 boolean deleted = GUI.MasterTable.deleteUserAccount(GUI.currentUserAccount.getUserName());
                 GUI.currentBankAccount = null;
                 GUI.currentUserAccount = null;
+                JOptionPane.showMessageDialog(null, "User Account Deleted");
+                CardLayout layout = (CardLayout) (MainPanel.getLayout());
+                layout.show(MainPanel, "TellerMainMenu");
             }
         }
     }
@@ -271,8 +274,6 @@ public class TellerDeleteAccountPanel extends javax.swing.JPanel
 
     private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
         DeleteAcc();
-        CardLayout layout = (CardLayout) (MainPanel.getLayout());
-        layout.show(MainPanel, "TellerMainMenu");
     }//GEN-LAST:event_DeleteButtonActionPerformed
 
     private void AccNameFieldFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_AccNameFieldFocusGained
