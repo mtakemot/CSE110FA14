@@ -17,15 +17,6 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-              <Component id="BATypeLabel" min="-2" pref="86" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="218" max="-2" attributes="0"/>
-              <Component id="BAUserNameLabel" min="-2" pref="86" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="BAAmountLabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
               <Component id="SettingsButton" min="-2" pref="146" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="BankNamePanel" min="-2" max="-2" attributes="0"/>
@@ -53,7 +44,7 @@
                       </Group>
                       <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="BankAccountsList2" min="-2" max="-2" attributes="0"/>
+                          <Component id="BankAccountsList0" min="-2" max="-2" attributes="0"/>
                           <Component id="AmountField" min="-2" max="-2" attributes="0"/>
                           <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                               <Group type="102" attributes="0">
@@ -88,16 +79,10 @@
                   <Component id="LogoutButtton" alignment="1" max="32767" attributes="0"/>
                   <Component id="SettingsButton" alignment="0" min="-2" pref="32" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="BATypeLabel" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                  <Component id="BAUserNameLabel" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                  <Component id="BAAmountLabel" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="58" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="BankAccountsList2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BankAccountsList0" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -172,13 +157,6 @@
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="SettingsButtonMouseClicked"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="BAUserNameLabel">
-      <Properties>
-        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="GUI.currentBankAccount.getAccountName()" type="code"/>
-        </Property>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JButton" name="LogoutButtton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Logout"/>
@@ -186,20 +164,6 @@
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="LogoutButttonMouseClicked"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="BATypeLabel">
-      <Properties>
-        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="GUI.currentBankAccount.getAccountType()" type="code"/>
-        </Property>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="BAAmountLabel">
-      <Properties>
-        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="String.valueOf(GUI.currentBankAccount.getBalance())" type="code"/>
-        </Property>
-      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="ExitButton">
       <Properties>
@@ -282,14 +246,14 @@
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="TransferButton1MouseClicked"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JComboBox" name="BankAccountsList2">
+    <Component class="javax.swing.JComboBox" name="BankAccountsList0">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
           <Connection code="new javax.swing.DefaultComboBoxModel(accountlist)" type="code"/>
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BankAccountsList2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BankAccountsList0ActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

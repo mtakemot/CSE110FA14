@@ -25,6 +25,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
 {
 
     private JPanel MainPanel;
+    private GUI mainGUI;
 
     /**
      * Creates new form CreateAccount
@@ -179,9 +180,9 @@ public class CreateAccountPanel extends javax.swing.JPanel
                 .addContainerGap(50, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-    public CreateAccountPanel(JPanel MainPanel)
+    public CreateAccountPanel(JPanel MainPanel, GUI mainGUI)
     {
-
+        this.mainGUI = mainGUI;
         this.MainPanel = MainPanel;
         initComponents();
     }

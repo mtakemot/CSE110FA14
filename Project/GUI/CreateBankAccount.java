@@ -16,13 +16,15 @@ public class CreateBankAccount extends javax.swing.JPanel
 {
 
     private JPanel MainPanel;
+    private GUI mainGUI;
     String[] accTypes =
     {
         "Checking", "Savings"
     };
 
-    public CreateBankAccount(JPanel MainPanel)
+    public CreateBankAccount(JPanel MainPanel, GUI mainGUI)
     {
+        this.mainGUI = mainGUI;
         this.MainPanel = MainPanel;
         initComponents();
     }
@@ -131,6 +133,7 @@ public class CreateBankAccount extends javax.swing.JPanel
         {
             GUI.currentUserAccount.insertBankAccount(0, AccountNameField.getText(), TypeCombo.getSelectedItem().toString());
             CardLayout layout = (CardLayout) (MainPanel.getLayout());
+            mainGUI.getAccList().update();
             layout.show(MainPanel, "AccList");
         }
         else
@@ -138,7 +141,7 @@ public class CreateBankAccount extends javax.swing.JPanel
             JOptionPane.showMessageDialog(null, "Invalid input");
             AccountNameField.setText("");
         }
-
+        
     }//GEN-LAST:event_CreateButtonActionPerformed
 
 

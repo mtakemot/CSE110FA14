@@ -45,13 +45,12 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="CreateBAButton" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="GoToAcc" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="145" max="-2" attributes="0"/>
+                              <Component id="CreateBAButton" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
@@ -83,10 +82,7 @@
               <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="188" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="GoToAcc" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="CreateBAButton" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
+              <Component id="CreateBAButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="240" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -143,15 +139,6 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="GoToAcc">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Go to Account"/>
-      </Properties>
-      <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="GoToAccMouseClicked"/>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GoToAccActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JButton" name="TransferFundsButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Transfer Funds"/>
@@ -166,7 +153,6 @@
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="DeleteAccountButtonMouseClicked"/>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DeleteAccountButtonActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="CreateBAButton">

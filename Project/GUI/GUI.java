@@ -32,10 +32,13 @@ import java.awt.*;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.*;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 
 public class GUI extends javax.swing.JFrame
 {
-
+    public static final String ITEM = "item";
+    public String item;
     static int counter = 0;
 
     // Static HashTable allows us to access the table in any element of our GUI
@@ -53,7 +56,7 @@ public class GUI extends javax.swing.JFrame
     {
         initComponents();
     }
-
+    
     // This is a getter function for the JPanel that is created when this 
     // component is initiialized. If you open "Generated Code" below you can 
     // see where MainPanel is declared. This one JPanel is where we will show/hide
@@ -178,55 +181,84 @@ public class GUI extends javax.swing.JFrame
                  // This creates the MainPanel that is referenced above. All of 
                  // our other panels will go on top of this one and be shown or 
                  // hidden depending on the state of our program*/
-                GUI mainGUI = new GUI();
+                final GUI mainGUI = new GUI();
 
                 //Puts some initial values in the table to prevent null pointer 
                 // exceptions
-                currentUserAccount = MasterTable.insertUserAccount("testaccount");
+                currentUserAccount = MasterTable.insertUserAccount("qq");
                 currentUserAccount.setFirstName("first");
                 currentUserAccount.setLastName("last");
-                currentUserAccount.setUserName("testaccount");
-                currentUserAccount.setPassword("password");
+                currentUserAccount.setPassword("Password");
                 currentUserAccount.setEmail("email");
                 currentUserAccount.setPhone("0123456789");
-                currentBankAccount = currentUserAccount.insertBankAccount(20, "acc1", "Checking");
-                currentBankAccount = currentUserAccount.insertBankAccount(25, "acc3456", "Savings");
-                currentBankAccount = currentUserAccount.insertBankAccount(30, "acc2", "Checking");
-                currentBankAccount = currentUserAccount.insertBankAccount(30, "0acc0", "Checking");
+                currentBankAccount = currentUserAccount.insertBankAccount(20, "qq1", "Checking");
+                currentBankAccount = currentUserAccount.insertBankAccount(25, "qq2", "Savings");
+                currentBankAccount = currentUserAccount.insertBankAccount(30, "qq3", "Checking");
+                currentBankAccount = currentUserAccount.insertBankAccount(30, "qq4", "Checking");
                 
-                currentUserAccount = MasterTable.insertUserAccount("testaccount2");
+                currentUserAccount = MasterTable.insertUserAccount("ww");
                 currentUserAccount.setFirstName("first2");
                 currentUserAccount.setLastName("last2");
-                currentUserAccount.setUserName("testaccount2");
-                currentUserAccount.setPassword("password2");
+                currentUserAccount.setPassword("Password");
                 currentUserAccount.setEmail("email2");
                 currentUserAccount.setPhone("1234567890");
-                currentBankAccount = currentUserAccount.insertBankAccount(50, "2acc1", "Checking");
-                currentBankAccount = currentUserAccount.insertBankAccount(35, "2acc3456", "Savings");
-                currentBankAccount = currentUserAccount.insertBankAccount(30, "acc2", "Checking");               
-                currentBankAccount = currentUserAccount.insertBankAccount(30, "0acc0", "Checking");               
+                currentBankAccount = currentUserAccount.insertBankAccount(50, "ww1", "Checking");
+                currentBankAccount = currentUserAccount.insertBankAccount(35, "ww2", "Savings");
+                currentBankAccount = currentUserAccount.insertBankAccount(30, "ww3", "Checking");               
+                currentBankAccount = currentUserAccount.insertBankAccount(30, "ww4", "Checking");
+                
+                currentUserAccount = MasterTable.insertUserAccount("ee");
+                currentUserAccount.setFirstName("first2");
+                currentUserAccount.setLastName("last2");
+                currentUserAccount.setPassword("Password");
+                currentUserAccount.setEmail("email3");
+                currentUserAccount.setPhone("1234567890");
+                currentBankAccount = currentUserAccount.insertBankAccount(50, "ee1", "Checking");
+                currentBankAccount = currentUserAccount.insertBankAccount(35, "ee2", "Savings");
+                currentBankAccount = currentUserAccount.insertBankAccount(30, "ee3", "Checking");               
+                currentBankAccount = currentUserAccount.insertBankAccount(30, "ee4", "Checking");
+                
+                //test
+                for (int i = 0; i < 10000; i++)
+                {
+                    currentUserAccount.insertBankAccount(i, ("acc" + i), "Checking");
+                }
+                    
 
                 
                 // This grabs the MainPanel and stores it in a variable so that
                 // we have easy access to it
                 JPanel cardHolder = mainGUI.getMainPanel();
                 // This creates a new LoginPanel and passes in the MainPanel. 
-                LoginPanel Login = new LoginPanel(cardHolder);
+                
+                //LoginPanel Login = new LoginPanel(cardHolder);
+                
+                mainGUI.setLogin(new LoginPanel(cardHolder, mainGUI));
+                mainGUI.setAccList(new AccountsListPanel(cardHolder, mainGUI));
+                mainGUI.setSettings(new Settings(cardHolder, mainGUI));
+                mainGUI.setCreateAcc(new CreateAccountPanel(cardHolder, mainGUI));
+                mainGUI.setDelete(new DeleteAccountPanel(cardHolder, mainGUI));
+                mainGUI.setCreateBA(new CreateBankAccount(cardHolder, mainGUI));
+                mainGUI.setTellerAP(new TellerAccountPage(cardHolder, mainGUI));
+                mainGUI.setTransfer(new TransferFundsPanel(cardHolder, mainGUI));
+                mainGUI.setTellerMainMenu(new TellerMainMenu(cardHolder, mainGUI));
+                
                 // This creates a new AccList Panel and passes in the MainPanel
-                final AccountsListPanel AccList = new AccountsListPanel(cardHolder, mainGUI);
+                //AccountsListPanel AccList = new AccountsListPanel(cardHolder, mainGUI);
                 // This creates a new Settings Panel and passes in the MainPanel
-                Settings Settings = new Settings(cardHolder);
+                //Settings Settings = new Settings(cardHolder);
+                mainGUI.setTransfer(new TransferFundsPanel(cardHolder, mainGUI));
                 // Creates a new CreateAccountPanel and passes in the Main Panel
-                CreateAccountPanel CreateAcc = new CreateAccountPanel(cardHolder);
-                MainMenuPanel mainMenu = new MainMenuPanel(cardHolder);
+                //CreateAccountPanel CreateAcc = new CreateAccountPanel(cardHolder);
+                //MainMenuPanel mainMenu = new MainMenuPanel(cardHolder);
 
-                TransferFundsPanel Transfer = new TransferFundsPanel(cardHolder, mainGUI);
-                WithdrawPanel Withdraw = new WithdrawPanel(cardHolder);
-                DepositPanel Deposit = new DepositPanel(cardHolder);
-                DeleteAccountPanel Delete = new DeleteAccountPanel(cardHolder);
-                TellerMainMenu TellerMainMenu = new TellerMainMenu(cardHolder);
-                CreateBankAccount createBA = new CreateBankAccount(cardHolder);
-                TellerAccountPage TellerAP = new TellerAccountPage(cardHolder);
+                //TransferFundsPanel Transfer = new TransferFundsPanel(cardHolder);
+                //WithdrawPanel Withdraw = new WithdrawPanel(cardHolder);
+                //DepositPanel Deposit = new DepositPanel(cardHolder);
+                //DeleteAccountPanel Delete = new DeleteAccountPanel(cardHolder);
+                //TellerMainMenu TellerMainMenu = new TellerMainMenu(cardHolder);
+                //CreateBankAccount createBA = new CreateBankAccount(cardHolder);
+                //TellerAccountPage TellerAP = new TellerAccountPage(cardHolder);
                 
                 // This addes the LoginPanel and AccountsListPanel that we just
                 // created to the MainPanel. It also assigns a name to each of
@@ -236,19 +268,18 @@ public class GUI extends javax.swing.JFrame
                 // to show the AccList panel
                 // CardLayout layout = (CardLayout) (MainPanel.getLayout());
                 // layout.show(MainPanel, "AccList");
-                cardHolder.add(Login, "Login");
-                cardHolder.add(AccList, "AccList");
-                cardHolder.add(CreateAcc, "CreateAcc");
-                cardHolder.add(Settings, "Settings");
-                cardHolder.add(mainMenu, "MainMenu");
-
-                cardHolder.add(Transfer, "Transfer");
-                cardHolder.add(Withdraw, "Withdraw");
-                cardHolder.add(Deposit, "Deposit" );
-                cardHolder.add(Delete, "Delete");
-                cardHolder.add(TellerMainMenu,"TellerMainMenu");
-                cardHolder.add(createBA, "CreateBA");
-                cardHolder.add(TellerAP, "TellerAP");
+                cardHolder.add(mainGUI.getLogin(), "Login");
+                cardHolder.add(mainGUI.getAccList(), "AccList");
+                cardHolder.add(mainGUI.getCreateAcc(), "CreateAcc");
+                cardHolder.add(mainGUI.getSettings(), "Settings");
+                cardHolder.add(mainGUI.getTransfer(), "Transfer");
+                //cardHolder.add(Withdraw, "Withdraw");
+                //cardHolder.add(Deposit, "Deposit" );
+                cardHolder.add(mainGUI.getDelete(), "Delete");
+                cardHolder.add(mainGUI.getTellerMainMenu(),"TellerMainMenu");
+                cardHolder.add(mainGUI.getCreateBA(), "CreateBA");
+                cardHolder.add(mainGUI.getTellerAP(), "TellerAP");
+                
                 
                 // These two lines show the MainPanel. Without these 2 lines 
                 // the GUI would not show up at all. Just leave them alone.
@@ -262,12 +293,12 @@ public class GUI extends javax.swing.JFrame
                         
                             @Override
                             public void propertyChange(PropertyChangeEvent PcEvt){
-                                AccList.setNewCellValue(currentBankAccount.getBalance(),
-                                        currentBankAccount.getRowIndex(), 2);
+                                mainGUI.getAccList().setNewCellValue(currentBankAccount.getBalance(),
+                                        currentBankAccount.getAccountPosition(), 2);
                                 return;
                             }
                         
-                     });
+                     });               
                 /*if (dataout.exportDB(MasterTable))
                  {
                  System.err.println("\nExported file to local source file"
@@ -286,7 +317,104 @@ public class GUI extends javax.swing.JFrame
             }
         });
     }
+    private TransferFundsPanel Transfer;
+    private LoginPanel Login;
+    private AccountsListPanel AccList;
+    private CreateAccountPanel CreateAcc;
+    private Settings Settings;
+    private TellerMainMenu TellerMainMenu;
+    private CreateBankAccount CreateBA;
+    private TellerAccountPage TellerAP;
+    private DeleteAccountPanel Delete;
 
+    public DeleteAccountPanel getDelete()
+    {
+        return Delete;
+    }
+
+    public void setDelete(DeleteAccountPanel Delete)
+    {
+        this.Delete = Delete;
+    }
+    
+    public LoginPanel getLogin()
+    {
+        return Login;
+    }
+
+    public void setLogin(LoginPanel Login)
+    {
+        this.Login = Login;
+    }
+
+    public AccountsListPanel getAccList()
+    {
+        return AccList;
+    }
+
+    public void setAccList(AccountsListPanel AccList)
+    {
+        this.AccList = AccList;
+    }
+
+    public CreateAccountPanel getCreateAcc()
+    {
+        return CreateAcc;
+    }
+
+    public void setCreateAcc(CreateAccountPanel CreateAcc)
+    {
+        this.CreateAcc = CreateAcc;
+    }
+
+    public Settings getSettings()
+    {
+        return Settings;
+    }
+
+    public void setSettings(Settings Settings)
+    {
+        this.Settings = Settings;
+    }
+
+    public TellerMainMenu getTellerMainMenu()
+    {
+        return TellerMainMenu;
+    }
+
+    public void setTellerMainMenu(TellerMainMenu TellerMainMenu)
+    {
+        this.TellerMainMenu = TellerMainMenu;
+    }
+
+    public CreateBankAccount getCreateBA()
+    {
+        return CreateBA;
+    }
+
+    public void setCreateBA(CreateBankAccount CreateBA)
+    {
+        this.CreateBA = CreateBA;
+    }
+
+    public TellerAccountPage getTellerAP()
+    {
+        return TellerAP;
+    }
+
+    public void setTellerAP(TellerAccountPage TellerAP)
+    {
+        this.TellerAP = TellerAP;
+    }
+    
+    public TransferFundsPanel getTransfer() {
+        return Transfer;
+    }
+    
+    public void setTransfer(TransferFundsPanel Transfer) {
+        this.Transfer = Transfer;
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel MainPanel;
     // End of variables declaration//GEN-END:variables

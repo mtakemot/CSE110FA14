@@ -16,10 +16,12 @@ public class DeleteAccountPanel extends javax.swing.JPanel
 {
 
     private JPanel MainPanel;
+    private GUI mainGUI;
 
-    public DeleteAccountPanel(JPanel MainPanel)
+    public DeleteAccountPanel(JPanel MainPanel, GUI mainGUI)
     {
         this.MainPanel = MainPanel;
+        this.mainGUI = mainGUI;
         initComponents();
     }
 
