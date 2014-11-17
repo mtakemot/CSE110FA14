@@ -81,17 +81,4 @@ public class TableWrapper
     {
         return currentBA;
     }
-    
-    public void setAccountBalance(double newBalance, int rowIndex) {
-        this.accountBalances[rowIndex] = newBalance;
-    }
-
-    public void setAccountName(String newName, int rowIndex) {
-        this.accountNames[rowIndex] = newName;
-    }
-
-    public void setAccountType(String newType, int rowIndex) {
-        this.accountTypes[rowIndex] = newType;
-    }
-    
 }
