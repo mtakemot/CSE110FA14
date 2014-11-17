@@ -17,6 +17,7 @@ import Backend.*;
 public class TellerMainMenu extends javax.swing.JPanel {
     
     private JPanel MainPanel;
+    private GUI mainGUI;
     /**
      * Creates new form TellerMainMenu
      */
@@ -24,8 +25,9 @@ public class TellerMainMenu extends javax.swing.JPanel {
         initComponents();
     }
 
-    public TellerMainMenu(JPanel MainPanel)
+    public TellerMainMenu(JPanel MainPanel, GUI mainGUI)
     {
+        this.mainGUI = mainGUI;
         this.MainPanel = MainPanel;
         initComponents();
     }

@@ -16,13 +16,15 @@ public class CreateBankAccount extends javax.swing.JPanel
 {
 
     private JPanel MainPanel;
+    private GUI mainGUI;
     String[] accTypes =
     {
         "Checking", "Savings"
     };
 
-    public CreateBankAccount(JPanel MainPanel)
+    public CreateBankAccount(JPanel MainPanel, GUI mainGUI)
     {
+        this.mainGUI = mainGUI;
         this.MainPanel = MainPanel;
         initComponents();
     }

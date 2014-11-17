@@ -19,15 +19,17 @@ public class Settings extends javax.swing.JPanel
      * Creates new form Settings
      */
     private JPanel MainPanel;
+    private GUI mainGUI;
 
     public Settings()
     {
         initComponents();
     }
 
-    public Settings(JPanel MainPanel)
+    public Settings(JPanel MainPanel, GUI mainGUI)
     {
         this.MainPanel = MainPanel;
+        this.mainGUI = mainGUI;
         initComponents();
     }
 
