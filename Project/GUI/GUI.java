@@ -29,6 +29,8 @@ package GUI;
 import Backend.*;
 import javax.swing.*;
 import java.awt.*;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.util.*;
 
 public class GUI extends javax.swing.JFrame
@@ -44,6 +46,8 @@ public class GUI extends javax.swing.JFrame
     // Static BankAccount allows us to store a UserAccount after a user selects
     // it so that we can manipulate it in other panels of our GUI
     public static BankAccount currentBankAccount;
+    //keyword to change the table
+    public static final String ACCTABLE = "account table";
 
     public GUI()
     {
@@ -60,7 +64,26 @@ public class GUI extends javax.swing.JFrame
     {
         return MainPanel;
     }
-
+    
+    public void setAccountBalance(String BankAccountName, double NewBalance){
+        if(currentUserAccount != null){
+            TableWrapper wrapper = new TableWrapper(currentUserAccount);
+            this.currentBankAccount = currentUserAccount.findBankAccount(BankAccountName);
+            //find the row of the given account
+            int row = 0;
+            
+            while(!(BankAccountName.equals(wrapper.getAccountName(row)) || 
+                    counter == currentUserAccount.getNumOfBankAccounts()))
+            {
+                row++;
+            }
+            //now change the table model and call fireTableDataChanged.     
+            firePropertyChange(ACCTABLE, false, true);
+        }
+    }
+    
+    
+    
     /**
      * EXPAND THIS FUNCTION TO SEE HOW MainPanel IS INITIALIZED. ALL OF OUR
      * OTHER PANELS/PAGES WILL BE PLACED ON MainPanel WHICH IS DELCARED HERE
@@ -190,14 +213,14 @@ public class GUI extends javax.swing.JFrame
                 // This creates a new LoginPanel and passes in the MainPanel. 
                 LoginPanel Login = new LoginPanel(cardHolder);
                 // This creates a new AccList Panel and passes in the MainPanel
-                AccountsListPanel AccList = new AccountsListPanel(cardHolder);
+                final AccountsListPanel AccList = new AccountsListPanel(cardHolder, mainGUI);
                 // This creates a new Settings Panel and passes in the MainPanel
                 Settings Settings = new Settings(cardHolder);
                 // Creates a new CreateAccountPanel and passes in the Main Panel
                 CreateAccountPanel CreateAcc = new CreateAccountPanel(cardHolder);
                 MainMenuPanel mainMenu = new MainMenuPanel(cardHolder);
 
-                TransferFundsPanel Transfer = new TransferFundsPanel(cardHolder);
+                TransferFundsPanel Transfer = new TransferFundsPanel(cardHolder, mainGUI);
                 WithdrawPanel Withdraw = new WithdrawPanel(cardHolder);
                 DepositPanel Deposit = new DepositPanel(cardHolder);
                 DeleteAccountPanel Delete = new DeleteAccountPanel(cardHolder);
@@ -233,7 +256,18 @@ public class GUI extends javax.swing.JFrame
                 mainGUI.setVisible(true);
 
                 mainGUI.setResizable(false);
-
+                
+                mainGUI.addPropertyChangeListener(ACCTABLE,
+                        new PropertyChangeListener(){
+                        
+                            @Override
+                            public void propertyChange(PropertyChangeEvent PcEvt){
+                                AccList.setNewCellValue(currentBankAccount.getBalance(),
+                                        currentBankAccount.getRowIndex(), 2);
+                                return;
+                            }
+                        
+                     });
                 /*if (dataout.exportDB(MasterTable))
                  {
                  System.err.println("\nExported file to local source file"

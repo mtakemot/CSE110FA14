@@ -36,12 +36,18 @@ public class AccountsListPanel extends javax.swing.JPanel
     
      This constructor takes in MainPanel from GUI.java which gives us access to
      the main panel where all of our GUI elements will eventually be located. */
-    public AccountsListPanel(JPanel MainPanel)
+    public AccountsListPanel(JPanel MainPanel, GUI mainGUI)
     {
         this.MainPanel = MainPanel;
         initComponents();
     }
 
+    public void setNewCellValue(double NewBalance, int row, int column){
+        AccountsTable.setValueAt((Object) NewBalance, row, column);
+    }
+   
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

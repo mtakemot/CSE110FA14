@@ -14,16 +14,16 @@ import Backend.*;
  * @author Zack
  */
 public class TransferFundsPanel extends javax.swing.JPanel {
-    
+    private GUI mainGui;
     private JPanel MainPanel;
     TableWrapper wrapper = new TableWrapper(GUI.currentUserAccount);
     int total_accounts = wrapper.getTotalAccounts();
     String[] accountlist = new String[total_accounts];
     
-    public TransferFundsPanel(JPanel MainPanel)
+    public TransferFundsPanel(JPanel MainPanel, GUI mainGUI)
     {
         this.MainPanel = MainPanel;
-        
+        this.mainGui = mainGUI;
         for(int i=0; i < total_accounts; i++)
         {
             accountlist[i]=wrapper.getAccountName(i);
@@ -352,8 +352,10 @@ public class TransferFundsPanel extends javax.swing.JPanel {
         else
         {    
             GUI.currentBankAccount.subFromBalance(amount);
-            GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount((String)BankAccountsList2.getSelectedItem());
+            mainGui.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
+            GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount((String)BankAccountsList1.getSelectedItem());
             GUI.currentBankAccount.addToBalance(amount);
+            mainGui.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
             JOptionPane.showMessageDialog(null, "Funds Transfered Successfully!");
             //GUI.MasterTable.findUserAccount();
             // test

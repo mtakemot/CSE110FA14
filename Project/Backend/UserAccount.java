@@ -101,6 +101,7 @@ public class UserAccount implements Serializable
             if (type.equals("Checking"))
             {
                 BankAccHead = new CheckingAccount(bal, name);
+                BankAccHead.setRowIndex(0);
                 numOfBankAccounts++;
                 BankAccHead.setAccountPosition(0);
                 return BankAccHead;
@@ -109,6 +110,7 @@ public class UserAccount implements Serializable
             else
             {
                 BankAccHead = new SavingsAccount(bal, name);
+                BankAccHead.setRowIndex(0);
                 numOfBankAccounts++;
                 BankAccHead.setAccountPosition(0);
                 return BankAccHead;
@@ -116,6 +118,7 @@ public class UserAccount implements Serializable
         }
         else // The head of the linked list was not null
         {
+            int rowIndex = 0;
             BankAccount current;
             current = this.BankAccHead;
             // Traverse the linked list until we find a BankAccount with the
@@ -123,6 +126,7 @@ public class UserAccount implements Serializable
             while (current.getNext() != null
                     && !(current.getAccountName().equals(name)))
             {
+                rowIndex++;
                 current = current.getNext();
             }
             if (current.getAccountName().equals(name))
@@ -137,6 +141,7 @@ public class UserAccount implements Serializable
                 {
                     current.setNext(new CheckingAccount(bal, name));
                     numOfBankAccounts++;
+                    BankAccHead.setRowIndex(rowIndex);
                     current.getNext().setAccountPosition(numOfBankAccounts - 1);
                     return current.getNext();
                 }
@@ -144,6 +149,7 @@ public class UserAccount implements Serializable
                 {
                     current.setNext(new SavingsAccount(bal, name));
                     numOfBankAccounts++;
+                    BankAccHead.setRowIndex(rowIndex);
                     current.getNext().setAccountPosition(numOfBankAccounts - 1);
                     return current.getNext();
                 }
