@@ -188,7 +188,7 @@ public class GUI extends javax.swing.JFrame
                 currentUserAccount = MasterTable.insertUserAccount("qq");
                 currentUserAccount.setFirstName("first");
                 currentUserAccount.setLastName("last");
-                currentUserAccount.setPassword("Password");
+                currentUserAccount.setPassword("qq");
                 currentUserAccount.setEmail("email");
                 currentUserAccount.setPhone("0123456789");
                 currentBankAccount = currentUserAccount.insertBankAccount(20, "qq1", "Checking");
@@ -199,7 +199,7 @@ public class GUI extends javax.swing.JFrame
                 currentUserAccount = MasterTable.insertUserAccount("ww");
                 currentUserAccount.setFirstName("first2");
                 currentUserAccount.setLastName("last2");
-                currentUserAccount.setPassword("Password");
+                currentUserAccount.setPassword("ww");
                 currentUserAccount.setEmail("email2");
                 currentUserAccount.setPhone("1234567890");
                 currentBankAccount = currentUserAccount.insertBankAccount(50, "ww1", "Checking");
@@ -210,7 +210,7 @@ public class GUI extends javax.swing.JFrame
                 currentUserAccount = MasterTable.insertUserAccount("ee");
                 currentUserAccount.setFirstName("first2");
                 currentUserAccount.setLastName("last2");
-                currentUserAccount.setPassword("Password");
+                currentUserAccount.setPassword("ee");
                 currentUserAccount.setEmail("email3");
                 currentUserAccount.setPhone("1234567890");
                 currentBankAccount = currentUserAccount.insertBankAccount(50, "ee1", "Checking");

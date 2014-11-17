@@ -20,13 +20,9 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                      <Component id="BATypeLabel" min="-2" pref="86" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="218" max="-2" attributes="0"/>
-                      <Component id="BAUserNameLabel" min="-2" pref="86" max="-2" attributes="0"/>
-                      <EmptySpace pref="322" max="32767" attributes="0"/>
-                      <Component id="BAAmountLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="320" max="-2" attributes="0"/>
+                      <Component id="CurrentUserAccountLabel" min="-2" pref="86" max="-2" attributes="0"/>
+                      <EmptySpace min="26" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="SettingsButton" min="-2" pref="146" max="-2" attributes="0"/>
@@ -64,11 +60,7 @@
                   <Component id="SettingsButton" alignment="0" min="-2" pref="32" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="BATypeLabel" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                  <Component id="BAUserNameLabel" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                  <Component id="BAAmountLabel" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-              </Group>
+              <Component id="CurrentUserAccountLabel" min="-2" pref="29" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="DepositButton" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -127,14 +119,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JLabel" name="BATypeLabel">
-      <Properties>
-        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="GUI.currentBankAccount.getAccountType()" type="code"/>
-        </Property>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="BAUserNameLabel">
+    <Component class="javax.swing.JLabel" name="CurrentUserAccountLabel">
       <Properties>
         <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
           <Connection code="GUI.currentBankAccount.getAccountName()" type="code"/>
@@ -148,13 +133,6 @@
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="LogoutButttonMouseClicked"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="BAAmountLabel">
-      <Properties>
-        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="String.valueOf(GUI.currentBankAccount.getBalance())" type="code"/>
-        </Property>
-      </Properties>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
       <AuxValues>
