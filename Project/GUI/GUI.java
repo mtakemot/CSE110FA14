@@ -242,6 +242,7 @@ public class GUI extends javax.swing.JFrame
                 mainGUI.setTellerAP(new TellerAccountPage(cardHolder, mainGUI));
                 mainGUI.setTransfer(new TransferFundsPanel(cardHolder, mainGUI));
                 mainGUI.setTellerMainMenu(new TellerMainMenu(cardHolder, mainGUI));
+                mainGUI.setTDelete(new TellerDeleteAccountPanel(cardHolder, mainGUI));
                 
                 // This creates a new AccList Panel and passes in the MainPanel
                 //AccountsListPanel AccList = new AccountsListPanel(cardHolder, mainGUI);
@@ -279,6 +280,7 @@ public class GUI extends javax.swing.JFrame
                 cardHolder.add(mainGUI.getTellerMainMenu(),"TellerMainMenu");
                 cardHolder.add(mainGUI.getCreateBA(), "CreateBA");
                 cardHolder.add(mainGUI.getTellerAP(), "TellerAP");
+                cardHolder.add(mainGUI.getTDelete(), "TDelete");
                 
                 
                 // These two lines show the MainPanel. Without these 2 lines 
@@ -334,7 +336,18 @@ public class GUI extends javax.swing.JFrame
     private CreateBankAccount CreateBA;
     private TellerAccountPage TellerAP;
     private DeleteAccountPanel Delete;
+    private TellerDeleteAccountPanel TDelete;
 
+    public TellerDeleteAccountPanel getTDelete()
+    {
+        return TDelete;
+    }
+
+    public void setTDelete(TellerDeleteAccountPanel TDelete)
+    {
+        this.TDelete = TDelete;
+    }
+    
     public DeleteAccountPanel getDelete()
     {
         return Delete;

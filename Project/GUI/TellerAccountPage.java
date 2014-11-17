@@ -58,6 +58,7 @@ public class TellerAccountPage extends javax.swing.JPanel {
         AccountsTable = new javax.swing.JTable();
         DepositButton = new javax.swing.JButton();
         WithdrawButton = new javax.swing.JButton();
+        DeleteAccountButton = new javax.swing.JButton();
 
         SettingsButton.setText("Settings");
         SettingsButton.addMouseListener(new java.awt.event.MouseAdapter()
@@ -123,6 +124,15 @@ public class TellerAccountPage extends javax.swing.JPanel {
             }
         });
 
+        DeleteAccountButton.setText("Delete Account");
+        DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                DeleteAccountButtonMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -130,10 +140,6 @@ public class TellerAccountPage extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(320, 320, 320)
-                        .addComponent(CurrentUserAccountLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(SettingsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -147,11 +153,16 @@ public class TellerAccountPage extends javax.swing.JPanel {
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(62, 62, 62)
-                                .addComponent(DepositButton)
-                                .addGap(148, 148, 148)
-                                .addComponent(WithdrawButton)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                                .addComponent(DepositButton))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(320, 320, 320)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(WithdrawButton)
+                                .addGap(48, 48, 48)
+                                .addComponent(DeleteAccountButton))
+                            .addComponent(CurrentUserAccountLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -165,7 +176,8 @@ public class TellerAccountPage extends javax.swing.JPanel {
                 .addGap(4, 4, 4)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(DepositButton)
-                    .addComponent(WithdrawButton))
+                    .addComponent(WithdrawButton)
+                    .addComponent(DeleteAccountButton))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -295,11 +307,18 @@ public class TellerAccountPage extends javax.swing.JPanel {
         
     }//GEN-LAST:event_WithdrawButtonMouseClicked
 
+    private void DeleteAccountButtonMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_DeleteAccountButtonMouseClicked
+    {//GEN-HEADEREND:event_DeleteAccountButtonMouseClicked
+        CardLayout layout = (CardLayout) (MainPanel.getLayout());
+        layout.show(MainPanel, "TDelete");
+    }//GEN-LAST:event_DeleteAccountButtonMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable AccountsTable;
     private javax.swing.JPanel BankNamePanel;
     private javax.swing.JLabel CurrentUserAccountLabel;
+    private javax.swing.JButton DeleteAccountButton;
     private javax.swing.JButton DepositButton;
     private javax.swing.JButton LogoutButtton;
     private javax.swing.JButton SettingsButton;
