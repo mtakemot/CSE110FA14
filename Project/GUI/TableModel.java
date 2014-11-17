@@ -33,6 +33,7 @@ public class TableModel extends AbstractTableModel
     {
         this.current = curr;
         wrapper = new TableWrapper(this.current);
+        this.addTableModelListener(new TableListener());
     }
 
     @Override
@@ -47,6 +48,24 @@ public class TableModel extends AbstractTableModel
         return colCount;
     }
 
+    
+    @Override
+    public void setValueAt(Object aValue, int rowIndex, int columnIndex){
+        switch (columnIndex)
+        {
+            case 2:
+                wrapper.setAccountBalance((double) aValue, rowIndex);
+                break;
+            case 1:
+                wrapper.setAccountType((String) aValue, rowIndex);
+                break;
+            case 0:
+                wrapper.setAccountName((String) aValue, rowIndex);
+                break;
+        }
+        fireTableCellUpdated(rowIndex, columnIndex);
+    }
+    
     @Override
     public Object getValueAt(int rowIndex, int columnIndex)
     {

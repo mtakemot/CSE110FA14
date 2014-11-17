@@ -24,6 +24,7 @@ public class BankAccount implements Serializable
     protected BankAccount next;
     protected String accountType;
     private int accountPosition;
+    protected int rowIndex = 0;
 
     /**
      * This function will add to the account balance
@@ -43,7 +44,7 @@ public class BankAccount implements Serializable
      * the account balance to go below 0
      *
      * @method subFromBalance
-     * @param amount amount to subtrace from the balance
+     * @param amount amount to subtract from the balance
      * @return returns the new account balance
      */
     public boolean subFromBalance(double amount)
@@ -113,5 +114,13 @@ public class BankAccount implements Serializable
     {
         this.accountPosition = accountPosition;
     }
+    
+    public int getRowIndex()
+    {
+        return rowIndex;
+    }
 
+    public void setRowIndex(int rowIndex) {
+        this.rowIndex = rowIndex;
+    }
 }
