@@ -24,7 +24,6 @@ public class BankAccount implements Serializable
     protected BankAccount next;
     protected String accountType;
     private int accountPosition;
-    protected int rowIndex = 0;
 
     /**
      * This function will add to the account balance
@@ -113,14 +112,5 @@ public class BankAccount implements Serializable
     public void setAccountPosition(int accountPosition)
     {
         this.accountPosition = accountPosition;
-    }
-    
-    public int getRowIndex()
-    {
-        return rowIndex;
-    }
-
-    public void setRowIndex(int rowIndex) {
-        this.rowIndex = rowIndex;
     }
 }

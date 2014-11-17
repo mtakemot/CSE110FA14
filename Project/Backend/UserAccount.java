@@ -101,7 +101,6 @@ public class UserAccount implements Serializable
             if (type.equals("Checking"))
             {
                 BankAccHead = new CheckingAccount(bal, name);
-                BankAccHead.setRowIndex(0);
                 numOfBankAccounts++;
                 BankAccHead.setAccountPosition(0);
                 return BankAccHead;
@@ -110,7 +109,6 @@ public class UserAccount implements Serializable
             else
             {
                 BankAccHead = new SavingsAccount(bal, name);
-                BankAccHead.setRowIndex(0);
                 numOfBankAccounts++;
                 BankAccHead.setAccountPosition(0);
                 return BankAccHead;
@@ -141,7 +139,6 @@ public class UserAccount implements Serializable
                 {
                     current.setNext(new CheckingAccount(bal, name));
                     numOfBankAccounts++;
-                    BankAccHead.setRowIndex(rowIndex);
                     current.getNext().setAccountPosition(numOfBankAccounts - 1);
                     return current.getNext();
                 }
@@ -149,7 +146,6 @@ public class UserAccount implements Serializable
                 {
                     current.setNext(new SavingsAccount(bal, name));
                     numOfBankAccounts++;
-                    BankAccHead.setRowIndex(rowIndex);
                     current.getNext().setAccountPosition(numOfBankAccounts - 1);
                     return current.getNext();
                 }
