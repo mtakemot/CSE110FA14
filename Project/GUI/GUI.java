@@ -53,6 +53,11 @@ public class GUI extends javax.swing.JFrame
         initComponents();
     }
 
+    public TransferFundsPanel getTransfer() {
+        return Transfer;
+    }
+
+    
     // This is a getter function for the JPanel that is created when this 
     // component is initiialized. If you open "Generated Code" below you can 
     // see where MainPanel is declared. This one JPanel is where we will show/hide
@@ -63,6 +68,12 @@ public class GUI extends javax.swing.JFrame
     {
         return MainPanel;
     }
+
+    public void setTransfer(TransferFundsPanel Transfer) {
+        this.Transfer = Transfer;
+    }
+    
+    
        
     /**
      * EXPAND THIS FUNCTION TO SEE HOW MainPanel IS INITIALIZED. ALL OF OUR
@@ -162,11 +173,10 @@ public class GUI extends javax.swing.JFrame
 
                 //Puts some initial values in the table to prevent null pointer 
                 // exceptions
-                currentUserAccount = MasterTable.insertUserAccount("testaccount");
+                currentUserAccount = MasterTable.insertUserAccount("qq");
                 currentUserAccount.setFirstName("first");
                 currentUserAccount.setLastName("last");
-                currentUserAccount.setUserName("testaccount");
-                currentUserAccount.setPassword("password");
+                currentUserAccount.setPassword("Password");
                 currentUserAccount.setEmail("email");
                 currentUserAccount.setPhone("0123456789");
                 currentBankAccount = currentUserAccount.insertBankAccount(20, "acc1", "Checking");
@@ -174,11 +184,10 @@ public class GUI extends javax.swing.JFrame
                 currentBankAccount = currentUserAccount.insertBankAccount(30, "acc2", "Checking");
                 currentBankAccount = currentUserAccount.insertBankAccount(30, "0acc0", "Checking");
                 
-                currentUserAccount = MasterTable.insertUserAccount("testaccount2");
+                currentUserAccount = MasterTable.insertUserAccount("ww");
                 currentUserAccount.setFirstName("first2");
                 currentUserAccount.setLastName("last2");
-                currentUserAccount.setUserName("testaccount2");
-                currentUserAccount.setPassword("password2");
+                currentUserAccount.setPassword("Password");
                 currentUserAccount.setEmail("email2");
                 currentUserAccount.setPhone("1234567890");
                 currentBankAccount = currentUserAccount.insertBankAccount(50, "2acc1", "Checking");
@@ -191,16 +200,19 @@ public class GUI extends javax.swing.JFrame
                 // we have easy access to it
                 JPanel cardHolder = mainGUI.getMainPanel();
                 // This creates a new LoginPanel and passes in the MainPanel. 
+                
                 LoginPanel Login = new LoginPanel(cardHolder);
+                
                 // This creates a new AccList Panel and passes in the MainPanel
-                AccountsListPanel AccList = new AccountsListPanel(cardHolder);
+                AccountsListPanel AccList = new AccountsListPanel(cardHolder, mainGUI);
                 // This creates a new Settings Panel and passes in the MainPanel
                 Settings Settings = new Settings(cardHolder);
+                mainGUI.setTransfer(new TransferFundsPanel(cardHolder, mainGUI));
                 // Creates a new CreateAccountPanel and passes in the Main Panel
                 CreateAccountPanel CreateAcc = new CreateAccountPanel(cardHolder);
                 MainMenuPanel mainMenu = new MainMenuPanel(cardHolder);
 
-                TransferFundsPanel Transfer = new TransferFundsPanel(cardHolder);
+                //TransferFundsPanel Transfer = new TransferFundsPanel(cardHolder);
                 WithdrawPanel Withdraw = new WithdrawPanel(cardHolder);
                 DepositPanel Deposit = new DepositPanel(cardHolder);
                 DeleteAccountPanel Delete = new DeleteAccountPanel(cardHolder);
@@ -222,13 +234,14 @@ public class GUI extends javax.swing.JFrame
                 cardHolder.add(Settings, "Settings");
                 cardHolder.add(mainMenu, "MainMenu");
 
-                cardHolder.add(Transfer, "Transfer");
+                cardHolder.add(mainGUI.getTransfer(), "Transfer");
                 cardHolder.add(Withdraw, "Withdraw");
                 cardHolder.add(Deposit, "Deposit" );
                 cardHolder.add(Delete, "Delete");
                 cardHolder.add(TellerMainMenu,"TellerMainMenu");
                 cardHolder.add(createBA, "CreateBA");
                 cardHolder.add(TellerAP, "TellerAP");
+                
                 
                 // These two lines show the MainPanel. Without these 2 lines 
                 // the GUI would not show up at all. Just leave them alone.
@@ -255,7 +268,7 @@ public class GUI extends javax.swing.JFrame
             }
         });
     }
-
+    private TransferFundsPanel Transfer;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel MainPanel;
     // End of variables declaration//GEN-END:variables

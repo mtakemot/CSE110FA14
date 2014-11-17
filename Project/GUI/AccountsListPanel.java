@@ -25,6 +25,7 @@ public class AccountsListPanel extends javax.swing.JPanel
     // VERY IMPORTANT !! YOU MUST MAKE SURE THAT YOU GIVE EACH NEW PANEL THAT 
     // YOU DECLARE A PRIVATE VARIABLE THAT WILL STORE THE MAIN PANEL FROM GUI 
     private JPanel MainPanel;
+    private GUI mainGUI;
 
     public AccountsListPanel()
     {
@@ -36,9 +37,10 @@ public class AccountsListPanel extends javax.swing.JPanel
     
      This constructor takes in MainPanel from GUI.java which gives us access to
      the main panel where all of our GUI elements will eventually be located. */
-    public AccountsListPanel(JPanel MainPanel)
+    public AccountsListPanel(JPanel MainPanel, GUI mainGUI)
     {
         this.MainPanel = MainPanel;
+        this.mainGUI = mainGUI;
         initComponents();
     }
 
@@ -238,26 +240,16 @@ public class AccountsListPanel extends javax.swing.JPanel
     }//GEN-LAST:event_TransferFundsButtonMouseClicked
 
     private void DeleteAccountButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteAccountButtonMouseClicked
-        int row = AccountsTable.getSelectedRow();
-        String bankacc = (String) AccountsTable.getValueAt(row, 0);
-        GUI.currentUserAccount.deleteBankAccount(bankacc);
-        //TransferFundsPanel.updatecomboboxes();
-        
-        /*TableWrapper wrapper = new TableWrapper(GUI.currentUserAccount);
-        int total_accounts = wrapper.getTotalAccounts();
-        String[] accountlist = new String[total_accounts];
-        
-        for(int i=0; i < total_accounts; i++)
+        if (AccountsTable.getSelectedRowCount() > 0)
         {
-            accountlist[i]=wrapper.getAccountName(i);
+            int row = AccountsTable.getSelectedRow();
+            String bankacc = (String) AccountsTable.getValueAt(row, 0);
+            GUI.currentUserAccount.deleteBankAccount(bankacc);
+            JOptionPane.showMessageDialog(null, "Bank Account " + bankacc
+                    + "has been Deleted");
+            AccountsTable.setModel(new TableModel(GUI.currentUserAccount));
+            mainGUI.getTransfer().update();
         }
-        
-        DefaultComboBoxModel model = new DefaultComboBoxModel(accountlist);
-        //TransferFundsPanel.BankAccountsList0.setModel(model);*/
-        
-        JOptionPane.showMessageDialog(null, "Bank Account " + bankacc
-                + "has been Deleted");
-        AccountsTable.setModel(new TableModel(GUI.currentUserAccount));
     }//GEN-LAST:event_DeleteAccountButtonMouseClicked
 
     private void CreateBAButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_CreateBAButtonActionPerformed
