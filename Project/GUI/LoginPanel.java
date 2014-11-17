@@ -56,11 +56,12 @@ public class LoginPanel extends javax.swing.JPanel
     {
 
         UsernameField = new javax.swing.JTextField();
-        PasswordField = new javax.swing.JTextField();
         CreateAccButton = new javax.swing.JButton();
         LoginButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jPasswordField = new javax.swing.JPasswordField();
+        UsernameLabel = new javax.swing.JLabel();
+        PasswordLabel = new javax.swing.JLabel();
 
         setOpaque(false);
 
@@ -72,27 +73,11 @@ public class LoginPanel extends javax.swing.JPanel
                 UsernameFieldFocusGained(evt);
             }
         });
-        UsernameField.addActionListener(new java.awt.event.ActionListener()
+        UsernameField.addKeyListener(new java.awt.event.KeyAdapter()
         {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
+            public void keyPressed(java.awt.event.KeyEvent evt)
             {
-                UsernameFieldActionPerformed(evt);
-            }
-        });
-
-        PasswordField.setText("Password");
-        PasswordField.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusGained(java.awt.event.FocusEvent evt)
-            {
-                PasswordFieldFocusGained(evt);
-            }
-        });
-        PasswordField.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                PasswordFieldActionPerformed(evt);
+                UsernameFieldKeyPressed(evt);
             }
         });
 
@@ -117,25 +102,46 @@ public class LoginPanel extends javax.swing.JPanel
         jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 48)); // NOI18N
         jLabel1.setText("Bank 42");
 
-        jPasswordField.setText("jPasswordField1");
+        jPasswordField.setText("password");
+        jPasswordField.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
+                jPasswordFieldFocusGained(evt);
+            }
+        });
+        jPasswordField.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
+                jPasswordFieldKeyPressed(evt);
+            }
+        });
+
+        UsernameLabel.setText("Username:");
+
+        PasswordLabel.setText("Password:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(123, 123, 123)
-                .addComponent(jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(56, 56, 56)
+                .addGap(198, 198, 198)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(CreateAccButton, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
-                        .addComponent(LoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(UsernameLabel)
+                    .addComponent(PasswordLabel))
+                .addGap(58, 58, 58)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                         .addComponent(UsernameField, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(PasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel1)))
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jPasswordField, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addComponent(CreateAccButton, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(27, 27, 27)
+                            .addComponent(LoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(331, 331, 331))
         );
         layout.setVerticalGroup(
@@ -143,15 +149,14 @@ public class LoginPanel extends javax.swing.JPanel
             .addGroup(layout.createSequentialGroup()
                 .addGap(149, 149, 149)
                 .addComponent(jLabel1)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(UsernameField, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(UsernameField, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(UsernameLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PasswordLabel))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(CreateAccButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -159,62 +164,56 @@ public class LoginPanel extends javax.swing.JPanel
                 .addContainerGap(168, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void UsernameFieldActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_UsernameFieldActionPerformed
-    {//GEN-HEADEREND:event_UsernameFieldActionPerformed
-        UsernameField.setText("");
-    }//GEN-LAST:event_UsernameFieldActionPerformed
+    
+    private void Login() {
+        String username = UsernameField.getText();
+        char[] passwordarray = jPasswordField.getPassword();
+        String password = new String(passwordarray);
+            
+        if((username.equals("teller"))&&(password.equals("teller")))
+        {
+            CardLayout layout = (CardLayout) (MainPanel.getLayout());
+            layout.show(MainPanel,"TellerMainMenu");
+            return;
+        }
+            
+        GUI.currentUserAccount = GUI.MasterTable.findUserAccount(UsernameField.getText());
+            
+        if (GUI.currentUserAccount == null)
+        {
+            JOptionPane.showMessageDialog(null, "Account Not found!", "Error!",
+                                    JOptionPane.INFORMATION_MESSAGE);
+        }
+        else
+        {
+            if(password.compareTo(GUI.currentUserAccount.getPassword()) == 0) {
+                mainGUI.getAccList().update();
+                // This line grabs the layout from MainPanel from the GUI class so that
+                // we can show a new panel on it
+                CardLayout layout = (CardLayout) (MainPanel.getLayout());
+                // This will show the next panel when the button is clicked. Notice 
+                // the parameters here. MainPanel is passed in, which is the panel from 
+                // GUI.java with the CardLayout that our next panel will appear on,
+                //  and "AccList" is the name of the panel that will be shown. 
+                // "AccList" matches up to the name that we gave the AccountsListPanel
+                // in GUI.java. Giving our instance of AccountsListPanel in GUI.java
+                // this name and adding that object to MainPanel has allowed us 
+                // to access and show that panel from outside of the class as long
+                //  as we pass in MainPanel
+                layout.show(MainPanel, "AccList");    
+                }
+            else  {
+                JOptionPane.showMessageDialog(null, "Invalid Username Password Combination");
+            }
+            //move the following code in here, for demoing and when we're done testing.   
+            }
+    }
     
     // Creates an event for the LoginButton that will fire any time the button
     // is clicked. This is just an example to get you started.
     private void LoginButtonMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_LoginButtonMouseClicked
     {//GEN-HEADEREND:event_LoginButtonMouseClicked
-        
-        //if ((UsernameField.getText().length() > 0) && (PasswordField.getPassword.length() > 0) && (validate(UsernameField.getText())))
-        //{
-            String username = UsernameField.getText();
-            //char[] passwordarray = jPasswordField.getPassword();
-            //String password = passwordarray.toString();
-            String password = PasswordField.getText();
-            
-            if((username.equals("teller"))&&(password.equals("teller")))
-            {
-                CardLayout layout = (CardLayout) (MainPanel.getLayout());
-                layout.show(MainPanel,"TellerMainMenu");
-                return;
-            }
-            
-            GUI.currentUserAccount = GUI.MasterTable.findUserAccount(UsernameField.getText());
-            
-            if (GUI.currentUserAccount.equals(null))
-            {
-                JOptionPane.showMessageDialog(null, "Not found!", "Error!",
-                                        JOptionPane.INFORMATION_MESSAGE);
-            }
-            else
-            {
-                if(password.compareTo(GUI.currentUserAccount.getPassword()) == 0) {
-                    mainGUI.getAccList().update();
-                    // This line grabs the layout from MainPanel from the GUI class so that
-                    // we can show a new panel on it
-                    CardLayout layout = (CardLayout) (MainPanel.getLayout());
-                    // This will show the next panel when the button is clicked. Notice 
-                    // the parameters here. MainPanel is passed in, which is the panel from 
-                    // GUI.java with the CardLayout that our next panel will appear on,
-                    //  and "AccList" is the name of the panel that will be shown. 
-                    // "AccList" matches up to the name that we gave the AccountsListPanel
-                    // in GUI.java. Giving our instance of AccountsListPanel in GUI.java
-                    // this name and adding that object to MainPanel has allowed us 
-                    // to access and show that panel from outside of the class as long
-                    //  as we pass in MainPanel
-                    layout.show(MainPanel, "AccList");    
-                }
-                else {
-                    JOptionPane.showMessageDialog(null, "Invalid Username Password Combination");
-                }
-                //move the following code in here, for demoing and when we're done testing. 
-            }           
-        //}
+        Login();
     }//GEN-LAST:event_LoginButtonMouseClicked
         
     private void CreateAccButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CreateAccButtonMouseClicked
@@ -231,15 +230,26 @@ public class LoginPanel extends javax.swing.JPanel
         UsernameField.setText("");
     }//GEN-LAST:event_UsernameFieldFocusGained
 
-    private void PasswordFieldActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_PasswordFieldActionPerformed
-    {//GEN-HEADEREND:event_PasswordFieldActionPerformed
-        UsernameField.setText("");
-    }//GEN-LAST:event_PasswordFieldActionPerformed
+    private void UsernameFieldKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_UsernameFieldKeyPressed
+    {//GEN-HEADEREND:event_UsernameFieldKeyPressed
+        int key = evt.getKeyCode();
+           if (key == java.awt.event.KeyEvent.VK_ENTER) {
+              Login();
+              }
+    }//GEN-LAST:event_UsernameFieldKeyPressed
 
-    private void PasswordFieldFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_PasswordFieldFocusGained
-    {//GEN-HEADEREND:event_PasswordFieldFocusGained
-        PasswordField.setText("");
-    }//GEN-LAST:event_PasswordFieldFocusGained
+    private void jPasswordFieldKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_jPasswordFieldKeyPressed
+    {//GEN-HEADEREND:event_jPasswordFieldKeyPressed
+        int key = evt.getKeyCode();
+           if (key == java.awt.event.KeyEvent.VK_ENTER) {
+              Login();
+              }
+    }//GEN-LAST:event_jPasswordFieldKeyPressed
+
+    private void jPasswordFieldFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_jPasswordFieldFocusGained
+    {//GEN-HEADEREND:event_jPasswordFieldFocusGained
+        jPasswordField.setText("");
+    }//GEN-LAST:event_jPasswordFieldFocusGained
 
     public boolean validate(final String username){
                    
@@ -255,8 +265,9 @@ public class LoginPanel extends javax.swing.JPanel
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CreateAccButton;
     private javax.swing.JButton LoginButton;
-    private javax.swing.JTextField PasswordField;
+    private javax.swing.JLabel PasswordLabel;
     private javax.swing.JTextField UsernameField;
+    private javax.swing.JLabel UsernameLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPasswordField jPasswordField;
     // End of variables declaration//GEN-END:variables
