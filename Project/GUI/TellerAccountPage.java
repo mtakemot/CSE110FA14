@@ -17,6 +17,7 @@ import Backend.*;
 public class TellerAccountPage extends javax.swing.JPanel {
 
     private JPanel MainPanel;
+    private GUI mainGUI;
     /**
      * Creates new form TellerAccountPage
      */
@@ -24,8 +25,9 @@ public class TellerAccountPage extends javax.swing.JPanel {
         initComponents();
     }
 
-    public TellerAccountPage(JPanel MainPanel) {
+    public TellerAccountPage(JPanel MainPanel, GUI mainGUI) {
         this.MainPanel = MainPanel;
+        this.mainGUI = mainGUI;
         initComponents();
     }
     
