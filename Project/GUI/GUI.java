@@ -37,8 +37,6 @@ import java.beans.PropertyChangeListener;
 
 public class GUI extends javax.swing.JFrame
 {
-    public static final String ITEM = "item";
-    public String item;
     static int counter = 0;
 
     // Static HashTable allows us to access the table in any element of our GUI
@@ -49,8 +47,10 @@ public class GUI extends javax.swing.JFrame
     // Static BankAccount allows us to store a UserAccount after a user selects
     // it so that we can manipulate it in other panels of our GUI
     public static BankAccount currentBankAccount;
-    //keyword to change the table
+    //keyword to change the AccList table
     public static final String ACCTABLE = "account table";
+    //keyword to change the TellerAP table
+    public static final String TELTABLE = "teller table";
 
     public GUI()
     {
@@ -297,8 +297,16 @@ public class GUI extends javax.swing.JFrame
                                         currentBankAccount.getAccountPosition(), 2);
                                 return;
                             }
-                        
-                     });               
+                     });     
+                mainGUI.addPropertyChangeListener(TELTABLE,
+                        new PropertyChangeListener(){
+                            
+                            @Override
+                            public void propertyChange(PropertyChangeEvent PcE) {
+                                mainGUI.getTellerAP().setNewCellValue(currentBankAccount.getBalance(),
+                                        currentBankAccount.getAccountPosition(), 2);
+                            }
+                        });
                 /*if (dataout.exportDB(MasterTable))
                  {
                  System.err.println("\nExported file to local source file"

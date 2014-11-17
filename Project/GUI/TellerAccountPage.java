@@ -31,6 +31,14 @@ public class TellerAccountPage extends javax.swing.JPanel {
         initComponents();
     }
     
+    public void setNewCellValue(double NewBalance, int row, int column){
+        AccountsTable.setValueAt((Object) NewBalance, row, column);
+    }
+    
+    public void update(){
+        AccountsTable.setModel(new TableModel(GUI.currentUserAccount));
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -226,7 +234,7 @@ public class TellerAccountPage extends javax.swing.JPanel {
         }
         
         GUI.currentBankAccount.addToBalance(amount);
-                
+        setNewCellValue(GUI.currentBankAccount.getBalance(), GUI.currentBankAccount.getAccountPosition(), 2);
         System.out.print("\n GUI.currentBankAcc Name:  " + GUI.currentBankAccount.getAccountName() + "\n");
 
         JOptionPane.showMessageDialog(null, "amount of " + amount + "$ was deposited to account "
@@ -278,7 +286,10 @@ public class TellerAccountPage extends javax.swing.JPanel {
             return;
         }
         else
+        {
             GUI.currentBankAccount.subFromBalance(amount);
+            setNewCellValue(GUI.currentBankAccount.getBalance(), GUI.currentBankAccount.getAccountPosition(), 2);
+        }
                 
         System.out.print("\n GUI.currentBankAcc Name:  " + GUI.currentBankAccount.getAccountName() + "\n");
 
