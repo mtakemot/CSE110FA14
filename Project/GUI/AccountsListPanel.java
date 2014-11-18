@@ -553,8 +553,10 @@ public class AccountsListPanel extends javax.swing.JPanel
         if (founduser != null)
         {
             GUI.currentBankAccount.subFromBalance(amount);
+            mainGUI.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
             GUI.currentBankAccount = founduser.getBankAccHead();
             GUI.currentBankAccount.addToBalance(amount);
+            mainGUI.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
             JOptionPane.showMessageDialog(null, "Funds Transfered Successfully!");
         }
         else
