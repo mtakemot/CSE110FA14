@@ -97,32 +97,34 @@ public class GUI extends javax.swing.JFrame
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         MainPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(800, 600));
+        setPreferredSize(new java.awt.Dimension(800, 600));
 
         MainPanel.setBackground(new java.awt.Color(0, 153, 204));
-        MainPanel.setMaximumSize(new java.awt.Dimension(1000, 1000));
+        MainPanel.setMaximumSize(new java.awt.Dimension(800, 600));
         MainPanel.setName(""); // NOI18N
-        MainPanel.setPreferredSize(new java.awt.Dimension(1024, 768));
+        MainPanel.setPreferredSize(new java.awt.Dimension(800, 600));
         MainPanel.setLayout(new java.awt.CardLayout());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 12, Short.MAX_VALUE)
-                .addComponent(MainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1036, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(MainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 856, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(MainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 750, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -242,6 +244,7 @@ public class GUI extends javax.swing.JFrame
                 mainGUI.setTellerAP(new TellerAccountPage(cardHolder, mainGUI));
                 mainGUI.setTransfer(new TransferFundsPanel(cardHolder, mainGUI));
                 mainGUI.setTellerMainMenu(new TellerMainMenu(cardHolder, mainGUI));
+                mainGUI.setTDelete(new TellerDeleteAccountPanel(cardHolder, mainGUI));
                 
                 // This creates a new AccList Panel and passes in the MainPanel
                 //AccountsListPanel AccList = new AccountsListPanel(cardHolder, mainGUI);
@@ -279,6 +282,7 @@ public class GUI extends javax.swing.JFrame
                 cardHolder.add(mainGUI.getTellerMainMenu(),"TellerMainMenu");
                 cardHolder.add(mainGUI.getCreateBA(), "CreateBA");
                 cardHolder.add(mainGUI.getTellerAP(), "TellerAP");
+                cardHolder.add(mainGUI.getTDelete(), "TDelete");
                 
                 
                 // These two lines show the MainPanel. Without these 2 lines 
@@ -334,7 +338,18 @@ public class GUI extends javax.swing.JFrame
     private CreateBankAccount CreateBA;
     private TellerAccountPage TellerAP;
     private DeleteAccountPanel Delete;
+    private TellerDeleteAccountPanel TDelete;
 
+    public TellerDeleteAccountPanel getTDelete()
+    {
+        return TDelete;
+    }
+
+    public void setTDelete(TellerDeleteAccountPanel TDelete)
+    {
+        this.TDelete = TDelete;
+    }
+    
     public DeleteAccountPanel getDelete()
     {
         return Delete;
