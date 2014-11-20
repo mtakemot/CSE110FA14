@@ -77,18 +77,24 @@ public class AccountsListPanel extends javax.swing.JPanel
         this.BankAccountsList0.setModel(model0);
     }
     
-    public void updatecomboboxes() {
+    public void deletecomboboxes(String bankacc) {
         wrapper = new TableWrapper(GUI.currentUserAccount);
         total_accounts = wrapper.getTotalAccounts();
-        accountlist = new String[total_accounts];
-        for (int i = 0; i < total_accounts; i++)
-        {
-            accountlist[i] = wrapper.getAccountName(i);
+        accountlist = new String[total_accounts-1];
+        boolean accountfound = false;
+        for (int i = 0; i < total_accounts-1; i++)
+        { 
+            if(accountfound==false) {
+            if(wrapper.getAccountName(i).compareTo(bankacc)!=0)                
+                accountlist[i] = wrapper.getAccountName(i);
+            else
+                accountfound=true;
+            }
+            
+            else {
+                accountlist[i-1] = wrapper.getAccountName(i);
+            }
         }
-        DefaultComboBoxModel model1 = new DefaultComboBoxModel(accountlist);
-        DefaultComboBoxModel model0 = new DefaultComboBoxModel(accountlist);
-        this.BankAccountsList1.setModel(model1);
-        this.BankAccountsList0.setModel(model0);
     }
     
     /**
@@ -408,67 +414,55 @@ public class AccountsListPanel extends javax.swing.JPanel
                         + "You cannot delete this Bank Account without creating a new one first.");
                 return;
             }
+            
             String account_type;
             double amount_in_deleted_acc;
             String account_name;
             int row = AccountsTable.getSelectedRow();
             String bankacc = (String) AccountsTable.getValueAt(row, 1);
-            amount_in_deleted_acc = GUI.currentUserAccount.findBankAccount(bankacc).getBalance();
-            account_type = GUI.currentUserAccount.findBankAccount(bankacc).getAccountType();
-            account_name = GUI.currentUserAccount.findBankAccount(bankacc).getAccountName();
             
-            Object[] options = {"To one of my other Bank Accounts",
-                    "Email Me Funds"};
+            GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(bankacc);
+            amount_in_deleted_acc = GUI.currentBankAccount.getBalance();
+            account_type = GUI.currentBankAccount.getAccountType();
+            account_name = GUI.currentBankAccount.getAccountName();
             
             if(amount_in_deleted_acc==0) {
                 JOptionPane.showMessageDialog(null, bankacc + " has been Deleted");
                 GUI.currentUserAccount.deleteBankAccount(bankacc);
                 this.update();
                 return;
-            }
+            }  
             
-            GUI.currentUserAccount.deleteBankAccount(bankacc);
-            this.updatecomboboxes();
-            
-            if(accountlist.length== 0) {
-                JOptionPane.showMessageDialog(null, "No Remaining Bank Accounts to Transfer Funds To"
-                        + "\nFunds have been emailed to " + GUI.currentUserAccount.getEmail());
-                this.update();
-                return;
-            }            
-            
+            Object[] options = {"To one of my other Bank Accounts",
+                    "Email Me Funds"};
             int n = JOptionPane.showOptionDialog(null,
                     "You have $" + amount_in_deleted_acc + " in account " + account_name
                             + "\nWhere would you like the funds to go?",
                     "Where to Transfer Funds",
                     JOptionPane.YES_NO_CANCEL_OPTION,
                     JOptionPane.QUESTION_MESSAGE,
-                    null,     //do not use a custom Icon
+                    null,     //do not use a custom icon
                     options,  //the titles of buttons
                     options[0]); //default button title
             
-            GUI.currentUserAccount.deleteBankAccount(bankacc);
-            this.updatecomboboxes();
+            deletecomboboxes(bankacc);
             
-            if(n==0) {
-                if(accountlist.length== 0) {
-                    
-                }
-                
-                String s = (String)JOptionPane.showInputDialog(
+            if(n==0) {            
+                String choice = (String)JOptionPane.showInputDialog(
                     null,
                     "Choose a Bank Account",
-                    "Customized Dialog",
+                    "",
                     JOptionPane.PLAIN_MESSAGE,
                     null,
                     accountlist,
                     accountlist[0]);
-                GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(s);
+                
+                GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(choice);
                 GUI.currentBankAccount.addToBalance(amount_in_deleted_acc);
                 mainGUI.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
                 this.update();
                 JOptionPane.showMessageDialog(null, "Bank Account " + bankacc
-                    + " has been Deleted" + "\nFunds have been transfered to " + s);
+                    + " has been Deleted" + "\nFunds have been transfered to " + choice);
             }
             
             else if(n==1) {
@@ -476,20 +470,6 @@ public class AccountsListPanel extends javax.swing.JPanel
                     + " has been Deleted" + "\nFunds have been emailed to " + GUI.currentUserAccount.getEmail());
                 this.update();
             }
-            
-            else
-            {
-                GUI.currentUserAccount.insertBankAccount(amount_in_deleted_acc, bankacc,account_type);
-                this.updatecomboboxes();
-            }
-            
-            
-            /*String[] options = {"Select This Bank Account","Or Email Funds"};
-            String s = (String)JOptionPane.showOptionDialog(null,
-                    "Bank Account to receive funds",
-                    options,
-                    null,
-                    accountlist,accountlist[0]);*/
         }
         else
             JOptionPane.showMessageDialog(null,"Please Select an Account");
