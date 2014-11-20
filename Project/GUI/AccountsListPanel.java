@@ -412,7 +412,7 @@ public class AccountsListPanel extends javax.swing.JPanel
             double amount_in_deleted_acc;
             String account_name;
             int row = AccountsTable.getSelectedRow();
-            String bankacc = (String) AccountsTable.getValueAt(row, 0);
+            String bankacc = (String) AccountsTable.getValueAt(row, 1);
             amount_in_deleted_acc = GUI.currentUserAccount.findBankAccount(bankacc).getBalance();
             account_type = GUI.currentUserAccount.findBankAccount(bankacc).getAccountType();
             account_name = GUI.currentUserAccount.findBankAccount(bankacc).getAccountName();
