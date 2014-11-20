@@ -422,6 +422,12 @@ public class AccountsListPanel extends javax.swing.JPanel
     private void DeleteAccountButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteAccountButtonMouseClicked
         if (AccountsTable.getSelectedRowCount() > 0)
         {
+            if(GUI.currentUserAccount.getNumOfBankAccounts() == 1)
+            {
+                JOptionPane.showMessageDialog(null, "ERROR! You must have at least one bank account.\n"
+                        + "You cannot delete this Bank Account without creating a new one first.");
+                return;
+            }
             String account_type;
             double amount_in_deleted_acc;
             String account_name;
@@ -431,12 +437,11 @@ public class AccountsListPanel extends javax.swing.JPanel
             account_type = GUI.currentUserAccount.findBankAccount(bankacc).getAccountType();
             account_name = GUI.currentUserAccount.findBankAccount(bankacc).getAccountName();
             
-            Object[] options = {"To another of my Bank Accounts",
+            Object[] options = {"To one of my other Bank Accounts",
                     "Email Me Funds"};
             
             if(amount_in_deleted_acc==0) {
-                JOptionPane.showMessageDialog(null, "No Funds In Selected Account to Transfer\n Bank Account"
-                        + bankacc + " has been Deleted");
+                JOptionPane.showMessageDialog(null, bankacc + " has been Deleted");
                 GUI.currentUserAccount.deleteBankAccount(bankacc);
                 this.update();
                 return;

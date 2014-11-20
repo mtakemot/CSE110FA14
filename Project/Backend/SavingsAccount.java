@@ -1,5 +1,7 @@
 package Backend;
 
+import java.util.Calendar;
+
 /****************************************************************************
 
                                                         Ryan Bridges
@@ -22,6 +24,7 @@ public class SavingsAccount extends BankAccount
     public SavingsAccount(String name)
     {
         this.accountName = name;
+        creationDate = Calendar.getInstance();
     }
     public SavingsAccount(double bal, String name)
     {
