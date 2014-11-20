@@ -17,15 +17,8 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="239" max="-2" attributes="0"/>
-              <Component id="changeLastName" min="-2" pref="172" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="changeUsername" min="-2" pref="180" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="changePassword" min="-2" pref="155" max="-2" attributes="0"/>
@@ -35,11 +28,20 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="changeEmail" min="-2" pref="172" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="DeleteAccountButton" min="-2" pref="149" max="-2" attributes="0"/>
+                              <Component id="changeLastName" min="-2" pref="155" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="changeUsername" min="-2" pref="155" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="changePhone" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="changeEmail" min="-2" pref="155" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="DeleteAccountButton" min="-2" pref="155" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="changePhone" min="-2" pref="155" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="LogoutButtton" min="-2" pref="155" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -58,13 +60,11 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="LogoutButtton" min="-2" pref="64" max="-2" attributes="0"/>
-                  <Component id="jLabel1" alignment="1" min="-2" pref="47" max="-2" attributes="0"/>
-                  <Component id="BAUserNameLabel" alignment="1" min="-2" pref="39" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" pref="47" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="BAUserNameLabel" min="-2" pref="39" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="changeFirstName" alignment="3" min="-2" pref="95" max="-2" attributes="0"/>
                   <Component id="changeLastName" alignment="3" min="-2" pref="95" max="-2" attributes="0"/>
@@ -74,14 +74,17 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="changePassword" alignment="3" min="-2" pref="95" max="-2" attributes="0"/>
                   <Component id="changeEmail" alignment="3" min="-2" pref="95" max="-2" attributes="0"/>
-                  <Component id="DeleteAccountButton" alignment="3" min="-2" pref="97" max="-2" attributes="0"/>
+                  <Component id="DeleteAccountButton" alignment="3" min="-2" pref="95" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="BackButton" alignment="3" min="-2" pref="97" max="-2" attributes="0"/>
-                  <Component id="changePhone" alignment="3" min="-2" pref="95" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="BackButton" alignment="3" min="-2" pref="95" max="-2" attributes="0"/>
+                      <Component id="changePhone" alignment="3" min="-2" pref="95" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="LogoutButtton" alignment="0" min="-2" pref="95" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="201" max="32767" attributes="0"/>
+              <EmptySpace pref="196" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -92,6 +95,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="DejaVu Sans" size="48" style="1"/>
         </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Bank 42"/>
       </Properties>
     </Component>
