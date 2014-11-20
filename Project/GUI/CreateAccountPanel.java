@@ -54,7 +54,10 @@ public class CreateAccountPanel extends javax.swing.JPanel
         lastName = new javax.swing.JTextField();
         confirmPassword = new javax.swing.JPasswordField();
         email = new javax.swing.JTextField();
-        phone = new javax.swing.JTextField();
+        phone1 = new javax.swing.JTextField();
+        phone2 = new javax.swing.JTextField();
+        phone3 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
 
         setOpaque(false);
 
@@ -117,12 +120,23 @@ public class CreateAccountPanel extends javax.swing.JPanel
             }
         });
 
-        phone.setText("Phone");
-        phone.addFocusListener(new java.awt.event.FocusAdapter() {
+        phone1.setText("Area Code");
+        phone1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                phoneFocusGained(evt);
+                phone1FocusGained(evt);
             }
         });
+        phone1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                phone1ActionPerformed(evt);
+            }
+        });
+
+        phone2.setText("XXX");
+
+        phone3.setText("XXXX");
+
+        jLabel3.setText("Phone Number:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -137,15 +151,22 @@ public class CreateAccountPanel extends javax.swing.JPanel
                         .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(94, 94, 94)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(phone, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(email, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(confirmPassword, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(password, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(username, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lastName, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(firstName, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(createUserAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 524, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(username)
+                            .addComponent(email)
+                            .addComponent(confirmPassword)
+                            .addComponent(createUserAccount, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 524, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(phone1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(phone2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(phone3, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(password, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(firstName)
+                            .addComponent(lastName))
                         .addGap(0, 146, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -162,7 +183,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(firstName, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(13, 13, 13)
+                        .addGap(18, 18, 18)
                         .addComponent(lastName, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(12, 12, 12)
                         .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -173,11 +194,14 @@ public class CreateAccountPanel extends javax.swing.JPanel
                         .addGap(12, 12, 12)
                         .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(12, 12, 12)
-                        .addComponent(phone, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(3, 3, 3)))
-                .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
+                            .addComponent(phone1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(phone2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(phone3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(createUserAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
     public CreateAccountPanel(JPanel MainPanel, GUI mainGUI)
@@ -199,8 +223,16 @@ public class CreateAccountPanel extends javax.swing.JPanel
         char[] input2 = confirmPassword.getPassword();
         String input3 = email.getText();
         String pass2 = new String(input2);
-
-        if (name1.length() > 0)
+       
+        String phoneNumber = phone1.getText() + phone2.getText() + phone3.getText();
+        
+        //phone validation
+        if (phone1.getText().length() < 3 || phone2.getText().length() < 3 || phone3.getText().length() < 4)
+        {
+            JOptionPane.showMessageDialog(null, "Invalid phone format.\nShould be 3 digits in first two boxes, and 4 in the last box.");
+        }
+           
+        else if (name1.length() > 0)
         {
             System.out.println("firstname");
             if (name2.length() > 0)
@@ -221,7 +253,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
                             System.out.println("email");
                             System.out.println("test2");
 
-                            if (validatePhoneNumber(phone.getText()))
+                            if (validatePhoneNumber(phoneNumber))
                             {
                                 System.out.println("phone");
                                 System.out.println("test3");
@@ -235,7 +267,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
                                     GUI.currentUserAccount.setUserName(user);
                                     GUI.currentUserAccount.setPassword(pass1);
                                     GUI.currentUserAccount.setEmail(input3);
-                                    GUI.currentUserAccount.setPhone(phone.getText());
+                                    GUI.currentUserAccount.setPhone(phone1.getText());
                                     System.out.println("You have successfully created your user account!");
                                     JOptionPane.showMessageDialog(null, "You have successfully created your user account!", "Success!",
                                             JOptionPane.INFORMATION_MESSAGE);
@@ -337,10 +369,14 @@ public class CreateAccountPanel extends javax.swing.JPanel
         email.setText("");
     }//GEN-LAST:event_emailFocusGained
 
-    private void phoneFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_phoneFocusGained
-    {//GEN-HEADEREND:event_phoneFocusGained
-        phone.setText("");
-    }//GEN-LAST:event_phoneFocusGained
+    private void phone1FocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_phone1FocusGained
+    {//GEN-HEADEREND:event_phone1FocusGained
+        phone1.setText("");
+    }//GEN-LAST:event_phone1FocusGained
+
+    private void phone1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phone1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_phone1ActionPerformed
 
     private static boolean validatePhoneNumber(String phoneNo)
     {
@@ -381,9 +417,12 @@ public class CreateAccountPanel extends javax.swing.JPanel
     private javax.swing.JTextField email;
     private javax.swing.JTextField firstName;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField lastName;
     private javax.swing.JPasswordField password;
-    private javax.swing.JTextField phone;
+    private javax.swing.JTextField phone1;
+    private javax.swing.JTextField phone2;
+    private javax.swing.JTextField phone3;
     private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
 }
