@@ -64,6 +64,7 @@ public class AccountsListPanel extends javax.swing.JPanel
     
     public void update(){
         AccountsTable.setModel(new TableModel(GUI.currentUserAccount));
+        AccountsTable.clearSelection();
         wrapper = new TableWrapper(GUI.currentUserAccount);
         total_accounts = wrapper.getTotalAccounts();
         accountlist = new String[total_accounts];
@@ -465,11 +466,9 @@ public class AccountsListPanel extends javax.swing.JPanel
                 GUI.currentUserAccount.deleteBankAccount(bankacc);
                 
                 GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(choice);
-                GUI.currentBankAccount.addToBalance(amount_in_deleted_acc);
-                
-                mainGUI.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
-                
+                GUI.currentBankAccount.addToBalance(amount_in_deleted_acc);         
                 this.update();
+                
                 JOptionPane.showMessageDialog(null, "Bank Account " + bankacc
                     + " has been Deleted" + "\nFunds have been transfered to " + choice);
             }
@@ -477,6 +476,7 @@ public class AccountsListPanel extends javax.swing.JPanel
             else if(n==1) {
                 GUI.currentUserAccount.deleteBankAccount(bankacc);
                 this.update();
+                
                 JOptionPane.showMessageDialog(null, "Bank Account " + bankacc
                     + " has been Deleted" + "\nFunds have been emailed to " + GUI.currentUserAccount.getEmail());
             }
