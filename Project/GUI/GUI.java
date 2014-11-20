@@ -68,6 +68,14 @@ public class GUI extends javax.swing.JFrame
         return MainPanel;
     }
     
+    public void updateUserLabels()
+    {
+        getDelete().updateUserLabel();
+        getSettings().updateUserLabel();
+        getTellerAP().updateUserLabel();
+        getTDelete().updateUserLabel();
+    }
+    
     public void setAccountBalance(String BankAccountName, double NewBalance){
         if(currentUserAccount != null){
             TableWrapper wrapper = new TableWrapper(currentUserAccount);
@@ -97,8 +105,7 @@ public class GUI extends javax.swing.JFrame
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         MainPanel = new javax.swing.JPanel();
 
