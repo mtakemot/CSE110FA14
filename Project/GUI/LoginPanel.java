@@ -177,6 +177,7 @@ public class LoginPanel extends javax.swing.JPanel
         {
             CardLayout layout = (CardLayout) (MainPanel.getLayout());
             layout.show(MainPanel, "TellerMainMenu");
+            mainGUI.updateUserLabels();
             return;
         }
 
@@ -205,6 +206,7 @@ public class LoginPanel extends javax.swing.JPanel
                 // to access and show that panel from outside of the class as long
                 //  as we pass in MainPanel
                 layout.show(MainPanel, "AccList");
+                mainGUI.updateUserLabels();
             }
             else
             {
