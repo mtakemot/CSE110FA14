@@ -21,6 +21,9 @@ public class TellerAccountPage extends javax.swing.JPanel {
 
     private JPanel MainPanel;
     private GUI mainGUI;
+    private TableWrapper wrapper;
+    private int total_accounts;
+    private String[] accountlist;
     /**
      * Creates new form TellerAccountPage
      */
@@ -50,11 +53,33 @@ public class TellerAccountPage extends javax.swing.JPanel {
     
     public void update(){
         AccountsTable.setModel(new TableModel(GUI.currentUserAccount));
+        CurrentUserAccountLabel.setText(GUI.currentUserAccount.getUserName());
+    }
+    
+    public void deletecomboboxes(String bankacc) {
+        wrapper = new TableWrapper(GUI.currentUserAccount);
+        total_accounts = wrapper.getTotalAccounts();
+        accountlist = new String[total_accounts-1];
+        boolean accountfound = false;
+        for (int i = 0; i < total_accounts; i++)
+        { 
+            if(accountfound==false) {
+            if(wrapper.getAccountName(i).compareTo(bankacc)!=0)   {            
+                accountlist[i] = wrapper.getAccountName(i);
+            }
+            else
+                accountfound=true;
+            }
+            
+            else {
+                accountlist[i-1] = wrapper.getAccountName(i);
+            }
+        }
     }
     
     public void updateUserLabel()
     {
-        CurrentUserAccountLabel.setText(GUI.currentUserAccount.getUserName());
+        //CurrentUserAccountLabel.setText(GUI.currentUserAccount.getUserName());
     }
 
     /**
@@ -64,7 +89,8 @@ public class TellerAccountPage extends javax.swing.JPanel {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         SettingsButton = new javax.swing.JButton();
         BankNamePanel = new javax.swing.JPanel();
@@ -79,8 +105,10 @@ public class TellerAccountPage extends javax.swing.JPanel {
         DeleteAccountButton = new javax.swing.JButton();
 
         SettingsButton.setText("Settings");
-        SettingsButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        SettingsButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 SettingsButtonMouseClicked(evt);
             }
         });
@@ -110,8 +138,10 @@ public class TellerAccountPage extends javax.swing.JPanel {
         CurrentUserAccountLabel.setText(GUI.currentBankAccount.getAccountName());
 
         LogoutButtton.setText("Logout");
-        LogoutButtton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        LogoutButtton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 LogoutButttonMouseClicked(evt);
             }
         });
@@ -127,29 +157,37 @@ public class TellerAccountPage extends javax.swing.JPanel {
         jScrollPane1.setViewportView(AccountsTable);
 
         DepositButton.setText("Deposit");
-        DepositButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        DepositButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 DepositButtonMouseClicked(evt);
             }
         });
 
         WithdrawButton.setText("Withdraw");
-        WithdrawButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        WithdrawButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 WithdrawButtonMouseClicked(evt);
             }
         });
 
         DeleteUserAccountButton.setText("Delete User Account");
-        DeleteUserAccountButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        DeleteUserAccountButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 DeleteUserAccountButtonMouseClicked(evt);
             }
         });
 
         DeleteAccountButton.setText("Delete Highlighted Account");
-        DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 DeleteAccountButtonMouseClicked(evt);
             }
         });
@@ -336,21 +374,98 @@ public class TellerAccountPage extends javax.swing.JPanel {
 
     private void DeleteUserAccountButtonMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_DeleteUserAccountButtonMouseClicked
     {//GEN-HEADEREND:event_DeleteUserAccountButtonMouseClicked
-        CardLayout layout = (CardLayout) (MainPanel.getLayout());
-        layout.show(MainPanel, "TDelete");
+        int n = JOptionPane.showConfirmDialog(
+        null,
+        "Are you sure you would like to delete this User Account?",
+        "Bank 42",
+        JOptionPane.YES_NO_OPTION);
+        if (n==0) {
+            GUI.MasterTable.deleteUserAccount(GUI.currentUserAccount.getUserName());
+            GUI.currentBankAccount = null;
+            GUI.currentUserAccount = null;
+            JOptionPane.showMessageDialog(null, "User Account Deleted");
+            CardLayout layout = (CardLayout) (MainPanel.getLayout());
+            layout.show(MainPanel, "TellerMainMenu");    
+        }
     }//GEN-LAST:event_DeleteUserAccountButtonMouseClicked
 
     private void DeleteAccountButtonMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_DeleteAccountButtonMouseClicked
     {//GEN-HEADEREND:event_DeleteAccountButtonMouseClicked
-        if (AccountsTable.getSelectedRowCount() > 0)
+          if (AccountsTable.getSelectedRowCount() > 0)
         {
+            if(GUI.currentUserAccount.getNumOfBankAccounts() == 1)
+            {
+                JOptionPane.showMessageDialog(null, "ERROR! You must have at least one bank account.\n"
+                        + "You cannot delete this Bank Account without creating a new one first.");
+                return;
+            }
+            
+            String account_type;
+            double amount_in_deleted_acc;
+            String account_name;
             int row = AccountsTable.getSelectedRow();
-            String bankacc = (String) AccountsTable.getValueAt(row, 0);
-            GUI.currentUserAccount.deleteBankAccount(bankacc);
-            JOptionPane.showMessageDialog(null, "Bank Account " + bankacc
-                + " has been Deleted");
-            AccountsTable.setModel(new TableModel(GUI.currentUserAccount));
+            String bankacc = (String) AccountsTable.getValueAt(row, 1);
+            
+            GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(bankacc);
+            amount_in_deleted_acc = GUI.currentBankAccount.getBalance();
+            account_type = GUI.currentBankAccount.getAccountType();
+            account_name = GUI.currentBankAccount.getAccountName();
+            
+            if(amount_in_deleted_acc==0) {
+                JOptionPane.showMessageDialog(null, bankacc + " has been Deleted");
+                GUI.currentUserAccount.deleteBankAccount(bankacc);
+                this.update();
+                return;
+            }  
+            
+            Object[] options = {"To another Bank Account",
+                    "Email Funds"};
+            int n = JOptionPane.showOptionDialog(null,
+                    "You have $" + amount_in_deleted_acc + " in account " + account_name
+                            + "\nWhere would you like the funds to go?",
+                    "Where to Transfer Funds",
+                    JOptionPane.YES_NO_CANCEL_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,     //do not use a custom icon
+                    options,  //the titles of buttons
+                    options[0]); //default button title
+            
+            deletecomboboxes(bankacc);
+            
+            if(n==0) {            
+                String choice = (String)JOptionPane.showInputDialog(
+                    null,
+                    "Choose a Bank Account",
+                    "",
+                    JOptionPane.PLAIN_MESSAGE,
+                    null,
+                    accountlist,
+                    null);
+                
+                if(null==choice) {
+                    return;
+                }
+                
+                GUI.currentUserAccount.deleteBankAccount(bankacc);
+                
+                GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(choice);
+                GUI.currentBankAccount.addToBalance(amount_in_deleted_acc);         
+                this.update();
+                
+                JOptionPane.showMessageDialog(null, "Bank Account " + bankacc
+                    + " has been Deleted" + "\nFunds have been transfered to " + choice);
+            }
+            
+            else if(n==1) {
+                GUI.currentUserAccount.deleteBankAccount(bankacc);
+                this.update();
+                
+                JOptionPane.showMessageDialog(null, "Bank Account " + bankacc
+                    + " has been Deleted" + "\nFunds have been emailed to " + GUI.currentUserAccount.getEmail());
+            }
         }
+        else
+            JOptionPane.showMessageDialog(null,"Please Select an Account");
     }//GEN-LAST:event_DeleteAccountButtonMouseClicked
 
 
