@@ -82,11 +82,12 @@ public class AccountsListPanel extends javax.swing.JPanel
         total_accounts = wrapper.getTotalAccounts();
         accountlist = new String[total_accounts-1];
         boolean accountfound = false;
-        for (int i = 0; i < total_accounts-1; i++)
+        for (int i = 0; i < total_accounts; i++)
         { 
             if(accountfound==false) {
-            if(wrapper.getAccountName(i).compareTo(bankacc)!=0)                
+            if(wrapper.getAccountName(i).compareTo(bankacc)!=0)   {            
                 accountlist[i] = wrapper.getAccountName(i);
+            }
             else
                 accountfound=true;
             }
@@ -461,9 +462,13 @@ public class AccountsListPanel extends javax.swing.JPanel
                     return;
                 }
                 
+                GUI.currentUserAccount.deleteBankAccount(bankacc);
+                
                 GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(choice);
                 GUI.currentBankAccount.addToBalance(amount_in_deleted_acc);
+                
                 mainGUI.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
+                
                 this.update();
                 JOptionPane.showMessageDialog(null, "Bank Account " + bankacc
                     + " has been Deleted" + "\nFunds have been transfered to " + choice);
