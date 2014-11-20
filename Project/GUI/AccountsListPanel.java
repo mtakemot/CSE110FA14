@@ -455,7 +455,11 @@ public class AccountsListPanel extends javax.swing.JPanel
                     JOptionPane.PLAIN_MESSAGE,
                     null,
                     accountlist,
-                    accountlist[0]);
+                    null);
+                
+                if(null==choice) {
+                    return;
+                }
                 
                 GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(choice);
                 GUI.currentBankAccount.addToBalance(amount_in_deleted_acc);
