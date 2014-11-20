@@ -7,6 +7,7 @@ package GUI;
 
 import Backend.TableWrapper;
 import Backend.UserAccount;
+import javax.swing.JLabel;
 import javax.swing.table.*;
 
 /**
@@ -21,11 +22,11 @@ public class TableModel extends AbstractTableModel
     private TableWrapper wrapper;
     Class[] columns = new Class[]
     {
-        Double.class, String.class, String.class, Double.class
+        Integer.class, String.class, String.class, Double.class
     };
     private String[] columnNames =
     {
-        "Number", "Account Name", "Account Type",
+        "#", "Account Name", "Account Type",
         "Account Balance"
     };
 
@@ -63,7 +64,7 @@ public class TableModel extends AbstractTableModel
                 wrapper.setAccountName((String) aValue, rowIndex);
                 break;
             case 0:
-                wrapper.setAccountNumber((double) aValue, rowIndex);
+                wrapper.setAccountNumber((int) aValue, rowIndex);
         }
         fireTableCellUpdated(rowIndex, columnIndex);
     }

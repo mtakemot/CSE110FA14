@@ -27,6 +27,6 @@ public class SavingsAccount extends BankAccount
     {
         this.balance = bal;
         this.accountName = name;
-        this.accountType = "Savings Account";
+        this.accountType = "Saving";
     }
 }

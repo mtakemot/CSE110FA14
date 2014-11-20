@@ -11,6 +11,7 @@ import javax.swing.*;
 import Backend.*;
 import static GUI.AccountsListPanel.BALANCECOL;
 import static GUI.AccountsListPanel.NAMECOL;
+import javax.swing.table.*;
 
 /**
  *
@@ -115,9 +116,13 @@ public class TellerAccountPage extends javax.swing.JPanel {
             }
         });
 
+        AccountsTable.setSelectionModel(new ForcedListSelectionModel());
         AccountsTable.setAutoCreateRowSorter(true);
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment( JLabel.CENTER );
+        AccountsTable.setDefaultRenderer(String.class, centerRenderer);
+        AccountsTable.setDefaultRenderer(Double.class, centerRenderer);
         AccountsTable.setModel(new TableModel(GUI.currentUserAccount));
-        AccountsTable.setColumnSelectionAllowed(false);
         AccountsTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(AccountsTable);
 

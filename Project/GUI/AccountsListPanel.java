@@ -17,6 +17,7 @@ import Backend.TableWrapper;
 import Backend.UserAccount;
 import javax.swing.*;
 import java.awt.*;
+import javax.swing.table.DefaultTableCellRenderer;
 
 //for debug
 //import java.io.*;
@@ -134,7 +135,12 @@ public class AccountsListPanel extends javax.swing.JPanel
         });
 
         AccountsTable.setAutoCreateRowSorter(true);
+        AccountsTable.setSelectionModel(new ForcedListSelectionModel());
         AccountsTable.setModel(new TableModel(GUI.currentUserAccount));
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment( JLabel.CENTER );
+        AccountsTable.setDefaultRenderer(String.class, centerRenderer);
+        AccountsTable.setDefaultRenderer(Double.class, centerRenderer);
         AccountsTable.getTableHeader().setResizingAllowed(false);
         AccountsTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(AccountsTable);

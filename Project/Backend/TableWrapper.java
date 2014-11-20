@@ -11,7 +11,7 @@ package Backend;
  */
 public class TableWrapper
 {
-    private double[] accountNumbers;
+    private int[] accountNumbers;
     private String[] accountNames;
     private String[] accountTypes;
     private double[] accountBalances;
@@ -25,7 +25,7 @@ public class TableWrapper
         {
             currentUA = curr;
             totalAccounts = currentUA.getNumOfBankAccounts();
-            accountNumbers = new double[totalAccounts];
+            accountNumbers = new int[totalAccounts];
             accountNames = new String[totalAccounts];
             accountTypes = new String[totalAccounts];
             accountBalances = new double[totalAccounts];
@@ -55,7 +55,7 @@ public class TableWrapper
     // BELOW ARE JUST SETTERS AND GETTERS ///
     /////////////////////////////////////////
     
-    public double getAccountNumber(int index){
+    public int getAccountNumber(int index){
         return accountNumbers[index];
     }
     
@@ -101,7 +101,7 @@ public class TableWrapper
         this.accountTypes[rowIndex] = newType;
     }
     
-    public void setAccountNumber(double newNumber, int rowIndex){
+    public void setAccountNumber(int newNumber, int rowIndex){
         this.accountNumbers[rowIndex] = newNumber;
     }
     
