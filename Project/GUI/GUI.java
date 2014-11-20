@@ -76,6 +76,7 @@ public class GUI extends javax.swing.JFrame
         getSettings().updateUserLabel();
         getTellerAP().updateUserLabel();
         getTDelete().updateUserLabel();
+        getCreateBA().updateUserLabel();
     }
     
     public void setAccountBalance(String BankAccountName, double NewBalance){

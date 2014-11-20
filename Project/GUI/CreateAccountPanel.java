@@ -45,6 +45,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
     private void initComponents() {
 
         ERRORPOP = new java.awt.PopupMenu();
+        jPasswordField1 = new javax.swing.JPasswordField();
         firstName = new javax.swing.JTextField();
         password = new javax.swing.JPasswordField();
         createUserAccount = new javax.swing.JButton();
@@ -63,6 +64,8 @@ public class CreateAccountPanel extends javax.swing.JPanel
         jLabel7 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+
+        jPasswordField1.setText("jPasswordField1");
 
         setOpaque(false);
 
@@ -122,7 +125,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
         phone.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                phone1FocusGained(evt);
+                phoneFocusGained(evt);
             }
         });
         phone.addActionListener(new java.awt.event.ActionListener() {
@@ -159,7 +162,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
                             .addComponent(dismissView)
                             .addComponent(jLabel2))
                         .addGap(109, 109, 109)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18))
@@ -258,16 +261,8 @@ public class CreateAccountPanel extends javax.swing.JPanel
         char[] input2 = confirmPassword.getPassword();
         String input3 = email.getText();
         String pass2 = new String(input2);
-       
-        String phoneNumber = phone1.getText() + phone2.getText() + phone3.getText();
         
-        //phone validation
-        if (phone1.getText().length() < 3 || phone2.getText().length() < 3 || phone3.getText().length() < 4)
-        {
-            JOptionPane.showMessageDialog(null, "Invalid phone format.\nShould be 3 digits in first two boxes, and 4 in the last box.");
-        }
-           
-        else if (name1.length() > 0)
+        if (name1.length() > 0)
         {
             System.out.println("firstname");
             if (name2.length() > 0)
@@ -288,7 +283,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
                             System.out.println("email");
                             System.out.println("test2");
 
-                            if (validatePhoneNumber(phoneNumber))
+                            if (validatePhoneNumber(phone.getText()))
                             {
                                 System.out.println("phone");
                                 System.out.println("test3");
@@ -302,7 +297,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
                                     GUI.currentUserAccount.setUserName(user);
                                     GUI.currentUserAccount.setPassword(pass1);
                                     GUI.currentUserAccount.setEmail(input3);
-                                    GUI.currentUserAccount.setPhone(phone1.getText());
+                                    GUI.currentUserAccount.setPhone(phone.getText());
                                     System.out.println("You have successfully created your user account!");
                                     JOptionPane.showMessageDialog(null, "You have successfully created your user account!", "Success!",
                                             JOptionPane.INFORMATION_MESSAGE);
@@ -404,18 +399,13 @@ public class CreateAccountPanel extends javax.swing.JPanel
         email.setText("");
     }//GEN-LAST:event_emailFocusGained
 
-    private void phone1FocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_phone1FocusGained
-    {//GEN-HEADEREND:event_phone1FocusGained
-        phone1.setText("");
-    }//GEN-LAST:event_phone1FocusGained
-
-    private void phone1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phone1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_phone1ActionPerformed
-
     private void phoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phoneActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_phoneActionPerformed
+
+    private void phoneFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_phoneFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_phoneFocusGained
 
     private static boolean validatePhoneNumber(String phoneNo)
     {
@@ -464,11 +454,10 @@ public class CreateAccountPanel extends javax.swing.JPanel
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField lastName;
     private javax.swing.JPasswordField password;
-    private javax.swing.JTextField phone1;
-    private javax.swing.JTextField phone2;
-    private javax.swing.JTextField phone3;
+    private javax.swing.JTextField phone;
     private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
 }
