@@ -475,10 +475,10 @@ public class AccountsListPanel extends javax.swing.JPanel
             }
             
             else if(n==1) {
-                JOptionPane.showMessageDialog(null, "Bank Account " + bankacc
-                    + " has been Deleted" + "\nFunds have been emailed to " + GUI.currentUserAccount.getEmail());
                 GUI.currentUserAccount.deleteBankAccount(bankacc);
                 this.update();
+                JOptionPane.showMessageDialog(null, "Bank Account " + bankacc
+                    + " has been Deleted" + "\nFunds have been emailed to " + GUI.currentUserAccount.getEmail());
             }
         }
         else
