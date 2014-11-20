@@ -1,6 +1,7 @@
 package Backend;
 
 import java.io.Serializable;
+import java.util.Calendar;
 
 /**
  * **************************************************************************
@@ -23,7 +24,8 @@ public class BankAccount implements Serializable
     protected String accountName;
     protected BankAccount next;
     protected String accountType;
-    private int accountPosition;
+    protected int accountPosition;
+    protected Calendar creationDate;
 
     /**
      * This function will add to the account balance
@@ -60,6 +62,8 @@ public class BankAccount implements Serializable
             return true;
         }
     }
+    
+    
 
     /////////////////////////////////////////
     // BELOW ARE JUST SETTERS AND GETTERS ///

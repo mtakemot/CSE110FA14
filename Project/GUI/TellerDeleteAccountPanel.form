@@ -152,7 +152,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="DejaVu Sans" size="24" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Are you sture you want to delete your account?"/>
+        <Property name="text" type="java.lang.String" value="Are you sure you want to delete your account?"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="AccNameField">

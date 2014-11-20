@@ -126,7 +126,7 @@ public class TellerDeleteAccountPanel extends javax.swing.JPanel
         });
 
         usernameLabel.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
-        usernameLabel.setText("Are you sture you want to delete your account?");
+        usernameLabel.setText("Are you sure you want to delete your account?");
 
         AccNameField.setText("Account Name");
         AccNameField.addFocusListener(new java.awt.event.FocusAdapter() {
