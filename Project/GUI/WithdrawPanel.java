@@ -28,6 +28,11 @@ public class WithdrawPanel extends javax.swing.JPanel {
     public WithdrawPanel() {
         initComponents();
     }
+    
+    public void updateUserLabel()
+    {
+        BAUserNameLabel.setText(GUI.currentUserAccount.getUserName());
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

@@ -31,8 +31,7 @@ public class TellerMainMenu extends javax.swing.JPanel {
         this.MainPanel = MainPanel;
         initComponents();
     }
-    
-    
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -150,6 +149,9 @@ public class TellerMainMenu extends javax.swing.JPanel {
                         null, "Please Enter User Account: ");
         
         GUI.currentUserAccount = GUI.MasterTable.findUserAccount(name);
+        
+        //Updates user account labels
+        mainGUI.updateUserLabels();
         
         if(GUI.currentUserAccount!=null){
             mainGUI.getTellerAP().update();
