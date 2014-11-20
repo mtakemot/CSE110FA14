@@ -22,7 +22,8 @@ import java.awt.*;
 //import java.io.*;
 public class AccountsListPanel extends javax.swing.JPanel
 {
-
+    final static int NAMECOL = 1;
+    final static int BALANCECOL = 3;
     // VERY IMPORTANT !! YOU MUST MAKE SURE THAT YOU GIVE EACH NEW PANEL THAT 
     // YOU DECLARE A PRIVATE VARIABLE THAT WILL STORE THE MAIN PANEL FROM GUI 
     private JPanel MainPanel;
@@ -30,7 +31,7 @@ public class AccountsListPanel extends javax.swing.JPanel
     private TableWrapper wrapper;
     private int total_accounts;
     private String[] accountlist;
-
+    
     public AccountsListPanel()
     {
         initComponents();
@@ -55,8 +56,9 @@ public class AccountsListPanel extends javax.swing.JPanel
         initComponents();
     }
 
-    public void setNewCellValue(double NewBalance, int row, int column){
-        AccountsTable.setValueAt((Object) NewBalance, row, column);
+    public void setNewCellValue(double NewBalance, String accountName){
+        AccountsTable.setValueAt((Object) NewBalance, 
+                findRowPositionByName(accountName), BALANCECOL);
     }
     
     public void update(){
@@ -83,8 +85,7 @@ public class AccountsListPanel extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
@@ -119,45 +120,36 @@ public class AccountsListPanel extends javax.swing.JPanel
         jLabel5.setText("Bank 42");
 
         Settings.setText("Settings");
-        Settings.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        Settings.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 SettingsMouseClicked(evt);
             }
         });
 
         Logout.setText("Logout");
-        Logout.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        Logout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LogoutMouseClicked(evt);
             }
         });
 
         AccountsTable.setAutoCreateRowSorter(true);
         AccountsTable.setModel(new TableModel(GUI.currentUserAccount));
-        AccountsTable.setColumnSelectionAllowed(false);
         AccountsTable.getTableHeader().setResizingAllowed(false);
         AccountsTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(AccountsTable);
-        AccountsTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+        AccountsTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         DeleteAccountButton.setText("Delete Highlighted Account");
-        DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 DeleteAccountButtonMouseClicked(evt);
             }
         });
 
         CreateBAButton.setText("Create New Bank Account");
-        CreateBAButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        CreateBAButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CreateBAButtonActionPerformed(evt);
             }
         });
@@ -168,26 +160,20 @@ public class AccountsListPanel extends javax.swing.JPanel
         jLabel2.setText("Amount to Tranfser:");
 
         AmountField.setText("Amount");
-        AmountField.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusGained(java.awt.event.FocusEvent evt)
-            {
+        AmountField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
                 AmountFieldFocusGained(evt);
             }
         });
-        AmountField.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        AmountField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AmountFieldActionPerformed(evt);
             }
         });
 
         BankAccountsList0.setModel(new javax.swing.DefaultComboBoxModel(accountlist));
-        BankAccountsList0.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        BankAccountsList0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BankAccountsList0ActionPerformed(evt);
             }
         });
@@ -196,17 +182,13 @@ public class AccountsListPanel extends javax.swing.JPanel
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         TransferButton.setText("Transfer");
-        TransferButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        TransferButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 TransferButtonMouseClicked(evt);
             }
         });
-        TransferButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        TransferButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TransferButtonActionPerformed(evt);
             }
         });
@@ -214,10 +196,8 @@ public class AccountsListPanel extends javax.swing.JPanel
         jLabel3.setText("To Your One Of Bank Accounts");
 
         BankAccountsList1.setModel(new javax.swing.DefaultComboBoxModel(accountlist));
-        BankAccountsList1.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        BankAccountsList1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BankAccountsList1ActionPerformed(evt);
             }
         });
@@ -256,26 +236,20 @@ public class AccountsListPanel extends javax.swing.JPanel
         jLabel4.setText("Transfer To Another User:");
 
         TransferButton1.setText("Transfer");
-        TransferButton1.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        TransferButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 TransferButton1MouseClicked(evt);
             }
         });
 
         EmailEntryField.setText("Email Address");
-        EmailEntryField.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusGained(java.awt.event.FocusEvent evt)
-            {
+        EmailEntryField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
                 EmailEntryFieldFocusGained(evt);
             }
         });
-        EmailEntryField.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        EmailEntryField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EmailEntryFieldActionPerformed(evt);
             }
         });
@@ -511,7 +485,15 @@ public class AccountsListPanel extends javax.swing.JPanel
             // test
         }
     }//GEN-LAST:event_TransferButtonMouseClicked
-
+    private int findRowPositionByName(String accountName){
+        int cRow = 0;
+        int totalRows = AccountsTable.getRowCount();
+        while(!accountName.equals(AccountsTable.getValueAt(cRow, NAMECOL)) || 
+                cRow == totalRows){
+            cRow++;
+        }                    
+        return cRow;
+    }
     private void TransferButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_TransferButtonActionPerformed
     {//GEN-HEADEREND:event_TransferButtonActionPerformed
         // TODO add your handling code here:

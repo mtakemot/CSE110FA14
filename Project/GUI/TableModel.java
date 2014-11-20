@@ -16,16 +16,16 @@ import javax.swing.table.*;
 public class TableModel extends AbstractTableModel
 {
 
-    private int colCount = 3;
+    private int colCount = 4;
     private UserAccount current;
     private TableWrapper wrapper;
     Class[] columns = new Class[]
     {
-        String.class, String.class, Double.class
+        Double.class, String.class, String.class, Double.class
     };
     private String[] columnNames =
     {
-        "Account Name", "Account Type",
+        "Number", "Account Name", "Account Type",
         "Account Balance"
     };
 
@@ -53,15 +53,17 @@ public class TableModel extends AbstractTableModel
     public void setValueAt(Object aValue, int rowIndex, int columnIndex){
         switch (columnIndex)
         {
-            case 2:
+            case 3:
                 wrapper.setAccountBalance((double) aValue, rowIndex);
                 break;
-            case 1:
+            case 2:
                 wrapper.setAccountType((String) aValue, rowIndex);
                 break;
-            case 0:
+            case 1:
                 wrapper.setAccountName((String) aValue, rowIndex);
                 break;
+            case 0:
+                wrapper.setAccountNumber((double) aValue, rowIndex);
         }
         fireTableCellUpdated(rowIndex, columnIndex);
     }
@@ -72,15 +74,17 @@ public class TableModel extends AbstractTableModel
         Object returnMe = null;
         switch (columnIndex)
         {
-            case 2:
+            case 3:
                 returnMe = wrapper.getAccountBalance(rowIndex);
                 break;
-            case 1:
+            case 2:
                 returnMe = wrapper.getAccountType(rowIndex);
                 break;
-            case 0:
+            case 1:
                 returnMe = wrapper.getAccountName(rowIndex);
                 break;
+            case 0:
+                returnMe = wrapper.getAccountNumber(rowIndex);
         }
         return returnMe;
     }

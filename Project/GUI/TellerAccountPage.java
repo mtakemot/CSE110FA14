@@ -9,6 +9,8 @@ import java.awt.*;
 import javax.swing.JPanel;
 import javax.swing.*;
 import Backend.*;
+import static GUI.AccountsListPanel.BALANCECOL;
+import static GUI.AccountsListPanel.NAMECOL;
 
 /**
  *
@@ -30,9 +32,19 @@ public class TellerAccountPage extends javax.swing.JPanel {
         this.mainGUI = mainGUI;
         initComponents();
     }
+    private int findRowPositionByName(String accountName){
+        int cRow = 0;
+        int totalRows = AccountsTable.getRowCount();
+        while(!accountName.equals(AccountsTable.getValueAt(cRow, NAMECOL)) || 
+                cRow == totalRows){
+            cRow++;
+        }                    
+        return cRow;
+    }
     
-    public void setNewCellValue(double NewBalance, int row, int column){
-        AccountsTable.setValueAt((Object) NewBalance, row, column);
+    public void setNewCellValue(double NewBalance, String accountName){
+        AccountsTable.setValueAt((Object) NewBalance, 
+                findRowPositionByName(accountName), BALANCECOL);
     }
     
     public void update(){
@@ -258,7 +270,7 @@ public class TellerAccountPage extends javax.swing.JPanel {
         }
         
         GUI.currentBankAccount.addToBalance(amount);
-        setNewCellValue(GUI.currentBankAccount.getBalance(), GUI.currentBankAccount.getAccountPosition(), 2);
+        setNewCellValue(GUI.currentBankAccount.getBalance(), GUI.currentBankAccount.getAccountName());
         System.out.print("\n GUI.currentBankAcc Name:  " + GUI.currentBankAccount.getAccountName() + "\n");
 
         JOptionPane.showMessageDialog(null, "amount of " + amount + "$ was deposited to account "
@@ -312,7 +324,7 @@ public class TellerAccountPage extends javax.swing.JPanel {
         else
         {
             GUI.currentBankAccount.subFromBalance(amount);
-            setNewCellValue(GUI.currentBankAccount.getBalance(), GUI.currentBankAccount.getAccountPosition(), 2);
+            setNewCellValue(GUI.currentBankAccount.getBalance(), GUI.currentBankAccount.getAccountName());
         }
                 
         System.out.print("\n GUI.currentBankAcc Name:  " + GUI.currentBankAccount.getAccountName() + "\n");

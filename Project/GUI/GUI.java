@@ -51,6 +51,8 @@ public class GUI extends javax.swing.JFrame
     public static final String ACCTABLE = "account table";
     //keyword to change the TellerAP table
     public static final String TELTABLE = "teller table";
+    
+    public static final int BALANCECOL = 3;
 
     public GUI()
     {
@@ -97,8 +99,7 @@ public class GUI extends javax.swing.JFrame
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         MainPanel = new javax.swing.JPanel();
 
@@ -298,7 +299,7 @@ public class GUI extends javax.swing.JFrame
                             @Override
                             public void propertyChange(PropertyChangeEvent PcEvt){
                                 mainGUI.getAccList().setNewCellValue(currentBankAccount.getBalance(),
-                                        currentBankAccount.getAccountPosition(), 2);
+                                        currentBankAccount.getAccountName());
                                 return;
                             }
                      });     
@@ -308,7 +309,7 @@ public class GUI extends javax.swing.JFrame
                             @Override
                             public void propertyChange(PropertyChangeEvent PcE) {
                                 mainGUI.getTellerAP().setNewCellValue(currentBankAccount.getBalance(),
-                                        currentBankAccount.getAccountPosition(), 2);
+                                        currentBankAccount.getAccountName());
                             }
                         });
                 /*if (dataout.exportDB(MasterTable))
