@@ -54,6 +54,7 @@ public class TellerAccountPage extends javax.swing.JPanel {
     public void update(){
         AccountsTable.setModel(new TableModel(GUI.currentUserAccount));
         CurrentUserAccountLabel.setText(GUI.currentUserAccount.getUserName());
+        mainGUI.updateUserLabels();
     }
     
     public void deletecomboboxes(String bankacc) {

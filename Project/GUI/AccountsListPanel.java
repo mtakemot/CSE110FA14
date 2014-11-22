@@ -66,6 +66,7 @@ public class AccountsListPanel extends javax.swing.JPanel
 
     public void update()
     {
+        mainGUI.updateUserLabels();
         AccountsTable.clearSelection();
         System.out.println(AccountsTable.getSelectedRowCount());
         AccountsTable.getSelectionModel().clearSelection();

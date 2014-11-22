@@ -150,9 +150,6 @@ public class TellerMainMenu extends javax.swing.JPanel {
         
         GUI.currentUserAccount = GUI.MasterTable.findUserAccount(name);
         
-        //Updates user account labels
-        mainGUI.updateUserLabels();
-        
         if(GUI.currentUserAccount!=null){
             mainGUI.getTellerAP().update();
             CardLayout layout = (CardLayout) (MainPanel.getLayout());
