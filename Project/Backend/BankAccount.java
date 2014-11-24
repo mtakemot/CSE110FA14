@@ -18,8 +18,6 @@ import org.joda.time.*;
  */
 public class BankAccount implements Serializable
 {
-
-    // making changes
     protected double balance;
     protected String accountName;
     protected BankAccount next;
@@ -49,14 +47,6 @@ public class BankAccount implements Serializable
         this.dayDepositAmount = 0;
     }
 
-    /**
-     * This function will subtract from the account balance, but will not allow
-     * the account balance to go below 0
-     *
-     * @method subFromBalance
-     * @param amount amount to subtract from the balance
-     * @return returns the new account balance
-     */
     double calculateAverageBalance()
     {
         return 0;
