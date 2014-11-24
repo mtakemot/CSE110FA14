@@ -1,6 +1,7 @@
 package Backend;
 
 import java.io.Serializable;
+import org.joda.time.*;
 
 /**
  * **************************************************************************
@@ -21,7 +22,7 @@ public class HashTable implements Serializable
     private final static int SIZE = 251;
     public int occ; // Total number of UserAccounts that the table is holding
     UserAccount[] Table; // The hash table
-
+    private DateTime lastInterestDateTime;
     // Constructor for the HashTable creates an array of size SIZE and
     // initializes every element in the array to null. Also initializes occ
     public HashTable()
@@ -31,7 +32,10 @@ public class HashTable implements Serializable
         for (int zod = 0; zod < SIZE; zod++)
         {
             Table[zod] = null;
-        }        
+        }
+        // Sets the creation time of the HashTable to the local time converted
+        // to UTC
+        lastInterestDateTime = new DateTime(DateTimeZone.forID("Etc/UTC"));
     }
 
     /**
@@ -44,6 +48,11 @@ public class HashTable implements Serializable
      */
     public UserAccount insertUserAccount(String userName)
     {
+        /* DEBUG uncomment to see if admin account added to every DB
+         if(userName == "admin"){
+         System.err.println("Can't create admin account");
+         return null;
+         }*/
         int index = hashCode(userName) % SIZE;
         // The bucket at index is not currently occupied, so we insert at
         // Table[index]
@@ -51,6 +60,8 @@ public class HashTable implements Serializable
         {
             Table[index] = new UserAccount(userName);
             Table[index].setLocation(index);
+            Table[index].insertBankAccount(0, "Checking1", "Checking");
+            Table[index].insertBankAccount(0, "Savings1", "Savings");
             this.occ++;
             return Table[index];
         }
@@ -76,11 +87,12 @@ public class HashTable implements Serializable
             {
                 current.setNext(new UserAccount(userName));
                 current.getNext().setLocation(index);
+                current.getNext().insertBankAccount(0, "Checking1", "Checking");
+                current.getNext().insertBankAccount(0, "Savings1", "Savings");
                 this.occ++;
                 return current.getNext();
             }
         }
-
     }
 
     // When a user attempts to log in, this function will be called to see
@@ -119,6 +131,42 @@ public class HashTable implements Serializable
         }
     }
 
+    public UserAccount findUserAccountEmail(String email)
+    {
+        int isEqual;
+        for (int i = 0; i < SIZE; i++)
+        {
+            if (Table[i] != null)
+            {
+                UserAccount current = Table[i];
+                String currentEmail = current.getEmail();
+                if (currentEmail != null)
+                {
+                    isEqual = currentEmail.compareTo(email);
+                    if (isEqual == 0)
+                    {
+                        return current;
+                    }
+                }
+                while (current.getNext() != null)
+                {
+                    current = current.getNext();
+                    currentEmail = current.getEmail();
+                    if (currentEmail != null)
+                    {
+                        isEqual = currentEmail.compareTo(email);
+                        if (isEqual == 0)
+                        {
+                            return current;
+                        }
+                    }
+                }
+            }
+
+        }
+        return null;
+    }
+
     /**
      * This function will delete a UserAccount from the HashTable
      *
@@ -129,7 +177,7 @@ public class HashTable implements Serializable
      */
     public boolean deleteUserAccount(String userName)
     {
-        int index = hashCode(userName);
+        int index = hashCode(userName) % SIZE;
         if (Table[index] != null)
         {
             // Keep track of the previous UserAccount in the list
@@ -147,9 +195,14 @@ public class HashTable implements Serializable
             {
                 // The UserAccount is not the head of the linked list
                 if (prev != null)
+                {
                     prev.setNext(current.getNext());
+                    current.setNext(null);
+                    current = null;
+                }
                 else // Remove the head of the linked list inside of the bucket
                     Table[index] = current.getNext();
+                occ--;
                 return true;
             }
         }
@@ -183,63 +236,55 @@ public class HashTable implements Serializable
         return (shiftedHash ^ hashValue);
     }
 
-    /**
-     * This function will transfer funds between two BankAccounts
-     *
-     * @method transferFunds
-     * @param sendFunds This is the UserAccount which contains the BankAccount
-     * that the funds will be sent from
-     * @param receiveFunds This is the userName of the UserAccount which
-     * contains the BankAccount that will receive funds
-     * @param fromAcc This is the name of the BankAccount which will have its
-     * balance subtracted from to send to another account
-     * @param toAcc This is the name of the BankAccount which will have its
-     * balance added to and will receive funds
-     * @param amount The amount of money to send
-     * @return Returns true if the transfer was successful. Returns false if one
-     * of the accounts does not exist or if subtracting funds from fromAcc would
-     * result in a negative balance.
-     */
-    public boolean transferFunds(UserAccount sendFunds, String receiveFunds,
-            String fromAcc, String toAcc, double amount)
+    public int adminPrintUser()
     {
-        // UserAccount which contains the BankAccount that will
-        // be receiving funds
-        UserAccount recUA;
-        // BankAccount which will be recieving funds
-        BankAccount recBA;
-        // BankAccount which will be sending funds
-        BankAccount sendBA;
-        // Make sure that the sender's UserAccount exists.
-        if (sendFunds != null)
+
+        if (Table != null && occ != 0)
         {
-            // Find the UserAccount which contains the BankAccount that will
-            // be receiving funds
-            recUA = this.findUserAccount(receiveFunds);
-            if (recUA != null) // Make sure the UserAccount exists
+            System.out.println("User List");
+            System.out.println("Begin:");
+            System.out.println("======================");
+            int count = 0;
+            for (int i = 0; i < SIZE; i++)
             {
-                // Find the BankAccount to send funds to
-                recBA = recUA.findBankAccount(toAcc);
-                // The recieving UserAccount does not exits. Return false
-                if (recBA != null)
+                if (Table[i] != null && !Table[i].getAdmin())
                 {
-                    // Find the BankAccount that will be sending funds
-                    sendBA = sendFunds.findBankAccount(fromAcc);
-                    if (sendBA != null)
+                    System.out.println((i + count) + ". " + Table[i].getUserName());
+                    if (Table[i].getNext() != null)
                     {
-                        // Check if subtracting funds will result in a negative
-                        // balance
-                        if (sendBA.subFromBalance(amount))
+                        UserAccount currUserAccount = Table[i].getNext();
+                        while (currUserAccount != null)
                         {
-                            // Add funds to the receiver's BankAccount
-                            recBA.addToBalance(amount);
-                            return true;
+                            System.out.println((i + count) + ". " + currUserAccount.getUserName());
+                            currUserAccount = currUserAccount.getNext();
+                            count++;
                         }
                     }
+                    System.out.println();
+                    System.out.println("======================");
                 }
-            }
-        }
-        return false;
 
+            }
+            System.out.println("END");
+            return occ;
+        }
+        return 0;
     }
+
+    public void CalculateInterest()
+    {
+        
+    }
+    
+    public DateTime getLastInterestDateTime()
+    {
+        return lastInterestDateTime;
+    }
+
+    public void setLastInterestDateTime(DateTime LastInterestDateTime)
+    {
+        this.lastInterestDateTime = LastInterestDateTime;
+    }
+    
+    
 }

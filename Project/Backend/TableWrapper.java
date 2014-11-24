@@ -11,7 +11,7 @@ package Backend;
  */
 public class TableWrapper
 {
-
+    private int[] accountNumbers;
     private String[] accountNames;
     private String[] accountTypes;
     private double[] accountBalances;
@@ -25,6 +25,7 @@ public class TableWrapper
         {
             currentUA = curr;
             totalAccounts = currentUA.getNumOfBankAccounts();
+            accountNumbers = new int[totalAccounts];
             accountNames = new String[totalAccounts];
             accountTypes = new String[totalAccounts];
             accountBalances = new double[totalAccounts];
@@ -41,6 +42,7 @@ public class TableWrapper
             // or we reach the end of the list
             for (int zod = 0; zod < totalAccounts; zod++)
             {
+                accountNumbers[zod] = zod+1;
                 accountNames[zod] = currentBA.getAccountName();
                 accountTypes[zod] = currentBA.getAccountType();
                 accountBalances[zod] = currentBA.getBalance();
@@ -52,6 +54,11 @@ public class TableWrapper
     /////////////////////////////////////////
     // BELOW ARE JUST SETTERS AND GETTERS ///
     /////////////////////////////////////////
+    
+    public int getAccountNumber(int index){
+        return accountNumbers[index];
+    }
+    
     public String getAccountName(int index)
     {
         return accountNames[index];
@@ -81,4 +88,21 @@ public class TableWrapper
     {
         return currentBA;
     }
+    
+    public void setAccountBalance(double newBalance, int rowIndex) {
+        this.accountBalances[rowIndex] = newBalance;
+    }
+
+    public void setAccountName(String newName, int rowIndex) {
+        this.accountNames[rowIndex] = newName;
+    }
+
+    public void setAccountType(String newType, int rowIndex) {
+        this.accountTypes[rowIndex] = newType;
+    }
+    
+    public void setAccountNumber(int newNumber, int rowIndex){
+        this.accountNumbers[rowIndex] = newNumber;
+    }
+    
 }

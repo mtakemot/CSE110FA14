@@ -7,6 +7,7 @@ package GUI;
 
 import Backend.TableWrapper;
 import Backend.UserAccount;
+import javax.swing.JLabel;
 import javax.swing.table.*;
 
 /**
@@ -16,16 +17,16 @@ import javax.swing.table.*;
 public class TableModel extends AbstractTableModel
 {
 
-    private int colCount = 3;
+    private int colCount = 4;
     private UserAccount current;
     private TableWrapper wrapper;
     Class[] columns = new Class[]
     {
-        String.class, String.class, Double.class
+        Integer.class, String.class, String.class, Double.class
     };
     private String[] columnNames =
     {
-        "Account Name", "Account Type",
+        "#", "Account Name", "Account Type",
         "Account Balance"
     };
 
@@ -33,6 +34,7 @@ public class TableModel extends AbstractTableModel
     {
         this.current = curr;
         wrapper = new TableWrapper(this.current);
+        this.addTableModelListener(new TableListener());
     }
 
     @Override
@@ -47,21 +49,43 @@ public class TableModel extends AbstractTableModel
         return colCount;
     }
 
+    
+    @Override
+    public void setValueAt(Object aValue, int rowIndex, int columnIndex){
+        switch (columnIndex)
+        {
+            case 3:
+                wrapper.setAccountBalance((double) aValue, rowIndex);
+                break;
+            case 2:
+                wrapper.setAccountType((String) aValue, rowIndex);
+                break;
+            case 1:
+                wrapper.setAccountName((String) aValue, rowIndex);
+                break;
+            case 0:
+                wrapper.setAccountNumber((int) aValue, rowIndex);
+        }
+        fireTableCellUpdated(rowIndex, columnIndex);
+    }
+    
     @Override
     public Object getValueAt(int rowIndex, int columnIndex)
     {
         Object returnMe = null;
         switch (columnIndex)
         {
-            case 2:
+            case 3:
                 returnMe = wrapper.getAccountBalance(rowIndex);
                 break;
-            case 1:
+            case 2:
                 returnMe = wrapper.getAccountType(rowIndex);
                 break;
-            case 0:
+            case 1:
                 returnMe = wrapper.getAccountName(rowIndex);
                 break;
+            case 0:
+                returnMe = wrapper.getAccountNumber(rowIndex);
         }
         return returnMe;
     }

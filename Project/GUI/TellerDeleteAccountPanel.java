@@ -12,13 +12,13 @@ import javax.swing.*;
  *
  * @author Zack
  */
-public class DeleteAccountPanel extends javax.swing.JPanel
+public class TellerDeleteAccountPanel extends javax.swing.JPanel
 {
 
     private JPanel MainPanel;
     private GUI mainGUI;
 
-    public DeleteAccountPanel(JPanel MainPanel, GUI mainGUI)
+    public TellerDeleteAccountPanel(JPanel MainPanel, GUI mainGUI)
     {
         this.MainPanel = MainPanel;
         this.mainGUI = mainGUI;
@@ -28,7 +28,7 @@ public class DeleteAccountPanel extends javax.swing.JPanel
     /**
      * Creates new form DeleteAccountPanel
      */
-    public DeleteAccountPanel()
+    public TellerDeleteAccountPanel()
     {
         initComponents();
     }
@@ -59,12 +59,9 @@ public class DeleteAccountPanel extends javax.swing.JPanel
                 boolean deleted = GUI.MasterTable.deleteUserAccount(GUI.currentUserAccount.getUserName());
                 GUI.currentBankAccount = null;
                 GUI.currentUserAccount = null;
+                JOptionPane.showMessageDialog(null, "User Account Deleted");
                 CardLayout layout = (CardLayout) (MainPanel.getLayout());
-                layout.show(MainPanel, "Login");
-                GUI.dataout.exportDB(GUI.MasterTable);
-                System.out.println("MSG AccountsListPanel.java: exported DB n == 0");
-                
-                
+                layout.show(MainPanel, "TellerMainMenu");
             }
         }
     }
@@ -203,7 +200,7 @@ public class DeleteAccountPanel extends javax.swing.JPanel
                         .addGap(167, 167, 167))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(BAUserNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(323, 323, 323))))
+                        .addGap(320, 320, 320))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -247,7 +244,7 @@ public class DeleteAccountPanel extends javax.swing.JPanel
 
     private void BackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButtonMouseClicked
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
-        layout.show(MainPanel, "Settings");
+        layout.show(MainPanel, "TellerAP");
     }//GEN-LAST:event_BackButtonMouseClicked
 
     private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed

@@ -17,40 +17,57 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-              <Component id="BATypeLabel" min="-2" pref="86" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="218" max="-2" attributes="0"/>
-              <Component id="BAUserNameLabel" min="-2" pref="86" max="-2" attributes="0"/>
-              <EmptySpace pref="322" max="32767" attributes="0"/>
-              <Component id="BAAmountLabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
+              <Component id="SettingsButton" min="-2" pref="146" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="BackButton" min="-2" pref="130" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
-              <Component id="TransferButton" min="-2" pref="197" max="-2" attributes="0"/>
+              <Component id="BankNamePanel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="LogoutButtton" min="-2" pref="146" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="182" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="BankAccountsList0" min="-2" max="-2" attributes="0"/>
+                          <Component id="AmountField" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="EmailEntryField" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="TransferButton1" min="-2" pref="197" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="BankAccountsList1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
+                                  <Component id="TransferButton" min="-2" pref="197" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="BackButton" min="-2" pref="130" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
               <EmptySpace max="32767" attributes="0"/>
               <Component id="ExitButton" min="-2" pref="130" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <Component id="SettingsButton" min="-2" pref="146" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="usernameLabel" min="-2" max="-2" attributes="0"/>
-                  <Group type="102" attributes="0">
-                      <Component id="BankNamePanel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="LogoutButtton" min="-2" pref="146" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="247" max="-2" attributes="0"/>
-              <Component id="AmountField" min="-2" pref="276" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -62,21 +79,32 @@
                   <Component id="LogoutButtton" alignment="1" max="32767" attributes="0"/>
                   <Component id="SettingsButton" alignment="0" min="-2" pref="32" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace pref="58" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="BATypeLabel" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                  <Component id="BAUserNameLabel" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                  <Component id="BAAmountLabel" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                  <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BankAccountsList0" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="85" max="32767" attributes="0"/>
-              <Component id="usernameLabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-              <Component id="AmountField" min="-2" pref="53" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="135" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                  <Component id="AmountField" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="TransferButton" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                  <Component id="BankAccountsList1" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="EmailEntryField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="TransferButton1" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="132" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="ExitButton" alignment="3" min="-2" pref="75" max="-2" attributes="0"/>
                   <Component id="BackButton" alignment="3" min="-2" pref="75" max="-2" attributes="0"/>
-                  <Component id="TransferButton" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -129,13 +157,6 @@
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="SettingsButtonMouseClicked"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="BAUserNameLabel">
-      <Properties>
-        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="GUI.currentBankAccount.getAccountName()" type="code"/>
-        </Property>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JButton" name="LogoutButtton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Logout"/>
@@ -143,20 +164,6 @@
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="LogoutButttonMouseClicked"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="BATypeLabel">
-      <Properties>
-        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="GUI.currentBankAccount.getAccountType()" type="code"/>
-        </Property>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="BAAmountLabel">
-      <Properties>
-        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="String.valueOf(GUI.currentBankAccount.getBalance())" type="code"/>
-        </Property>
-      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="ExitButton">
       <Properties>
@@ -174,29 +181,79 @@
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BackButtonMouseClicked"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="AmountField">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Amount"/>
-      </Properties>
-      <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="AmountFieldMouseClicked"/>
-        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="AmountFieldKeyTyped"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="usernameLabel">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="DejaVu Sans" size="24" style="1"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="How much do you want to transfer?"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JButton" name="TransferButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Transfer"/>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="TransferButtonMouseClicked"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TransferButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Amount to Tranfser"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Transfer One Of Your Bank Accounts"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel4">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Or Transfer To Another User"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="EmailEntryField">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Email Address"/>
+      </Properties>
+      <Events>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="EmailEntryFieldFocusGained"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EmailEntryFieldActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel5">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Bank Account To Transfer From"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="AmountField">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Amount"/>
+      </Properties>
+      <Events>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="AmountFieldFocusGained"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AmountFieldActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="BankAccountsList1">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="new javax.swing.DefaultComboBoxModel(accountlist)" type="code"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BankAccountsList1ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="TransferButton1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Transfer"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="TransferButton1MouseClicked"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="BankAccountsList0">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="new javax.swing.DefaultComboBoxModel(accountlist)" type="code"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BankAccountsList0ActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

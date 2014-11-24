@@ -15,11 +15,12 @@ import java.io.Serializable;
  * will hold basic information about the user, and must have a unique userName.
  * Each UserAccount will also contain a linked list of BankAccounts which will
  * be either checking or savings. TODO: Implement a deleteBankAccount function
- ***************************************************************************
+ * **************************************************************************
  */
 public class UserAccount implements Serializable
 {
 
+    private boolean admin = false;
     private String firstName;
     private String lastName;
     private String userName;
@@ -35,7 +36,7 @@ public class UserAccount implements Serializable
     // This will hold the first bank account (either checking or savings)
     // that the user owns. Each BankAccount object will have a next field which
     // will point to the user's next account.
-    private BankAccount BankAccHead;
+    public BankAccount BankAccHead;
     // Keeps track of how many BankAccounts the UserAccount has. Important for
     // the table on AccountsListPage
     private int numOfBankAccounts = 0;
@@ -49,6 +50,7 @@ public class UserAccount implements Serializable
     public UserAccount(String first, String last, String user, String pass,
             String email, String phone, int loc)
     {
+        this.admin = false;
         this.firstName = first;
         this.lastName = last;
         this.userName = user;
@@ -100,6 +102,7 @@ public class UserAccount implements Serializable
             {
                 BankAccHead = new CheckingAccount(bal, name);
                 numOfBankAccounts++;
+                BankAccHead.setAccountPosition(0);
                 return BankAccHead;
             }
             // Create a SavingsAccount
@@ -107,11 +110,13 @@ public class UserAccount implements Serializable
             {
                 BankAccHead = new SavingsAccount(bal, name);
                 numOfBankAccounts++;
+                BankAccHead.setAccountPosition(0);
                 return BankAccHead;
             }
         }
         else // The head of the linked list was not null
         {
+            int rowIndex = 0;
             BankAccount current;
             current = this.BankAccHead;
             // Traverse the linked list until we find a BankAccount with the
@@ -119,6 +124,7 @@ public class UserAccount implements Serializable
             while (current.getNext() != null
                     && !(current.getAccountName().equals(name)))
             {
+                rowIndex++;
                 current = current.getNext();
             }
             if (current.getAccountName().equals(name))
@@ -133,12 +139,14 @@ public class UserAccount implements Serializable
                 {
                     current.setNext(new CheckingAccount(bal, name));
                     numOfBankAccounts++;
+                    current.getNext().setAccountPosition(numOfBankAccounts - 1);
                     return current.getNext();
                 }
                 else // Create a SavingsAccount
                 {
                     current.setNext(new SavingsAccount(bal, name));
                     numOfBankAccounts++;
+                    current.getNext().setAccountPosition(numOfBankAccounts - 1);
                     return current.getNext();
                 }
             }
@@ -178,6 +186,85 @@ public class UserAccount implements Serializable
     }
 
     /**
+     * This function will allow us to pass in a number and return the
+     * BankAccount that is at that position in our linked list of BankAccounts
+     *
+     * @param num the position of the BankAccount we are looking for
+     * @return the BankAccount if it is found. null otherwise
+     */
+    public BankAccount findBankAccountNumber(int num)
+    {
+        if (this.BankAccHead == null) // The user does not have any BankAccounts
+        {
+            return null;
+        }
+        else
+        {
+            BankAccount current = this.BankAccHead;
+            // Traverse the BankAccount linked list until the account is found
+            // or we reach the end of the list
+            for (int zod = 0; zod < (num-1); zod++)
+            {
+                current = current.getNext();
+            }
+            if (current == null) // The end of the list was reached
+                return null;
+            else // The item was found
+                return current;
+        }
+    }
+
+    public boolean deleteBankAccount(String name)
+    {
+        if (BankAccHead != null)
+        {
+            // Keep track of the previous UserAccount in the list
+            BankAccount prev = null;
+            BankAccount current = BankAccHead;
+            // Traverse the linked list inside of the bucket until the UserAccount
+            // is found or we reach the end of the linked list
+            while (current.getNext() != null
+                    && !(current.getAccountName().equals(name)))
+            {
+                prev = current;
+                current = current.getNext();
+            }
+            if (current.getAccountName().equals(name)) // The UserAccount was found
+            {
+                numOfBankAccounts--;
+                // The UserAccount is not the head of the linked list
+                if (prev != null)
+                {
+                    prev.setNext(current.getNext());
+                    setBankAccountNumbers(current.getNext());
+                    current = null;
+                }
+                else // Remove the head of the linked list inside of the bucket
+                {
+                    BankAccHead = BankAccHead.getNext();
+                    setBankAccountNumbers(current.getNext());
+                    current = null;
+                }
+                return true;
+            }
+        }
+        // The bucket at index was empty so the UserAccount was not found
+        return false;
+    }
+    
+    public void setBankAccountNumbers(BankAccount current)
+    {
+        if (current != null) // The user does not have any BankAccounts
+        {
+            for (int zod = ((current.getAccountPosition()) - 1); zod < (numOfBankAccounts); zod++)
+            {
+                current.setAccountPosition(zod);
+                current = current.getNext();
+            }
+        }
+    }
+
+    /**
      * Prints information about all BankAccounts that the user owns
      *
      * @method printAllBankAccounts
@@ -202,6 +289,22 @@ public class UserAccount implements Serializable
             System.out.println("You have no bank accounts. ");
     }
 
+    public int printBankAccountNames()
+    {
+        if (BankAccHead != null)
+        {
+            BankAccount current = this.BankAccHead;
+            for (int zod = 0; zod < numOfBankAccounts; zod++)
+            {
+                System.out.println((current.getAccountPosition() + 1) + ". " + current.getAccountName());
+                current = current.next;
+            }
+            return numOfBankAccounts;
+        }
+        System.out.println("You have no bank accounts. ");
+        return 0;
+    }
+
     /**
      * Checks if two UserAccounts are equal by comparing the userName field
      *
@@ -217,6 +320,21 @@ public class UserAccount implements Serializable
     /////////////////////////////////////////
     // BELOW ARE JUST SETTERS AND GETTERS ///
     /////////////////////////////////////////
+    
+    /**
+     * 11_15 testing admin account*
+     */
+    public void allowAdmin()
+    {
+
+        this.admin = true;
+    }
+
+    public boolean getAdmin()
+    {
+        return admin;
+    }
+
     public void setFirstName(String firstName)
     {
         this.firstName = firstName;
