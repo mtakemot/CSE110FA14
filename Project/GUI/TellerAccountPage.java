@@ -280,7 +280,7 @@ public class TellerAccountPage extends javax.swing.JPanel
         boolean parsable = true;
         try
         {
-            Integer.parseInt(input);
+            Double.parseDouble(input);
         } catch (NumberFormatException e)
         {
             parsable = false;
@@ -295,7 +295,7 @@ public class TellerAccountPage extends javax.swing.JPanel
 
         if (isParsable(amountstring))
         {
-            amount = Integer.parseInt(amountstring);
+            amount = Double.parseDouble(amountstring);
         }
         else
         {
@@ -348,7 +348,7 @@ public class TellerAccountPage extends javax.swing.JPanel
 
         if (isParsable(amountstring))
         {
-            amount = Integer.parseInt(amountstring);
+            amount = Double.parseDouble(amountstring);
         }
         else
         {
