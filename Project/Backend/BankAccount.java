@@ -1,7 +1,7 @@
 package Backend;
 
 import java.io.Serializable;
-import java.util.Calendar;
+import org.joda.time.*;
 
 /**
  * **************************************************************************
@@ -25,19 +25,28 @@ public class BankAccount implements Serializable
     protected BankAccount next;
     protected String accountType;
     protected int accountPosition;
-    protected Calendar creationDate;
 
-    /**
-     * This function will add to the account balance
-     *
-     * @method addToBalance
-     * @param amount this is the amount to add to the balance
-     * @return returns the new account balance
-     */
-    public double addToBalance(double amount)
+    // Average balance in the account over the last month
+    protected double averageBalance;
+    // Total amount withdrawn in last 24 hrs
+    protected double dayWithdrawAmount;
+    // The last time a withdraw was made on the account
+    protected DateTime lastWithdrawDateTime;
+    // Total amount deposited in last 24 hrs
+    protected double dayDepositAmount;
+    // The last time a deposit was made on the account
+    protected DateTime lastDepositDateTime;
+
+    public BankAccount()
     {
-        this.balance += amount;
-        return this.balance;
+        DateTime currentTime = new DateTime(DateTimeZone.forID("Etc/UTC"));
+        this.lastDepositDateTime = currentTime;
+        this.lastWithdrawDateTime = currentTime;
+
+        this.averageBalance = 0;
+
+        this.dayWithdrawAmount = 0;
+        this.dayDepositAmount = 0;
     }
 
     /**
@@ -48,26 +57,26 @@ public class BankAccount implements Serializable
      * @param amount amount to subtract from the balance
      * @return returns the new account balance
      */
-    public boolean subFromBalance(double amount)
+    double calculateAverageBalance()
     {
-        if (this.balance - amount < 0)
-        {
-            System.out.print("This amount cannot be withdrawn ");
-            System.out.println("because the new balance will be negative.");
-            return false;
-        }
-        else
-        {
-            this.balance -= amount;
-            return true;
-        }
+        return 0;
     }
     
+    // The following 2 methods will be overridden in 
+    // SavingsAccount.java and CheckingAccount.java
+    public boolean subFromBalance(double amount)
+    {
+        return false;
+    }
     
+    public boolean addToBalance(double amount)
+    {
+        return true;
+    }
 
-    /////////////////////////////////////////
-    // BELOW ARE JUST SETTERS AND GETTERS ///
-    /////////////////////////////////////////
+/////////////////////////////////////////
+// BELOW ARE JUST SETTERS AND GETTERS ///
+/////////////////////////////////////////
     public void setBalance(double balance)
     {
         this.balance = balance;

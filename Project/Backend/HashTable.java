@@ -1,6 +1,7 @@
 package Backend;
 
 import java.io.Serializable;
+import org.joda.time.*;
 
 /**
  * **************************************************************************
@@ -21,7 +22,7 @@ public class HashTable implements Serializable
     private final static int SIZE = 251;
     public int occ; // Total number of UserAccounts that the table is holding
     UserAccount[] Table; // The hash table
-
+    private DateTime lastInterestDateTime;
     // Constructor for the HashTable creates an array of size SIZE and
     // initializes every element in the array to null. Also initializes occ
     public HashTable()
@@ -32,6 +33,9 @@ public class HashTable implements Serializable
         {
             Table[zod] = null;
         }
+        // Sets the creation time of the HashTable to the local time converted
+        // to UTC
+        lastInterestDateTime = new DateTime(DateTimeZone.forID("Etc/UTC"));
     }
 
     /**
@@ -232,66 +236,6 @@ public class HashTable implements Serializable
         return (shiftedHash ^ hashValue);
     }
 
-    /**
-     * This function will transfer funds between two BankAccounts
-     *
-     * @method transferFunds
-     * @param sendFunds This is the UserAccount which contains the BankAccount
-     * that the funds will be sent from
-     * @param receiveFunds This is the userName of the UserAccount which
-     * contains the BankAccount that will receive funds
-     * @param fromAcc This is the name of the BankAccount which will have its
-     * balance subtracted from to send to another account
-     * @param toAcc This is the name of the BankAccount which will have its
-     * balance added to and will receive funds
-     * @param amount The amount of money to send
-     * @return Returns true if the transfer was successful. Returns false if one
-     * of the accounts does not exist or if subtracting funds from fromAcc would
-     * result in a negative balance.
-     */
-    public boolean transferFunds(UserAccount sendFunds, String receiveFunds,
-            String fromAcc, String toAcc, double amount)
-    {
-        // UserAccount which contains the BankAccount that will
-        // be receiving funds
-        UserAccount recUA;
-        // BankAccount which will be recieving funds
-        BankAccount recBA;
-        // BankAccount which will be sending funds
-        BankAccount sendBA;
-        // Make sure that the sender's UserAccount exists.
-        if (sendFunds != null)
-        {
-            // Find the UserAccount which contains the BankAccount that will
-            // be receiving funds
-            recUA = this.findUserAccount(receiveFunds);
-            if (recUA != null) // Make sure the UserAccount exists
-            {
-                // Find the BankAccount to send funds to
-                recBA = recUA.findBankAccount(toAcc);
-                // The recieving UserAccount does not exits. Return false
-                if (recBA != null)
-                {
-                    // Find the BankAccount that will be sending funds
-                    sendBA = sendFunds.findBankAccount(fromAcc);
-                    if (sendBA != null)
-                    {
-                        // Check if subtracting funds will result in a negative
-                        // balance
-                        if (sendBA.subFromBalance(amount))
-                        {
-                            // Add funds to the receiver's BankAccount
-                            recBA.addToBalance(amount);
-                            return true;
-                        }
-                    }
-                }
-            }
-        }
-        return false;
-
-    }
-
     public int adminPrintUser()
     {
 
@@ -326,4 +270,21 @@ public class HashTable implements Serializable
         }
         return 0;
     }
+
+    public void CalculateInterest()
+    {
+        
+    }
+    
+    public DateTime getLastInterestDateTime()
+    {
+        return lastInterestDateTime;
+    }
+
+    public void setLastInterestDateTime(DateTime LastInterestDateTime)
+    {
+        this.lastInterestDateTime = LastInterestDateTime;
+    }
+    
+    
 }
