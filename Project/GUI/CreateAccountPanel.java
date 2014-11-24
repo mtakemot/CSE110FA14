@@ -148,8 +148,6 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
         jLabel15.setText("Phone:");
 
-        jLabel8.setText("Error message!");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(

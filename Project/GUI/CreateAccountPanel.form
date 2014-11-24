@@ -231,9 +231,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Error message!"/>
-      </Properties>
     </Component>
   </SubComponents>
 </Form>
