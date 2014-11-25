@@ -283,7 +283,9 @@ public class HashTable implements Serializable
 
     /**
      * This function will iterate through the entire HashTable and delegate to 
-     * InterestAndPenaltiesHelper to calculate the penalties and interest on all existing
+     * InterestAndPenaltiesHelper to calculate the penalties and interest on all existing.
+     * Call this function when you need to calculate the penalties on all Bank 
+     * Accounts and it should do everything for you.
      */
     public void InterestAndPenalties()
     {
