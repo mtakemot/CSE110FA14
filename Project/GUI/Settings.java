@@ -32,12 +32,12 @@ public class Settings extends javax.swing.JPanel
         this.mainGUI = mainGUI;
         initComponents();
     }
-    
+
     public void updateUserLabel()
     {
         BAUserNameLabel.setText(GUI.currentUserAccount.getUserName());
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -198,7 +198,6 @@ public class Settings extends javax.swing.JPanel
 
     private void changeFirstNameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_changeFirstNameMouseClicked
         // TODO add your handling code here:
-        
 
     }//GEN-LAST:event_changeFirstNameMouseClicked
 
@@ -227,8 +226,8 @@ public class Settings extends javax.swing.JPanel
     }//GEN-LAST:event_changePasswordActionPerformed
 
     private void changeEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changeEmailActionPerformed
-       String response = JOptionPane.showInputDialog("Enter your new email:");
-       if (response.length() > 0)
+        String response = JOptionPane.showInputDialog("Enter your new email:");
+        if (response.length() > 0)
             GUI.currentUserAccount.setEmail(response);
     }//GEN-LAST:event_changeEmailActionPerformed
 

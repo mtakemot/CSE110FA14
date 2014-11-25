@@ -203,7 +203,7 @@ public class UserAccount implements Serializable
             BankAccount current = this.BankAccHead;
             // Traverse the BankAccount linked list until the account is found
             // or we reach the end of the list
-            for (int zod = 0; zod < (num-1); zod++)
+            for (int zod = 0; zod < (num - 1); zod++)
             {
                 current = current.getNext();
             }
@@ -251,7 +251,7 @@ public class UserAccount implements Serializable
         // The bucket at index was empty so the UserAccount was not found
         return false;
     }
-    
+
     public void setBankAccountNumbers(BankAccount current)
     {
         if (current != null) // The user does not have any BankAccounts
@@ -320,7 +320,6 @@ public class UserAccount implements Serializable
     /////////////////////////////////////////
     // BELOW ARE JUST SETTERS AND GETTERS ///
     /////////////////////////////////////////
-    
     /**
      * 11_15 testing admin account*
      */

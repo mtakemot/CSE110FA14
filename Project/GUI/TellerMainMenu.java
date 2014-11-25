@@ -14,14 +14,17 @@ import Backend.*;
  *
  * @author Zack
  */
-public class TellerMainMenu extends javax.swing.JPanel {
-    
+public class TellerMainMenu extends javax.swing.JPanel
+{
+
     private JPanel MainPanel;
     private GUI mainGUI;
+
     /**
      * Creates new form TellerMainMenu
      */
-    public TellerMainMenu() {
+    public TellerMainMenu()
+    {
         initComponents();
     }
 
@@ -31,7 +34,7 @@ public class TellerMainMenu extends javax.swing.JPanel {
         this.MainPanel = MainPanel;
         initComponents();
     }
-   
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -144,13 +147,14 @@ public class TellerMainMenu extends javax.swing.JPanel {
     }//GEN-LAST:event_LogoutButttonMouseClicked
 
     private void SearchUserButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SearchUserButtonMouseClicked
-        
+
         String name = JOptionPane.showInputDialog(
-                        null, "Please Enter User Account: ");
-        
+                null, "Please Enter User Account: ");
+
         GUI.currentUserAccount = GUI.MasterTable.findUserAccount(name);
-        
-        if(GUI.currentUserAccount!=null){
+
+        if (GUI.currentUserAccount != null)
+        {
             mainGUI.getTellerAP().update();
             CardLayout layout = (CardLayout) (MainPanel.getLayout());
             layout.show(MainPanel, "TellerAP");
@@ -160,7 +164,6 @@ public class TellerMainMenu extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "User Accout Not Found");
         }
     }//GEN-LAST:event_SearchUserButtonMouseClicked
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BankNamePanel;

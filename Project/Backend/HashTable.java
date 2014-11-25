@@ -282,10 +282,10 @@ public class HashTable implements Serializable
     }
 
     /**
-     * This function will iterate through the entire HashTable and delegate to 
-     * InterestAndPenaltiesHelper to calculate the penalties and interest on all existing.
-     * Call this function when you need to calculate the penalties on all Bank 
-     * Accounts and it should do everything for you.
+     * This function will iterate through the entire HashTable and delegate to
+     * InterestAndPenaltiesHelper to calculate the penalties and interest on all
+     * existing. Call this function when you need to calculate the penalties on
+     * all Bank Accounts and it should do everything for you.
      */
     public void InterestAndPenalties()
     {
@@ -311,12 +311,14 @@ public class HashTable implements Serializable
                 }
             }
         }
-        lastInterestDateTime = new DateTime(DateTimeZone.forID("Etc/UTC"));  
+        lastInterestDateTime = new DateTime(DateTimeZone.forID("Etc/UTC"));
     }
 
     /**
-     * This function will perform interest/penalty calculations on the passed in BankAccount
-     * @param currentBA 
+     * This function will perform interest/penalty calculations on the passed in
+     * BankAccount
+     *
+     * @param currentBA
      */
     public void InterestAndPenaltiesHelper(BankAccount currentBA)
     {
@@ -331,21 +333,21 @@ public class HashTable implements Serializable
         {
             if (currentBA instanceof CheckingAccount)
                 currentBA.setBalance(currentBA.getBalance() * CHECKING_RATE_OVER_3000);
-            else 
+            else
                 currentBA.setBalance(currentBA.getBalance() * SAVINGS_RATE_OVER_3000);
         }
         else if (dailyAverage >= 2000 && dailyAverage < 3000)
         {
             if (currentBA instanceof CheckingAccount)
                 currentBA.setBalance(currentBA.getBalance() * CHECKING_RATE_2000_TO_3000);
-            else 
+            else
                 currentBA.setBalance(currentBA.getBalance() * SAVINGS_RATE_2000_TO_3000);
         }
         else if (dailyAverage < 2000 && dailyAverage >= 1000)
         {
             if (currentBA instanceof CheckingAccount)
                 currentBA.setBalance(currentBA.getBalance() * CHECKING_RATE_1000_TO_2000);
-            else 
+            else
                 currentBA.setBalance(currentBA.getBalance() * SAVINGS_RATE_1000_TO_2000);
         }
         currentBA.setThisMonthsDailyTotals(0);

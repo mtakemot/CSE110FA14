@@ -657,7 +657,6 @@ public class AccountsListPanel extends javax.swing.JPanel
         }
     }//GEN-LAST:event_TransferButton1MouseClicked
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable AccountsTable;
     private javax.swing.JTextField AmountField;

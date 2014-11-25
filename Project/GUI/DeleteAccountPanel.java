@@ -32,12 +32,12 @@ public class DeleteAccountPanel extends javax.swing.JPanel
     {
         initComponents();
     }
-    
+
     public void updateUserLabel()
     {
         BAUserNameLabel.setText(GUI.currentUserAccount.getUserName());
     }
-    
+
     private void DeleteAcc()
     {
         if (!(AccNameField.getText().equals(GUI.currentUserAccount.getUserName())))
@@ -268,7 +268,6 @@ public class DeleteAccountPanel extends javax.swing.JPanel
             DeleteAcc();
         }
     }//GEN-LAST:event_jPasswordFieldKeyPressed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField AccNameField;

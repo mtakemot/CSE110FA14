@@ -18,12 +18,13 @@ import org.joda.time.*;
  */
 public class BankAccount implements Serializable
 {
+
     protected double balance;
     protected String accountName;
     protected BankAccount next;
     protected String accountType;
     protected int accountPosition;
-    
+
     // A running total of the amount of money at the end of each day for the 
     // whole month
     protected double thisMonthsDailyTotals;
@@ -52,14 +53,14 @@ public class BankAccount implements Serializable
     {
         return 0;
     }
-    
+
     // The following 2 methods will be overridden in 
     // SavingsAccount.java and CheckingAccount.java
     public boolean subFromBalance(double amount)
     {
         return false;
     }
-    
+
     public boolean addToBalance(double amount)
     {
         return true;
@@ -127,6 +128,5 @@ public class BankAccount implements Serializable
     {
         this.thisMonthsDailyTotals = thisMonthsDailyTotals;
     }
-    
-    
+
 }

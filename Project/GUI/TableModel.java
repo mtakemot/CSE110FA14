@@ -49,9 +49,9 @@ public class TableModel extends AbstractTableModel
         return colCount;
     }
 
-    
     @Override
-    public void setValueAt(Object aValue, int rowIndex, int columnIndex){
+    public void setValueAt(Object aValue, int rowIndex, int columnIndex)
+    {
         switch (columnIndex)
         {
             case 3:
@@ -68,7 +68,7 @@ public class TableModel extends AbstractTableModel
         }
         fireTableCellUpdated(rowIndex, columnIndex);
     }
-    
+
     @Override
     public Object getValueAt(int rowIndex, int columnIndex)
     {
@@ -101,7 +101,7 @@ public class TableModel extends AbstractTableModel
     {
         return columnNames[index];
     }
-    
+
     @Override
     public Class getColumnClass(int columnIndex)
     {

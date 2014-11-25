@@ -243,12 +243,11 @@ public class CreateAccountPanel extends javax.swing.JPanel
     private void createUserAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserAccountActionPerformed
 
         boolean operationSuccessful = false;
-       
+
         //know which field is incorrect
         //make phone number more versatile
-        
         errorMessage.setForeground(Color.red);
-        
+
         String name1 = firstName.getText();
         String name2 = lastName.getText();
         String user = username.getText();
@@ -273,7 +272,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
                     {
                         System.out.println("test1");
                         if ((input3.length() > 0) && (isValidEmailAddress(input3)))
-                        { 
+                        {
                             System.out.println("email");
                             System.out.println("test2");
 
@@ -300,14 +299,14 @@ public class CreateAccountPanel extends javax.swing.JPanel
                                     //send the layout of MainPanel to new display of JPanel "MainMenu"
                                     layout.show(MainPanel, "Login");
                                 }
-                                
+
                                 /*else
-                                {
-                                    //print a pop up error
-                                    System.out.println("Error creating an account!");
-                                    JOptionPane.showMessageDialog(null, "Error creating an account!", "IN USE",
-                                            JOptionPane.INFORMATION_MESSAGE);
-                                }
+                                 {
+                                 //print a pop up error
+                                 System.out.println("Error creating an account!");
+                                 JOptionPane.showMessageDialog(null, "Error creating an account!", "IN USE",
+                                 JOptionPane.INFORMATION_MESSAGE);
+                                 }
                                  UserAccount retVal = GUI.MasterTable.findUserAccount(username.getText());
                                  if (retVal == null){
                                 
@@ -331,7 +330,8 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
                             //UserAccount currentUserAccount = new UserAccount(firstName.getText(),lastName.getText(),username.getText(),password.getText(),email.getText(), phone.getText(), "");
                         }
-                        else {
+                        else
+                        {
                             //email wrong
                             errorMessage.setText("Your email was entered\n incorrectly.");
                         }
@@ -384,7 +384,6 @@ public class CreateAccountPanel extends javax.swing.JPanel
          }
 
          }*/
-
     }//GEN-LAST:event_createUserAccountActionPerformed
 
     private void dismissViewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dismissViewMouseClicked
@@ -462,29 +461,31 @@ public class CreateAccountPanel extends javax.swing.JPanel
         return m.matches();
     }
 
-    public static boolean validateFirstName( String firstName )
+    public static boolean validateFirstName(String firstName)
     {
-      return firstName.matches( "[A-Z][a-zA-Z]*" );
+        return firstName.matches("[A-Z][a-zA-Z]*");
     } // end method validateFirstName
 
     // validate last name
-    public static boolean validateLastName( String lastName )
+    public static boolean validateLastName(String lastName)
     {
-      return lastName.matches( "[a-zA-z]+([ '-][a-zA-Z]+)*" );
+        return lastName.matches("[a-zA-z]+([ '-][a-zA-Z]+)*");
     } // end method validateLastName
-    
-    public boolean validate(final String username){
+
+    public boolean validate(final String username)
+    {
         String USERNAME_PATTERN = "^[a-z0-9_-]{3,20}$";
         Pattern pattern = Pattern.compile(USERNAME_PATTERN);
-	Matcher matcher = pattern.matcher(username);
+        Matcher matcher = pattern.matcher(username);
         return matcher.matches();
-   }
-    
-   public boolean validatePassword(final String username) {
-        String passwd = "aaZZa44@"; 
+    }
+
+    public boolean validatePassword(final String username)
+    {
+        String passwd = "aaZZa44@";
         String pattern = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{5,10}";
         return passwd.matches(pattern);
-   }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.PopupMenu ERRORPOP;
     private javax.swing.JPasswordField confirmPassword;

@@ -33,6 +33,7 @@ import java.beans.PropertyChangeListener;
 
 public class GUI extends javax.swing.JFrame
 {
+
     static int counter = 0;
 
     // Static HashTable allows us to access the table in any element of our GUI
@@ -47,14 +48,14 @@ public class GUI extends javax.swing.JFrame
     public static final String ACCTABLE = "account table";
     //keyword to change the TellerAP table
     public static final String TELTABLE = "teller table";
-    
+
     public static final int BALANCECOL = 3;
 
     public GUI()
     {
         initComponents();
     }
-    
+
     // This is a getter function for the JPanel that is created when this 
     // component is initiialized. If you open "Generated Code" below you can 
     // see where MainPanel is declared. This one JPanel is where we will show/hide
@@ -65,7 +66,7 @@ public class GUI extends javax.swing.JFrame
     {
         return MainPanel;
     }
-    
+
     public void updateUserLabels()
     {
         getDelete().updateUserLabel();
@@ -74,16 +75,18 @@ public class GUI extends javax.swing.JFrame
         getTDelete().updateUserLabel();
         getCreateBA().updateUserLabel();
     }
-    
-    public void setAccountBalance(String BankAccountName, double NewBalance){
-        if(currentUserAccount != null){
+
+    public void setAccountBalance(String BankAccountName, double NewBalance)
+    {
+        if (currentUserAccount != null)
+        {
             TableWrapper wrapper = new TableWrapper(currentUserAccount);
             this.currentBankAccount = currentUserAccount.findBankAccount(BankAccountName);
             //find the row of the given account
             int row = 0;
-            
-            while(!(BankAccountName.equals(wrapper.getAccountName(row)) || 
-                    counter == currentUserAccount.getNumOfBankAccounts()))
+
+            while (!(BankAccountName.equals(wrapper.getAccountName(row))
+                    || counter == currentUserAccount.getNumOfBankAccounts()))
             {
                 row++;
             }
@@ -91,9 +94,7 @@ public class GUI extends javax.swing.JFrame
             firePropertyChange(ACCTABLE, false, true);
         }
     }
-    
-    
-    
+
     /**
      * EXPAND THIS FUNCTION TO SEE HOW MainPanel IS INITIALIZED. ALL OF OUR
      * OTHER PANELS/PAGES WILL BE PLACED ON MainPanel WHICH IS DELCARED HERE
@@ -204,7 +205,7 @@ public class GUI extends javax.swing.JFrame
                 currentBankAccount = currentUserAccount.insertBankAccount(25, "qq2", "Savings");
                 currentBankAccount = currentUserAccount.insertBankAccount(30, "qq3", "Checking");
                 currentBankAccount = currentUserAccount.insertBankAccount(30, "qq4", "Checking");
-                
+
                 currentUserAccount = MasterTable.insertUserAccount("ww");
                 currentUserAccount.setFirstName("first2");
                 currentUserAccount.setLastName("last2");
@@ -213,9 +214,9 @@ public class GUI extends javax.swing.JFrame
                 currentUserAccount.setPhone("1234567890");
                 currentBankAccount = currentUserAccount.insertBankAccount(50, "ww1", "Checking");
                 currentBankAccount = currentUserAccount.insertBankAccount(35, "ww2", "Savings");
-                currentBankAccount = currentUserAccount.insertBankAccount(30, "ww3", "Checking");               
+                currentBankAccount = currentUserAccount.insertBankAccount(30, "ww3", "Checking");
                 currentBankAccount = currentUserAccount.insertBankAccount(30, "ww4", "Checking");
-                
+
                 currentUserAccount = MasterTable.insertUserAccount("ee");
                 currentUserAccount.setFirstName("first2");
                 currentUserAccount.setLastName("last2");
@@ -224,24 +225,21 @@ public class GUI extends javax.swing.JFrame
                 currentUserAccount.setPhone("1234567890");
                 currentBankAccount = currentUserAccount.insertBankAccount(50, "ee1", "Checking");
                 currentBankAccount = currentUserAccount.insertBankAccount(35, "ee2", "Savings");
-                currentBankAccount = currentUserAccount.insertBankAccount(30, "ee3", "Checking");               
+                currentBankAccount = currentUserAccount.insertBankAccount(30, "ee3", "Checking");
                 currentBankAccount = currentUserAccount.insertBankAccount(30, "ee4", "Checking");
-                
+
                 //test
                 for (int i = 0; i < 10000; i++)
                 {
                     currentUserAccount.insertBankAccount(i, ("acc" + i), "Checking");
                 }
-                    
 
-                
                 // This grabs the MainPanel and stores it in a variable so that
                 // we have easy access to it
                 JPanel cardHolder = mainGUI.getMainPanel();
                 // This creates a new LoginPanel and passes in the MainPanel. 
-                
+
                 //LoginPanel Login = new LoginPanel(cardHolder);
-                
                 mainGUI.setLogin(new LoginPanel(cardHolder, mainGUI));
                 mainGUI.setAccList(new AccountsListPanel(cardHolder, mainGUI));
                 mainGUI.setSettings(new Settings(cardHolder, mainGUI));
@@ -252,7 +250,7 @@ public class GUI extends javax.swing.JFrame
                 mainGUI.setTransfer(new TransferFundsPanel(cardHolder, mainGUI));
                 mainGUI.setTellerMainMenu(new TellerMainMenu(cardHolder, mainGUI));
                 mainGUI.setTDelete(new TellerDeleteAccountPanel(cardHolder, mainGUI));
-                
+
                 // This creates a new AccList Panel and passes in the MainPanel
                 //AccountsListPanel AccList = new AccountsListPanel(cardHolder, mainGUI);
                 // This creates a new Settings Panel and passes in the MainPanel
@@ -269,7 +267,6 @@ public class GUI extends javax.swing.JFrame
                 //TellerMainMenu TellerMainMenu = new TellerMainMenu(cardHolder);
                 //CreateBankAccount createBA = new CreateBankAccount(cardHolder);
                 //TellerAccountPage TellerAP = new TellerAccountPage(cardHolder);
-                
                 // This addes the LoginPanel and AccountsListPanel that we just
                 // created to the MainPanel. It also assigns a name to each of
                 // the panels so that we can reference them easily when we want 
@@ -286,34 +283,37 @@ public class GUI extends javax.swing.JFrame
                 //cardHolder.add(Withdraw, "Withdraw");
                 //cardHolder.add(Deposit, "Deposit" );
                 cardHolder.add(mainGUI.getDelete(), "Delete");
-                cardHolder.add(mainGUI.getTellerMainMenu(),"TellerMainMenu");
+                cardHolder.add(mainGUI.getTellerMainMenu(), "TellerMainMenu");
                 cardHolder.add(mainGUI.getCreateBA(), "CreateBA");
                 cardHolder.add(mainGUI.getTellerAP(), "TellerAP");
                 cardHolder.add(mainGUI.getTDelete(), "TDelete");
-                
-                
+
                 // These two lines show the MainPanel. Without these 2 lines 
                 // the GUI would not show up at all. Just leave them alone.
                 mainGUI.pack();
                 mainGUI.setVisible(true);
 
                 mainGUI.setResizable(false);
-                
+
                 mainGUI.addPropertyChangeListener(ACCTABLE,
-                        new PropertyChangeListener(){
-                        
+                        new PropertyChangeListener()
+                        {
+
                             @Override
-                            public void propertyChange(PropertyChangeEvent PcEvt){
+                            public void propertyChange(PropertyChangeEvent PcEvt)
+                            {
                                 mainGUI.getAccList().setNewCellValue(currentBankAccount.getBalance(),
                                         currentBankAccount.getAccountName());
                                 return;
                             }
-                     });     
+                        });
                 mainGUI.addPropertyChangeListener(TELTABLE,
-                        new PropertyChangeListener(){
-                            
+                        new PropertyChangeListener()
+                        {
+
                             @Override
-                            public void propertyChange(PropertyChangeEvent PcE) {
+                            public void propertyChange(PropertyChangeEvent PcE)
+                            {
                                 mainGUI.getTellerAP().setNewCellValue(currentBankAccount.getBalance(),
                                         currentBankAccount.getAccountName());
                             }
@@ -356,7 +356,7 @@ public class GUI extends javax.swing.JFrame
     {
         this.TDelete = TDelete;
     }
-    
+
     public DeleteAccountPanel getDelete()
     {
         return Delete;
@@ -366,7 +366,7 @@ public class GUI extends javax.swing.JFrame
     {
         this.Delete = Delete;
     }
-    
+
     public LoginPanel getLogin()
     {
         return Login;
@@ -436,15 +436,17 @@ public class GUI extends javax.swing.JFrame
     {
         this.TellerAP = TellerAP;
     }
-    
-    public TransferFundsPanel getTransfer() {
+
+    public TransferFundsPanel getTransfer()
+    {
         return Transfer;
     }
-    
-    public void setTransfer(TransferFundsPanel Transfer) {
+
+    public void setTransfer(TransferFundsPanel Transfer)
+    {
         this.Transfer = Transfer;
     }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel MainPanel;
     // End of variables declaration//GEN-END:variables

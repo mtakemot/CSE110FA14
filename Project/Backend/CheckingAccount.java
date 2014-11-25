@@ -13,7 +13,7 @@ import org.joda.time.*;
  * and will be the object that is created every time a user wants to create a
  * new checking account. This type of BankAccount WILL NOT gain interest or lose
  * funds as a result of not having a high enough balance.
- ***************************************************************************
+ * **************************************************************************
  */
 public class CheckingAccount extends BankAccount
 {
