@@ -9,7 +9,7 @@ package GUI;
  *
  * File Name: LoginPanel.java Description: This class will define what our Login
  * Page will look like and how it will behave.
- ***************************************************************************
+ * **************************************************************************
  */
 import Backend.UserAccount;
 import javax.swing.*;

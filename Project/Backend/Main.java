@@ -322,7 +322,7 @@ public class Main
                     else if (currUser.getAdmin())
                     {
                         while (login && currUser.getAdmin())
-                        {                            
+                        {
                             Scanner input3 = new Scanner(System.in);
                             System.out.println("1. Search for User Account");
                             System.out.println("2. Interest/Penalty");
@@ -335,9 +335,9 @@ public class Main
                                 case "1":
                                     if (MasterTable.adminPrintUser() != 0)
                                     {
-                                        
+
                                         System.out.println("Enter the number next to the account you would like access: ");
-                                        String action4;                                     
+                                        String action4;
                                         Scanner input4 = new Scanner(System.in);
                                         action4 = input4.nextLine();
                                         int index = Integer.parseInt(action4);
@@ -347,7 +347,7 @@ public class Main
                                         editUser.printAllBankAccounts();
                                         System.out.println("Enter \"exit\" to logout OR ");
                                         System.out.println("Enter the account name you wish to edit: ");
-                                        
+
                                         Scanner input5 = new Scanner(System.in);
                                         String action5 = input5.nextLine();
                                         if (action5.equals("exit"))
@@ -355,7 +355,7 @@ public class Main
                                             login = false;
                                             dataout.exportDB(MasterTable);
                                         }
-                                        
+
                                         BankAccount currBA = editUser.findBankAccount(action5);
                                         System.out.println("1. Credit Account");
                                         System.out.println("2. Debit Account");
@@ -365,7 +365,7 @@ public class Main
                                         String action6 = input5.nextLine();
                                         index = 0;
                                         index = Integer.parseInt(action6);
-                                        
+
                                         if (index == 1)
                                         {
                                             System.out.println("The current balance is: " + currBA.getBalance());
@@ -383,15 +383,15 @@ public class Main
                                             Scanner input8 = new Scanner(System.in);
                                             String action8 = input8.nextLine();
                                             int credit = Integer.parseInt(action8);
-                                            
+
                                             if (currBA.subFromBalance(credit))
                                             {
                                                 System.out.println("New balance: " + currBA.getBalance());
                                             }
-                                            
+
                                             else
                                             {
-                                                
+
                                                 dataout.exportDB(MasterTable);
                                             }
                                             login = false;
@@ -410,7 +410,7 @@ public class Main
                                                 dataout.exportDB(MasterTable);
                                                 login = false;
                                             }
-                                            
+
                                         }
                                         else if (index == 4)
                                         {

@@ -381,7 +381,7 @@ public class TransferFundsPanel extends javax.swing.JPanel
         {
             GUI.currentBankAccount.subFromBalance(amount);
             mainGUI.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
-            GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount((String)BankAccountsList1.getSelectedItem());
+            GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount((String) BankAccountsList1.getSelectedItem());
             GUI.currentBankAccount.addToBalance(amount);
             mainGUI.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
             JOptionPane.showMessageDialog(null, "Funds Transfered Successfully!");
@@ -464,7 +464,6 @@ public class TransferFundsPanel extends javax.swing.JPanel
     private void TransferButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TransferButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TransferButtonActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField AmountField;

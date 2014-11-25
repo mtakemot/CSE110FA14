@@ -510,7 +510,6 @@ public class TellerAccountPage extends javax.swing.JPanel
             JOptionPane.showMessageDialog(null, "Please Select an Account");
     }//GEN-LAST:event_DeleteAccountButtonMouseClicked
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable AccountsTable;
     private javax.swing.JPanel BankNamePanel;

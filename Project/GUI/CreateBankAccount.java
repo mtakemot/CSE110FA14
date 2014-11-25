@@ -28,7 +28,7 @@ public class CreateBankAccount extends javax.swing.JPanel
         this.MainPanel = MainPanel;
         initComponents();
     }
-    
+
     public void updateUserLabel()
     {
         BAUserLabel.setText(GUI.currentUserAccount.getUserName());
@@ -154,10 +154,10 @@ public class CreateBankAccount extends javax.swing.JPanel
             if (a < 48 || (a > 57 && a < 65) || (a > 90 && a < 97) || (a > 123))
                 return false;
         }
-        
+
         return true;
     }
-    
+
     private void CreateButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_CreateButtonActionPerformed
     {//GEN-HEADEREND:event_CreateButtonActionPerformed
         if (AccountNameField.getText().length() > 0 && GUI.currentUserAccount.findBankAccount(AccountNameField.getText()) == null
@@ -176,7 +176,7 @@ public class CreateBankAccount extends javax.swing.JPanel
             JOptionPane.showMessageDialog(null, "Invalid input.\nOnly alphanumeric characters are allowed.\nNo spaces.");
             AccountNameField.setText("");
         }
-        
+
     }//GEN-LAST:event_CreateButtonActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
@@ -184,7 +184,6 @@ public class CreateBankAccount extends javax.swing.JPanel
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
         layout.show(MainPanel, "AccList");
     }//GEN-LAST:event_backButtonActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField AccountNameField;
