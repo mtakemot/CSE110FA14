@@ -23,9 +23,10 @@ public class BankAccount implements Serializable
     protected BankAccount next;
     protected String accountType;
     protected int accountPosition;
-
-    // Average balance in the account over the last month
-    protected double averageBalance;
+    
+    // A running total of the amount of money at the end of each day for the 
+    // whole month
+    protected double thisMonthsDailyTotals;
     // Total amount withdrawn in last 24 hrs
     protected double dayWithdrawAmount;
     // The last time a withdraw was made on the account
@@ -41,7 +42,7 @@ public class BankAccount implements Serializable
         this.lastDepositDateTime = currentTime;
         this.lastWithdrawDateTime = currentTime;
 
-        this.averageBalance = 0;
+        this.thisMonthsDailyTotals = 0;
 
         this.dayWithdrawAmount = 0;
         this.dayDepositAmount = 0;
@@ -116,4 +117,16 @@ public class BankAccount implements Serializable
     {
         this.accountPosition = accountPosition;
     }
+
+    public double getThisMonthsDailyTotals()
+    {
+        return thisMonthsDailyTotals;
+    }
+
+    public void setThisMonthsDailyTotals(double thisMonthsDailyTotals)
+    {
+        this.thisMonthsDailyTotals = thisMonthsDailyTotals;
+    }
+    
+    
 }
