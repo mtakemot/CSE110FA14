@@ -51,6 +51,7 @@ public class GUI extends javax.swing.JFrame
     public static final String TELTABLE = "teller table";
     
     public static final int BALANCECOL = 3;
+    // This is a test
 
     public GUI()
     {
