@@ -20,9 +20,19 @@ public class HashTable implements Serializable
 
     // Chose a prime number for the size of the table for more efficient hashing
     private final static int SIZE = 251;
+    // Interest rates for savings accounts
+    private double SAVINGS_RATE_OVER_3000 = 0.04;
+    private double SAVINGS_RATE_2000_TO_3000 = 0.03;
+    private double SAVINGS_RATE_1000_TO_2000 = 0.02;
+    // Interest rates for checking accounts
+    private double CHECKING_RATE_OVER_3000 = 0.03;
+    private double CHECKING_RATE_2000_TO_3000 = 0.02;
+    private double CHECKING_RATE_1000_TO_2000 = 0.01;
+
     public int occ; // Total number of UserAccounts that the table is holding
     UserAccount[] Table; // The hash table
     private DateTime lastInterestDateTime;
+
     // Constructor for the HashTable creates an array of size SIZE and
     // initializes every element in the array to null. Also initializes occ
     public HashTable()
@@ -271,11 +281,137 @@ public class HashTable implements Serializable
         return 0;
     }
 
-    public void CalculateInterest()
+    /**
+     * This function will iterate through the entire HashTable and delegate to 
+     * InterestAndPenaltiesHelper to calculate the penalties and interest on all existing
+     */
+    public void InterestAndPenalties()
     {
-        
+        BankAccount currentBA;
+        UserAccount currentUA;
+        for (int zod = 0; zod < SIZE; zod++)
+        {
+            if (Table[zod] != null)
+            {
+                currentUA = Table[zod];
+                while (currentUA != null)
+                {
+                    if (currentUA.getBankAccHead() != null)
+                    {
+                        currentBA = currentUA.getBankAccHead();
+                        while (currentBA != null)
+                        {
+                            InterestAndPenaltiesHelper(currentBA);
+                            currentBA = currentBA.getNext();
+                        }
+                    }
+                    currentUA = currentUA.getNext();
+                }
+            }
+        }
+        lastInterestDateTime = new DateTime(DateTimeZone.forID("Etc/UTC"));  
     }
-    
+
+    /**
+     * This function will perform interest/penalty calculations on the passed in BankAccount
+     * @param currentBA 
+     */
+    public void InterestAndPenaltiesHelper(BankAccount currentBA)
+    {
+        // Divide the running daily total by the total number of days in the
+        // month to obtain the daily average
+        double dailyAverage = ((currentBA.getThisMonthsDailyTotals()) / (lastInterestDateTime.dayOfMonth().getMaximumValue()));
+        if (dailyAverage < 100)
+        {
+            currentBA.setBalance(currentBA.getBalance() - 25);
+        }
+        else if (dailyAverage >= 3000)
+        {
+            if (currentBA instanceof CheckingAccount)
+                currentBA.setBalance(currentBA.getBalance() * CHECKING_RATE_OVER_3000);
+            else 
+                currentBA.setBalance(currentBA.getBalance() * SAVINGS_RATE_OVER_3000);
+        }
+        else if (dailyAverage >= 2000 && dailyAverage < 3000)
+        {
+            if (currentBA instanceof CheckingAccount)
+                currentBA.setBalance(currentBA.getBalance() * CHECKING_RATE_2000_TO_3000);
+            else 
+                currentBA.setBalance(currentBA.getBalance() * SAVINGS_RATE_2000_TO_3000);
+        }
+        else if (dailyAverage < 2000 && dailyAverage >= 1000)
+        {
+            if (currentBA instanceof CheckingAccount)
+                currentBA.setBalance(currentBA.getBalance() * CHECKING_RATE_1000_TO_2000);
+            else 
+                currentBA.setBalance(currentBA.getBalance() * SAVINGS_RATE_1000_TO_2000);
+        }
+        currentBA.setThisMonthsDailyTotals(0);
+    }
+
+    /////////////////////////////////////////
+    // BELOW ARE JUST SETTERS AND GETTERS ///
+    /////////////////////////////////////////
+    public double getSAVINGS_RATE_OVER_3000()
+    {
+        return SAVINGS_RATE_OVER_3000;
+    }
+
+    public double getSAVINGS_RATE_2000_TO_3000()
+    {
+        return SAVINGS_RATE_2000_TO_3000;
+    }
+
+    public double getSAVINGS_RATE_1000_TO_2000()
+    {
+        return SAVINGS_RATE_1000_TO_2000;
+    }
+
+    public double getCHECKING_RATE_OVER_3000()
+    {
+        return CHECKING_RATE_OVER_3000;
+    }
+
+    public double getCHECKING_RATE_2000_TO_3000()
+    {
+        return CHECKING_RATE_2000_TO_3000;
+    }
+
+    public double getCHECKING_RATE_1000_TO_2000()
+    {
+        return CHECKING_RATE_1000_TO_2000;
+    }
+
+    public void setSAVINGS_RATE_OVER_3000(double SAVINGS_RATE_OVER_3000)
+    {
+        this.SAVINGS_RATE_OVER_3000 = SAVINGS_RATE_OVER_3000;
+    }
+
+    public void setSAVINGS_RATE_2000_TO_3000(double SAVINGS_RATE_2000_TO_3000)
+    {
+        this.SAVINGS_RATE_2000_TO_3000 = SAVINGS_RATE_2000_TO_3000;
+    }
+
+    public void setSAVINGS_RATE_1000_TO_2000(double SAVINGS_RATE_1000_TO_2000)
+    {
+        this.SAVINGS_RATE_1000_TO_2000 = SAVINGS_RATE_1000_TO_2000;
+    }
+
+    public void setCHECKING_RATE_OVER_3000(double CHECKING_RATE_OVER_3000)
+    {
+        this.CHECKING_RATE_OVER_3000 = CHECKING_RATE_OVER_3000;
+    }
+
+    public void setCHECKING_RATE_2000_TO_3000(double CHECKING_RATE_2000_TO_3000)
+    {
+        this.CHECKING_RATE_2000_TO_3000 = CHECKING_RATE_2000_TO_3000;
+    }
+
+    public void setCHECKING_RATE_1000_TO_2000(double CHECKING_RATE_1000_TO_2000)
+    {
+        this.CHECKING_RATE_1000_TO_2000 = CHECKING_RATE_1000_TO_2000;
+    }
+
     public DateTime getLastInterestDateTime()
     {
         return lastInterestDateTime;
@@ -285,6 +421,5 @@ public class HashTable implements Serializable
     {
         this.lastInterestDateTime = LastInterestDateTime;
     }
-    
-    
+
 }

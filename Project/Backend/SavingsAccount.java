@@ -35,7 +35,7 @@ public class SavingsAccount extends BankAccount
     {
         this.balance = bal;
         this.accountName = name;
-        this.accountType = "Saving";
+        this.accountType = "Savings";
     }
 
     @Override

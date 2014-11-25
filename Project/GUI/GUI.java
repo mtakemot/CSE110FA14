@@ -28,8 +28,6 @@ package GUI;
 //need to add backend.ImportExport if not
 import Backend.*;
 import javax.swing.*;
-import java.awt.*;
-import java.util.*;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
@@ -51,7 +49,6 @@ public class GUI extends javax.swing.JFrame
     public static final String TELTABLE = "teller table";
     
     public static final int BALANCECOL = 3;
-    // This is a test
 
     public GUI()
     {
