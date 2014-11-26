@@ -14,9 +14,9 @@
 10. Make sure that "Scan for Netbeans projects after clone" is checked on the next page, everything else should be fine as default.
 11. Press finish. The project has now been successfully imported.
 
-******************** To Upload Changes to Git With Netbeans ********************
+******************** To Push Changes to Git With Netbeans ********************
 
-1. To upload changes, right click on the project on the left hand side in the project pane
+1. To push changes, right click on the project on the left hand side in the project pane
 2. Select Git > Commit
 3. Add a descriptive message in the top box. Select which files you wish to commit. You can view what changes will be made to a given file in the repo by right clicking on it and selecting "Diff"
 4. Press the Commit button
@@ -27,11 +27,28 @@
 9. In "Repository URL" box, paste -> https://github.com/t4kmode/CSE110FA14.git
 10. Enter your user and password
 11. Press next
-12. Check the box next to master -> master. If the icon next to master -> master is red, you must do a pull before committing your most recent changes. If it is blue, you are good to go.
+12. Check the box next to master -> master. If the icon next to master -> master is red, you must do a pull before pushing your most recent changes. If it is blue, you are good to go.
 13. Press next
 14. Check the box next to master -> origin/master
 15. Finish
 
+******************** To Pull Changes from Git With Netbeans *********************
+
+1. To pull changes, right click on the project on the left hand side in the project pane
+2. Select Git > Commit if you have made any uncommitted changes. If you have not made any uncommitted changes, skip to #5
+3. Add a descriptive message in the top box. Select which files you wish to commit. You can view what changes will be made to a given file in the repo by right clicking on it and selecting "Diff"
+4. Press the Commit button
+5. Right click again on the project on the left hand side in the project pane
+6. Select Git > Remote > pull
+7. Select the bubble with "Specify Git Repository Location"
+8. Set "Remote Name" to origin
+9. In "Repository URL" box, paste -> https://github.com/t4kmode/CSE110FA14.git
+10. Enter your user and password
+11. Press next
+12. Check the box next to master -> master.
+13. Press next
+14. Check the box next to master -> origin/master
+15. Finish
 ****************************** To run our GUI in Netbeans ******************************
 
 1. Right click on GUI.java in the project pane on the left under Source Packages > GUI
