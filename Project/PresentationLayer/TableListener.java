@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
+package PresentationLayer;
 
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;

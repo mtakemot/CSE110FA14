@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
+package PresentationLayer;
 
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.table.*;
 import FacadeLayer.BackendWrapper;
-import static GUI.AccountsListPanel.BALANCECOL;
-import static GUI.AccountsListPanel.NAMECOL;
+import static PresentationLayer.AccountsListPanel.BALANCECOL;
+import static PresentationLayer.AccountsListPanel.NAMECOL;
 
 /**
  *
@@ -145,7 +145,7 @@ public class TellerAccountPage extends javax.swing.JPanel
 
         CurrentUserAccountLabel.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         CurrentUserAccountLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        CurrentUserAccountLabel.setText(GUI.currentBankAccount.getAccountName());
+        CurrentUserAccountLabel.setText(PresentationLayer.GUI.currentBankAccount.getAccountName());
 
         LogoutButtton.setText("Logout");
         LogoutButtton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -160,9 +160,11 @@ public class TellerAccountPage extends javax.swing.JPanel
         centerRenderer.setHorizontalAlignment( JLabel.CENTER );
         AccountsTable.setDefaultRenderer(String.class, centerRenderer);
         AccountsTable.setDefaultRenderer(Double.class, centerRenderer);
-        AccountsTable.setModel(new TableModel(GUI.currentUserAccount));
+        AccountsTable.setModel(new TableModel(PresentationLayer.GUI.currentUserAccount));
+        AccountsTable.getTableHeader().setResizingAllowed(false);
         AccountsTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(AccountsTable);
+        AccountsTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         DepositButton.setText("Deposit");
         DepositButton.addMouseListener(new java.awt.event.MouseAdapter() {

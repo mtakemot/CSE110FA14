@@ -160,7 +160,7 @@
           <Font name="Tahoma" size="15" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="GUI.currentBankAccount.getAccountName()" type="code"/>
+          <Connection code="PresentationLayer.GUI.currentBankAccount.getAccountName()" type="code"/>
         </Property>
       </Properties>
     </Component>

@@ -1,4 +1,4 @@
-package GUI;
+package PresentationLayer;
 
 import java.awt.CardLayout;
 import java.awt.Color;

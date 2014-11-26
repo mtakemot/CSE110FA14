@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
+package PresentationLayer;
 
 import java.awt.*;
 import javax.swing.*;
@@ -116,7 +116,7 @@ public class TellerDeleteAccountPanel extends javax.swing.JPanel
 
         BAUserNameLabel.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         BAUserNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        BAUserNameLabel.setText(GUI.currentBankAccount.getAccountName());
+        BAUserNameLabel.setText(PresentationLayer.GUI.currentBankAccount.getAccountName());
 
         LogoutButtton.setText("Logout");
         LogoutButtton.addMouseListener(new java.awt.event.MouseAdapter() {

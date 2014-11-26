@@ -1,4 +1,4 @@
-package GUI;
+package PresentationLayer;
 
 import javax.swing.*;
 import java.awt.*;
@@ -118,7 +118,7 @@ public class Settings extends javax.swing.JPanel
         });
 
         BAUserNameLabel.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
-        BAUserNameLabel.setText(GUI.currentBankAccount.getAccountName());
+        BAUserNameLabel.setText(PresentationLayer.GUI.currentBankAccount.getAccountName());
 
         LogoutButtton.setText("Logout");
         LogoutButtton.addMouseListener(new java.awt.event.MouseAdapter() {
