@@ -18,7 +18,7 @@ public class TransferFundsPanel extends javax.swing.JPanel
 
     private JPanel MainPanel;
     private GUI mainGUI;
-    private TableWrapper wrapper;
+    private BackendWrapper wrapper;
     private int total_accounts;
     private String[] accountlist;
 
@@ -26,7 +26,7 @@ public class TransferFundsPanel extends javax.swing.JPanel
     {
         this.MainPanel = MainPanel;
         this.mainGUI = mainGUI;
-        wrapper = new TableWrapper(GUI.currentUserAccount);
+        wrapper = new BackendWrapper(GUI.currentUserAccount);
         total_accounts = wrapper.getTotalAccounts();
         accountlist = new String[total_accounts];
         for (int i = 0; i < total_accounts; i++)
@@ -41,7 +41,7 @@ public class TransferFundsPanel extends javax.swing.JPanel
 
     /*public void updatecomboboxes()
      { 
-     TableWrapper wrapper = new TableWrapper(GUI.currentUserAccount);
+     BackendWrapper wrapper = new BackendWrapper(GUI.currentUserAccount);
      int total_accounts = wrapper.getTotalAccounts();
      String[] accountlist = new String[total_accounts];
      DefaultComboBoxModel model = new DefaultComboBoxModel(accountlist);
@@ -322,7 +322,7 @@ public class TransferFundsPanel extends javax.swing.JPanel
 
     public void update()
     {
-        wrapper = new TableWrapper(GUI.currentUserAccount);
+        wrapper = new BackendWrapper(GUI.currentUserAccount);
         total_accounts = wrapper.getTotalAccounts();
         accountlist = new String[total_accounts];
         for (int i = 0; i < total_accounts; i++)

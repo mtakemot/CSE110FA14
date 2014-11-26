@@ -22,7 +22,7 @@ public class TellerAccountPage extends javax.swing.JPanel
 
     private JPanel MainPanel;
     private GUI mainGUI;
-    private TableWrapper wrapper;
+    private BackendWrapper wrapper;
     private int total_accounts;
     private String[] accountlist;
 
@@ -68,7 +68,7 @@ public class TellerAccountPage extends javax.swing.JPanel
 
     public void deletecomboboxes(String bankacc)
     {
-        wrapper = new TableWrapper(GUI.currentUserAccount);
+        wrapper = new BackendWrapper(GUI.currentUserAccount);
         total_accounts = wrapper.getTotalAccounts();
         accountlist = new String[total_accounts - 1];
         boolean accountfound = false;

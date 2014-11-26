@@ -13,7 +13,7 @@ package GUI;
  * MESSAGE TELLING US WHICH PANEL IT IS SUPPOSED TO BE.
  * **************************************************************************
  */
-import Backend.TableWrapper;
+import Backend.BackendWrapper;
 import Backend.UserAccount;
 import javax.swing.*;
 import java.awt.*;
@@ -30,7 +30,7 @@ public class AccountsListPanel extends javax.swing.JPanel
     // YOU DECLARE A PRIVATE VARIABLE THAT WILL STORE THE MAIN PANEL FROM GUI 
     private JPanel MainPanel;
     private GUI mainGUI;
-    private TableWrapper wrapper;
+    private BackendWrapper wrapper;
     private int total_accounts;
     private String[] accountlist;
 
@@ -46,7 +46,7 @@ public class AccountsListPanel extends javax.swing.JPanel
      the main panel where all of our GUI elements will eventually be located. */
     public AccountsListPanel(JPanel MainPanel, GUI mainGUI)
     {
-        wrapper = new TableWrapper(GUI.currentUserAccount);
+        wrapper = new BackendWrapper(GUI.currentUserAccount);
         total_accounts = wrapper.getTotalAccounts();
         accountlist = new String[total_accounts];
         for (int i = 0; i < total_accounts; i++)
@@ -71,7 +71,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         System.out.println(AccountsTable.getSelectedRowCount());
         AccountsTable.getSelectionModel().clearSelection();
         AccountsTable.setModel(new TableModel(GUI.currentUserAccount));
-        wrapper = new TableWrapper(GUI.currentUserAccount);
+        wrapper = new BackendWrapper(GUI.currentUserAccount);
         total_accounts = wrapper.getTotalAccounts();
         accountlist = new String[total_accounts];
         for (int i = 0; i < total_accounts; i++)
@@ -86,7 +86,7 @@ public class AccountsListPanel extends javax.swing.JPanel
 
     public void deletecomboboxes(String bankacc)
     {
-        wrapper = new TableWrapper(GUI.currentUserAccount);
+        wrapper = new BackendWrapper(GUI.currentUserAccount);
         total_accounts = wrapper.getTotalAccounts();
         accountlist = new String[total_accounts - 1];
         boolean accountfound = false;

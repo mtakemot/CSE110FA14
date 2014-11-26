@@ -25,14 +25,14 @@ public class HashTableTest {
                UserAccount result = testTable.insertUserAccount(testString+i);
                
                 //check to see if every field matches
+                assertEquals((testTable.hashCode(testString+i) % testTable.getSIZE()), result.getLocation());
                 assertEquals(testAccount.getFirstName(),result.getFirstName());
                 assertEquals(testAccount.getLastName() , result.getLastName());
                 assertEquals(testAccount.getUserName(), result.getUserName());
                 assertEquals(testAccount.getPassword(), result.getPassword());
                 assertEquals(testAccount.getPhone(), result.getPhone());
                 assertEquals(testAccount.getEmail(), result.getEmail());
-                assertEquals(testAccount.getNumOfBankAccounts(), result.getNumOfBankAccounts());
-                assertEquals(testAccount.getLocation(), result.getLocation());
+                assertEquals(2, result.getNumOfBankAccounts());
             } 
     }
 

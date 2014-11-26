@@ -5,7 +5,7 @@
  */
 package GUI;
 
-import Backend.TableWrapper;
+import Backend.BackendWrapper;
 import Backend.UserAccount;
 import javax.swing.JLabel;
 import javax.swing.table.*;
@@ -19,7 +19,7 @@ public class TableModel extends AbstractTableModel
 
     private int colCount = 4;
     private UserAccount current;
-    private TableWrapper wrapper;
+    private BackendWrapper wrapper;
     Class[] columns = new Class[]
     {
         Integer.class, String.class, String.class, Double.class
@@ -33,7 +33,7 @@ public class TableModel extends AbstractTableModel
     public TableModel(UserAccount curr)
     {
         this.current = curr;
-        wrapper = new TableWrapper(this.current);
+        wrapper = new BackendWrapper(this.current);
         this.addTableModelListener(new TableListener());
     }
 

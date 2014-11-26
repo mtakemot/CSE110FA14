@@ -9,7 +9,7 @@ package Backend;
  *
  * @author rbridges
  */
-public class TableWrapper
+public class BackendWrapper
 {
 
     private int[] accountNumbers;
@@ -20,7 +20,7 @@ public class TableWrapper
     private UserAccount currentUA;
     private BankAccount currentBA;
 
-    public TableWrapper(UserAccount curr)
+    public BackendWrapper(UserAccount curr)
     {
         if (curr != null)
         {

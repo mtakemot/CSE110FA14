@@ -39,7 +39,7 @@ public class UserAccount implements Serializable
     public BankAccount BankAccHead;
     // Keeps track of how many BankAccounts the UserAccount has. Important for
     // the table on AccountsListPage
-    private int numOfBankAccounts = 0;
+    private int numOfBankAccounts;
 
     // Default constructor
     public UserAccount()
@@ -60,6 +60,7 @@ public class UserAccount implements Serializable
         this.location = loc;
         this.next = null;
         this.BankAccHead = null;
+        numOfBankAccounts = 0;
     }
 
     // This constructor is for usage with the find/insert/delete functions.
@@ -68,6 +69,7 @@ public class UserAccount implements Serializable
     public UserAccount(String name)
     {
         this.userName = name;
+        numOfBankAccounts = 0;
     }
 
     // This will make sure that the password that the user enters when they

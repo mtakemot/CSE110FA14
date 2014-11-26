@@ -80,7 +80,7 @@ public class GUI extends javax.swing.JFrame
     {
         if (currentUserAccount != null)
         {
-            TableWrapper wrapper = new TableWrapper(currentUserAccount);
+            BackendWrapper wrapper = new BackendWrapper(currentUserAccount);
             this.currentBankAccount = currentUserAccount.findBankAccount(BankAccountName);
             //find the row of the given account
             int row = 0;
