@@ -26,7 +26,10 @@ package GUI;
  import Backend.BankAccount;*/
 //11/8 michio takemoto seeing if just backend.* is fine 
 //need to add backend.ImportExport if not
-import Backend.*;
+import Backend.BankAccount;
+import Backend.HashTable;
+import Backend.UserAccount;
+import FacadeLayer.BackendWrapper;
 import javax.swing.*;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
@@ -105,8 +108,7 @@ public class GUI extends javax.swing.JFrame
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         MainPanel = new javax.swing.JPanel();
 

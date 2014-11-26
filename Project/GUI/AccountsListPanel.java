@@ -13,10 +13,10 @@ package GUI;
  * MESSAGE TELLING US WHICH PANEL IT IS SUPPOSED TO BE.
  * **************************************************************************
  */
-import Backend.BackendWrapper;
+import FacadeLayer.BackendWrapper;
 import Backend.UserAccount;
+import java.awt.CardLayout;
 import javax.swing.*;
-import java.awt.*;
 import javax.swing.table.DefaultTableCellRenderer;
 
 //for debug

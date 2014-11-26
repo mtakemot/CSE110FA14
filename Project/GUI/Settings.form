@@ -49,8 +49,6 @@
                       <Component id="jLabel1" min="-2" pref="236" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="BAUserNameLabel" min="-2" pref="237" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="LogoutButtton" min="-2" pref="436" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="514" max="32767" attributes="0"/>

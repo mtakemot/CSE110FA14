@@ -11,7 +11,6 @@ package GUI;
  * Page will look like and how it will behave.
  * **************************************************************************
  */
-import Backend.UserAccount;
 import javax.swing.*;
 import java.awt.*;
 import java.util.regex.Matcher;

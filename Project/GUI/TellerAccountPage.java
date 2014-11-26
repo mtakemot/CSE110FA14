@@ -6,12 +6,11 @@
 package GUI;
 
 import java.awt.*;
-import javax.swing.JPanel;
 import javax.swing.*;
-import Backend.*;
+import javax.swing.table.*;
+import FacadeLayer.BackendWrapper;
 import static GUI.AccountsListPanel.BALANCECOL;
 import static GUI.AccountsListPanel.NAMECOL;
-import javax.swing.table.*;
 
 /**
  *

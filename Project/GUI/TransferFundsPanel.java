@@ -5,9 +5,10 @@
  */
 package GUI;
 
+import Backend.UserAccount;
 import java.awt.*;
 import javax.swing.*;
-import Backend.*;
+import FacadeLayer.BackendWrapper;
 
 /**
  *

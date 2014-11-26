@@ -5,9 +5,8 @@
  */
 package GUI;
 
-import Backend.BackendWrapper;
 import Backend.UserAccount;
-import javax.swing.JLabel;
+import FacadeLayer.BackendWrapper;
 import javax.swing.table.*;
 
 /**
