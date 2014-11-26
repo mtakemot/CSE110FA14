@@ -14,7 +14,7 @@ package GUI;
  * **************************************************************************
  */
 import FacadeLayer.BackendWrapper;
-import Backend.UserAccount;
+import LogicLayer.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -171,6 +171,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         centerRenderer.setHorizontalAlignment( JLabel.CENTER );
         AccountsTable.setDefaultRenderer(String.class, centerRenderer);
         AccountsTable.setDefaultRenderer(Double.class, centerRenderer);
+        AccountsTable.setColumnSelectionAllowed(true);
         AccountsTable.getTableHeader().setResizingAllowed(false);
         AccountsTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(AccountsTable);
@@ -191,7 +192,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         });
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 255));
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Transfer Funds", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("DejaVu Sans", 1, 16))); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Transfer Funds", 0, 0, new java.awt.Font("DejaVu Sans", 1, 16))); // NOI18N
 
         jLabel2.setText("Amount to Tranfser:");
 

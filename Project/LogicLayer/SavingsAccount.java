@@ -1,4 +1,4 @@
-package Backend;
+package LogicLayer;
 
 import org.joda.time.*;
 
@@ -9,37 +9,39 @@ import org.joda.time.*;
  *
  * Team 42
  *
- * File Name: CheckingAccount.java Description: This file extends BankAccount
- * and will be the object that is created every time a user wants to create a
- * new checking account. This type of BankAccount WILL NOT gain interest or lose
- * funds as a result of not having a high enough balance.
+ * File Name: SavingsAccount.java Description: This file extends BankAccount and
+ * will be the object that is created every time a user wants to create a new
+ * savings account. This type of BankAccount WILL gain interest and lose funds
+ * as a result of not having a high enough balance. TODO: Implement functions
+ * that will add interest or subtract funds based on the balance and the age of
+ * the account
  * **************************************************************************
  */
-public class CheckingAccount extends BankAccount
+public class SavingsAccount extends BankAccount
 {
 
-    public CheckingAccount()
+    public SavingsAccount()
     {
+        super();
     }
 
-    public CheckingAccount(String name)
+    public SavingsAccount(String name)
     {
+        super();
         this.accountName = name;
-        dayWithdrawAmount = 0;
     }
 
-    public CheckingAccount(double bal, String name)
+    public SavingsAccount(double bal, String name)
     {
         this.balance = bal;
         this.accountName = name;
-        this.accountType = "Checking";
-        dayWithdrawAmount = 0;
+        this.accountType = "Savings";
     }
 
     @Override
     public boolean subFromBalance(double amount)
     {
-        if ((this.balance - amount < 0) || (amount > 10000))
+        if ((this.balance - amount < 0) || (amount > 5000))
         {
             return false;
         }
@@ -49,7 +51,7 @@ public class CheckingAccount extends BankAccount
         if (Hours.hoursBetween(currentDateTime, lastWithdrawDateTime).getHours() <= 24)
         {
             // Ensure that this withdraw will not put the user over their threshold
-            if ((dayWithdrawAmount + amount) <= 10000)
+            if ((dayWithdrawAmount + amount) <= 5000)
             {
                 // Perform withdraw and update threshold
                 this.balance -= amount;
@@ -71,7 +73,7 @@ public class CheckingAccount extends BankAccount
     @Override
     public boolean addToBalance(double amount)
     {
-        if (amount > 10000)
+        if (amount > 5000)
         {
             return false;
         }
@@ -81,7 +83,7 @@ public class CheckingAccount extends BankAccount
         if (Hours.hoursBetween(currentDateTime, lastDepositDateTime).getHours() <= 24)
         {
             // Check if this deposit will put the user over their daily threshold
-            if ((dayDepositAmount + amount) <= 10000)
+            if ((dayDepositAmount + amount) <= 5000)
             {
                 // Update threshold and deposit the money
                 this.balance += amount;

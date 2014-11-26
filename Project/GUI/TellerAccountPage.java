@@ -102,8 +102,7 @@ public class TellerAccountPage extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         SettingsButton = new javax.swing.JButton();
         BankNamePanel = new javax.swing.JPanel();
@@ -118,10 +117,8 @@ public class TellerAccountPage extends javax.swing.JPanel
         DeleteAccountButton = new javax.swing.JButton();
 
         SettingsButton.setText("Settings");
-        SettingsButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        SettingsButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 SettingsButtonMouseClicked(evt);
             }
         });
@@ -151,10 +148,8 @@ public class TellerAccountPage extends javax.swing.JPanel
         CurrentUserAccountLabel.setText(GUI.currentBankAccount.getAccountName());
 
         LogoutButtton.setText("Logout");
-        LogoutButtton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        LogoutButtton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LogoutButttonMouseClicked(evt);
             }
         });
@@ -170,37 +165,29 @@ public class TellerAccountPage extends javax.swing.JPanel
         jScrollPane1.setViewportView(AccountsTable);
 
         DepositButton.setText("Deposit");
-        DepositButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        DepositButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 DepositButtonMouseClicked(evt);
             }
         });
 
         WithdrawButton.setText("Withdraw");
-        WithdrawButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        WithdrawButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 WithdrawButtonMouseClicked(evt);
             }
         });
 
         DeleteUserAccountButton.setText("Delete User Account");
-        DeleteUserAccountButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        DeleteUserAccountButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 DeleteUserAccountButtonMouseClicked(evt);
             }
         });
 
         DeleteAccountButton.setText("Delete Highlighted Account");
-        DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 DeleteAccountButtonMouseClicked(evt);
             }
         });

@@ -49,8 +49,7 @@ public class LoginPanel extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         UsernameField = new javax.swing.JTextField();
         CreateAccButton = new javax.swing.JButton();
@@ -65,35 +64,27 @@ public class LoginPanel extends javax.swing.JPanel
         setPreferredSize(new java.awt.Dimension(800, 600));
 
         UsernameField.setText("Username");
-        UsernameField.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusGained(java.awt.event.FocusEvent evt)
-            {
+        UsernameField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
                 UsernameFieldFocusGained(evt);
             }
         });
-        UsernameField.addKeyListener(new java.awt.event.KeyAdapter()
-        {
-            public void keyPressed(java.awt.event.KeyEvent evt)
-            {
+        UsernameField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
                 UsernameFieldKeyPressed(evt);
             }
         });
 
         CreateAccButton.setText("Create Account");
-        CreateAccButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        CreateAccButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 CreateAccButtonMouseClicked(evt);
             }
         });
 
         LoginButton.setText("Login");
-        LoginButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        LoginButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LoginButtonMouseClicked(evt);
             }
         });
@@ -102,17 +93,13 @@ public class LoginPanel extends javax.swing.JPanel
         jLabel1.setText("Bank 42");
 
         jPasswordField.setText("password");
-        jPasswordField.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusGained(java.awt.event.FocusEvent evt)
-            {
+        jPasswordField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
                 jPasswordFieldFocusGained(evt);
             }
         });
-        jPasswordField.addKeyListener(new java.awt.event.KeyAdapter()
-        {
-            public void keyPressed(java.awt.event.KeyEvent evt)
-            {
+        jPasswordField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
                 jPasswordFieldKeyPressed(evt);
             }
         });

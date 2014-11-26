@@ -1,6 +1,6 @@
 package BackendTests;
-import Backend.HashTable;
-import Backend.UserAccount;
+import LogicLayer.HashTable;
+import LogicLayer.UserAccount;
 import org.junit.*;
 import static org.junit.Assert.*;
 /**

@@ -1,4 +1,4 @@
-package Backend;
+package LogicLayer;
 
 import java.io.Serializable;
 

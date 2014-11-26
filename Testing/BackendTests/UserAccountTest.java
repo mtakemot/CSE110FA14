@@ -1,9 +1,9 @@
 package BackendTests;
 
-import Backend.BankAccount;
-import Backend.CheckingAccount;
-import Backend.SavingsAccount;
-import Backend.UserAccount;
+import LogicLayer.BankAccount;
+import LogicLayer.CheckingAccount;
+import LogicLayer.SavingsAccount;
+import LogicLayer.UserAccount;
 import org.junit.*;
 import static org.junit.Assert.*;
 

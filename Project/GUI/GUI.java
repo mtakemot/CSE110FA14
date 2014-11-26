@@ -26,9 +26,9 @@ package GUI;
  import Backend.BankAccount;*/
 //11/8 michio takemoto seeing if just backend.* is fine 
 //need to add backend.ImportExport if not
-import Backend.BankAccount;
-import Backend.HashTable;
-import Backend.UserAccount;
+import LogicLayer.BankAccount;
+import LogicLayer.HashTable;
+import LogicLayer.UserAccount;
 import FacadeLayer.BackendWrapper;
 import javax.swing.*;
 import java.beans.PropertyChangeEvent;
@@ -113,8 +113,6 @@ public class GUI extends javax.swing.JFrame
         MainPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(800, 600));
-        setPreferredSize(new java.awt.Dimension(800, 600));
 
         MainPanel.setBackground(new java.awt.Color(0, 153, 204));
         MainPanel.setMaximumSize(new java.awt.Dimension(800, 600));

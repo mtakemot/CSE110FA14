@@ -5,7 +5,7 @@
  */
 package GUI;
 
-import Backend.UserAccount;
+import LogicLayer.UserAccount;
 import java.awt.*;
 import javax.swing.*;
 import FacadeLayer.BackendWrapper;
@@ -63,8 +63,7 @@ public class TransferFundsPanel extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         BankNamePanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -104,46 +103,36 @@ public class TransferFundsPanel extends javax.swing.JPanel
         );
 
         SettingsButton.setText("Settings");
-        SettingsButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        SettingsButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 SettingsButtonMouseClicked(evt);
             }
         });
 
         LogoutButtton.setText("Logout");
-        LogoutButtton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        LogoutButtton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LogoutButttonMouseClicked(evt);
             }
         });
 
         ExitButton.setText("Exit");
-        ExitButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        ExitButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ExitButtonMouseClicked(evt);
             }
         });
 
         BackButton.setText("Back");
-        BackButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        BackButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BackButtonMouseClicked(evt);
             }
         });
 
         TransferButton.setText("Transfer");
-        TransferButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        TransferButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 TransferButtonMouseClicked(evt);
             }
         });
@@ -160,17 +149,13 @@ public class TransferFundsPanel extends javax.swing.JPanel
         jLabel4.setText("Or Transfer To Another User");
 
         EmailEntryField.setText("Email Address");
-        EmailEntryField.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusGained(java.awt.event.FocusEvent evt)
-            {
+        EmailEntryField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
                 EmailEntryFieldFocusGained(evt);
             }
         });
-        EmailEntryField.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        EmailEntryField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EmailEntryFieldActionPerformed(evt);
             }
         });
@@ -178,44 +163,34 @@ public class TransferFundsPanel extends javax.swing.JPanel
         jLabel5.setText("Bank Account To Transfer From");
 
         AmountField.setText("Amount");
-        AmountField.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusGained(java.awt.event.FocusEvent evt)
-            {
+        AmountField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
                 AmountFieldFocusGained(evt);
             }
         });
-        AmountField.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        AmountField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AmountFieldActionPerformed(evt);
             }
         });
 
         BankAccountsList1.setModel(new javax.swing.DefaultComboBoxModel(accountlist));
-        BankAccountsList1.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        BankAccountsList1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BankAccountsList1ActionPerformed(evt);
             }
         });
 
         TransferButton1.setText("Transfer");
-        TransferButton1.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        TransferButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 TransferButton1MouseClicked(evt);
             }
         });
 
         BankAccountsList0.setModel(new javax.swing.DefaultComboBoxModel(accountlist));
-        BankAccountsList0.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        BankAccountsList0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BankAccountsList0ActionPerformed(evt);
             }
         });

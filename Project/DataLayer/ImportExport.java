@@ -20,8 +20,9 @@
  *    working right in .exe form
  *
  */
-package Backend;
+package DataLayer;
 
+import LogicLayer.HashTable;
 import java.io.*;
 
 /**
