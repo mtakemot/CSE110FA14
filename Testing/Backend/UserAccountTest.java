@@ -1,5 +1,9 @@
 package Backend;
 
+import LogicLayer.BankAccount;
+import LogicLayer.CheckingAccount;
+import LogicLayer.SavingsAccount;
+import LogicLayer.UserAccount;
 import org.junit.*;
 import static org.junit.Assert.*;
 
