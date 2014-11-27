@@ -424,10 +424,9 @@ public class HashTable implements Serializable
         this.lastInterestDateTime = LastInterestDateTime;
     }
 
-    public static int getSIZE() {
+    public static int getSIZE()
+    {
         return SIZE;
     }
-    
-    
 
 }

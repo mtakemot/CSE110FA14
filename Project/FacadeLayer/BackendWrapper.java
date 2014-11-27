@@ -1,4 +1,5 @@
 package FacadeLayer;
+
 import LogicLayer.BankAccount;
 import LogicLayer.UserAccount;
 
@@ -8,7 +9,6 @@ import LogicLayer.UserAccount;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author rbridges
