@@ -27,8 +27,6 @@ public class UserAccount implements Serializable
     private String password;
     private String email; // User's email address
     private String phone; // User's phone number
-    // Will store the index where the UserAccount is stored in the HashTable
-    private int location;
     // Each bucket in the Hash Table will store a linked list of
     // UserAccounts. Theis is a link to the next item in the
     //  linked list in the bucket that contains this item.
@@ -57,7 +55,6 @@ public class UserAccount implements Serializable
         this.password = pass;
         this.email = email;
         this.phone = phone;
-        this.location = loc;
         this.next = null;
         this.BankAccHead = null;
         numOfBankAccounts = 0;
@@ -104,7 +101,6 @@ public class UserAccount implements Serializable
             {
                 BankAccHead = new CheckingAccount(bal, name);
                 numOfBankAccounts++;
-                BankAccHead.setAccountPosition(0);
                 return BankAccHead;
             }
             // Create a SavingsAccount
@@ -112,7 +108,6 @@ public class UserAccount implements Serializable
             {
                 BankAccHead = new SavingsAccount(bal, name);
                 numOfBankAccounts++;
-                BankAccHead.setAccountPosition(0);
                 return BankAccHead;
             }
         }
@@ -141,14 +136,12 @@ public class UserAccount implements Serializable
                 {
                     current.setNext(new CheckingAccount(bal, name));
                     numOfBankAccounts++;
-                    current.getNext().setAccountPosition(numOfBankAccounts - 1);
                     return current.getNext();
                 }
                 else // Create a SavingsAccount
                 {
                     current.setNext(new SavingsAccount(bal, name));
                     numOfBankAccounts++;
-                    current.getNext().setAccountPosition(numOfBankAccounts - 1);
                     return current.getNext();
                 }
             }
@@ -238,13 +231,11 @@ public class UserAccount implements Serializable
                 if (prev != null)
                 {
                     prev.setNext(current.getNext());
-                    setBankAccountNumbers(current.getNext());
                     current = null;
                 }
                 else // Remove the head of the linked list inside of the bucket
                 {
                     BankAccHead = BankAccHead.getNext();
-                    setBankAccountNumbers(current.getNext());
                     current = null;
                 }
                 return true;
@@ -252,59 +243,6 @@ public class UserAccount implements Serializable
         }
         // The bucket at index was empty so the UserAccount was not found
         return false;
-    }
-
-    public void setBankAccountNumbers(BankAccount current)
-    {
-        if (current != null) // The user does not have any BankAccounts
-        {
-            for (int zod = ((current.getAccountPosition()) - 1); zod < (numOfBankAccounts); zod++)
-            {
-                current.setAccountPosition(zod);
-                current = current.getNext();
-            }
-        }
-    }
-
-    /**
-     * Prints information about all BankAccounts that the user owns
-     *
-     * @method printAllBankAccounts
-     */
-    public void printAllBankAccounts()
-    {
-        if (BankAccHead != null)
-        {
-            BankAccount current = this.BankAccHead;
-            System.out.println("Bank Account Statement");
-            System.out.println("======================");
-            while (current != null)
-            {
-                System.out.println("Account Name: " + current.getAccountName());
-                System.out.println("Account Type: " + current.getAccountType());
-                System.out.println("Account Balance: " + current.getBalance());
-                System.out.println("======================");
-                current = current.next;
-            }
-        }
-        else
-            System.out.println("You have no bank accounts. ");
-    }
-
-    public int printBankAccountNames()
-    {
-        if (BankAccHead != null)
-        {
-            BankAccount current = this.BankAccHead;
-            for (int zod = 0; zod < numOfBankAccounts; zod++)
-            {
-                System.out.println((current.getAccountPosition() + 1) + ". " + current.getAccountName());
-                current = current.next;
-            }
-            return numOfBankAccounts;
-        }
-        System.out.println("You have no bank accounts. ");
-        return 0;
     }
 
     /**
@@ -405,16 +343,6 @@ public class UserAccount implements Serializable
     public UserAccount getNext()
     {
         return next;
-    }
-
-    public int getLocation()
-    {
-        return location;
-    }
-
-    public void setLocation(int location)
-    {
-        this.location = location;
     }
 
     public void setBankAccHead(BankAccount BankAccHead)

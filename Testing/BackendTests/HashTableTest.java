@@ -27,7 +27,6 @@ public class HashTableTest {
                UserAccount result = testTable.insertUserAccount(testString+i);
                
                 //check to see if every field matches
-                assertEquals((testTable.hashCode(testString+i) % testTable.getSIZE()), result.getLocation());
                 assertEquals(testAccount.getFirstName(),result.getFirstName());
                 assertEquals(testAccount.getLastName() , result.getLastName());
                 assertEquals(testAccount.getUserName(), result.getUserName());

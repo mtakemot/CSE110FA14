@@ -69,7 +69,6 @@ public class HashTable implements Serializable
         if (Table[index] == null)
         {
             Table[index] = new UserAccount(userName);
-            Table[index].setLocation(index);
             Table[index].insertBankAccount(0, "Checking1", "Checking");
             Table[index].insertBankAccount(0, "Savings1", "Savings");
             this.occ++;
@@ -96,7 +95,6 @@ public class HashTable implements Serializable
             // so we insert here.
             {
                 current.setNext(new UserAccount(userName));
-                current.getNext().setLocation(index);
                 current.getNext().insertBankAccount(0, "Checking1", "Checking");
                 current.getNext().insertBankAccount(0, "Savings1", "Savings");
                 this.occ++;
