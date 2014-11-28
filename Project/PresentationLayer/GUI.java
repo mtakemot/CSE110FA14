@@ -264,7 +264,7 @@ public class GUI extends javax.swing.JFrame
                 mainGUI.setCreateBA(new CreateBankAccount(cardHolder, mainGUI));
                 mainGUI.setTellerAP(new TellerAccountPage(cardHolder, mainGUI));
                 mainGUI.setTellerMainMenu(new TellerMainMenu(cardHolder, mainGUI));
-                mainGUI.setTDelete(new TellerDeleteAccountPanel(cardHolder, mainGUI));
+                mainGUI.setIntPenPanel(new InterestPenaltyPanel(cardHolder, mainGUI));
 
                 // This addes the LoginPanel and AccountsListPanel that we just
                 // created to the MainPanel. It also assigns a name to each of
@@ -281,6 +281,7 @@ public class GUI extends javax.swing.JFrame
                 cardHolder.add(mainGUI.getCreateBA(), "CreateBA");
                 cardHolder.add(mainGUI.getTellerAP(), "TellerAP");
                 cardHolder.add(mainGUI.getTDelete(), "TDelete");
+                cardHolder.add(mainGUI.getTIntPenPanel(), "IntPenPanel");
 
                 // These two lines show the MainPanel. Without these 2 lines
                 // the GUI would not show up at all. Just leave them alone.
@@ -297,7 +298,6 @@ public class GUI extends javax.swing.JFrame
                             {
                                 mainGUI.getAccList().setNewCellValue(currentBankAccount.getBalance(),
                                         currentBankAccount.getAccountName());
-                                return;
                             }
                         });
                 mainGUI.addPropertyChangeListener(TELTABLE,
@@ -338,6 +338,7 @@ public class GUI extends javax.swing.JFrame
     private TellerAccountPage TellerAP;
     private DeleteAccountPanel Delete;
     private TellerDeleteAccountPanel TDelete;
+    private InterestPenaltyPanel intPenPanel;
 
     public TellerDeleteAccountPanel getTDelete()
     {
@@ -429,7 +430,18 @@ public class GUI extends javax.swing.JFrame
         this.TellerAP = TellerAP;
     }
 
+    private void setIntPenPanel(InterestPenaltyPanel intPenPanel)
+    {
+        this.intPenPanel = intPenPanel;
+    }
+
+    private InterestPenaltyPanel getTIntPenPanel()
+    {
+        return intPenPanel;
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel MainPanel;
     // End of variables declaration//GEN-END:variables
+
 }

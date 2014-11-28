@@ -5,18 +5,30 @@
  */
 package PresentationLayer;
 
+import javax.swing.JPanel;
+
 /**
  *
  * @author Ryan
  */
-public class InterestPenaltyTable extends javax.swing.JPanel
+public class InterestPenaltyPanel extends javax.swing.JPanel
 {
+
+    private JPanel MainPanel;
+    private GUI mainGUI;
+
+    public InterestPenaltyPanel()
+    {
+        initComponents();
+    }
 
     /**
      * Creates new form InterestPenaltyTable
      */
-    public InterestPenaltyTable()
+    public InterestPenaltyPanel(JPanel MainPanel, GUI mainGUI)
     {
+        this.MainPanel = MainPanel;
+        this.mainGUI = mainGUI;
         initComponents();
     }
 
@@ -31,7 +43,7 @@ public class InterestPenaltyTable extends javax.swing.JPanel
     {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        InterestTable = new javax.swing.JTable();
 
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
@@ -39,26 +51,14 @@ public class InterestPenaltyTable extends javax.swing.JPanel
         setPreferredSize(new java.awt.Dimension(800, 600));
         setLayout(new java.awt.GridBagLayout());
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][]
-            {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String []
-            {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        InterestTable.setModel(new PresentationLayer.InterestTableModel(PresentationLayer.GUI.MasterTable));
+        jScrollPane1.setViewportView(InterestTable);
 
         add(jScrollPane1, new java.awt.GridBagConstraints());
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable InterestTable;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,6 +5,8 @@
  */
 package PresentationLayer;
 
+import FacadeLayer.HashTableWrapper;
+import LogicLayer.HashTable;
 import javax.swing.table.AbstractTableModel;
 
 /**
@@ -20,6 +22,26 @@ public class InterestTableModel extends AbstractTableModel
         "$2000-$3000"
     };
 
+    private String[] rowNames =
+    {
+        "Savings", "Checking"
+    };
+
+    Class[] columns = new Class[]
+    {
+        String.class, double.class, double.class, double.class
+    };
+
+    private HashTable hashTable;
+    private HashTableWrapper wrapper;
+
+    public InterestTableModel(HashTable hashTable)
+    {
+        this.hashTable = hashTable;
+        wrapper = new HashTableWrapper(this.hashTable);
+        //this.addTableModelListener(new TableListener());
+    }
+
     @Override
     public int getRowCount()
     {
@@ -33,9 +55,23 @@ public class InterestTableModel extends AbstractTableModel
     }
 
     @Override
-    public Object getValueAt(int i, int i1)
+    public Object getValueAt(int rowIndex, int columnIndex)
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (columnIndex == 0)
+            return rowNames[rowIndex];
+        else
+            return wrapper.getTableValue(rowIndex, columnIndex - 1);
     }
 
+    @Override
+    public String getColumnName(int index)
+    {
+        return columnNames[index];
+    }
+
+    @Override
+    public Class getColumnClass(int columnIndex)
+    {
+        return columns[columnIndex];
+    }
 }
