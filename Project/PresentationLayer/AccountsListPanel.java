@@ -13,7 +13,7 @@ package PresentationLayer;
  * MESSAGE TELLING US WHICH PANEL IT IS SUPPOSED TO BE.
  * **************************************************************************
  */
-import FacadeLayer.BackendWrapper;
+import FacadeLayer.UserAccountWrapper;
 import LogicLayer.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.*;
@@ -30,7 +30,7 @@ public class AccountsListPanel extends javax.swing.JPanel
     // YOU DECLARE A PRIVATE VARIABLE THAT WILL STORE THE MAIN PANEL FROM GUI 
     private JPanel MainPanel;
     private GUI mainGUI;
-    private BackendWrapper wrapper;
+    private UserAccountWrapper wrapper;
     private int total_accounts;
     private String[] accountlist;
 
@@ -46,7 +46,7 @@ public class AccountsListPanel extends javax.swing.JPanel
      the main panel where all of our GUI elements will eventually be located. */
     public AccountsListPanel(JPanel MainPanel, GUI mainGUI)
     {
-        wrapper = new BackendWrapper(GUI.currentUserAccount);
+        wrapper = new UserAccountWrapper(GUI.currentUserAccount);
         total_accounts = wrapper.getTotalAccounts();
         accountlist = new String[total_accounts];
         for (int i = 0; i < total_accounts; i++)
@@ -70,8 +70,8 @@ public class AccountsListPanel extends javax.swing.JPanel
         AccountsTable.clearSelection();
         System.out.println(AccountsTable.getSelectedRowCount());
         AccountsTable.getSelectionModel().clearSelection();
-        AccountsTable.setModel(new TableModel(GUI.currentUserAccount));
-        wrapper = new BackendWrapper(GUI.currentUserAccount);
+        AccountsTable.setModel(new AccountsTableModel(GUI.currentUserAccount));
+        wrapper = new UserAccountWrapper(GUI.currentUserAccount);
         total_accounts = wrapper.getTotalAccounts();
         accountlist = new String[total_accounts];
         for (int i = 0; i < total_accounts; i++)
@@ -86,7 +86,7 @@ public class AccountsListPanel extends javax.swing.JPanel
 
     public void deletecomboboxes(String bankacc)
     {
-        wrapper = new BackendWrapper(GUI.currentUserAccount);
+        wrapper = new UserAccountWrapper(GUI.currentUserAccount);
         total_accounts = wrapper.getTotalAccounts();
         accountlist = new String[total_accounts - 1];
         boolean accountfound = false;
@@ -171,7 +171,7 @@ public class AccountsListPanel extends javax.swing.JPanel
 
         AccountsTable.setAutoCreateRowSorter(true);
         AccountsTable.setSelectionModel(new ForcedListSelectionModel());
-        AccountsTable.setModel(new TableModel(PresentationLayer.GUI.currentUserAccount));
+        AccountsTable.setModel(new AccountsTableModel(PresentationLayer.GUI.currentUserAccount));
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
         centerRenderer.setHorizontalAlignment( JLabel.CENTER );
         AccountsTable.setDefaultRenderer(String.class, centerRenderer);
@@ -201,23 +201,23 @@ public class AccountsListPanel extends javax.swing.JPanel
         });
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 255));
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Transfer Funds", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("DejaVu Sans", 1, 16))); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Transfer Funds", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("DejaVu Sans", 1, 16))); // NOI18N
 
         jLabel2.setText("Amount to Tranfser:");
 
         AmountField.setText("Amount");
-        AmountField.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusGained(java.awt.event.FocusEvent evt)
-            {
-                AmountFieldFocusGained(evt);
-            }
-        });
         AmountField.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
                 AmountFieldActionPerformed(evt);
+            }
+        });
+        AmountField.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
+                AmountFieldFocusGained(evt);
             }
         });
 

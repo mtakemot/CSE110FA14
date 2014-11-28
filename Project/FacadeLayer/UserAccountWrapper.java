@@ -13,7 +13,7 @@ import LogicLayer.UserAccount;
  *
  * @author rbridges
  */
-public class BackendWrapper
+public class UserAccountWrapper
 {
 
     private int[] accountNumbers;
@@ -24,7 +24,7 @@ public class BackendWrapper
     private UserAccount currentUA;
     private BankAccount currentBA;
 
-    public BackendWrapper(UserAccount curr)
+    public UserAccountWrapper(UserAccount curr)
     {
         if (curr != null)
         {

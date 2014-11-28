@@ -29,7 +29,7 @@ package PresentationLayer;
 import LogicLayer.BankAccount;
 import LogicLayer.HashTable;
 import LogicLayer.UserAccount;
-import FacadeLayer.BackendWrapper;
+import FacadeLayer.UserAccountWrapper;
 import javax.swing.*;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
@@ -83,7 +83,7 @@ public class GUI extends javax.swing.JFrame
     {
         if (currentUserAccount != null)
         {
-            BackendWrapper wrapper = new BackendWrapper(currentUserAccount);
+            UserAccountWrapper wrapper = new UserAccountWrapper(currentUserAccount);
             this.currentBankAccount = currentUserAccount.findBankAccount(BankAccountName);
             //find the row of the given account
             int row = 0;
