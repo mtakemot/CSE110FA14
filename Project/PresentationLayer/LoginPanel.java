@@ -149,6 +149,7 @@ public class LoginPanel extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(40, 0, 0, 0);
         add(jPasswordField, gridBagConstraints);
 
+        UsernameLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         UsernameLabel.setForeground(new java.awt.Color(51, 0, 255));
         UsernameLabel.setText("Username:");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -158,6 +159,7 @@ public class LoginPanel extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(0, 225, 40, 0);
         add(UsernameLabel, gridBagConstraints);
 
+        PasswordLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         PasswordLabel.setForeground(new java.awt.Color(51, 0, 255));
         PasswordLabel.setText("Password:");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -174,7 +176,7 @@ public class LoginPanel extends javax.swing.JPanel
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-        gridBagConstraints.insets = new java.awt.Insets(50, 0, 0, 64);
+        gridBagConstraints.insets = new java.awt.Insets(50, 0, 0, 0);
         add(jLabel1, gridBagConstraints);
 
         LoginButton.setText("Login");
