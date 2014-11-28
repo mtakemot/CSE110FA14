@@ -274,7 +274,7 @@ public class HashTable implements Serializable
                 }
             }
         }
-        lastInterestDateTime = new DateTime(DateTimeZone.forID("Etc/UTC"));
+        lastInterestDateTime.plusDays(lastInterestDateTime.dayOfMonth().getMaximumValue());
     }
 
     /**

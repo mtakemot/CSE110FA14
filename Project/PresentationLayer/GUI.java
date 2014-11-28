@@ -209,7 +209,6 @@ public class GUI extends javax.swing.JFrame
                  // our other panels will go on top of this one and be shown or
                  // hidden depending on the state of our program*/
                 final GUI mainGUI = new GUI();
-
                 //Puts some initial values in the table to prevent null pointer
                 // exceptions
                 currentUserAccount = MasterTable.insertUserAccount("qq");
