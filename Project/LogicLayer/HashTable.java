@@ -244,41 +244,6 @@ public class HashTable implements Serializable
         return (shiftedHash ^ hashValue);
     }
 
-    public int adminPrintUser()
-    {
-
-        if (Table != null && occ != 0)
-        {
-            System.out.println("User List");
-            System.out.println("Begin:");
-            System.out.println("======================");
-            int count = 0;
-            for (int i = 0; i < SIZE; i++)
-            {
-                if (Table[i] != null && !Table[i].getAdmin())
-                {
-                    System.out.println((i + count) + ". " + Table[i].getUserName());
-                    if (Table[i].getNext() != null)
-                    {
-                        UserAccount currUserAccount = Table[i].getNext();
-                        while (currUserAccount != null)
-                        {
-                            System.out.println((i + count) + ". " + currUserAccount.getUserName());
-                            currUserAccount = currUserAccount.getNext();
-                            count++;
-                        }
-                    }
-                    System.out.println();
-                    System.out.println("======================");
-                }
-
-            }
-            System.out.println("END");
-            return occ;
-        }
-        return 0;
-    }
-
     /**
      * This function will iterate through the entire HashTable and delegate to
      * InterestAndPenaltiesHelper to calculate the penalties and interest on all
