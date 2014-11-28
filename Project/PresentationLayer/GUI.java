@@ -30,6 +30,9 @@ import LogicLayer.BankAccount;
 import LogicLayer.HashTable;
 import LogicLayer.UserAccount;
 import FacadeLayer.BackendWrapper;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Toolkit;
 import javax.swing.*;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
@@ -41,19 +44,37 @@ public class GUI extends javax.swing.JFrame
 
     // Static HashTable allows us to access the table in any element of our GUI
     public static HashTable MasterTable = new HashTable();
+    
     // Static UserAccount allows us to store a UserAccount after a user logs in
     // so that we can manipulate it in other panels of our GUI
     public static UserAccount currentUserAccount;
+    
     // Static BankAccount allows us to store a UserAccount after a user selects
     // it so that we can manipulate it in other panels of our GUI
     public static BankAccount currentBankAccount;
+    
     //keyword to change the AccList table
     public static final String ACCTABLE = "account table";
+    
     //keyword to change the TellerAP table
     public static final String TELTABLE = "teller table";
 
     public static final int BALANCECOL = 3;
 
+    /**
+     *
+     */
+    public Image my_image;
+    //my_image = Toolkit.getDefaultToolkit().createImage("background-wallpapers-24.jpg");
+    
+    
+    /*@Override
+    public void paint(Graphics g)
+    {
+        // Draws the img to the BackgroundPanel.
+        g.drawImage(img, 0, 0, null);
+    }*/
+    
     public GUI()
     {
         initComponents();
@@ -110,31 +131,25 @@ public class GUI extends javax.swing.JFrame
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents()
     {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         MainPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(800, 600));
         setResizable(false);
+        getContentPane().setLayout(new java.awt.GridBagLayout());
 
-        MainPanel.setBackground(new java.awt.Color(0, 153, 204));
+        MainPanel.setBackground(new java.awt.Color(153, 102, 255));
         MainPanel.setMaximumSize(new java.awt.Dimension(800, 600));
         MainPanel.setName(""); // NOI18N
         MainPanel.setPreferredSize(new java.awt.Dimension(800, 600));
         MainPanel.setLayout(new java.awt.CardLayout());
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(MainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 22, Short.MAX_VALUE))
-        );
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        getContentPane().add(MainPanel, gridBagConstraints);
 
         pack();
         setLocationRelativeTo(null);
@@ -259,18 +274,13 @@ public class GUI extends javax.swing.JFrame
                 //AccountsListPanel AccList = new AccountsListPanel(cardHolder, mainGUI);
                 // This creates a new Settings Panel and passes in the MainPanel
                 //Settings Settings = new Settings(cardHolder);
-                mainGUI.setTransfer(new TransferFundsPanel(cardHolder, mainGUI));
+                //mainGUI.setTransfer(new TransferFundsPanel(cardHolder, mainGUI));
                 // Creates a new CreateAccountPanel and passes in the Main Panel
                 //CreateAccountPanel CreateAcc = new CreateAccountPanel(cardHolder);
                 //MainMenuPanel mainMenu = new MainMenuPanel(cardHolder);
 
-                //TransferFundsPanel Transfer = new TransferFundsPanel(cardHolder);
-                //WithdrawPanel Withdraw = new WithdrawPanel(cardHolder);
-                //DepositPanel Deposit = new DepositPanel(cardHolder);
-                //DeleteAccountPanel Delete = new DeleteAccountPanel(cardHolder);
-                //TellerMainMenu TellerMainMenu = new TellerMainMenu(cardHolder);
-                //CreateBankAccount createBA = new CreateBankAccount(cardHolder);
-                //TellerAccountPage TellerAP = new TellerAccountPage(cardHolder);
+                
+                
                 // This addes the LoginPanel and AccountsListPanel that we just
                 // created to the MainPanel. It also assigns a name to each of
                 // the panels so that we can reference them easily when we want 
@@ -284,8 +294,6 @@ public class GUI extends javax.swing.JFrame
                 cardHolder.add(mainGUI.getCreateAcc(), "CreateAcc");
                 cardHolder.add(mainGUI.getSettings(), "Settings");
                 cardHolder.add(mainGUI.getTransfer(), "Transfer");
-                //cardHolder.add(Withdraw, "Withdraw");
-                //cardHolder.add(Deposit, "Deposit" );
                 cardHolder.add(mainGUI.getDelete(), "Delete");
                 cardHolder.add(mainGUI.getTellerMainMenu(), "TellerMainMenu");
                 cardHolder.add(mainGUI.getCreateBA(), "CreateBA");
@@ -296,7 +304,6 @@ public class GUI extends javax.swing.JFrame
                 // the GUI would not show up at all. Just leave them alone.
                 mainGUI.pack();
                 mainGUI.setVisible(true);
-
                 mainGUI.setResizable(false);
 
                 mainGUI.addPropertyChangeListener(ACCTABLE,

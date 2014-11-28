@@ -41,7 +41,8 @@ public class CreateBankAccount extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         AccountNameField = new javax.swing.JTextField();
         TypeCombo = new javax.swing.JComboBox();
@@ -51,13 +52,17 @@ public class CreateBankAccount extends javax.swing.JPanel
         jLabel2 = new javax.swing.JLabel();
         backButton = new javax.swing.JButton();
 
-        AccountNameField.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
+        AccountNameField.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
                 AccountNameFieldFocusGained(evt);
             }
         });
-        AccountNameField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        AccountNameField.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 AccountNameFieldActionPerformed(evt);
             }
         });
@@ -65,8 +70,10 @@ public class CreateBankAccount extends javax.swing.JPanel
         TypeCombo.setModel(new DefaultComboBoxModel(accTypes));
 
         CreateButton.setText("Create Bank Account");
-        CreateButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        CreateButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 CreateButtonActionPerformed(evt);
             }
         });
@@ -80,8 +87,10 @@ public class CreateBankAccount extends javax.swing.JPanel
         jLabel2.setText("Account Name:");
 
         backButton.setText("Back");
-        backButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        backButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 backButtonActionPerformed(evt);
             }
         });

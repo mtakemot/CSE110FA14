@@ -116,7 +116,8 @@ public class AccountsListPanel extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         jButton1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
@@ -151,15 +152,19 @@ public class AccountsListPanel extends javax.swing.JPanel
         jLabel5.setText("Bank 42");
 
         Settings.setText("Settings");
-        Settings.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        Settings.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 SettingsMouseClicked(evt);
             }
         });
 
         Logout.setText("Logout");
-        Logout.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        Logout.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 LogoutMouseClicked(evt);
             }
         });
@@ -178,39 +183,56 @@ public class AccountsListPanel extends javax.swing.JPanel
         AccountsTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         DeleteAccountButton.setText("Delete Highlighted Account");
-        DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 DeleteAccountButtonMouseClicked(evt);
+            }
+        });
+        DeleteAccountButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                DeleteAccountButtonActionPerformed(evt);
             }
         });
 
         CreateBAButton.setText("Create New Bank Account");
-        CreateBAButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        CreateBAButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 CreateBAButtonActionPerformed(evt);
             }
         });
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 255));
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Transfer Funds", 0, 0, new java.awt.Font("DejaVu Sans", 1, 16))); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Transfer Funds", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("DejaVu Sans", 1, 16))); // NOI18N
 
-        jLabel2.setText("Amount to Tranfser:");
+        jLabel2.setText("Amount to Transfer:");
 
         AmountField.setText("Amount");
-        AmountField.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
+        AmountField.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
                 AmountFieldFocusGained(evt);
             }
         });
-        AmountField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        AmountField.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 AmountFieldActionPerformed(evt);
             }
         });
 
         BankAccountsList0.setModel(new javax.swing.DefaultComboBoxModel(accountlist));
-        BankAccountsList0.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        BankAccountsList0.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 BankAccountsList0ActionPerformed(evt);
             }
         });
@@ -219,13 +241,17 @@ public class AccountsListPanel extends javax.swing.JPanel
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         TransferButton.setText("Transfer");
-        TransferButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        TransferButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 TransferButtonMouseClicked(evt);
             }
         });
-        TransferButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        TransferButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 TransferButtonActionPerformed(evt);
             }
         });
@@ -233,8 +259,10 @@ public class AccountsListPanel extends javax.swing.JPanel
         jLabel3.setText("To Your One Of Bank Accounts");
 
         BankAccountsList1.setModel(new javax.swing.DefaultComboBoxModel(accountlist));
-        BankAccountsList1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        BankAccountsList1.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 BankAccountsList1ActionPerformed(evt);
             }
         });
@@ -273,20 +301,26 @@ public class AccountsListPanel extends javax.swing.JPanel
         jLabel4.setText("Transfer To Another User:");
 
         TransferButton1.setText("Transfer");
-        TransferButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        TransferButton1.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 TransferButton1MouseClicked(evt);
             }
         });
 
         EmailEntryField.setText("Email Address");
-        EmailEntryField.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
+        EmailEntryField.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
                 EmailEntryFieldFocusGained(evt);
             }
         });
-        EmailEntryField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        EmailEntryField.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 EmailEntryFieldActionPerformed(evt);
             }
         });
@@ -365,14 +399,13 @@ public class AccountsListPanel extends javax.swing.JPanel
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(Settings)
                         .addGap(247, 247, 247)
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Logout)
-                        .addGap(89, 89, 89))
+                        .addGap(268, 268, 268)
+                        .addComponent(Logout))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -381,8 +414,8 @@ public class AccountsListPanel extends javax.swing.JPanel
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(DeleteAccountButton)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(18, Short.MAX_VALUE))))
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -401,7 +434,7 @@ public class AccountsListPanel extends javax.swing.JPanel
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(169, Short.MAX_VALUE))
+                .addContainerGap(175, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -469,7 +502,7 @@ public class AccountsListPanel extends javax.swing.JPanel
                 String choice = (String) JOptionPane.showInputDialog(
                         null,
                         "Choose a Bank Account",
-                        "",
+                        "Bank 42",
                         JOptionPane.PLAIN_MESSAGE,
                         null,
                         accountlist,
@@ -505,8 +538,35 @@ public class AccountsListPanel extends javax.swing.JPanel
 
     private void CreateBAButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_CreateBAButtonActionPerformed
     {//GEN-HEADEREND:event_CreateBAButtonActionPerformed
-        CardLayout layout = (CardLayout) (MainPanel.getLayout());
-        layout.show(MainPanel, "CreateBA");
+        String choice = (String) JOptionPane.showInputDialog(
+                        null,
+                        "New Bank Account Name",
+                        "Bank 42",
+                        JOptionPane.PLAIN_MESSAGE,
+                        null,
+                        null,
+                        null);
+        
+        if (GUI.currentUserAccount.findBankAccount(choice)==null&&choice.length()>0) {
+            
+            
+            
+        }
+        
+        /* Object[] options =
+            {
+                "",
+                ""
+            };
+            int n = JOptionPane.showOptionDialog(null,
+                    "You have $" + amount_in_deleted_acc + " in account " + account_name
+                    + "\nWhere would you like the funds to go?",
+                    "Where to Transfer Funds",
+                    JOptionPane.YES_NO_CANCEL_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null, //do not use a custom icon
+                    options, //the titles of buttons
+                    options[0]); //default button title*/
     }//GEN-LAST:event_CreateBAButtonActionPerformed
 
     private void AmountFieldFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_AmountFieldFocusGained
@@ -554,45 +614,7 @@ public class AccountsListPanel extends javax.swing.JPanel
 
     private void TransferButtonMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_TransferButtonMouseClicked
     {//GEN-HEADEREND:event_TransferButtonMouseClicked
-        double amount;
 
-        if (isParsable(AmountField.getText()))
-        {
-            amount = Integer.parseInt(AmountField.getText());
-        }
-
-        else
-        {
-            JOptionPane.showMessageDialog(null, "Please Enter A Valid Amount To Transfer");
-            return;
-        }
-
-        if (amount <= 0)
-        {
-            JOptionPane.showMessageDialog(null, "Please Enter A Valid Amount To Transfer");
-            return;
-        }
-
-        GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount((String) BankAccountsList0.getSelectedItem());
-
-        if (amount > GUI.currentBankAccount.getBalance())
-        {
-            AmountField.setText("");
-            JOptionPane.showMessageDialog(null, "Insufficient Funds"
-                    + "\nYou have " + GUI.currentBankAccount.getBalance() + "$ available"
-                    + " in selected Bank Account");
-        }
-        else
-        {
-            GUI.currentBankAccount.subFromBalance(amount);
-            mainGUI.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
-            GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount((String) BankAccountsList1.getSelectedItem());
-            GUI.currentBankAccount.addToBalance(amount);
-            mainGUI.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
-            JOptionPane.showMessageDialog(null, "Funds Transfered Successfully!");
-            //GUI.MasterTable.findUserAccount();
-            // test
-        }
     }//GEN-LAST:event_TransferButtonMouseClicked
     private int findRowPositionByName(String accountName)
     {
@@ -607,25 +629,22 @@ public class AccountsListPanel extends javax.swing.JPanel
     }
     private void TransferButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_TransferButtonActionPerformed
     {//GEN-HEADEREND:event_TransferButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TransferButtonActionPerformed
+         double amount;
 
-    private void TransferButton1MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_TransferButton1MouseClicked
-    {//GEN-HEADEREND:event_TransferButton1MouseClicked
-        double amount;
         if (isParsable(AmountField.getText()))
         {
             amount = Integer.parseInt(AmountField.getText());
         }
+
         else
         {
-            JOptionPane.showMessageDialog(null, "Please Enter A Valid Amount To Transfer");
+            JOptionPane.showMessageDialog(null, "Please Enter A Valid Amount To Transfer","Bank 42",1);
             return;
         }
 
         if (amount <= 0)
         {
-            JOptionPane.showMessageDialog(null, "Please Enter A Valid Amount To Transfer");
+            JOptionPane.showMessageDialog(null, "Please Enter A Valid Amount To Transfer","Bank 42",1);
             return;
         }
 
@@ -636,27 +655,112 @@ public class AccountsListPanel extends javax.swing.JPanel
             AmountField.setText("");
             JOptionPane.showMessageDialog(null, "Insufficient Funds"
                     + "\nYou have " + GUI.currentBankAccount.getBalance() + "$ available"
-                    + " in selected Bank Account");
-            return;
-        }
-
-        String email = EmailEntryField.getText();
-        UserAccount founduser = GUI.MasterTable.findUserAccountEmail(email);
-
-        if (founduser != null)
-        {
-            GUI.currentBankAccount.subFromBalance(amount);
-            mainGUI.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
-            GUI.currentBankAccount = founduser.getBankAccHead();
-            GUI.currentBankAccount.addToBalance(amount);
-            mainGUI.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
-            JOptionPane.showMessageDialog(null, "Funds Transfered Successfully!");
+                    + " in selected Bank Account","Bank 42",1);
         }
         else
         {
-            JOptionPane.showMessageDialog(null, "Error, User Account Not Found");
+            GUI.currentBankAccount.subFromBalance(amount);
+            mainGUI.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
+            GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount((String) BankAccountsList1.getSelectedItem());
+            GUI.currentBankAccount.addToBalance(amount);
+            mainGUI.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
+            JOptionPane.showMessageDialog(null, "Funds Transfered Successfully!","Bank 42",1);
+            //GUI.MasterTable.findUserAccount();
+            // test
         }
+    }//GEN-LAST:event_TransferButtonActionPerformed
+
+    private void TransferButton1MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_TransferButton1MouseClicked
+    {//GEN-HEADEREND:event_TransferButton1MouseClicked
+
     }//GEN-LAST:event_TransferButton1MouseClicked
+
+    private void DeleteAccountButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_DeleteAccountButtonActionPerformed
+    {//GEN-HEADEREND:event_DeleteAccountButtonActionPerformed
+          if (AccountsTable.getSelectedRowCount() > 0)
+        {
+            if (GUI.currentUserAccount.getNumOfBankAccounts() == 1)
+            {
+                JOptionPane.showMessageDialog(null, "You must have at least one bank account.\n"
+                        + "You cannot delete this Bank Account without creating a new one first.","Bank 42",0);
+                return;
+            }
+
+            String account_type;
+            double amount_in_deleted_acc;
+            String account_name;
+            int row = AccountsTable.getSelectedRow();
+            String bankacc = (String) AccountsTable.getValueAt(row, 1);
+
+            GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(bankacc);
+            amount_in_deleted_acc = GUI.currentBankAccount.getBalance();
+            account_type = GUI.currentBankAccount.getAccountType();
+            account_name = GUI.currentBankAccount.getAccountName();
+
+            if (amount_in_deleted_acc == 0)
+            {
+                JOptionPane.showMessageDialog(null, bankacc + " has been Deleted","Bank 42",1);
+                GUI.currentUserAccount.deleteBankAccount(bankacc);
+                this.update();
+                return;
+            }
+
+            Object[] options =
+            {
+                "To one of my other Bank Accounts",
+                "Email Me Funds"
+            };
+            int n = JOptionPane.showOptionDialog(null,
+                    "You have $" + amount_in_deleted_acc + " in account " + account_name
+                    + "\nWhere would you like the funds to go?",
+                    "Bank 42",
+                    JOptionPane.YES_NO_CANCEL_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null, //do not use a custom icon
+                    options, //the titles of buttons
+                    options[0]); //default button title
+
+            deletecomboboxes(bankacc);
+
+            if (n == 0)
+            {
+                String choice = (String) JOptionPane.showInputDialog(
+                        null,
+                        "Choose a Bank Account",
+                        "Bank 42",
+                        JOptionPane.PLAIN_MESSAGE,
+                        null,
+                        accountlist,
+                        null);
+
+                if (null == choice)
+                {
+                    return;
+                }
+
+                GUI.currentUserAccount.deleteBankAccount(bankacc);
+
+                GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(choice);
+                GUI.currentBankAccount.addToBalance(amount_in_deleted_acc);
+                this.update();
+
+                JOptionPane.showMessageDialog(null, "Bank Account " + bankacc
+                        + " has been Deleted" + "\nFunds have been transfered to " + choice,"Bank 42",1);
+            }
+
+            else if (n == 1)
+            {
+                GUI.currentUserAccount.deleteBankAccount(bankacc);
+                this.update();
+
+                JOptionPane.showMessageDialog(null, "Bank Account " + bankacc
+                        + " has been Deleted" + "\nFunds have been emailed to you at:\n" 
+                        + GUI.currentUserAccount.getEmail(),"Bank 42",1);
+            }
+        }
+        else
+            JOptionPane.showMessageDialog(null, "Please Select an Account","Bank 42",1);
+    }//GEN-LAST:event_DeleteAccountButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable AccountsTable;
