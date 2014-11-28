@@ -8,7 +8,7 @@ package PresentationLayer;
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.table.*;
-import FacadeLayer.BackendWrapper;
+import FacadeLayer.UserAccountWrapper;
 import static PresentationLayer.AccountsListPanel.BALANCECOL;
 import static PresentationLayer.AccountsListPanel.NAMECOL;
 
@@ -21,7 +21,7 @@ public class TellerAccountPage extends javax.swing.JPanel
 
     private JPanel MainPanel;
     private GUI mainGUI;
-    private BackendWrapper wrapper;
+    private UserAccountWrapper wrapper;
     private int total_accounts;
     private String[] accountlist;
 
@@ -60,14 +60,14 @@ public class TellerAccountPage extends javax.swing.JPanel
 
     public void update()
     {
-        AccountsTable.setModel(new TableModel(GUI.currentUserAccount));
+        AccountsTable.setModel(new AccountsTableModel(GUI.currentUserAccount));
         CurrentUserAccountLabel.setText(GUI.currentUserAccount.getUserName());
         mainGUI.updateUserLabels();
     }
 
     public void deletecomboboxes(String bankacc)
     {
-        wrapper = new BackendWrapper(GUI.currentUserAccount);
+        wrapper = new UserAccountWrapper(GUI.currentUserAccount);
         total_accounts = wrapper.getTotalAccounts();
         accountlist = new String[total_accounts - 1];
         boolean accountfound = false;
@@ -169,7 +169,7 @@ public class TellerAccountPage extends javax.swing.JPanel
         centerRenderer.setHorizontalAlignment( JLabel.CENTER );
         AccountsTable.setDefaultRenderer(String.class, centerRenderer);
         AccountsTable.setDefaultRenderer(Double.class, centerRenderer);
-        AccountsTable.setModel(new TableModel(PresentationLayer.GUI.currentUserAccount));
+        AccountsTable.setModel(new AccountsTableModel(PresentationLayer.GUI.currentUserAccount));
         AccountsTable.getTableHeader().setResizingAllowed(false);
         AccountsTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(AccountsTable);

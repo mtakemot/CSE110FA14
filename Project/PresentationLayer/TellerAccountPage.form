@@ -171,7 +171,7 @@
           <Properties>
             <Property name="autoCreateRowSorter" type="boolean" value="true" postCode="DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();&#xa;centerRenderer.setHorizontalAlignment( JLabel.CENTER );&#xa;AccountsTable.setDefaultRenderer(String.class, centerRenderer);&#xa;AccountsTable.setDefaultRenderer(Double.class, centerRenderer);"/>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" postCode="AccountsTable.getTableHeader().setResizingAllowed(false);">
-              <Connection code="new TableModel(PresentationLayer.GUI.currentUserAccount)" type="code"/>
+              <Connection code="new PresentationLayer.AccountsTableModel(PresentationLayer.GUI.currentUserAccount)" type="code"/>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor" preCode="AccountsTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);">
               <TableColumnModel selectionModel="0"/>

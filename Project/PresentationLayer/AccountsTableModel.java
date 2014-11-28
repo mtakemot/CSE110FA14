@@ -6,19 +6,19 @@
 package PresentationLayer;
 
 import LogicLayer.UserAccount;
-import FacadeLayer.BackendWrapper;
+import FacadeLayer.UserAccountWrapper;
 import javax.swing.table.*;
 
 /**
  *
  * @author rbridges
  */
-public class TableModel extends AbstractTableModel
+public class AccountsTableModel extends AbstractTableModel
 {
 
     private int colCount = 4;
     private UserAccount current;
-    private BackendWrapper wrapper;
+    private UserAccountWrapper wrapper;
     Class[] columns = new Class[]
     {
         Integer.class, String.class, String.class, Double.class
@@ -29,10 +29,10 @@ public class TableModel extends AbstractTableModel
         "Account Balance"
     };
 
-    public TableModel(UserAccount curr)
+    public AccountsTableModel(UserAccount curr)
     {
         this.current = curr;
-        wrapper = new BackendWrapper(this.current);
+        wrapper = new UserAccountWrapper(this.current);
         this.addTableModelListener(new TableListener());
     }
 
