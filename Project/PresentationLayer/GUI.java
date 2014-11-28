@@ -24,12 +24,12 @@ package PresentationLayer;
  import Backend.UserAccount;
  import Backend.HashTable;
  import Backend.BankAccount;*/
-//11/8 michio takemoto seeing if just backend.* is fine 
+//11/8 michio takemoto seeing if just backend.* is fine
 //need to add backend.ImportExport if not
 import LogicLayer.BankAccount;
 import LogicLayer.HashTable;
 import LogicLayer.UserAccount;
-import FacadeLayer.BackendWrapper;
+import FacadeLayer.UserAccountWrapper;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -44,18 +44,18 @@ public class GUI extends javax.swing.JFrame
 
     // Static HashTable allows us to access the table in any element of our GUI
     public static HashTable MasterTable = new HashTable();
-    
+
     // Static UserAccount allows us to store a UserAccount after a user logs in
     // so that we can manipulate it in other panels of our GUI
     public static UserAccount currentUserAccount;
-    
+
     // Static BankAccount allows us to store a UserAccount after a user selects
     // it so that we can manipulate it in other panels of our GUI
     public static BankAccount currentBankAccount;
-    
+
     //keyword to change the AccList table
     public static final String ACCTABLE = "account table";
-    
+
     //keyword to change the TellerAP table
     public static final String TELTABLE = "teller table";
 
@@ -66,24 +66,22 @@ public class GUI extends javax.swing.JFrame
      */
     public Image my_image;
     //my_image = Toolkit.getDefaultToolkit().createImage("background-wallpapers-24.jpg");
-    
-    
+
     /*@Override
-    public void paint(Graphics g)
-    {
-        // Draws the img to the BackgroundPanel.
-        g.drawImage(img, 0, 0, null);
-    }*/
-    
+     public void paint(Graphics g)
+     {
+     // Draws the img to the BackgroundPanel.
+     g.drawImage(img, 0, 0, null);
+     }*/
     public GUI()
     {
         initComponents();
     }
 
-    // This is a getter function for the JPanel that is created when this 
-    // component is initiialized. If you open "Generated Code" below you can 
+    // This is a getter function for the JPanel that is created when this
+    // component is initiialized. If you open "Generated Code" below you can
     // see where MainPanel is declared. This one JPanel is where we will show/hide
-    // all of our other UI elements. This should also be passed into the 
+    // all of our other UI elements. This should also be passed into the
     // constructor of any new panel that we make so that each panel as access to
     // it
     public JPanel getMainPanel()
@@ -114,7 +112,7 @@ public class GUI extends javax.swing.JFrame
             {
                 row++;
             }
-            //now change the table model and call fireTableDataChanged.     
+            //now change the table model and call fireTableDataChanged.
             firePropertyChange(ACCTABLE, false, true);
         }
     }
@@ -161,7 +159,7 @@ public class GUI extends javax.swing.JFrame
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try
         {
@@ -206,13 +204,13 @@ public class GUI extends javax.swing.JFrame
                  ImportExport dataout = new ImportExport();
 
                  MasterTable = datain.importDB(MasterTable);
-                 System.out.println("GUI.java imported table has: " + MasterTable.occ + " users\n"); 
-                 // This creates the MainPanel that is referenced above. All of 
-                 // our other panels will go on top of this one and be shown or 
+                 System.out.println("GUI.java imported table has: " + MasterTable.occ + " users\n");
+                 // This creates the MainPanel that is referenced above. All of
+                 // our other panels will go on top of this one and be shown or
                  // hidden depending on the state of our program*/
                 final GUI mainGUI = new GUI();
 
-                //Puts some initial values in the table to prevent null pointer 
+                //Puts some initial values in the table to prevent null pointer
                 // exceptions
                 currentUserAccount = MasterTable.insertUserAccount("qq");
                 currentUserAccount.setFirstName("first");
@@ -256,7 +254,7 @@ public class GUI extends javax.swing.JFrame
                 // This grabs the MainPanel and stores it in a variable so that
                 // we have easy access to it
                 JPanel cardHolder = mainGUI.getMainPanel();
-                // This creates a new LoginPanel and passes in the MainPanel. 
+                // This creates a new LoginPanel and passes in the MainPanel.
 
                 mainGUI.setLogin(new LoginPanel(cardHolder, mainGUI));
                 mainGUI.setAccList(new AccountsListPanel(cardHolder, mainGUI));
@@ -270,7 +268,7 @@ public class GUI extends javax.swing.JFrame
 
                 // This addes the LoginPanel and AccountsListPanel that we just
                 // created to the MainPanel. It also assigns a name to each of
-                // the panels so that we can reference them easily when we want 
+                // the panels so that we can reference them easily when we want
                 // to show/hide them. For instance, if we were in some other class
                 // that has access to MainPanel, we could use the following 2 lines
                 // to show the AccList panel
@@ -284,7 +282,7 @@ public class GUI extends javax.swing.JFrame
                 cardHolder.add(mainGUI.getTellerAP(), "TellerAP");
                 cardHolder.add(mainGUI.getTDelete(), "TDelete");
 
-                // These two lines show the MainPanel. Without these 2 lines 
+                // These two lines show the MainPanel. Without these 2 lines
                 // the GUI would not show up at all. Just leave them alone.
                 mainGUI.pack();
                 mainGUI.setVisible(true);
