@@ -5,6 +5,7 @@
  */
 package PresentationLayer;
 
+import java.awt.CardLayout;
 import javax.swing.JPanel;
 
 /**
@@ -41,9 +42,11 @@ public class InterestPenaltyPanel extends javax.swing.JPanel
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents()
     {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         jScrollPane1 = new javax.swing.JScrollPane();
         InterestTable = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
 
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
@@ -51,14 +54,40 @@ public class InterestPenaltyPanel extends javax.swing.JPanel
         setPreferredSize(new java.awt.Dimension(800, 600));
         setLayout(new java.awt.GridBagLayout());
 
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(420, 150));
+        jScrollPane1.setRequestFocusEnabled(false);
+
         InterestTable.setModel(new PresentationLayer.InterestTableModel(PresentationLayer.GUI.MasterTable));
+        InterestTable.getTableHeader().setResizingAllowed(false);
+        InterestTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(InterestTable);
 
         add(jScrollPane1, new java.awt.GridBagConstraints());
+
+        jButton1.setText("Back");
+        jButton1.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.insets = new java.awt.Insets(5, 0, 0, 0);
+        add(jButton1, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1ActionPerformed
+    {//GEN-HEADEREND:event_jButton1ActionPerformed
+        CardLayout layout = (CardLayout) (MainPanel.getLayout());
+        layout.show(MainPanel, "TellerMainMenu");
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable InterestTable;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

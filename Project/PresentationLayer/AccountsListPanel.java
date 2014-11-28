@@ -456,7 +456,7 @@ public class AccountsListPanel extends javax.swing.JPanel
             if (GUI.currentUserAccount.getNumOfBankAccounts() == 1)
             {
                 JOptionPane.showMessageDialog(null, "ERROR! You must have at least one bank account.\n"
-                        + "You cannot delete this Bank Account without creating a new one first.");
+                        + "You cannot delete this Bank Account without creating a new one first.", "ERROR", JOptionPane.ERROR_MESSAGE);
                 return;
             }
 
@@ -529,7 +529,7 @@ public class AccountsListPanel extends javax.swing.JPanel
             }
         }
         else
-            JOptionPane.showMessageDialog(null, "Please Select an Account");
+            JOptionPane.showMessageDialog(null, "Please Select an Account", "ERROR", JOptionPane.ERROR_MESSAGE);
     }//GEN-LAST:event_DeleteAccountButtonMouseClicked
 
     private void CreateBAButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_CreateBAButtonActionPerformed

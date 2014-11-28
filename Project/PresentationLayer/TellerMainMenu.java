@@ -161,24 +161,28 @@ public class TellerMainMenu extends javax.swing.JPanel
         String name = JOptionPane.showInputDialog(
                 null, "Please Enter User Account: ");
 
-        GUI.currentUserAccount = GUI.MasterTable.findUserAccount(name);
+        if (name != null)
+        {
+            GUI.currentUserAccount = GUI.MasterTable.findUserAccount(name);
 
-        if (GUI.currentUserAccount != null)
-        {
-            mainGUI.getTellerAP().update();
-            CardLayout layout = (CardLayout) (MainPanel.getLayout());
-            layout.show(MainPanel, "TellerAP");
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(null, "User Accout Not Found");
+            if (GUI.currentUserAccount != null)
+            {
+                mainGUI.getTellerAP().update();
+                CardLayout layout = (CardLayout) (MainPanel.getLayout());
+                layout.show(MainPanel, "TellerAP");
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "User Accout Not Found");
+            }
         }
     }//GEN-LAST:event_SearchUserButtonMouseClicked
 
     private void InterestPenaltyButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_InterestPenaltyButtonActionPerformed
     {//GEN-HEADEREND:event_InterestPenaltyButtonActionPerformed
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
-        layout.show(MainPanel, "IntPenPanel");
+        //layout.show(MainPanel, "IntPenPanel");
+        layout.show(MainPanel, "IntPenPanel2");
     }//GEN-LAST:event_InterestPenaltyButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

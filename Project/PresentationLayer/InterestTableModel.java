@@ -18,8 +18,8 @@ public class InterestTableModel extends AbstractTableModel
 
     private String[] columnNames =
     {
-        "Account Type", "Less than $1000", "$1000-$2000",
-        "$2000-$3000"
+        "Account Type", "$1000-$2000",
+        "$2000-$3000", "More than $3000"
     };
 
     private String[] rowNames =
@@ -64,6 +64,15 @@ public class InterestTableModel extends AbstractTableModel
     }
 
     @Override
+    public void setValueAt(Object val, int rowIndex, int columnIndex)
+    {
+        if (val instanceof Number && ((Number) val).doubleValue() >= 0)
+        {
+            super.setValueAt(val, rowIndex, columnIndex);
+        }
+    }
+
+    @Override
     public String getColumnName(int index)
     {
         return columnNames[index];
@@ -73,5 +82,12 @@ public class InterestTableModel extends AbstractTableModel
     public Class getColumnClass(int columnIndex)
     {
         return columns[columnIndex];
+    }
+
+    public boolean isCellEditable(int rowIndex, int columnIndex)
+    {
+        if (columnIndex == 0)
+            return false;
+        return true;
     }
 }

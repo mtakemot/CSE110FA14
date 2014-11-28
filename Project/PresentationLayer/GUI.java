@@ -265,6 +265,8 @@ public class GUI extends javax.swing.JFrame
                 mainGUI.setTellerAP(new TellerAccountPage(cardHolder, mainGUI));
                 mainGUI.setTellerMainMenu(new TellerMainMenu(cardHolder, mainGUI));
                 mainGUI.setIntPenPanel(new InterestPenaltyPanel(cardHolder, mainGUI));
+                mainGUI.setTDelete(new TellerDeleteAccountPanel(cardHolder, mainGUI));
+                mainGUI.setIntPenPanel2(new PenaltyInterestPanel(cardHolder, mainGUI));
 
                 // This addes the LoginPanel and AccountsListPanel that we just
                 // created to the MainPanel. It also assigns a name to each of
@@ -282,6 +284,7 @@ public class GUI extends javax.swing.JFrame
                 cardHolder.add(mainGUI.getTellerAP(), "TellerAP");
                 cardHolder.add(mainGUI.getTDelete(), "TDelete");
                 cardHolder.add(mainGUI.getTIntPenPanel(), "IntPenPanel");
+                cardHolder.add(mainGUI.getIntPenPanel2(), "IntPenPanel2");
 
                 // These two lines show the MainPanel. Without these 2 lines
                 // the GUI would not show up at all. Just leave them alone.
@@ -339,6 +342,17 @@ public class GUI extends javax.swing.JFrame
     private DeleteAccountPanel Delete;
     private TellerDeleteAccountPanel TDelete;
     private InterestPenaltyPanel intPenPanel;
+    private PenaltyInterestPanel intPenPanel2;
+
+    public PenaltyInterestPanel getIntPenPanel2()
+    {
+        return intPenPanel2;
+    }
+
+    public void setIntPenPanel2(PenaltyInterestPanel intPenPanel2)
+    {
+        this.intPenPanel2 = intPenPanel2;
+    }
 
     public TellerDeleteAccountPanel getTDelete()
     {
