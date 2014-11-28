@@ -60,6 +60,7 @@ public class Settings extends javax.swing.JPanel
         LogoutButtton = new javax.swing.JButton();
         DeleteAccountButton = new javax.swing.JButton();
 
+        setOpaque(false);
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
         setPreferredSize(new java.awt.Dimension(800, 600));
