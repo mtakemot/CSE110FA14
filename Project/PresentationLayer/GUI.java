@@ -258,7 +258,6 @@ public class GUI extends javax.swing.JFrame
                 JPanel cardHolder = mainGUI.getMainPanel();
                 // This creates a new LoginPanel and passes in the MainPanel. 
 
-                //LoginPanel Login = new LoginPanel(cardHolder);
                 mainGUI.setLogin(new LoginPanel(cardHolder, mainGUI));
                 mainGUI.setAccList(new AccountsListPanel(cardHolder, mainGUI));
                 mainGUI.setSettings(new Settings(cardHolder, mainGUI));
@@ -266,34 +265,19 @@ public class GUI extends javax.swing.JFrame
                 mainGUI.setDelete(new DeleteAccountPanel(cardHolder, mainGUI));
                 mainGUI.setCreateBA(new CreateBankAccount(cardHolder, mainGUI));
                 mainGUI.setTellerAP(new TellerAccountPage(cardHolder, mainGUI));
-                mainGUI.setTransfer(new TransferFundsPanel(cardHolder, mainGUI));
                 mainGUI.setTellerMainMenu(new TellerMainMenu(cardHolder, mainGUI));
                 mainGUI.setTDelete(new TellerDeleteAccountPanel(cardHolder, mainGUI));
 
-                // This creates a new AccList Panel and passes in the MainPanel
-                //AccountsListPanel AccList = new AccountsListPanel(cardHolder, mainGUI);
-                // This creates a new Settings Panel and passes in the MainPanel
-                //Settings Settings = new Settings(cardHolder);
-                //mainGUI.setTransfer(new TransferFundsPanel(cardHolder, mainGUI));
-                // Creates a new CreateAccountPanel and passes in the Main Panel
-                //CreateAccountPanel CreateAcc = new CreateAccountPanel(cardHolder);
-                //MainMenuPanel mainMenu = new MainMenuPanel(cardHolder);
-
-                
-                
                 // This addes the LoginPanel and AccountsListPanel that we just
                 // created to the MainPanel. It also assigns a name to each of
                 // the panels so that we can reference them easily when we want 
                 // to show/hide them. For instance, if we were in some other class
                 // that has access to MainPanel, we could use the following 2 lines
                 // to show the AccList panel
-                // CardLayout layout = (CardLayout) (MainPanel.getLayout());
-                // layout.show(MainPanel, "AccList");
                 cardHolder.add(mainGUI.getLogin(), "Login");
                 cardHolder.add(mainGUI.getAccList(), "AccList");
                 cardHolder.add(mainGUI.getCreateAcc(), "CreateAcc");
                 cardHolder.add(mainGUI.getSettings(), "Settings");
-                cardHolder.add(mainGUI.getTransfer(), "Transfer");
                 cardHolder.add(mainGUI.getDelete(), "Delete");
                 cardHolder.add(mainGUI.getTellerMainMenu(), "TellerMainMenu");
                 cardHolder.add(mainGUI.getCreateBA(), "CreateBA");
@@ -347,7 +331,6 @@ public class GUI extends javax.swing.JFrame
             }
         });
     }
-    private TransferFundsPanel Transfer;
     private LoginPanel Login;
     private AccountsListPanel AccList;
     private CreateAccountPanel CreateAcc;
@@ -446,16 +429,6 @@ public class GUI extends javax.swing.JFrame
     public void setTellerAP(TellerAccountPage TellerAP)
     {
         this.TellerAP = TellerAP;
-    }
-
-    public TransferFundsPanel getTransfer()
-    {
-        return Transfer;
-    }
-
-    public void setTransfer(TransferFundsPanel Transfer)
-    {
-        this.Transfer = Transfer;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

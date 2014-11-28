@@ -23,7 +23,6 @@ public class BankAccount implements Serializable
     protected String accountName;
     protected BankAccount next;
     protected String accountType;
-    protected int accountPosition;
 
     // A running total of the amount of money at the end of each day for the 
     // whole month
@@ -107,16 +106,6 @@ public class BankAccount implements Serializable
     public String getAccountType()
     {
         return accountType;
-    }
-
-    public int getAccountPosition()
-    {
-        return accountPosition;
-    }
-
-    public void setAccountPosition(int accountPosition)
-    {
-        this.accountPosition = accountPosition;
     }
 
     public double getThisMonthsDailyTotals()

@@ -461,15 +461,12 @@ public class AccountsListPanel extends javax.swing.JPanel
                 return;
             }
 
-            String account_type;
             double amount_in_deleted_acc;
             String account_name;
             int row = AccountsTable.getSelectedRow();
             String bankacc = (String) AccountsTable.getValueAt(row, 1);
-
             GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(bankacc);
             amount_in_deleted_acc = GUI.currentBankAccount.getBalance();
-            account_type = GUI.currentBankAccount.getAccountType();
             account_name = GUI.currentBankAccount.getAccountName();
 
             if (amount_in_deleted_acc == 0)
@@ -604,7 +601,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         boolean parsable = true;
         try
         {
-            Integer.parseInt(input);
+            Double.parseDouble(input);
         } catch (NumberFormatException e)
         {
             parsable = false;
@@ -633,7 +630,7 @@ public class AccountsListPanel extends javax.swing.JPanel
 
         if (isParsable(AmountField.getText()))
         {
-            amount = Integer.parseInt(AmountField.getText());
+            amount = Double.parseDouble(AmountField.getText());
         }
 
         else

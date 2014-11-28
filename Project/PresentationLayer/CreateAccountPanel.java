@@ -41,7 +41,8 @@ public class CreateAccountPanel extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         ERRORPOP = new java.awt.PopupMenu();
         firstName = new javax.swing.JTextField();
@@ -63,23 +64,37 @@ public class CreateAccountPanel extends javax.swing.JPanel
         jLabel15 = new javax.swing.JLabel();
         errorMessage = new javax.swing.JLabel();
 
+        ERRORPOP.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                ERRORPOPActionPerformed(evt);
+            }
+        });
+
         setOpaque(false);
 
-        firstName.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
+        firstName.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
                 firstNameFocusGained(evt);
             }
         });
 
-        password.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
+        password.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
                 passwordFocusGained(evt);
             }
         });
 
         createUserAccount.setText("Create User Account");
-        createUserAccount.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        createUserAccount.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 createUserAccountActionPerformed(evt);
             }
         });
@@ -88,44 +103,58 @@ public class CreateAccountPanel extends javax.swing.JPanel
         jLabel1.setText("Bank 42");
 
         dismissView.setText("Back");
-        dismissView.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        dismissView.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 dismissViewMouseClicked(evt);
             }
         });
 
-        username.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
+        username.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
                 usernameFocusGained(evt);
             }
         });
 
         lastName.setMinimumSize(new java.awt.Dimension(6, 35));
-        lastName.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
+        lastName.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
                 lastNameFocusGained(evt);
             }
         });
 
-        confirmPassword.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
+        confirmPassword.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
                 confirmPasswordFocusGained(evt);
             }
         });
 
-        email.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
+        email.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
                 emailFocusGained(evt);
             }
         });
 
-        phone.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
+        phone.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
                 phoneFocusGained(evt);
             }
         });
-        phone.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        phone.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 phoneActionPerformed(evt);
             }
         });
@@ -426,6 +455,11 @@ public class CreateAccountPanel extends javax.swing.JPanel
     private void phoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phoneActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_phoneActionPerformed
+
+    private void ERRORPOPActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ERRORPOPActionPerformed
+    {//GEN-HEADEREND:event_ERRORPOPActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ERRORPOPActionPerformed
 
     private static boolean validatePhoneNumber(String phoneNo)
     {

@@ -102,7 +102,8 @@ public class TellerAccountPage extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         SettingsButton = new javax.swing.JButton();
         BankNamePanel = new javax.swing.JPanel();
@@ -116,9 +117,15 @@ public class TellerAccountPage extends javax.swing.JPanel
         DeleteUserAccountButton = new javax.swing.JButton();
         DeleteAccountButton = new javax.swing.JButton();
 
+        setMaximumSize(new java.awt.Dimension(800, 600));
+        setMinimumSize(new java.awt.Dimension(800, 600));
+        setPreferredSize(new java.awt.Dimension(800, 600));
+
         SettingsButton.setText("Settings");
-        SettingsButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        SettingsButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 SettingsButtonMouseClicked(evt);
             }
         });
@@ -148,8 +155,10 @@ public class TellerAccountPage extends javax.swing.JPanel
         CurrentUserAccountLabel.setText(PresentationLayer.GUI.currentBankAccount.getAccountName());
 
         LogoutButtton.setText("Logout");
-        LogoutButtton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        LogoutButtton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 LogoutButttonMouseClicked(evt);
             }
         });
@@ -167,29 +176,37 @@ public class TellerAccountPage extends javax.swing.JPanel
         AccountsTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         DepositButton.setText("Deposit");
-        DepositButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        DepositButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 DepositButtonMouseClicked(evt);
             }
         });
 
         WithdrawButton.setText("Withdraw");
-        WithdrawButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        WithdrawButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 WithdrawButtonMouseClicked(evt);
             }
         });
 
         DeleteUserAccountButton.setText("Delete User Account");
-        DeleteUserAccountButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        DeleteUserAccountButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 DeleteUserAccountButtonMouseClicked(evt);
             }
         });
 
         DeleteAccountButton.setText("Delete Highlighted Account");
-        DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 DeleteAccountButtonMouseClicked(evt);
             }
         });
@@ -199,7 +216,7 @@ public class TellerAccountPage extends javax.swing.JPanel
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(SettingsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -226,8 +243,7 @@ public class TellerAccountPage extends javax.swing.JPanel
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(WithdrawButton)
                                 .addGap(18, 18, 18)
-                                .addComponent(DeleteAccountButton)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(DeleteAccountButton))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -247,7 +263,7 @@ public class TellerAccountPage extends javax.swing.JPanel
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(DeleteUserAccountButton)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(260, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
