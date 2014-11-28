@@ -113,7 +113,7 @@ public class LoginPanel extends javax.swing.JPanel
         gridBagConstraints.gridy = 0;
         gridBagConstraints.ipadx = 200;
         gridBagConstraints.ipady = 10;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 40, 64);
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 40, 0);
         add(UsernameField, gridBagConstraints);
 
         CreateAccButton.setText("Create Account");
@@ -127,7 +127,7 @@ public class LoginPanel extends javax.swing.JPanel
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.insets = new java.awt.Insets(125, 0, 0, 144);
+        gridBagConstraints.insets = new java.awt.Insets(125, 0, 0, 100);
         add(CreateAccButton, gridBagConstraints);
 
         jPasswordField.setText("password");
@@ -150,29 +150,29 @@ public class LoginPanel extends javax.swing.JPanel
         gridBagConstraints.gridy = 0;
         gridBagConstraints.ipadx = 200;
         gridBagConstraints.ipady = 10;
-        gridBagConstraints.insets = new java.awt.Insets(40, 0, 0, 64);
+        gridBagConstraints.insets = new java.awt.Insets(40, 0, 0, 0);
         add(jPasswordField, gridBagConstraints);
 
-        UsernameLabel.setForeground(new java.awt.Color(255, 51, 51));
+        UsernameLabel.setForeground(new java.awt.Color(51, 0, 255));
         UsernameLabel.setText("Username:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 225, 40, 64);
+        gridBagConstraints.insets = new java.awt.Insets(0, 225, 40, 0);
         add(UsernameLabel, gridBagConstraints);
 
-        PasswordLabel.setForeground(new java.awt.Color(255, 51, 51));
+        PasswordLabel.setForeground(new java.awt.Color(51, 0, 255));
         PasswordLabel.setText("Password:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(40, 225, 0, 64);
+        gridBagConstraints.insets = new java.awt.Insets(40, 225, 0, 0);
         add(PasswordLabel, gridBagConstraints);
 
         jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel1.setForeground(new java.awt.Color(51, 0, 255));
         jLabel1.setText("Bank 42");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -192,8 +192,8 @@ public class LoginPanel extends javax.swing.JPanel
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.ipadx = 20;
-        gridBagConstraints.insets = new java.awt.Insets(125, 110, 0, 64);
+        gridBagConstraints.ipadx = 45;
+        gridBagConstraints.insets = new java.awt.Insets(125, 110, 0, 0);
         add(LoginButton, gridBagConstraints);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/Background2.jpg"))); // NOI18N
@@ -207,7 +207,6 @@ public class LoginPanel extends javax.swing.JPanel
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 64);
         add(jLabel2, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
