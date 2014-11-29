@@ -208,6 +208,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         centerRenderer.setHorizontalAlignment( JLabel.CENTER );
         AccountsTable.setDefaultRenderer(String.class, centerRenderer);
         AccountsTable.setDefaultRenderer(Double.class, centerRenderer);
+        AccountsTable.setColumnSelectionAllowed(true);
         AccountsTable.getTableHeader().setResizingAllowed(false);
         AccountsTable.setOpaque(false);
         AccountsTable.getTableHeader().setReorderingAllowed(false);
@@ -561,34 +562,19 @@ public class AccountsListPanel extends javax.swing.JPanel
 
     private void CreateBAButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_CreateBAButtonActionPerformed
     {//GEN-HEADEREND:event_CreateBAButtonActionPerformed
-        String choice = (String) JOptionPane.showInputDialog(
-                null,
-                "New Bank Account Name",
-                "Bank 42",
-                JOptionPane.PLAIN_MESSAGE,
-                null,
-                null,
-                null);
+        JPanel createBApanel = mainGUI.getCreateBA().getCreateBankAccountPanel();
+        int choice = JOptionPane.showConfirmDialog(
+                        null,
+                        createBApanel,
+                        "Bank 42",
+                        JOptionPane.OK_CANCEL_OPTION,
+                        JOptionPane.PLAIN_MESSAGE
+                        );
 
-        if (GUI.currentUserAccount.findBankAccount(choice) == null && choice.length() > 0)
+        if (choice==0)
         {
-
+            mainGUI.getCreateBA().CreateAccount();
         }
-
-        /* Object[] options =
-         {
-         "",
-         ""
-         };
-         int n = JOptionPane.showOptionDialog(null,
-         "You have $" + amount_in_deleted_acc + " in account " + account_name
-         + "\nWhere would you like the funds to go?",
-         "Where to Transfer Funds",
-         JOptionPane.YES_NO_CANCEL_OPTION,
-         JOptionPane.QUESTION_MESSAGE,
-         null, //do not use a custom icon
-         options, //the titles of buttons
-         options[0]); //default button title*/
     }//GEN-LAST:event_CreateBAButtonActionPerformed
 
     private void AmountFieldFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_AmountFieldFocusGained

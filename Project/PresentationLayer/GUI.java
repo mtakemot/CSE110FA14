@@ -278,13 +278,13 @@ public class GUI extends javax.swing.JFrame
                 cardHolder.add(mainGUI.getCreateAcc(), "CreateAcc");
                 cardHolder.add(mainGUI.getSettings(), "Settings");
                 cardHolder.add(mainGUI.getDelete(), "Delete");
-                cardHolder.add(mainGUI.getTellerMainMenu(), "TellerMainMenu");
-                cardHolder.add(mainGUI.getCreateBA(), "CreateBA");
+                cardHolder.add(mainGUI.getTellerMainMenu(), "TellerMainMenu");               
                 cardHolder.add(mainGUI.getTellerAP(), "TellerAP");
                 cardHolder.add(mainGUI.getTDelete(), "TDelete");
-                cardHolder.add(mainGUI.getTDelete(), "pass");
+                //cardHolder.add(mainGUI.getTDelete(), "pass");
                 cardHolder.add(mainGUI.getPenIntPanel(), "PenIntPanel");
-
+                //cardHolder.add(mainGUI.getTDelete(), "CreateBA");
+                
                 // These two lines show the MainPanel. Without these 2 lines
                 // the GUI would not show up at all. Just leave them alone.
                 mainGUI.pack();
@@ -352,6 +352,7 @@ public class GUI extends javax.swing.JFrame
     {
         this.pass = pass;
     }   
+    
     public PenaltyInterestPanel getPenIntPanel()
     {
         return PenIntPanel;
