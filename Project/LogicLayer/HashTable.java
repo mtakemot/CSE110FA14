@@ -20,7 +20,7 @@ public class HashTable implements Serializable
 
     // Chose a prime number for the size of the table for more efficient hashing
     private final static int SIZE = 251;
-    private final static int MAX_MONTHS = 12;
+    public final static int MAX_MONTHS = 12;
     // Interest rates for savings accounts
     public static double SAVINGS_RATE_OVER_3000 = 0.04;
     public static double SAVINGS_RATE_2000_TO_3000 = 0.03;
