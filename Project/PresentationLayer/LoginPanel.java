@@ -70,20 +70,80 @@ public class LoginPanel extends javax.swing.JPanel
     {
         java.awt.GridBagConstraints gridBagConstraints;
 
-        UsernameField = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
         CreateAccButton = new javax.swing.JButton();
-        jPasswordField = new javax.swing.JPasswordField();
-        UsernameLabel = new javax.swing.JLabel();
-        PasswordLabel = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         LoginButton = new javax.swing.JButton();
+        jPasswordField = new javax.swing.JPasswordField();
+        UsernameField = new javax.swing.JTextField();
+        PasswordLabel = new javax.swing.JLabel();
+        UsernameLabel = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        Background = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
         setPreferredSize(new java.awt.Dimension(800, 600));
         setLayout(new java.awt.GridBagLayout());
 
+        jPanel1.setOpaque(false);
+        java.awt.GridBagLayout jPanel1Layout = new java.awt.GridBagLayout();
+        jPanel1Layout.columnWidths = new int[] {0, 5, 0};
+        jPanel1Layout.rowHeights = new int[] {0, 5, 0, 5, 0};
+        jPanel1.setLayout(jPanel1Layout);
+
+        CreateAccButton.setText("Create Account");
+        CreateAccButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                CreateAccButtonMouseClicked(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel1.add(CreateAccButton, gridBagConstraints);
+
+        LoginButton.setText("Login");
+        LoginButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                LoginButtonMouseClicked(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.ipadx = 50;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        jPanel1.add(LoginButton, gridBagConstraints);
+
+        jPasswordField.setText("password");
+        jPasswordField.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
+                jPasswordFieldFocusGained(evt);
+            }
+        });
+        jPasswordField.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
+                jPasswordFieldKeyPressed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipady = 15;
+        jPanel1.add(jPasswordField, gridBagConstraints);
+
+        UsernameField.setMinimumSize(new java.awt.Dimension(250, 25));
+        UsernameField.setPreferredSize(new java.awt.Dimension(250, 25));
         UsernameField.addFocusListener(new java.awt.event.FocusAdapter()
         {
             public void focusGained(java.awt.event.FocusEvent evt)
@@ -106,48 +166,19 @@ public class LoginPanel extends javax.swing.JPanel
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.ipadx = 200;
-        gridBagConstraints.ipady = 10;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 40, 0);
-        add(UsernameField, gridBagConstraints);
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipady = 15;
+        jPanel1.add(UsernameField, gridBagConstraints);
 
-        CreateAccButton.setText("Create Account");
-        CreateAccButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                CreateAccButtonMouseClicked(evt);
-            }
-        });
+        PasswordLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        PasswordLabel.setForeground(new java.awt.Color(51, 0, 255));
+        PasswordLabel.setText("Password:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.insets = new java.awt.Insets(125, 0, 0, 100);
-        add(CreateAccButton, gridBagConstraints);
-
-        jPasswordField.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusGained(java.awt.event.FocusEvent evt)
-            {
-                jPasswordFieldFocusGained(evt);
-            }
-        });
-        jPasswordField.addKeyListener(new java.awt.event.KeyAdapter()
-        {
-            public void keyPressed(java.awt.event.KeyEvent evt)
-            {
-                jPasswordFieldKeyPressed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.ipadx = 200;
-        gridBagConstraints.ipady = 10;
-        gridBagConstraints.insets = new java.awt.Insets(40, 0, 0, 0);
-        add(jPasswordField, gridBagConstraints);
+        gridBagConstraints.gridy = 2;
+        jPanel1.add(PasswordLabel, gridBagConstraints);
 
         UsernameLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         UsernameLabel.setForeground(new java.awt.Color(51, 0, 255));
@@ -155,57 +186,34 @@ public class LoginPanel extends javax.swing.JPanel
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 225, 40, 0);
-        add(UsernameLabel, gridBagConstraints);
+        jPanel1.add(UsernameLabel, gridBagConstraints);
 
-        PasswordLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        PasswordLabel.setForeground(new java.awt.Color(51, 0, 255));
-        PasswordLabel.setText("Password:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(40, 225, 0, 0);
-        add(PasswordLabel, gridBagConstraints);
+        add(jPanel1, gridBagConstraints);
 
-        jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(51, 0, 255));
-        jLabel1.setText("Bank 42");
+        jLabel2.setFont(new java.awt.Font("DejaVu Sans", 1, 48)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(51, 0, 255));
+        jLabel2.setText("Bank 42");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-        gridBagConstraints.insets = new java.awt.Insets(50, 0, 0, 0);
-        add(jLabel1, gridBagConstraints);
+        add(jLabel2, gridBagConstraints);
 
-        LoginButton.setText("Login");
-        LoginButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                LoginButtonMouseClicked(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.ipadx = 45;
-        gridBagConstraints.insets = new java.awt.Insets(125, 110, 0, 0);
-        add(LoginButton, gridBagConstraints);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/Background2.jpg"))); // NOI18N
-        jLabel2.setToolTipText("");
-        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jLabel2.setFocusable(false);
-        jLabel2.setInheritsPopupMenu(false);
-        jLabel2.setRequestFocusEnabled(false);
-        jLabel2.setVerifyInputWhenFocusTarget(false);
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/Background2.jpg"))); // NOI18N
+        Background.setToolTipText("");
+        Background.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Background.setFocusable(false);
+        Background.setInheritsPopupMenu(false);
+        Background.setRequestFocusEnabled(false);
+        Background.setVerifyInputWhenFocusTarget(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        add(jLabel2, gridBagConstraints);
+        add(Background, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
     private void Login()
@@ -233,6 +241,7 @@ public class LoginPanel extends javax.swing.JPanel
             if (password.compareTo(GUI.currentUserAccount.getPassword()) == 0)
             {
                 mainGUI.getAccList().update();
+                mainGUI.getSettings().update();
                 // This line grabs the layout from MainPanel from the GUI class so that
                 // we can show a new panel on it
                 CardLayout layout = (CardLayout) (MainPanel.getLayout());
@@ -317,13 +326,14 @@ public class LoginPanel extends javax.swing.JPanel
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Background;
     private javax.swing.JButton CreateAccButton;
     private javax.swing.JButton LoginButton;
     private javax.swing.JLabel PasswordLabel;
     private javax.swing.JTextField UsernameField;
     private javax.swing.JLabel UsernameLabel;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField;
     // End of variables declaration//GEN-END:variables
 

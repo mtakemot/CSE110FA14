@@ -20,14 +20,16 @@ public class HashTable implements Serializable
 
     // Chose a prime number for the size of the table for more efficient hashing
     private final static int SIZE = 251;
+    public final static int MAX_MONTHS = 12;
     // Interest rates for savings accounts
-    private double SAVINGS_RATE_OVER_3000 = 0.04;
-    private double SAVINGS_RATE_2000_TO_3000 = 0.03;
-    private double SAVINGS_RATE_1000_TO_2000 = 0.02;
+    public static double SAVINGS_RATE_OVER_3000 = 0.04;
+    public static double SAVINGS_RATE_2000_TO_3000 = 0.03;
+    public static double SAVINGS_RATE_1000_TO_2000 = 0.02;
     // Interest rates for checking accounts
-    private double CHECKING_RATE_OVER_3000 = 0.03;
-    private double CHECKING_RATE_2000_TO_3000 = 0.02;
-    private double CHECKING_RATE_1000_TO_2000 = 0.01;
+    public static double CHECKING_RATE_OVER_3000 = 0.03;
+    public static double CHECKING_RATE_2000_TO_3000 = 0.02;
+    public static double CHECKING_RATE_1000_TO_2000 = 0.01;
+    public static double PENALTY_AMOUNT = 25;
 
     public int occ; // Total number of UserAccounts that the table is holding
     UserAccount[] Table; // The hash table
@@ -51,56 +53,56 @@ public class HashTable implements Serializable
     /**
      * This function will insert a new UserAccount into the table
      *
+     * @param userEmail The user's email address
      * @method insertUserAccount
      * @param userName The UserAccount to be inserted
      * @return Returns the inserted UserAccount if insertion was successful.
      * Returns null if UserAccount with the given userName is found.
      */
-    public UserAccount insertUserAccount(String userName)
+    public UserAccount insertUserAccount(String userName, String userEmail)
     {
-        /* DEBUG uncomment to see if admin account added to every DB
-         if(userName == "admin"){
-         System.err.println("Can't create admin account");
-         return null;
-         }*/
         int index = hashCode(userName) % SIZE;
         // The bucket at index is not currently occupied, so we insert at
         // Table[index]
-        if (Table[index] == null)
+        if (findUserAccountEmail(userEmail) == null)
         {
-            Table[index] = new UserAccount(userName);
-            Table[index].insertBankAccount(0, "Checking1", "Checking");
-            Table[index].insertBankAccount(0, "Savings1", "Savings");
-            this.occ++;
-            return Table[index];
-        }
-        else // The bucket at index is occupied, so we insert into the linked
-        // list of UserAccounts that the bucket is holding
-        {
-            UserAccount current;
-            current = Table[index];
-            // Traverse the linked list to find the insertion point
-            while (current.getNext() != null
-                    && !((current.getUserName()).equals(userName)))
+            if (Table[index] == null)
             {
-                current = current.getNext();
-            }
-            // Will return false if the userName is already in use
-            // Prompt the user to enter a different userName in main
-            // and then call insert again if this happens.
-            if (current.getUserName().equals(userName))
-                return null;
-            else // The end of the linked list was reached.
-            // This means that the userName that was entered is not in use
-            // so we insert here.
-            {
-                current.setNext(new UserAccount(userName));
-                current.getNext().insertBankAccount(0, "Checking1", "Checking");
-                current.getNext().insertBankAccount(0, "Savings1", "Savings");
+                Table[index] = new UserAccount(userName);
+                Table[index].insertBankAccount(0, "Checking1", "Checking");
+                Table[index].insertBankAccount(0, "Savings1", "Savings");
                 this.occ++;
-                return current.getNext();
+                return Table[index];
+            }
+            else // The bucket at index is occupied, so we insert into the linked
+            // list of UserAccounts that the bucket is holding
+            {
+                UserAccount current;
+                current = Table[index];
+                // Traverse the linked list to find the insertion point
+                while (current.getNext() != null
+                        && !((current.getUserName()).equals(userName)))
+                {
+                    current = current.getNext();
+                }
+                // Will return false if the userName is already in use
+                // Prompt the user to enter a different userName in main
+                // and then call insert again if this happens.
+                if (current.getUserName().equals(userName))
+                    return null;
+                else // The end of the linked list was reached.
+                // This means that the userName that was entered is not in use
+                // so we insert here.
+                {
+                    current.setNext(new UserAccount(userName));
+                    current.getNext().insertBankAccount(0, "Checking1", "Checking");
+                    current.getNext().insertBankAccount(0, "Savings1", "Savings");
+                    this.occ++;
+                    return current.getNext();
+                }
             }
         }
+        return null;
     }
 
     // When a user attempts to log in, this function will be called to see
@@ -152,9 +154,7 @@ public class HashTable implements Serializable
                 {
                     isEqual = currentEmail.compareTo(email);
                     if (isEqual == 0)
-                    {
                         return current;
-                    }
                 }
                 while (current.getNext() != null)
                 {
@@ -164,13 +164,10 @@ public class HashTable implements Serializable
                     {
                         isEqual = currentEmail.compareTo(email);
                         if (isEqual == 0)
-                        {
                             return current;
-                        }
                     }
                 }
             }
-
         }
         return null;
     }
@@ -274,7 +271,9 @@ public class HashTable implements Serializable
                 }
             }
         }
-        lastInterestDateTime.plusDays(lastInterestDateTime.dayOfMonth().getMaximumValue());
+        DateTime newDateTime = lastInterestDateTime.withMonthOfYear((lastInterestDateTime.plusMonths(1).getMonthOfYear()));
+        newDateTime = newDateTime.withDayOfMonth(1);
+        lastInterestDateTime = newDateTime;
     }
 
     /**
@@ -290,28 +289,28 @@ public class HashTable implements Serializable
         double dailyAverage = ((currentBA.getThisMonthsDailyTotals()) / (lastInterestDateTime.dayOfMonth().getMaximumValue()));
         if (dailyAverage < 100)
         {
-            currentBA.setBalance(currentBA.getBalance() - 25);
+            currentBA.setBalance(currentBA.getBalance() - PENALTY_AMOUNT);
         }
         else if (dailyAverage >= 3000)
         {
             if (currentBA instanceof CheckingAccount)
-                currentBA.setBalance(currentBA.getBalance() * CHECKING_RATE_OVER_3000);
+                currentBA.setBalance(currentBA.getBalance() + (currentBA.getBalance() * CHECKING_RATE_OVER_3000));
             else
-                currentBA.setBalance(currentBA.getBalance() * SAVINGS_RATE_OVER_3000);
+                currentBA.setBalance(currentBA.getBalance() + (currentBA.getBalance() * SAVINGS_RATE_OVER_3000));
         }
         else if (dailyAverage >= 2000 && dailyAverage < 3000)
         {
             if (currentBA instanceof CheckingAccount)
-                currentBA.setBalance(currentBA.getBalance() * CHECKING_RATE_2000_TO_3000);
+                currentBA.setBalance(currentBA.getBalance() + (currentBA.getBalance() * CHECKING_RATE_2000_TO_3000));
             else
-                currentBA.setBalance(currentBA.getBalance() * SAVINGS_RATE_2000_TO_3000);
+                currentBA.setBalance(currentBA.getBalance() + (currentBA.getBalance() * SAVINGS_RATE_2000_TO_3000));
         }
         else if (dailyAverage < 2000 && dailyAverage >= 1000)
         {
             if (currentBA instanceof CheckingAccount)
-                currentBA.setBalance(currentBA.getBalance() * CHECKING_RATE_1000_TO_2000);
+                currentBA.setBalance(currentBA.getBalance() + (currentBA.getBalance() * CHECKING_RATE_1000_TO_2000));
             else
-                currentBA.setBalance(currentBA.getBalance() * SAVINGS_RATE_1000_TO_2000);
+                currentBA.setBalance(currentBA.getBalance() + (currentBA.getBalance() * SAVINGS_RATE_1000_TO_2000));
         }
         currentBA.setThisMonthsDailyTotals(0);
     }
@@ -393,5 +392,4 @@ public class HashTable implements Serializable
     {
         return SIZE;
     }
-
 }

@@ -35,7 +35,7 @@ public class Settings extends javax.swing.JPanel
 
     public void updateUserLabel()
     {
-        BAUserNameLabel.setText(GUI.currentUserAccount.getUserName());
+        BAUserNameLabel.setText("User " + GUI.currentUserAccount.getUserName());
     }
 
     /**
@@ -47,100 +47,52 @@ public class Settings extends javax.swing.JPanel
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents()
     {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         jLabel1 = new javax.swing.JLabel();
-        changePassword = new javax.swing.JButton();
-        changeEmail = new javax.swing.JButton();
-        changeLastName = new javax.swing.JButton();
-        changeUsername = new javax.swing.JButton();
-        changePhone = new javax.swing.JButton();
-        changeFirstName = new javax.swing.JButton();
-        BackButton = new javax.swing.JButton();
-        BAUserNameLabel = new javax.swing.JLabel();
         LogoutButtton = new javax.swing.JButton();
+        BackButton = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        FirstName = new javax.swing.JLabel();
+        LastName = new javax.swing.JLabel();
+        Username = new javax.swing.JLabel();
+        Email = new javax.swing.JLabel();
+        PhoneNumber = new javax.swing.JLabel();
+        UserLastName = new javax.swing.JLabel();
+        UserFirstName = new javax.swing.JLabel();
+        UserUsername = new javax.swing.JLabel();
+        UserEmail = new javax.swing.JLabel();
+        UserPhoneNumber = new javax.swing.JLabel();
+        EditLastName = new javax.swing.JButton();
+        EditFirstName = new javax.swing.JButton();
+        EditUsername = new javax.swing.JButton();
+        EditEmail = new javax.swing.JButton();
+        EditPhoneNumber = new javax.swing.JButton();
+        Password = new javax.swing.JLabel();
+        UserPassword = new javax.swing.JLabel();
         DeleteAccountButton = new javax.swing.JButton();
+        BAUserNameLabel = new javax.swing.JLabel();
+        EditPassword = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        Background = new javax.swing.JLabel();
 
-        setOpaque(false);
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
+        setOpaque(false);
         setPreferredSize(new java.awt.Dimension(800, 600));
+        setLayout(new java.awt.GridBagLayout());
 
         jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 0, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Bank 42");
-
-        changePassword.setText("Change Password");
-        changePassword.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                changePasswordActionPerformed(evt);
-            }
-        });
-
-        changeEmail.setText("Change Email");
-        changeEmail.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                changeEmailActionPerformed(evt);
-            }
-        });
-
-        changeLastName.setText("Change Last Name");
-        changeLastName.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                changeLastNameActionPerformed(evt);
-            }
-        });
-
-        changeUsername.setText("Change Username");
-        changeUsername.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                changeUsernameActionPerformed(evt);
-            }
-        });
-
-        changePhone.setText("Change Phone");
-        changePhone.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                changePhoneActionPerformed(evt);
-            }
-        });
-
-        changeFirstName.setText("Change First Name");
-        changeFirstName.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                changeFirstNameMouseClicked(evt);
-            }
-        });
-        changeFirstName.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                changeFirstNameActionPerformed(evt);
-            }
-        });
-
-        BackButton.setText("Back");
-        BackButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                BackButtonMouseClicked(evt);
-            }
-        });
-
-        BAUserNameLabel.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
-        BAUserNameLabel.setText(PresentationLayer.GUI.currentBankAccount.getAccountName());
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+        add(jLabel1, gridBagConstraints);
 
         LogoutButtton.setText("Logout");
         LogoutButtton.addMouseListener(new java.awt.event.MouseAdapter()
@@ -150,6 +102,198 @@ public class Settings extends javax.swing.JPanel
                 LogoutButttonMouseClicked(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHEAST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 10);
+        add(LogoutButtton, gridBagConstraints);
+
+        BackButton.setText("Back");
+        BackButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                BackButtonMouseClicked(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 10, 0, 0);
+        add(BackButton, gridBagConstraints);
+
+        jPanel2.setOpaque(false);
+        jPanel2.setLayout(new java.awt.GridBagLayout());
+
+        jPanel1.setName(""); // NOI18N
+        jPanel1.setOpaque(false);
+        java.awt.GridBagLayout jPanel1Layout = new java.awt.GridBagLayout();
+        jPanel1Layout.columnWidths = new int[] {0, 30, 0, 30, 0, 30, 0};
+        jPanel1Layout.rowHeights = new int[] {0, 9, 0, 9, 0, 9, 0, 9, 0, 9, 0, 9, 0, 9, 0, 9, 0, 9, 0};
+        jPanel1.setLayout(jPanel1Layout);
+
+        FirstName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        FirstName.setText("First Name");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel1.add(FirstName, gridBagConstraints);
+
+        LastName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        LastName.setText("Last Name");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel1.add(LastName, gridBagConstraints);
+
+        Username.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Username.setText("Username");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel1.add(Username, gridBagConstraints);
+
+        Email.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Email.setText("Email");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel1.add(Email, gridBagConstraints);
+
+        PhoneNumber.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        PhoneNumber.setText("Phone Number");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 12;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel1.add(PhoneNumber, gridBagConstraints);
+
+        UserLastName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        UserLastName.setText("jLabel2");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel1.add(UserLastName, gridBagConstraints);
+
+        UserFirstName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        UserFirstName.setText("jLabel3");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel1.add(UserFirstName, gridBagConstraints);
+
+        UserUsername.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        UserUsername.setText("jLabel4");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel1.add(UserUsername, gridBagConstraints);
+
+        UserEmail.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        UserEmail.setText("jLabel5");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel1.add(UserEmail, gridBagConstraints);
+
+        UserPhoneNumber.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        UserPhoneNumber.setText("jLabel6");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 12;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel1.add(UserPhoneNumber, gridBagConstraints);
+
+        EditLastName.setText("Edit");
+        EditLastName.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                EditLastNameActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 4;
+        jPanel1.add(EditLastName, gridBagConstraints);
+
+        EditFirstName.setText("Edit");
+        EditFirstName.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                EditFirstNameActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 6;
+        jPanel1.add(EditFirstName, gridBagConstraints);
+
+        EditUsername.setText("Edit");
+        EditUsername.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                EditUsernameActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 8;
+        jPanel1.add(EditUsername, gridBagConstraints);
+
+        EditEmail.setText("Edit");
+        EditEmail.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                EditEmailActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 10;
+        jPanel1.add(EditEmail, gridBagConstraints);
+
+        EditPhoneNumber.setText("Edit");
+        EditPhoneNumber.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                EditPhoneNumberActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 12;
+        jPanel1.add(EditPhoneNumber, gridBagConstraints);
+
+        Password.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Password.setText("Password");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 14;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel1.add(Password, gridBagConstraints);
+
+        UserPassword.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        UserPassword.setText("*****");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 14;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel1.add(UserPassword, gridBagConstraints);
 
         DeleteAccountButton.setText("Delete Main Account");
         DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter()
@@ -159,108 +303,69 @@ public class Settings extends javax.swing.JPanel
                 DeleteAccountButtonMouseClicked(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 18;
+        jPanel1.add(DeleteAccountButton, gridBagConstraints);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(78, 78, 78)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(changePassword, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(changeFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(changeLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(changeUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(changeEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(DeleteAccountButton, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(changePhone, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(LogoutButtton, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(BAUserNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(221, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(77, 77, 77)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BAUserNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(4, 4, 4)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(changeFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(changeLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(changeUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(changePassword, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(changeEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(DeleteAccountButton, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(changePhone, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(LogoutButtton, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(121, Short.MAX_VALUE))
-        );
+        BAUserNameLabel.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
+        BAUserNameLabel.setText("User" + PresentationLayer.GUI.currentBankAccount.getAccountName());
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        jPanel1.add(BAUserNameLabel, gridBagConstraints);
+
+        EditPassword.setText("Edit");
+        EditPassword.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                EditPasswordActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 14;
+        jPanel1.add(EditPassword, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel2.add(jPanel1, gridBagConstraints);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/rsz_1big_42_robot.jpg"))); // NOI18N
+        jLabel2.setMaximumSize(new java.awt.Dimension(683, 384));
+        jLabel2.setMinimumSize(new java.awt.Dimension(683, 384));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel2.add(jLabel2, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        add(jPanel2, gridBagConstraints);
+
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/Background2.jpg"))); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        add(Background, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void changeFirstNameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_changeFirstNameMouseClicked
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_changeFirstNameMouseClicked
-
-    private void changeLastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changeLastNameActionPerformed
-        String response = JOptionPane.showInputDialog("Enter your new last name only:");
-        if (response.length() > 0)
-            GUI.currentUserAccount.setLastName(response);
-    }//GEN-LAST:event_changeLastNameActionPerformed
-
-    private void changeFirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changeFirstNameActionPerformed
-        String response = JOptionPane.showInputDialog("Enter your new first name only:");
-        if (response.length() > 0)
-            GUI.currentUserAccount.setFirstName(response);
-    }//GEN-LAST:event_changeFirstNameActionPerformed
-
-    private void changeUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changeUsernameActionPerformed
-        String response = JOptionPane.showInputDialog("Enter your new username:");
-        if (response.length() > 0)
-            GUI.currentUserAccount.setUserName(response);
-    }//GEN-LAST:event_changeUsernameActionPerformed
-
-    private void changePasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changePasswordActionPerformed
-        String response = JOptionPane.showInputDialog("Enter your new first name only:");
-        if (response.length() > 0)
-            GUI.currentUserAccount.setPassword(response);
-    }//GEN-LAST:event_changePasswordActionPerformed
-
-    private void changeEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changeEmailActionPerformed
-        String response = JOptionPane.showInputDialog("Enter your new email:");
-        if (response.length() > 0)
-            GUI.currentUserAccount.setEmail(response);
-    }//GEN-LAST:event_changeEmailActionPerformed
-
-    private void changePhoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changePhoneActionPerformed
-        String response = JOptionPane.showInputDialog("Enter your new phone number:");
-        if (response.length() > 0)
-            GUI.currentUserAccount.setPhone(response);
-    }//GEN-LAST:event_changePhoneActionPerformed
-
+    public void update() {
+        UserLastName.setText(GUI.currentUserAccount.getLastName());
+        UserFirstName.setText(GUI.currentUserAccount.getFirstName());
+        UserUsername.setText(GUI.currentUserAccount.getUserName());
+        UserEmail.setText(GUI.currentUserAccount.getEmail());
+        UserPhoneNumber.setText(GUI.currentUserAccount.getPhone());
+    }
+    
     private void BackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButtonMouseClicked
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
         layout.show(MainPanel, "AccList");
@@ -273,22 +378,140 @@ public class Settings extends javax.swing.JPanel
         layout.show(MainPanel, "Login");
     }//GEN-LAST:event_LogoutButttonMouseClicked
 
+    
     private void DeleteAccountButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteAccountButtonMouseClicked
-        CardLayout layout = (CardLayout) (MainPanel.getLayout());
-        layout.show(MainPanel, "Delete");
+       
+        JPanel passpanel = mainGUI.getPass().GetPanel();
+        int choice = JOptionPane.showConfirmDialog(
+                        null,
+                        passpanel,
+                        "Bank 42",
+                        JOptionPane.OK_CANCEL_OPTION,
+                        JOptionPane.PLAIN_MESSAGE
+                        );
+        
+        
+        
+        if (choice==0)
+        {
+            String password = mainGUI.getPass().GetPassword();
+            if (!(GUI.currentUserAccount.validatePassword(password)))
+            {
+                JOptionPane.showMessageDialog(null, "Incorrect Password!", "Error!",
+                        JOptionPane.INFORMATION_MESSAGE);
+                return;
+            }
+            
+             int choice2 = JOptionPane.showConfirmDialog(
+                        null,
+                        "Are You Sure You Want To Delete Your Account?",
+                        "Bank 42",
+                        JOptionPane.YES_NO_OPTION,
+                        JOptionPane.PLAIN_MESSAGE
+                        );   
+        
+            if(choice2==0) 
+            {
+            String passwrd = mainGUI.getPass().GetPassword();
+            if (!(GUI.currentUserAccount.validatePassword(passwrd)))
+            {
+                JOptionPane.showMessageDialog(null, "Incorrect Password!", "Error!",
+                        JOptionPane.INFORMATION_MESSAGE);
+            }
+            else
+            {
+                GUI.MasterTable.deleteUserAccount(GUI.currentUserAccount.getUserName());
+                GUI.currentBankAccount = null;
+                GUI.currentUserAccount = null;
+                CardLayout layout = (CardLayout) (MainPanel.getLayout());
+                layout.show(MainPanel, "Login");
+            }
+            }
+        }
+        
     }//GEN-LAST:event_DeleteAccountButtonMouseClicked
+
+    private void EditLastNameActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EditLastNameActionPerformed
+    {//GEN-HEADEREND:event_EditLastNameActionPerformed
+        String response = JOptionPane.showInputDialog(null,"Enter Your New Last Name:","Bank 42",1);
+        if (response.length() > 0) {
+            GUI.currentUserAccount.setLastName(response);
+            update();   
+        }
+    }//GEN-LAST:event_EditLastNameActionPerformed
+
+    private void EditFirstNameActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EditFirstNameActionPerformed
+    {//GEN-HEADEREND:event_EditFirstNameActionPerformed
+        String response = JOptionPane.showInputDialog("Enter Your New First:");
+        if (response.length() > 0) {
+            GUI.currentUserAccount.setFirstName(response);
+            update();
+        }
+    }//GEN-LAST:event_EditFirstNameActionPerformed
+
+    private void EditUsernameActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EditUsernameActionPerformed
+    {//GEN-HEADEREND:event_EditUsernameActionPerformed
+        String response = JOptionPane.showInputDialog("Enter Your New Username:");
+        if (response.length() > 0) {
+            GUI.currentUserAccount.setUserName(response);
+            update();
+        }
+    }//GEN-LAST:event_EditUsernameActionPerformed
+
+    private void EditEmailActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EditEmailActionPerformed
+    {//GEN-HEADEREND:event_EditEmailActionPerformed
+        String response = JOptionPane.showInputDialog("Enter Your New Email:");
+        if (response.length() > 0) {
+            GUI.currentUserAccount.setEmail(response);
+            update();
+        }
+    }//GEN-LAST:event_EditEmailActionPerformed
+
+    private void EditPhoneNumberActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EditPhoneNumberActionPerformed
+    {//GEN-HEADEREND:event_EditPhoneNumberActionPerformed
+        String response = JOptionPane.showInputDialog("Enter Your New Phone Number:");
+        if (response.length() > 0) {
+            GUI.currentUserAccount.setPhone(response);
+            update();
+        }
+    }//GEN-LAST:event_EditPhoneNumberActionPerformed
+
+    private void EditPasswordActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EditPasswordActionPerformed
+    {//GEN-HEADEREND:event_EditPasswordActionPerformed
+        String response = JOptionPane.showInputDialog("Enter Your New Password:");
+        if (response.length() > 0) {
+            GUI.currentUserAccount.setPassword(response);
+            update();
+        }
+    }//GEN-LAST:event_EditPasswordActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BAUserNameLabel;
     private javax.swing.JButton BackButton;
+    private javax.swing.JLabel Background;
     private javax.swing.JButton DeleteAccountButton;
+    private javax.swing.JButton EditEmail;
+    private javax.swing.JButton EditFirstName;
+    private javax.swing.JButton EditLastName;
+    private javax.swing.JButton EditPassword;
+    private javax.swing.JButton EditPhoneNumber;
+    private javax.swing.JButton EditUsername;
+    private javax.swing.JLabel Email;
+    private javax.swing.JLabel FirstName;
+    private javax.swing.JLabel LastName;
     private javax.swing.JButton LogoutButtton;
-    private javax.swing.JButton changeEmail;
-    private javax.swing.JButton changeFirstName;
-    private javax.swing.JButton changeLastName;
-    private javax.swing.JButton changePassword;
-    private javax.swing.JButton changePhone;
-    private javax.swing.JButton changeUsername;
+    private javax.swing.JLabel Password;
+    private javax.swing.JLabel PhoneNumber;
+    private javax.swing.JLabel UserEmail;
+    private javax.swing.JLabel UserFirstName;
+    private javax.swing.JLabel UserLastName;
+    private javax.swing.JLabel UserPassword;
+    private javax.swing.JLabel UserPhoneNumber;
+    private javax.swing.JLabel UserUsername;
+    private javax.swing.JLabel Username;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }
