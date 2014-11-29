@@ -83,7 +83,10 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
 
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
-        setLayout(new java.awt.GridBagLayout());
+        java.awt.GridBagLayout layout = new java.awt.GridBagLayout();
+        layout.columnWidths = new int[] {0, 5, 0};
+        layout.rowHeights = new int[] {0};
+        setLayout(layout);
 
         CheckingAccountRatesPanel.setBackground(new java.awt.Color(204, 255, 204));
         CheckingAccountRatesPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.MatteBorder(null), "Checking Account Rates", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
