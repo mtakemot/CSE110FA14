@@ -28,6 +28,7 @@ public class HashTable implements Serializable
     private double CHECKING_RATE_OVER_3000 = 0.03;
     private double CHECKING_RATE_2000_TO_3000 = 0.02;
     private double CHECKING_RATE_1000_TO_2000 = 0.01;
+    private double PENALTY_AMOUNT = 25;
 
     public int occ; // Total number of UserAccounts that the table is holding
     UserAccount[] Table; // The hash table
@@ -392,6 +393,16 @@ public class HashTable implements Serializable
     public static int getSIZE()
     {
         return SIZE;
+    }
+
+    public double getPENALTY_AMOUNT()
+    {
+        return PENALTY_AMOUNT;
+    }
+
+    public void setPENALTY_AMOUNT(double PENALTY_AMOUNT)
+    {
+        this.PENALTY_AMOUNT = PENALTY_AMOUNT;
     }
 
 }
