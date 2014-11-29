@@ -13,14 +13,9 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Zachary Preece-Scaringe This class tests the UserAccount
+ * @author Tahereh Masoumi This class tests the CheckingAccount class
  * functionality.
- *
- * NOTE: Everything seems to work very well, you are able to insert and find 100
- * bank accounts perfectly, and you are unable to reinsert a bank account with
- * the same name. When i changed the number to 1000 however, 1000 were inserted
- * but the find method broke down. However I don't think we will need more than
- * 100.
+ * 
  */
 public class CheckingAccountTest
 {
