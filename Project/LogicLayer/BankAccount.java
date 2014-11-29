@@ -1,6 +1,7 @@
 package LogicLayer;
 
 import java.io.Serializable;
+import static java.lang.Math.abs;
 import org.joda.time.*;
 
 /**
@@ -65,13 +66,24 @@ public class BankAccount implements Serializable
         return false;
     }
 
+    /**
+     * Call this function to calculate what the user's interest will be at a
+     * certain date in the future.
+     *
+     * @param interestDate A DateTime object that represents the date that the
+     * user wants to know his interest on.
+     * @return the user's balance after a set amount of time
+     */
     public double getInterest(DateTime interestDate)
     {
         DateTime startTime = new DateTime(DateTimeZone.forID("Etc/UTC"));
         double tempTotal = thisMonthsDailyTotals;
         double tempAvg;
         double balanceAfterInterest = balance;
-        while (startTime.getMonthOfYear() != interestDate.getMonthOfYear())
+        // Create a counter for the total number of months that interest has be
+        // calculated for.
+        int counter = abs(Months.monthsBetween(startTime.withDayOfMonth(1), interestDate.withDayOfMonth(1)).getMonths());
+        for (int zod = 0; zod < counter; zod++)
         {
             // Calculates the month's total daily balance by multiplying the current balance by
             // the total number of days that are left in the month including the

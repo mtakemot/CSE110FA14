@@ -1,5 +1,6 @@
 package LogicLayer;
 
+import static java.lang.Math.abs;
 import org.joda.time.*;
 
 /**
@@ -46,7 +47,7 @@ public class CheckingAccount extends BankAccount
         // Grab the current time in UTC
         DateTime currentDateTime = new DateTime(DateTimeZone.forID("Etc/UTC"));
         // Check if this withdraw is less than 24 hours from the last withdraw
-        if (Hours.hoursBetween(currentDateTime, lastWithdrawDateTime).getHours() <= 24)
+        if (abs(Hours.hoursBetween(currentDateTime, lastWithdrawDateTime).getHours()) <= 24)
         {
             // Ensure that this withdraw will not put the user over their threshold
             if ((dayWithdrawAmount + amount) <= 10000)
@@ -78,7 +79,7 @@ public class CheckingAccount extends BankAccount
         // Grab the current time in UTC
         DateTime currentDateTime = new DateTime(DateTimeZone.forID("Etc/UTC"));
         // Check if this deposit is less than 24 hours from the last deposit
-        if (Hours.hoursBetween(currentDateTime, lastDepositDateTime).getHours() <= 24)
+        if (abs(Hours.hoursBetween(currentDateTime, lastDepositDateTime).getHours()) <= 24)
         {
             // Check if this deposit will put the user over their daily threshold
             if ((dayDepositAmount + amount) <= 10000)
