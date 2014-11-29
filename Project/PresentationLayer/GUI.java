@@ -217,10 +217,10 @@ public class GUI extends javax.swing.JFrame
                 currentUserAccount.setPassword("qq");
                 currentUserAccount.setEmail("email");
                 currentUserAccount.setPhone("0123456789");
-                currentBankAccount = currentUserAccount.insertBankAccount(20, "qq1", "Checking");
-                currentBankAccount = currentUserAccount.insertBankAccount(25, "qq2", "Savings");
-                currentBankAccount = currentUserAccount.insertBankAccount(30, "qq3", "Checking");
-                currentBankAccount = currentUserAccount.insertBankAccount(30, "qq4", "Checking");
+                currentBankAccount = currentUserAccount.insertBankAccount(1100, "qq1", "Checking");
+                currentBankAccount = currentUserAccount.insertBankAccount(2100, "qq2", "Savings");
+                currentBankAccount = currentUserAccount.insertBankAccount(100, "qq3", "Checking");
+                currentBankAccount = currentUserAccount.insertBankAccount(3100, "qq4", "Checking");
 
                 currentUserAccount = MasterTable.insertUserAccount("ww");
                 currentUserAccount.setFirstName("first2");
@@ -228,7 +228,7 @@ public class GUI extends javax.swing.JFrame
                 currentUserAccount.setPassword("ww");
                 currentUserAccount.setEmail("email2");
                 currentUserAccount.setPhone("1234567890");
-                currentBankAccount = currentUserAccount.insertBankAccount(50, "ww1", "Checking");
+                currentBankAccount = currentUserAccount.insertBankAccount(1100, "ww1", "Checking");
                 currentBankAccount = currentUserAccount.insertBankAccount(35, "ww2", "Savings");
                 currentBankAccount = currentUserAccount.insertBankAccount(30, "ww3", "Checking");
                 currentBankAccount = currentUserAccount.insertBankAccount(30, "ww4", "Checking");
@@ -342,7 +342,7 @@ public class GUI extends javax.swing.JFrame
     private TellerDeleteAccountPanel TDelete;
     private PasswordFieldPanel pass;
     private PenaltyInterestPanel PenIntPanel;
-    
+
     public PasswordFieldPanel getPass()
     {
         return pass;
@@ -351,7 +351,8 @@ public class GUI extends javax.swing.JFrame
     public void setPass(PasswordFieldPanel pass)
     {
         this.pass = pass;
-    }   
+    }
+
     public PenaltyInterestPanel getPenIntPanel()
     {
         return PenIntPanel;

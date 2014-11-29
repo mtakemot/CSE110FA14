@@ -276,7 +276,7 @@ public class HashTable implements Serializable
                 }
             }
         }
-        DateTime newDateTime = lastInterestDateTime.withMonthOfYear((lastInterestDateTime.getMonthOfYear() + 1) % MAX_MONTHS);
+        DateTime newDateTime = lastInterestDateTime.withMonthOfYear((lastInterestDateTime.plusMonths(1).getMonthOfYear()));
         newDateTime = newDateTime.withDayOfMonth(1);
         lastInterestDateTime = newDateTime;
     }

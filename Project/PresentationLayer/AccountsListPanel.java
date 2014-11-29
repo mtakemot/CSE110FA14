@@ -18,6 +18,8 @@ import java.awt.CardLayout;
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
 import LogicLayer.UserAccount;
+import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
 
 //for debug
 //import java.io.*;
@@ -120,7 +122,6 @@ public class AccountsListPanel extends javax.swing.JPanel
     {
         java.awt.GridBagConstraints gridBagConstraints;
 
-        jButton1 = new javax.swing.JButton();
         Bank42 = new javax.swing.JLabel();
         Settings = new javax.swing.JButton();
         Logout = new javax.swing.JButton();
@@ -142,9 +143,8 @@ public class AccountsListPanel extends javax.swing.JPanel
         BankAccountTransfer = new javax.swing.JLabel();
         DeleteAccountButton = new javax.swing.JButton();
         CreateBAButton = new javax.swing.JButton();
+        FutureInterestButton = new javax.swing.JButton();
         Background = new javax.swing.JLabel();
-
-        jButton1.setText("jButton1");
 
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
@@ -194,7 +194,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         jPanel3.setOpaque(false);
         java.awt.GridBagLayout jPanel3Layout = new java.awt.GridBagLayout();
         jPanel3Layout.columnWidths = new int[] {0, 5, 0};
-        jPanel3Layout.rowHeights = new int[] {0, 5, 0};
+        jPanel3Layout.rowHeights = new int[] {0, 5, 0, 5, 0};
         jPanel3.setLayout(jPanel3Layout);
 
         jScrollPane1.setMinimumSize(new java.awt.Dimension(440, 390));
@@ -208,7 +208,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         centerRenderer.setHorizontalAlignment( JLabel.CENTER );
         AccountsTable.setDefaultRenderer(String.class, centerRenderer);
         AccountsTable.setDefaultRenderer(Double.class, centerRenderer);
-        AccountsTable.setColumnSelectionAllowed(true);
+        AccountsTable.setColumnSelectionAllowed(false);
         AccountsTable.getTableHeader().setResizingAllowed(false);
         AccountsTable.setOpaque(false);
         AccountsTable.getTableHeader().setReorderingAllowed(false);
@@ -452,6 +452,19 @@ public class AccountsListPanel extends javax.swing.JPanel
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         jPanel3.add(CreateBAButton, gridBagConstraints);
 
+        FutureInterestButton.setText("Calculate Future Interest On Highlighted Account");
+        FutureInterestButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                FutureInterestButtonActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        jPanel3.add(FutureInterestButton, gridBagConstraints);
+
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -624,12 +637,25 @@ public class AccountsListPanel extends javax.swing.JPanel
         // TODO add your handling code here:
     }//GEN-LAST:event_BankAccountsList1ActionPerformed
 
-    public static boolean isParsable(String input)
+    public static boolean isParsableDouble(String input)
     {
         boolean parsable = true;
         try
         {
             Double.parseDouble(input);
+        } catch (NumberFormatException e)
+        {
+            parsable = false;
+        }
+        return parsable;
+    }
+
+    public static boolean isParsableInt(String input)
+    {
+        boolean parsable = true;
+        try
+        {
+            Integer.parseInt(input);
         } catch (NumberFormatException e)
         {
             parsable = false;
@@ -657,7 +683,7 @@ public class AccountsListPanel extends javax.swing.JPanel
     {//GEN-HEADEREND:event_TransferButtonActionPerformed
         double amount;
 
-        if (isParsable(AmountField.getText()))
+        if (isParsableDouble(AmountField.getText()))
         {
             amount = Double.parseDouble(AmountField.getText());
         }
@@ -699,7 +725,7 @@ public class AccountsListPanel extends javax.swing.JPanel
     private void TransferButton1MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_TransferButton1MouseClicked
     {//GEN-HEADEREND:event_TransferButton1MouseClicked
         double amount;
-        if (isParsable(AmountField.getText()))
+        if (isParsableDouble(AmountField.getText()))
         {
             amount = Integer.parseInt(AmountField.getText());
         }
@@ -831,6 +857,40 @@ public class AccountsListPanel extends javax.swing.JPanel
             JOptionPane.showMessageDialog(null, "Please Select an Account", "Bank 42", 1);
     }//GEN-LAST:event_DeleteAccountButtonActionPerformed
 
+    private void FutureInterestButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_FutureInterestButtonActionPerformed
+    {//GEN-HEADEREND:event_FutureInterestButtonActionPerformed
+        if (AccountsTable.getSelectedRow() > 0)
+        {
+            int amount;
+            String amountstring = JOptionPane.showInputDialog(
+                    null, "Please enter the time period, in days, that you would like to calculate interest over");
+            if (amountstring != null)
+            {
+                if (isParsableInt(amountstring))
+                    amount = Integer.parseInt(amountstring);
+                else
+                {
+                    JOptionPane.showMessageDialog(null, "You must enter a valid number of days.", "ERROR", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+                if (amount < 0)
+                {
+                    JOptionPane.showMessageDialog(null, "You must enter a valid number of days.", "ERROR", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+                DateTime interestDate = new DateTime(DateTimeZone.forID("Etc/UTC"));
+                int row = AccountsTable.getSelectedRow();
+                String bankacc = (String) AccountsTable.getValueAt(row, 1);
+                GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(bankacc);
+                double calcInt = GUI.currentBankAccount.getInterest(interestDate.plusDays(amount));
+                JOptionPane.showMessageDialog(null, "Success! The balance of account "
+                        + GUI.currentBankAccount.getAccountName() + " after " + amount + " days will be $" + calcInt);
+            }
+        }
+        else
+            JOptionPane.showMessageDialog(null, "Please Select an Account", "Bank 42", 1);
+    }//GEN-LAST:event_FutureInterestButtonActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable AccountsTable;
     private javax.swing.JTextField AmountField;
@@ -843,13 +903,13 @@ public class AccountsListPanel extends javax.swing.JPanel
     private javax.swing.JButton CreateBAButton;
     private javax.swing.JButton DeleteAccountButton;
     private javax.swing.JTextField EmailEntryField;
+    private javax.swing.JButton FutureInterestButton;
     private javax.swing.JButton Logout;
     private javax.swing.JButton Settings;
     private javax.swing.JButton TransferButton;
     private javax.swing.JButton TransferButton1;
     private javax.swing.JPanel TransferFundsPanel;
     private javax.swing.JLabel Transferanotheruser;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
