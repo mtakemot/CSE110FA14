@@ -241,6 +241,7 @@ public class LoginPanel extends javax.swing.JPanel
             if (password.compareTo(GUI.currentUserAccount.getPassword()) == 0)
             {
                 mainGUI.getAccList().update();
+                mainGUI.getSettings().update();
                 // This line grabs the layout from MainPanel from the GUI class so that
                 // we can show a new panel on it
                 CardLayout layout = (CardLayout) (MainPanel.getLayout());

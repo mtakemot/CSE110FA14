@@ -173,7 +173,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(11, 10, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(10, 10, 0, 0);
         add(Settings, gridBagConstraints);
 
         Logout.setText("Logout");
@@ -188,7 +188,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHEAST;
-        gridBagConstraints.insets = new java.awt.Insets(11, 268, 0, 18);
+        gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 10);
         add(Logout, gridBagConstraints);
 
         jPanel3.setOpaque(false);
