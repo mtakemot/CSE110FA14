@@ -341,7 +341,8 @@ public class GUI extends javax.swing.JFrame
     private DeleteAccountPanel Delete;
     private TellerDeleteAccountPanel TDelete;
     private PasswordFieldPanel pass;
-
+    private PenaltyInterestPanel PenIntPanel;
+    
     public PasswordFieldPanel getPass()
     {
         return pass;
@@ -350,8 +351,7 @@ public class GUI extends javax.swing.JFrame
     public void setPass(PasswordFieldPanel pass)
     {
         this.pass = pass;
-    private PenaltyInterestPanel PenIntPanel;
-
+    }   
     public PenaltyInterestPanel getPenIntPanel()
     {
         return PenIntPanel;

@@ -17,6 +17,7 @@ import FacadeLayer.UserAccountWrapper;
 import java.awt.CardLayout;
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
+import LogicLayer.UserAccount;
 
 //for debug
 //import java.io.*;
