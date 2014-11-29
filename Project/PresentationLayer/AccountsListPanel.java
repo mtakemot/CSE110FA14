@@ -152,7 +152,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         setPreferredSize(new java.awt.Dimension(800, 600));
         setLayout(new java.awt.GridBagLayout());
 
-        Bank42.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        Bank42.setFont(new java.awt.Font("DejaVu Sans", 1, 48)); // NOI18N
         Bank42.setForeground(new java.awt.Color(51, 0, 255));
         Bank42.setText("Bank 42");
         gridBagConstraints = new java.awt.GridBagConstraints();

@@ -84,6 +84,7 @@ public class Settings extends javax.swing.JPanel
         setLayout(new java.awt.GridBagLayout());
 
         jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 0, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Bank 42");
         gridBagConstraints = new java.awt.GridBagConstraints();
