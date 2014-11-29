@@ -215,33 +215,30 @@ public class GUI extends javax.swing.JFrame
                 final GUI mainGUI = new GUI();
                 //Puts some initial values in the table to prevent null pointer
                 // exceptions
-                currentUserAccount = MasterTable.insertUserAccount("qq");
+                currentUserAccount = MasterTable.insertUserAccount("qq", "email");
                 currentUserAccount.setFirstName("first");
                 currentUserAccount.setLastName("last");
                 currentUserAccount.setPassword("qq");
-                currentUserAccount.setEmail("email");
                 currentUserAccount.setPhone("0123456789");
                 currentBankAccount = currentUserAccount.insertBankAccount(1100, "qq1", "Checking");
                 currentBankAccount = currentUserAccount.insertBankAccount(2100, "qq2", "Savings");
                 currentBankAccount = currentUserAccount.insertBankAccount(100, "qq3", "Checking");
                 currentBankAccount = currentUserAccount.insertBankAccount(3100, "qq4", "Checking");
 
-                currentUserAccount = MasterTable.insertUserAccount("ww");
+                currentUserAccount = MasterTable.insertUserAccount("ww", "email2");
                 currentUserAccount.setFirstName("first2");
                 currentUserAccount.setLastName("last2");
                 currentUserAccount.setPassword("ww");
-                currentUserAccount.setEmail("email2");
                 currentUserAccount.setPhone("1234567890");
                 currentBankAccount = currentUserAccount.insertBankAccount(1100, "ww1", "Checking");
                 currentBankAccount = currentUserAccount.insertBankAccount(35, "ww2", "Savings");
                 currentBankAccount = currentUserAccount.insertBankAccount(30, "ww3", "Checking");
                 currentBankAccount = currentUserAccount.insertBankAccount(30, "ww4", "Checking");
 
-                currentUserAccount = MasterTable.insertUserAccount("ee");
+                currentUserAccount = MasterTable.insertUserAccount("ee", "emai3");
                 currentUserAccount.setFirstName("first2");
                 currentUserAccount.setLastName("last2");
                 currentUserAccount.setPassword("ee");
-                currentUserAccount.setEmail("email3");
                 currentUserAccount.setPhone("1234567890");
                 currentBankAccount = currentUserAccount.insertBankAccount(50, "ee1", "Checking");
                 currentBankAccount = currentUserAccount.insertBankAccount(35, "ee2", "Savings");

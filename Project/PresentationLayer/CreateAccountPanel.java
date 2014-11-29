@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 /*
  * 11/9 Michio Takemoto
  * Uses import/export now, but we have a FEW issues
- ** 1) When invalid input, we have to reset all the buttons or reset the page itself 
+ ** 1) When invalid input, we have to reset all the buttons or reset the page itself
  that all the fields will reset as well. As of now, if we tried to submit something
  invalid, but we correct it and submit, it will still be invalid as the old data
  doesn't leave
@@ -308,7 +308,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
                                 System.out.println("test3");
                                 System.out.println("test4");
 
-                                GUI.currentUserAccount = GUI.MasterTable.insertUserAccount(user);
+                                GUI.currentUserAccount = GUI.MasterTable.insertUserAccount(user, input3);
                                 if (GUI.currentUserAccount != null)
                                 {
                                     GUI.currentUserAccount.setFirstName(firstName.getText());
@@ -335,9 +335,9 @@ public class CreateAccountPanel extends javax.swing.JPanel
                                  }
                                  UserAccount retVal = GUI.MasterTable.findUserAccount(username.getText());
                                  if (retVal == null){
-                                
+
                                  UserAccount newUser = new UserAccount();
-                               
+
                                  newUser.setFirstName(firstName.getText());
                                  newUser.setLastName(name2);
                                  newUser.setUserName(user);
