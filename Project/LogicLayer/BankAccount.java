@@ -24,7 +24,7 @@ public class BankAccount implements Serializable
     protected BankAccount next;
     protected String accountType;
 
-    // A running total of the amount of money at the end of each day for the 
+    // A running total of the amount of money at the end of each day for the
     // whole month
     protected double thisMonthsDailyTotals;
     // Total amount withdrawn in last 24 hrs
@@ -53,7 +53,7 @@ public class BankAccount implements Serializable
         return 0;
     }
 
-    // The following 2 methods will be overridden in 
+    // The following 3 methods will be overridden in
     // SavingsAccount.java and CheckingAccount.java
     public boolean subFromBalance(double amount)
     {
@@ -62,7 +62,48 @@ public class BankAccount implements Serializable
 
     public boolean addToBalance(double amount)
     {
-        return true;
+        return false;
+    }
+
+    public double getInterest(DateTime interestDate)
+    {
+        DateTime startTime = new DateTime(DateTimeZone.forID("Etc/UTC"));
+        double tempTotal = thisMonthsDailyTotals;
+        double tempAvg = 0;
+        double balanceAfterInterest = balance;
+        while (startTime.getMonthOfYear() != interestDate.getMonthOfYear())
+        {
+            tempTotal += balance * (startTime.dayOfMonth().getMaximumValue() - startTime.getDayOfMonth());
+            tempAvg = ((tempTotal) / (startTime.dayOfMonth().getMaximumValue()));
+            if (tempAvg < 100)
+            {
+                balanceAfterInterest -= HashTable.PENALTY_AMOUNT;
+            }
+            else if (tempAvg >= 3000)
+            {
+                if (this instanceof CheckingAccount)
+                    balanceAfterInterest += balanceAfterInterest * HashTable.CHECKING_RATE_OVER_3000;
+                else
+                    balanceAfterInterest += balanceAfterInterest * HashTable.SAVINGS_RATE_OVER_3000;
+            }
+            else if (tempAvg >= 2000 && tempAvg < 3000)
+            {
+                if (this instanceof CheckingAccount)
+                    balanceAfterInterest += balanceAfterInterest * HashTable.CHECKING_RATE_2000_TO_3000;
+                else
+                    balanceAfterInterest += balanceAfterInterest * HashTable.SAVINGS_RATE_2000_TO_3000;
+            }
+            else if (tempAvg >= 1000 && tempAvg < 2000)
+            {
+                if (this instanceof CheckingAccount)
+                    balanceAfterInterest += balanceAfterInterest * HashTable.CHECKING_RATE_1000_TO_2000;
+                else
+                    balanceAfterInterest += balanceAfterInterest * HashTable.SAVINGS_RATE_1000_TO_2000;
+            }
+            tempTotal = 0;
+            startTime.withMonthOfYear(startTime.getMonthOfYear() + 1);
+        }
+        return balanceAfterInterest;
     }
 
 /////////////////////////////////////////

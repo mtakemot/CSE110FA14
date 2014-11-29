@@ -22,14 +22,14 @@ public class HashTable implements Serializable
     private final static int SIZE = 251;
     private final static int MAX_MONTHS = 12;
     // Interest rates for savings accounts
-    private double SAVINGS_RATE_OVER_3000 = 0.04;
-    private double SAVINGS_RATE_2000_TO_3000 = 0.03;
-    private double SAVINGS_RATE_1000_TO_2000 = 0.02;
+    public static double SAVINGS_RATE_OVER_3000 = 0.04;
+    public static double SAVINGS_RATE_2000_TO_3000 = 0.03;
+    public static double SAVINGS_RATE_1000_TO_2000 = 0.02;
     // Interest rates for checking accounts
-    private double CHECKING_RATE_OVER_3000 = 0.03;
-    private double CHECKING_RATE_2000_TO_3000 = 0.02;
-    private double CHECKING_RATE_1000_TO_2000 = 0.01;
-    private double PENALTY_AMOUNT = 25;
+    public static double CHECKING_RATE_OVER_3000 = 0.03;
+    public static double CHECKING_RATE_2000_TO_3000 = 0.02;
+    public static double CHECKING_RATE_1000_TO_2000 = 0.01;
+    public static double PENALTY_AMOUNT = 25;
 
     public int occ; // Total number of UserAccounts that the table is holding
     UserAccount[] Table; // The hash table
@@ -294,28 +294,28 @@ public class HashTable implements Serializable
         double dailyAverage = ((currentBA.getThisMonthsDailyTotals()) / (lastInterestDateTime.dayOfMonth().getMaximumValue()));
         if (dailyAverage < 100)
         {
-            currentBA.setBalance(currentBA.getBalance() - 25);
+            currentBA.setBalance(currentBA.getBalance() - PENALTY_AMOUNT);
         }
         else if (dailyAverage >= 3000)
         {
             if (currentBA instanceof CheckingAccount)
-                currentBA.setBalance(currentBA.getBalance() * CHECKING_RATE_OVER_3000);
+                currentBA.setBalance(currentBA.getBalance() + (currentBA.getBalance() * CHECKING_RATE_OVER_3000));
             else
-                currentBA.setBalance(currentBA.getBalance() * SAVINGS_RATE_OVER_3000);
+                currentBA.setBalance(currentBA.getBalance() + (currentBA.getBalance() * SAVINGS_RATE_OVER_3000));
         }
         else if (dailyAverage >= 2000 && dailyAverage < 3000)
         {
             if (currentBA instanceof CheckingAccount)
-                currentBA.setBalance(currentBA.getBalance() * CHECKING_RATE_2000_TO_3000);
+                currentBA.setBalance(currentBA.getBalance() + (currentBA.getBalance() * CHECKING_RATE_2000_TO_3000));
             else
-                currentBA.setBalance(currentBA.getBalance() * SAVINGS_RATE_2000_TO_3000);
+                currentBA.setBalance(currentBA.getBalance() + (currentBA.getBalance() * SAVINGS_RATE_2000_TO_3000));
         }
         else if (dailyAverage < 2000 && dailyAverage >= 1000)
         {
             if (currentBA instanceof CheckingAccount)
-                currentBA.setBalance(currentBA.getBalance() * CHECKING_RATE_1000_TO_2000);
+                currentBA.setBalance(currentBA.getBalance() + (currentBA.getBalance() * CHECKING_RATE_1000_TO_2000));
             else
-                currentBA.setBalance(currentBA.getBalance() * SAVINGS_RATE_1000_TO_2000);
+                currentBA.setBalance(currentBA.getBalance() + (currentBA.getBalance() * SAVINGS_RATE_1000_TO_2000));
         }
         currentBA.setThisMonthsDailyTotals(0);
     }
@@ -397,15 +397,4 @@ public class HashTable implements Serializable
     {
         return SIZE;
     }
-
-    public double getPENALTY_AMOUNT()
-    {
-        return PENALTY_AMOUNT;
-    }
-
-    public void setPENALTY_AMOUNT(double PENALTY_AMOUNT)
-    {
-        this.PENALTY_AMOUNT = PENALTY_AMOUNT;
-    }
-
 }
