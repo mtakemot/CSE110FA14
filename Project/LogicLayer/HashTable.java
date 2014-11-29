@@ -20,6 +20,7 @@ public class HashTable implements Serializable
 
     // Chose a prime number for the size of the table for more efficient hashing
     private final static int SIZE = 251;
+    private final static int MAX_MONTHS = 12;
     // Interest rates for savings accounts
     private double SAVINGS_RATE_OVER_3000 = 0.04;
     private double SAVINGS_RATE_2000_TO_3000 = 0.03;
@@ -275,7 +276,9 @@ public class HashTable implements Serializable
                 }
             }
         }
-        lastInterestDateTime.plusDays(lastInterestDateTime.dayOfMonth().getMaximumValue());
+        DateTime newDateTime = lastInterestDateTime.withMonthOfYear((lastInterestDateTime.getMonthOfYear() + 1) % MAX_MONTHS);
+        newDateTime = newDateTime.withDayOfMonth(1);
+        lastInterestDateTime = newDateTime;
     }
 
     /**
