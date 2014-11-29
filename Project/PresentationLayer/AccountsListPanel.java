@@ -412,7 +412,9 @@ public class AccountsListPanel extends javax.swing.JPanel
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridheight = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
         jPanel3.add(TransferFundsPanel, gridBagConstraints);
 
         DeleteAccountButton.setText("Delete Highlighted Account");
@@ -688,13 +690,13 @@ public class AccountsListPanel extends javax.swing.JPanel
         }
         else
         {
-            JOptionPane.showMessageDialog(null, "Please Enter A Valid Amount To Transfer","Bank 42",1);
+            JOptionPane.showMessageDialog(null, "Please Enter A Valid Amount To Transfer", "Bank 42", 1);
             return;
         }
 
         if (amount <= 0)
         {
-            JOptionPane.showMessageDialog(null, "Please Enter A Valid Amount To Transfer","Bank 42",1);
+            JOptionPane.showMessageDialog(null, "Please Enter A Valid Amount To Transfer", "Bank 42", 1);
             return;
         }
 
@@ -705,7 +707,7 @@ public class AccountsListPanel extends javax.swing.JPanel
             AmountField.setText("");
             JOptionPane.showMessageDialog(null, "Insufficient Funds"
                     + "\nYou have " + GUI.currentBankAccount.getBalance() + "$ available"
-                    + " in selected Bank Account","Bank 42",1);
+                    + " in selected Bank Account", "Bank 42", 1);
             return;
         }
 
@@ -719,11 +721,11 @@ public class AccountsListPanel extends javax.swing.JPanel
             GUI.currentBankAccount = founduser.getBankAccHead();
             GUI.currentBankAccount.addToBalance(amount);
             mainGUI.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
-            JOptionPane.showMessageDialog(null, "Funds Transfered Successfully!","Bank 42",1);
+            JOptionPane.showMessageDialog(null, "Funds Transfered Successfully!", "Bank 42", 1);
         }
         else
         {
-            JOptionPane.showMessageDialog(null, "Error, User Account Not Found","Bank 42",1);
+            JOptionPane.showMessageDialog(null, "Error, User Account Not Found", "Bank 42", 1);
         }
     }//GEN-LAST:event_TransferButton1MouseClicked
 

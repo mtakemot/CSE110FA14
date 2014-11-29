@@ -1,6 +1,7 @@
 package LogicLayer;
 
 import java.io.Serializable;
+import static java.lang.Math.abs;
 import org.joda.time.*;
 
 /**
@@ -65,15 +66,31 @@ public class BankAccount implements Serializable
         return false;
     }
 
+    /**
+     * Call this function to calculate what the user's interest will be at a
+     * certain date in the future.
+     *
+     * @param interestDate A DateTime object that represents the date that the
+     * user wants to know his interest on.
+     * @return the user's balance after a set amount of time
+     */
     public double getInterest(DateTime interestDate)
     {
         DateTime startTime = new DateTime(DateTimeZone.forID("Etc/UTC"));
         double tempTotal = thisMonthsDailyTotals;
-        double tempAvg = 0;
+        double tempAvg;
         double balanceAfterInterest = balance;
-        while (startTime.getMonthOfYear() != interestDate.getMonthOfYear())
+        // Create a counter for the total number of months that interest has be
+        // calculated for.
+        int counter = abs(Months.monthsBetween(startTime.withDayOfMonth(1), interestDate.withDayOfMonth(1)).getMonths());
+        for (int zod = 0; zod < counter; zod++)
         {
-            tempTotal += balance * (startTime.dayOfMonth().getMaximumValue() - startTime.getDayOfMonth());
+            // Calculates the month's total daily balance by multiplying the current balance by
+            // the total number of days that are left in the month including the
+            // current day
+            tempTotal += balanceAfterInterest * (startTime.dayOfMonth().getMaximumValue() - startTime.getDayOfMonth() + 1);
+            // Calculates the average daily balance by dividing the total by
+            // the total number of days in the month
             tempAvg = ((tempTotal) / (startTime.dayOfMonth().getMaximumValue()));
             if (tempAvg < 100)
             {
@@ -82,26 +99,31 @@ public class BankAccount implements Serializable
             else if (tempAvg >= 3000)
             {
                 if (this instanceof CheckingAccount)
-                    balanceAfterInterest += balanceAfterInterest * HashTable.CHECKING_RATE_OVER_3000;
+                    balanceAfterInterest += (balanceAfterInterest * HashTable.CHECKING_RATE_OVER_3000);
                 else
-                    balanceAfterInterest += balanceAfterInterest * HashTable.SAVINGS_RATE_OVER_3000;
+                    balanceAfterInterest += (balanceAfterInterest * HashTable.SAVINGS_RATE_OVER_3000);
             }
             else if (tempAvg >= 2000 && tempAvg < 3000)
             {
                 if (this instanceof CheckingAccount)
-                    balanceAfterInterest += balanceAfterInterest * HashTable.CHECKING_RATE_2000_TO_3000;
+                    balanceAfterInterest += (balanceAfterInterest * HashTable.CHECKING_RATE_2000_TO_3000);
                 else
-                    balanceAfterInterest += balanceAfterInterest * HashTable.SAVINGS_RATE_2000_TO_3000;
+                    balanceAfterInterest += (balanceAfterInterest * HashTable.SAVINGS_RATE_2000_TO_3000);
             }
             else if (tempAvg >= 1000 && tempAvg < 2000)
             {
                 if (this instanceof CheckingAccount)
-                    balanceAfterInterest += balanceAfterInterest * HashTable.CHECKING_RATE_1000_TO_2000;
+                    balanceAfterInterest += (balanceAfterInterest * HashTable.CHECKING_RATE_1000_TO_2000);
                 else
-                    balanceAfterInterest += balanceAfterInterest * HashTable.SAVINGS_RATE_1000_TO_2000;
+                    balanceAfterInterest += (balanceAfterInterest * HashTable.SAVINGS_RATE_1000_TO_2000);
             }
             tempTotal = 0;
-            startTime.withMonthOfYear(startTime.getMonthOfYear() + 1);
+            // Advances the month by 1
+            DateTime newStartTime = startTime.withMonthOfYear((startTime.getMonthOfYear() + 1) % HashTable.MAX_MONTHS);
+            // Sets the day to the first of the month
+            newStartTime = newStartTime.withDayOfMonth(1);
+            // Now start time is equal to the first of the next month
+            startTime = newStartTime;
         }
         return balanceAfterInterest;
     }
