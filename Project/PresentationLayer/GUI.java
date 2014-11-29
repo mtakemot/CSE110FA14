@@ -36,6 +36,8 @@ import java.awt.Toolkit;
 import javax.swing.*;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
 public class GUI extends javax.swing.JFrame
 {
@@ -60,6 +62,8 @@ public class GUI extends javax.swing.JFrame
     public static final String TELTABLE = "teller table";
 
     public static final int BALANCECOL = 3;
+    // Format doubles in output so that they look like money
+    public static final NumberFormat MoneyFormat = new DecimalFormat("$0.00");
 
     /**
      *

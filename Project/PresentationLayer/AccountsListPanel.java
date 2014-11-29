@@ -859,7 +859,7 @@ public class AccountsListPanel extends javax.swing.JPanel
 
     private void FutureInterestButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_FutureInterestButtonActionPerformed
     {//GEN-HEADEREND:event_FutureInterestButtonActionPerformed
-        if (AccountsTable.getSelectedRow() > 0)
+        if (AccountsTable.getSelectedRowCount() > 0)
         {
             int amount;
             String amountstring = JOptionPane.showInputDialog(
@@ -884,7 +884,7 @@ public class AccountsListPanel extends javax.swing.JPanel
                 GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(bankacc);
                 double calcInt = GUI.currentBankAccount.getInterest(interestDate.plusDays(amount));
                 JOptionPane.showMessageDialog(null, "Success! The balance of account "
-                        + GUI.currentBankAccount.getAccountName() + " after " + amount + " days will be $" + calcInt);
+                        + GUI.currentBankAccount.getAccountName() + " after " + amount + " days will be " + GUI.MoneyFormat.format(calcInt));
             }
         }
         else
