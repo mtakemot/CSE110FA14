@@ -209,7 +209,6 @@ public class GUI extends javax.swing.JFrame
                  // our other panels will go on top of this one and be shown or
                  // hidden depending on the state of our program*/
                 final GUI mainGUI = new GUI();
-
                 //Puts some initial values in the table to prevent null pointer
                 // exceptions
                 currentUserAccount = MasterTable.insertUserAccount("qq");
@@ -266,6 +265,7 @@ public class GUI extends javax.swing.JFrame
                 mainGUI.setTellerMainMenu(new TellerMainMenu(cardHolder, mainGUI));
                 mainGUI.setTDelete(new TellerDeleteAccountPanel(cardHolder, mainGUI));
                 mainGUI.setPass(new PasswordFieldPanel(cardHolder, mainGUI));
+                mainGUI.setPenIntPanel(new PenaltyInterestPanel(cardHolder, mainGUI));
 
                 // This addes the LoginPanel and AccountsListPanel that we just
                 // created to the MainPanel. It also assigns a name to each of
@@ -283,6 +283,7 @@ public class GUI extends javax.swing.JFrame
                 cardHolder.add(mainGUI.getTellerAP(), "TellerAP");
                 cardHolder.add(mainGUI.getTDelete(), "TDelete");
                 cardHolder.add(mainGUI.getTDelete(), "pass");
+                cardHolder.add(mainGUI.getPenIntPanel(), "PenIntPanel");
 
                 // These two lines show the MainPanel. Without these 2 lines
                 // the GUI would not show up at all. Just leave them alone.
@@ -299,7 +300,6 @@ public class GUI extends javax.swing.JFrame
                             {
                                 mainGUI.getAccList().setNewCellValue(currentBankAccount.getBalance(),
                                         currentBankAccount.getAccountName());
-                                return;
                             }
                         });
                 mainGUI.addPropertyChangeListener(TELTABLE,
@@ -350,6 +350,16 @@ public class GUI extends javax.swing.JFrame
     public void setPass(PasswordFieldPanel pass)
     {
         this.pass = pass;
+    private PenaltyInterestPanel PenIntPanel;
+
+    public PenaltyInterestPanel getPenIntPanel()
+    {
+        return PenIntPanel;
+    }
+
+    public void setPenIntPanel(PenaltyInterestPanel PenIntPanel)
+    {
+        this.PenIntPanel = PenIntPanel;
     }
 
     public TellerDeleteAccountPanel getTDelete()
@@ -445,4 +455,5 @@ public class GUI extends javax.swing.JFrame
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel MainPanel;
     // End of variables declaration//GEN-END:variables
+
 }

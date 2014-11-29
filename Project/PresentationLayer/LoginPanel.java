@@ -20,15 +20,13 @@ import java.util.regex.Pattern;
 public class LoginPanel extends javax.swing.JPanel
 {
 
-    // VERY IMPORTANT !! YOU MUST MAKE SURE THAT YOU GIVE EACH NEW PANEL THAT 
-    // YOU DECLARE A PRIVATE VARIABLE THAT WILL STORE THE MAIN PANEL FROM GUI 
+    // VERY IMPORTANT !! YOU MUST MAKE SURE THAT YOU GIVE EACH NEW PANEL THAT
+    // YOU DECLARE A PRIVATE VARIABLE THAT WILL STORE THE MAIN PANEL FROM GUI
     private JPanel MainPanel;
     private GUI mainGUI;
     private static final String USERNAME_PATTERN = "^[a-z0-9_-]{1,15}$";
     private Image image;
-    
-    
-    
+
     public LoginPanel()
     {
         initComponents();
@@ -36,7 +34,7 @@ public class LoginPanel extends javax.swing.JPanel
 
     /* THIS CONSTRUCTOR IS EXTREMELY IMPORTANT. WRITE A CONSTRUCTOR LIKE THIS
      FOR ALL OTHER PANELS
-    
+
      This constructor takes in MainPanel from GUI.java which gives us access to
      the main panel where all of our GUI elements will eventually be located. */
     public LoginPanel(JPanel MainPanel, GUI mainGUI)
@@ -45,23 +43,22 @@ public class LoginPanel extends javax.swing.JPanel
         this.MainPanel = MainPanel;
         initComponents();
         /*{
-            try
-            {
-            File image2 = new File("background-wallpapers-24");
-            image = javax.imageio.ImageIO.read(image2);
-            }
-            catch (Exception e) { /*handled in paintComponent()*/ //}
+         try
+         {
+         File image2 = new File("background-wallpapers-24");
+         image = javax.imageio.ImageIO.read(image2);
+         }
+         catch (Exception e) { /*handled in paintComponent()*/ //}
         //}
     }
 
     /*@Override
-    protected void paintComponent(Graphics g)
-    {
-        super.paintComponent(g); 
-        if (image != null)
-        g.drawImage(image, 0,0,this.getWidth(),this.getHeight(),this);
-    }*/
-    
+     protected void paintComponent(Graphics g)
+     {
+     super.paintComponent(g);
+     if (image != null)
+     g.drawImage(image, 0,0,this.getWidth(),this.getHeight(),this);
+     }*/
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -247,13 +244,13 @@ public class LoginPanel extends javax.swing.JPanel
                 // This line grabs the layout from MainPanel from the GUI class so that
                 // we can show a new panel on it
                 CardLayout layout = (CardLayout) (MainPanel.getLayout());
-                // This will show the next panel when the button is clicked. Notice 
-                // the parameters here. MainPanel is passed in, which is the panel from 
+                // This will show the next panel when the button is clicked. Notice
+                // the parameters here. MainPanel is passed in, which is the panel from
                 // GUI.java with the CardLayout that our next panel will appear on,
-                //  and "AccList" is the name of the panel that will be shown. 
+                //  and "AccList" is the name of the panel that will be shown.
                 // "AccList" matches up to the name that we gave the AccountsListPanel
                 // in GUI.java. Giving our instance of AccountsListPanel in GUI.java
-                // this name and adding that object to MainPanel has allowed us 
+                // this name and adding that object to MainPanel has allowed us
                 // to access and show that panel from outside of the class as long
                 //  as we pass in MainPanel
                 layout.show(MainPanel, "AccList");
@@ -262,7 +259,7 @@ public class LoginPanel extends javax.swing.JPanel
             {
                 JOptionPane.showMessageDialog(null, "Invalid Username Password Combination");
             }
-            //move the following code in here, for demoing and when we're done testing.   
+            //move the following code in here, for demoing and when we're done testing.
         }
     }
 
