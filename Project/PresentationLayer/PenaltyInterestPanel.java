@@ -56,7 +56,7 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
     {
         java.awt.GridBagConstraints gridBagConstraints;
 
-        CheckingAccountRatesPanel = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
         BalanceLabelTop = new javax.swing.JLabel();
         BalanceLabelMid = new javax.swing.JLabel();
         BalanceLabelBot = new javax.swing.JLabel();
@@ -83,73 +83,76 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
 
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
-        java.awt.GridBagLayout layout = new java.awt.GridBagLayout();
-        layout.columnWidths = new int[] {0, 3, 0};
-        layout.rowHeights = new int[] {0, 3, 0, 3, 0};
-        setLayout(layout);
+        setLayout(new java.awt.GridBagLayout());
 
-        CheckingAccountRatesPanel.setBackground(new java.awt.Color(204, 255, 204));
-        CheckingAccountRatesPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.MatteBorder(null), "Checking Account Rates", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
-        java.awt.GridBagLayout CheckingAccountRatesPanelLayout = new java.awt.GridBagLayout();
-        CheckingAccountRatesPanelLayout.columnWidths = new int[] {0, 3, 0, 3, 0};
-        CheckingAccountRatesPanelLayout.rowHeights = new int[] {0, 3, 0, 3, 0, 3, 0};
-        CheckingAccountRatesPanel.setLayout(CheckingAccountRatesPanelLayout);
+        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Checking Account Rates", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP));
+        jPanel1.setLayout(new java.awt.GridBagLayout());
 
         BalanceLabelTop.setText("$1000-$2000");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        CheckingAccountRatesPanel.add(BalanceLabelTop, gridBagConstraints);
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.insets = new java.awt.Insets(3, 5, 3, 5);
+        jPanel1.add(BalanceLabelTop, gridBagConstraints);
 
         BalanceLabelMid.setText("$2000-$3000");
         BalanceLabelMid.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
-        CheckingAccountRatesPanel.add(BalanceLabelMid, gridBagConstraints);
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.insets = new java.awt.Insets(3, 5, 3, 5);
+        jPanel1.add(BalanceLabelMid, gridBagConstraints);
         BalanceLabelMid.getAccessibleContext().setAccessibleDescription("");
 
         BalanceLabelBot.setText("More than $3000");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
-        CheckingAccountRatesPanel.add(BalanceLabelBot, gridBagConstraints);
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.insets = new java.awt.Insets(3, 5, 3, 5);
+        jPanel1.add(BalanceLabelBot, gridBagConstraints);
 
         BalanceLabel.setText("Balance");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        CheckingAccountRatesPanel.add(BalanceLabel, gridBagConstraints);
+        gridBagConstraints.insets = new java.awt.Insets(3, 5, 3, 5);
+        jPanel1.add(BalanceLabel, gridBagConstraints);
 
         Checking_1000_2000_Label.setText((String.valueOf(GUI.MasterTable.getCHECKING_RATE_1000_TO_2000()*100)) + "%");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 2;
-        CheckingAccountRatesPanel.add(Checking_1000_2000_Label, gridBagConstraints);
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.insets = new java.awt.Insets(3, 5, 3, 5);
+        jPanel1.add(Checking_1000_2000_Label, gridBagConstraints);
 
         Checking_2000_3000_Label.setText((String.valueOf(GUI.MasterTable.getCHECKING_RATE_2000_TO_3000()*100)) + "%");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 4;
-        CheckingAccountRatesPanel.add(Checking_2000_3000_Label, gridBagConstraints);
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.insets = new java.awt.Insets(3, 5, 3, 5);
+        jPanel1.add(Checking_2000_3000_Label, gridBagConstraints);
 
         Checking_More_Than_3000_Label.setText((String.valueOf(GUI.MasterTable.getCHECKING_RATE_OVER_3000()*100)) + "%");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 6;
-        CheckingAccountRatesPanel.add(Checking_More_Than_3000_Label, gridBagConstraints);
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.insets = new java.awt.Insets(3, 5, 3, 5);
+        jPanel1.add(Checking_More_Than_3000_Label, gridBagConstraints);
 
         CurrentCheckingRateLabel.setText("Current Rate");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
-        CheckingAccountRatesPanel.add(CurrentCheckingRateLabel, gridBagConstraints);
+        gridBagConstraints.insets = new java.awt.Insets(3, 5, 3, 5);
+        jPanel1.add(CurrentCheckingRateLabel, gridBagConstraints);
 
         CheckingNewRateLabel.setText("New Rate");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
-        CheckingAccountRatesPanel.add(CheckingNewRateLabel, gridBagConstraints);
+        gridBagConstraints.insets = new java.awt.Insets(3, 5, 3, 5);
+        jPanel1.add(CheckingNewRateLabel, gridBagConstraints);
 
         Checking_1000_2000_Field.setMinimumSize(new java.awt.Dimension(59, 30));
         Checking_1000_2000_Field.setPreferredSize(new java.awt.Dimension(59, 30));
@@ -161,9 +164,10 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 2;
-        CheckingAccountRatesPanel.add(Checking_1000_2000_Field, gridBagConstraints);
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.insets = new java.awt.Insets(3, 5, 3, 5);
+        jPanel1.add(Checking_1000_2000_Field, gridBagConstraints);
 
         Checking_2000_3000_Field.setMinimumSize(new java.awt.Dimension(59, 30));
         Checking_2000_3000_Field.setPreferredSize(new java.awt.Dimension(59, 30));
@@ -175,9 +179,10 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 4;
-        CheckingAccountRatesPanel.add(Checking_2000_3000_Field, gridBagConstraints);
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.insets = new java.awt.Insets(3, 5, 3, 5);
+        jPanel1.add(Checking_2000_3000_Field, gridBagConstraints);
 
         Checking_More_Than_3000_Field.setMinimumSize(new java.awt.Dimension(59, 30));
         Checking_More_Than_3000_Field.setPreferredSize(new java.awt.Dimension(59, 30));
@@ -189,53 +194,56 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 6;
-        CheckingAccountRatesPanel.add(Checking_More_Than_3000_Field, gridBagConstraints);
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.insets = new java.awt.Insets(3, 5, 3, 5);
+        jPanel1.add(Checking_More_Than_3000_Field, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        add(CheckingAccountRatesPanel, gridBagConstraints);
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        add(jPanel1, gridBagConstraints);
 
         SavingsAccountRatesPanel.setBackground(new java.awt.Color(204, 255, 255));
-        SavingsAccountRatesPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.MatteBorder(null), "Savings Account Rates", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
-        java.awt.GridBagLayout SavingsAccountRatesPanelLayout = new java.awt.GridBagLayout();
-        SavingsAccountRatesPanelLayout.columnWidths = new int[] {0, 3, 0};
-        SavingsAccountRatesPanelLayout.rowHeights = new int[] {0, 3, 0, 3, 0, 3, 0};
-        SavingsAccountRatesPanel.setLayout(SavingsAccountRatesPanelLayout);
+        SavingsAccountRatesPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Savings Account Rates", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP));
+        SavingsAccountRatesPanel.setToolTipText("");
+        SavingsAccountRatesPanel.setName(""); // NOI18N
+        SavingsAccountRatesPanel.setLayout(new java.awt.GridBagLayout());
 
         Savings_1000_2000_Label.setText((String.valueOf(GUI.MasterTable.getSAVINGS_RATE_1000_TO_2000()*100)) + "%");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.insets = new java.awt.Insets(0, 5, 0, 5);
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.insets = new java.awt.Insets(3, 5, 3, 5);
         SavingsAccountRatesPanel.add(Savings_1000_2000_Label, gridBagConstraints);
 
         Savings_2000_3000_Label.setText((String.valueOf(GUI.MasterTable.getSAVINGS_RATE_2000_TO_3000()*100)) + "%");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.insets = new java.awt.Insets(0, 5, 0, 5);
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.insets = new java.awt.Insets(3, 5, 3, 5);
         SavingsAccountRatesPanel.add(Savings_2000_3000_Label, gridBagConstraints);
 
         Savings_More_Than_3000_Label.setText((String.valueOf(GUI.MasterTable.getSAVINGS_RATE_OVER_3000()*100)) + "%");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.insets = new java.awt.Insets(0, 5, 0, 5);
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.insets = new java.awt.Insets(3, 5, 3, 5);
         SavingsAccountRatesPanel.add(Savings_More_Than_3000_Label, gridBagConstraints);
 
         CurrentSavingsRateLabel.setText("Current Rate");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
+        gridBagConstraints.insets = new java.awt.Insets(3, 5, 3, 5);
         SavingsAccountRatesPanel.add(CurrentSavingsRateLabel, gridBagConstraints);
 
         SavingsNewRateLabel.setText("New Rate");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
+        gridBagConstraints.insets = new java.awt.Insets(3, 5, 3, 5);
         SavingsAccountRatesPanel.add(SavingsNewRateLabel, gridBagConstraints);
 
         Savings_1000_2000_Field.setMinimumSize(new java.awt.Dimension(59, 30));
@@ -248,8 +256,9 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.insets = new java.awt.Insets(3, 5, 3, 5);
         SavingsAccountRatesPanel.add(Savings_1000_2000_Field, gridBagConstraints);
 
         Savings_2000_3000_Field.setMinimumSize(new java.awt.Dimension(59, 30));
@@ -262,8 +271,9 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.insets = new java.awt.Insets(3, 5, 3, 5);
         SavingsAccountRatesPanel.add(Savings_2000_3000_Field, gridBagConstraints);
 
         Savings_More_Than_3000_Field.setMinimumSize(new java.awt.Dimension(59, 30));
@@ -276,20 +286,31 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.insets = new java.awt.Insets(3, 5, 3, 5);
         SavingsAccountRatesPanel.add(Savings_More_Than_3000_Field, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         add(SavingsAccountRatesPanel, gridBagConstraints);
 
         ConfirmButton.setText("Confirm");
+        ConfirmButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                ConfirmButtonActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(3, 0, 3, 0);
         add(ConfirmButton, gridBagConstraints);
 
         BackButton.setText("Back");
@@ -302,8 +323,10 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(6, 0, 3, 0);
         add(BackButton, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -314,11 +337,11 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         {
             GUI.MasterTable.setCHECKING_RATE_1000_TO_2000((Double.parseDouble(input) / 100));
             Checking_1000_2000_Label.setText(input + "%");
-            Checking_1000_2000_Field.setText("");
+            Checking_1000_2000_Field.setText(null);
         }
         else
             JOptionPane.showMessageDialog(null, "Please enter a valid number", "ERROR", JOptionPane.ERROR_MESSAGE);
-        Checking_1000_2000_Field.setText("");
+        Checking_1000_2000_Field.setText(null);
         System.out.println(GUI.MasterTable.getCHECKING_RATE_1000_TO_2000());
     }//GEN-LAST:event_Checking_1000_2000_FieldActionPerformed
 
@@ -329,28 +352,13 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         {
             GUI.MasterTable.setCHECKING_RATE_2000_TO_3000((Double.parseDouble(input) / 100));
             Checking_2000_3000_Label.setText(input + "%");
-            Checking_2000_3000_Field.setText("");
+            Checking_2000_3000_Field.setText(null);
         }
         else
             JOptionPane.showMessageDialog(null, "Please enter a valid number", "ERROR", JOptionPane.ERROR_MESSAGE);
-        Checking_2000_3000_Field.setText("");
+        Checking_2000_3000_Field.setText(null);
         System.out.println(GUI.MasterTable.getCHECKING_RATE_2000_TO_3000());
     }//GEN-LAST:event_Checking_2000_3000_FieldActionPerformed
-
-    private void Checking_More_Than_3000_FieldActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_Checking_More_Than_3000_FieldActionPerformed
-    {//GEN-HEADEREND:event_Checking_More_Than_3000_FieldActionPerformed
-        String input = Checking_More_Than_3000_Field.getText();
-        if (isParsable(input))
-        {
-            GUI.MasterTable.setCHECKING_RATE_OVER_3000(Double.parseDouble(input) / 100);
-            Checking_More_Than_3000_Label.setText(input + "%");
-            Checking_More_Than_3000_Field.setText("");
-        }
-        else
-            JOptionPane.showMessageDialog(null, "Please enter a valid number", "ERROR", JOptionPane.ERROR_MESSAGE);
-        Checking_More_Than_3000_Field.setText("");
-        System.out.println(GUI.MasterTable.getCHECKING_RATE_OVER_3000());
-    }//GEN-LAST:event_Checking_More_Than_3000_FieldActionPerformed
 
     private void Savings_More_Than_3000_FieldActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_Savings_More_Than_3000_FieldActionPerformed
     {//GEN-HEADEREND:event_Savings_More_Than_3000_FieldActionPerformed
@@ -359,11 +367,11 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         {
             GUI.MasterTable.setSAVINGS_RATE_OVER_3000(Double.parseDouble(input) / 100);
             Savings_More_Than_3000_Label.setText(input + "%");
-            Savings_More_Than_3000_Field.setText("");
+            Savings_More_Than_3000_Field.setText(null);
         }
         else
             JOptionPane.showMessageDialog(null, "Please enter a valid number", "ERROR", JOptionPane.ERROR_MESSAGE);
-        Savings_More_Than_3000_Field.setText("");
+        Savings_More_Than_3000_Field.setText(null);
         System.out.println(GUI.MasterTable.getSAVINGS_RATE_OVER_3000());
     }//GEN-LAST:event_Savings_More_Than_3000_FieldActionPerformed
 
@@ -374,11 +382,11 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         {
             GUI.MasterTable.setSAVINGS_RATE_2000_TO_3000((Double.parseDouble(input) / 100));
             Savings_2000_3000_Label.setText(input + "%");
-            Savings_2000_3000_Field.setText("");
+            Savings_2000_3000_Field.setText(null);
         }
         else
             JOptionPane.showMessageDialog(null, "Please enter a valid number", "ERROR", JOptionPane.ERROR_MESSAGE);
-        Savings_2000_3000_Field.setText("");
+        Savings_2000_3000_Field.setText(null);
         System.out.println(GUI.MasterTable.getSAVINGS_RATE_2000_TO_3000());
     }//GEN-LAST:event_Savings_2000_3000_FieldActionPerformed
 
@@ -389,11 +397,11 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         {
             GUI.MasterTable.setSAVINGS_RATE_1000_TO_2000((Double.parseDouble(input) / 100));
             Savings_1000_2000_Label.setText(input + "%");
-            Savings_1000_2000_Field.setText("");
+            Savings_1000_2000_Field.setText(null);
         }
         else
             JOptionPane.showMessageDialog(null, "Please enter a valid number", "ERROR", JOptionPane.ERROR_MESSAGE);
-        Savings_1000_2000_Field.setText("");
+        Savings_1000_2000_Field.setText(null);
         System.out.println(GUI.MasterTable.getSAVINGS_RATE_1000_TO_2000());
     }//GEN-LAST:event_Savings_1000_2000_FieldActionPerformed
 
@@ -403,13 +411,47 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         layout.show(MainPanel, "TellerMainMenu");
     }//GEN-LAST:event_BackButtonActionPerformed
 
+    private void ConfirmButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ConfirmButtonActionPerformed
+    {//GEN-HEADEREND:event_ConfirmButtonActionPerformed
+        boolean wasCorrect = true;
+        String input = Checking_1000_2000_Field.getText();
+        if (input != null)
+        {
+            if (isParsable(input))
+            {
+                GUI.MasterTable.setCHECKING_RATE_1000_TO_2000((Double.parseDouble(input) / 100));
+                Checking_1000_2000_Label.setText(input + "%");
+                Checking_1000_2000_Field.setText(null);
+            }
+            else
+            {
+                wasCorrect = false;
+            }
+            Checking_1000_2000_Field.setText(null);
+        }
+    }//GEN-LAST:event_ConfirmButtonActionPerformed
+
+    private void Checking_More_Than_3000_FieldActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_Checking_More_Than_3000_FieldActionPerformed
+    {//GEN-HEADEREND:event_Checking_More_Than_3000_FieldActionPerformed
+        String input = Checking_More_Than_3000_Field.getText();
+        if (isParsable(input))
+        {
+            GUI.MasterTable.setCHECKING_RATE_OVER_3000(Double.parseDouble(input) / 100);
+            Checking_More_Than_3000_Label.setText(input + "%");
+            Checking_More_Than_3000_Field.setText(null);
+        }
+        else
+            JOptionPane.showMessageDialog(null, "Please enter a valid number", "ERROR", JOptionPane.ERROR_MESSAGE);
+        Checking_More_Than_3000_Field.setText(null);
+        System.out.println(GUI.MasterTable.getCHECKING_RATE_OVER_3000());
+    }//GEN-LAST:event_Checking_More_Than_3000_FieldActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackButton;
     private javax.swing.JLabel BalanceLabel;
     private javax.swing.JLabel BalanceLabelBot;
     private javax.swing.JLabel BalanceLabelMid;
     private javax.swing.JLabel BalanceLabelTop;
-    private javax.swing.JPanel CheckingAccountRatesPanel;
     private javax.swing.JLabel CheckingNewRateLabel;
     private javax.swing.JTextField Checking_1000_2000_Field;
     private javax.swing.JLabel Checking_1000_2000_Label;
@@ -428,5 +470,6 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
     private javax.swing.JLabel Savings_2000_3000_Label;
     private javax.swing.JTextField Savings_More_Than_3000_Field;
     private javax.swing.JLabel Savings_More_Than_3000_Label;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
