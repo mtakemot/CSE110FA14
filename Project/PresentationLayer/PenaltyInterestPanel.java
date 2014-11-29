@@ -84,8 +84,8 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
         java.awt.GridBagLayout layout = new java.awt.GridBagLayout();
-        layout.columnWidths = new int[] {0, 5, 0};
-        layout.rowHeights = new int[] {0};
+        layout.columnWidths = new int[] {0, 3, 0};
+        layout.rowHeights = new int[] {0, 3, 0, 3, 0};
         setLayout(layout);
 
         CheckingAccountRatesPanel.setBackground(new java.awt.Color(204, 255, 204));
@@ -98,7 +98,7 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         BalanceLabelTop.setText("$1000-$2000");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridy = 0;
         CheckingAccountRatesPanel.add(BalanceLabelTop, gridBagConstraints);
 
         BalanceLabelMid.setText("$2000-$3000");
@@ -281,17 +281,15 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         SavingsAccountRatesPanel.add(Savings_More_Than_3000_Field, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
         add(SavingsAccountRatesPanel, gridBagConstraints);
 
         ConfirmButton.setText("Confirm");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.insets = new java.awt.Insets(3, 0, 0, 0);
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 3;
         add(ConfirmButton, gridBagConstraints);
 
         BackButton.setText("Back");
@@ -304,10 +302,8 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.insets = new java.awt.Insets(3, 0, 0, 0);
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 3;
         add(BackButton, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
