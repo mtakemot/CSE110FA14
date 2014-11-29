@@ -1,6 +1,8 @@
 package LogicLayer;
 
 import java.io.Serializable;
+import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
 
 /**
  * **************************************************************************
@@ -92,6 +94,9 @@ public class UserAccount implements Serializable
      */
     public BankAccount insertBankAccount(double bal, String name, String type)
     {
+        // Get the current time so that DailyTotals can be calculated for the
+        // new account
+        DateTime currentTime = new DateTime(DateTimeZone.forID("Etc/UTC"));
         // If the head of the linked list that hold BankAccount is null, then
         // we insert the new BankAccount at the head.
         if (BankAccHead == null)
@@ -100,6 +105,7 @@ public class UserAccount implements Serializable
             if (type.equals("Checking"))
             {
                 BankAccHead = new CheckingAccount(bal, name);
+                BankAccHead.setThisMonthsDailyTotals(bal * currentTime.getDayOfMonth());
                 numOfBankAccounts++;
                 return BankAccHead;
             }
@@ -107,6 +113,7 @@ public class UserAccount implements Serializable
             else
             {
                 BankAccHead = new SavingsAccount(bal, name);
+                BankAccHead.setThisMonthsDailyTotals(bal * currentTime.getDayOfMonth());
                 numOfBankAccounts++;
                 return BankAccHead;
             }
@@ -135,12 +142,14 @@ public class UserAccount implements Serializable
                 if (type.equals("Checking")) // Create a CheckingAccount
                 {
                     current.setNext(new CheckingAccount(bal, name));
+                    current.getNext().setThisMonthsDailyTotals(bal * currentTime.getDayOfMonth());
                     numOfBankAccounts++;
                     return current.getNext();
                 }
                 else // Create a SavingsAccount
                 {
                     current.setNext(new SavingsAccount(bal, name));
+                    current.getNext().setThisMonthsDailyTotals(bal * currentTime.getDayOfMonth());
                     numOfBankAccounts++;
                     return current.getNext();
                 }

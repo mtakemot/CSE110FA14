@@ -20,7 +20,7 @@ public class HashTableTest
 
         String testString = "testUserName";
 
-        //create and insert 10000 UserAccounts 
+        //create and insert 10000 UserAccounts
         for (int i = 0; i < 10000; i++)
         {
 
@@ -28,7 +28,7 @@ public class HashTableTest
             UserAccount testAccount = new UserAccount(testString + i);
 
             //Adding the 10000 userAccounts to the HashTable
-            UserAccount result = testTable.insertUserAccount(testString + i);
+            UserAccount result = testTable.insertUserAccount(testString + i, "email" + i);
 
             //check to see if every field matches
             assertEquals(testAccount.getFirstName(), result.getFirstName());
@@ -48,16 +48,16 @@ public class HashTableTest
         HashTable testTable = new HashTable();
         String testString = "testUserName";
 
-        //inserting 10000 user accounts into the hashtable 
+        //inserting 10000 user accounts into the hashtable
         for (int i = 0; i < 10000; i++)
         {
-            testTable.insertUserAccount(testString + i);
+            testTable.insertUserAccount(testString + i, "email" + i);
         }
 
         //reinsert the accounts to check for duplicate accounts
         for (int i = 0; i < 10000; i++)
         {
-            UserAccount result = testTable.insertUserAccount(testString + i);
+            UserAccount result = testTable.insertUserAccount(testString + i, "email" + i);
             assertEquals(result, null);
         }
     }
@@ -70,16 +70,16 @@ public class HashTableTest
         HashTable testTable = new HashTable();
         String testString = "testUserName";
 
-        //inserting 10000 user accounts into the hashtable 
+        //inserting 10000 user accounts into the hashtable
         for (int i = 0; i < 10000; i++)
         {
-            testTable.insertUserAccount(testString + i);
+            testTable.insertUserAccount(testString + i, "email" + i);
         }
 
         // Making sure duplicate inserts return null
         for (int i = 0; i < 10000; i++)
         {
-            UserAccount check = testTable.insertUserAccount(testString + i);
+            UserAccount check = testTable.insertUserAccount(testString + i, "email" + i);
             assertEquals(check, null);
         }
 
@@ -91,7 +91,7 @@ public class HashTableTest
             UserAccount result = testTable.findUserAccount(testString + i);
             assertEquals(testAccount.getUserName(), result.getUserName());
 
-            //following not required right ? 
+            //following not required right ?
               /*  assertEquals(testAccount.getFirstName(),result.getFirstName());
              assertEquals(testAccount.getLastName() , result.getLastName());
              assertEquals(testAccount.getUserName(), result.getUserName());
@@ -113,20 +113,20 @@ public class HashTableTest
         HashTable testTable = new HashTable();
         String testString = "testUserName";
 
-        //inserting 10000 user accounts into the hashtable 
+        //inserting 10000 user accounts into the hashtable
         for (int i = 0; i < 10000; i++)
         {
-            testTable.insertUserAccount(testString + i);
+            testTable.insertUserAccount(testString + i, "email" + i);
         }
 
         // Making sure duplicate inserts return null
         for (int i = 0; i < 10000; i++)
         {
-            UserAccount check = testTable.insertUserAccount(testString + i);
+            UserAccount check = testTable.insertUserAccount(testString + i, "email" + i);
             assertEquals(check, null);
         }
 
-        //deleting useraccounts and checking if the deletion happened correctly. 
+        //deleting useraccounts and checking if the deletion happened correctly.
         for (int i = 0; i < 10000; i++)
         {
             assertTrue(testTable.deleteUserAccount(testString + i));

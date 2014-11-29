@@ -169,7 +169,7 @@ public class TellerAccountPage extends javax.swing.JPanel
         centerRenderer.setHorizontalAlignment( JLabel.CENTER );
         AccountsTable.setDefaultRenderer(String.class, centerRenderer);
         AccountsTable.setDefaultRenderer(Double.class, centerRenderer);
-        AccountsTable.setModel(new AccountsTableModel(PresentationLayer.GUI.currentUserAccount));
+        AccountsTable.setModel(new PresentationLayer.AccountsTableModel(PresentationLayer.GUI.currentUserAccount));
         AccountsTable.getTableHeader().setResizingAllowed(false);
         AccountsTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(AccountsTable);
@@ -313,7 +313,7 @@ public class TellerAccountPage extends javax.swing.JPanel
             return;
         }
 
-        //first, retrieve the row index of selection        
+        //first, retrieve the row index of selection
         int row = AccountsTable.getSelectedRow();
         String user = (String) AccountsTable.getValueAt(row, 1);
         System.out.print("\nTESTING retrieve selected row index: ");
@@ -366,7 +366,7 @@ public class TellerAccountPage extends javax.swing.JPanel
             return;
         }
 
-        //first, retrieve the row index of selection        
+        //first, retrieve the row index of selection
         int row = AccountsTable.getSelectedRow();
         String user = (String) AccountsTable.getValueAt(row, 1);
         System.out.print("\nTESTING retrieve selected row index: ");
@@ -406,7 +406,7 @@ public class TellerAccountPage extends javax.swing.JPanel
         }
 
         System.out.print("\n GUI.currentBankAcc Name:  " + GUI.currentBankAccount.getAccountName() + "\n");
-        //GUI.currentBankAccount.addToBalance(amount        
+        //GUI.currentBankAccount.addToBalance(amount
 
     }//GEN-LAST:event_WithdrawButtonMouseClicked
 

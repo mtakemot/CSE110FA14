@@ -36,6 +36,8 @@ import java.awt.Toolkit;
 import javax.swing.*;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
 public class GUI extends javax.swing.JFrame
 {
@@ -60,6 +62,8 @@ public class GUI extends javax.swing.JFrame
     public static final String TELTABLE = "teller table";
 
     public static final int BALANCECOL = 3;
+    // Format doubles in output so that they look like money
+    public static final NumberFormat MoneyFormat = new DecimalFormat("$0.00");
 
     /**
      *
@@ -211,33 +215,30 @@ public class GUI extends javax.swing.JFrame
                 final GUI mainGUI = new GUI();
                 //Puts some initial values in the table to prevent null pointer
                 // exceptions
-                currentUserAccount = MasterTable.insertUserAccount("qq");
+                currentUserAccount = MasterTable.insertUserAccount("qq", "email");
                 currentUserAccount.setFirstName("first");
                 currentUserAccount.setLastName("last");
                 currentUserAccount.setPassword("qq");
-                currentUserAccount.setEmail("email");
                 currentUserAccount.setPhone("0123456789");
-                currentBankAccount = currentUserAccount.insertBankAccount(20, "qq1", "Checking");
-                currentBankAccount = currentUserAccount.insertBankAccount(25, "qq2", "Savings");
-                currentBankAccount = currentUserAccount.insertBankAccount(30, "qq3", "Checking");
-                currentBankAccount = currentUserAccount.insertBankAccount(30, "qq4", "Checking");
+                currentBankAccount = currentUserAccount.insertBankAccount(1100, "qq1", "Checking");
+                currentBankAccount = currentUserAccount.insertBankAccount(2100, "qq2", "Savings");
+                currentBankAccount = currentUserAccount.insertBankAccount(100, "qq3", "Checking");
+                currentBankAccount = currentUserAccount.insertBankAccount(3100, "qq4", "Checking");
 
-                currentUserAccount = MasterTable.insertUserAccount("ww");
+                currentUserAccount = MasterTable.insertUserAccount("ww", "email2");
                 currentUserAccount.setFirstName("first2");
                 currentUserAccount.setLastName("last2");
                 currentUserAccount.setPassword("ww");
-                currentUserAccount.setEmail("email2");
                 currentUserAccount.setPhone("1234567890");
-                currentBankAccount = currentUserAccount.insertBankAccount(50, "ww1", "Checking");
+                currentBankAccount = currentUserAccount.insertBankAccount(1100, "ww1", "Checking");
                 currentBankAccount = currentUserAccount.insertBankAccount(35, "ww2", "Savings");
                 currentBankAccount = currentUserAccount.insertBankAccount(30, "ww3", "Checking");
                 currentBankAccount = currentUserAccount.insertBankAccount(30, "ww4", "Checking");
 
-                currentUserAccount = MasterTable.insertUserAccount("ee");
+                currentUserAccount = MasterTable.insertUserAccount("ee", "emai3");
                 currentUserAccount.setFirstName("first2");
                 currentUserAccount.setLastName("last2");
                 currentUserAccount.setPassword("ee");
-                currentUserAccount.setEmail("email3");
                 currentUserAccount.setPhone("1234567890");
                 currentBankAccount = currentUserAccount.insertBankAccount(50, "ee1", "Checking");
                 currentBankAccount = currentUserAccount.insertBankAccount(35, "ee2", "Savings");
@@ -342,7 +343,7 @@ public class GUI extends javax.swing.JFrame
     private TellerDeleteAccountPanel TDelete;
     private PasswordFieldPanel pass;
     private PenaltyInterestPanel PenIntPanel;
-    
+
     public PasswordFieldPanel getPass()
     {
         return pass;
@@ -353,6 +354,8 @@ public class GUI extends javax.swing.JFrame
         this.pass = pass;
     }   
     
+    }
+
     public PenaltyInterestPanel getPenIntPanel()
     {
         return PenIntPanel;

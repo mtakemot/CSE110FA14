@@ -119,7 +119,7 @@ public class BankAccount implements Serializable
             }
             tempTotal = 0;
             // Advances the month by 1
-            DateTime newStartTime = startTime.withMonthOfYear((startTime.getMonthOfYear() + 1) % HashTable.MAX_MONTHS);
+            DateTime newStartTime = startTime.withMonthOfYear((startTime.plusMonths(1).getMonthOfYear()));
             // Sets the day to the first of the month
             newStartTime = newStartTime.withDayOfMonth(1);
             // Now start time is equal to the first of the next month
