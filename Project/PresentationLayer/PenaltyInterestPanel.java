@@ -573,7 +573,7 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
     {//GEN-HEADEREND:event_PenaltyButtonActionPerformed
         double amount;
         String amountstring = JOptionPane.showInputDialog(
-                null, "The current penalty is $" + GUI.MasterTable.getPENALTY_AMOUNT()
+                null, "The current penalty is $" + GUI.MasterTable.PENALTY_AMOUNT
                 + "\n" + "Please enter a new penalty amount");
 
         if (isParsable(amountstring))
@@ -589,7 +589,7 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
             JOptionPane.showMessageDialog(null, "Please Enter a Valid number");
             return;
         }
-        GUI.MasterTable.setPENALTY_AMOUNT(amount);
+        GUI.MasterTable.PENALTY_AMOUNT = amount;
         JOptionPane.showMessageDialog(null, "Success!\n $" + amount + " is the new penalty.");
     }//GEN-LAST:event_PenaltyButtonActionPerformed
 
