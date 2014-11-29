@@ -353,8 +353,6 @@ public class GUI extends javax.swing.JFrame
     {
         this.pass = pass;
     }   
-    
-    }
 
     public PenaltyInterestPanel getPenIntPanel()
     {
