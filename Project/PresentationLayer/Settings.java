@@ -60,9 +60,9 @@ public class Settings extends javax.swing.JPanel
         LogoutButtton = new javax.swing.JButton();
         DeleteAccountButton = new javax.swing.JButton();
 
-        setOpaque(false);
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
+        setOpaque(false);
         setPreferredSize(new java.awt.Dimension(800, 600));
 
         jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 48)); // NOI18N
@@ -205,7 +205,7 @@ public class Settings extends javax.swing.JPanel
                     .addComponent(changeFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(changeLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(changeUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
+                .addGap(13, 13, 13)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(changePassword, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(changeEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -216,7 +216,7 @@ public class Settings extends javax.swing.JPanel
                         .addComponent(BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(changePhone, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(LogoutButtton, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(121, Short.MAX_VALUE))
+                .addContainerGap(118, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -273,9 +273,59 @@ public class Settings extends javax.swing.JPanel
         layout.show(MainPanel, "Login");
     }//GEN-LAST:event_LogoutButttonMouseClicked
 
+    
     private void DeleteAccountButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteAccountButtonMouseClicked
-        CardLayout layout = (CardLayout) (MainPanel.getLayout());
-        layout.show(MainPanel, "Delete");
+        /*CardLayout layout = (CardLayout) (MainPanel.getLayout());
+        layout.show(MainPanel, "Delete");*/
+        
+        JPanel passpanel = mainGUI.getPass().GetPanel();
+        int choice = JOptionPane.showConfirmDialog(
+                        null,
+                        passpanel,
+                        "Bank 42",
+                        JOptionPane.OK_CANCEL_OPTION,
+                        JOptionPane.PLAIN_MESSAGE
+                        );
+        
+        
+        
+        if (choice==0)
+        {
+            String password = mainGUI.getPass().GetPassword();
+            if (!(GUI.currentUserAccount.validatePassword(password)))
+            {
+                JOptionPane.showMessageDialog(null, "Incorrect Password!", "Error!",
+                        JOptionPane.INFORMATION_MESSAGE);
+                return;
+            }
+            
+             int choice2 = JOptionPane.showConfirmDialog(
+                        null,
+                        "Are You Sure You Want To Delete Your Account?",
+                        "Bank 42",
+                        JOptionPane.YES_NO_OPTION,
+                        JOptionPane.PLAIN_MESSAGE
+                        );   
+        
+            if(choice2==0) 
+            {
+            String passwrd = mainGUI.getPass().GetPassword();
+            if (!(GUI.currentUserAccount.validatePassword(passwrd)))
+            {
+                JOptionPane.showMessageDialog(null, "Incorrect Password!", "Error!",
+                        JOptionPane.INFORMATION_MESSAGE);
+            }
+            else
+            {
+                GUI.MasterTable.deleteUserAccount(GUI.currentUserAccount.getUserName());
+                GUI.currentBankAccount = null;
+                GUI.currentUserAccount = null;
+                CardLayout layout = (CardLayout) (MainPanel.getLayout());
+                layout.show(MainPanel, "Login");
+            }
+            }
+        }
+        
     }//GEN-LAST:event_DeleteAccountButtonMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
