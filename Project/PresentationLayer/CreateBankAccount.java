@@ -31,7 +31,7 @@ public class CreateBankAccount extends javax.swing.JPanel
 
     public void updateUserLabel()
     {
-        BAUserLabel.setText(GUI.currentUserAccount.getUserName());
+        //BAUserLabel.setText(GUI.currentUserAccount.getUserName());
     }
 
     /**
@@ -46,11 +46,8 @@ public class CreateBankAccount extends javax.swing.JPanel
 
         AccountNameField = new javax.swing.JTextField();
         TypeCombo = new javax.swing.JComboBox();
-        CreateButton = new javax.swing.JButton();
-        BAUserLabel = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        backButton = new javax.swing.JButton();
 
         AccountNameField.addFocusListener(new java.awt.event.FocusAdapter()
         {
@@ -69,68 +66,34 @@ public class CreateBankAccount extends javax.swing.JPanel
 
         TypeCombo.setModel(new DefaultComboBoxModel(accTypes));
 
-        CreateButton.setText("Create Bank Account");
-        CreateButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                CreateButtonActionPerformed(evt);
-            }
-        });
-
-        BAUserLabel.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
-        BAUserLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        BAUserLabel.setText("<User Code>");
-
         jLabel1.setText("Account Type:");
 
         jLabel2.setText("Account Name:");
-
-        backButton.setText("Back");
-        backButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                backButtonActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(AccountNameField)
             .addGroup(layout.createSequentialGroup()
-                .addGap(283, 283, 283)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(BAUserLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(AccountNameField, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(TypeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CreateButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(backButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(255, Short.MAX_VALUE))
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(TypeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addComponent(BAUserLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TypeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(TypeCombo))
-                .addGap(37, 37, 37)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(AccountNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(CreateButton)
-                .addGap(18, 18, 18)
-                .addComponent(backButton)
-                .addContainerGap(194, Short.MAX_VALUE))
+                .addComponent(AccountNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -165,37 +128,9 @@ public class CreateBankAccount extends javax.swing.JPanel
         return true;
     }
 
-    private void CreateButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_CreateButtonActionPerformed
-    {//GEN-HEADEREND:event_CreateButtonActionPerformed
-        if (AccountNameField.getText().length() > 0 && GUI.currentUserAccount.findBankAccount(AccountNameField.getText()) == null
-                && nameIsValid(AccountNameField.getText()))
-        {
-            GUI.currentUserAccount.insertBankAccount(0, AccountNameField.getText(), TypeCombo.getSelectedItem().toString());
-            CardLayout layout = (CardLayout) (MainPanel.getLayout());
-            mainGUI.getAccList().update();
-            JOptionPane.showMessageDialog(null, TypeCombo.getSelectedItem() + " Account: " + AccountNameField.getText() + " successfully created");
-            layout.show(MainPanel, "AccList");
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(null, "Invalid input.\nOnly alphanumeric characters are allowed.\nNo spaces.");
-            AccountNameField.setText("");
-        }
-
-    }//GEN-LAST:event_CreateButtonActionPerformed
-
-    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        // TODO add your handling code here:
-        CardLayout layout = (CardLayout) (MainPanel.getLayout());
-        layout.show(MainPanel, "AccList");
-    }//GEN-LAST:event_backButtonActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField AccountNameField;
-    private javax.swing.JLabel BAUserLabel;
-    private javax.swing.JButton CreateButton;
     private javax.swing.JComboBox TypeCombo;
-    private javax.swing.JButton backButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables

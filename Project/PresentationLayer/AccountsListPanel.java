@@ -17,6 +17,7 @@ import FacadeLayer.UserAccountWrapper;
 import java.awt.CardLayout;
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
+import LogicLayer.UserAccount;
 
 //for debug
 //import java.io.*;
@@ -117,17 +118,17 @@ public class AccountsListPanel extends javax.swing.JPanel
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents()
     {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         jButton1 = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
+        Bank42 = new javax.swing.JLabel();
         Settings = new javax.swing.JButton();
         Logout = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         AccountsTable = new javax.swing.JTable();
-        DeleteAccountButton = new javax.swing.JButton();
-        CreateBAButton = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        TransferFundsPanel = new javax.swing.JPanel();
+        AmountToTransfer = new javax.swing.JLabel();
         AmountField = new javax.swing.JTextField();
         BankAccountsList0 = new javax.swing.JComboBox();
         jPanel2 = new javax.swing.JPanel();
@@ -135,10 +136,13 @@ public class AccountsListPanel extends javax.swing.JPanel
         jLabel3 = new javax.swing.JLabel();
         BankAccountsList1 = new javax.swing.JComboBox();
         jPanel1 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        Transferanotheruser = new javax.swing.JLabel();
         TransferButton1 = new javax.swing.JButton();
         EmailEntryField = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
+        BankAccountTransfer = new javax.swing.JLabel();
+        DeleteAccountButton = new javax.swing.JButton();
+        CreateBAButton = new javax.swing.JButton();
+        Background = new javax.swing.JLabel();
 
         jButton1.setText("jButton1");
 
@@ -146,9 +150,16 @@ public class AccountsListPanel extends javax.swing.JPanel
         setMinimumSize(new java.awt.Dimension(800, 600));
         setOpaque(false);
         setPreferredSize(new java.awt.Dimension(800, 600));
+        setLayout(new java.awt.GridBagLayout());
 
-        jLabel5.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
-        jLabel5.setText("Bank 42");
+        Bank42.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        Bank42.setForeground(new java.awt.Color(51, 0, 255));
+        Bank42.setText("Bank 42");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+        add(Bank42, gridBagConstraints);
 
         Settings.setText("Settings");
         Settings.addMouseListener(new java.awt.event.MouseAdapter()
@@ -158,6 +169,12 @@ public class AccountsListPanel extends javax.swing.JPanel
                 SettingsMouseClicked(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(11, 10, 0, 0);
+        add(Settings, gridBagConstraints);
 
         Logout.setText("Logout");
         Logout.addMouseListener(new java.awt.event.MouseAdapter()
@@ -167,49 +184,49 @@ public class AccountsListPanel extends javax.swing.JPanel
                 LogoutMouseClicked(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHEAST;
+        gridBagConstraints.insets = new java.awt.Insets(11, 268, 0, 18);
+        add(Logout, gridBagConstraints);
+
+        jPanel3.setOpaque(false);
+        java.awt.GridBagLayout jPanel3Layout = new java.awt.GridBagLayout();
+        jPanel3Layout.columnWidths = new int[] {0, 5, 0};
+        jPanel3Layout.rowHeights = new int[] {0, 5, 0};
+        jPanel3.setLayout(jPanel3Layout);
+
+        jScrollPane1.setMinimumSize(new java.awt.Dimension(440, 390));
+        jScrollPane1.setOpaque(false);
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(440, 390));
 
         AccountsTable.setAutoCreateRowSorter(true);
         AccountsTable.setSelectionModel(new ForcedListSelectionModel());
-        AccountsTable.setModel(new AccountsTableModel(PresentationLayer.GUI.currentUserAccount));
+        AccountsTable.setModel(new PresentationLayer.AccountsTableModel(PresentationLayer.GUI.currentUserAccount));
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
         centerRenderer.setHorizontalAlignment( JLabel.CENTER );
         AccountsTable.setDefaultRenderer(String.class, centerRenderer);
         AccountsTable.setDefaultRenderer(Double.class, centerRenderer);
-        AccountsTable.setColumnSelectionAllowed(false);
         AccountsTable.getTableHeader().setResizingAllowed(false);
+        AccountsTable.setOpaque(false);
         AccountsTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(AccountsTable);
         AccountsTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
-        DeleteAccountButton.setText("Delete Highlighted Account");
-        DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                DeleteAccountButtonMouseClicked(evt);
-            }
-        });
-        DeleteAccountButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                DeleteAccountButtonActionPerformed(evt);
-            }
-        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        jPanel3.add(jScrollPane1, gridBagConstraints);
 
-        CreateBAButton.setText("Create New Bank Account");
-        CreateBAButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                CreateBAButtonActionPerformed(evt);
-            }
-        });
+        TransferFundsPanel.setBackground(new java.awt.Color(204, 204, 255));
+        TransferFundsPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Transfer Funds", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("DejaVu Sans", 1, 16))); // NOI18N
 
-        jPanel3.setBackground(new java.awt.Color(204, 204, 255));
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Transfer Funds", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("DejaVu Sans", 1, 16))); // NOI18N
-
-        jLabel2.setText("Amount to Transfer:");
+        AmountToTransfer.setText("Amount to Transfer:");
 
         AmountField.setText("Amount");
         AmountField.addActionListener(new java.awt.event.ActionListener()
@@ -297,7 +314,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         jPanel1.setBackground(new java.awt.Color(204, 255, 153));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel4.setText("Transfer To Another User:");
+        Transferanotheruser.setText("Transfer To Another User:");
 
         TransferButton1.setText("Transfer");
         TransferButton1.addMouseListener(new java.awt.event.MouseAdapter()
@@ -329,8 +346,8 @@ public class AccountsListPanel extends javax.swing.JPanel
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(43, Short.MAX_VALUE)
-                .addComponent(jLabel4)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Transferanotheruser)
                 .addGap(18, 18, 18)
                 .addComponent(EmailEntryField, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30))
@@ -344,46 +361,46 @@ public class AccountsListPanel extends javax.swing.JPanel
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
+                    .addComponent(Transferanotheruser)
                     .addComponent(EmailEntryField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(TransferButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        jLabel6.setText("Bank Account To Transfer From");
+        BankAccountTransfer.setText("Bank Account To Transfer From");
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout TransferFundsPanelLayout = new javax.swing.GroupLayout(TransferFundsPanel);
+        TransferFundsPanel.setLayout(TransferFundsPanelLayout);
+        TransferFundsPanelLayout.setHorizontalGroup(
+            TransferFundsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TransferFundsPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(TransferFundsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
-            .addGroup(jPanel3Layout.createSequentialGroup()
+            .addGroup(TransferFundsPanelLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel6))
+                .addGroup(TransferFundsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(AmountToTransfer)
+                    .addComponent(BankAccountTransfer))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(TransferFundsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(BankAccountsList0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(AmountField, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        TransferFundsPanelLayout.setVerticalGroup(
+            TransferFundsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TransferFundsPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
+                .addGroup(TransferFundsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BankAccountTransfer)
                     .addComponent(BankAccountsList0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
+                .addGroup(TransferFundsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AmountToTransfer)
                     .addComponent(AmountField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -392,49 +409,59 @@ public class AccountsListPanel extends javax.swing.JPanel
                 .addContainerGap())
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(Settings)
-                        .addGap(247, 247, 247)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(268, 268, 268)
-                        .addComponent(Logout))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(CreateBAButton)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(DeleteAccountButton)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(18, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Logout)
-                    .addComponent(Settings))
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(DeleteAccountButton)
-                            .addComponent(CreateBAButton))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(175, Short.MAX_VALUE))
-        );
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 2;
+        jPanel3.add(TransferFundsPanel, gridBagConstraints);
+
+        DeleteAccountButton.setText("Delete Highlighted Account");
+        DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                DeleteAccountButtonMouseClicked(evt);
+            }
+        });
+        DeleteAccountButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                DeleteAccountButtonActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        jPanel3.add(DeleteAccountButton, gridBagConstraints);
+
+        CreateBAButton.setText("Create New Bank Account");
+        CreateBAButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                CreateBAButtonActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        jPanel3.add(CreateBAButton, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        add(jPanel3, gridBagConstraints);
+
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/Background2.jpg"))); // NOI18N
+        Background.setAlignmentY(0.0F);
+        Background.setOpaque(true);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        add(Background, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
     private void LogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoutMouseClicked
@@ -668,7 +695,50 @@ public class AccountsListPanel extends javax.swing.JPanel
 
     private void TransferButton1MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_TransferButton1MouseClicked
     {//GEN-HEADEREND:event_TransferButton1MouseClicked
+        double amount;
+        if (isParsable(AmountField.getText()))
+        {
+            amount = Integer.parseInt(AmountField.getText());
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Please Enter A Valid Amount To Transfer","Bank 42",1);
+            return;
+        }
 
+        if (amount <= 0)
+        {
+            JOptionPane.showMessageDialog(null, "Please Enter A Valid Amount To Transfer","Bank 42",1);
+            return;
+        }
+
+        GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount((String) BankAccountsList0.getSelectedItem());
+
+        if (amount > GUI.currentBankAccount.getBalance())
+        {
+            AmountField.setText("");
+            JOptionPane.showMessageDialog(null, "Insufficient Funds"
+                    + "\nYou have " + GUI.currentBankAccount.getBalance() + "$ available"
+                    + " in selected Bank Account","Bank 42",1);
+            return;
+        }
+
+        String email = EmailEntryField.getText();
+        UserAccount founduser = GUI.MasterTable.findUserAccountEmail(email);
+
+        if (founduser != null)
+        {
+            GUI.currentBankAccount.subFromBalance(amount);
+            mainGUI.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
+            GUI.currentBankAccount = founduser.getBankAccHead();
+            GUI.currentBankAccount.addToBalance(amount);
+            mainGUI.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
+            JOptionPane.showMessageDialog(null, "Funds Transfered Successfully!","Bank 42",1);
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Error, User Account Not Found","Bank 42",1);
+        }
     }//GEN-LAST:event_TransferButton1MouseClicked
 
     private void DeleteAccountButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_DeleteAccountButtonActionPerformed
@@ -761,6 +831,10 @@ public class AccountsListPanel extends javax.swing.JPanel
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable AccountsTable;
     private javax.swing.JTextField AmountField;
+    private javax.swing.JLabel AmountToTransfer;
+    private javax.swing.JLabel Background;
+    private javax.swing.JLabel Bank42;
+    private javax.swing.JLabel BankAccountTransfer;
     private javax.swing.JComboBox BankAccountsList0;
     private javax.swing.JComboBox BankAccountsList1;
     private javax.swing.JButton CreateBAButton;
@@ -770,12 +844,10 @@ public class AccountsListPanel extends javax.swing.JPanel
     private javax.swing.JButton Settings;
     private javax.swing.JButton TransferButton;
     private javax.swing.JButton TransferButton1;
+    private javax.swing.JPanel TransferFundsPanel;
+    private javax.swing.JLabel Transferanotheruser;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

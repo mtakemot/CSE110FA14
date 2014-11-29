@@ -264,6 +264,7 @@ public class GUI extends javax.swing.JFrame
                 mainGUI.setTellerAP(new TellerAccountPage(cardHolder, mainGUI));
                 mainGUI.setTellerMainMenu(new TellerMainMenu(cardHolder, mainGUI));
                 mainGUI.setTDelete(new TellerDeleteAccountPanel(cardHolder, mainGUI));
+                mainGUI.setPass(new PasswordFieldPanel(cardHolder, mainGUI));
                 mainGUI.setPenIntPanel(new PenaltyInterestPanel(cardHolder, mainGUI));
 
                 // This addes the LoginPanel and AccountsListPanel that we just
@@ -281,6 +282,7 @@ public class GUI extends javax.swing.JFrame
                 cardHolder.add(mainGUI.getCreateBA(), "CreateBA");
                 cardHolder.add(mainGUI.getTellerAP(), "TellerAP");
                 cardHolder.add(mainGUI.getTDelete(), "TDelete");
+                cardHolder.add(mainGUI.getTDelete(), "pass");
                 cardHolder.add(mainGUI.getPenIntPanel(), "PenIntPanel");
 
                 // These two lines show the MainPanel. Without these 2 lines
@@ -338,8 +340,18 @@ public class GUI extends javax.swing.JFrame
     private TellerAccountPage TellerAP;
     private DeleteAccountPanel Delete;
     private TellerDeleteAccountPanel TDelete;
+    private PasswordFieldPanel pass;
     private PenaltyInterestPanel PenIntPanel;
+    
+    public PasswordFieldPanel getPass()
+    {
+        return pass;
+    }
 
+    public void setPass(PasswordFieldPanel pass)
+    {
+        this.pass = pass;
+    }   
     public PenaltyInterestPanel getPenIntPanel()
     {
         return PenIntPanel;
