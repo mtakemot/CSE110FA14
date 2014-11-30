@@ -6,7 +6,9 @@
 package PresentationLayer;
 
 import java.awt.CardLayout;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableCellRenderer;
 
 /**
  *
@@ -50,11 +52,20 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
 
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
+        setPreferredSize(new java.awt.Dimension(800, 600));
         setLayout(new java.awt.GridBagLayout());
 
         jPanel1.setLayout(new java.awt.GridBagLayout());
 
         TransactionsTable.setModel(new PresentationLayer.TransactionTableModel(PresentationLayer.GUI.currentBankAccount));
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment( JLabel.CENTER );
+        TransactionsTable.setDefaultRenderer(String.class, centerRenderer);
+        TransactionsTable.setSelectionModel(new ForcedListSelectionModel());
+        TransactionsTable.getTableHeader().setReorderingAllowed(false);
+        TransactionsTable.getTableHeader().setDefaultRenderer((new HeaderRenderer(TransactionsTable)));
+        TransactionsTable.getTableHeader().setResizingAllowed(false);
+        TransactionsTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(TransactionsTable);
 
         jPanel1.add(jScrollPane1, new java.awt.GridBagConstraints());

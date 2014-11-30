@@ -254,6 +254,8 @@ public class LoginPanel extends javax.swing.JPanel
         {
             CardLayout layout = (CardLayout) (MainPanel.getLayout());
             layout.show(MainPanel, "TellerMainMenu");
+            UsernameField.setText(null);
+            jPasswordField.setText(null);
             return;
         }
 
@@ -282,6 +284,8 @@ public class LoginPanel extends javax.swing.JPanel
                 // this name and adding that object to MainPanel has allowed us
                 // to access and show that panel from outside of the class as long
                 //  as we pass in MainPanel
+                UsernameField.setText(null);
+                jPasswordField.setText(null);
                 layout.show(MainPanel, "AccList");
             }
             else
@@ -301,6 +305,8 @@ public class LoginPanel extends javax.swing.JPanel
 
     private void CreateAccButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CreateAccButtonMouseClicked
 
+        UsernameField.setText(null);
+        jPasswordField.setText(null);
         //retrieve MainPanel to transfer it's layout to CreateAccountPanel
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
 
