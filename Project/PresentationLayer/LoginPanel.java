@@ -91,6 +91,9 @@ public class LoginPanel extends javax.swing.JPanel
         jPanel1Layout.rowHeights = new int[] {0, 5, 0, 5, 0};
         jPanel1.setLayout(jPanel1Layout);
 
+        CreateAccButton.setBackground(new Color (255,255,255,150));
+        CreateAccButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        CreateAccButton.setForeground(new java.awt.Color(51, 0, 255));
         CreateAccButton.setText("Create Account");
         CreateAccButton.addMouseListener(new java.awt.event.MouseAdapter()
         {
@@ -105,6 +108,9 @@ public class LoginPanel extends javax.swing.JPanel
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel1.add(CreateAccButton, gridBagConstraints);
 
+        LoginButton.setBackground(new java.awt.Color(255, 255, 255));
+        LoginButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        LoginButton.setForeground(new java.awt.Color(51, 0, 255));
         LoginButton.setText("Login");
         LoginButton.addMouseListener(new java.awt.event.MouseAdapter()
         {
