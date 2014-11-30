@@ -45,7 +45,6 @@ public class CreateAccountPanel extends javax.swing.JPanel
     {
         java.awt.GridBagConstraints gridBagConstraints;
 
-        ERRORPOP = new java.awt.PopupMenu();
         jPanel2 = new javax.swing.JPanel();
         HeaderPanel = new javax.swing.JPanel();
         Bank42 = new javax.swing.JLabel();
@@ -76,14 +75,6 @@ public class CreateAccountPanel extends javax.swing.JPanel
         spacinglabellol = new javax.swing.JLabel();
         BackButton = new javax.swing.JButton();
         Background = new javax.swing.JLabel();
-
-        ERRORPOP.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                ERRORPOPActionPerformed(evt);
-            }
-        });
 
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
@@ -375,10 +366,6 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
     private void createUserAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserAccountActionPerformed
 
-        boolean operationSuccessful = false;
-
-        //know which field is incorrect
-        //make phone number more versatile
         errorMessage.setForeground(Color.red);
 
         String name1 = firstName.getText().trim();
@@ -393,134 +380,65 @@ public class CreateAccountPanel extends javax.swing.JPanel
         String pass1 = new String(input1);
         String pass2 = new String(input2);
 
-        if ((name1.length() > 0) && (validateFirstName(name1) == true))
-        {
-            System.out.println("firstname");
-            if ((name2.length() > 0) && (validateLastName(name2) == true))
-            {
-                System.out.println("lastname");
-                if ((user.length() > 0) && (validate(user) == true))
-                {
-                    System.out.println("username");
-
-                    // if (((password.getText().length()) > 0) && ((password.getText()).equals(confirmPassword.())))
-                    if (((pass1.length()) > 0) && (pass1.equals(pass2)) && (validatePassword(pass1) == true))
-                    {
-                        System.out.println("test1");
-                        if ((input3.length() > 0) && (isValidEmailAddress(input3)))
-                        {
-                            System.out.println("email");
-                            System.out.println("test2");
-
-                            if (validatePhoneNumber(phoneNumber))
-                            {
-                                System.out.println("phone");
-                                System.out.println("test3");
-                                System.out.println("test4");
-
-                                GUI.currentUserAccount = GUI.MasterTable.insertUserAccount(user, input3);
-                                if (GUI.currentUserAccount != null)
-                                {
-                                    GUI.currentUserAccount.setFirstName(name1);
-                                    GUI.currentUserAccount.setLastName(name2);
-                                    GUI.currentUserAccount.setUserName(user);
-                                    GUI.currentUserAccount.setPassword(pass1);
-                                    GUI.currentUserAccount.setEmail(input3);
-                                    GUI.currentUserAccount.setPhone(phoneNumber);
-                                    System.out.println("You have successfully created your user account!");
-                                    JOptionPane.showMessageDialog(null, "You have successfully created your user account!", "Success!",
-                                            JOptionPane.INFORMATION_MESSAGE);
-                                    operationSuccessful = true;
-                                    CardLayout layout = (CardLayout) (MainPanel.getLayout());
-                                    //send the layout of MainPanel to new display of JPanel "MainMenu"
-                                    layout.show(MainPanel, "Login");
-                                }
-
-                                /*else
-                                 {
-                                 //print a pop up error
-                                 System.out.println("Error creating an account!");
-                                 JOptionPane.showMessageDialog(null, "Error creating an account!", "IN USE",
-                                 JOptionPane.INFORMATION_MESSAGE);
-                                 }
-                                 UserAccount retVal = GUI.MasterTable.findUserAccount(username.getText());
-                                 if (retVal == null){
-
-                                 UserAccount newUser = new UserAccount();
-
-                                 newUser.setFirstName(firstName.getText());
-                                 newUser.setLastName(name2);
-                                 newUser.setUserName(user);
-                                 //newUser.setPassword(password.getText());
-                                 newUser.setPassword(pass1);
-                                 newUser.setEmail(input3);
-                                 newUser.setPhone(phone.getText());
-                                 newUser = GUI.MasterTable.insertUserAccount(user);*/
-                                //  System.out.print("\nnewUser pass inserting to MasterTable: " newUser.getPassword()+ "\n");
-                            }
-                            else
-                            {
-                                //phone wrong
-                                errorMessage.setText("Your phone number was entered incorrectly.");
-                            }
-
-                            //UserAccount currentUserAccount = new UserAccount(firstName.getText(),lastName.getText(),username.getText(),password.getText(),email.getText(), phone.getText(), "");
-                        }
-                        else
-                        {
-                            //email wrong
-                            errorMessage.setText("Your email was entered incorrectly.");
-                        }
-                    }
-                    else
-                    {
-                        //pass wrong
-                        errorMessage.setText("Your password was invalid or doesn't match confirm password");
-                    }
-                }
-                else
-                {
-                    //username wrong
-                    errorMessage.setText("Your username was entered incorrectly.");
-                }
-            }
-            else
-            {
-                //last name wrong
-                errorMessage.setText("Your last name was entered incorrectly.");
-            }
-        }
+        if (!((name1.length() > 0) && (validateFirstName(name1) == true)))
+            errorMessage.setText("Your first name was entered incorrectly.");
+        else if (!((name2.length() > 0) && (validateLastName(name2) == true)))
+            errorMessage.setText("Your last name was entered incorrectly.");
+        else if (!((user.length() > 0) && (validate(user) == true)))
+            errorMessage.setText("Your username was entered incorrectly.");
+        else if (!(((pass1.length()) > 0) && (pass1.equals(pass2)) && (validatePassword(pass1) == true)))
+            errorMessage.setText("Your password was invalid or doesn't match confirm password");
+        else if (!((input3.length() > 0) && (isValidEmailAddress(input3))))
+            errorMessage.setText("Your email was entered incorrectly.");
+        else if (!validatePhoneNumber(phoneNumber))
+            errorMessage.setText("Your phone number was entered incorrectly.");
         else
         {
-            //first name wrong
-            errorMessage.setText("Your first name was entered incorrectly.");
+            GUI.currentUserAccount = GUI.MasterTable.insertUserAccount(user, input3);
+            if (GUI.currentUserAccount != null)
+            {
+                GUI.currentUserAccount.setFirstName(name1);
+                GUI.currentUserAccount.setLastName(name2);
+                GUI.currentUserAccount.setUserName(user);
+                GUI.currentUserAccount.setPassword(pass1);
+                GUI.currentUserAccount.setEmail(input3);
+                GUI.currentUserAccount.setPhone(phoneNumber);
+                System.out.println("You have successfully created your user account!");
+                JOptionPane.showMessageDialog(null, "You have successfully created your user account!", "Success!",
+                        JOptionPane.INFORMATION_MESSAGE);
+
+                // Clear all text fields
+                phone.setText("");
+                email.setText("");
+                confirmPassword.setText("");
+                password.setText("");
+                username.setText("");
+                lastName.setText("");
+                firstName.setText("");
+
+                CardLayout layout = (CardLayout) (MainPanel.getLayout());
+                //send the layout of MainPanel to new display of JPanel "MainMenu"
+                layout.show(MainPanel, "Login");
+            }
+            else
+                JOptionPane.showMessageDialog(null, "ERROR! An account with that User Name or Email already exists.", "ERROR", JOptionPane.ERROR_MESSAGE);
+
+            //ANY TIME THERE's DATA CHANGING (viewing information doesn't count as changing) EXPORT!
+             /*
+             ImportExport dataout = new ImportExport();
+             if (dataout.exportDB(GUI.MasterTable))
+             {
+             System.out.println("\nExported file to local source file"
+             + " THROUGH CREATE ACCOUNT GUI\n");
+
+             }
+             else
+             {
+             System.err.println("\n\nCould not export THROUGH CREATE ACCOUNT GUI, ERROR\n\n");
+             }
+
+             }*/
         }
-        //}
-
-        if (!operationSuccessful)
-        {
-            //NO NEED TO SHOW ERROR MESSAGE, LABEL UPDATES WITH THE SPECIFIC ERROR
-            System.out.println("Error with input format!");
-            //JOptionPane.showMessageDialog(null, "Error creating an account! INVALID FORMAT", "INVALID FORMAT", JOptionPane.INFORMATION_MESSAGE);
-        }
-
-        /*//If we reach here, user name was 100% successfully inserted into table.
-         //ANY TIME THERE's DATA CHANGING (viewing information doesn't count as changing EXPORT!
-         else
-         {
-         ImportExport dataout = new ImportExport();
-         if (dataout.exportDB(GUI.MasterTable))
-         {
-         System.out.println("\nExported file to local source file"
-         + " THROUGH CREATE ACCOUNT GUI\n");
-
-         }
-         else
-         {
-         System.err.println("\n\nCould not export THROUGH CREATE ACCOUNT GUI, ERROR\n\n");
-         }
-
-         }*/
     }//GEN-LAST:event_createUserAccountActionPerformed
 
     private void firstNameFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_firstNameFocusGained
@@ -557,11 +475,6 @@ public class CreateAccountPanel extends javax.swing.JPanel
     {//GEN-HEADEREND:event_phoneFocusGained
         phone.setText("");
     }//GEN-LAST:event_phoneFocusGained
-
-    private void ERRORPOPActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ERRORPOPActionPerformed
-    {//GEN-HEADEREND:event_ERRORPOPActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ERRORPOPActionPerformed
 
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BackButtonActionPerformed
     {//GEN-HEADEREND:event_BackButtonActionPerformed
@@ -609,7 +522,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
     public static boolean validateFirstName(String firstName)
     {
-        return firstName.matches("[A-Z][a-zA-Z]*");
+        return firstName.matches("[a-zA-z]+([ '-][a-zA-Z]+)*");
     } // end method validateFirstName
 
     // validate last name
@@ -637,7 +550,6 @@ public class CreateAccountPanel extends javax.swing.JPanel
     private javax.swing.JLabel Background;
     private javax.swing.JLabel Bank42;
     private javax.swing.JLabel ConfirmPasswordError;
-    private java.awt.PopupMenu ERRORPOP;
     private javax.swing.JLabel EmailError;
     private javax.swing.JLabel FirstNameError;
     private javax.swing.JPanel HeaderPanel;
