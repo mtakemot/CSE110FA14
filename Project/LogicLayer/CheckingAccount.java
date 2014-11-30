@@ -55,6 +55,7 @@ public class CheckingAccount extends BankAccount
                 // Perform withdraw and update threshold
                 this.balance -= amount;
                 dayWithdrawAmount += amount;
+                this.transactions.add(new Transaction("Withdraw", amount));
                 return true;
             }
         }
@@ -64,6 +65,7 @@ public class CheckingAccount extends BankAccount
             this.balance -= amount;
             lastWithdrawDateTime = currentDateTime;
             dayWithdrawAmount = amount;
+            this.transactions.add(new Transaction("Withdraw", amount));
             return true;
         }
         return false;
@@ -87,6 +89,7 @@ public class CheckingAccount extends BankAccount
                 // Update threshold and deposit the money
                 this.balance += amount;
                 dayDepositAmount += amount;
+                this.transactions.add(new Transaction("Deposit", amount));
                 return true;
             }
         }
@@ -96,6 +99,7 @@ public class CheckingAccount extends BankAccount
             this.balance += amount;
             lastDepositDateTime = currentDateTime;
             dayDepositAmount = amount;
+            this.transactions.add(new Transaction("Deposit", amount));
             return true;
         }
         return false;

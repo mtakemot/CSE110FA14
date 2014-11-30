@@ -30,12 +30,13 @@ public class Settings extends javax.swing.JPanel
     {
         this.MainPanel = MainPanel;
         this.mainGUI = mainGUI;
+                        
         initComponents();
     }
 
     public void updateUserLabel()
     {
-        BAUserNameLabel.setText("User " + GUI.currentUserAccount.getUserName());
+        BAUserNameLabel.setText("User " + GUI.currentUserAccount.getUserName());        
     }
 
     /**
@@ -45,8 +46,7 @@ public class Settings extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
         jLabel1 = new javax.swing.JLabel();
@@ -74,6 +74,7 @@ public class Settings extends javax.swing.JPanel
         DeleteAccountButton = new javax.swing.JButton();
         BAUserNameLabel = new javax.swing.JLabel();
         EditPassword = new javax.swing.JButton();
+        errorMessage = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         Background = new javax.swing.JLabel();
 
@@ -95,10 +96,8 @@ public class Settings extends javax.swing.JPanel
         add(jLabel1, gridBagConstraints);
 
         LogoutButtton.setText("Logout");
-        LogoutButtton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        LogoutButtton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LogoutButttonMouseClicked(evt);
             }
         });
@@ -110,10 +109,8 @@ public class Settings extends javax.swing.JPanel
         add(LogoutButtton, gridBagConstraints);
 
         BackButton.setText("Back");
-        BackButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        BackButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BackButtonMouseClicked(evt);
             }
         });
@@ -215,10 +212,8 @@ public class Settings extends javax.swing.JPanel
         jPanel1.add(UserPhoneNumber, gridBagConstraints);
 
         EditLastName.setText("Edit");
-        EditLastName.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        EditLastName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EditLastNameActionPerformed(evt);
             }
         });
@@ -228,10 +223,8 @@ public class Settings extends javax.swing.JPanel
         jPanel1.add(EditLastName, gridBagConstraints);
 
         EditFirstName.setText("Edit");
-        EditFirstName.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        EditFirstName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EditFirstNameActionPerformed(evt);
             }
         });
@@ -241,10 +234,8 @@ public class Settings extends javax.swing.JPanel
         jPanel1.add(EditFirstName, gridBagConstraints);
 
         EditUsername.setText("Edit");
-        EditUsername.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        EditUsername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EditUsernameActionPerformed(evt);
             }
         });
@@ -254,10 +245,8 @@ public class Settings extends javax.swing.JPanel
         jPanel1.add(EditUsername, gridBagConstraints);
 
         EditEmail.setText("Edit");
-        EditEmail.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        EditEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EditEmailActionPerformed(evt);
             }
         });
@@ -267,10 +256,8 @@ public class Settings extends javax.swing.JPanel
         jPanel1.add(EditEmail, gridBagConstraints);
 
         EditPhoneNumber.setText("Edit");
-        EditPhoneNumber.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        EditPhoneNumber.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EditPhoneNumberActionPerformed(evt);
             }
         });
@@ -296,10 +283,8 @@ public class Settings extends javax.swing.JPanel
         jPanel1.add(UserPassword, gridBagConstraints);
 
         DeleteAccountButton.setText("Delete Main Account");
-        DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 DeleteAccountButtonMouseClicked(evt);
             }
         });
@@ -310,18 +295,11 @@ public class Settings extends javax.swing.JPanel
 
         BAUserNameLabel.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         BAUserNameLabel.setText("User" + PresentationLayer.GUI.currentBankAccount.getAccountName());
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        jPanel1.add(BAUserNameLabel, gridBagConstraints);
+        jPanel1.add(BAUserNameLabel, new java.awt.GridBagConstraints());
 
         EditPassword.setText("Edit");
-        EditPassword.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        EditPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EditPasswordActionPerformed(evt);
             }
         });
@@ -329,6 +307,19 @@ public class Settings extends javax.swing.JPanel
         gridBagConstraints.gridx = 6;
         gridBagConstraints.gridy = 14;
         jPanel1.add(EditPassword, gridBagConstraints);
+
+        errorMessage.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        errorMessage.setForeground(new java.awt.Color(255, 102, 102));
+        errorMessage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        errorMessage.setText("Please click on the Edit button to change info.");
+        errorMessage.setPreferredSize(new java.awt.Dimension(304, 15));
+        errorMessage.setRequestFocusEnabled(false);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        jPanel1.add(errorMessage, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -358,14 +349,15 @@ public class Settings extends javax.swing.JPanel
         add(Background, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
-    public void update() {
+    public void update()
+    {
         UserLastName.setText(GUI.currentUserAccount.getLastName());
         UserFirstName.setText(GUI.currentUserAccount.getFirstName());
         UserUsername.setText(GUI.currentUserAccount.getUserName());
         UserEmail.setText(GUI.currentUserAccount.getEmail());
         UserPhoneNumber.setText(GUI.currentUserAccount.getPhone());
     }
-    
+
     private void BackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButtonMouseClicked
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
         layout.show(MainPanel, "AccList");
@@ -378,21 +370,18 @@ public class Settings extends javax.swing.JPanel
         layout.show(MainPanel, "Login");
     }//GEN-LAST:event_LogoutButttonMouseClicked
 
-    
     private void DeleteAccountButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteAccountButtonMouseClicked
-       
+
         JPanel passpanel = mainGUI.getPass().GetPanel();
         int choice = JOptionPane.showConfirmDialog(
-                        null,
-                        passpanel,
-                        "Bank 42",
-                        JOptionPane.OK_CANCEL_OPTION,
-                        JOptionPane.PLAIN_MESSAGE
-                        );
-        
-        
-        
-        if (choice==0)
+                null,
+                passpanel,
+                "Bank 42",
+                JOptionPane.OK_CANCEL_OPTION,
+                JOptionPane.PLAIN_MESSAGE
+        );
+
+        if (choice == 0)
         {
             String password = mainGUI.getPass().GetPassword();
             if (!(GUI.currentUserAccount.validatePassword(password)))
@@ -401,124 +390,148 @@ public class Settings extends javax.swing.JPanel
                         JOptionPane.INFORMATION_MESSAGE);
                 return;
             }
-            
-             int choice2 = JOptionPane.showConfirmDialog(
-                        null,
-                        "Are You Sure You Want To Delete Your Account?",
-                        "Bank 42",
-                        JOptionPane.YES_NO_OPTION,
-                        JOptionPane.PLAIN_MESSAGE
-                        );   
-        
-            if(choice2==0) 
+
+            int choice2 = JOptionPane.showConfirmDialog(
+                    null,
+                    "Are You Sure You Want To Delete Your Account?",
+                    "Bank 42",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.PLAIN_MESSAGE
+            );
+
+            if (choice2 == 0)
             {
-            String passwrd = mainGUI.getPass().GetPassword();
-            if (!(GUI.currentUserAccount.validatePassword(passwrd)))
-            {
-                JOptionPane.showMessageDialog(null, "Incorrect Password!", "Error!",
-                        JOptionPane.INFORMATION_MESSAGE);
-            }
-            else
-            {
-                GUI.MasterTable.deleteUserAccount(GUI.currentUserAccount.getUserName());
-                GUI.currentBankAccount = null;
-                GUI.currentUserAccount = null;
-                CardLayout layout = (CardLayout) (MainPanel.getLayout());
-                layout.show(MainPanel, "Login");
-            }
+                String passwrd = mainGUI.getPass().GetPassword();
+                if (!(GUI.currentUserAccount.validatePassword(passwrd)))
+                {
+                    JOptionPane.showMessageDialog(null, "Incorrect Password!", "Error!",
+                            JOptionPane.INFORMATION_MESSAGE);
+                }
+                else
+                {
+                    GUI.MasterTable.deleteUserAccount(GUI.currentUserAccount.getUserName());
+                    GUI.currentBankAccount = null;
+                    GUI.currentUserAccount = null;
+                    CardLayout layout = (CardLayout) (MainPanel.getLayout());
+                    layout.show(MainPanel, "Login");
+                }
             }
         }
-        
+
     }//GEN-LAST:event_DeleteAccountButtonMouseClicked
 
     private void EditLastNameActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EditLastNameActionPerformed
     {//GEN-HEADEREND:event_EditLastNameActionPerformed
-        String response = JOptionPane.showInputDialog(null,"Enter Your New Last Name:","Bank 42",1);
-        
-        if (response == null)                    
+        String response = JOptionPane.showInputDialog(null, "Enter Your New Last Name:", "Bank 42", 1);
+
+        if (response == null)
             return;
-        
+
         response = response.trim();
         if ((response.length() > 0) && CreateAccountPanel.validateLastName(response))
         {
             GUI.currentUserAccount.setLastName(response);
-            update();   
+            update();
+        }
+        else
+        {
+            errorMessage.setText("Your last name was entered incorrectly.");
         }
     }//GEN-LAST:event_EditLastNameActionPerformed
 
     private void EditFirstNameActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EditFirstNameActionPerformed
     {//GEN-HEADEREND:event_EditFirstNameActionPerformed
         String response = JOptionPane.showInputDialog("Enter Your New First:");
-        
-        if (response == null)                    
+
+        if (response == null)
             return;
-         
+
         response = response.trim();
-        
+
         if ((response.length() > 0) && CreateAccountPanel.validateFirstName(response))
         {
             GUI.currentUserAccount.setFirstName(response);
             update();
+        }
+        else
+        {
+            errorMessage.setText("Your first name was entered incorrectly.");
         }
     }//GEN-LAST:event_EditFirstNameActionPerformed
 
     private void EditUsernameActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EditUsernameActionPerformed
     {//GEN-HEADEREND:event_EditUsernameActionPerformed
         String response = JOptionPane.showInputDialog("Enter Your New Username:");
-        
-        if (response == null)                    
+
+        if (response == null)
             return;
-         
+
         response = response.trim();
         if ((response.length() > 0) && (CreateAccountPanel.validate(response)))
-        {           
+        {
             GUI.currentUserAccount.setUserName(response);
             update();
+        }
+        else
+        {
+            errorMessage.setText("Your username was entered incorrectly");
         }
     }//GEN-LAST:event_EditUsernameActionPerformed
 
     private void EditEmailActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EditEmailActionPerformed
     {//GEN-HEADEREND:event_EditEmailActionPerformed
         String response = JOptionPane.showInputDialog("Enter Your New Email:");
-        
-        if (response == null)                    
+
+        if (response == null)
             return;
-        
+
         response = response.trim();
         if ((response.length() > 0) && (CreateAccountPanel.isValidEmailAddress(response)))
-        {           
+        {
             GUI.currentUserAccount.setEmail(response);
             update();
+        }
+        else
+        {
+            errorMessage.setText("Your email was entered incorrectly.");
         }
     }//GEN-LAST:event_EditEmailActionPerformed
 
     private void EditPhoneNumberActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EditPhoneNumberActionPerformed
     {//GEN-HEADEREND:event_EditPhoneNumberActionPerformed
         String response = JOptionPane.showInputDialog("Enter Your New Phone Number:");
-        
-        if (response == null)                    
+
+        if (response == null)
             return;
-        
+
         response = response.trim();
         if ((response.length() > 0) && (CreateAccountPanel.validatePhoneNumber(response)))
-        {            
+        {
             GUI.currentUserAccount.setPhone(response);
             update();
+        }
+        else
+        {
+            errorMessage.setText("Your phone number was entered incorrectly.");
         }
     }//GEN-LAST:event_EditPhoneNumberActionPerformed
 
     private void EditPasswordActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EditPasswordActionPerformed
     {//GEN-HEADEREND:event_EditPasswordActionPerformed
         String response = JOptionPane.showInputDialog("Enter Your New Password:");
-        
-        if (response == null)                    
+
+        if (response == null)
             return;
-        
+
         response = response.trim();
         if ((response.length() > 0) && (CreateAccountPanel.validatePassword(response)))
-        {           
+        {
             GUI.currentUserAccount.setPassword(response);
             update();
+        }
+        else
+        {
+            errorMessage.setText("Your password was entered incorrectly.");
         }
     }//GEN-LAST:event_EditPasswordActionPerformed
 
@@ -546,6 +559,7 @@ public class Settings extends javax.swing.JPanel
     private javax.swing.JLabel UserPhoneNumber;
     private javax.swing.JLabel UserUsername;
     private javax.swing.JLabel Username;
+    private javax.swing.JLabel errorMessage;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
