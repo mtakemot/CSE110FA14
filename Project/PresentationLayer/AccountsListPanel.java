@@ -519,6 +519,9 @@ public class AccountsListPanel extends javax.swing.JPanel
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel3.add(FutureInterestButton, gridBagConstraints);
 
+        TransactionHistoryButton.setBackground(new java.awt.Color(255, 255, 255));
+        TransactionHistoryButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        TransactionHistoryButton.setForeground(new java.awt.Color(51, 0, 255));
         TransactionHistoryButton.setText("Transaction History");
         TransactionHistoryButton.addActionListener(new java.awt.event.ActionListener()
         {

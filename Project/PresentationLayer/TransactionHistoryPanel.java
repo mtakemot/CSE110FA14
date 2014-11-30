@@ -5,6 +5,7 @@
  */
 package PresentationLayer;
 
+import java.awt.CardLayout;
 import javax.swing.JPanel;
 
 /**
@@ -45,7 +46,7 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TransactionsTable = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        Back = new javax.swing.JButton();
 
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
@@ -60,18 +61,31 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
 
         add(jPanel1, new java.awt.GridBagConstraints());
 
-        jButton1.setText("Back");
+        Back.setText("Back");
+        Back.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                BackActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.insets = new java.awt.Insets(5, 0, 0, 0);
-        add(jButton1, gridBagConstraints);
+        add(Back, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void BackActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BackActionPerformed
+    {//GEN-HEADEREND:event_BackActionPerformed
+        CardLayout layout = (CardLayout) (MainPanel.getLayout());
+        layout.show(MainPanel, "AccList");
+    }//GEN-LAST:event_BackActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Back;
     private javax.swing.JTable TransactionsTable;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
