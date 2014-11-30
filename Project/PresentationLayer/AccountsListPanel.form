@@ -64,7 +64,7 @@
           <SubComponents>
             <Component class="javax.swing.JTable" name="AccountsTable">
               <Properties>
-                <Property name="autoCreateRowSorter" type="boolean" value="true" postCode="AccountsTable.setSelectionModel(new ForcedListSelectionModel());"/>
+                <Property name="autoCreateRowSorter" type="boolean" value="true" postCode="AccountsTable.setSelectionModel(SelectionModel = new DefaultListSelectionModel());&#xa;SelectionModel.setSelectionMode(0);"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="11" style="1"/>
                 </Property>
