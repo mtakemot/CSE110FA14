@@ -7,9 +7,7 @@ package PresentationLayer;
 
 import LogicLayer.BankAccount;
 import LogicLayer.Transaction;
-import java.awt.List;
-import java.util.ArrayList;
-import java.util.TreeSet;
+import java.util.*;
 import javax.swing.table.AbstractTableModel;
 
 /**
@@ -19,25 +17,29 @@ import javax.swing.table.AbstractTableModel;
 public class TransactionTableModel extends AbstractTableModel
 {
 
-    private Transaction[] transactions;
-    private BankAccount current;
+    private List<Transaction> transactions;
     private static final int colCount = 3;
+
+    Class[] columns = new Class[]
+    {
+        String.class, String.class, Double.class
+    };
 
     private String[] columnNames =
     {
-        "Date", "Type", "Transaction"
+        "Date", "Type", "Transaction Amount"
     };
 
     public TransactionTableModel(BankAccount current)
     {
-        this.current = current;
-        transactions = current.getTransactions().toArray(new Transaction[current.getTransactions().size()]);
+        transactions = current.getTransactions();
+        Collections.sort(transactions);
     }
 
     @Override
     public int getRowCount()
     {
-        return transactions.length;
+        return transactions.size();
     }
 
     @Override
@@ -53,11 +55,11 @@ public class TransactionTableModel extends AbstractTableModel
         switch (columnIndex)
         {
             case 0:
-                returnMe = BankAccount.dtf.print(transactions[rowIndex].getTransTime());
+                returnMe = BankAccount.dtf.print(transactions.get(rowIndex).getTransTime());
             case 1:
-                returnMe = transactions[rowIndex].getTransType();
+                returnMe = transactions.get(rowIndex).getTransType();
             case 2:
-                returnMe = transactions[rowIndex].getTransAmount();
+                returnMe = transactions.get(rowIndex).getTransAmount();
         }
         return returnMe;
     }
@@ -74,4 +76,9 @@ public class TransactionTableModel extends AbstractTableModel
         return columnNames[index];
     }
 
+    @Override
+    public Class getColumnClass(int columnIndex)
+    {
+        return columns[columnIndex];
+    }
 }

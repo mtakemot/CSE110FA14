@@ -144,6 +144,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         DeleteAccountButton = new javax.swing.JButton();
         CreateBAButton = new javax.swing.JButton();
         FutureInterestButton = new javax.swing.JButton();
+        TransactionHistoryButton = new javax.swing.JButton();
         Background = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(800, 600));
@@ -451,7 +452,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         jPanel3.add(CreateBAButton, gridBagConstraints);
 
-        FutureInterestButton.setText("Calculate Future Interest On Highlighted Account");
+        FutureInterestButton.setText("Calculate Future Interest");
         FutureInterestButton.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -462,7 +463,22 @@ public class AccountsListPanel extends javax.swing.JPanel
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel3.add(FutureInterestButton, gridBagConstraints);
+
+        TransactionHistoryButton.setText("Transaction History");
+        TransactionHistoryButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                TransactionHistoryButtonActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        jPanel3.add(TransactionHistoryButton, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -875,6 +891,14 @@ public class AccountsListPanel extends javax.swing.JPanel
             JOptionPane.showMessageDialog(null, "Please Select an Account", "Bank 42", 1);
     }//GEN-LAST:event_FutureInterestButtonActionPerformed
 
+    private void TransactionHistoryButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_TransactionHistoryButtonActionPerformed
+    {//GEN-HEADEREND:event_TransactionHistoryButtonActionPerformed
+        CardLayout layout = (CardLayout) (MainPanel.getLayout());
+        // add update() here
+        mainGUI.getTransPanel().update();
+        layout.show(MainPanel, "TransPanel");
+    }//GEN-LAST:event_TransactionHistoryButtonActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable AccountsTable;
     private javax.swing.JTextField AmountField;
@@ -890,6 +914,7 @@ public class AccountsListPanel extends javax.swing.JPanel
     private javax.swing.JButton FutureInterestButton;
     private javax.swing.JButton Logout;
     private javax.swing.JButton Settings;
+    private javax.swing.JButton TransactionHistoryButton;
     private javax.swing.JButton TransferButton;
     private javax.swing.JButton TransferButton1;
     private javax.swing.JPanel TransferFundsPanel;
