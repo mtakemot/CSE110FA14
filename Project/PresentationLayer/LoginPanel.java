@@ -129,6 +129,7 @@ public class LoginPanel extends javax.swing.JPanel
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         jPanel1.add(LoginButton, gridBagConstraints);
 
+        jPasswordField.setBackground(new Color(255,255,255,190));
         jPasswordField.addFocusListener(new java.awt.event.FocusAdapter()
         {
             public void focusGained(java.awt.event.FocusEvent evt)
@@ -150,6 +151,7 @@ public class LoginPanel extends javax.swing.JPanel
         gridBagConstraints.ipady = 15;
         jPanel1.add(jPasswordField, gridBagConstraints);
 
+        UsernameField.setBackground(new Color(255,255,255,190));
         UsernameField.setMinimumSize(new java.awt.Dimension(250, 25));
         UsernameField.setPreferredSize(new java.awt.Dimension(250, 25));
         UsernameField.addFocusListener(new java.awt.event.FocusAdapter()

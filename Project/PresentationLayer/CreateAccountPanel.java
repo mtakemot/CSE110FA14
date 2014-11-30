@@ -177,6 +177,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         jPanel1.add(jLabel3, gridBagConstraints);
 
+        confirmPassword.setBackground(new Color(255,255,255,190));
         confirmPassword.addFocusListener(new java.awt.event.FocusAdapter()
         {
             public void focusGained(java.awt.event.FocusEvent evt)
@@ -187,10 +188,11 @@ public class CreateAccountPanel extends javax.swing.JPanel
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 10;
-        gridBagConstraints.ipadx = 140;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel1.add(confirmPassword, gridBagConstraints);
 
+        email.setBackground(new Color(255,255,255,190));
         email.addFocusListener(new java.awt.event.FocusAdapter()
         {
             public void focusGained(java.awt.event.FocusEvent evt)
@@ -201,7 +203,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 14;
-        gridBagConstraints.ipadx = 140;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel1.add(email, gridBagConstraints);
 
@@ -214,6 +216,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         jPanel1.add(jLabel5, gridBagConstraints);
 
+        phone.setBackground(new Color(255,255,255,190));
         phone.addFocusListener(new java.awt.event.FocusAdapter()
         {
             public void focusGained(java.awt.event.FocusEvent evt)
@@ -224,11 +227,12 @@ public class CreateAccountPanel extends javax.swing.JPanel
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 16;
-        gridBagConstraints.ipadx = 140;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel1.add(phone, gridBagConstraints);
 
-        lastName.setMinimumSize(new java.awt.Dimension(6, 35));
+        lastName.setBackground(new Color(255,255,255,190));
+        lastName.setMaximumSize(new java.awt.Dimension(6, 20));
         lastName.addFocusListener(new java.awt.event.FocusAdapter()
         {
             public void focusGained(java.awt.event.FocusEvent evt)
@@ -239,10 +243,11 @@ public class CreateAccountPanel extends javax.swing.JPanel
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 6;
-        gridBagConstraints.ipadx = 140;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel1.add(lastName, gridBagConstraints);
 
+        username.setBackground(new Color(255,255,255,190));
         username.addFocusListener(new java.awt.event.FocusAdapter()
         {
             public void focusGained(java.awt.event.FocusEvent evt)
@@ -253,10 +258,11 @@ public class CreateAccountPanel extends javax.swing.JPanel
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 8;
-        gridBagConstraints.ipadx = 140;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel1.add(username, gridBagConstraints);
 
+        firstName.setBackground(new Color(255,255,255,190));
         firstName.addFocusListener(new java.awt.event.FocusAdapter()
         {
             public void focusGained(java.awt.event.FocusEvent evt)
@@ -267,10 +273,11 @@ public class CreateAccountPanel extends javax.swing.JPanel
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 4;
-        gridBagConstraints.ipadx = 140;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel1.add(firstName, gridBagConstraints);
 
+        password.setBackground(new Color(255,255,255,190));
         password.addFocusListener(new java.awt.event.FocusAdapter()
         {
             public void focusGained(java.awt.event.FocusEvent evt)
@@ -281,7 +288,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 12;
-        gridBagConstraints.ipadx = 140;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel1.add(password, gridBagConstraints);
 
@@ -299,6 +306,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 18;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel1.add(createUserAccount, gridBagConstraints);
 
@@ -323,7 +331,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 20;
-        gridBagConstraints.ipadx = 96;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel1.add(BackButton, gridBagConstraints);
 
