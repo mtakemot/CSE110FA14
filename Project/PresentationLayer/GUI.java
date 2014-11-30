@@ -30,6 +30,7 @@ import LogicLayer.BankAccount;
 import LogicLayer.HashTable;
 import LogicLayer.UserAccount;
 import FacadeLayer.UserAccountWrapper;
+import LogicLayer.Transaction;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -224,6 +225,15 @@ public class GUI extends javax.swing.JFrame
                 currentBankAccount = currentUserAccount.insertBankAccount(2100, "qq2", "Savings");
                 currentBankAccount = currentUserAccount.insertBankAccount(100, "qq3", "Checking");
                 currentBankAccount = currentUserAccount.insertBankAccount(3100, "qq4", "Checking");
+                for (int zod = 0; zod < 500; zod++)
+                {
+                    currentBankAccount.addToBalance(zod);
+                }
+                System.out.println(currentBankAccount.getBalance());
+                for (Transaction trans : currentBankAccount.getTransactions())
+                {
+                    System.out.println(trans.getTransType());
+                }
 
                 currentUserAccount = MasterTable.insertUserAccount("ww", "email2");
                 currentUserAccount.setFirstName("first2");
@@ -267,6 +277,7 @@ public class GUI extends javax.swing.JFrame
                 mainGUI.setTDelete(new TellerDeleteAccountPanel(cardHolder, mainGUI));
                 mainGUI.setPass(new PasswordFieldPanel(cardHolder, mainGUI));
                 mainGUI.setPenIntPanel(new PenaltyInterestPanel(cardHolder, mainGUI));
+                mainGUI.setTransPanel(new TransactionHistoryPanel(cardHolder, mainGUI));
 
                 // This addes the LoginPanel and AccountsListPanel that we just
                 // created to the MainPanel. It also assigns a name to each of
@@ -279,13 +290,12 @@ public class GUI extends javax.swing.JFrame
                 cardHolder.add(mainGUI.getCreateAcc(), "CreateAcc");
                 cardHolder.add(mainGUI.getSettings(), "Settings");
                 cardHolder.add(mainGUI.getDelete(), "Delete");
-                cardHolder.add(mainGUI.getTellerMainMenu(), "TellerMainMenu");               
+                cardHolder.add(mainGUI.getTellerMainMenu(), "TellerMainMenu");
                 cardHolder.add(mainGUI.getTellerAP(), "TellerAP");
                 cardHolder.add(mainGUI.getTDelete(), "TDelete");
-                //cardHolder.add(mainGUI.getTDelete(), "pass");
                 cardHolder.add(mainGUI.getPenIntPanel(), "PenIntPanel");
-                //cardHolder.add(mainGUI.getTDelete(), "CreateBA");
-                
+                cardHolder.add(mainGUI.getTransPanel(), "TransPanel");
+
                 // These two lines show the MainPanel. Without these 2 lines
                 // the GUI would not show up at all. Just leave them alone.
                 mainGUI.pack();
@@ -343,6 +353,17 @@ public class GUI extends javax.swing.JFrame
     private TellerDeleteAccountPanel TDelete;
     private PasswordFieldPanel pass;
     private PenaltyInterestPanel PenIntPanel;
+    private TransactionHistoryPanel TransPanel;
+
+    public TransactionHistoryPanel getTransPanel()
+    {
+        return TransPanel;
+    }
+
+    public void setTransPanel(TransactionHistoryPanel TransPanel)
+    {
+        this.TransPanel = TransPanel;
+    }
 
     public PasswordFieldPanel getPass()
     {
@@ -352,7 +373,7 @@ public class GUI extends javax.swing.JFrame
     public void setPass(PasswordFieldPanel pass)
     {
         this.pass = pass;
-    }   
+    }
 
     public PenaltyInterestPanel getPenIntPanel()
     {

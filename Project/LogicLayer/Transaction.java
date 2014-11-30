@@ -6,17 +6,18 @@ import org.joda.time.DateTimeZone;
 public class Transaction implements Comparable<Transaction>
 {
 
+    // Type of transaction
     private String transType;
-
+    // Amount of transaction
     private double transAmount;
-
+    // Time that the transaction took place
     private DateTime transTime;
 
     public Transaction(String transType, double transAmount)
     {
-        transType = this.transType;
-        transAmount = this.transAmount;
-        transTime = new DateTime(DateTimeZone.forID("Etc/UTC"));
+        this.transType = transType;
+        this.transAmount = transAmount;
+        this.transTime = new DateTime(DateTimeZone.forID("Etc/UTC"));
     }
 
     @Override

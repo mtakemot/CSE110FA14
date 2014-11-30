@@ -126,7 +126,6 @@ public class LoginPanel extends javax.swing.JPanel
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         jPanel1.add(LoginButton, gridBagConstraints);
 
-        jPasswordField.setText("password");
         jPasswordField.addFocusListener(new java.awt.event.FocusAdapter()
         {
             public void focusGained(java.awt.event.FocusEvent evt)

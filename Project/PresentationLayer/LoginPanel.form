@@ -82,9 +82,6 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JPasswordField" name="jPasswordField">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="password"/>
-          </Properties>
           <Events>
             <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jPasswordFieldFocusGained"/>
             <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jPasswordFieldKeyPressed"/>
