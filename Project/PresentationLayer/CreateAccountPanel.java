@@ -74,7 +74,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
         PhoneError = new javax.swing.JLabel();
         createUserAccount = new javax.swing.JButton();
         spacinglabellol = new javax.swing.JLabel();
-        Settings = new javax.swing.JButton();
+        BackButton = new javax.swing.JButton();
         Background = new javax.swing.JLabel();
 
         ERRORPOP.addActionListener(new java.awt.event.ActionListener()
@@ -209,13 +209,6 @@ public class CreateAccountPanel extends javax.swing.JPanel
                 phoneFocusGained(evt);
             }
         });
-        phone.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                phoneActionPerformed(evt);
-            }
-        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 13;
@@ -341,15 +334,15 @@ public class CreateAccountPanel extends javax.swing.JPanel
         gridBagConstraints.gridy = 14;
         jPanel1.add(spacinglabellol, gridBagConstraints);
 
-        Settings.setBackground(new java.awt.Color(255, 255, 255));
-        Settings.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Settings.setForeground(new java.awt.Color(51, 0, 255));
-        Settings.setText("Back");
-        Settings.addMouseListener(new java.awt.event.MouseAdapter()
+        BackButton.setBackground(new java.awt.Color(255, 255, 255));
+        BackButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        BackButton.setForeground(new java.awt.Color(51, 0, 255));
+        BackButton.setText("Back");
+        BackButton.addActionListener(new java.awt.event.ActionListener()
         {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
+            public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                SettingsMouseClicked(evt);
+                BackButtonActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -358,7 +351,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
-        jPanel1.add(Settings, gridBagConstraints);
+        jPanel1.add(BackButton, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -565,20 +558,23 @@ public class CreateAccountPanel extends javax.swing.JPanel
         phone.setText("");
     }//GEN-LAST:event_phoneFocusGained
 
-    private void phoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phoneActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_phoneActionPerformed
-
     private void ERRORPOPActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ERRORPOPActionPerformed
     {//GEN-HEADEREND:event_ERRORPOPActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ERRORPOPActionPerformed
 
-    private void SettingsMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_SettingsMouseClicked
-    {//GEN-HEADEREND:event_SettingsMouseClicked
+    private void BackButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BackButtonActionPerformed
+    {//GEN-HEADEREND:event_BackButtonActionPerformed
+        phone.setText("");
+        email.setText("");
+        confirmPassword.setText("");
+        password.setText("");
+        username.setText("");
+        lastName.setText("");
+        firstName.setText("");
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
-        layout.show(MainPanel, "Settings");
-    }//GEN-LAST:event_SettingsMouseClicked
+        layout.show(MainPanel, "Login");
+    }//GEN-LAST:event_BackButtonActionPerformed
 
     public static boolean validatePhoneNumber(String phoneNo)
     {
@@ -637,6 +633,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
         return passwd.matches(pattern);
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BackButton;
     private javax.swing.JLabel Background;
     private javax.swing.JLabel Bank42;
     private javax.swing.JLabel ConfirmPasswordError;
@@ -647,7 +644,6 @@ public class CreateAccountPanel extends javax.swing.JPanel
     private javax.swing.JLabel LastNameError;
     private javax.swing.JLabel PasswordError;
     private javax.swing.JLabel PhoneError;
-    private javax.swing.JButton Settings;
     private javax.swing.JLabel UsernameError;
     private javax.swing.JPasswordField confirmPassword;
     private javax.swing.JButton createUserAccount;
