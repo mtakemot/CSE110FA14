@@ -505,7 +505,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         FutureInterestButton.setBackground(new java.awt.Color(255, 255, 255));
         FutureInterestButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         FutureInterestButton.setForeground(new java.awt.Color(51, 0, 255));
-        FutureInterestButton.setText("Calculate Future Interest On Highlighted Account");
+        FutureInterestButton.setText("Calculate Future Interest ");
         FutureInterestButton.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
