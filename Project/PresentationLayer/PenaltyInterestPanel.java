@@ -56,6 +56,8 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
     {
         java.awt.GridBagConstraints gridBagConstraints;
 
+        PanelDescLabel = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         CheckingAccountRatesPanel = new javax.swing.JPanel();
         BalanceLabelTop = new javax.swing.JLabel();
         BalanceLabelMid = new javax.swing.JLabel();
@@ -81,11 +83,19 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         ConfirmButton = new javax.swing.JButton();
         BackButton = new javax.swing.JButton();
         PenaltyButton = new javax.swing.JButton();
-        PanelDescLabel = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
         setLayout(new java.awt.GridBagLayout());
+
+        PanelDescLabel.setText("Change Penalties and Interest");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 100, 0);
+        add(PanelDescLabel, gridBagConstraints);
+
+        jPanel1.setLayout(new java.awt.GridBagLayout());
 
         CheckingAccountRatesPanel.setBackground(new java.awt.Color(204, 255, 204));
         CheckingAccountRatesPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Checking Account Rates", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP));
@@ -229,7 +239,7 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        add(CheckingAccountRatesPanel, gridBagConstraints);
+        jPanel1.add(CheckingAccountRatesPanel, gridBagConstraints);
 
         SavingsAccountRatesPanel.setBackground(new java.awt.Color(204, 255, 255));
         SavingsAccountRatesPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Savings Account Rates", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP));
@@ -344,7 +354,7 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        add(SavingsAccountRatesPanel, gridBagConstraints);
+        jPanel1.add(SavingsAccountRatesPanel, gridBagConstraints);
 
         ConfirmButton.setText("Confirm");
         ConfirmButton.addActionListener(new java.awt.event.ActionListener()
@@ -360,7 +370,7 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.insets = new java.awt.Insets(5, 0, 0, 0);
-        add(ConfirmButton, gridBagConstraints);
+        jPanel1.add(ConfirmButton, gridBagConstraints);
 
         BackButton.setText("Back");
         BackButton.addActionListener(new java.awt.event.ActionListener()
@@ -376,7 +386,7 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.insets = new java.awt.Insets(5, 0, 0, 0);
-        add(BackButton, gridBagConstraints);
+        jPanel1.add(BackButton, gridBagConstraints);
 
         PenaltyButton.setText("Change Penalty");
         PenaltyButton.addActionListener(new java.awt.event.ActionListener()
@@ -392,15 +402,13 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.insets = new java.awt.Insets(5, 0, 0, 0);
-        add(PenaltyButton, gridBagConstraints);
+        jPanel1.add(PenaltyButton, gridBagConstraints);
 
-        PanelDescLabel.setText("Change Penalties and Interest");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.ipady = 200;
-        add(PanelDescLabel, gridBagConstraints);
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 100, 0);
+        add(jPanel1, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
     private boolean changeRates()
@@ -620,5 +628,6 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
     private javax.swing.JLabel Savings_2000_3000_Label;
     private javax.swing.JTextField Savings_More_Than_3000_Field;
     private javax.swing.JLabel Savings_More_Than_3000_Label;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
