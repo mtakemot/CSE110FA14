@@ -229,11 +229,6 @@ public class GUI extends javax.swing.JFrame
                 {
                     currentBankAccount.addToBalance(zod);
                 }
-                System.out.println(currentBankAccount.getBalance());
-                for (Transaction trans : currentBankAccount.getTransactions())
-                {
-                    System.out.println(trans.getTransType());
-                }
 
                 currentUserAccount = MasterTable.insertUserAccount("ww", "email2");
                 currentUserAccount.setFirstName("first2");

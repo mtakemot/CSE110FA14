@@ -223,6 +223,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         AccountsTable.setColumnSelectionAllowed(false);
         AccountsTable.getTableHeader().setResizingAllowed(false);
         AccountsTable.setGridColor(new java.awt.Color(255, 255, 255));
+        AccountsTable.getTableHeader().setDefaultRenderer((new HeaderRenderer(AccountsTable)));
         AccountsTable.setOpaque(false);
         AccountsTable.setSelectionBackground(new java.awt.Color(51, 0, 255));
         AccountsTable.getTableHeader().setReorderingAllowed(false);
