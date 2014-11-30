@@ -23,6 +23,7 @@ package PresentationLayer;
 import LogicLayer.BankAccount;
 import LogicLayer.HashTable;
 import LogicLayer.UserAccount;
+import DataLayer.*;
 import FacadeLayer.UserAccountWrapper;
 import LogicLayer.Transaction;
 import java.awt.Graphics;
@@ -63,7 +64,12 @@ public class GUI extends javax.swing.JFrame
     public static final int BALANCECOL = 3;
     // Format doubles in output so that they look like money
     public static final NumberFormat MoneyFormat = new DecimalFormat("$0.00");
-
+    
+    //declare import/export variables used for database read/write
+    public static ImportExport datain = new ImportExport();
+    public static ImportExport dataout = new ImportExport();
+    
+    
     /**
      *
      */
@@ -79,6 +85,78 @@ public class GUI extends javax.swing.JFrame
     public GUI()
     {
         initComponents();
+    }
+    
+    /**11/30**call import/export and initialize empty databases with this function**/
+    public static void initDB(){
+        HashTable tempTable = MasterTable;
+        // MasterTable = datain.importDB(MasterTable);
+         tempTable=datain.importDB(tempTable);
+
+         if(tempTable != null)
+         {
+             //import worked, copy temp to Master
+             MasterTable = tempTable;
+             System.out.println("MSG GUI.java: Imported existing data");
+         }
+         else
+         {
+             //didn't work, leave MasterTable AS IS
+             System.out.println("MSG GUI.java: empty table, creating new DB");
+             //MasterTable = new HashTable();
+         }
+         
+         //Puts some initial values in the table to prevent null pointer
+         // exceptions
+         currentUserAccount = MasterTable.insertUserAccount("qq", "email");
+         if(currentUserAccount != null){
+             currentUserAccount.setFirstName("first");
+             currentUserAccount.setLastName("last");
+             currentUserAccount.setPassword("qq");
+             currentUserAccount.setPhone("0123456789");
+             currentBankAccount = currentUserAccount.insertBankAccount(1100, "qq1", "Checking");
+             currentBankAccount = currentUserAccount.insertBankAccount(2100, "qq2", "Savings");
+             currentBankAccount = currentUserAccount.insertBankAccount(100, "qq3", "Checking");
+             currentBankAccount = currentUserAccount.insertBankAccount(3100, "qq4", "Checking");
+         }
+        /* for (int zod = 0; zod < 500; zod++)
+         {
+             currentBankAccount.addToBalance(zod);
+         }*/
+
+         currentUserAccount = MasterTable.insertUserAccount("ww", "email2");
+         if (currentUserAccount != null){
+             currentUserAccount.setFirstName("first2");
+             currentUserAccount.setLastName("last2");
+             currentUserAccount.setPassword("ww");
+             currentUserAccount.setPhone("1234567890");
+             currentBankAccount = currentUserAccount.insertBankAccount(1100, "ww1", "Checking");
+             currentBankAccount = currentUserAccount.insertBankAccount(35, "ww2", "Savings");
+             currentBankAccount = currentUserAccount.insertBankAccount(30, "ww3", "Checking");
+             currentBankAccount = currentUserAccount.insertBankAccount(30, "ww4", "Checking");
+         }
+
+         currentUserAccount = MasterTable.insertUserAccount("ee", "emai3");
+         if (currentUserAccount != null){
+             currentUserAccount.setFirstName("first2");
+             currentUserAccount.setLastName("last2");
+             currentUserAccount.setPassword("ee");
+             currentUserAccount.setPhone("1234567890");
+             currentBankAccount = currentUserAccount.insertBankAccount(50, "ee1", "Checking");
+             currentBankAccount = currentUserAccount.insertBankAccount(35, "ee2", "Savings");
+             currentBankAccount = currentUserAccount.insertBankAccount(30, "ee3", "Checking");
+             currentBankAccount = currentUserAccount.insertBankAccount(30, "ee4", "Checking");
+         }
+         
+         //if these items exists in our DB alread, currentUser will be NULL.
+         //initializing in case it's NULL
+         if(currentUserAccount == null){
+             currentUserAccount = MasterTable.findUserAccount("ee");
+             currentBankAccount = currentUserAccount.findBankAccount("ee1");
+         }
+         
+         //save DB immediately after we create and add data to it
+         dataout.exportDB(MasterTable);
     }
 
     // This is a getter function for the JPanel that is created when this
@@ -201,21 +279,7 @@ public class GUI extends javax.swing.JFrame
             public void run()
             {
                 
-                TimerTask task = new interestTask();
-                task.run();
-                /**
-                 * *******testing import export*********
-                 */
-                /*ImportExport datain = new ImportExport();
-                 ImportExport dataout = new ImportExport();
-
-                 MasterTable = datain.importDB(MasterTable);
-                 System.out.println("GUI.java imported table has: " + MasterTable.occ + " users\n");
-                 // This creates the MainPanel that is referenced above. All of
-                 // our other panels will go on top of this one and be shown or
-                 // hidden depending on the state of our program*/
-                
-                
+                TimerTask task = new interestTask();                                                       
                 Timer timer = new Timer();
                // TimerTask task = new interestTask();
                 DateTime initTime = new DateTime(DateTimeZone.forID("Etc/UTC"));
@@ -241,52 +305,80 @@ public class GUI extends javax.swing.JFrame
                //if the time isn't EXACTLY at the hour, run task to init. all bank account interests.
                task.run();
                
-               timer.scheduleAtFixedRate(task, 10*1000, 5*1000);
+               timer.scheduleAtFixedRate(task, 1000*3, 1000*5);
                System.out.println ("TaskTimer scheduled in main. Now initializing GUI");
                
                 
                 final GUI mainGUI = new GUI();
+                initDB();
+                
+                
+                /**11/30 implement DB**
+                HashTable tempTable = MasterTable;
+               // MasterTable = datain.importDB(MasterTable);
+                tempTable=datain.importDB(tempTable);
+                
+                if(tempTable != null)
+                {
+                    //import worked, copy temp to Master
+                    MasterTable = tempTable;
+                    System.out.println("MSG GUI.java: Imported existing data");
+                }
+                else
+                {
+                    //didn't work, leave MasterTable which was previously instantiated
+                    //AS IS
+                    System.out.println("MSG GUI.java: empty table, creating new DB");
+                    //MasterTable = new HashTable();
+                }
                 //Puts some initial values in the table to prevent null pointer
                 // exceptions
                 currentUserAccount = MasterTable.insertUserAccount("qq", "email");
-                currentUserAccount.setFirstName("first");
-                currentUserAccount.setLastName("last");
-                currentUserAccount.setPassword("qq");
-                currentUserAccount.setPhone("0123456789");
-                currentBankAccount = currentUserAccount.insertBankAccount(1100, "qq1", "Checking");
-                currentBankAccount = currentUserAccount.insertBankAccount(2100, "qq2", "Savings");
-                currentBankAccount = currentUserAccount.insertBankAccount(100, "qq3", "Checking");
-                currentBankAccount = currentUserAccount.insertBankAccount(3100, "qq4", "Checking");
-                for (int zod = 0; zod < 500; zod++)
-                {
-                    currentBankAccount.addToBalance(zod);
+                if(currentUserAccount != null){
+                    currentUserAccount.setFirstName("first");
+                    currentUserAccount.setLastName("last");
+                    currentUserAccount.setPassword("qq");
+                    currentUserAccount.setPhone("0123456789");
+                    currentBankAccount = currentUserAccount.insertBankAccount(1100, "qq1", "Checking");
+                    currentBankAccount = currentUserAccount.insertBankAccount(2100, "qq2", "Savings");
+                    currentBankAccount = currentUserAccount.insertBankAccount(100, "qq3", "Checking");
+                    currentBankAccount = currentUserAccount.insertBankAccount(3100, "qq4", "Checking");
                 }
+               //for (int zod = 0; zod < 500; zod++)
+               // {
+                //    currentBankAccount.addToBalance(zod);
+              //  }
 
                 currentUserAccount = MasterTable.insertUserAccount("ww", "email2");
-                currentUserAccount.setFirstName("first2");
-                currentUserAccount.setLastName("last2");
-                currentUserAccount.setPassword("ww");
-                currentUserAccount.setPhone("1234567890");
-                currentBankAccount = currentUserAccount.insertBankAccount(1100, "ww1", "Checking");
-                currentBankAccount = currentUserAccount.insertBankAccount(35, "ww2", "Savings");
-                currentBankAccount = currentUserAccount.insertBankAccount(30, "ww3", "Checking");
-                currentBankAccount = currentUserAccount.insertBankAccount(30, "ww4", "Checking");
+                if (currentUserAccount != null){
+                    currentUserAccount.setFirstName("first2");
+                    currentUserAccount.setLastName("last2");
+                    currentUserAccount.setPassword("ww");
+                    currentUserAccount.setPhone("1234567890");
+                    currentBankAccount = currentUserAccount.insertBankAccount(1100, "ww1", "Checking");
+                    currentBankAccount = currentUserAccount.insertBankAccount(35, "ww2", "Savings");
+                    currentBankAccount = currentUserAccount.insertBankAccount(30, "ww3", "Checking");
+                    currentBankAccount = currentUserAccount.insertBankAccount(30, "ww4", "Checking");
+                }
 
                 currentUserAccount = MasterTable.insertUserAccount("ee", "emai3");
-                currentUserAccount.setFirstName("first2");
-                currentUserAccount.setLastName("last2");
-                currentUserAccount.setPassword("ee");
-                currentUserAccount.setPhone("1234567890");
-                currentBankAccount = currentUserAccount.insertBankAccount(50, "ee1", "Checking");
-                currentBankAccount = currentUserAccount.insertBankAccount(35, "ee2", "Savings");
-                currentBankAccount = currentUserAccount.insertBankAccount(30, "ee3", "Checking");
-                currentBankAccount = currentUserAccount.insertBankAccount(30, "ee4", "Checking");
+                if (currentUserAccount != null){
+                    currentUserAccount.setFirstName("first2");
+                    currentUserAccount.setLastName("last2");
+                    currentUserAccount.setPassword("ee");
+                    currentUserAccount.setPhone("1234567890");
+                    currentBankAccount = currentUserAccount.insertBankAccount(50, "ee1", "Checking");
+                    currentBankAccount = currentUserAccount.insertBankAccount(35, "ee2", "Savings");
+                    currentBankAccount = currentUserAccount.insertBankAccount(30, "ee3", "Checking");
+                    currentBankAccount = currentUserAccount.insertBankAccount(30, "ee4", "Checking");
+                }*/
 
+                /*
                 //test
                 for (int i = 0; i < 10000; i++)
                 {
                     currentUserAccount.insertBankAccount(i, ("acc" + i), "Checking");
-                }
+                }*/
 
                 // This grabs the MainPanel and stores it in a variable so that
                 // we have easy access to it
