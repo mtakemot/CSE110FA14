@@ -553,6 +553,9 @@ public class CreateAccountPanel extends javax.swing.JPanel
         username.setText("");
         lastName.setText("");
         firstName.setText("");
+    }
+    
+    public void clearerrors() {
         FirstNameError.setText("");
         LastNameError.setText("");
         UsernameError.setText("");
@@ -580,6 +583,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
         boolean account_accepted = true;
         
+        clearerrors();
         
         if (!((name1.length() > 0) && (validateFirstName(name1) == true))) {
             FirstNameError.setText("Your first name was entered incorrectly.");
@@ -598,7 +602,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
             account_accepted = false;   
         }
         if (!(pass1.equals(pass2))) {
-            errorMessage.setText("Your password doesn't match confirm password");
+            ConfirmPasswordError.setText("Your password doesn't match confirm password");
             account_accepted = false; 
         }
         if (!((input3.length() > 0) && (isValidEmailAddress(input3)))) {
@@ -697,6 +701,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BackButtonActionPerformed
     {//GEN-HEADEREND:event_BackButtonActionPerformed
         clearfields();
+        clearerrors();
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
         layout.show(MainPanel, "Login");
     }//GEN-LAST:event_BackButtonActionPerformed
