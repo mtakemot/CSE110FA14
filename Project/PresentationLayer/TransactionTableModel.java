@@ -20,11 +20,6 @@ public class TransactionTableModel extends AbstractTableModel
     private List<Transaction> transactions;
     private static final int colCount = 3;
 
-    Class[] columns = new Class[]
-    {
-        String.class, String.class, Double.class
-    };
-
     private String[] columnNames =
     {
         "Date", "Type", "Transaction Amount"
@@ -56,10 +51,13 @@ public class TransactionTableModel extends AbstractTableModel
         {
             case 0:
                 returnMe = BankAccount.dtf.print(transactions.get(rowIndex).getTransTime());
+                break;
             case 1:
                 returnMe = transactions.get(rowIndex).getTransType();
+                break;
             case 2:
-                returnMe = transactions.get(rowIndex).getTransAmount();
+                returnMe = ("$" + transactions.get(rowIndex).getTransAmount());
+                break;
         }
         return returnMe;
     }
@@ -79,6 +77,6 @@ public class TransactionTableModel extends AbstractTableModel
     @Override
     public Class getColumnClass(int columnIndex)
     {
-        return columns[columnIndex];
+        return String.class;
     }
 }
