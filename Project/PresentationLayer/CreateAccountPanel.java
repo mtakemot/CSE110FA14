@@ -46,8 +46,9 @@ public class CreateAccountPanel extends javax.swing.JPanel
         java.awt.GridBagConstraints gridBagConstraints;
 
         ERRORPOP = new java.awt.PopupMenu();
-        jLabel1 = new javax.swing.JLabel();
-        dismissView = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        HeaderPanel = new javax.swing.JPanel();
+        Bank42 = new javax.swing.JLabel();
         errorMessage = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -73,6 +74,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
         PhoneError = new javax.swing.JLabel();
         createUserAccount = new javax.swing.JButton();
         spacinglabellol = new javax.swing.JLabel();
+        Settings = new javax.swing.JButton();
         Background = new javax.swing.JLabel();
 
         ERRORPOP.addActionListener(new java.awt.event.ActionListener()
@@ -83,44 +85,42 @@ public class CreateAccountPanel extends javax.swing.JPanel
             }
         });
 
+        setMaximumSize(new java.awt.Dimension(800, 600));
+        setMinimumSize(new java.awt.Dimension(800, 600));
         setOpaque(false);
+        setPreferredSize(new java.awt.Dimension(800, 600));
         setLayout(new java.awt.GridBagLayout());
 
-        jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 48)); // NOI18N
-        jLabel1.setText("Bank 42");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-        add(jLabel1, gridBagConstraints);
+        jPanel2.setOpaque(false);
+        jPanel2.setLayout(new java.awt.GridBagLayout());
 
-        dismissView.setText("Back");
-        dismissView.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                dismissViewMouseClicked(evt);
-            }
-        });
+        HeaderPanel.setBackground(new java.awt.Color(255, 255, 255));
+        HeaderPanel.setOpaque(false);
+        HeaderPanel.setLayout(new java.awt.GridBagLayout());
+
+        Bank42.setFont(new java.awt.Font("DejaVu Sans", 1, 48)); // NOI18N
+        Bank42.setForeground(new java.awt.Color(51, 0, 255));
+        Bank42.setText("Bank 42");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 10, 0, 0);
-        add(dismissView, gridBagConstraints);
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 40, 0);
+        HeaderPanel.add(Bank42, gridBagConstraints);
 
         errorMessage.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         errorMessage.setForeground(new java.awt.Color(255, 102, 102));
         errorMessage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        errorMessage.setText("Please fill in the field below to create an account.");
+        errorMessage.setText("Please fill in the fields below to create an account.");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        HeaderPanel.add(errorMessage, gridBagConstraints);
+
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.ipadx = 299;
-        gridBagConstraints.ipady = 8;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 18, 0, 105);
-        add(errorMessage, gridBagConstraints);
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 30, 0);
+        jPanel2.add(HeaderPanel, gridBagConstraints);
 
         jPanel1.setOpaque(false);
         jPanel1.setLayout(new java.awt.GridBagLayout());
@@ -129,36 +129,42 @@ public class CreateAccountPanel extends javax.swing.JPanel
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         jPanel1.add(jLabel2, gridBagConstraints);
 
         jLabel7.setText("Email:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 11;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         jPanel1.add(jLabel7, gridBagConstraints);
 
         jLabel15.setText("Phone:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 13;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         jPanel1.add(jLabel15, gridBagConstraints);
 
         jLabel6.setText("Confirm Password:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 9;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         jPanel1.add(jLabel6, gridBagConstraints);
 
         jLabel4.setText("Password:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 7;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         jPanel1.add(jLabel4, gridBagConstraints);
 
         jLabel3.setText("Last Name:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         jPanel1.add(jLabel3, gridBagConstraints);
 
         confirmPassword.addFocusListener(new java.awt.event.FocusAdapter()
@@ -193,6 +199,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         jPanel1.add(jLabel5, gridBagConstraints);
 
         phone.addFocusListener(new java.awt.event.FocusAdapter()
@@ -325,6 +332,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 15;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel1.add(createUserAccount, gridBagConstraints);
 
         spacinglabellol.setText(" ");
@@ -333,12 +341,31 @@ public class CreateAccountPanel extends javax.swing.JPanel
         gridBagConstraints.gridy = 14;
         jPanel1.add(spacinglabellol, gridBagConstraints);
 
+        Settings.setBackground(new java.awt.Color(255, 255, 255));
+        Settings.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Settings.setForeground(new java.awt.Color(51, 0, 255));
+        Settings.setText("Back");
+        Settings.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                SettingsMouseClicked(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 16;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
+        jPanel1.add(Settings, gridBagConstraints);
+
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 180, 0, 0);
-        add(jPanel1, gridBagConstraints);
+        gridBagConstraints.gridy = 1;
+        jPanel2.add(jPanel1, gridBagConstraints);
+
+        add(jPanel2, new java.awt.GridBagConstraints());
 
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/robotbackground.jpg"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -366,13 +393,13 @@ public class CreateAccountPanel extends javax.swing.JPanel
         String user = username.getText().trim();
         String input3 = email.getText().trim();
         String phoneNumber = phone.getText().trim();
-        
+
         char[] input1 = password.getPassword();
         char[] input2 = confirmPassword.getPassword();
-                
+
         String pass1 = new String(input1);
-        String pass2 = new String(input2);      
-        
+        String pass2 = new String(input2);
+
         if ((name1.length() > 0) && (validateFirstName(name1) == true))
         {
             System.out.println("firstname");
@@ -503,11 +530,6 @@ public class CreateAccountPanel extends javax.swing.JPanel
          }*/
     }//GEN-LAST:event_createUserAccountActionPerformed
 
-    private void dismissViewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dismissViewMouseClicked
-        CardLayout layout = (CardLayout) (MainPanel.getLayout());
-        layout.show(MainPanel, "Login");
-    }//GEN-LAST:event_dismissViewMouseClicked
-
     private void firstNameFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_firstNameFocusGained
     {//GEN-HEADEREND:event_firstNameFocusGained
         firstName.setText("");
@@ -551,6 +573,12 @@ public class CreateAccountPanel extends javax.swing.JPanel
     {//GEN-HEADEREND:event_ERRORPOPActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ERRORPOPActionPerformed
+
+    private void SettingsMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_SettingsMouseClicked
+    {//GEN-HEADEREND:event_SettingsMouseClicked
+        CardLayout layout = (CardLayout) (MainPanel.getLayout());
+        layout.show(MainPanel, "Settings");
+    }//GEN-LAST:event_SettingsMouseClicked
 
     public static boolean validatePhoneNumber(String phoneNo)
     {
@@ -610,21 +638,22 @@ public class CreateAccountPanel extends javax.swing.JPanel
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Background;
+    private javax.swing.JLabel Bank42;
     private javax.swing.JLabel ConfirmPasswordError;
     private java.awt.PopupMenu ERRORPOP;
     private javax.swing.JLabel EmailError;
     private javax.swing.JLabel FirstNameError;
+    private javax.swing.JPanel HeaderPanel;
     private javax.swing.JLabel LastNameError;
     private javax.swing.JLabel PasswordError;
     private javax.swing.JLabel PhoneError;
+    private javax.swing.JButton Settings;
     private javax.swing.JLabel UsernameError;
     private javax.swing.JPasswordField confirmPassword;
     private javax.swing.JButton createUserAccount;
-    private javax.swing.JButton dismissView;
     private javax.swing.JTextField email;
     private javax.swing.JLabel errorMessage;
     private javax.swing.JTextField firstName;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -633,6 +662,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField lastName;
     private javax.swing.JPasswordField password;
     private javax.swing.JTextField phone;

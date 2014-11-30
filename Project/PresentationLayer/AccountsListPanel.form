@@ -1674,7 +1674,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Container class="javax.swing.JPanel" name="jPanel7">
+        <Container class="javax.swing.JPanel" name="HeaderPanel">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -2357,11 +2357,11 @@
             <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
           </StatementProvider>
           <Parameters>
-            <CodeExpression id="129_jPanel7">
-              <CodeVariable name="jPanel7" type="8194" declaredType="javax.swing.JPanel"/>
+            <CodeExpression id="129_HeaderPanel">
+              <CodeVariable name="HeaderPanel" type="8194" declaredType="javax.swing.JPanel"/>
               <ExpressionOrigin>
                 <ExpressionProvider type="ComponentRef">
-                  <ComponentRef name="jPanel7"/>
+                  <ComponentRef name="HeaderPanel"/>
                 </ExpressionProvider>
               </ExpressionOrigin>
             </CodeExpression>

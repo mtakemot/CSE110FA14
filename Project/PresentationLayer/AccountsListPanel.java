@@ -146,7 +146,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         CreateBAButton = new javax.swing.JButton();
         FutureInterestButton = new javax.swing.JButton();
         TransactionHistoryButton = new javax.swing.JButton();
-        jPanel7 = new javax.swing.JPanel();
+        HeaderPanel = new javax.swing.JPanel();
         Bank42 = new javax.swing.JLabel();
         Settings = new javax.swing.JButton();
         Logout = new javax.swing.JButton();
@@ -505,9 +505,9 @@ public class AccountsListPanel extends javax.swing.JPanel
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         jPanel3.add(TransactionHistoryButton, gridBagConstraints);
 
-        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel7.setOpaque(false);
-        jPanel7.setLayout(new java.awt.GridBagLayout());
+        HeaderPanel.setBackground(new java.awt.Color(255, 255, 255));
+        HeaderPanel.setOpaque(false);
+        HeaderPanel.setLayout(new java.awt.GridBagLayout());
 
         Bank42.setFont(new java.awt.Font("DejaVu Sans", 1, 48)); // NOI18N
         Bank42.setForeground(new java.awt.Color(51, 0, 255));
@@ -515,7 +515,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
-        jPanel7.add(Bank42, gridBagConstraints);
+        HeaderPanel.add(Bank42, gridBagConstraints);
 
         Settings.setBackground(new java.awt.Color(255, 255, 255));
         Settings.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -532,7 +532,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 200);
-        jPanel7.add(Settings, gridBagConstraints);
+        HeaderPanel.add(Settings, gridBagConstraints);
 
         Logout.setBackground(new java.awt.Color(255, 255, 255));
         Logout.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -549,7 +549,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.insets = new java.awt.Insets(0, 200, 0, 0);
-        jPanel7.add(Logout, gridBagConstraints);
+        HeaderPanel.add(Logout, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -557,7 +557,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.PAGE_START;
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 45, 0);
-        jPanel3.add(jPanel7, gridBagConstraints);
+        jPanel3.add(HeaderPanel, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -999,6 +999,7 @@ public class AccountsListPanel extends javax.swing.JPanel
     private javax.swing.JButton DeleteAccountButton;
     private javax.swing.JTextField EmailEntryField;
     private javax.swing.JButton FutureInterestButton;
+    private javax.swing.JPanel HeaderPanel;
     private javax.swing.JButton Logout;
     private javax.swing.JButton Settings;
     private javax.swing.JButton TransactionHistoryButton;
@@ -1013,7 +1014,6 @@ public class AccountsListPanel extends javax.swing.JPanel
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 
