@@ -20,12 +20,6 @@ package PresentationLayer;
  * GUI.java.
  * **************************************************************************
  */
-/*
- import Backend.UserAccount;
- import Backend.HashTable;
- import Backend.BankAccount;*/
-//11/8 michio takemoto seeing if just backend.* is fine
-//need to add backend.ImportExport if not
 import LogicLayer.BankAccount;
 import LogicLayer.HashTable;
 import LogicLayer.UserAccount;
@@ -39,6 +33,10 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import org.joda.time.DateTime;
+import java.util.Timer;
+import java.util.TimerTask;
+import org.joda.time.DateTimeZone;
 
 public class GUI extends javax.swing.JFrame
 {
@@ -202,6 +200,9 @@ public class GUI extends javax.swing.JFrame
             @Override
             public void run()
             {
+                
+                TimerTask task = new interestTask();
+                task.run();
                 /**
                  * *******testing import export*********
                  */
@@ -213,6 +214,37 @@ public class GUI extends javax.swing.JFrame
                  // This creates the MainPanel that is referenced above. All of
                  // our other panels will go on top of this one and be shown or
                  // hidden depending on the state of our program*/
+                
+                
+                Timer timer = new Timer();
+               // TimerTask task = new interestTask();
+                DateTime initTime = new DateTime(DateTimeZone.forID("Etc/UTC"));
+                int initMin = initTime.getMinuteOfHour();
+                int initSec = initTime.getSecondOfMinute();
+                //increment values for sec/min. For sec, add 1 to carry over to min which will carry to hour
+                int incrementSec = initTime.minuteOfHour().getMaximumValue()-initSec+1;
+                int incrementMin = initTime.minuteOfHour().getMaximumValue()-initMin;
+                int taskDelay = 60*initMin + initSec;
+
+               //set next hour time to the initTime plus increment
+               DateTime nextHour = initTime;
+               //nextHour = nextHour.plusSeconds(incrementSec);
+               nextHour = nextHour.plusSeconds(incrementSec);
+               nextHour = nextHour.plusMinutes(incrementMin);
+               System.out.println("initial minutes is: " + initMin);
+               System.out.println("initial seconds is: " + initSec);
+               System.out.println("initial time: "+ initTime);
+               System.out.println("next hour is at: "+ nextHour);
+               System.out.println("delay for task schedule: " + taskDelay);
+               System.out.println("Task will run every 10 secs from the delay");
+
+               //if the time isn't EXACTLY at the hour, run task to init. all bank account interests.
+               task.run();
+               
+               timer.scheduleAtFixedRate(task, 10*1000, 5*1000);
+               System.out.println ("TaskTimer scheduled in main. Now initializing GUI");
+               
+                
                 final GUI mainGUI = new GUI();
                 //Puts some initial values in the table to prevent null pointer
                 // exceptions
