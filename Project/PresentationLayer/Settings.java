@@ -434,7 +434,13 @@ public class Settings extends javax.swing.JPanel
     private void EditLastNameActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EditLastNameActionPerformed
     {//GEN-HEADEREND:event_EditLastNameActionPerformed
         String response = JOptionPane.showInputDialog(null,"Enter Your New Last Name:","Bank 42",1);
-        if (response!=null) {
+        
+        if (response == null)                    
+            return;
+        
+        response = response.trim();
+        if ((response.length() > 0) && CreateAccountPanel.validateLastName(response))
+        {
             GUI.currentUserAccount.setLastName(response);
             update();   
         }
@@ -443,7 +449,14 @@ public class Settings extends javax.swing.JPanel
     private void EditFirstNameActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EditFirstNameActionPerformed
     {//GEN-HEADEREND:event_EditFirstNameActionPerformed
         String response = JOptionPane.showInputDialog("Enter Your New First:");
-        if (response!=null) {
+        
+        if (response == null)                    
+            return;
+         
+        response = response.trim();
+        
+        if ((response.length() > 0) && CreateAccountPanel.validateFirstName(response))
+        {
             GUI.currentUserAccount.setFirstName(response);
             update();
         }
@@ -452,7 +465,13 @@ public class Settings extends javax.swing.JPanel
     private void EditUsernameActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EditUsernameActionPerformed
     {//GEN-HEADEREND:event_EditUsernameActionPerformed
         String response = JOptionPane.showInputDialog("Enter Your New Username:");
-        if (response!=null) {
+        
+        if (response == null)                    
+            return;
+         
+        response = response.trim();
+        if ((response.length() > 0) && (CreateAccountPanel.validate(response)))
+        {           
             GUI.currentUserAccount.setUserName(response);
             update();
         }
@@ -461,7 +480,13 @@ public class Settings extends javax.swing.JPanel
     private void EditEmailActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EditEmailActionPerformed
     {//GEN-HEADEREND:event_EditEmailActionPerformed
         String response = JOptionPane.showInputDialog("Enter Your New Email:");
-        if (response!=null) {
+        
+        if (response == null)                    
+            return;
+        
+        response = response.trim();
+        if ((response.length() > 0) && (CreateAccountPanel.isValidEmailAddress(response)))
+        {           
             GUI.currentUserAccount.setEmail(response);
             update();
         }
@@ -470,7 +495,13 @@ public class Settings extends javax.swing.JPanel
     private void EditPhoneNumberActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EditPhoneNumberActionPerformed
     {//GEN-HEADEREND:event_EditPhoneNumberActionPerformed
         String response = JOptionPane.showInputDialog("Enter Your New Phone Number:");
-        if (response!=null) {
+        
+        if (response == null)                    
+            return;
+        
+        response = response.trim();
+        if ((response.length() > 0) && (CreateAccountPanel.validatePhoneNumber(response)))
+        {            
             GUI.currentUserAccount.setPhone(response);
             update();
         }
@@ -479,7 +510,13 @@ public class Settings extends javax.swing.JPanel
     private void EditPasswordActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EditPasswordActionPerformed
     {//GEN-HEADEREND:event_EditPasswordActionPerformed
         String response = JOptionPane.showInputDialog("Enter Your New Password:");
-        if (response!=null) {
+        
+        if (response == null)                    
+            return;
+        
+        response = response.trim();
+        if ((response.length() > 0) && (CreateAccountPanel.validatePassword(response)))
+        {           
             GUI.currentUserAccount.setPassword(response);
             update();
         }

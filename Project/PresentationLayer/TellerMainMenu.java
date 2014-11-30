@@ -182,7 +182,7 @@ public class TellerMainMenu extends javax.swing.JPanel
     {//GEN-HEADEREND:event_InterestPenaltyButtonActionPerformed
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
         //layout.show(MainPanel, "IntPenPanel");
-        layout.show(MainPanel, "IntPenPanel2");
+        layout.show(MainPanel, "PenIntPanel");
     }//GEN-LAST:event_InterestPenaltyButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
