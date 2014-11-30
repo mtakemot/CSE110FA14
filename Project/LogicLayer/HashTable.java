@@ -71,6 +71,7 @@ public class HashTable implements Serializable
                 Table[index] = new UserAccount(userName);
                 Table[index].insertBankAccount(0, "Checking1", "Checking");
                 Table[index].insertBankAccount(0, "Savings1", "Savings");
+                Table[index].setEmail(userEmail);
                 this.occ++;
                 return Table[index];
             }
@@ -97,6 +98,7 @@ public class HashTable implements Serializable
                     current.setNext(new UserAccount(userName));
                     current.getNext().insertBankAccount(0, "Checking1", "Checking");
                     current.getNext().insertBankAccount(0, "Savings1", "Savings");
+                    current.getNext().setEmail(userEmail);
                     this.occ++;
                     return current.getNext();
                 }

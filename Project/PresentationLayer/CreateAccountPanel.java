@@ -274,15 +274,18 @@ public class CreateAccountPanel extends javax.swing.JPanel
         //make phone number more versatile
         errorMessage.setForeground(Color.red);
 
-        String name1 = firstName.getText();
-        String name2 = lastName.getText();
-        String user = username.getText();
+        String name1 = firstName.getText().trim();
+        String name2 = lastName.getText().trim();
+        String user = username.getText().trim();
+        String input3 = email.getText().trim();
+        String phoneNumber = phone.getText().trim();
+        
         char[] input1 = password.getPassword();
-        String pass1 = new String(input1);
         char[] input2 = confirmPassword.getPassword();
-        String input3 = email.getText();
-        String pass2 = new String(input2);
-
+                
+        String pass1 = new String(input1);
+        String pass2 = new String(input2);      
+        
         if ((name1.length() > 0) && (validateFirstName(name1) == true))
         {
             System.out.println("firstname");
@@ -302,7 +305,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
                             System.out.println("email");
                             System.out.println("test2");
 
-                            if (validatePhoneNumber(phone.getText()))
+                            if (validatePhoneNumber(phoneNumber))
                             {
                                 System.out.println("phone");
                                 System.out.println("test3");
@@ -311,12 +314,12 @@ public class CreateAccountPanel extends javax.swing.JPanel
                                 GUI.currentUserAccount = GUI.MasterTable.insertUserAccount(user, input3);
                                 if (GUI.currentUserAccount != null)
                                 {
-                                    GUI.currentUserAccount.setFirstName(firstName.getText());
+                                    GUI.currentUserAccount.setFirstName(name1);
                                     GUI.currentUserAccount.setLastName(name2);
                                     GUI.currentUserAccount.setUserName(user);
                                     GUI.currentUserAccount.setPassword(pass1);
                                     GUI.currentUserAccount.setEmail(input3);
-                                    GUI.currentUserAccount.setPhone(phone.getText());
+                                    GUI.currentUserAccount.setPhone(phoneNumber);
                                     System.out.println("You have successfully created your user account!");
                                     JOptionPane.showMessageDialog(null, "You have successfully created your user account!", "Success!",
                                             JOptionPane.INFORMATION_MESSAGE);
@@ -351,7 +354,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
                             else
                             {
                                 //phone wrong
-                                errorMessage.setText("Your phone number was entered\n incorrectly.");
+                                errorMessage.setText("Your phone number was entered incorrectly.");
                             }
 
                             //UserAccount currentUserAccount = new UserAccount(firstName.getText(),lastName.getText(),username.getText(),password.getText(),email.getText(), phone.getText(), "");
@@ -359,25 +362,25 @@ public class CreateAccountPanel extends javax.swing.JPanel
                         else
                         {
                             //email wrong
-                            errorMessage.setText("Your email was entered\n incorrectly.");
+                            errorMessage.setText("Your email was entered incorrectly.");
                         }
                     }
                     else
                     {
                         //pass wrong
-                        errorMessage.setText("Your password was entered\n incorrectly.");
+                        errorMessage.setText("Your password was invalid or doesn't match confirm password");
                     }
                 }
                 else
                 {
                     //username wrong
-                    errorMessage.setText("Your password was entered \nincorrectly.");
+                    errorMessage.setText("Your username was entered incorrectly.");
                 }
             }
             else
             {
                 //last name wrong
-                errorMessage.setText("Your last name was entered\n incorrectly.");
+                errorMessage.setText("Your last name was entered incorrectly.");
             }
         }
         else
@@ -389,8 +392,9 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
         if (!operationSuccessful)
         {
+            //NO NEED TO SHOW ERROR MESSAGE, LABEL UPDATES WITH THE SPECIFIC ERROR
             System.out.println("Error with input format!");
-            JOptionPane.showMessageDialog(null, "Error creating an account! INVALID FORMAT", "INVALID FORMAT", JOptionPane.INFORMATION_MESSAGE);
+            //JOptionPane.showMessageDialog(null, "Error creating an account! INVALID FORMAT", "INVALID FORMAT", JOptionPane.INFORMATION_MESSAGE);
         }
 
         /*//If we reach here, user name was 100% successfully inserted into table.
@@ -461,7 +465,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
         // TODO add your handling code here:
     }//GEN-LAST:event_ERRORPOPActionPerformed
 
-    private static boolean validatePhoneNumber(String phoneNo)
+    public static boolean validatePhoneNumber(String phoneNo)
     {
         //validate phone numbers of format "1234567890"
         if (phoneNo.matches("\\d{10}"))
@@ -484,7 +488,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
             return false;
     }
 
-    private static boolean isValidEmailAddress(String email)
+    public static boolean isValidEmailAddress(String email)
     {
         String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
         java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
@@ -503,7 +507,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
         return lastName.matches("[a-zA-z]+([ '-][a-zA-Z]+)*");
     } // end method validateLastName
 
-    public boolean validate(final String username)
+    public static boolean validate(final String username)
     {
         String USERNAME_PATTERN = "^[a-z0-9_-]{3,20}$";
         Pattern pattern = Pattern.compile(USERNAME_PATTERN);
@@ -511,7 +515,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
         return matcher.matches();
     }
 
-    public boolean validatePassword(final String username)
+    public static boolean validatePassword(final String username)
     {
         String passwd = "aaZZa44@";
         String pattern = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{5,10}";
