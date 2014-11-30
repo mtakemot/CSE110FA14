@@ -16,7 +16,7 @@ import LogicLayer.UserAccount;
 public class UserAccountWrapper
 {
 
-    private int[] accountNumbers;
+    //private int[] accountNumbers;
     private String[] accountNames;
     private String[] accountTypes;
     private double[] accountBalances;
@@ -30,7 +30,7 @@ public class UserAccountWrapper
         {
             currentUA = curr;
             totalAccounts = currentUA.getNumOfBankAccounts();
-            accountNumbers = new int[totalAccounts];
+            //accountNumbers = new int[totalAccounts];
             accountNames = new String[totalAccounts];
             accountTypes = new String[totalAccounts];
             accountBalances = new double[totalAccounts];
@@ -47,7 +47,7 @@ public class UserAccountWrapper
             // or we reach the end of the list
             for (int zod = 0; zod < totalAccounts; zod++)
             {
-                accountNumbers[zod] = zod + 1;
+                //accountNumbers[zod] = zod + 1;
                 accountNames[zod] = currentBA.getAccountName();
                 accountTypes[zod] = currentBA.getAccountType();
                 accountBalances[zod] = currentBA.getBalance();
@@ -59,10 +59,10 @@ public class UserAccountWrapper
     /////////////////////////////////////////
     // BELOW ARE JUST SETTERS AND GETTERS ///
     /////////////////////////////////////////
-    public int getAccountNumber(int index)
+    /*public int getAccountNumber(int index)
     {
         return accountNumbers[index];
-    }
+    }*/
 
     public String getAccountName(int index)
     {
@@ -109,9 +109,9 @@ public class UserAccountWrapper
         this.accountTypes[rowIndex] = newType;
     }
 
-    public void setAccountNumber(int newNumber, int rowIndex)
+    /*public void setAccountNumber(int newNumber, int rowIndex)
     {
         this.accountNumbers[rowIndex] = newNumber;
-    }
+    }*/
 
 }
