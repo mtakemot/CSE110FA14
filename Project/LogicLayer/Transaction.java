@@ -3,7 +3,7 @@ package LogicLayer;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 
-public class Transaction
+public class Transaction implements Comparable<Transaction>
 {
 
     private String transType;
@@ -17,6 +17,12 @@ public class Transaction
         transType = this.transType;
         transAmount = this.transAmount;
         transTime = new DateTime(DateTimeZone.forID("Etc/UTC"));
+    }
+
+    @Override
+    public int compareTo(Transaction t)
+    {
+        return (t.getTransTime().compareTo(this.getTransTime()));
     }
 
     public String getTransType()
@@ -48,5 +54,4 @@ public class Transaction
     {
         this.transTime = transTime;
     }
-
 }

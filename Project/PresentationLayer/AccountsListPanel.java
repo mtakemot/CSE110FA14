@@ -208,7 +208,6 @@ public class AccountsListPanel extends javax.swing.JPanel
         centerRenderer.setHorizontalAlignment( JLabel.CENTER );
         AccountsTable.setDefaultRenderer(String.class, centerRenderer);
         AccountsTable.setDefaultRenderer(Double.class, centerRenderer);
-        AccountsTable.setColumnSelectionAllowed(false);
         AccountsTable.getTableHeader().setResizingAllowed(false);
         AccountsTable.setOpaque(false);
         AccountsTable.getTableHeader().setReorderingAllowed(false);
@@ -579,14 +578,14 @@ public class AccountsListPanel extends javax.swing.JPanel
     {//GEN-HEADEREND:event_CreateBAButtonActionPerformed
         JPanel createBApanel = mainGUI.getCreateBA().getCreateBankAccountPanel();
         int choice = JOptionPane.showConfirmDialog(
-                        null,
-                        createBApanel,
-                        "Bank 42",
-                        JOptionPane.OK_CANCEL_OPTION,
-                        JOptionPane.PLAIN_MESSAGE
-                        );
+                null,
+                createBApanel,
+                "Bank 42",
+                JOptionPane.OK_CANCEL_OPTION,
+                JOptionPane.PLAIN_MESSAGE
+        );
 
-        if (choice==0)
+        if (choice == 0)
         {
             mainGUI.getCreateBA().CreateAccount();
         }

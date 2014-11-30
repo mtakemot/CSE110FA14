@@ -5,6 +5,8 @@
  */
 package PresentationLayer;
 
+import javax.swing.JPanel;
+
 /**
  *
  * @author Ryan
@@ -12,11 +14,20 @@ package PresentationLayer;
 public class TransactionHistoryPanel extends javax.swing.JPanel
 {
 
-    /**
-     * Creates new form TransactionHistoryPanel
-     */
-    public TransactionHistoryPanel()
+    private JPanel MainPanel;
+    private GUI mainGUI;
+
+    public void update()
     {
+        TransactionsTable.clearSelection();
+        TransactionsTable.getSelectionModel().clearSelection();
+        TransactionsTable.setModel(new TransactionTableModel(GUI.currentBankAccount));
+    }
+
+    public TransactionHistoryPanel(JPanel MainPanel, GUI mainGUI)
+    {
+        this.MainPanel = MainPanel;
+        this.mainGUI = mainGUI;
         initComponents();
     }
 
@@ -32,7 +43,7 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TransactionsTable = new javax.swing.JTable();
 
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
@@ -40,20 +51,8 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
 
         jPanel1.setLayout(new java.awt.GridBagLayout());
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][]
-            {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String []
-            {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        TransactionsTable.setModel(new PresentationLayer.TransactionTableModel(PresentationLayer.GUI.currentBankAccount));
+        jScrollPane1.setViewportView(TransactionsTable);
 
         jPanel1.add(jScrollPane1, new java.awt.GridBagConstraints());
 
@@ -61,8 +60,8 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable TransactionsTable;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
