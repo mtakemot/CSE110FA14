@@ -45,24 +45,23 @@ public class CheckingAccountTest
     {
         instance.setBalance(0);
         System.out.println("Balance reflects deposits");
-        double totalBal = 0;
+
         for(int i =1; i < 10; i++)
         {
-            double expResult = totalBal = instance.getBalance() + (i*10);
+            double expResult  = instance.getBalance() + (i*10);
             instance.addToBalance(i*10);
             double result = instance.getBalance();
             assertEquals(expResult, result, .001);
         }
     }
     
-       /**
-     * ===Test 2 of addToBalance method, of class CheckingAccount=== general tests
-     * daily deposit limits
+    /**
+     * ===Test 2 of addToBalance method, of class CheckingAccount=== 
+     * testing depositing amounts < 10000 limit
      */
     @Test
     public void testAddToBalance_DepositlessThanDailyLimit()
     {
-        //testing depositing amounts < 10000 limit
         System.out.println("Daily depositing less than $10000 daily limit");
         instance.setBalance(0);
         boolean res1 = instance.addToBalance(5000);
@@ -70,7 +69,7 @@ public class CheckingAccountTest
         assertEquals(exp1, res1);
     }    
     
-           /**
+    /**
      * ===Test 3 of addToBalance method, of class CheckingAccount=== 
      * testing edge case: $10000 balance
      */
@@ -83,7 +82,7 @@ public class CheckingAccountTest
         assertEquals(exp2, res2);
     }
     /**
-     * ===Test 3 of addToBalance method, of class CheckingAccount=== 
+     * ===Test 4 of addToBalance method, of class CheckingAccount=== 
      * testing depositing more than $10000 in a day
      */
     @Test
@@ -101,18 +100,18 @@ public class CheckingAccountTest
      */
     @Test    
     public void testAddToBalance_DepositMoreThanLimit2DaysPeriod()
-    {   
-       System.out.println("initial balance: "+ instance.getBalance());
+    {  
+       DateTimeUtils.setCurrentMillisOffset(0);
+
        instance.addToBalance(9000);
-       System.out.println("balance after 9000 deposit in one day: "+ instance.getBalance());
+       System.out.println("balance after 9000 deposit in one day");
 
        //changing current time to one day after actual time
         DateTimeUtils.setCurrentMillisOffset(100000000);
-        
-        DateTime fake = new DateTime(DateTimeZone.forID("Etc/UTC"));
-        System.out.println("depositing more than $10000 in 2-days period " +fake.toString());
+
         boolean res4 = instance.addToBalance(5000);
-        System.out.println("balance after 5000 deposit in next day: "+ instance.getBalance());
+
+        System.out.println("balance after 5000 deposit in next day");
 
         boolean exp4 = true;
         assertEquals(exp4, res4);
@@ -127,9 +126,7 @@ public class CheckingAccountTest
     {
         instance.addToBalance(6000);
         DateTimeUtils.setCurrentMillisOffset(200000000);
-        DateTime fake2 = new DateTime(DateTimeZone.forID("Etc/UTC"));
-        System.out.println("depositing more than $10000 in several-days period " +
-                fake2.toString() + "balance"+instance.getBalance());
+        System.out.println("depositing more than $10000 in several-days period ");
         boolean res5 = instance.addToBalance(5000);
         boolean exp5 = true;
         assertEquals(exp5, res5);
@@ -190,7 +187,7 @@ public class CheckingAccountTest
         assertEquals(expResult4, result4);
     } 
     
-           /**
+    /**
      * ===Test 5 of subFromeBalance method, of class CheckingAccount=== tests the
      * withdraw of an amount more than daily limit in multiple days period
      */
@@ -199,16 +196,10 @@ public class CheckingAccountTest
     {   
         DateTimeUtils.setCurrentMillisOffset(0);
 
-        DateTime real = new DateTime(DateTimeZone.forID("Etc/UTC"));
         instance.setBalance(20000);
         System.out.println("Debit more than $10000 in multiple days period ");
         instance.subFromBalance(5000);
         DateTimeUtils.setCurrentMillisOffset(100000000);
-        DateTime fake = new DateTime(DateTimeZone.forID("Etc/UTC"));
-        
-        System.out.println("real: "+ real.toString());
-        System.out.println("fake: "+ fake.toString());
-
 
         boolean expResult5 = true;
         boolean result5 = instance.subFromBalance(6000);
