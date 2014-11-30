@@ -89,21 +89,20 @@ public class GUI extends javax.swing.JFrame
     
     /**11/30**call import/export and initialize empty databases with this function**/
     public static void initDB(){
-        HashTable tempTable = MasterTable;
-        // MasterTable = datain.importDB(MasterTable);
-         tempTable=datain.importDB(tempTable);
-
-         if(tempTable != null)
+        
+         MasterTable = datain.importDB(MasterTable);
+         
+         if(MasterTable != null)
          {
              //import worked, copy temp to Master
-             MasterTable = tempTable;
+             //MasterTable = tempTable;
              System.out.println("MSG GUI.java: Imported existing data");
          }
          else
          {
-             //didn't work, leave MasterTable AS IS
+             //didn't work, MasterTable will start as a blank HashTable obj
              System.out.println("MSG GUI.java: empty table, creating new DB");
-             //MasterTable = new HashTable();
+             MasterTable = new HashTable();
          }
          
          //Puts some initial values in the table to prevent null pointer
@@ -119,10 +118,6 @@ public class GUI extends javax.swing.JFrame
              currentBankAccount = currentUserAccount.insertBankAccount(100, "qq3", "Checking");
              currentBankAccount = currentUserAccount.insertBankAccount(3100, "qq4", "Checking");
          }
-        /* for (int zod = 0; zod < 500; zod++)
-         {
-             currentBankAccount.addToBalance(zod);
-         }*/
 
          currentUserAccount = MasterTable.insertUserAccount("ww", "email2");
          if (currentUserAccount != null){
@@ -154,9 +149,45 @@ public class GUI extends javax.swing.JFrame
              currentUserAccount = MasterTable.findUserAccount("ee");
              currentBankAccount = currentUserAccount.findBankAccount("ee1");
          }
-         
+         /*
          //save DB immediately after we create and add data to it
+         if(dataout.exportDB(MasterTable)==true){
+             //DEBUG, we don't need this print statement later
+             System.out.println("MSG GUI.JAVA: updated DB, proceed to set up TimerTask");
+         }*/
          dataout.exportDB(MasterTable);
+    }
+    
+    /**11/30**method for setting up TimerTask to run in background**/
+    public static void initTask(){
+        TimerTask task = new interestTask();                                                       
+        Timer timer = new Timer();
+       // TimerTask task = new interestTask();
+        DateTime initTime = new DateTime(DateTimeZone.forID("Etc/UTC"));
+        int initMin = initTime.getMinuteOfHour();
+        int initSec = initTime.getSecondOfMinute();
+        //increment values for sec/min. For sec, add 1 to carry over to min which will carry to hour
+        int incrementSec = initTime.minuteOfHour().getMaximumValue()-initSec+1;
+        int incrementMin = initTime.minuteOfHour().getMaximumValue()-initMin;
+        int taskDelay = 60*initMin + initSec;
+
+       //set next hour time to the initTime plus increment
+       DateTime nextHour = initTime;
+       //nextHour = nextHour.plusSeconds(incrementSec);
+       nextHour = nextHour.plusSeconds(incrementSec);
+       nextHour = nextHour.plusMinutes(incrementMin);
+       System.out.println("initial minutes is: " + initMin);
+       System.out.println("initial seconds is: " + initSec);
+       System.out.println("initial time: "+ initTime);
+       System.out.println("next hour is at: "+ nextHour);
+       System.out.println("delay for task schedule: " + taskDelay);
+       System.out.println("Task will run every 10 secs from the delay");
+
+       //if the time isn't EXACTLY at the hour, run task to init. all bank account interests.
+       task.run();
+
+       timer.scheduleAtFixedRate(task, 1000*3, 1000*5);
+       System.out.println ("TaskTimer scheduled in main. Now initializing GUI");
     }
 
     // This is a getter function for the JPanel that is created when this
@@ -278,107 +309,10 @@ public class GUI extends javax.swing.JFrame
             @Override
             public void run()
             {
-                
-                TimerTask task = new interestTask();                                                       
-                Timer timer = new Timer();
-               // TimerTask task = new interestTask();
-                DateTime initTime = new DateTime(DateTimeZone.forID("Etc/UTC"));
-                int initMin = initTime.getMinuteOfHour();
-                int initSec = initTime.getSecondOfMinute();
-                //increment values for sec/min. For sec, add 1 to carry over to min which will carry to hour
-                int incrementSec = initTime.minuteOfHour().getMaximumValue()-initSec+1;
-                int incrementMin = initTime.minuteOfHour().getMaximumValue()-initMin;
-                int taskDelay = 60*initMin + initSec;
 
-               //set next hour time to the initTime plus increment
-               DateTime nextHour = initTime;
-               //nextHour = nextHour.plusSeconds(incrementSec);
-               nextHour = nextHour.plusSeconds(incrementSec);
-               nextHour = nextHour.plusMinutes(incrementMin);
-               System.out.println("initial minutes is: " + initMin);
-               System.out.println("initial seconds is: " + initSec);
-               System.out.println("initial time: "+ initTime);
-               System.out.println("next hour is at: "+ nextHour);
-               System.out.println("delay for task schedule: " + taskDelay);
-               System.out.println("Task will run every 10 secs from the delay");
-
-               //if the time isn't EXACTLY at the hour, run task to init. all bank account interests.
-               task.run();
-               
-               timer.scheduleAtFixedRate(task, 1000*3, 1000*5);
-               System.out.println ("TaskTimer scheduled in main. Now initializing GUI");
-               
-                
                 final GUI mainGUI = new GUI();
                 initDB();
-                
-                
-                /**11/30 implement DB**
-                HashTable tempTable = MasterTable;
-               // MasterTable = datain.importDB(MasterTable);
-                tempTable=datain.importDB(tempTable);
-                
-                if(tempTable != null)
-                {
-                    //import worked, copy temp to Master
-                    MasterTable = tempTable;
-                    System.out.println("MSG GUI.java: Imported existing data");
-                }
-                else
-                {
-                    //didn't work, leave MasterTable which was previously instantiated
-                    //AS IS
-                    System.out.println("MSG GUI.java: empty table, creating new DB");
-                    //MasterTable = new HashTable();
-                }
-                //Puts some initial values in the table to prevent null pointer
-                // exceptions
-                currentUserAccount = MasterTable.insertUserAccount("qq", "email");
-                if(currentUserAccount != null){
-                    currentUserAccount.setFirstName("first");
-                    currentUserAccount.setLastName("last");
-                    currentUserAccount.setPassword("qq");
-                    currentUserAccount.setPhone("0123456789");
-                    currentBankAccount = currentUserAccount.insertBankAccount(1100, "qq1", "Checking");
-                    currentBankAccount = currentUserAccount.insertBankAccount(2100, "qq2", "Savings");
-                    currentBankAccount = currentUserAccount.insertBankAccount(100, "qq3", "Checking");
-                    currentBankAccount = currentUserAccount.insertBankAccount(3100, "qq4", "Checking");
-                }
-               //for (int zod = 0; zod < 500; zod++)
-               // {
-                //    currentBankAccount.addToBalance(zod);
-              //  }
-
-                currentUserAccount = MasterTable.insertUserAccount("ww", "email2");
-                if (currentUserAccount != null){
-                    currentUserAccount.setFirstName("first2");
-                    currentUserAccount.setLastName("last2");
-                    currentUserAccount.setPassword("ww");
-                    currentUserAccount.setPhone("1234567890");
-                    currentBankAccount = currentUserAccount.insertBankAccount(1100, "ww1", "Checking");
-                    currentBankAccount = currentUserAccount.insertBankAccount(35, "ww2", "Savings");
-                    currentBankAccount = currentUserAccount.insertBankAccount(30, "ww3", "Checking");
-                    currentBankAccount = currentUserAccount.insertBankAccount(30, "ww4", "Checking");
-                }
-
-                currentUserAccount = MasterTable.insertUserAccount("ee", "emai3");
-                if (currentUserAccount != null){
-                    currentUserAccount.setFirstName("first2");
-                    currentUserAccount.setLastName("last2");
-                    currentUserAccount.setPassword("ee");
-                    currentUserAccount.setPhone("1234567890");
-                    currentBankAccount = currentUserAccount.insertBankAccount(50, "ee1", "Checking");
-                    currentBankAccount = currentUserAccount.insertBankAccount(35, "ee2", "Savings");
-                    currentBankAccount = currentUserAccount.insertBankAccount(30, "ee3", "Checking");
-                    currentBankAccount = currentUserAccount.insertBankAccount(30, "ee4", "Checking");
-                }*/
-
-                /*
-                //test
-                for (int i = 0; i < 10000; i++)
-                {
-                    currentUserAccount.insertBankAccount(i, ("acc" + i), "Checking");
-                }*/
+                initTask();
 
                 // This grabs the MainPanel and stores it in a variable so that
                 // we have easy access to it
@@ -421,6 +355,7 @@ public class GUI extends javax.swing.JFrame
                 mainGUI.setVisible(true);
                 mainGUI.setResizable(false);
 
+                
                 mainGUI.addPropertyChangeListener(ACCTABLE,
                         new PropertyChangeListener()
                         {
@@ -443,21 +378,6 @@ public class GUI extends javax.swing.JFrame
                                         currentBankAccount.getAccountName());
                             }
                         });
-                /*if (dataout.exportDB(MasterTable))
-                 {
-                 System.err.println("\nExported file to local source file"
-                 + " Data.ser\n"
-                 + "\n\nFrom run() in GUI.java");
-
-                 }
-
-                 else
-                 {
-                 System.err.println("\n\nCould not export, ERROR\n\n");
-
-                 }
-
-                 System.out.println("\nrun() has ran: " + counter + " times\n");*/
             }
         });
     }

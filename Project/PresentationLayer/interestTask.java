@@ -21,6 +21,7 @@ public class interestTask extends TimerTask {
         ThreadMXBean bean = ManagementFactory.getThreadMXBean();
         int peakThreadCount = bean.getPeakThreadCount();
         System.out.println("Peak Thread Count: " + peakThreadCount);
+        System.out.println("Number of active threads from the given thread: " + Thread.activeCount());
         
     }
     

@@ -2,8 +2,8 @@ package LogicLayer;
 
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
-
-public class Transaction implements Comparable<Transaction>
+import java.io.Serializable;
+public class Transaction implements Comparable<Transaction>, Serializable
 {
 
     // Type of transaction
