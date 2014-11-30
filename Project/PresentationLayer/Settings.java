@@ -358,14 +358,15 @@ public class Settings extends javax.swing.JPanel
         add(Background, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
-    public void update() {
+    public void update()
+    {
         UserLastName.setText(GUI.currentUserAccount.getLastName());
         UserFirstName.setText(GUI.currentUserAccount.getFirstName());
         UserUsername.setText(GUI.currentUserAccount.getUserName());
         UserEmail.setText(GUI.currentUserAccount.getEmail());
         UserPhoneNumber.setText(GUI.currentUserAccount.getPhone());
     }
-    
+
     private void BackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButtonMouseClicked
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
         layout.show(MainPanel, "AccList");
@@ -378,21 +379,18 @@ public class Settings extends javax.swing.JPanel
         layout.show(MainPanel, "Login");
     }//GEN-LAST:event_LogoutButttonMouseClicked
 
-    
     private void DeleteAccountButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteAccountButtonMouseClicked
-       
+
         JPanel passpanel = mainGUI.getPass().GetPanel();
         int choice = JOptionPane.showConfirmDialog(
-                        null,
-                        passpanel,
-                        "Bank 42",
-                        JOptionPane.OK_CANCEL_OPTION,
-                        JOptionPane.PLAIN_MESSAGE
-                        );
-        
-        
-        
-        if (choice==0)
+                null,
+                passpanel,
+                "Bank 42",
+                JOptionPane.OK_CANCEL_OPTION,
+                JOptionPane.PLAIN_MESSAGE
+        );
+
+        if (choice == 0)
         {
             String password = mainGUI.getPass().GetPassword();
             if (!(GUI.currentUserAccount.validatePassword(password)))
@@ -401,60 +399,60 @@ public class Settings extends javax.swing.JPanel
                         JOptionPane.INFORMATION_MESSAGE);
                 return;
             }
-            
-             int choice2 = JOptionPane.showConfirmDialog(
-                        null,
-                        "Are You Sure You Want To Delete Your Account?",
-                        "Bank 42",
-                        JOptionPane.YES_NO_OPTION,
-                        JOptionPane.PLAIN_MESSAGE
-                        );   
-        
-            if(choice2==0) 
+
+            int choice2 = JOptionPane.showConfirmDialog(
+                    null,
+                    "Are You Sure You Want To Delete Your Account?",
+                    "Bank 42",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.PLAIN_MESSAGE
+            );
+
+            if (choice2 == 0)
             {
-            String passwrd = mainGUI.getPass().GetPassword();
-            if (!(GUI.currentUserAccount.validatePassword(passwrd)))
-            {
-                JOptionPane.showMessageDialog(null, "Incorrect Password!", "Error!",
-                        JOptionPane.INFORMATION_MESSAGE);
-            }
-            else
-            {
-                GUI.MasterTable.deleteUserAccount(GUI.currentUserAccount.getUserName());
-                GUI.currentBankAccount = null;
-                GUI.currentUserAccount = null;
-                CardLayout layout = (CardLayout) (MainPanel.getLayout());
-                layout.show(MainPanel, "Login");
-            }
+                String passwrd = mainGUI.getPass().GetPassword();
+                if (!(GUI.currentUserAccount.validatePassword(passwrd)))
+                {
+                    JOptionPane.showMessageDialog(null, "Incorrect Password!", "Error!",
+                            JOptionPane.INFORMATION_MESSAGE);
+                }
+                else
+                {
+                    GUI.MasterTable.deleteUserAccount(GUI.currentUserAccount.getUserName());
+                    GUI.currentBankAccount = null;
+                    GUI.currentUserAccount = null;
+                    CardLayout layout = (CardLayout) (MainPanel.getLayout());
+                    layout.show(MainPanel, "Login");
+                }
             }
         }
-        
+
     }//GEN-LAST:event_DeleteAccountButtonMouseClicked
 
     private void EditLastNameActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EditLastNameActionPerformed
     {//GEN-HEADEREND:event_EditLastNameActionPerformed
-        String response = JOptionPane.showInputDialog(null,"Enter Your New Last Name:","Bank 42",1);
-        
-        if (response == null)                    
+        String response = JOptionPane.showInputDialog(null, "Enter Your New Last Name:", "Bank 42", 1);
+
+        if (response == null)
             return;
-        
+
         response = response.trim();
         if ((response.length() > 0) && CreateAccountPanel.validateLastName(response))
         {
             GUI.currentUserAccount.setLastName(response);
-            update();   
+            update();
         }
     }//GEN-LAST:event_EditLastNameActionPerformed
 
     private void EditFirstNameActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EditFirstNameActionPerformed
     {//GEN-HEADEREND:event_EditFirstNameActionPerformed
         String response = JOptionPane.showInputDialog("Enter Your New First:");
-        
-        if (response == null)                    
+
+        if (response == null)
             return;
-         
+
         response = response.trim();
-        
+
         if ((response.length() > 0) && CreateAccountPanel.validateFirstName(response))
         {
             GUI.currentUserAccount.setFirstName(response);
@@ -465,13 +463,13 @@ public class Settings extends javax.swing.JPanel
     private void EditUsernameActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EditUsernameActionPerformed
     {//GEN-HEADEREND:event_EditUsernameActionPerformed
         String response = JOptionPane.showInputDialog("Enter Your New Username:");
-        
-        if (response == null)                    
+
+        if (response == null)
             return;
-         
+
         response = response.trim();
         if ((response.length() > 0) && (CreateAccountPanel.validate(response)))
-        {           
+        {
             GUI.currentUserAccount.setUserName(response);
             update();
         }
@@ -480,13 +478,13 @@ public class Settings extends javax.swing.JPanel
     private void EditEmailActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EditEmailActionPerformed
     {//GEN-HEADEREND:event_EditEmailActionPerformed
         String response = JOptionPane.showInputDialog("Enter Your New Email:");
-        
-        if (response == null)                    
+
+        if (response == null)
             return;
-        
+
         response = response.trim();
         if ((response.length() > 0) && (CreateAccountPanel.isValidEmailAddress(response)))
-        {           
+        {
             GUI.currentUserAccount.setEmail(response);
             update();
         }
@@ -495,13 +493,13 @@ public class Settings extends javax.swing.JPanel
     private void EditPhoneNumberActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EditPhoneNumberActionPerformed
     {//GEN-HEADEREND:event_EditPhoneNumberActionPerformed
         String response = JOptionPane.showInputDialog("Enter Your New Phone Number:");
-        
-        if (response == null)                    
+
+        if (response == null)
             return;
-        
+
         response = response.trim();
         if ((response.length() > 0) && (CreateAccountPanel.validatePhoneNumber(response)))
-        {            
+        {
             GUI.currentUserAccount.setPhone(response);
             update();
         }
@@ -510,13 +508,13 @@ public class Settings extends javax.swing.JPanel
     private void EditPasswordActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EditPasswordActionPerformed
     {//GEN-HEADEREND:event_EditPasswordActionPerformed
         String response = JOptionPane.showInputDialog("Enter Your New Password:");
-        
-        if (response == null)                    
+
+        if (response == null)
             return;
-        
+
         response = response.trim();
         if ((response.length() > 0) && (CreateAccountPanel.validatePassword(response)))
-        {           
+        {
             GUI.currentUserAccount.setPassword(response);
             update();
         }

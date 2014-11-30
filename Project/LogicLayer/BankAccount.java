@@ -3,6 +3,7 @@ package LogicLayer;
 import java.io.Serializable;
 import static java.lang.Math.abs;
 import org.joda.time.*;
+import org.joda.time.format.*;
 
 /**
  * **************************************************************************
@@ -36,6 +37,8 @@ public class BankAccount implements Serializable
     protected double dayDepositAmount;
     // The last time a deposit was made on the account
     protected DateTime lastDepositDateTime;
+    // Allows us to format dates so they look nice for the user
+    public static DateTimeFormatter dtf = DateTimeFormat.forPattern("MMMM d, yyyy");
 
     public BankAccount()
     {
