@@ -238,7 +238,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         gridBagConstraints.weighty = 1.0;
         jPanel3.add(jScrollPane1, gridBagConstraints);
 
-        TransferFundsPanel.setBackground(new java.awt.Color(255, 255, 255));
+        TransferFundsPanel.setBackground(new Color(255,255,255,190));
         TransferFundsPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Transfer Funds", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("DejaVu Sans", 1, 16), new java.awt.Color(51, 0, 255))); // NOI18N
 
         jPanel2.setBackground(new java.awt.Color(51, 0, 255));
