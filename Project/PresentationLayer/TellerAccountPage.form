@@ -181,7 +181,7 @@
             </Property>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="AccountsTable.setSelectionModel(new ForcedListSelectionModel());"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="AccountsTable.setSelectionModel(SelectionModel = new DefaultListSelectionModel());&#xa;SelectionModel.setSelectionMode(0);"/>
           </AuxValues>
         </Component>
       </SubComponents>
