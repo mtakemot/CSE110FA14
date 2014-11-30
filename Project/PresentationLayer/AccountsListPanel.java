@@ -949,10 +949,17 @@ public class AccountsListPanel extends javax.swing.JPanel
 
     private void TransactionHistoryButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_TransactionHistoryButtonActionPerformed
     {//GEN-HEADEREND:event_TransactionHistoryButtonActionPerformed
-        CardLayout layout = (CardLayout) (MainPanel.getLayout());
-        // add update() here
-        mainGUI.getTransPanel().update();
-        layout.show(MainPanel, "TransPanel");
+        if (AccountsTable.getSelectedRowCount() > 0)
+        {
+            int row = AccountsTable.getSelectedRow();
+            String bankacc = (String) AccountsTable.getValueAt(row, 1);
+            GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(bankacc);
+            CardLayout layout = (CardLayout) (MainPanel.getLayout());
+            mainGUI.getTransPanel().update();
+            layout.show(MainPanel, "TransPanel");
+        }
+        else
+            JOptionPane.showMessageDialog(null, "Please select and account first", "Bank 42", 1);
     }//GEN-LAST:event_TransactionHistoryButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
