@@ -250,7 +250,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         TransferFundsPanel.setLayout(TransferFundsPanelLayout);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(204, 255, 153));
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("To Your One Of Bank Accounts");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
@@ -334,7 +334,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         TransferFundsPanel.add(TransferButton1, gridBagConstraints);
 
         Transferanotheruser.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        Transferanotheruser.setForeground(new java.awt.Color(204, 255, 153));
+        Transferanotheruser.setForeground(new java.awt.Color(255, 255, 255));
         Transferanotheruser.setText("Transfer To Another User:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
@@ -396,7 +396,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         TransferFundsPanel.add(BankAccountsList0, gridBagConstraints);
 
-        jPanel2.setBackground(new java.awt.Color(51, 0, 255));
+        jPanel2.setBackground(new Color(51,0,255,190));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.setLayout(new java.awt.GridBagLayout());
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -407,7 +407,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         TransferFundsPanel.add(jPanel2, gridBagConstraints);
 
-        jPanel1.setBackground(new java.awt.Color(51, 0, 255));
+        jPanel1.setBackground(new Color(51,0,255,190));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.setLayout(new java.awt.GridBagLayout());
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -418,7 +418,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         TransferFundsPanel.add(jPanel1, gridBagConstraints);
 
-        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.setBackground(new Color(255,255,255,190));
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         java.awt.GridBagLayout jPanel5Layout = new java.awt.GridBagLayout();
         jPanel5Layout.columnWidths = new int[] {0, 5, 0};
