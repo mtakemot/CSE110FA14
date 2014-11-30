@@ -46,7 +46,8 @@ public class Settings extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
         java.awt.GridBagConstraints gridBagConstraints;
 
         jLabel1 = new javax.swing.JLabel();
@@ -75,7 +76,6 @@ public class Settings extends javax.swing.JPanel
         BAUserNameLabel = new javax.swing.JLabel();
         EditPassword = new javax.swing.JButton();
         errorMessage = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         Background = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(800, 600));
@@ -96,8 +96,10 @@ public class Settings extends javax.swing.JPanel
         add(jLabel1, gridBagConstraints);
 
         LogoutButtton.setText("Logout");
-        LogoutButtton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        LogoutButtton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 LogoutButttonMouseClicked(evt);
             }
         });
@@ -109,8 +111,10 @@ public class Settings extends javax.swing.JPanel
         add(LogoutButtton, gridBagConstraints);
 
         BackButton.setText("Back");
-        BackButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        BackButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 BackButtonMouseClicked(evt);
             }
         });
@@ -134,7 +138,7 @@ public class Settings extends javax.swing.JPanel
         FirstName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         FirstName.setText("First Name");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel1.add(FirstName, gridBagConstraints);
@@ -142,7 +146,7 @@ public class Settings extends javax.swing.JPanel
         LastName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         LastName.setText("Last Name");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel1.add(LastName, gridBagConstraints);
@@ -150,7 +154,7 @@ public class Settings extends javax.swing.JPanel
         Username.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Username.setText("Username");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 8;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel1.add(Username, gridBagConstraints);
@@ -158,7 +162,7 @@ public class Settings extends javax.swing.JPanel
         Email.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Email.setText("Email");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel1.add(Email, gridBagConstraints);
@@ -166,7 +170,7 @@ public class Settings extends javax.swing.JPanel
         PhoneNumber.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         PhoneNumber.setText("Phone Number");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 12;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel1.add(PhoneNumber, gridBagConstraints);
@@ -174,7 +178,7 @@ public class Settings extends javax.swing.JPanel
         UserLastName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         UserLastName.setText("jLabel2");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel1.add(UserLastName, gridBagConstraints);
@@ -182,7 +186,7 @@ public class Settings extends javax.swing.JPanel
         UserFirstName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         UserFirstName.setText("jLabel3");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel1.add(UserFirstName, gridBagConstraints);
@@ -190,7 +194,7 @@ public class Settings extends javax.swing.JPanel
         UserUsername.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         UserUsername.setText("jLabel4");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 8;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel1.add(UserUsername, gridBagConstraints);
@@ -198,7 +202,7 @@ public class Settings extends javax.swing.JPanel
         UserEmail.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         UserEmail.setText("jLabel5");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel1.add(UserEmail, gridBagConstraints);
@@ -206,70 +210,80 @@ public class Settings extends javax.swing.JPanel
         UserPhoneNumber.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         UserPhoneNumber.setText("jLabel6");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 12;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel1.add(UserPhoneNumber, gridBagConstraints);
 
         EditLastName.setText("Edit");
-        EditLastName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        EditLastName.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 EditLastNameActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 4;
         jPanel1.add(EditLastName, gridBagConstraints);
 
         EditFirstName.setText("Edit");
-        EditFirstName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        EditFirstName.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 EditFirstNameActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 6;
         jPanel1.add(EditFirstName, gridBagConstraints);
 
         EditUsername.setText("Edit");
-        EditUsername.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        EditUsername.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 EditUsernameActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 8;
         jPanel1.add(EditUsername, gridBagConstraints);
 
         EditEmail.setText("Edit");
-        EditEmail.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        EditEmail.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 EditEmailActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 10;
         jPanel1.add(EditEmail, gridBagConstraints);
 
         EditPhoneNumber.setText("Edit");
-        EditPhoneNumber.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        EditPhoneNumber.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 EditPhoneNumberActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 12;
         jPanel1.add(EditPhoneNumber, gridBagConstraints);
 
         Password.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Password.setText("Password");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 14;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel1.add(Password, gridBagConstraints);
@@ -277,14 +291,16 @@ public class Settings extends javax.swing.JPanel
         UserPassword.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         UserPassword.setText("*****");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 14;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel1.add(UserPassword, gridBagConstraints);
 
         DeleteAccountButton.setText("Delete Main Account");
-        DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 DeleteAccountButtonMouseClicked(evt);
             }
         });
@@ -295,16 +311,21 @@ public class Settings extends javax.swing.JPanel
 
         BAUserNameLabel.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         BAUserNameLabel.setText("User" + PresentationLayer.GUI.currentBankAccount.getAccountName());
-        jPanel1.add(BAUserNameLabel, new java.awt.GridBagConstraints());
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        jPanel1.add(BAUserNameLabel, gridBagConstraints);
 
         EditPassword.setText("Edit");
-        EditPassword.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        EditPassword.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 EditPasswordActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 14;
         jPanel1.add(EditPassword, gridBagConstraints);
 
@@ -327,21 +348,14 @@ public class Settings extends javax.swing.JPanel
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel2.add(jPanel1, gridBagConstraints);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/rsz_1big_42_robot.jpg"))); // NOI18N
-        jLabel2.setMaximumSize(new java.awt.Dimension(683, 384));
-        jLabel2.setMinimumSize(new java.awt.Dimension(683, 384));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel2.add(jLabel2, gridBagConstraints);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 10, 0, 0);
         add(jPanel2, gridBagConstraints);
 
-        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/Background2.jpg"))); // NOI18N
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/hitchguide42robot.jpg"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -561,7 +575,6 @@ public class Settings extends javax.swing.JPanel
     private javax.swing.JLabel Username;
     private javax.swing.JLabel errorMessage;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
