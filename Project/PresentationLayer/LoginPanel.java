@@ -82,6 +82,7 @@ public class LoginPanel extends javax.swing.JPanel
         jLabel2 = new javax.swing.JLabel();
         Background = new javax.swing.JLabel();
 
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
         setPreferredSize(new java.awt.Dimension(800, 600));

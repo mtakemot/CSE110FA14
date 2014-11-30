@@ -337,10 +337,10 @@ public class CreateAccountPanel extends javax.swing.JPanel
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 180, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(0, 75, 0, 0);
         add(jPanel1, gridBagConstraints);
 
-        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/robotbackground.jpg"))); // NOI18N
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/hitchguide42robot.jpg"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -353,6 +353,23 @@ public class CreateAccountPanel extends javax.swing.JPanel
         initComponents();
     }
 
+    public void clearfields() {
+        firstName.setText("");
+        lastName.setText("");
+        username.setText("");
+        phone.setText("");
+        email.setText("");
+        confirmPassword.setText("");
+        password.setText("");
+        FirstNameError.setText(" ");
+        LastNameError.setText(" ");
+        UsernameError.setText(" ");
+        PhoneError.setText(" ");
+        EmailError.setText(" ");
+        PasswordError.setText(" ");
+        ConfirmPasswordError.setText(" ");
+    }
+    
     private void createUserAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserAccountActionPerformed
 
         boolean operationSuccessful = false;
@@ -504,6 +521,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
     }//GEN-LAST:event_createUserAccountActionPerformed
 
     private void dismissViewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dismissViewMouseClicked
+        clearfields();
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
         layout.show(MainPanel, "Login");
     }//GEN-LAST:event_dismissViewMouseClicked
