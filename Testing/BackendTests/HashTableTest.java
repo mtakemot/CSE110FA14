@@ -8,6 +8,7 @@ import static org.junit.Assert.*;
 /**
  *
  * @author Nishat rustagi
+ * @author Tahereh Masoumi  Last Updated Nov. 30 2014
  */
 public class HashTableTest
 {
@@ -21,11 +22,12 @@ public class HashTableTest
         String testString = "testUserName";
 
         //create and insert 10000 UserAccounts
-        for (int i = 0; i < 10000; i++)
+        for (int i = 0; i < 1000; i++)
         {
 
             // creating 10000 test userAccounts each with different userName
             UserAccount testAccount = new UserAccount(testString + i);
+            testAccount.setEmail("email" + i);
 
             //Adding the 10000 userAccounts to the HashTable
             UserAccount result = testTable.insertUserAccount(testString + i, "email" + i);
@@ -130,6 +132,39 @@ public class HashTableTest
         for (int i = 0; i < 10000; i++)
         {
             assertTrue(testTable.deleteUserAccount(testString + i));
+        }
+
+    }
+    
+    @Test
+    public void testFindUserAccountByEmail()
+
+    {
+        System.out.println("Find UserAccount by Email");
+        HashTable testTable = new HashTable();
+        String testString = "testUserName";
+
+        //inserting 10000 user accounts into the hashtable
+        for (int i = 0; i < 10000; i++)
+        {
+            testTable.insertUserAccount(testString + i, "email" + i);
+        }
+
+        // Making sure duplicate inserts return null
+        for (int i = 0; i < 10000; i++)
+        {
+            UserAccount check = testTable.insertUserAccount(testString + i, "email" + i);
+            assertEquals(check, null);
+        }
+
+        //checking userName and email of the user accounts to see if found
+        //accounts match
+        for (int i = 0; i < 10000; i++)
+        {
+            UserAccount testAccount = testTable.findUserAccount(testString + i);
+            UserAccount result = testTable.findUserAccountEmail("email" + i);
+            assertEquals(testAccount.getUserName(), result.getUserName());
+
         }
 
     }

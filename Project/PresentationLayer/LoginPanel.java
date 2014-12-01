@@ -79,6 +79,7 @@ public class LoginPanel extends javax.swing.JPanel
         UsernameLabel = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         PasswordLabel = new javax.swing.JLabel();
+        ForgotPWButton = new javax.swing.JButton();
         Background = new javax.swing.JLabel();
 
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -90,7 +91,7 @@ public class LoginPanel extends javax.swing.JPanel
         jPanel1.setOpaque(false);
         java.awt.GridBagLayout jPanel1Layout = new java.awt.GridBagLayout();
         jPanel1Layout.columnWidths = new int[] {0, 5, 0};
-        jPanel1Layout.rowHeights = new int[] {0, 5, 0, 5, 0};
+        jPanel1Layout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0};
         jPanel1.setLayout(jPanel1Layout);
 
         CreateAccButton.setBackground(new Color (255,255,255,150));
@@ -123,7 +124,8 @@ public class LoginPanel extends javax.swing.JPanel
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.ipadx = 50;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         jPanel1.add(LoginButton, gridBagConstraints);
@@ -231,6 +233,13 @@ public class LoginPanel extends javax.swing.JPanel
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         jPanel1.add(jPanel3, gridBagConstraints);
+
+        ForgotPWButton.setText("Forgot Password");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        jPanel1.add(ForgotPWButton, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -375,6 +384,7 @@ public class LoginPanel extends javax.swing.JPanel
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Background;
     private javax.swing.JButton CreateAccButton;
+    private javax.swing.JButton ForgotPWButton;
     private javax.swing.JButton LoginButton;
     private javax.swing.JLabel PasswordLabel;
     private javax.swing.JTextField UsernameField;
