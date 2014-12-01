@@ -34,6 +34,7 @@ public class HashTable implements Serializable
     public int occ; // Total number of UserAccounts that the table is holding
     UserAccount[] Table; // The hash table
     private DateTime lastInterestDateTime;
+    public int balanceCounter;
 
     // Constructor for the HashTable creates an array of size SIZE and
     // initializes every element in the array to null. Also initializes occ
@@ -48,6 +49,7 @@ public class HashTable implements Serializable
         // Sets the creation time of the HashTable to the local time converted
         // to UTC
         lastInterestDateTime = new DateTime(DateTimeZone.forID("Etc/UTC"));
+        balanceCounter = 0;
     }
 
     /**
@@ -249,6 +251,7 @@ public class HashTable implements Serializable
      */
     public void updateAverageBalance()
     {
+        
         BankAccount currentBA;
         UserAccount currentUA;
         double dailyTotal;

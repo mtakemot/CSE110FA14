@@ -201,22 +201,50 @@ public class GUI extends javax.swing.JFrame
         
         //begin setup for balanceTask thread
         TimerTask updateBalance = new balanceTask();
-        
+        TimerTask updateInterest = new interestTask();
         //get the DateTime for the 
         DateTime last = MasterTable.getLastInterestDateTime();
         DateTime now = new DateTime(DateTimeZone.forID("Etc/UTC"));
+
+        //month difference
+        int lastMonth = last.getMonthOfYear();
+        int nowMonth = now.getMonthOfYear();
+        int monthDiff = nowMonth - lastMonth;
+        
+        //days passed, subtract the number of daysleft in lastmonth
         Days d = Days.daysBetween(last, now);
         int dPassed = d.getDays();
-        System.out.println("Testing balance thread. Current time: " + now);
-        System.out.println("        Last interest Date/Time time: " + last);
+        int nowMin = now.getMinuteOfHour();
+        int nowSec = now.getSecondOfMinute();
+        //automatically, if monthDiff = 0 then, updateBalance x dPassed times
+        if(monthDiff == 0){
+            
+            //if current min and sec == 0, update bal then interest
+            if (nowMin == 0 && nowSec == 0){
+                
+                updateInterest.run();
+                timer.scheduleAtFixedRate(updateBalance, 0, 1000 * 60*60);
+                timer.scheduleAtFixedRate(updateInterest, 0, 1000 * 60*60);
+            }
+            else{
+                for (int i = 0; i < dPassed; i++){
+                updateBalance.run();
+                }
+            }
+        }
+      
+        
+        
         Minutes m = Minutes.minutesBetween(last, now);
         int mPassed = m.getMinutes();
         System.out.println("TEST!!! Min from DateTime: " + mPassed);
         
-        int daysInMonth = last.dayOfMonth().getMaximumValue();
+        
+        
+       /* int daysInMonth = last.dayOfMonth().getMaximumValue();
         System.out.println("Days in this month: " + daysInMonth);
-        int daysLeft = daysInMonth - last.getDayOfMonth();
-        System.out.println("Days until next month: " + daysLeft);
+        //int daysLeft = daysInMonth - last.getDayOfMonth();
+        System.out.println("Days until next month: " + daysLeft);*/
         /***CASE 1***
          * If the user has not been on for over a day, his current balance 
          * is added to his average total X amount of times 
