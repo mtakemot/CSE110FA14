@@ -61,7 +61,7 @@ public class TellerAccountPage extends javax.swing.JPanel
 
     public void update()
     {
-        
+
         AccountsTable.setModel(new AccountsTableModel(GUI.currentUserAccount));
         SelectionModel.clearSelection();
         CurrentUserAccountLabel.setText(GUI.currentUserAccount.getUserName());
@@ -287,7 +287,8 @@ public class TellerAccountPage extends javax.swing.JPanel
         double amount;
         String amountstring = JOptionPane.showInputDialog(
                 null, "Amount To Deposit: ");
-
+        if (amountstring == null)
+            return;
         if (isParsable(amountstring))
         {
             amount = Double.parseDouble(amountstring);
@@ -306,7 +307,7 @@ public class TellerAccountPage extends javax.swing.JPanel
 
         //first, retrieve the row index of selection
         int row = AccountsTable.getSelectedRow();
-        String user = (String) AccountsTable.getValueAt(row, 1);
+        String user = (String) AccountsTable.getValueAt(row, 0);
         System.out.print("\nTESTING retrieve selected row index: ");
         System.out.print(row);
         //next, retrieve the user account for the selection ( row , column0) = (x,y)
@@ -340,7 +341,8 @@ public class TellerAccountPage extends javax.swing.JPanel
         double amount;
         String amountstring = JOptionPane.showInputDialog(
                 null, "Amount To Withdraw: ");
-
+        if (amountstring == null)
+            return;
         if (isParsable(amountstring))
         {
             amount = Double.parseDouble(amountstring);
@@ -359,7 +361,7 @@ public class TellerAccountPage extends javax.swing.JPanel
 
         //first, retrieve the row index of selection
         int row = AccountsTable.getSelectedRow();
-        String user = (String) AccountsTable.getValueAt(row, 1);
+        String user = (String) AccountsTable.getValueAt(row, 0);
         System.out.print("\nTESTING retrieve selected row index: ");
         System.out.print(row);
         //next, retrieve the user account for the selection ( row , column0) = (x,y)
@@ -434,7 +436,7 @@ public class TellerAccountPage extends javax.swing.JPanel
             double amount_in_deleted_acc;
             String account_name;
             int row = AccountsTable.getSelectedRow();
-            String bankacc = (String) AccountsTable.getValueAt(row, 1);
+            String bankacc = (String) AccountsTable.getValueAt(row, 0);
 
             GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(bankacc);
             amount_in_deleted_acc = GUI.currentBankAccount.getBalance();
