@@ -235,6 +235,7 @@ public class GUI extends javax.swing.JFrame
         timer.scheduleAtFixedRate(task, 1000 * 10, 1000 * 15); 
         
         System.out.println("TaskTimer scheduled in main. Now initializing GUI");
+      
         /* ***********************************************************************/
     }
 
