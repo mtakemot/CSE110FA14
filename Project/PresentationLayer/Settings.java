@@ -2,6 +2,9 @@ package PresentationLayer;
 
 import javax.swing.*;
 import java.awt.*;
+import static java.lang.Thread.sleep;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -426,8 +429,11 @@ public class Settings extends javax.swing.JPanel
                     GUI.MasterTable.deleteUserAccount(GUI.currentUserAccount.getUserName());
                     GUI.currentBankAccount = null;
                     GUI.currentUserAccount = null;
+                    
                     CardLayout layout = (CardLayout) (MainPanel.getLayout());
                     layout.show(MainPanel, "Login");
+                    //mainGUI.getDolphinsPanel().DolphinsCalled();
+                    
                 }
             }
         }

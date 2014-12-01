@@ -165,6 +165,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         jPanel3.setLayout(jPanel3Layout);
 
         jScrollPane1.setBackground(new Color(255,255,255,190));
+        jScrollPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jScrollPane1.setMaximumSize(new java.awt.Dimension(440, 390));
         jScrollPane1.setMinimumSize(new java.awt.Dimension(400, 300));
         jScrollPane1.setOpaque(false);
