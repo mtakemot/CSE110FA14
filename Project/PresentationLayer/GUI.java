@@ -38,6 +38,7 @@ import org.joda.time.DateTime;
 import java.util.Timer;
 import java.util.TimerTask;
 import org.joda.time.DateTimeZone;
+import org.joda.time.*;
 
 
 
@@ -195,7 +196,13 @@ public class GUI extends javax.swing.JFrame
      * 11/30**method for setting up TimerTask to run in background*
      */
     public static void initTask()
-    {/*
+    {
+        Timer timer = new Timer();
+        
+        //begin setup for balanceTask thread
+        TimerTask updateBalance = new balanceTask();
+        
+        //get the DateTime for the 
         DateTime last = MasterTable.getLastInterestDateTime();
         DateTime now = new DateTime(DateTimeZone.forID("Etc/UTC"));
         int yearPassed = now.getYear() - last.getYear();
@@ -203,10 +210,25 @@ public class GUI extends javax.swing.JFrame
         int dayPassed = now.getDayOfMonth() - last.getDayOfMonth();
         int hourPassed = now.getHourOfDay() - last.getHourOfDay();
         int minPassed = now.getMinuteOfHour() - last.getMinuteOfHour();
-        int secPassed = now.getSecondOfMinute() - last.getSecondOfMinute();*/
+        int secPassed = now.getSecondOfMinute() - last.getSecondOfMinute();
+        System.out.println("Testing balance thread. Current time: " + now);
+        System.out.println("        Last interest Date/Time time: " + last);
+        System.out.println("                      Minutes Passed: "+ minPassed );
+        
+        
+        /*
+        LocalDateTime last1 = last.toLocalDateTime();
+        System.out.println ("TESTING localDateTime conversion: "+ last1);
+        LocalDate date = last1.toLocalDate();
+        LocalTime time = last1.toLocalTime();
+        System.out.println ("TESTING localDate conversion: " + date);
+        System.out.println ("TESTING localTime conversion: " + time);*/
+       
+        
+        
                 
         
-        /********This comment block was for testing multithreads with interestAndPenalty ONLY (not using balanceUpdate********/
+        /********This comment block was for testing multithreads with interestAndPenalty ONLY (not using balanceUpdate********
         TimerTask task = new interestTask();
         Timer timer = new Timer();
         DateTime initTime = new DateTime(DateTimeZone.forID("Etc/UTC"));
@@ -229,10 +251,9 @@ public class GUI extends javax.swing.JFrame
         System.out.println("delay for task schedule: 20sec");// + taskDelay);
         System.out.println("Task will run every 30 secs from the delay");
 
-        //if the time isn't EXACTLY at the hour, run task to init. all bank account interests.
        //task.run();
 
-        timer.scheduleAtFixedRate(task, 1000 * 10, 1000 * 15); 
+        timer.scheduleAtFixedRate(task, 1000 * 10, 1000 * 15); */
         
         System.out.println("TaskTimer scheduled in main. Now initializing GUI");
       
@@ -383,6 +404,7 @@ public class GUI extends javax.swing.JFrame
                 mainGUI.setPass(new PasswordFieldPanel(cardHolder, mainGUI));
                 mainGUI.setPenIntPanel(new PenaltyInterestPanel(cardHolder, mainGUI));
                 mainGUI.setTransPanel(new TransactionHistoryPanel(cardHolder, mainGUI));
+                mainGUI.setDolphinsPanel(new DolphinsPanel(cardHolder, mainGUI));
 
                 // This addes the LoginPanel and AccountsListPanel that we just
                 // created to the MainPanel. It also assigns a name to each of
@@ -400,6 +422,7 @@ public class GUI extends javax.swing.JFrame
                 cardHolder.add(mainGUI.getTDelete(), "TDelete");
                 cardHolder.add(mainGUI.getPenIntPanel(), "PenIntPanel");
                 cardHolder.add(mainGUI.getTransPanel(), "TransPanel");
+                cardHolder.add(mainGUI.getDolphinsPanel(), "DolphinsPanel");
 
                 // These two lines show the MainPanel. Without these 2 lines
                 // the GUI would not show up at all. Just leave them alone.
@@ -444,7 +467,18 @@ public class GUI extends javax.swing.JFrame
     private PasswordFieldPanel pass;
     private PenaltyInterestPanel PenIntPanel;
     private TransactionHistoryPanel TransPanel;
+    private DolphinsPanel DolphinsPanel;
 
+    public DolphinsPanel getDolphinsPanel()
+    {
+        return DolphinsPanel;
+    }
+
+    public void setDolphinsPanel(DolphinsPanel DolphinsPanel)
+    {
+        this.DolphinsPanel = DolphinsPanel;
+    }
+    
     public TransactionHistoryPanel getTransPanel()
     {
         return TransPanel;
