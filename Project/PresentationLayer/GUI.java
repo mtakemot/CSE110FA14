@@ -205,18 +205,47 @@ public class GUI extends javax.swing.JFrame
         //get the DateTime for the 
         DateTime last = MasterTable.getLastInterestDateTime();
         DateTime now = new DateTime(DateTimeZone.forID("Etc/UTC"));
-        int yearPassed = now.getYear() - last.getYear();
-        int monthPassed = now.getMonthOfYear()- last.getMonthOfYear();
-        int dayPassed = now.getDayOfMonth() - last.getDayOfMonth();
-        int hourPassed = now.getHourOfDay() - last.getHourOfDay();
-        int minPassed = now.getMinuteOfHour() - last.getMinuteOfHour();
-        int secPassed = now.getSecondOfMinute() - last.getSecondOfMinute();
+        Days d = Days.daysBetween(last, now);
+        int dPassed = d.getDays();
         System.out.println("Testing balance thread. Current time: " + now);
         System.out.println("        Last interest Date/Time time: " + last);
-        System.out.println("                      Minutes Passed: "+ minPassed );
+        Minutes m = Minutes.minutesBetween(last, now);
+        int mPassed = m.getMinutes();
+        System.out.println("TEST!!! Min from DateTime: " + mPassed);
         
+        int daysInMonth = last.dayOfMonth().getMaximumValue();
+        System.out.println("Days in this month: " + daysInMonth);
+        int daysLeft = daysInMonth - last.getDayOfMonth();
+        System.out.println("Days until next month: " + daysLeft);
+        /***CASE 1***
+         * If the user has not been on for over a day, his current balance 
+         * is added to his average total X amount of times 
+         * transfers from other Users need to be implemented through Transfers
+         */
+        while(dPassed > 0){
+            updateBalance.run();
+            dPassed--;
+        }
+        
+        /***CASE 2 ***
+         * User has been on within the last 24 hours (a day has not passsed
+         */
         
         /*
+        //compare LocalDate or LocalTime obj so we can call period class's LocalDat/Time comparators
+        LocalDate dateLast = last.toLocalDate();
+        LocalDate dateNow = now.toLocalDate();
+        
+        LocalTime timeLast = last.toLocalTime();
+        LocalTime timeNow = now.toLocalTime();
+        
+        Days days = Days.daysBetween(dateLast, dateNow);
+        int daysPassed = days.getDays();
+        System.out.println("Days passed: " + daysPassed);
+        Minutes min = Minutes.minutesBetween(last, now);
+        int minsPassed = min.getMinutes();
+        System.out.println("Min passed: " + minsPassed);
+        
         LocalDateTime last1 = last.toLocalDateTime();
         System.out.println ("TESTING localDateTime conversion: "+ last1);
         LocalDate date = last1.toLocalDate();
