@@ -2,6 +2,11 @@ package PresentationLayer;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.font.TextAttribute;
+import static java.lang.Thread.sleep;
+import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -20,6 +25,7 @@ public class Settings extends javax.swing.JPanel
      */
     private JPanel MainPanel;
     private GUI mainGUI;
+    private Font thefont;
 
     public Settings()
     {
@@ -53,29 +59,48 @@ public class Settings extends javax.swing.JPanel
         jLabel1 = new javax.swing.JLabel();
         LogoutButtton = new javax.swing.JButton();
         BackButton = new javax.swing.JButton();
+        errorMessage = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
-        FirstName = new javax.swing.JLabel();
-        LastName = new javax.swing.JLabel();
-        Username = new javax.swing.JLabel();
-        Email = new javax.swing.JLabel();
-        PhoneNumber = new javax.swing.JLabel();
-        UserLastName = new javax.swing.JLabel();
-        UserFirstName = new javax.swing.JLabel();
-        UserUsername = new javax.swing.JLabel();
-        UserEmail = new javax.swing.JLabel();
-        UserPhoneNumber = new javax.swing.JLabel();
-        EditLastName = new javax.swing.JButton();
-        EditFirstName = new javax.swing.JButton();
-        EditUsername = new javax.swing.JButton();
-        EditEmail = new javax.swing.JButton();
-        EditPhoneNumber = new javax.swing.JButton();
-        Password = new javax.swing.JLabel();
-        UserPassword = new javax.swing.JLabel();
         DeleteAccountButton = new javax.swing.JButton();
         BAUserNameLabel = new javax.swing.JLabel();
         EditPassword = new javax.swing.JButton();
-        errorMessage = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        LastName = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        FirstName = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        Username = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        Email = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
+        PhoneNumber = new javax.swing.JLabel();
+        jPanel8 = new javax.swing.JPanel();
+        Password = new javax.swing.JLabel();
+        jPanel9 = new javax.swing.JPanel();
+        EditLabel = new javax.swing.JLabel();
+        jPanel10 = new javax.swing.JPanel();
+        EditLabel1 = new javax.swing.JLabel();
+        jPanel11 = new javax.swing.JPanel();
+        EditLabel4 = new javax.swing.JLabel();
+        jPanel12 = new javax.swing.JPanel();
+        EditLabel2 = new javax.swing.JLabel();
+        jPanel13 = new javax.swing.JPanel();
+        EditLabel3 = new javax.swing.JLabel();
+        jPanel14 = new javax.swing.JPanel();
+        EditLabel5 = new javax.swing.JLabel();
+        jPanel15 = new javax.swing.JPanel();
+        UserLastName = new javax.swing.JLabel();
+        jPanel16 = new javax.swing.JPanel();
+        UserFirstName = new javax.swing.JLabel();
+        jPanel17 = new javax.swing.JPanel();
+        UserUsername = new javax.swing.JLabel();
+        jPanel18 = new javax.swing.JPanel();
+        UserEmail = new javax.swing.JLabel();
+        jPanel19 = new javax.swing.JPanel();
+        UserPhoneNumber = new javax.swing.JLabel();
+        jPanel20 = new javax.swing.JPanel();
+        UserPassword = new javax.swing.JLabel();
         Background = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(800, 600));
@@ -125,176 +150,24 @@ public class Settings extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(10, 10, 0, 0);
         add(BackButton, gridBagConstraints);
 
+        errorMessage.setForeground(new java.awt.Color(255, 102, 102));
+        errorMessage.setText("error message");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 10, 220, 0);
+        add(errorMessage, gridBagConstraints);
+
         jPanel2.setOpaque(false);
         jPanel2.setLayout(new java.awt.GridBagLayout());
 
         jPanel1.setName(""); // NOI18N
         jPanel1.setOpaque(false);
         java.awt.GridBagLayout jPanel1Layout = new java.awt.GridBagLayout();
-        jPanel1Layout.columnWidths = new int[] {0, 30, 0, 30, 0, 30, 0};
-        jPanel1Layout.rowHeights = new int[] {0, 9, 0, 9, 0, 9, 0, 9, 0, 9, 0, 9, 0, 9, 0, 9, 0, 9, 0};
+        jPanel1Layout.columnWidths = new int[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        jPanel1Layout.rowHeights = new int[] {0, 8, 0, 8, 0, 8, 0, 8, 0, 8, 0, 8, 0, 8, 0, 8, 0, 8, 0};
         jPanel1.setLayout(jPanel1Layout);
-
-        FirstName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        FirstName.setText("First Name");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        jPanel1.add(FirstName, gridBagConstraints);
-
-        LastName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        LastName.setText("Last Name");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        jPanel1.add(LastName, gridBagConstraints);
-
-        Username.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Username.setText("Username");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        jPanel1.add(Username, gridBagConstraints);
-
-        Email.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Email.setText("Email");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 10;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        jPanel1.add(Email, gridBagConstraints);
-
-        PhoneNumber.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        PhoneNumber.setText("Phone Number");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 12;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        jPanel1.add(PhoneNumber, gridBagConstraints);
-
-        UserLastName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        UserLastName.setText("jLabel2");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        jPanel1.add(UserLastName, gridBagConstraints);
-
-        UserFirstName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        UserFirstName.setText("jLabel3");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        jPanel1.add(UserFirstName, gridBagConstraints);
-
-        UserUsername.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        UserUsername.setText("jLabel4");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        jPanel1.add(UserUsername, gridBagConstraints);
-
-        UserEmail.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        UserEmail.setText("jLabel5");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 10;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        jPanel1.add(UserEmail, gridBagConstraints);
-
-        UserPhoneNumber.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        UserPhoneNumber.setText("jLabel6");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 12;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        jPanel1.add(UserPhoneNumber, gridBagConstraints);
-
-        EditLastName.setText("Edit");
-        EditLastName.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                EditLastNameActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 4;
-        jPanel1.add(EditLastName, gridBagConstraints);
-
-        EditFirstName.setText("Edit");
-        EditFirstName.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                EditFirstNameActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 6;
-        jPanel1.add(EditFirstName, gridBagConstraints);
-
-        EditUsername.setText("Edit");
-        EditUsername.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                EditUsernameActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 8;
-        jPanel1.add(EditUsername, gridBagConstraints);
-
-        EditEmail.setText("Edit");
-        EditEmail.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                EditEmailActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 10;
-        jPanel1.add(EditEmail, gridBagConstraints);
-
-        EditPhoneNumber.setText("Edit");
-        EditPhoneNumber.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                EditPhoneNumberActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 12;
-        jPanel1.add(EditPhoneNumber, gridBagConstraints);
-
-        Password.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Password.setText("Password");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 14;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        jPanel1.add(Password, gridBagConstraints);
-
-        UserPassword.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        UserPassword.setText("*****");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 14;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        jPanel1.add(UserPassword, gridBagConstraints);
 
         DeleteAccountButton.setText("Delete Main Account");
         DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter()
@@ -305,12 +178,12 @@ public class Settings extends javax.swing.JPanel
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 18;
         jPanel1.add(DeleteAccountButton, gridBagConstraints);
 
         BAUserNameLabel.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
-        BAUserNameLabel.setText("User" + PresentationLayer.GUI.currentBankAccount.getAccountName());
+        BAUserNameLabel.setText("User Information");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -325,22 +198,623 @@ public class Settings extends javax.swing.JPanel
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 14;
         jPanel1.add(EditPassword, gridBagConstraints);
 
-        errorMessage.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        errorMessage.setForeground(new java.awt.Color(255, 102, 102));
-        errorMessage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        errorMessage.setText("Please click on the Edit button to change info.");
-        errorMessage.setPreferredSize(new java.awt.Dimension(304, 15));
-        errorMessage.setRequestFocusEnabled(false);
+        jPanel3.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel3.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                jPanel3MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
+                jPanel3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
+                jPanel3MouseExited(evt);
+            }
+        });
+        java.awt.GridBagLayout jPanel3Layout = new java.awt.GridBagLayout();
+        jPanel3Layout.columnWidths = new int[] {0};
+        jPanel3Layout.rowHeights = new int[] {0};
+        jPanel3.setLayout(jPanel3Layout);
+
+        LastName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        LastName.setText("Last Name       ");
+        LastName.setToolTipText("");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        jPanel3.add(LastName, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel1.add(jPanel3, gridBagConstraints);
+
+        jPanel4.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel4.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                jPanel4MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
+                jPanel4MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
+                jPanel4MouseExited(evt);
+            }
+        });
+        java.awt.GridBagLayout jPanel4Layout = new java.awt.GridBagLayout();
+        jPanel4Layout.columnWidths = new int[] {0};
+        jPanel4Layout.rowHeights = new int[] {0};
+        jPanel4.setLayout(jPanel4Layout);
+
+        FirstName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        FirstName.setText("First Name       ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        jPanel4.add(FirstName, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel1.add(jPanel4, gridBagConstraints);
+
+        jPanel5.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel5.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                jPanel5MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
+                jPanel5MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
+                jPanel5MouseExited(evt);
+            }
+        });
+        java.awt.GridBagLayout jPanel5Layout = new java.awt.GridBagLayout();
+        jPanel5Layout.columnWidths = new int[] {0};
+        jPanel5Layout.rowHeights = new int[] {0};
+        jPanel5.setLayout(jPanel5Layout);
+
+        Username.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Username.setText("Username        ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel5.add(Username, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel1.add(jPanel5, gridBagConstraints);
+
+        jPanel6.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel6.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                jPanel6MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
+                jPanel6MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
+                jPanel6MouseExited(evt);
+            }
+        });
+        java.awt.GridBagLayout jPanel6Layout = new java.awt.GridBagLayout();
+        jPanel6Layout.columnWidths = new int[] {0};
+        jPanel6Layout.rowHeights = new int[] {0};
+        jPanel6.setLayout(jPanel6Layout);
+
+        Email.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Email.setText("Email               ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel6.add(Email, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel1.add(jPanel6, gridBagConstraints);
+
+        jPanel7.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel7.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                jPanel7MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
+                jPanel7MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
+                jPanel7MouseExited(evt);
+            }
+        });
+        java.awt.GridBagLayout jPanel7Layout = new java.awt.GridBagLayout();
+        jPanel7Layout.columnWidths = new int[] {0};
+        jPanel7Layout.rowHeights = new int[] {0};
+        jPanel7.setLayout(jPanel7Layout);
+
+        PhoneNumber.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        PhoneNumber.setText("Phone Number");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel7.add(PhoneNumber, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 12;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel1.add(jPanel7, gridBagConstraints);
+
+        jPanel8.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel8.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
+                jPanel8MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
+                jPanel8MouseExited(evt);
+            }
+        });
+        java.awt.GridBagLayout jPanel8Layout = new java.awt.GridBagLayout();
+        jPanel8Layout.columnWidths = new int[] {0};
+        jPanel8Layout.rowHeights = new int[] {0};
+        jPanel8.setLayout(jPanel8Layout);
+
+        Password.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Password.setText("Password         ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel8.add(Password, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 14;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel1.add(jPanel8, gridBagConstraints);
+
+        jPanel9.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel9.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                jPanel9MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
+                jPanel9MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
+                jPanel9MouseExited(evt);
+            }
+        });
+        jPanel9.setLayout(new java.awt.GridBagLayout());
+
+        EditLabel.setText("Edit");
+        EditLabel.setFocusable(false);
+        EditLabel.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                EditLabelMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
+                EditLabelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
+                EditLabelMouseExited(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        jPanel1.add(errorMessage, gridBagConstraints);
+        gridBagConstraints.gridy = 4;
+        jPanel9.add(EditLabel, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel1.add(jPanel9, gridBagConstraints);
+
+        jPanel10.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel10.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                jPanel10MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
+                jPanel10MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
+                jPanel10MouseExited(evt);
+            }
+        });
+
+        EditLabel1.setText("Edit");
+        EditLabel1.setFocusable(false);
+        EditLabel1.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                EditLabel1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
+                EditLabel1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
+                EditLabel1MouseExited(evt);
+            }
+        });
+        jPanel10.add(EditLabel1);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel1.add(jPanel10, gridBagConstraints);
+
+        jPanel11.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel11.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                jPanel11MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
+                jPanel11MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
+                jPanel11MouseExited(evt);
+            }
+        });
+
+        EditLabel4.setText("Edit");
+        EditLabel4.setFocusable(false);
+        EditLabel4.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                EditLabel4MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
+                EditLabel4MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
+                EditLabel4MouseExited(evt);
+            }
+        });
+        jPanel11.add(EditLabel4);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 12;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel1.add(jPanel11, gridBagConstraints);
+
+        jPanel12.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel12.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                jPanel12MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
+                jPanel12MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
+                jPanel12MouseExited(evt);
+            }
+        });
+
+        EditLabel2.setText("Edit");
+        EditLabel2.setFocusable(false);
+        EditLabel2.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                EditLabel2MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
+                EditLabel2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
+                EditLabel2MouseExited(evt);
+            }
+        });
+        jPanel12.add(EditLabel2);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel1.add(jPanel12, gridBagConstraints);
+
+        jPanel13.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel13.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                jPanel13MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
+                jPanel13MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
+                jPanel13MouseExited(evt);
+            }
+        });
+
+        EditLabel3.setText("Edit");
+        EditLabel3.setFocusable(false);
+        EditLabel3.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                EditLabel3MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
+                EditLabel3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
+                EditLabel3MouseExited(evt);
+            }
+        });
+        jPanel13.add(EditLabel3);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel1.add(jPanel13, gridBagConstraints);
+
+        jPanel14.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel14.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
+                jPanel14MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
+                jPanel14MouseExited(evt);
+            }
+        });
+
+        EditLabel5.setText("Edit");
+        EditLabel5.setFocusable(false);
+        EditLabel5.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
+                EditLabel5MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
+                EditLabel5MouseExited(evt);
+            }
+        });
+        jPanel14.add(EditLabel5);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 14;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel1.add(jPanel14, gridBagConstraints);
+
+        jPanel15.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel15.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                jPanel15MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
+                jPanel15MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
+                jPanel15MouseExited(evt);
+            }
+        });
+
+        UserLastName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        UserLastName.setText("jLabel2");
+        jPanel15.add(UserLastName);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel1.add(jPanel15, gridBagConstraints);
+
+        jPanel16.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel16.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                jPanel16MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
+                jPanel16MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
+                jPanel16MouseExited(evt);
+            }
+        });
+
+        UserFirstName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        UserFirstName.setText("jLabel3");
+        jPanel16.add(UserFirstName);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel1.add(jPanel16, gridBagConstraints);
+
+        jPanel17.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel17.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                jPanel17MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
+                jPanel17MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
+                jPanel17MouseExited(evt);
+            }
+        });
+
+        UserUsername.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        UserUsername.setText("jLabel4");
+        jPanel17.add(UserUsername);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel1.add(jPanel17, gridBagConstraints);
+
+        jPanel18.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel18.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                jPanel18MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
+                jPanel18MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
+                jPanel18MouseExited(evt);
+            }
+        });
+
+        UserEmail.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        UserEmail.setText("jLabel5");
+        jPanel18.add(UserEmail);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel1.add(jPanel18, gridBagConstraints);
+
+        jPanel19.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel19.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                jPanel19MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
+                jPanel19MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
+                jPanel19MouseExited(evt);
+            }
+        });
+
+        UserPhoneNumber.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        UserPhoneNumber.setText("jLabel6");
+        jPanel19.add(UserPhoneNumber);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 12;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel1.add(jPanel19, gridBagConstraints);
+
+        jPanel20.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel20.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
+                jPanel20MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
+                jPanel20MouseExited(evt);
+            }
+        });
+
+        UserPassword.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        UserPassword.setText("*****");
+        jPanel20.add(UserPassword);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 14;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel1.add(jPanel20, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -426,109 +900,16 @@ public class Settings extends javax.swing.JPanel
                     GUI.MasterTable.deleteUserAccount(GUI.currentUserAccount.getUserName());
                     GUI.currentBankAccount = null;
                     GUI.currentUserAccount = null;
+                    
                     CardLayout layout = (CardLayout) (MainPanel.getLayout());
                     layout.show(MainPanel, "Login");
+                    //mainGUI.getDolphinsPanel().DolphinsCalled();
+                    
                 }
             }
         }
 
     }//GEN-LAST:event_DeleteAccountButtonMouseClicked
-
-    private void EditLastNameActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EditLastNameActionPerformed
-    {//GEN-HEADEREND:event_EditLastNameActionPerformed
-        String response = JOptionPane.showInputDialog(null, "Enter Your New Last Name:", "Bank 42", 1);
-
-        if (response == null)
-            return;
-
-        response = response.trim();
-        if ((response.length() > 0) && CreateAccountPanel.validateLastName(response))
-        {
-            GUI.currentUserAccount.setLastName(response);
-            update();
-        }
-        else
-        {
-            errorMessage.setText("Your last name was entered incorrectly.");
-        }
-    }//GEN-LAST:event_EditLastNameActionPerformed
-
-    private void EditFirstNameActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EditFirstNameActionPerformed
-    {//GEN-HEADEREND:event_EditFirstNameActionPerformed
-        String response = JOptionPane.showInputDialog("Enter Your New First:");
-
-        if (response == null)
-            return;
-
-        response = response.trim();
-
-        if ((response.length() > 0) && CreateAccountPanel.validateFirstName(response))
-        {
-            GUI.currentUserAccount.setFirstName(response);
-            update();
-        }
-        else
-        {
-            errorMessage.setText("Your first name was entered incorrectly.");
-        }
-    }//GEN-LAST:event_EditFirstNameActionPerformed
-
-    private void EditUsernameActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EditUsernameActionPerformed
-    {//GEN-HEADEREND:event_EditUsernameActionPerformed
-        String response = JOptionPane.showInputDialog("Enter Your New Username:");
-
-        if (response == null)
-            return;
-
-        response = response.trim();
-        if ((response.length() > 0) && (CreateAccountPanel.validate(response)))
-        {
-            GUI.currentUserAccount.setUserName(response);
-            update();
-        }
-        else
-        {
-            errorMessage.setText("Your username was entered incorrectly");
-        }
-    }//GEN-LAST:event_EditUsernameActionPerformed
-
-    private void EditEmailActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EditEmailActionPerformed
-    {//GEN-HEADEREND:event_EditEmailActionPerformed
-        String response = JOptionPane.showInputDialog("Enter Your New Email:");
-
-        if (response == null)
-            return;
-
-        response = response.trim();
-        if ((response.length() > 0) && (CreateAccountPanel.isValidEmailAddress(response)))
-        {
-            GUI.currentUserAccount.setEmail(response);
-            update();
-        }
-        else
-        {
-            errorMessage.setText("Your email was entered incorrectly.");
-        }
-    }//GEN-LAST:event_EditEmailActionPerformed
-
-    private void EditPhoneNumberActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EditPhoneNumberActionPerformed
-    {//GEN-HEADEREND:event_EditPhoneNumberActionPerformed
-        String response = JOptionPane.showInputDialog("Enter Your New Phone Number:");
-
-        if (response == null)
-            return;
-
-        response = response.trim();
-        if ((response.length() > 0) && (CreateAccountPanel.validatePhoneNumber(response)))
-        {
-            GUI.currentUserAccount.setPhone(response);
-            update();
-        }
-        else
-        {
-            errorMessage.setText("Your phone number was entered incorrectly.");
-        }
-    }//GEN-LAST:event_EditPhoneNumberActionPerformed
 
     private void EditPasswordActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EditPasswordActionPerformed
     {//GEN-HEADEREND:event_EditPasswordActionPerformed
@@ -549,17 +930,882 @@ public class Settings extends javax.swing.JPanel
         }
     }//GEN-LAST:event_EditPasswordActionPerformed
 
+    private void jPanel3MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel3MouseEntered
+    {//GEN-HEADEREND:event_jPanel3MouseEntered
+        jPanel3.setBackground(new Color(255,255,255));
+        jPanel9.setBackground(new Color(255,255,255));
+        jPanel15.setBackground(new Color(255,255,255));
+        thefont = EditLabel.getFont();
+        Font font = EditLabel.getFont();
+        Map attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        EditLabel.setFont(font.deriveFont(attributes));
+    }//GEN-LAST:event_jPanel3MouseEntered
+
+    private void jPanel3MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel3MouseExited
+    {//GEN-HEADEREND:event_jPanel3MouseExited
+        jPanel3.setBackground(new Color(0,255,255));
+        jPanel9.setBackground(new Color(0,255,255));
+        jPanel15.setBackground(new Color(0,255,255));
+        EditLabel.setFont(thefont);
+    }//GEN-LAST:event_jPanel3MouseExited
+
+    private void EditLabelMouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabelMouseExited
+    {//GEN-HEADEREND:event_EditLabelMouseExited
+        jPanel3.setBackground(new Color(0,255,255));
+        jPanel9.setBackground(new Color(0,255,255));
+        jPanel15.setBackground(new Color(0,255,255));
+        EditLabel.setFont(thefont);
+    }//GEN-LAST:event_EditLabelMouseExited
+
+    private void EditLabelMouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabelMouseEntered
+    {//GEN-HEADEREND:event_EditLabelMouseEntered
+        jPanel3.setBackground(new Color(255,255,255));
+        jPanel9.setBackground(new Color(255,255,255));
+        jPanel15.setBackground(new Color(255,255,255));
+        thefont = EditLabel.getFont();
+        Font font = EditLabel.getFont();
+        Map attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        EditLabel.setFont(font.deriveFont(attributes));
+    }//GEN-LAST:event_EditLabelMouseEntered
+
+    private void EditLabel1MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel1MouseEntered
+    {//GEN-HEADEREND:event_EditLabel1MouseEntered
+        jPanel4.setBackground(new Color(255,255,255));
+        jPanel10.setBackground(new Color(255,255,255));
+        jPanel16.setBackground(new Color(255,255,255));
+        thefont = EditLabel.getFont();
+        Font font = EditLabel.getFont();
+        Map attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        EditLabel1.setFont(font.deriveFont(attributes));
+    }//GEN-LAST:event_EditLabel1MouseEntered
+
+    private void EditLabel1MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel1MouseExited
+    {//GEN-HEADEREND:event_EditLabel1MouseExited
+        jPanel4.setBackground(new Color(0,255,255));
+        jPanel10.setBackground(new Color(0,255,255));
+        jPanel16.setBackground(new Color(0,255,255));
+        EditLabel1.setFont(thefont);
+    }//GEN-LAST:event_EditLabel1MouseExited
+
+    private void EditLabel2MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel2MouseEntered
+    {//GEN-HEADEREND:event_EditLabel2MouseEntered
+        jPanel5.setBackground(new Color(255,255,255));
+        jPanel12.setBackground(new Color(255,255,255));
+        jPanel17.setBackground(new Color(255,255,255));
+        thefont = EditLabel.getFont();
+        Font font = EditLabel.getFont();
+        Map attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        EditLabel2.setFont(font.deriveFont(attributes));
+    }//GEN-LAST:event_EditLabel2MouseEntered
+
+    private void EditLabel2MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel2MouseExited
+    {//GEN-HEADEREND:event_EditLabel2MouseExited
+        jPanel5.setBackground(new Color(0,255,255));
+        jPanel12.setBackground(new Color(0,255,255));
+        jPanel17.setBackground(new Color(0,255,255));
+        EditLabel2.setFont(thefont);
+    }//GEN-LAST:event_EditLabel2MouseExited
+
+    private void EditLabel3MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel3MouseEntered
+    {//GEN-HEADEREND:event_EditLabel3MouseEntered
+        jPanel6.setBackground(new Color(255,255,255));
+        jPanel13.setBackground(new Color(255,255,255));
+        jPanel18.setBackground(new Color(255,255,255));
+        thefont = EditLabel.getFont();
+        Font font = EditLabel.getFont();
+        Map attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        EditLabel3.setFont(font.deriveFont(attributes));
+    }//GEN-LAST:event_EditLabel3MouseEntered
+
+    private void EditLabel3MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel3MouseExited
+    {//GEN-HEADEREND:event_EditLabel3MouseExited
+        jPanel6.setBackground(new Color(0,255,255));
+        jPanel13.setBackground(new Color(0,255,255));
+        jPanel18.setBackground(new Color(0,255,255));
+        EditLabel3.setFont(thefont);
+    }//GEN-LAST:event_EditLabel3MouseExited
+
+    private void EditLabel4MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel4MouseEntered
+    {//GEN-HEADEREND:event_EditLabel4MouseEntered
+        jPanel7.setBackground(new Color(255,255,255));
+        jPanel11.setBackground(new Color(255,255,255));
+        jPanel19.setBackground(new Color(255,255,255));
+        thefont = EditLabel.getFont();
+        Font font = EditLabel.getFont();
+        Map attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        EditLabel4.setFont(font.deriveFont(attributes));
+    }//GEN-LAST:event_EditLabel4MouseEntered
+
+    private void EditLabel4MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel4MouseExited
+    {//GEN-HEADEREND:event_EditLabel4MouseExited
+        jPanel7.setBackground(new Color(0,255,255));
+        jPanel11.setBackground(new Color(0,255,255));
+        jPanel19.setBackground(new Color(0,255,255));
+        EditLabel4.setFont(thefont);
+    }//GEN-LAST:event_EditLabel4MouseExited
+
+    private void EditLabel5MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel5MouseEntered
+    {//GEN-HEADEREND:event_EditLabel5MouseEntered
+        jPanel8.setBackground(new Color(255,255,255));
+        jPanel14.setBackground(new Color(255,255,255));
+        jPanel20.setBackground(new Color(255,255,255));
+        thefont = EditLabel.getFont();
+        Font font = EditLabel.getFont();
+        Map attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        EditLabel5.setFont(font.deriveFont(attributes));
+    }//GEN-LAST:event_EditLabel5MouseEntered
+
+    private void EditLabel5MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel5MouseExited
+    {//GEN-HEADEREND:event_EditLabel5MouseExited
+        jPanel8.setBackground(new Color(0,255,255));
+        jPanel14.setBackground(new Color(0,255,255));
+        jPanel20.setBackground(new Color(0,255,255));
+        EditLabel5.setFont(thefont);
+    }//GEN-LAST:event_EditLabel5MouseExited
+
+    private void jPanel9MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel9MouseEntered
+    {//GEN-HEADEREND:event_jPanel9MouseEntered
+        jPanel3.setBackground(new Color(255,255,255));
+        jPanel9.setBackground(new Color(255,255,255));
+        jPanel15.setBackground(new Color(255,255,255));
+        thefont = EditLabel.getFont();
+        Font font = EditLabel.getFont();
+        Map attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        EditLabel.setFont(font.deriveFont(attributes));
+    }//GEN-LAST:event_jPanel9MouseEntered
+
+    private void jPanel9MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel9MouseExited
+    {//GEN-HEADEREND:event_jPanel9MouseExited
+        jPanel3.setBackground(new Color(0,255,255));
+        jPanel9.setBackground(new Color(0,255,255));
+        jPanel15.setBackground(new Color(0,255,255));
+        EditLabel.setFont(thefont);
+    }//GEN-LAST:event_jPanel9MouseExited
+
+    private void jPanel4MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel4MouseEntered
+    {//GEN-HEADEREND:event_jPanel4MouseEntered
+        jPanel4.setBackground(new Color(255,255,255));
+        jPanel10.setBackground(new Color(255,255,255));
+        jPanel16.setBackground(new Color(255,255,255));
+        thefont = EditLabel.getFont();
+        Font font = EditLabel.getFont();
+        Map attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        EditLabel1.setFont(font.deriveFont(attributes));
+    }//GEN-LAST:event_jPanel4MouseEntered
+
+    private void jPanel4MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel4MouseExited
+    {//GEN-HEADEREND:event_jPanel4MouseExited
+        jPanel4.setBackground(new Color(0,255,255));
+        jPanel10.setBackground(new Color(0,255,255));
+        jPanel16.setBackground(new Color(0,255,255));
+        EditLabel1.setFont(thefont);
+    }//GEN-LAST:event_jPanel4MouseExited
+
+    private void jPanel10MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel10MouseEntered
+    {//GEN-HEADEREND:event_jPanel10MouseEntered
+        jPanel4.setBackground(new Color(255,255,255));
+        jPanel10.setBackground(new Color(255,255,255));
+        jPanel16.setBackground(new Color(255,255,255));
+        thefont = EditLabel.getFont();
+        Font font = EditLabel.getFont();
+        Map attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        EditLabel1.setFont(font.deriveFont(attributes));
+    }//GEN-LAST:event_jPanel10MouseEntered
+
+    private void jPanel10MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel10MouseExited
+    {//GEN-HEADEREND:event_jPanel10MouseExited
+        jPanel4.setBackground(new Color(0,255,255));
+        jPanel10.setBackground(new Color(0,255,255));
+        jPanel16.setBackground(new Color(0,255,255));
+        EditLabel1.setFont(thefont);
+    }//GEN-LAST:event_jPanel10MouseExited
+
+    private void jPanel3MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel3MouseClicked
+    {//GEN-HEADEREND:event_jPanel3MouseClicked
+        String response = JOptionPane.showInputDialog(null, "Enter Your New Last Name:", "Bank 42", 1);
+
+        if (response == null)
+            return;
+
+        response = response.trim();
+        if ((response.length() > 0) && CreateAccountPanel.validateLastName(response))
+        {
+            GUI.currentUserAccount.setLastName(response);
+            update();
+        }
+        else
+        {
+            errorMessage.setText("Your last name was entered incorrectly.");
+        }
+    }//GEN-LAST:event_jPanel3MouseClicked
+
+    private void jPanel9MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel9MouseClicked
+    {//GEN-HEADEREND:event_jPanel9MouseClicked
+        String response = JOptionPane.showInputDialog(null, "Enter Your New Last Name:", "Bank 42", 1);
+
+        if (response == null)
+            return;
+
+        response = response.trim();
+        if ((response.length() > 0) && CreateAccountPanel.validateLastName(response))
+        {
+            GUI.currentUserAccount.setLastName(response);
+            update();
+        }
+        else
+        {
+            errorMessage.setText("Your last name was entered incorrectly.");
+        }
+    }//GEN-LAST:event_jPanel9MouseClicked
+
+    private void EditLabelMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabelMouseClicked
+    {//GEN-HEADEREND:event_EditLabelMouseClicked
+        String response = JOptionPane.showInputDialog(null, "Enter Your New Last Name:", "Bank 42", 1);
+
+        if (response == null)
+            return;
+
+        response = response.trim();
+        if ((response.length() > 0) && CreateAccountPanel.validateLastName(response))
+        {
+            GUI.currentUserAccount.setLastName(response);
+            update();
+        }
+        else
+        {
+            errorMessage.setText("Your last name was entered incorrectly.");
+        }
+    }//GEN-LAST:event_EditLabelMouseClicked
+
+    private void jPanel7MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel7MouseEntered
+    {//GEN-HEADEREND:event_jPanel7MouseEntered
+        jPanel7.setBackground(new Color(255,255,255));
+        jPanel11.setBackground(new Color(255,255,255));
+        jPanel19.setBackground(new Color(255,255,255));
+        thefont = EditLabel.getFont();
+        Font font = EditLabel.getFont();
+        Map attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        EditLabel4.setFont(font.deriveFont(attributes));
+    }//GEN-LAST:event_jPanel7MouseEntered
+
+    private void jPanel7MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel7MouseExited
+    {//GEN-HEADEREND:event_jPanel7MouseExited
+        jPanel7.setBackground(new Color(0,255,255));
+        jPanel11.setBackground(new Color(0,255,255));
+        jPanel19.setBackground(new Color(0,255,255));
+        EditLabel4.setFont(thefont);
+    }//GEN-LAST:event_jPanel7MouseExited
+
+    private void jPanel11MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel11MouseEntered
+    {//GEN-HEADEREND:event_jPanel11MouseEntered
+        jPanel7.setBackground(new Color(255,255,255));
+        jPanel11.setBackground(new Color(255,255,255));
+        jPanel19.setBackground(new Color(255,255,255));
+        thefont = EditLabel.getFont();
+        Font font = EditLabel.getFont();
+        Map attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        EditLabel4.setFont(font.deriveFont(attributes));
+    }//GEN-LAST:event_jPanel11MouseEntered
+
+    private void jPanel11MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel11MouseExited
+    {//GEN-HEADEREND:event_jPanel11MouseExited
+        jPanel7.setBackground(new Color(0,255,255));
+        jPanel11.setBackground(new Color(0,255,255));
+        jPanel19.setBackground(new Color(0,255,255));
+        EditLabel4.setFont(thefont);
+    }//GEN-LAST:event_jPanel11MouseExited
+
+    private void jPanel5MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel5MouseEntered
+    {//GEN-HEADEREND:event_jPanel5MouseEntered
+        jPanel5.setBackground(new Color(255,255,255));
+        jPanel12.setBackground(new Color(255,255,255));
+        jPanel17.setBackground(new Color(255,255,255));
+        thefont = EditLabel.getFont();
+        Font font = EditLabel.getFont();
+        Map attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        EditLabel2.setFont(font.deriveFont(attributes));
+    }//GEN-LAST:event_jPanel5MouseEntered
+
+    private void jPanel5MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel5MouseExited
+    {//GEN-HEADEREND:event_jPanel5MouseExited
+        jPanel5.setBackground(new Color(0,255,255));
+        jPanel12.setBackground(new Color(0,255,255));
+        jPanel17.setBackground(new Color(0,255,255));
+        EditLabel2.setFont(thefont);
+    }//GEN-LAST:event_jPanel5MouseExited
+
+    private void jPanel12MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel12MouseEntered
+    {//GEN-HEADEREND:event_jPanel12MouseEntered
+        jPanel5.setBackground(new Color(255,255,255));
+        jPanel12.setBackground(new Color(255,255,255));
+        jPanel17.setBackground(new Color(255,255,255));
+        thefont = EditLabel.getFont();
+        Font font = EditLabel.getFont();
+        Map attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        EditLabel2.setFont(font.deriveFont(attributes));
+    }//GEN-LAST:event_jPanel12MouseEntered
+
+    private void jPanel12MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel12MouseExited
+    {//GEN-HEADEREND:event_jPanel12MouseExited
+        jPanel5.setBackground(new Color(0,255,255));
+        jPanel12.setBackground(new Color(0,255,255));
+        jPanel17.setBackground(new Color(0,255,255));
+        EditLabel2.setFont(thefont);
+    }//GEN-LAST:event_jPanel12MouseExited
+
+    private void jPanel6MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel6MouseEntered
+    {//GEN-HEADEREND:event_jPanel6MouseEntered
+        jPanel6.setBackground(new Color(255,255,255));
+        jPanel13.setBackground(new Color(255,255,255));
+        jPanel18.setBackground(new Color(255,255,255));
+        thefont = EditLabel.getFont();
+        Font font = EditLabel.getFont();
+        Map attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        EditLabel3.setFont(font.deriveFont(attributes));
+    }//GEN-LAST:event_jPanel6MouseEntered
+
+    private void jPanel13MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel13MouseEntered
+    {//GEN-HEADEREND:event_jPanel13MouseEntered
+        jPanel6.setBackground(new Color(255,255,255));
+        jPanel13.setBackground(new Color(255,255,255));
+        jPanel18.setBackground(new Color(255,255,255));
+        thefont = EditLabel.getFont();
+        Font font = EditLabel.getFont();
+        Map attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        EditLabel3.setFont(font.deriveFont(attributes));
+    }//GEN-LAST:event_jPanel13MouseEntered
+
+    private void jPanel6MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel6MouseExited
+    {//GEN-HEADEREND:event_jPanel6MouseExited
+        jPanel6.setBackground(new Color(0,255,255));
+        jPanel13.setBackground(new Color(0,255,255));
+        jPanel18.setBackground(new Color(0,255,255));
+        EditLabel3.setFont(thefont);
+    }//GEN-LAST:event_jPanel6MouseExited
+
+    private void jPanel13MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel13MouseExited
+    {//GEN-HEADEREND:event_jPanel13MouseExited
+        jPanel6.setBackground(new Color(0,255,255));
+        jPanel13.setBackground(new Color(0,255,255));
+        jPanel18.setBackground(new Color(0,255,255));
+        EditLabel3.setFont(thefont);
+    }//GEN-LAST:event_jPanel13MouseExited
+
+    private void jPanel8MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel8MouseEntered
+    {//GEN-HEADEREND:event_jPanel8MouseEntered
+        jPanel8.setBackground(new Color(255,255,255));
+        jPanel14.setBackground(new Color(255,255,255));
+        jPanel20.setBackground(new Color(255,255,255));
+        thefont = EditLabel.getFont();
+        Font font = EditLabel.getFont();
+        Map attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        EditLabel5.setFont(font.deriveFont(attributes));
+    }//GEN-LAST:event_jPanel8MouseEntered
+
+    private void jPanel14MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel14MouseEntered
+    {//GEN-HEADEREND:event_jPanel14MouseEntered
+        jPanel8.setBackground(new Color(255,255,255));
+        jPanel14.setBackground(new Color(255,255,255));
+        jPanel20.setBackground(new Color(255,255,255));
+        thefont = EditLabel.getFont();
+        Font font = EditLabel.getFont();
+        Map attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        EditLabel5.setFont(font.deriveFont(attributes));
+    }//GEN-LAST:event_jPanel14MouseEntered
+
+    private void jPanel8MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel8MouseExited
+    {//GEN-HEADEREND:event_jPanel8MouseExited
+        jPanel8.setBackground(new Color(0,255,255));
+        jPanel14.setBackground(new Color(0,255,255));
+        jPanel20.setBackground(new Color(0,255,255));
+        EditLabel5.setFont(thefont);
+    }//GEN-LAST:event_jPanel8MouseExited
+
+    private void jPanel14MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel14MouseExited
+    {//GEN-HEADEREND:event_jPanel14MouseExited
+        jPanel8.setBackground(new Color(0,255,255));
+        jPanel14.setBackground(new Color(0,255,255));
+        jPanel20.setBackground(new Color(0,255,255));
+        EditLabel5.setFont(thefont);
+    }//GEN-LAST:event_jPanel14MouseExited
+
+    private void jPanel15MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel15MouseEntered
+    {//GEN-HEADEREND:event_jPanel15MouseEntered
+        jPanel3.setBackground(new Color(255,255,255));
+        jPanel9.setBackground(new Color(255,255,255));
+        jPanel15.setBackground(new Color(255,255,255));
+        thefont = EditLabel.getFont();
+        Font font = EditLabel.getFont();
+        Map attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        EditLabel.setFont(font.deriveFont(attributes));
+    }//GEN-LAST:event_jPanel15MouseEntered
+
+    private void jPanel15MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel15MouseExited
+    {//GEN-HEADEREND:event_jPanel15MouseExited
+        jPanel3.setBackground(new Color(0,255,255));
+        jPanel9.setBackground(new Color(0,255,255));
+        jPanel15.setBackground(new Color(0,255,255));
+        EditLabel.setFont(thefont);
+    }//GEN-LAST:event_jPanel15MouseExited
+
+    private void jPanel15MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel15MouseClicked
+    {//GEN-HEADEREND:event_jPanel15MouseClicked
+        String response = JOptionPane.showInputDialog(null, "Enter Your New Last Name:", "Bank 42", 1);
+
+        if (response == null)
+            return;
+
+        response = response.trim();
+        if ((response.length() > 0) && CreateAccountPanel.validateLastName(response))
+        {
+            GUI.currentUserAccount.setLastName(response);
+            update();
+        }
+        else
+        {
+            errorMessage.setText("Your last name was entered incorrectly.");
+        }
+    }//GEN-LAST:event_jPanel15MouseClicked
+
+    private void jPanel16MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel16MouseEntered
+    {//GEN-HEADEREND:event_jPanel16MouseEntered
+        jPanel4.setBackground(new Color(255,255,255));
+        jPanel10.setBackground(new Color(255,255,255));
+        jPanel16.setBackground(new Color(255,255,255));
+        thefont = EditLabel.getFont();
+        Font font = EditLabel.getFont();
+        Map attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        EditLabel1.setFont(font.deriveFont(attributes));
+    }//GEN-LAST:event_jPanel16MouseEntered
+
+    private void jPanel17MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel17MouseEntered
+    {//GEN-HEADEREND:event_jPanel17MouseEntered
+        jPanel5.setBackground(new Color(255,255,255));
+        jPanel12.setBackground(new Color(255,255,255));
+        jPanel17.setBackground(new Color(255,255,255));
+        thefont = EditLabel.getFont();
+        Font font = EditLabel.getFont();
+        Map attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        EditLabel2.setFont(font.deriveFont(attributes));
+    }//GEN-LAST:event_jPanel17MouseEntered
+
+    private void jPanel17MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel17MouseExited
+    {//GEN-HEADEREND:event_jPanel17MouseExited
+        jPanel5.setBackground(new Color(0,255,255));
+        jPanel12.setBackground(new Color(0,255,255));
+        jPanel17.setBackground(new Color(0,255,255));
+        EditLabel2.setFont(thefont);
+    }//GEN-LAST:event_jPanel17MouseExited
+
+    private void jPanel20MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel20MouseEntered
+    {//GEN-HEADEREND:event_jPanel20MouseEntered
+        jPanel8.setBackground(new Color(255,255,255));
+        jPanel14.setBackground(new Color(255,255,255));
+        jPanel20.setBackground(new Color(255,255,255));
+        thefont = EditLabel.getFont();
+        Font font = EditLabel.getFont();
+        Map attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        EditLabel5.setFont(font.deriveFont(attributes));
+    }//GEN-LAST:event_jPanel20MouseEntered
+
+    private void jPanel20MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel20MouseExited
+    {//GEN-HEADEREND:event_jPanel20MouseExited
+        jPanel8.setBackground(new Color(0,255,255));
+        jPanel14.setBackground(new Color(0,255,255));
+        jPanel20.setBackground(new Color(0,255,255));
+        EditLabel5.setFont(thefont);
+    }//GEN-LAST:event_jPanel20MouseExited
+
+    private void jPanel19MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel19MouseEntered
+    {//GEN-HEADEREND:event_jPanel19MouseEntered
+        jPanel7.setBackground(new Color(255,255,255));
+        jPanel11.setBackground(new Color(255,255,255));
+        jPanel19.setBackground(new Color(255,255,255));
+        thefont = EditLabel.getFont();
+        Font font = EditLabel.getFont();
+        Map attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        EditLabel4.setFont(font.deriveFont(attributes));
+    }//GEN-LAST:event_jPanel19MouseEntered
+
+    private void jPanel19MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel19MouseExited
+    {//GEN-HEADEREND:event_jPanel19MouseExited
+        jPanel7.setBackground(new Color(0,255,255));
+        jPanel11.setBackground(new Color(0,255,255));
+        jPanel19.setBackground(new Color(0,255,255));
+        EditLabel4.setFont(thefont);
+    }//GEN-LAST:event_jPanel19MouseExited
+
+    private void jPanel18MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel18MouseEntered
+    {//GEN-HEADEREND:event_jPanel18MouseEntered
+        jPanel6.setBackground(new Color(255,255,255));
+        jPanel13.setBackground(new Color(255,255,255));
+        jPanel18.setBackground(new Color(255,255,255));
+        thefont = EditLabel.getFont();
+        Font font = EditLabel.getFont();
+        Map attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        EditLabel3.setFont(font.deriveFont(attributes));
+    }//GEN-LAST:event_jPanel18MouseEntered
+
+    private void jPanel18MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel18MouseExited
+    {//GEN-HEADEREND:event_jPanel18MouseExited
+        jPanel6.setBackground(new Color(0,255,255));
+        jPanel13.setBackground(new Color(0,255,255));
+        jPanel18.setBackground(new Color(0,255,255));
+        EditLabel3.setFont(thefont);
+    }//GEN-LAST:event_jPanel18MouseExited
+
+    private void jPanel16MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel16MouseExited
+    {//GEN-HEADEREND:event_jPanel16MouseExited
+        jPanel4.setBackground(new Color(0,255,255));
+        jPanel10.setBackground(new Color(0,255,255));
+        jPanel16.setBackground(new Color(0,255,255));
+        EditLabel1.setFont(thefont);
+    }//GEN-LAST:event_jPanel16MouseExited
+
+    private void jPanel4MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel4MouseClicked
+    {//GEN-HEADEREND:event_jPanel4MouseClicked
+        String response = JOptionPane.showInputDialog("Enter Your New First:");
+
+        if (response == null)
+            return;
+
+        response = response.trim();
+
+        if ((response.length() > 0) && CreateAccountPanel.validateFirstName(response))
+        {
+            GUI.currentUserAccount.setFirstName(response);
+            update();
+        }
+        else
+        {
+            errorMessage.setText("Your first name was entered incorrectly.");
+        }
+    }//GEN-LAST:event_jPanel4MouseClicked
+
+    private void jPanel16MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel16MouseClicked
+    {//GEN-HEADEREND:event_jPanel16MouseClicked
+        String response = JOptionPane.showInputDialog("Enter Your New First:");
+
+        if (response == null)
+            return;
+
+        response = response.trim();
+
+        if ((response.length() > 0) && CreateAccountPanel.validateFirstName(response))
+        {
+            GUI.currentUserAccount.setFirstName(response);
+            update();
+        }
+        else
+        {
+            errorMessage.setText("Your first name was entered incorrectly.");
+        }
+    }//GEN-LAST:event_jPanel16MouseClicked
+
+    private void EditLabel1MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel1MouseClicked
+    {//GEN-HEADEREND:event_EditLabel1MouseClicked
+        String response = JOptionPane.showInputDialog("Enter Your New First:");
+
+        if (response == null)
+            return;
+
+        response = response.trim();
+
+        if ((response.length() > 0) && CreateAccountPanel.validateFirstName(response))
+        {
+            GUI.currentUserAccount.setFirstName(response);
+            update();
+        }
+        else
+        {
+            errorMessage.setText("Your first name was entered incorrectly.");
+        }
+    }//GEN-LAST:event_EditLabel1MouseClicked
+
+    private void jPanel10MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel10MouseClicked
+    {//GEN-HEADEREND:event_jPanel10MouseClicked
+        String response = JOptionPane.showInputDialog("Enter Your New First:");
+
+        if (response == null)
+            return;
+
+        response = response.trim();
+
+        if ((response.length() > 0) && CreateAccountPanel.validateFirstName(response))
+        {
+            GUI.currentUserAccount.setFirstName(response);
+            update();
+        }
+        else
+        {
+            errorMessage.setText("Your first name was entered incorrectly.");
+        }
+    }//GEN-LAST:event_jPanel10MouseClicked
+
+    private void jPanel5MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel5MouseClicked
+    {//GEN-HEADEREND:event_jPanel5MouseClicked
+         String response = JOptionPane.showInputDialog("Enter Your New Username:");
+
+        if (response == null)
+            return;
+
+        response = response.trim();
+        if ((response.length() > 0) && (CreateAccountPanel.validate(response)))
+        {
+            GUI.currentUserAccount.setUserName(response);
+            update();
+        }
+        else
+        {
+            errorMessage.setText("Your username was entered incorrectly");
+        }
+    }//GEN-LAST:event_jPanel5MouseClicked
+
+    private void jPanel17MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel17MouseClicked
+    {//GEN-HEADEREND:event_jPanel17MouseClicked
+         String response = JOptionPane.showInputDialog("Enter Your New Username:");
+
+        if (response == null)
+            return;
+
+        response = response.trim();
+        if ((response.length() > 0) && (CreateAccountPanel.validate(response)))
+        {
+            GUI.currentUserAccount.setUserName(response);
+            update();
+        }
+        else
+        {
+            errorMessage.setText("Your username was entered incorrectly");
+        }
+    }//GEN-LAST:event_jPanel17MouseClicked
+
+    private void EditLabel2MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel2MouseClicked
+    {//GEN-HEADEREND:event_EditLabel2MouseClicked
+         String response = JOptionPane.showInputDialog("Enter Your New Username:");
+
+        if (response == null)
+            return;
+
+        response = response.trim();
+        if ((response.length() > 0) && (CreateAccountPanel.validate(response)))
+        {
+            GUI.currentUserAccount.setUserName(response);
+            update();
+        }
+        else
+        {
+            errorMessage.setText("Your username was entered incorrectly");
+        }
+    }//GEN-LAST:event_EditLabel2MouseClicked
+
+    private void jPanel12MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel12MouseClicked
+    {//GEN-HEADEREND:event_jPanel12MouseClicked
+         String response = JOptionPane.showInputDialog("Enter Your New Username:");
+
+        if (response == null)
+            return;
+
+        response = response.trim();
+        if ((response.length() > 0) && (CreateAccountPanel.validate(response)))
+        {
+            GUI.currentUserAccount.setUserName(response);
+            update();
+        }
+        else
+        {
+            errorMessage.setText("Your username was entered incorrectly");
+        }
+    }//GEN-LAST:event_jPanel12MouseClicked
+
+    private void jPanel6MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel6MouseClicked
+    {//GEN-HEADEREND:event_jPanel6MouseClicked
+        String response = JOptionPane.showInputDialog("Enter Your New Email:");
+
+        if (response == null)
+            return;
+
+        response = response.trim();
+        if ((response.length() > 0) && (CreateAccountPanel.isValidEmailAddress(response)))
+        {
+            GUI.currentUserAccount.setEmail(response);
+            update();
+        }
+        else
+        {
+            errorMessage.setText("Your email was entered incorrectly.");
+        }
+    }//GEN-LAST:event_jPanel6MouseClicked
+
+    private void jPanel18MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel18MouseClicked
+    {//GEN-HEADEREND:event_jPanel18MouseClicked
+        String response = JOptionPane.showInputDialog("Enter Your New Email:");
+
+        if (response == null)
+            return;
+
+        response = response.trim();
+        if ((response.length() > 0) && (CreateAccountPanel.isValidEmailAddress(response)))
+        {
+            GUI.currentUserAccount.setEmail(response);
+            update();
+        }
+        else
+        {
+            errorMessage.setText("Your email was entered incorrectly.");
+        }
+    }//GEN-LAST:event_jPanel18MouseClicked
+
+    private void EditLabel3MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel3MouseClicked
+    {//GEN-HEADEREND:event_EditLabel3MouseClicked
+        String response = JOptionPane.showInputDialog("Enter Your New Email:");
+
+        if (response == null)
+            return;
+
+        response = response.trim();
+        if ((response.length() > 0) && (CreateAccountPanel.isValidEmailAddress(response)))
+        {
+            GUI.currentUserAccount.setEmail(response);
+            update();
+        }
+        else
+        {
+            errorMessage.setText("Your email was entered incorrectly.");
+        }
+    }//GEN-LAST:event_EditLabel3MouseClicked
+
+    private void jPanel13MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel13MouseClicked
+    {//GEN-HEADEREND:event_jPanel13MouseClicked
+        String response = JOptionPane.showInputDialog("Enter Your New Email:");
+
+        if (response == null)
+            return;
+
+        response = response.trim();
+        if ((response.length() > 0) && (CreateAccountPanel.isValidEmailAddress(response)))
+        {
+            GUI.currentUserAccount.setEmail(response);
+            update();
+        }
+        else
+        {
+            errorMessage.setText("Your email was entered incorrectly.");
+        }
+    }//GEN-LAST:event_jPanel13MouseClicked
+
+    private void jPanel7MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel7MouseClicked
+    {//GEN-HEADEREND:event_jPanel7MouseClicked
+        String response = JOptionPane.showInputDialog("Enter Your New Phone Number:");
+
+        if (response == null)
+            return;
+
+        response = response.trim();
+        if ((response.length() > 0) && (CreateAccountPanel.validatePhoneNumber(response)))
+        {
+            GUI.currentUserAccount.setPhone(response);
+            update();
+        }
+        else
+        {
+            errorMessage.setText("Your phone number was entered incorrectly.");
+        }
+    }//GEN-LAST:event_jPanel7MouseClicked
+
+    private void jPanel19MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel19MouseClicked
+    {//GEN-HEADEREND:event_jPanel19MouseClicked
+        String response = JOptionPane.showInputDialog("Enter Your New Phone Number:");
+
+        if (response == null)
+            return;
+
+        response = response.trim();
+        if ((response.length() > 0) && (CreateAccountPanel.validatePhoneNumber(response)))
+        {
+            GUI.currentUserAccount.setPhone(response);
+            update();
+        }
+        else
+        {
+            errorMessage.setText("Your phone number was entered incorrectly.");
+        }
+    }//GEN-LAST:event_jPanel19MouseClicked
+
+    private void EditLabel4MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel4MouseClicked
+    {//GEN-HEADEREND:event_EditLabel4MouseClicked
+        String response = JOptionPane.showInputDialog("Enter Your New Phone Number:");
+
+        if (response == null)
+            return;
+
+        response = response.trim();
+        if ((response.length() > 0) && (CreateAccountPanel.validatePhoneNumber(response)))
+        {
+            GUI.currentUserAccount.setPhone(response);
+            update();
+        }
+        else
+        {
+            errorMessage.setText("Your phone number was entered incorrectly.");
+        }
+    }//GEN-LAST:event_EditLabel4MouseClicked
+
+    private void jPanel11MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel11MouseClicked
+    {//GEN-HEADEREND:event_jPanel11MouseClicked
+        String response = JOptionPane.showInputDialog("Enter Your New Phone Number:");
+
+        if (response == null)
+            return;
+
+        response = response.trim();
+        if ((response.length() > 0) && (CreateAccountPanel.validatePhoneNumber(response)))
+        {
+            GUI.currentUserAccount.setPhone(response);
+            update();
+        }
+        else
+        {
+            errorMessage.setText("Your phone number was entered incorrectly.");
+        }
+    }//GEN-LAST:event_jPanel11MouseClicked
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BAUserNameLabel;
     private javax.swing.JButton BackButton;
     private javax.swing.JLabel Background;
     private javax.swing.JButton DeleteAccountButton;
-    private javax.swing.JButton EditEmail;
-    private javax.swing.JButton EditFirstName;
-    private javax.swing.JButton EditLastName;
+    private javax.swing.JLabel EditLabel;
+    private javax.swing.JLabel EditLabel1;
+    private javax.swing.JLabel EditLabel2;
+    private javax.swing.JLabel EditLabel3;
+    private javax.swing.JLabel EditLabel4;
+    private javax.swing.JLabel EditLabel5;
     private javax.swing.JButton EditPassword;
-    private javax.swing.JButton EditPhoneNumber;
-    private javax.swing.JButton EditUsername;
     private javax.swing.JLabel Email;
     private javax.swing.JLabel FirstName;
     private javax.swing.JLabel LastName;
@@ -576,6 +1822,24 @@ public class Settings extends javax.swing.JPanel
     private javax.swing.JLabel errorMessage;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel20;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     // End of variables declaration//GEN-END:variables
 }

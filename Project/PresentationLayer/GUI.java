@@ -404,6 +404,7 @@ public class GUI extends javax.swing.JFrame
                 mainGUI.setPass(new PasswordFieldPanel(cardHolder, mainGUI));
                 mainGUI.setPenIntPanel(new PenaltyInterestPanel(cardHolder, mainGUI));
                 mainGUI.setTransPanel(new TransactionHistoryPanel(cardHolder, mainGUI));
+                mainGUI.setDolphinsPanel(new DolphinsPanel(cardHolder, mainGUI));
 
                 // This addes the LoginPanel and AccountsListPanel that we just
                 // created to the MainPanel. It also assigns a name to each of
@@ -421,6 +422,7 @@ public class GUI extends javax.swing.JFrame
                 cardHolder.add(mainGUI.getTDelete(), "TDelete");
                 cardHolder.add(mainGUI.getPenIntPanel(), "PenIntPanel");
                 cardHolder.add(mainGUI.getTransPanel(), "TransPanel");
+                cardHolder.add(mainGUI.getDolphinsPanel(), "DolphinsPanel");
 
                 // These two lines show the MainPanel. Without these 2 lines
                 // the GUI would not show up at all. Just leave them alone.
@@ -465,7 +467,18 @@ public class GUI extends javax.swing.JFrame
     private PasswordFieldPanel pass;
     private PenaltyInterestPanel PenIntPanel;
     private TransactionHistoryPanel TransPanel;
+    private DolphinsPanel DolphinsPanel;
 
+    public DolphinsPanel getDolphinsPanel()
+    {
+        return DolphinsPanel;
+    }
+
+    public void setDolphinsPanel(DolphinsPanel DolphinsPanel)
+    {
+        this.DolphinsPanel = DolphinsPanel;
+    }
+    
     public TransactionHistoryPanel getTransPanel()
     {
         return TransPanel;

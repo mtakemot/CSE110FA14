@@ -34,7 +34,6 @@ public class PasswordFieldPanel extends javax.swing.JPanel
     }
 
     public javax.swing.JPanel GetPanel() {
-        
         return this;
     }
     
