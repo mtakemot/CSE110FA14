@@ -185,7 +185,10 @@ public class AccountsListPanel extends javax.swing.JPanel
         AccountsTable.getTableHeader().setResizingAllowed(false);
         AccountsTable.setGridColor(new java.awt.Color(255, 255, 255));
         AccountsTable.getTableHeader().setDefaultRenderer((new HeaderRenderer(AccountsTable)));
+        AccountsTable.setMaximumSize(new java.awt.Dimension(440, 390));
+        AccountsTable.setMinimumSize(new java.awt.Dimension(440, 390));
         AccountsTable.setOpaque(false);
+        AccountsTable.setPreferredSize(new java.awt.Dimension(440, 390));
         AccountsTable.setSelectionBackground(new java.awt.Color(51, 0, 255));
         AccountsTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(AccountsTable);
@@ -312,7 +315,6 @@ public class AccountsListPanel extends javax.swing.JPanel
 
         AmountField.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         AmountField.setText("Amount");
-        AmountField.setMinimumSize(new java.awt.Dimension(100, 21));
         AmountField.addFocusListener(new java.awt.event.FocusAdapter()
         {
             public void focusGained(java.awt.event.FocusEvent evt)
@@ -713,11 +715,15 @@ public class AccountsListPanel extends javax.swing.JPanel
             GUI.currentBankAccount.addToBalance(amount);
             mainGUI.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
             JOptionPane.showMessageDialog(null, "Funds Transfered Successfully!", "Bank 42", 1);
-            
-            /**11/30**export upon successful change of data BEGIN**/
+
+            /**
+             * 11/30**export upon successful change of data BEGIN*
+             */
             GUI.dataout.exportDB(GUI.MasterTable);
             System.out.println("AccountListPanel.java: transferred and exported");
-            /**********************END**/
+            /**
+             * ********************END*
+             */
 
         }
         else
@@ -744,14 +750,15 @@ public class AccountsListPanel extends javax.swing.JPanel
             String bankacc = (String) AccountsTable.getValueAt(row, NAMECOL);
 
             GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(bankacc);
-            if(GUI.currentBankAccount == null){
-System.out.println("test2");    }        
+            if (GUI.currentBankAccount == null)
+            {
+                System.out.println("test2");
+            }
             amount_in_deleted_acc = GUI.currentBankAccount.getBalance();
-System.out.println("test3");            
+            System.out.println("test3");
             account_type = GUI.currentBankAccount.getAccountType();
             account_name = GUI.currentBankAccount.getAccountName();
 
- 
             if (amount_in_deleted_acc == 0)
             {
                 JOptionPane.showMessageDialog(null, bankacc + " has been Deleted", "Bank 42", 1);
