@@ -8,7 +8,7 @@ package PresentationLayer;
 import java.lang.management.ManagementFactory;
 import java.lang.management.ThreadMXBean;
 import java.util.TimerTask;
-import LogicLayer.HashTable;
+//import LogicLayer.HashTable;
 
 /**
  *
@@ -17,11 +17,24 @@ import LogicLayer.HashTable;
 public class interestTask extends TimerTask {
     @Override
     public void run(){
-        System.out.println("task running, calculate # threads\n");
+        
+        //interest depends on the updating of thisMonthsDailyTotals field, so 
+        //invoke method to update thisMonthsDailyTotals to get it ready for interest tasks
+        GUI.MasterTable.updateAverageBalance();
+        System.out.println("MSG interestTask.java: calling InterestAndPenalties");
+        GUI.MasterTable.InterestAndPenalties();
+        System.out.println("MSG interestTask.java: done with interest");
+        
+        
+        
+        /*System.out.println("task running, calculate # threads\n");
         ThreadMXBean bean = ManagementFactory.getThreadMXBean();
         int peakThreadCount = bean.getPeakThreadCount();
         System.out.println("Peak Thread Count: " + peakThreadCount);
-        System.out.println("Number of active threads from the given thread: " + Thread.activeCount());
+        System.out.println("Number of active threads from the given thread: " + Thread.activeCount());*/
+        
+        
+        
         
     }
     
