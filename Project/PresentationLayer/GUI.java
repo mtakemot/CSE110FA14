@@ -39,6 +39,8 @@ import java.util.Timer;
 import java.util.TimerTask;
 import org.joda.time.DateTimeZone;
 
+
+
 public class GUI extends javax.swing.JFrame
 {
 
@@ -193,7 +195,18 @@ public class GUI extends javax.swing.JFrame
      * 11/30**method for setting up TimerTask to run in background*
      */
     public static void initTask()
-    {
+    {/*
+        DateTime last = MasterTable.getLastInterestDateTime();
+        DateTime now = new DateTime(DateTimeZone.forID("Etc/UTC"));
+        int yearPassed = now.getYear() - last.getYear();
+        int monthPassed = now.getMonthOfYear()- last.getMonthOfYear();
+        int dayPassed = now.getDayOfMonth() - last.getDayOfMonth();
+        int hourPassed = now.getHourOfDay() - last.getHourOfDay();
+        int minPassed = now.getMinuteOfHour() - last.getMinuteOfHour();
+        int secPassed = now.getSecondOfMinute() - last.getSecondOfMinute();*/
+                
+        
+        /********This comment block was for testing multithreads with interestAndPenalty ONLY (not using balanceUpdate********/
         TimerTask task = new interestTask();
         Timer timer = new Timer();
         DateTime initTime = new DateTime(DateTimeZone.forID("Etc/UTC"));
@@ -217,10 +230,12 @@ public class GUI extends javax.swing.JFrame
         System.out.println("Task will run every 30 secs from the delay");
 
         //if the time isn't EXACTLY at the hour, run task to init. all bank account interests.
-        task.run();
+       //task.run();
 
-        timer.scheduleAtFixedRate(task, 1000 * 20, 1000 * 30); 
+        timer.scheduleAtFixedRate(task, 1000 * 10, 1000 * 15); 
+        
         System.out.println("TaskTimer scheduled in main. Now initializing GUI");
+        /* ***********************************************************************/
     }
 
     // This is a getter function for the JPanel that is created when this
@@ -344,6 +359,8 @@ public class GUI extends javax.swing.JFrame
             {
 
                 final GUI mainGUI = new GUI();
+                
+                /******initialize interestTask.java GUI object with mainGUI to use table change**/
                 initDB();
                 
                 //update daily total BEFORE interest. 
@@ -546,6 +563,8 @@ public class GUI extends javax.swing.JFrame
     {
         this.TellerAP = TellerAP;
     }
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel MainPanel;

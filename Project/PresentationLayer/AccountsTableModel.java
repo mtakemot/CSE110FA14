@@ -16,7 +16,7 @@ import javax.swing.table.*;
 public class AccountsTableModel extends AbstractTableModel
 {
 
-    private int colCount = 3;
+    private  int colCount = 3;
     private UserAccount current;
     private UserAccountWrapper wrapper;
     Class[] columns = new Class[]
