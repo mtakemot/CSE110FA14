@@ -174,7 +174,7 @@ public class BankAccount implements Serializable
     public String getAccountType()
     {
         return accountType;
-    }
+    } 
 
     public double getThisMonthsDailyTotals()
     {

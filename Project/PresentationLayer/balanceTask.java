@@ -5,10 +5,20 @@
  */
 package PresentationLayer;
 
+import java.util.TimerTask;
 /**
  *
  * @author Michio
  */
-public class balanceTask {
+public class balanceTask extends TimerTask {
+    private GUI mainGUI;
     
+    public void setGUI(GUI mainGUI){
+        this.mainGUI = mainGUI;
+    }
+    @Override
+    public void run(){
+        GUI.MasterTable.updateAverageBalance();
+        System.out.println("MSG balanceTask.java: calling updateAverageBalance()");
+    }
 }

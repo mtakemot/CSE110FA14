@@ -386,7 +386,8 @@ public class LoginPanel extends javax.swing.JPanel
                 newPassword = newPassword.trim();
                 if ((newPassword.length() > 0) && CreateAccountPanel.validatePassword(newPassword))
                 {
-                    GUI.currentUserAccount.setPassword(newPassword);            
+                    GUI.currentUserAccount.setPassword(newPassword);        
+                    GUI.dataout.exportDB(GUI.MasterTable);
                 }
             }
             

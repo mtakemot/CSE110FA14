@@ -733,6 +733,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
                 GUI.currentUserAccount.setPassword(pass1);
                 GUI.currentUserAccount.setEmail(input3);
                 GUI.currentUserAccount.setPhone(phoneNumber);
+                GUI.dataout.exportDB(GUI.MasterTable);
                 System.out.println("You have successfully created your user account!");
                 JOptionPane.showMessageDialog(null, "You have successfully created your user account!", "Success!",
                         JOptionPane.INFORMATION_MESSAGE);
@@ -753,21 +754,6 @@ public class CreateAccountPanel extends javax.swing.JPanel
             else
                 JOptionPane.showMessageDialog(null, "ERROR! An account with that User Name or Email already exists.", "ERROR", JOptionPane.ERROR_MESSAGE);
 
-            //ANY TIME THERE's DATA CHANGING (viewing information doesn't count as changing) EXPORT!
-             /*
-             ImportExport dataout = new ImportExport();
-             if (dataout.exportDB(GUI.MasterTable))
-             {
-             System.out.println("\nExported file to local source file"
-             + " THROUGH CREATE ACCOUNT GUI\n");
-
-             }
-             else
-             {
-             System.err.println("\n\nCould not export THROUGH CREATE ACCOUNT GUI, ERROR\n\n");
-             }
-
-             }*/
         }
     }//GEN-LAST:event_createUserAccountActionPerformed
 

@@ -59,6 +59,7 @@ public class TellerDeleteAccountPanel extends javax.swing.JPanel
                 boolean deleted = GUI.MasterTable.deleteUserAccount(GUI.currentUserAccount.getUserName());
                 GUI.currentBankAccount = null;
                 GUI.currentUserAccount = null;
+                GUI.dataout.exportDB(GUI.MasterTable);
                 JOptionPane.showMessageDialog(null, "User Account Deleted");
                 CardLayout layout = (CardLayout) (MainPanel.getLayout());
                 layout.show(MainPanel, "TellerMainMenu");

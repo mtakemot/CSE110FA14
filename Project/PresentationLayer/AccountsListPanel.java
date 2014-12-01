@@ -712,7 +712,7 @@ public class AccountsListPanel extends javax.swing.JPanel
              * 11/30**export upon successful change of data BEGIN*
              */
             GUI.dataout.exportDB(GUI.MasterTable);
-            System.out.println("AccountListPanel.java: transferred and exported");
+            
             /**
              * ********************END*
              */
@@ -742,12 +742,12 @@ public class AccountsListPanel extends javax.swing.JPanel
             String bankacc = (String) AccountsTable.getValueAt(row, NAMECOL);
 
             GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(bankacc);
-            if (GUI.currentBankAccount == null)
+           /* if (GUI.currentBankAccount == null)
             {
                 System.out.println("test2");
-            }
+            }*/
             amount_in_deleted_acc = GUI.currentBankAccount.getBalance();
-            System.out.println("test3");
+            //System.out.println("test3");
             account_type = GUI.currentBankAccount.getAccountType();
             account_name = GUI.currentBankAccount.getAccountName();
 
@@ -755,6 +755,7 @@ public class AccountsListPanel extends javax.swing.JPanel
             {
                 JOptionPane.showMessageDialog(null, bankacc + " has been Deleted", "Bank 42", 1);
                 GUI.currentUserAccount.deleteBankAccount(bankacc);
+                GUI.dataout.exportDB(GUI.MasterTable);
                 this.update();
                 return;
             }
@@ -797,6 +798,7 @@ public class AccountsListPanel extends javax.swing.JPanel
                 GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(choice);
                 GUI.currentBankAccount.addToBalance(amount_in_deleted_acc);
                 this.update();
+                GUI.dataout.exportDB(GUI.MasterTable);
 
                 JOptionPane.showMessageDialog(null, "Bank Account " + bankacc
                         + " has been Deleted" + "\nFunds have been transfered to " + choice, "Bank 42", 1);
@@ -806,6 +808,7 @@ public class AccountsListPanel extends javax.swing.JPanel
             {
                 GUI.currentUserAccount.deleteBankAccount(bankacc);
                 this.update();
+                GUI.dataout.exportDB(GUI.MasterTable);
 
                 JOptionPane.showMessageDialog(null, "Bank Account " + bankacc
                         + " has been Deleted" + "\nFunds have been emailed to you at:\n"
@@ -903,6 +906,7 @@ public class AccountsListPanel extends javax.swing.JPanel
             GUI.currentBankAccount.addToBalance(amount);
             mainGUI.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
             JOptionPane.showMessageDialog(null, "Funds Transfered Successfully!", "Bank 42", 1);
+            GUI.dataout.exportDB(GUI.MasterTable);
             //GUI.MasterTable.findUserAccount();
             // test
         }

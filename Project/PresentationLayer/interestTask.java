@@ -5,8 +5,8 @@
  */
 package PresentationLayer;
 
-import java.lang.management.ManagementFactory;
-import java.lang.management.ThreadMXBean;
+//import java.lang.management.ManagementFactory;
+//import java.lang.management.ThreadMXBean;
 import java.util.TimerTask;
 //import LogicLayer.HashTable;
 
@@ -18,9 +18,7 @@ public class interestTask extends TimerTask {
     @Override
     public void run(){
         
-        //interest depends on the updating of thisMonthsDailyTotals field, so 
-        //invoke method to update thisMonthsDailyTotals to get it ready for interest tasks
-        GUI.MasterTable.updateAverageBalance();
+        
         System.out.println("MSG interestTask.java: calling InterestAndPenalties");
         GUI.MasterTable.InterestAndPenalties();
         System.out.println("MSG interestTask.java: done with interest");

@@ -598,6 +598,7 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
             return;
         }
         GUI.MasterTable.PENALTY_AMOUNT = amount;
+        GUI.dataout.exportDB(GUI.MasterTable);
         JOptionPane.showMessageDialog(null, "Success!\n $" + amount + " is the new penalty.");
     }//GEN-LAST:event_PenaltyButtonActionPerformed
 
