@@ -16,6 +16,8 @@ import java.awt.*;
 import java.io.File;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class LoginPanel extends javax.swing.JPanel
 {
@@ -27,7 +29,8 @@ public class LoginPanel extends javax.swing.JPanel
     private static final String USERNAME_PATTERN = "^[a-z0-9_-]{1,15}$";
     private Image image;
     private static int numberOfAttempts;
-
+    private static int interval;
+    private static Timer timer;
     public LoginPanel()
     {
         initComponents();
@@ -80,6 +83,7 @@ public class LoginPanel extends javax.swing.JPanel
         jPanel3 = new javax.swing.JPanel();
         PasswordLabel = new javax.swing.JLabel();
         ForgotPWButton = new javax.swing.JButton();
+        noAccess = new javax.swing.JLabel();
         Background = new javax.swing.JLabel();
 
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -91,7 +95,7 @@ public class LoginPanel extends javax.swing.JPanel
         jPanel1.setOpaque(false);
         java.awt.GridBagLayout jPanel1Layout = new java.awt.GridBagLayout();
         jPanel1Layout.columnWidths = new int[] {0, 5, 0};
-        jPanel1Layout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0};
+        jPanel1Layout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0};
         jPanel1.setLayout(jPanel1Layout);
 
         CreateAccButton.setBackground(new Color (255,255,255,150));
@@ -105,7 +109,7 @@ public class LoginPanel extends javax.swing.JPanel
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridy = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel1.add(CreateAccButton, gridBagConstraints);
 
@@ -118,9 +122,14 @@ public class LoginPanel extends javax.swing.JPanel
                 LoginButtonMouseClicked(evt);
             }
         });
+        LoginButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LoginButtonActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridy = 8;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.ipadx = 50;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
@@ -147,7 +156,7 @@ public class LoginPanel extends javax.swing.JPanel
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridy = 4;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.ipady = 15;
         jPanel1.add(jPasswordField, gridBagConstraints);
@@ -215,7 +224,7 @@ public class LoginPanel extends javax.swing.JPanel
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridy = 4;
         jPanel1.add(jPanel3, gridBagConstraints);
 
         ForgotPWButton.setText("Forgot Password");
@@ -226,9 +235,19 @@ public class LoginPanel extends javax.swing.JPanel
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridy = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         jPanel1.add(ForgotPWButton, gridBagConstraints);
+
+        noAccess.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
+        noAccess.setForeground(new java.awt.Color(255, 0, 0));
+        noAccess.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(7, 0, 7, 0);
+        jPanel1.add(noAccess, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -358,6 +377,33 @@ public class LoginPanel extends javax.swing.JPanel
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordFieldActionPerformed
 
+    private void exceededAttempts()
+    {
+        int delay = 1000;
+        int period = 1000;
+        timer = new Timer();
+        interval = 5;
+
+        timer.scheduleAtFixedRate(new TimerTask() {
+
+            public void run() {
+              
+                noAccess.setText("Time Remaining: " + Integer.toString(setInterval() + 1));
+
+            }
+        }, delay, period);
+                       
+    }
+    
+    private int setInterval() {
+        if (interval == 0) {
+            noAccess.setText("");
+            numberOfAttempts = 0;
+            timer.cancel();
+        }
+        return --interval;
+    }
+    
     private void ForgotPWButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ForgotPWButtonActionPerformed
                 
         if (numberOfAttempts == 3)
@@ -395,9 +441,18 @@ public class LoginPanel extends javax.swing.JPanel
         else
         {
             JOptionPane.showMessageDialog(this, "Incorrect email, please try again.");
+            
+            if (numberOfAttempts == 3)
+            {
+                exceededAttempts();                
+            }
             return;
         }
     }//GEN-LAST:event_ForgotPWButtonActionPerformed
+
+    private void LoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LoginButtonActionPerformed
 
     public boolean validate(final String username)
     {
@@ -423,6 +478,7 @@ public class LoginPanel extends javax.swing.JPanel
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPasswordField jPasswordField;
+    private javax.swing.JLabel noAccess;
     // End of variables declaration//GEN-END:variables
 
 }
