@@ -27,8 +27,8 @@ import org.joda.time.DateTimeZone;
 public class AccountsListPanel extends javax.swing.JPanel
 {
 
-    final static int NAMECOL = 1;
-    final static int BALANCECOL = 3;
+    final static int NAMECOL = 0;
+    final static int BALANCECOL = 2;
     // VERY IMPORTANT !! YOU MUST MAKE SURE THAT YOU GIVE EACH NEW PANEL THAT
     // YOU DECLARE A PRIVATE VARIABLE THAT WILL STORE THE MAIN PANEL FROM GUI
     private JPanel MainPanel;
@@ -119,7 +119,8 @@ public class AccountsListPanel extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
         java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel3 = new javax.swing.JPanel();
@@ -220,13 +221,17 @@ public class AccountsListPanel extends javax.swing.JPanel
         TransferButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         TransferButton.setForeground(new java.awt.Color(51, 0, 255));
         TransferButton.setText("Transfer");
-        TransferButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        TransferButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 TransferButtonMouseClicked(evt);
             }
         });
-        TransferButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        TransferButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 TransferButtonActionPerformed(evt);
             }
         });
@@ -237,8 +242,10 @@ public class AccountsListPanel extends javax.swing.JPanel
 
         BankAccountsList1.setForeground(new java.awt.Color(255, 255, 255));
         BankAccountsList1.setModel(new javax.swing.DefaultComboBoxModel(accountlist));
-        BankAccountsList1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        BankAccountsList1.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 BankAccountsList1ActionPerformed(evt);
             }
         });
@@ -250,13 +257,17 @@ public class AccountsListPanel extends javax.swing.JPanel
 
         EmailEntryField.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         EmailEntryField.setText("Email Address");
-        EmailEntryField.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
+        EmailEntryField.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
                 EmailEntryFieldFocusGained(evt);
             }
         });
-        EmailEntryField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        EmailEntryField.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 EmailEntryFieldActionPerformed(evt);
             }
         });
@@ -269,8 +280,10 @@ public class AccountsListPanel extends javax.swing.JPanel
         TransferButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         TransferButton1.setForeground(new java.awt.Color(51, 0, 255));
         TransferButton1.setText("Transfer");
-        TransferButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        TransferButton1.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 TransferButton1MouseClicked(evt);
             }
         });
@@ -299,13 +312,18 @@ public class AccountsListPanel extends javax.swing.JPanel
 
         AmountField.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         AmountField.setText("Amount");
-        AmountField.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
+        AmountField.setMinimumSize(new java.awt.Dimension(100, 21));
+        AmountField.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
                 AmountFieldFocusGained(evt);
             }
         });
-        AmountField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        AmountField.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 AmountFieldActionPerformed(evt);
             }
         });
@@ -325,8 +343,10 @@ public class AccountsListPanel extends javax.swing.JPanel
 
         BankAccountsList0.setForeground(new Color(255,255,255,255));
         BankAccountsList0.setModel(new javax.swing.DefaultComboBoxModel(accountlist));
-        BankAccountsList0.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        BankAccountsList0.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 BankAccountsList0ActionPerformed(evt);
             }
         });
@@ -418,8 +438,10 @@ public class AccountsListPanel extends javax.swing.JPanel
         DeleteAccountButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         DeleteAccountButton.setForeground(new java.awt.Color(51, 0, 255));
         DeleteAccountButton.setText("Delete Highlighted Account");
-        DeleteAccountButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        DeleteAccountButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 DeleteAccountButtonActionPerformed(evt);
             }
         });
@@ -433,8 +455,10 @@ public class AccountsListPanel extends javax.swing.JPanel
         CreateBAButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         CreateBAButton.setForeground(new java.awt.Color(51, 0, 255));
         CreateBAButton.setText("Create New Bank Account");
-        CreateBAButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        CreateBAButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 CreateBAButtonActionPerformed(evt);
             }
         });
@@ -448,8 +472,10 @@ public class AccountsListPanel extends javax.swing.JPanel
         FutureInterestButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         FutureInterestButton.setForeground(new java.awt.Color(51, 0, 255));
         FutureInterestButton.setText("Calculate Future Interest ");
-        FutureInterestButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        FutureInterestButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 FutureInterestButtonActionPerformed(evt);
             }
         });
@@ -463,8 +489,10 @@ public class AccountsListPanel extends javax.swing.JPanel
         TransactionHistoryButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         TransactionHistoryButton.setForeground(new java.awt.Color(51, 0, 255));
         TransactionHistoryButton.setText("Transaction History");
-        TransactionHistoryButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        TransactionHistoryButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 TransactionHistoryButtonActionPerformed(evt);
             }
         });
@@ -490,8 +518,10 @@ public class AccountsListPanel extends javax.swing.JPanel
         Settings.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Settings.setForeground(new java.awt.Color(51, 0, 255));
         Settings.setText("Settings");
-        Settings.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        Settings.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 SettingsMouseClicked(evt);
             }
         });
@@ -505,8 +535,10 @@ public class AccountsListPanel extends javax.swing.JPanel
         Logout.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Logout.setForeground(new java.awt.Color(51, 0, 255));
         Logout.setText("Logout");
-        Logout.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        Logout.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 LogoutMouseClicked(evt);
             }
         });
@@ -530,7 +562,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 29, 0);
         add(jPanel3, gridBagConstraints);
 
-        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/Background2.jpg"))); // NOI18N
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/rsz_142galaxy Cropped.png"))); // NOI18N
         Background.setAlignmentY(0.0F);
         Background.setOpaque(true);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -572,7 +604,9 @@ public class AccountsListPanel extends javax.swing.JPanel
 
     private void AmountFieldFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_AmountFieldFocusGained
     {//GEN-HEADEREND:event_AmountFieldFocusGained
-        AmountField.setText("");
+        if(AmountField.getText().equals("Amount")) {
+            AmountField.setText("");
+        }
     }//GEN-LAST:event_AmountFieldFocusGained
 
     private void AmountFieldActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_AmountFieldActionPerformed
@@ -587,7 +621,9 @@ public class AccountsListPanel extends javax.swing.JPanel
 
     private void EmailEntryFieldFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_EmailEntryFieldFocusGained
     {//GEN-HEADEREND:event_EmailEntryFieldFocusGained
-        EmailEntryField.setText("");
+        if(EmailEntryField.getText().equals("Email Address")) {
+            EmailEntryField.setText("");
+        }        
     }//GEN-LAST:event_EmailEntryFieldFocusGained
 
     private void EmailEntryFieldActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EmailEntryFieldActionPerformed
@@ -660,7 +696,6 @@ public class AccountsListPanel extends javax.swing.JPanel
 
         if (amount > GUI.currentBankAccount.getBalance())
         {
-            AmountField.setText("");
             JOptionPane.showMessageDialog(null, "Insufficient Funds"
                     + "\nYou have " + GUI.currentBankAccount.getBalance() + "$ available"
                     + " in selected Bank Account", "Bank 42", 1);
@@ -706,7 +741,7 @@ public class AccountsListPanel extends javax.swing.JPanel
             double amount_in_deleted_acc;
             String account_name;
             int row = AccountsTable.getSelectedRow();
-            String bankacc = (String) AccountsTable.getValueAt(row, 0);
+            String bankacc = (String) AccountsTable.getValueAt(row, NAMECOL);
 
             GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(bankacc);
             if(GUI.currentBankAccount == null){
@@ -805,7 +840,7 @@ System.out.println("test3");
                 }
                 DateTime interestDate = new DateTime(DateTimeZone.forID("Etc/UTC"));
                 int row = AccountsTable.getSelectedRow();
-                String bankacc = (String) AccountsTable.getValueAt(row, 1);
+                String bankacc = (String) AccountsTable.getValueAt(row, NAMECOL);
                 GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(bankacc);
                 double calcInt = GUI.currentBankAccount.getInterest(interestDate.plusDays(amount));
                 JOptionPane.showMessageDialog(null, "Success! The balance of account "
@@ -821,7 +856,7 @@ System.out.println("test3");
         if (AccountsTable.getSelectedRowCount() > 0)
         {
             int row = AccountsTable.getSelectedRow();
-            String bankacc = (String) AccountsTable.getValueAt(row, 1);
+            String bankacc = (String) AccountsTable.getValueAt(row, NAMECOL);
             GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(bankacc);
             CardLayout layout = (CardLayout) (MainPanel.getLayout());
             mainGUI.getTransPanel().update();
@@ -856,7 +891,7 @@ System.out.println("test3");
 
         if (amount > GUI.currentBankAccount.getBalance())
         {
-            AmountField.setText("");
+            AmountField.setText("Amount");
             JOptionPane.showMessageDialog(null, "Insufficient Funds"
                     + "\nYou have " + GUI.currentBankAccount.getBalance() + "$ available"
                     + " in selected Bank Account", "Bank 42", 1);
