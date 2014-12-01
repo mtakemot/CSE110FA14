@@ -637,7 +637,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 10, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(0, 10, 20, 0);
         add(jPanel2, gridBagConstraints);
 
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/hitchguide42robot.jpg"))); // NOI18N
@@ -773,37 +773,37 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
     private void firstNameFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_firstNameFocusGained
     {//GEN-HEADEREND:event_firstNameFocusGained
-        firstName.setText("");
+      
     }//GEN-LAST:event_firstNameFocusGained
 
     private void lastNameFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_lastNameFocusGained
     {//GEN-HEADEREND:event_lastNameFocusGained
-        lastName.setText("");
+    
     }//GEN-LAST:event_lastNameFocusGained
 
     private void usernameFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_usernameFocusGained
     {//GEN-HEADEREND:event_usernameFocusGained
-        username.setText("");
+     
     }//GEN-LAST:event_usernameFocusGained
 
     private void passwordFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_passwordFocusGained
     {//GEN-HEADEREND:event_passwordFocusGained
-        password.setText("");
+     
     }//GEN-LAST:event_passwordFocusGained
 
     private void confirmPasswordFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_confirmPasswordFocusGained
     {//GEN-HEADEREND:event_confirmPasswordFocusGained
-        confirmPassword.setText("");
+     
     }//GEN-LAST:event_confirmPasswordFocusGained
 
     private void emailFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_emailFocusGained
     {//GEN-HEADEREND:event_emailFocusGained
-        email.setText("");
+   
     }//GEN-LAST:event_emailFocusGained
 
     private void phoneFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_phoneFocusGained
     {//GEN-HEADEREND:event_phoneFocusGained
-        phone.setText("");
+
     }//GEN-LAST:event_phoneFocusGained
 
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BackButtonActionPerformed
