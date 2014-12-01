@@ -181,13 +181,12 @@ public class GUI extends javax.swing.JFrame
             currentUserAccount = MasterTable.findUserAccount("ee");
             currentBankAccount = currentUserAccount.findBankAccount("ee1");
         }
-        /*
-         //save DB immediately after we create and add data to it
-         if(dataout.exportDB(MasterTable)==true){
-         //DEBUG, we don't need this print statement later
-         System.out.println("MSG GUI.JAVA: updated DB, proceed to set up TimerTask");
-         }*/
-        dataout.exportDB(MasterTable);
+        
+        if(dataout.exportDB(MasterTable)){
+            System.out.println("MSG GUI.JAVA: updated DB, proceed to set up TimerTask\n");
+        }
+        else
+            System.err.println("MSG GUI.JAVA: EXPORT DB FAILED in initDB()");
     }
 
     /**
@@ -197,7 +196,6 @@ public class GUI extends javax.swing.JFrame
     {
         TimerTask task = new interestTask();
         Timer timer = new Timer();
-        // TimerTask task = new interestTask();
         DateTime initTime = new DateTime(DateTimeZone.forID("Etc/UTC"));
         int initMin = initTime.getMinuteOfHour();
         int initSec = initTime.getSecondOfMinute();
@@ -215,13 +213,13 @@ public class GUI extends javax.swing.JFrame
         System.out.println("initial seconds is: " + initSec);
         System.out.println("initial time: " + initTime);
         System.out.println("next hour is at: " + nextHour);
-        System.out.println("delay for task schedule: " + taskDelay);
-        System.out.println("Task will run every 10 secs from the delay");
+        System.out.println("delay for task schedule: 20sec");// + taskDelay);
+        System.out.println("Task will run every 30 secs from the delay");
 
         //if the time isn't EXACTLY at the hour, run task to init. all bank account interests.
         task.run();
 
-        timer.scheduleAtFixedRate(task, 1000 * 5, 1000 * 15); 
+        timer.scheduleAtFixedRate(task, 1000 * 20, 1000 * 30); 
         System.out.println("TaskTimer scheduled in main. Now initializing GUI");
     }
 
@@ -347,6 +345,8 @@ public class GUI extends javax.swing.JFrame
 
                 final GUI mainGUI = new GUI();
                 initDB();
+                
+                //update daily total BEFORE interest. 
                 initTask();
                 // This grabs the MainPanel and stores it in a variable so that
                 // we have easy access to it
