@@ -59,6 +59,7 @@ public class DeleteAccountPanel extends javax.swing.JPanel
                 boolean deleted = GUI.MasterTable.deleteUserAccount(GUI.currentUserAccount.getUserName());
                 GUI.currentBankAccount = null;
                 GUI.currentUserAccount = null;
+                GUI.dataout.exportDB(GUI.MasterTable);
                 CardLayout layout = (CardLayout) (MainPanel.getLayout());
                 layout.show(MainPanel, "Login");
             }
