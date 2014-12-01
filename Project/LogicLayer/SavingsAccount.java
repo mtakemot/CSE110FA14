@@ -57,6 +57,7 @@ public class SavingsAccount extends BankAccount
                 // Perform withdraw and update threshold
                 this.balance -= amount;
                 dayWithdrawAmount += amount;
+                this.getTransactions().add(new Transaction("Withdraw", amount));
                 return true;
             }
         }
@@ -66,6 +67,7 @@ public class SavingsAccount extends BankAccount
             this.balance -= amount;
             lastWithdrawDateTime = currentDateTime;
             dayWithdrawAmount = amount;
+            this.getTransactions().add(new Transaction("Withdraw", amount));
             return true;
         }
         return false;
@@ -89,6 +91,7 @@ public class SavingsAccount extends BankAccount
                 // Update threshold and deposit the money
                 this.balance += amount;
                 dayDepositAmount += amount;
+                this.getTransactions().add(new Transaction("Deposit", amount));
                 return true;
             }
         }
@@ -98,6 +101,7 @@ public class SavingsAccount extends BankAccount
             this.balance += amount;
             lastDepositDateTime = currentDateTime;
             dayDepositAmount = amount;
+            this.getTransactions().add(new Transaction("Deposit", amount));
             return true;
         }
         return false;

@@ -16,17 +16,17 @@ import javax.swing.table.*;
 public class AccountsTableModel extends AbstractTableModel
 {
 
-    private int colCount = 4;
+    private int colCount = 3;
     private UserAccount current;
     private UserAccountWrapper wrapper;
     Class[] columns = new Class[]
     {
-        Integer.class, String.class, String.class, Double.class
+       String.class, String.class, Double.class
     };
     private String[] columnNames =
     {
-        "#", "Account Name", "Account Type",
-        "Account Balance"
+        "Account Name", "Account Type",
+        "Balance"
     };
 
     public AccountsTableModel(UserAccount curr)
@@ -53,17 +53,17 @@ public class AccountsTableModel extends AbstractTableModel
     {
         switch (columnIndex)
         {
-            case 3:
+            case 2:
                 wrapper.setAccountBalance((double) aValue, rowIndex);
                 break;
-            case 2:
+            case 1:
                 wrapper.setAccountType((String) aValue, rowIndex);
                 break;
-            case 1:
+            case 0:
                 wrapper.setAccountName((String) aValue, rowIndex);
                 break;
-            case 0:
-                wrapper.setAccountNumber((int) aValue, rowIndex);
+            //case 0:
+                //wrapper.setAccountNumber((int) aValue, rowIndex);
         }
         fireTableCellUpdated(rowIndex, columnIndex);
     }
@@ -74,17 +74,17 @@ public class AccountsTableModel extends AbstractTableModel
         Object returnMe = null;
         switch (columnIndex)
         {
-            case 3:
+            case 2:
                 returnMe = wrapper.getAccountBalance(rowIndex);
                 break;
-            case 2:
+            case 1:
                 returnMe = wrapper.getAccountType(rowIndex);
                 break;
-            case 1:
+            case 0:
                 returnMe = wrapper.getAccountName(rowIndex);
                 break;
-            case 0:
-                returnMe = wrapper.getAccountNumber(rowIndex);
+            //case 0:
+               // returnMe = wrapper.getAccountNumber(rowIndex);
         }
         return returnMe;
     }

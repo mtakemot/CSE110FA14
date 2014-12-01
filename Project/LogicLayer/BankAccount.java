@@ -2,7 +2,9 @@ package LogicLayer;
 
 import java.io.Serializable;
 import static java.lang.Math.abs;
+import java.util.*;
 import org.joda.time.*;
+import org.joda.time.format.*;
 
 /**
  * **************************************************************************
@@ -36,6 +38,11 @@ public class BankAccount implements Serializable
     protected double dayDepositAmount;
     // The last time a deposit was made on the account
     protected DateTime lastDepositDateTime;
+    // Allows us to format dates so they look nice for the user
+    public static DateTimeFormatter dtf = DateTimeFormat.forPattern("MMMM d, yyyy");
+    // Ordered set to hold all of this Bank Account's transactions.
+    // Will be sorrted by date.
+    private List<Transaction> transactions;
 
     public BankAccount()
     {
@@ -47,11 +54,9 @@ public class BankAccount implements Serializable
 
         this.dayWithdrawAmount = 0;
         this.dayDepositAmount = 0;
-    }
 
-    double calculateAverageBalance()
-    {
-        return 0;
+        transactions = new ArrayList<Transaction>();
+        transactions.add(new Transaction("Account Created", 0));
     }
 
     // The following 3 methods will be overridden in
@@ -179,6 +184,11 @@ public class BankAccount implements Serializable
     public void setThisMonthsDailyTotals(double thisMonthsDailyTotals)
     {
         this.thisMonthsDailyTotals = thisMonthsDailyTotals;
+    }
+
+    public List<Transaction> getTransactions()
+    {
+        return transactions;
     }
 
 }

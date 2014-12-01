@@ -18,6 +18,7 @@ import java.awt.CardLayout;
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
 import LogicLayer.UserAccount;
+import java.awt.Color;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 
@@ -26,8 +27,8 @@ import org.joda.time.DateTimeZone;
 public class AccountsListPanel extends javax.swing.JPanel
 {
 
-    final static int NAMECOL = 1;
-    final static int BALANCECOL = 3;
+    final static int NAMECOL = 0;
+    final static int BALANCECOL = 2;
     // VERY IMPORTANT !! YOU MUST MAKE SURE THAT YOU GIVE EACH NEW PANEL THAT
     // YOU DECLARE A PRIVATE VARIABLE THAT WILL STORE THE MAIN PANEL FROM GUI
     private JPanel MainPanel;
@@ -35,6 +36,7 @@ public class AccountsListPanel extends javax.swing.JPanel
     private UserAccountWrapper wrapper;
     private int total_accounts;
     private String[] accountlist;
+    private DefaultListSelectionModel SelectionModel;
 
     public AccountsListPanel()
     {
@@ -69,9 +71,8 @@ public class AccountsListPanel extends javax.swing.JPanel
     public void update()
     {
         mainGUI.updateUserLabels();
-        AccountsTable.clearSelection();
         System.out.println(AccountsTable.getSelectedRowCount());
-        AccountsTable.getSelectionModel().clearSelection();
+        SelectionModel.clearSelection();
         AccountsTable.setModel(new AccountsTableModel(GUI.currentUserAccount));
         wrapper = new UserAccountWrapper(GUI.currentUserAccount);
         total_accounts = wrapper.getTotalAccounts();
@@ -122,28 +123,33 @@ public class AccountsListPanel extends javax.swing.JPanel
     {
         java.awt.GridBagConstraints gridBagConstraints;
 
-        Bank42 = new javax.swing.JLabel();
-        Settings = new javax.swing.JButton();
-        Logout = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         AccountsTable = new javax.swing.JTable();
         TransferFundsPanel = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        TransferButton = new javax.swing.JButton();
+        BankAccountsList1 = new javax.swing.JComboBox();
+        EmailEntryField = new javax.swing.JTextField();
+        TransferButton1 = new javax.swing.JButton();
+        Transferanotheruser = new javax.swing.JLabel();
         AmountToTransfer = new javax.swing.JLabel();
         AmountField = new javax.swing.JTextField();
+        BankAccountTransfer = new javax.swing.JLabel();
         BankAccountsList0 = new javax.swing.JComboBox();
         jPanel2 = new javax.swing.JPanel();
-        TransferButton = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        BankAccountsList1 = new javax.swing.JComboBox();
         jPanel1 = new javax.swing.JPanel();
-        Transferanotheruser = new javax.swing.JLabel();
-        TransferButton1 = new javax.swing.JButton();
-        EmailEntryField = new javax.swing.JTextField();
-        BankAccountTransfer = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         DeleteAccountButton = new javax.swing.JButton();
         CreateBAButton = new javax.swing.JButton();
         FutureInterestButton = new javax.swing.JButton();
+        TransactionHistoryButton = new javax.swing.JButton();
+        HeaderPanel = new javax.swing.JPanel();
+        Bank42 = new javax.swing.JLabel();
+        Settings = new javax.swing.JButton();
+        Logout = new javax.swing.JButton();
         Background = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(800, 600));
@@ -152,57 +158,24 @@ public class AccountsListPanel extends javax.swing.JPanel
         setPreferredSize(new java.awt.Dimension(800, 600));
         setLayout(new java.awt.GridBagLayout());
 
-        Bank42.setFont(new java.awt.Font("DejaVu Sans", 1, 48)); // NOI18N
-        Bank42.setForeground(new java.awt.Color(51, 0, 255));
-        Bank42.setText("Bank 42");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-        add(Bank42, gridBagConstraints);
-
-        Settings.setText("Settings");
-        Settings.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                SettingsMouseClicked(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 10, 0, 0);
-        add(Settings, gridBagConstraints);
-
-        Logout.setText("Logout");
-        Logout.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                LogoutMouseClicked(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHEAST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 10);
-        add(Logout, gridBagConstraints);
-
         jPanel3.setOpaque(false);
         java.awt.GridBagLayout jPanel3Layout = new java.awt.GridBagLayout();
-        jPanel3Layout.columnWidths = new int[] {0, 5, 0};
-        jPanel3Layout.rowHeights = new int[] {0, 5, 0, 5, 0};
+        jPanel3Layout.columnWidths = new int[] {0, 8, 0};
+        jPanel3Layout.rowHeights = new int[] {0, 8, 0, 8, 0, 8, 0};
         jPanel3.setLayout(jPanel3Layout);
 
-        jScrollPane1.setMinimumSize(new java.awt.Dimension(440, 390));
+        jScrollPane1.setBackground(new Color(255,255,255,190));
+        jScrollPane1.setMaximumSize(new java.awt.Dimension(440, 390));
+        jScrollPane1.setMinimumSize(new java.awt.Dimension(400, 300));
         jScrollPane1.setOpaque(false);
         jScrollPane1.setPreferredSize(new java.awt.Dimension(440, 390));
 
         AccountsTable.setAutoCreateRowSorter(true);
-        AccountsTable.setSelectionModel(new ForcedListSelectionModel());
+        AccountsTable.setSelectionModel(SelectionModel = new DefaultListSelectionModel());
+        SelectionModel.setSelectionMode(0);
+        AccountsTable.setBackground(new Color(255,255,255));
+        AccountsTable.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        AccountsTable.setForeground(new java.awt.Color(51, 0, 255));
         AccountsTable.setModel(new PresentationLayer.AccountsTableModel(PresentationLayer.GUI.currentUserAccount));
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
         centerRenderer.setHorizontalAlignment( JLabel.CENTER );
@@ -210,53 +183,46 @@ public class AccountsListPanel extends javax.swing.JPanel
         AccountsTable.setDefaultRenderer(Double.class, centerRenderer);
         AccountsTable.setColumnSelectionAllowed(false);
         AccountsTable.getTableHeader().setResizingAllowed(false);
+        AccountsTable.setGridColor(new java.awt.Color(255, 255, 255));
+        AccountsTable.getTableHeader().setDefaultRenderer((new HeaderRenderer(AccountsTable)));
+        AccountsTable.setMaximumSize(new java.awt.Dimension(440, 390));
+        AccountsTable.setMinimumSize(new java.awt.Dimension(440, 390));
         AccountsTable.setOpaque(false);
+        AccountsTable.setPreferredSize(new java.awt.Dimension(440, 390));
+        AccountsTable.setSelectionBackground(new java.awt.Color(51, 0, 255));
         AccountsTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(AccountsTable);
         AccountsTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridy = 4;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
         jPanel3.add(jScrollPane1, gridBagConstraints);
 
-        TransferFundsPanel.setBackground(new java.awt.Color(204, 204, 255));
-        TransferFundsPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Transfer Funds", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("DejaVu Sans", 1, 16))); // NOI18N
+        TransferFundsPanel.setBackground(new Color(255,255,255,190));
+        TransferFundsPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Transfer Funds", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("DejaVu Sans", 1, 16), new java.awt.Color(51, 0, 255))); // NOI18N
+        TransferFundsPanel.setPreferredSize(new java.awt.Dimension(300, 160));
+        java.awt.GridBagLayout TransferFundsPanelLayout = new java.awt.GridBagLayout();
+        TransferFundsPanelLayout.columnWidths = new int[] {0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0};
+        TransferFundsPanelLayout.rowHeights = new int[] {0, 15, 0, 15, 0, 15, 0, 15, 0, 15, 0, 15, 0, 15, 0, 15, 0, 15, 0, 15, 0, 15, 0, 15, 0};
+        TransferFundsPanel.setLayout(TransferFundsPanelLayout);
 
-        AmountToTransfer.setText("Amount to Transfer:");
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("To Your One Of Bank Accounts");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        TransferFundsPanel.add(jLabel3, gridBagConstraints);
 
-        AmountField.setText("Amount");
-        AmountField.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                AmountFieldActionPerformed(evt);
-            }
-        });
-        AmountField.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusGained(java.awt.event.FocusEvent evt)
-            {
-                AmountFieldFocusGained(evt);
-            }
-        });
-
-        BankAccountsList0.setModel(new javax.swing.DefaultComboBoxModel(accountlist));
-        BankAccountsList0.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                BankAccountsList0ActionPerformed(evt);
-            }
-        });
-
-        jPanel2.setBackground(new java.awt.Color(204, 255, 153));
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
+        TransferButton.setBackground(new java.awt.Color(255, 255, 255));
+        TransferButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        TransferButton.setForeground(new java.awt.Color(51, 0, 255));
         TransferButton.setText("Transfer");
         TransferButton.addMouseListener(new java.awt.event.MouseAdapter()
         {
@@ -272,9 +238,12 @@ public class AccountsListPanel extends javax.swing.JPanel
                 TransferButtonActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 12;
+        TransferFundsPanel.add(TransferButton, gridBagConstraints);
 
-        jLabel3.setText("To Your One Of Bank Accounts");
-
+        BankAccountsList1.setForeground(new java.awt.Color(255, 255, 255));
         BankAccountsList1.setModel(new javax.swing.DefaultComboBoxModel(accountlist));
         BankAccountsList1.addActionListener(new java.awt.event.ActionListener()
         {
@@ -283,49 +252,13 @@ public class AccountsListPanel extends javax.swing.JPanel
                 BankAccountsList1ActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        TransferFundsPanel.add(BankAccountsList1, gridBagConstraints);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(jLabel3)
-                        .addGap(18, 18, 18)
-                        .addComponent(BankAccountsList1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(69, 69, 69)
-                        .addComponent(TransferButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BankAccountsList1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(18, 18, 18)
-                .addComponent(TransferButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        jPanel1.setBackground(new java.awt.Color(204, 255, 153));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        Transferanotheruser.setText("Transfer To Another User:");
-
-        TransferButton1.setText("Transfer");
-        TransferButton1.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                TransferButton1MouseClicked(evt);
-            }
-        });
-
+        EmailEntryField.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         EmailEntryField.setText("Email Address");
         EmailEntryField.addFocusListener(new java.awt.event.FocusAdapter()
         {
@@ -341,90 +274,163 @@ public class AccountsListPanel extends javax.swing.JPanel
                 EmailEntryFieldActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Transferanotheruser)
-                .addGap(18, 18, 18)
-                .addComponent(EmailEntryField, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addComponent(TransferButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Transferanotheruser)
-                    .addComponent(EmailEntryField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(TransferButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        BankAccountTransfer.setText("Bank Account To Transfer From");
-
-        javax.swing.GroupLayout TransferFundsPanelLayout = new javax.swing.GroupLayout(TransferFundsPanel);
-        TransferFundsPanel.setLayout(TransferFundsPanelLayout);
-        TransferFundsPanelLayout.setHorizontalGroup(
-            TransferFundsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TransferFundsPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(TransferFundsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-            .addGroup(TransferFundsPanelLayout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addGroup(TransferFundsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(AmountToTransfer)
-                    .addComponent(BankAccountTransfer))
-                .addGap(18, 18, 18)
-                .addGroup(TransferFundsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BankAccountsList0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(AmountField, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        TransferFundsPanelLayout.setVerticalGroup(
-            TransferFundsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TransferFundsPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(TransferFundsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BankAccountTransfer)
-                    .addComponent(BankAccountsList0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(TransferFundsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(AmountToTransfer)
-                    .addComponent(AmountField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridheight = 3;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
-        jPanel3.add(TransferFundsPanel, gridBagConstraints);
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 18;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        TransferFundsPanel.add(EmailEntryField, gridBagConstraints);
 
-        DeleteAccountButton.setText("Delete Highlighted Account");
-        DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter()
+        TransferButton1.setBackground(new java.awt.Color(255, 255, 255));
+        TransferButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        TransferButton1.setForeground(new java.awt.Color(51, 0, 255));
+        TransferButton1.setText("Transfer");
+        TransferButton1.addMouseListener(new java.awt.event.MouseAdapter()
         {
             public void mouseClicked(java.awt.event.MouseEvent evt)
             {
-                DeleteAccountButtonMouseClicked(evt);
+                TransferButton1MouseClicked(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 20;
+        TransferFundsPanel.add(TransferButton1, gridBagConstraints);
+
+        Transferanotheruser.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        Transferanotheruser.setForeground(new java.awt.Color(255, 255, 255));
+        Transferanotheruser.setText("Transfer To Another User:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 18;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        TransferFundsPanel.add(Transferanotheruser, gridBagConstraints);
+
+        AmountToTransfer.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        AmountToTransfer.setForeground(new java.awt.Color(51, 0, 255));
+        AmountToTransfer.setText("Amount to Transfer:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        TransferFundsPanel.add(AmountToTransfer, gridBagConstraints);
+
+        AmountField.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        AmountField.setText("Amount");
+        AmountField.setMinimumSize(new java.awt.Dimension(100, 21));
+        AmountField.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
+                AmountFieldFocusGained(evt);
+            }
+        });
+        AmountField.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                AmountFieldActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        TransferFundsPanel.add(AmountField, gridBagConstraints);
+
+        BankAccountTransfer.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        BankAccountTransfer.setForeground(new java.awt.Color(51, 0, 255));
+        BankAccountTransfer.setText("Bank Account To Transfer From");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 2;
+        TransferFundsPanel.add(BankAccountTransfer, gridBagConstraints);
+
+        BankAccountsList0.setForeground(new Color(255,255,255,255));
+        BankAccountsList0.setModel(new javax.swing.DefaultComboBoxModel(accountlist));
+        BankAccountsList0.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                BankAccountsList0ActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        TransferFundsPanel.add(BankAccountsList0, gridBagConstraints);
+
+        jPanel2.setBackground(new Color(51,0,255));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.setLayout(new java.awt.GridBagLayout());
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.gridheight = 7;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        TransferFundsPanel.add(jPanel2, gridBagConstraints);
+
+        jPanel1.setBackground(new Color(51,0,255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.setLayout(new java.awt.GridBagLayout());
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 16;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridheight = 7;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        TransferFundsPanel.add(jPanel1, gridBagConstraints);
+
+        jPanel5.setBackground(new Color(255,255,255,190));
+        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        java.awt.GridBagLayout jPanel5Layout = new java.awt.GridBagLayout();
+        jPanel5Layout.columnWidths = new int[] {0, 5, 0};
+        jPanel5Layout.rowHeights = new int[] {0, 10, 0};
+        jPanel5.setLayout(jPanel5Layout);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.gridheight = 7;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        TransferFundsPanel.add(jPanel5, gridBagConstraints);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 0;
+        TransferFundsPanel.add(jPanel4, gridBagConstraints);
+
+        jLabel1.setText("Email Address    ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 20;
+        TransferFundsPanel.add(jLabel1, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridheight = 5;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
+        jPanel3.add(TransferFundsPanel, gridBagConstraints);
+
+        DeleteAccountButton.setBackground(new java.awt.Color(255, 255, 255));
+        DeleteAccountButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        DeleteAccountButton.setForeground(new java.awt.Color(51, 0, 255));
+        DeleteAccountButton.setText("Delete Highlighted Account");
         DeleteAccountButton.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -434,10 +440,13 @@ public class AccountsListPanel extends javax.swing.JPanel
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridy = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         jPanel3.add(DeleteAccountButton, gridBagConstraints);
 
+        CreateBAButton.setBackground(new java.awt.Color(255, 255, 255));
+        CreateBAButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        CreateBAButton.setForeground(new java.awt.Color(51, 0, 255));
         CreateBAButton.setText("Create New Bank Account");
         CreateBAButton.addActionListener(new java.awt.event.ActionListener()
         {
@@ -448,11 +457,14 @@ public class AccountsListPanel extends javax.swing.JPanel
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridy = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         jPanel3.add(CreateBAButton, gridBagConstraints);
 
-        FutureInterestButton.setText("Calculate Future Interest On Highlighted Account");
+        FutureInterestButton.setBackground(new java.awt.Color(255, 255, 255));
+        FutureInterestButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        FutureInterestButton.setForeground(new java.awt.Color(51, 0, 255));
+        FutureInterestButton.setText("Calculate Future Interest ");
         FutureInterestButton.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -462,15 +474,88 @@ public class AccountsListPanel extends javax.swing.JPanel
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel3.add(FutureInterestButton, gridBagConstraints);
+
+        TransactionHistoryButton.setBackground(new java.awt.Color(255, 255, 255));
+        TransactionHistoryButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        TransactionHistoryButton.setForeground(new java.awt.Color(51, 0, 255));
+        TransactionHistoryButton.setText("Transaction History");
+        TransactionHistoryButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                TransactionHistoryButtonActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        jPanel3.add(TransactionHistoryButton, gridBagConstraints);
+
+        HeaderPanel.setBackground(new java.awt.Color(255, 255, 255));
+        HeaderPanel.setOpaque(false);
+        HeaderPanel.setLayout(new java.awt.GridBagLayout());
+
+        Bank42.setFont(new java.awt.Font("DejaVu Sans", 1, 48)); // NOI18N
+        Bank42.setForeground(new java.awt.Color(51, 0, 255));
+        Bank42.setText("Bank 42");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        HeaderPanel.add(Bank42, gridBagConstraints);
+
+        Settings.setBackground(new java.awt.Color(255, 255, 255));
+        Settings.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Settings.setForeground(new java.awt.Color(51, 0, 255));
+        Settings.setText("Settings");
+        Settings.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                SettingsMouseClicked(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 200);
+        HeaderPanel.add(Settings, gridBagConstraints);
+
+        Logout.setBackground(new java.awt.Color(255, 255, 255));
+        Logout.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Logout.setForeground(new java.awt.Color(51, 0, 255));
+        Logout.setText("Logout");
+        Logout.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                LogoutMouseClicked(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.insets = new java.awt.Insets(0, 200, 0, 0);
+        HeaderPanel.add(Logout, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.PAGE_START;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 45, 0);
+        jPanel3.add(HeaderPanel, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 29, 0);
         add(jPanel3, gridBagConstraints);
 
-        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/Background2.jpg"))); // NOI18N
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/rsz_142galaxy Cropped.png"))); // NOI18N
         Background.setAlignmentY(0.0F);
         Background.setOpaque(true);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -493,100 +578,18 @@ public class AccountsListPanel extends javax.swing.JPanel
         layout.show(MainPanel, "Settings");
     }//GEN-LAST:event_SettingsMouseClicked
 
-    private void DeleteAccountButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteAccountButtonMouseClicked
-        if (AccountsTable.getSelectedRowCount() > 0)
-        {
-            if (GUI.currentUserAccount.getNumOfBankAccounts() == 1)
-            {
-                JOptionPane.showMessageDialog(null, "ERROR! You must have at least one bank account.\n"
-                        + "You cannot delete this Bank Account without creating a new one first.", "ERROR", JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-
-            double amount_in_deleted_acc;
-            String account_name;
-            int row = AccountsTable.getSelectedRow();
-            String bankacc = (String) AccountsTable.getValueAt(row, 1);
-            GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(bankacc);
-            amount_in_deleted_acc = GUI.currentBankAccount.getBalance();
-            account_name = GUI.currentBankAccount.getAccountName();
-
-            if (amount_in_deleted_acc == 0)
-            {
-                JOptionPane.showMessageDialog(null, bankacc + " has been Deleted");
-                GUI.currentUserAccount.deleteBankAccount(bankacc);
-                this.update();
-                return;
-            }
-
-            Object[] options =
-            {
-                "To one of my other Bank Accounts",
-                "Email Me Funds"
-            };
-            int n = JOptionPane.showOptionDialog(null,
-                    "You have $" + amount_in_deleted_acc + " in account " + account_name
-                    + "\nWhere would you like the funds to go?",
-                    "Where to Transfer Funds",
-                    JOptionPane.YES_NO_CANCEL_OPTION,
-                    JOptionPane.QUESTION_MESSAGE,
-                    null, //do not use a custom icon
-                    options, //the titles of buttons
-                    options[0]); //default button title
-
-            deletecomboboxes(bankacc);
-
-            if (n == 0)
-            {
-                String choice = (String) JOptionPane.showInputDialog(
-                        null,
-                        "Choose a Bank Account",
-                        "Bank 42",
-                        JOptionPane.PLAIN_MESSAGE,
-                        null,
-                        accountlist,
-                        null);
-
-                if (null == choice)
-                {
-                    return;
-                }
-
-                GUI.currentUserAccount.deleteBankAccount(bankacc);
-
-                GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(choice);
-                GUI.currentBankAccount.addToBalance(amount_in_deleted_acc);
-                this.update();
-
-                JOptionPane.showMessageDialog(null, "Bank Account " + bankacc
-                        + " has been Deleted" + "\nFunds have been transfered to " + choice);
-            }
-
-            else if (n == 1)
-            {
-                GUI.currentUserAccount.deleteBankAccount(bankacc);
-                this.update();
-
-                JOptionPane.showMessageDialog(null, "Bank Account " + bankacc
-                        + " has been Deleted" + "\nFunds have been emailed to " + GUI.currentUserAccount.getEmail());
-            }
-        }
-        else
-            JOptionPane.showMessageDialog(null, "Please Select an Account", "ERROR", JOptionPane.ERROR_MESSAGE);
-    }//GEN-LAST:event_DeleteAccountButtonMouseClicked
-
     private void CreateBAButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_CreateBAButtonActionPerformed
     {//GEN-HEADEREND:event_CreateBAButtonActionPerformed
         JPanel createBApanel = mainGUI.getCreateBA().getCreateBankAccountPanel();
         int choice = JOptionPane.showConfirmDialog(
-                        null,
-                        createBApanel,
-                        "Bank 42",
-                        JOptionPane.OK_CANCEL_OPTION,
-                        JOptionPane.PLAIN_MESSAGE
-                        );
+                null,
+                createBApanel,
+                "Bank 42",
+                JOptionPane.OK_CANCEL_OPTION,
+                JOptionPane.PLAIN_MESSAGE
+        );
 
-        if (choice==0)
+        if (choice == 0)
         {
             mainGUI.getCreateBA().CreateAccount();
         }
@@ -594,7 +597,9 @@ public class AccountsListPanel extends javax.swing.JPanel
 
     private void AmountFieldFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_AmountFieldFocusGained
     {//GEN-HEADEREND:event_AmountFieldFocusGained
-        AmountField.setText("");
+        if(AmountField.getText().equals("Amount")) {
+            AmountField.setText("");
+        }
     }//GEN-LAST:event_AmountFieldFocusGained
 
     private void AmountFieldActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_AmountFieldActionPerformed
@@ -609,7 +614,9 @@ public class AccountsListPanel extends javax.swing.JPanel
 
     private void EmailEntryFieldFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_EmailEntryFieldFocusGained
     {//GEN-HEADEREND:event_EmailEntryFieldFocusGained
-        EmailEntryField.setText("");
+        if(EmailEntryField.getText().equals("Email Address")) {
+            EmailEntryField.setText("");
+        }        
     }//GEN-LAST:event_EmailEntryFieldFocusGained
 
     private void EmailEntryFieldActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EmailEntryFieldActionPerformed
@@ -648,11 +655,6 @@ public class AccountsListPanel extends javax.swing.JPanel
         return parsable;
     }
 
-    private void TransferButtonMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_TransferButtonMouseClicked
-    {//GEN-HEADEREND:event_TransferButtonMouseClicked
-
-    }//GEN-LAST:event_TransferButtonMouseClicked
-
     private int findRowPositionByName(String accountName)
     {
         int cRow = 0;
@@ -664,49 +666,6 @@ public class AccountsListPanel extends javax.swing.JPanel
         }
         return cRow;
     }
-    private void TransferButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_TransferButtonActionPerformed
-    {//GEN-HEADEREND:event_TransferButtonActionPerformed
-        double amount;
-
-        if (isParsableDouble(AmountField.getText()))
-        {
-            amount = Double.parseDouble(AmountField.getText());
-        }
-
-        else
-        {
-            JOptionPane.showMessageDialog(null, "Please Enter A Valid Amount To Transfer", "Bank 42", 1);
-            return;
-        }
-
-        if (amount <= 0)
-        {
-            JOptionPane.showMessageDialog(null, "Please Enter A Valid Amount To Transfer", "Bank 42", 1);
-            return;
-        }
-
-        GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount((String) BankAccountsList0.getSelectedItem());
-
-        if (amount > GUI.currentBankAccount.getBalance())
-        {
-            AmountField.setText("");
-            JOptionPane.showMessageDialog(null, "Insufficient Funds"
-                    + "\nYou have " + GUI.currentBankAccount.getBalance() + "$ available"
-                    + " in selected Bank Account", "Bank 42", 1);
-        }
-        else
-        {
-            GUI.currentBankAccount.subFromBalance(amount);
-            mainGUI.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
-            GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount((String) BankAccountsList1.getSelectedItem());
-            GUI.currentBankAccount.addToBalance(amount);
-            mainGUI.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
-            JOptionPane.showMessageDialog(null, "Funds Transfered Successfully!", "Bank 42", 1);
-            //GUI.MasterTable.findUserAccount();
-            // test
-        }
-    }//GEN-LAST:event_TransferButtonActionPerformed
-
     private void TransferButton1MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_TransferButton1MouseClicked
     {//GEN-HEADEREND:event_TransferButton1MouseClicked
         double amount;
@@ -730,7 +689,6 @@ public class AccountsListPanel extends javax.swing.JPanel
 
         if (amount > GUI.currentBankAccount.getBalance())
         {
-            AmountField.setText("");
             JOptionPane.showMessageDialog(null, "Insufficient Funds"
                     + "\nYou have " + GUI.currentBankAccount.getBalance() + "$ available"
                     + " in selected Bank Account", "Bank 42", 1);
@@ -748,6 +706,16 @@ public class AccountsListPanel extends javax.swing.JPanel
             GUI.currentBankAccount.addToBalance(amount);
             mainGUI.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
             JOptionPane.showMessageDialog(null, "Funds Transfered Successfully!", "Bank 42", 1);
+
+            /**
+             * 11/30**export upon successful change of data BEGIN*
+             */
+            GUI.dataout.exportDB(GUI.MasterTable);
+            System.out.println("AccountListPanel.java: transferred and exported");
+            /**
+             * ********************END*
+             */
+
         }
         else
         {
@@ -770,10 +738,15 @@ public class AccountsListPanel extends javax.swing.JPanel
             double amount_in_deleted_acc;
             String account_name;
             int row = AccountsTable.getSelectedRow();
-            String bankacc = (String) AccountsTable.getValueAt(row, 1);
+            String bankacc = (String) AccountsTable.getValueAt(row, NAMECOL);
 
             GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(bankacc);
+            if (GUI.currentBankAccount == null)
+            {
+                System.out.println("test2");
+            }
             amount_in_deleted_acc = GUI.currentBankAccount.getBalance();
+            System.out.println("test3");
             account_type = GUI.currentBankAccount.getAccountType();
             account_name = GUI.currentBankAccount.getAccountName();
 
@@ -865,7 +838,7 @@ public class AccountsListPanel extends javax.swing.JPanel
                 }
                 DateTime interestDate = new DateTime(DateTimeZone.forID("Etc/UTC"));
                 int row = AccountsTable.getSelectedRow();
-                String bankacc = (String) AccountsTable.getValueAt(row, 1);
+                String bankacc = (String) AccountsTable.getValueAt(row, NAMECOL);
                 GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(bankacc);
                 double calcInt = GUI.currentBankAccount.getInterest(interestDate.plusDays(amount));
                 JOptionPane.showMessageDialog(null, "Success! The balance of account "
@@ -875,6 +848,69 @@ public class AccountsListPanel extends javax.swing.JPanel
         else
             JOptionPane.showMessageDialog(null, "Please Select an Account", "Bank 42", 1);
     }//GEN-LAST:event_FutureInterestButtonActionPerformed
+
+    private void TransactionHistoryButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_TransactionHistoryButtonActionPerformed
+    {//GEN-HEADEREND:event_TransactionHistoryButtonActionPerformed
+        if (AccountsTable.getSelectedRowCount() > 0)
+        {
+            int row = AccountsTable.getSelectedRow();
+            String bankacc = (String) AccountsTable.getValueAt(row, NAMECOL);
+            GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(bankacc);
+            CardLayout layout = (CardLayout) (MainPanel.getLayout());
+            mainGUI.getTransPanel().update();
+            layout.show(MainPanel, "TransPanel");
+        }
+        else
+            JOptionPane.showMessageDialog(null, "Please select and account first", "Bank 42", 1);
+    }//GEN-LAST:event_TransactionHistoryButtonActionPerformed
+
+    private void TransferButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_TransferButtonActionPerformed
+    {//GEN-HEADEREND:event_TransferButtonActionPerformed
+        double amount;
+
+        if (isParsableDouble(AmountField.getText()))
+        {
+            amount = Double.parseDouble(AmountField.getText());
+        }
+
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Please Enter A Valid Amount To Transfer", "Bank 42", 1);
+            return;
+        }
+
+        if (amount <= 0)
+        {
+            JOptionPane.showMessageDialog(null, "Please Enter A Valid Amount To Transfer", "Bank 42", 1);
+            return;
+        }
+
+        GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount((String) BankAccountsList0.getSelectedItem());
+
+        if (amount > GUI.currentBankAccount.getBalance())
+        {
+            AmountField.setText("Amount");
+            JOptionPane.showMessageDialog(null, "Insufficient Funds"
+                    + "\nYou have " + GUI.currentBankAccount.getBalance() + "$ available"
+                    + " in selected Bank Account", "Bank 42", 1);
+        }
+        else
+        {
+            GUI.currentBankAccount.subFromBalance(amount);
+            mainGUI.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
+            GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount((String) BankAccountsList1.getSelectedItem());
+            GUI.currentBankAccount.addToBalance(amount);
+            mainGUI.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
+            JOptionPane.showMessageDialog(null, "Funds Transfered Successfully!", "Bank 42", 1);
+            //GUI.MasterTable.findUserAccount();
+            // test
+        }
+    }//GEN-LAST:event_TransferButtonActionPerformed
+
+    private void TransferButtonMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_TransferButtonMouseClicked
+    {//GEN-HEADEREND:event_TransferButtonMouseClicked
+
+    }//GEN-LAST:event_TransferButtonMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable AccountsTable;
@@ -889,16 +925,21 @@ public class AccountsListPanel extends javax.swing.JPanel
     private javax.swing.JButton DeleteAccountButton;
     private javax.swing.JTextField EmailEntryField;
     private javax.swing.JButton FutureInterestButton;
+    private javax.swing.JPanel HeaderPanel;
     private javax.swing.JButton Logout;
     private javax.swing.JButton Settings;
+    private javax.swing.JButton TransactionHistoryButton;
     private javax.swing.JButton TransferButton;
     private javax.swing.JButton TransferButton1;
     private javax.swing.JPanel TransferFundsPanel;
     private javax.swing.JLabel Transferanotheruser;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 

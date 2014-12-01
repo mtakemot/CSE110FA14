@@ -20,16 +20,12 @@ package PresentationLayer;
  * GUI.java.
  * **************************************************************************
  */
-/*
- import Backend.UserAccount;
- import Backend.HashTable;
- import Backend.BankAccount;*/
-//11/8 michio takemoto seeing if just backend.* is fine
-//need to add backend.ImportExport if not
 import LogicLayer.BankAccount;
 import LogicLayer.HashTable;
 import LogicLayer.UserAccount;
+import DataLayer.*;
 import FacadeLayer.UserAccountWrapper;
+import LogicLayer.Transaction;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -38,6 +34,10 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import org.joda.time.DateTime;
+import java.util.Timer;
+import java.util.TimerTask;
+import org.joda.time.DateTimeZone;
 
 public class GUI extends javax.swing.JFrame
 {
@@ -61,9 +61,13 @@ public class GUI extends javax.swing.JFrame
     //keyword to change the TellerAP table
     public static final String TELTABLE = "teller table";
 
-    public static final int BALANCECOL = 3;
+    public static final int BALANCECOL = 2;
     // Format doubles in output so that they look like money
     public static final NumberFormat MoneyFormat = new DecimalFormat("$0.00");
+
+    //declare import/export variables used for database read/write
+    public static ImportExport datain = new ImportExport();
+    public static ImportExport dataout = new ImportExport();
 
     /**
      *
@@ -80,6 +84,145 @@ public class GUI extends javax.swing.JFrame
     public GUI()
     {
         initComponents();
+    }
+
+    /**
+     * 11/30**call import/export and initialize empty databases with this
+     * function*
+     */
+    public static void initDB()
+    {
+
+        MasterTable = datain.importDB(MasterTable);
+
+        if (MasterTable != null)
+        {
+            //import worked, copy temp to Master
+            //MasterTable = tempTable;
+            System.out.println("MSG GUI.java: Imported existing data");
+        }
+        else
+        {
+            //didn't work, MasterTable will start as a blank HashTable obj
+            System.out.println("MSG GUI.java: empty table, creating new DB");
+            MasterTable = new HashTable();
+        }
+
+        //Puts some initial values in the table to prevent null pointer
+        // exceptions
+        currentUserAccount = MasterTable.insertUserAccount("Customer_A", "Customer_A_Email");
+        if (currentUserAccount != null)
+        {
+            currentUserAccount.setFirstName("first");
+            currentUserAccount.setLastName("last");
+            currentUserAccount.setPassword("foobar");
+            currentUserAccount.setPhone("0123456789");
+            currentBankAccount = currentUserAccount.insertBankAccount(1000, "Checking_1A", "Checking");
+            currentBankAccount = currentUserAccount.insertBankAccount(2100, "Savings_1A", "Savings");
+            currentBankAccount = currentUserAccount.insertBankAccount(100, "Checking_2A", "Checking");
+            currentBankAccount = currentUserAccount.insertBankAccount(3100, "Checking_3A", "Checking");
+        }
+
+        currentUserAccount = MasterTable.insertUserAccount("Customer_B", "Customer_B_Email");
+        if (currentUserAccount != null)
+        {
+            currentUserAccount.setFirstName("first");
+            currentUserAccount.setLastName("last");
+            currentUserAccount.setPassword("foobar");
+            currentUserAccount.setPhone("0123456789");
+            currentBankAccount = currentUserAccount.insertBankAccount(1100, "Checking_1B", "Checking");
+            currentBankAccount = currentUserAccount.insertBankAccount(2100, "Savings_1B", "Savings");
+            currentBankAccount = currentUserAccount.insertBankAccount(100, "Checking_2B", "Checking");
+            currentBankAccount = currentUserAccount.insertBankAccount(3100, "Checking_3B", "Checking");
+        }
+        currentUserAccount = MasterTable.insertUserAccount("qq", "email");
+        if (currentUserAccount != null)
+        {
+            currentUserAccount.setFirstName("first");
+            currentUserAccount.setLastName("last");
+            currentUserAccount.setPassword("qq");
+            currentUserAccount.setPhone("0123456789");
+            currentBankAccount = currentUserAccount.insertBankAccount(1100, "qq1", "Checking");
+            currentBankAccount = currentUserAccount.insertBankAccount(2100, "qq2", "Savings");
+            currentBankAccount = currentUserAccount.insertBankAccount(100, "qq3", "Checking");
+            currentBankAccount = currentUserAccount.insertBankAccount(3100, "qq4", "Checking");
+        }
+
+        currentUserAccount = MasterTable.insertUserAccount("ww", "email2");
+        if (currentUserAccount != null)
+        {
+            currentUserAccount.setFirstName("first2");
+            currentUserAccount.setLastName("last2");
+            currentUserAccount.setPassword("ww");
+            currentUserAccount.setPhone("1234567890");
+            currentBankAccount = currentUserAccount.insertBankAccount(1100, "ww1", "Checking");
+            currentBankAccount = currentUserAccount.insertBankAccount(35, "ww2", "Savings");
+            currentBankAccount = currentUserAccount.insertBankAccount(30, "ww3", "Checking");
+            currentBankAccount = currentUserAccount.insertBankAccount(30, "ww4", "Checking");
+        }
+
+        currentUserAccount = MasterTable.insertUserAccount("ee", "emai3");
+        if (currentUserAccount != null)
+        {
+            currentUserAccount.setFirstName("first2");
+            currentUserAccount.setLastName("last2");
+            currentUserAccount.setPassword("ee");
+            currentUserAccount.setPhone("1234567890");
+            currentBankAccount = currentUserAccount.insertBankAccount(50, "ee1", "Checking");
+            currentBankAccount = currentUserAccount.insertBankAccount(35, "ee2", "Savings");
+            currentBankAccount = currentUserAccount.insertBankAccount(30, "ee3", "Checking");
+            currentBankAccount = currentUserAccount.insertBankAccount(30, "ee4", "Checking");
+        }
+
+        //if these items exists in our DB alread, currentUser will be NULL.
+        //initializing in case it's NULL
+        if (currentUserAccount == null)
+        {
+            currentUserAccount = MasterTable.findUserAccount("ee");
+            currentBankAccount = currentUserAccount.findBankAccount("ee1");
+        }
+        /*
+         //save DB immediately after we create and add data to it
+         if(dataout.exportDB(MasterTable)==true){
+         //DEBUG, we don't need this print statement later
+         System.out.println("MSG GUI.JAVA: updated DB, proceed to set up TimerTask");
+         }*/
+        dataout.exportDB(MasterTable);
+    }
+
+    /**
+     * 11/30**method for setting up TimerTask to run in background*
+     */
+    public static void initTask()
+    {
+        TimerTask task = new interestTask();
+        Timer timer = new Timer();
+        // TimerTask task = new interestTask();
+        DateTime initTime = new DateTime(DateTimeZone.forID("Etc/UTC"));
+        int initMin = initTime.getMinuteOfHour();
+        int initSec = initTime.getSecondOfMinute();
+        //increment values for sec/min. For sec, add 1 to carry over to min which will carry to hour
+        int incrementSec = initTime.minuteOfHour().getMaximumValue() - initSec + 1;
+        int incrementMin = initTime.minuteOfHour().getMaximumValue() - initMin;
+        int taskDelay = 60 * initMin + initSec;
+
+        //set next hour time to the initTime plus increment
+        DateTime nextHour = initTime;
+        //nextHour = nextHour.plusSeconds(incrementSec);
+        nextHour = nextHour.plusSeconds(incrementSec);
+        nextHour = nextHour.plusMinutes(incrementMin);
+        System.out.println("initial minutes is: " + initMin);
+        System.out.println("initial seconds is: " + initSec);
+        System.out.println("initial time: " + initTime);
+        System.out.println("next hour is at: " + nextHour);
+        System.out.println("delay for task schedule: " + taskDelay);
+        System.out.println("Task will run every 10 secs from the delay");
+
+        //if the time isn't EXACTLY at the hour, run task to init. all bank account interests.
+        task.run();
+
+        timer.scheduleAtFixedRate(task, 1000 * 3, 1000 * 5);
+        System.out.println("TaskTimer scheduled in main. Now initializing GUI");
     }
 
     // This is a getter function for the JPanel that is created when this
@@ -201,55 +344,10 @@ public class GUI extends javax.swing.JFrame
             @Override
             public void run()
             {
-                /**
-                 * *******testing import export*********
-                 */
-                /*ImportExport datain = new ImportExport();
-                 ImportExport dataout = new ImportExport();
 
-                 MasterTable = datain.importDB(MasterTable);
-                 System.out.println("GUI.java imported table has: " + MasterTable.occ + " users\n");
-                 // This creates the MainPanel that is referenced above. All of
-                 // our other panels will go on top of this one and be shown or
-                 // hidden depending on the state of our program*/
                 final GUI mainGUI = new GUI();
-                //Puts some initial values in the table to prevent null pointer
-                // exceptions
-                currentUserAccount = MasterTable.insertUserAccount("qq", "email");
-                currentUserAccount.setFirstName("first");
-                currentUserAccount.setLastName("last");
-                currentUserAccount.setPassword("qq");
-                currentUserAccount.setPhone("0123456789");
-                currentBankAccount = currentUserAccount.insertBankAccount(1100, "qq1", "Checking");
-                currentBankAccount = currentUserAccount.insertBankAccount(2100, "qq2", "Savings");
-                currentBankAccount = currentUserAccount.insertBankAccount(100, "qq3", "Checking");
-                currentBankAccount = currentUserAccount.insertBankAccount(3100, "qq4", "Checking");
-
-                currentUserAccount = MasterTable.insertUserAccount("ww", "email2");
-                currentUserAccount.setFirstName("first2");
-                currentUserAccount.setLastName("last2");
-                currentUserAccount.setPassword("ww");
-                currentUserAccount.setPhone("1234567890");
-                currentBankAccount = currentUserAccount.insertBankAccount(1100, "ww1", "Checking");
-                currentBankAccount = currentUserAccount.insertBankAccount(35, "ww2", "Savings");
-                currentBankAccount = currentUserAccount.insertBankAccount(30, "ww3", "Checking");
-                currentBankAccount = currentUserAccount.insertBankAccount(30, "ww4", "Checking");
-
-                currentUserAccount = MasterTable.insertUserAccount("ee", "emai3");
-                currentUserAccount.setFirstName("first2");
-                currentUserAccount.setLastName("last2");
-                currentUserAccount.setPassword("ee");
-                currentUserAccount.setPhone("1234567890");
-                currentBankAccount = currentUserAccount.insertBankAccount(50, "ee1", "Checking");
-                currentBankAccount = currentUserAccount.insertBankAccount(35, "ee2", "Savings");
-                currentBankAccount = currentUserAccount.insertBankAccount(30, "ee3", "Checking");
-                currentBankAccount = currentUserAccount.insertBankAccount(30, "ee4", "Checking");
-
-                //test
-                for (int i = 0; i < 10000; i++)
-                {
-                    currentUserAccount.insertBankAccount(i, ("acc" + i), "Checking");
-                }
+                initDB();
+                initTask();
 
                 // This grabs the MainPanel and stores it in a variable so that
                 // we have easy access to it
@@ -267,6 +365,7 @@ public class GUI extends javax.swing.JFrame
                 mainGUI.setTDelete(new TellerDeleteAccountPanel(cardHolder, mainGUI));
                 mainGUI.setPass(new PasswordFieldPanel(cardHolder, mainGUI));
                 mainGUI.setPenIntPanel(new PenaltyInterestPanel(cardHolder, mainGUI));
+                mainGUI.setTransPanel(new TransactionHistoryPanel(cardHolder, mainGUI));
 
                 // This addes the LoginPanel and AccountsListPanel that we just
                 // created to the MainPanel. It also assigns a name to each of
@@ -279,13 +378,12 @@ public class GUI extends javax.swing.JFrame
                 cardHolder.add(mainGUI.getCreateAcc(), "CreateAcc");
                 cardHolder.add(mainGUI.getSettings(), "Settings");
                 cardHolder.add(mainGUI.getDelete(), "Delete");
-                cardHolder.add(mainGUI.getTellerMainMenu(), "TellerMainMenu");               
+                cardHolder.add(mainGUI.getTellerMainMenu(), "TellerMainMenu");
                 cardHolder.add(mainGUI.getTellerAP(), "TellerAP");
                 cardHolder.add(mainGUI.getTDelete(), "TDelete");
-                //cardHolder.add(mainGUI.getTDelete(), "pass");
                 cardHolder.add(mainGUI.getPenIntPanel(), "PenIntPanel");
-                //cardHolder.add(mainGUI.getTDelete(), "CreateBA");
-                
+                cardHolder.add(mainGUI.getTransPanel(), "TransPanel");
+
                 // These two lines show the MainPanel. Without these 2 lines
                 // the GUI would not show up at all. Just leave them alone.
                 mainGUI.pack();
@@ -314,21 +412,6 @@ public class GUI extends javax.swing.JFrame
                                         currentBankAccount.getAccountName());
                             }
                         });
-                /*if (dataout.exportDB(MasterTable))
-                 {
-                 System.err.println("\nExported file to local source file"
-                 + " Data.ser\n"
-                 + "\n\nFrom run() in GUI.java");
-
-                 }
-
-                 else
-                 {
-                 System.err.println("\n\nCould not export, ERROR\n\n");
-
-                 }
-
-                 System.out.println("\nrun() has ran: " + counter + " times\n");*/
             }
         });
     }
@@ -343,6 +426,17 @@ public class GUI extends javax.swing.JFrame
     private TellerDeleteAccountPanel TDelete;
     private PasswordFieldPanel pass;
     private PenaltyInterestPanel PenIntPanel;
+    private TransactionHistoryPanel TransPanel;
+
+    public TransactionHistoryPanel getTransPanel()
+    {
+        return TransPanel;
+    }
+
+    public void setTransPanel(TransactionHistoryPanel TransPanel)
+    {
+        this.TransPanel = TransPanel;
+    }
 
     public PasswordFieldPanel getPass()
     {
@@ -352,7 +446,7 @@ public class GUI extends javax.swing.JFrame
     public void setPass(PasswordFieldPanel pass)
     {
         this.pass = pass;
-    }   
+    }
 
     public PenaltyInterestPanel getPenIntPanel()
     {

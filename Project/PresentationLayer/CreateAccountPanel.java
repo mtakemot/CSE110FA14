@@ -43,37 +43,179 @@ public class CreateAccountPanel extends javax.swing.JPanel
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents()
     {
+        java.awt.GridBagConstraints gridBagConstraints;
 
-        ERRORPOP = new java.awt.PopupMenu();
-        firstName = new javax.swing.JTextField();
-        password = new javax.swing.JPasswordField();
-        createUserAccount = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        dismissView = new javax.swing.JButton();
-        username = new javax.swing.JTextField();
-        lastName = new javax.swing.JTextField();
+        jPanel2 = new javax.swing.JPanel();
+        HeaderPanel = new javax.swing.JPanel();
+        Bank42 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         confirmPassword = new javax.swing.JPasswordField();
         email = new javax.swing.JTextField();
         phone = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
+        lastName = new javax.swing.JTextField();
+        username = new javax.swing.JTextField();
+        firstName = new javax.swing.JTextField();
+        password = new javax.swing.JPasswordField();
+        createUserAccount = new javax.swing.JButton();
+        spacinglabellol = new javax.swing.JLabel();
+        BackButton = new javax.swing.JButton();
         errorMessage = new javax.swing.JLabel();
+        fillerlabellol = new javax.swing.JLabel();
+        spacinglabellol1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        FirstNameError = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        LastNameError = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        UsernameError = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        PasswordError = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
+        ConfirmPasswordError = new javax.swing.JLabel();
+        jPanel8 = new javax.swing.JPanel();
+        EmailError = new javax.swing.JLabel();
+        jPanel9 = new javax.swing.JPanel();
+        PhoneError = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jPanel10 = new javax.swing.JPanel();
+        FirstNameLabel = new javax.swing.JLabel();
+        jPanel11 = new javax.swing.JPanel();
+        LastNameLabel = new javax.swing.JLabel();
+        jPanel12 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jPanel13 = new javax.swing.JPanel();
+        PasswordLabel = new javax.swing.JLabel();
+        jPanel14 = new javax.swing.JPanel();
+        ConfirmPasswordLabel = new javax.swing.JLabel();
+        jPanel15 = new javax.swing.JPanel();
+        emailLabel = new javax.swing.JLabel();
+        jPanel16 = new javax.swing.JPanel();
+        PhoneLabel = new javax.swing.JLabel();
+        Background = new javax.swing.JLabel();
 
-        ERRORPOP.addActionListener(new java.awt.event.ActionListener()
+        setMaximumSize(new java.awt.Dimension(800, 600));
+        setMinimumSize(new java.awt.Dimension(800, 600));
+        setOpaque(false);
+        setPreferredSize(new java.awt.Dimension(800, 600));
+        setLayout(new java.awt.GridBagLayout());
+
+        jPanel2.setOpaque(false);
+        jPanel2.setLayout(new java.awt.GridBagLayout());
+
+        HeaderPanel.setBackground(new java.awt.Color(255, 255, 255));
+        HeaderPanel.setOpaque(false);
+        HeaderPanel.setLayout(new java.awt.GridBagLayout());
+
+        Bank42.setFont(new java.awt.Font("DejaVu Sans", 1, 48)); // NOI18N
+        Bank42.setForeground(new java.awt.Color(51, 0, 255));
+        Bank42.setText("Bank 42");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        HeaderPanel.add(Bank42, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        jPanel2.add(HeaderPanel, gridBagConstraints);
+
+        jPanel1.setOpaque(false);
+        java.awt.GridBagLayout jPanel1Layout = new java.awt.GridBagLayout();
+        jPanel1Layout.columnWidths = new int[] {0, 3, 0};
+        jPanel1Layout.rowHeights = new int[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        jPanel1.setLayout(jPanel1Layout);
+
+        confirmPassword.setBackground(new Color(255,255,255,190));
+        confirmPassword.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        confirmPassword.addFocusListener(new java.awt.event.FocusAdapter()
         {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
+            public void focusGained(java.awt.event.FocusEvent evt)
             {
-                ERRORPOPActionPerformed(evt);
+                confirmPasswordFocusGained(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 20;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel1.add(confirmPassword, gridBagConstraints);
 
-        setOpaque(false);
+        email.setBackground(new Color(255,255,255,190));
+        email.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        email.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
+                emailFocusGained(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 28;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel1.add(email, gridBagConstraints);
 
+        phone.setBackground(new Color(255,255,255,190));
+        phone.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        phone.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
+                phoneFocusGained(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 32;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel1.add(phone, gridBagConstraints);
+
+        lastName.setBackground(new Color(255,255,255,190));
+        lastName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lastName.setMaximumSize(new java.awt.Dimension(6, 20));
+        lastName.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
+                lastNameFocusGained(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 12;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel1.add(lastName, gridBagConstraints);
+
+        username.setBackground(new Color(255,255,255,190));
+        username.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        username.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
+                usernameFocusGained(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 16;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel1.add(username, gridBagConstraints);
+
+        firstName.setBackground(new Color(255,255,255,190));
+        firstName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         firstName.addFocusListener(new java.awt.event.FocusAdapter()
         {
             public void focusGained(java.awt.event.FocusEvent evt)
@@ -81,7 +223,15 @@ public class CreateAccountPanel extends javax.swing.JPanel
                 firstNameFocusGained(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel1.add(firstName, gridBagConstraints);
 
+        password.setBackground(new Color(255,255,255,190));
+        password.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         password.addFocusListener(new java.awt.event.FocusAdapter()
         {
             public void focusGained(java.awt.event.FocusEvent evt)
@@ -89,7 +239,16 @@ public class CreateAccountPanel extends javax.swing.JPanel
                 passwordFocusGained(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 24;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel1.add(password, gridBagConstraints);
 
+        createUserAccount.setBackground(new java.awt.Color(255, 255, 255));
+        createUserAccount.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        createUserAccount.setForeground(new java.awt.Color(51, 0, 255));
         createUserAccount.setText("Create User Account");
         createUserAccount.addActionListener(new java.awt.event.ActionListener()
         {
@@ -98,166 +257,394 @@ public class CreateAccountPanel extends javax.swing.JPanel
                 createUserAccountActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 36;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel1.add(createUserAccount, gridBagConstraints);
 
-        jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 48)); // NOI18N
-        jLabel1.setText("Bank 42");
+        spacinglabellol.setText(" ");
+        spacinglabellol.setEnabled(false);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 34;
+        jPanel1.add(spacinglabellol, gridBagConstraints);
 
-        dismissView.setText("Back");
-        dismissView.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                dismissViewMouseClicked(evt);
-            }
-        });
-
-        username.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusGained(java.awt.event.FocusEvent evt)
-            {
-                usernameFocusGained(evt);
-            }
-        });
-
-        lastName.setMinimumSize(new java.awt.Dimension(6, 35));
-        lastName.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusGained(java.awt.event.FocusEvent evt)
-            {
-                lastNameFocusGained(evt);
-            }
-        });
-
-        confirmPassword.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusGained(java.awt.event.FocusEvent evt)
-            {
-                confirmPasswordFocusGained(evt);
-            }
-        });
-
-        email.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusGained(java.awt.event.FocusEvent evt)
-            {
-                emailFocusGained(evt);
-            }
-        });
-
-        phone.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusGained(java.awt.event.FocusEvent evt)
-            {
-                phoneFocusGained(evt);
-            }
-        });
-        phone.addActionListener(new java.awt.event.ActionListener()
+        BackButton.setBackground(new java.awt.Color(255, 255, 255));
+        BackButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        BackButton.setForeground(new java.awt.Color(51, 0, 255));
+        BackButton.setText("Back");
+        BackButton.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                phoneActionPerformed(evt);
+                BackButtonActionPerformed(evt);
             }
         });
-
-        jLabel2.setText("First Name:");
-
-        jLabel3.setText("Last Name:");
-
-        jLabel4.setText("Password:");
-
-        jLabel5.setText("Username:");
-
-        jLabel6.setText("Confirm Password:");
-
-        jLabel7.setText("Email:");
-
-        jLabel15.setText("Phone:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 40;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel1.add(BackButton, gridBagConstraints);
 
         errorMessage.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         errorMessage.setForeground(new java.awt.Color(255, 102, 102));
         errorMessage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        errorMessage.setText("Please fill in the field below to create an account.");
+        errorMessage.setText("Please fill in the fields below to create an account.");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 2;
+        jPanel1.add(errorMessage, gridBagConstraints);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(dismissView, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(errorMessage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(phone, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 602, Short.MAX_VALUE)
-                        .addComponent(email, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(lastName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(firstName, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(password, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(username, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(confirmPassword, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(createUserAccount, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(201, 201, 201)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(105, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(dismissView, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(errorMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(firstName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lastName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(confirmPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(phone, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel15))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(createUserAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        fillerlabellol.setText(" ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 38;
+        jPanel1.add(fillerlabellol, gridBagConstraints);
+
+        spacinglabellol1.setText(" ");
+        spacinglabellol1.setEnabled(false);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 34;
+        jPanel1.add(spacinglabellol1, gridBagConstraints);
+
+        jLabel1.setText(" ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        jPanel1.add(jLabel1, gridBagConstraints);
+
+        jLabel8.setText(" ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 4;
+        jPanel1.add(jLabel8, gridBagConstraints);
+
+        jLabel9.setText(" ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 6;
+        jPanel1.add(jLabel9, gridBagConstraints);
+
+        jPanel3.setBackground(new java.awt.Color(255, 160, 122));
+        jPanel3.setLayout(new java.awt.GridBagLayout());
+
+        FirstNameError.setForeground(new java.awt.Color(255, 102, 102));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel3.add(FirstNameError, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 3, 0, 0);
+        jPanel1.add(jPanel3, gridBagConstraints);
+
+        jPanel4.setBackground(new Color(255,160,122));
+        jPanel4.setLayout(new java.awt.GridBagLayout());
+
+        LastNameError.setForeground(new java.awt.Color(255, 102, 102));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel4.add(LastNameError, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 3, 0, 0);
+        jPanel1.add(jPanel4, gridBagConstraints);
+
+        jPanel5.setBackground(new Color(255,160,122));
+        jPanel5.setLayout(new java.awt.GridBagLayout());
+
+        UsernameError.setForeground(new java.awt.Color(255, 102, 102));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 7;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel5.add(UsernameError, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 14;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 3, 0, 0);
+        jPanel1.add(jPanel5, gridBagConstraints);
+
+        jPanel6.setBackground(new Color(255,160,122));
+        jPanel6.setLayout(new java.awt.GridBagLayout());
+
+        PasswordError.setForeground(new java.awt.Color(255, 102, 102));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 9;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel6.add(PasswordError, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 18;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 3, 0, 0);
+        jPanel1.add(jPanel6, gridBagConstraints);
+
+        jPanel7.setBackground(new Color(255,160,122));
+        jPanel7.setLayout(new java.awt.GridBagLayout());
+
+        ConfirmPasswordError.setForeground(new java.awt.Color(255, 102, 102));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 11;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel7.add(ConfirmPasswordError, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 22;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 3, 0, 0);
+        jPanel1.add(jPanel7, gridBagConstraints);
+
+        jPanel8.setBackground(new Color(255,160,122));
+        jPanel8.setLayout(new java.awt.GridBagLayout());
+
+        EmailError.setForeground(new java.awt.Color(255, 102, 102));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 13;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel8.add(EmailError, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 26;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 3, 0, 0);
+        jPanel1.add(jPanel8, gridBagConstraints);
+
+        jPanel9.setBackground(new Color(255,160,122));
+        jPanel9.setLayout(new java.awt.GridBagLayout());
+
+        PhoneError.setForeground(new java.awt.Color(255, 102, 102));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 15;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel9.add(PhoneError, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 30;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 3, 0, 0);
+        jPanel1.add(jPanel9, gridBagConstraints);
+
+        jLabel10.setText(" ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 10;
+        jPanel1.add(jLabel10, gridBagConstraints);
+
+        jLabel11.setText(" ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 14;
+        jPanel1.add(jLabel11, gridBagConstraints);
+
+        jLabel12.setText(" ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 18;
+        jPanel1.add(jLabel12, gridBagConstraints);
+
+        jLabel16.setText(" ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 22;
+        jPanel1.add(jLabel16, gridBagConstraints);
+
+        jLabel13.setText(" ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 26;
+        jPanel1.add(jLabel13, gridBagConstraints);
+
+        jLabel14.setText(" ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 30;
+        jPanel1.add(jLabel14, gridBagConstraints);
+
+        jPanel10.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel10.setLayout(new java.awt.GridBagLayout());
+
+        FirstNameLabel.setBackground(new Color(255,255,255,190));
+        FirstNameLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        FirstNameLabel.setForeground(new java.awt.Color(51, 0, 255));
+        FirstNameLabel.setText("First Name:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
+        jPanel10.add(FirstNameLabel, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        jPanel1.add(jPanel10, gridBagConstraints);
+
+        jPanel11.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel11.setLayout(new java.awt.GridBagLayout());
+
+        LastNameLabel.setBackground(new Color(255,255,255,190));
+        LastNameLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        LastNameLabel.setForeground(new java.awt.Color(51, 0, 255));
+        LastNameLabel.setText("Last Name:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
+        jPanel11.add(LastNameLabel, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 12;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        jPanel1.add(jPanel11, gridBagConstraints);
+
+        jPanel12.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel12.setLayout(new java.awt.GridBagLayout());
+
+        jLabel5.setBackground(new Color(255,255,255,190));
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(51, 0, 255));
+        jLabel5.setText("Username:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
+        jPanel12.add(jLabel5, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 16;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        jPanel1.add(jPanel12, gridBagConstraints);
+
+        jPanel13.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel13.setLayout(new java.awt.GridBagLayout());
+
+        PasswordLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        PasswordLabel.setForeground(new java.awt.Color(51, 0, 255));
+        PasswordLabel.setText("Password:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
+        jPanel13.add(PasswordLabel, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 20;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        jPanel1.add(jPanel13, gridBagConstraints);
+
+        jPanel14.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel14.setLayout(new java.awt.GridBagLayout());
+
+        ConfirmPasswordLabel.setBackground(new Color(255,255,255,190));
+        ConfirmPasswordLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ConfirmPasswordLabel.setForeground(new java.awt.Color(51, 0, 255));
+        ConfirmPasswordLabel.setText("Confirm Password:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 12;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
+        jPanel14.add(ConfirmPasswordLabel, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 24;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        jPanel1.add(jPanel14, gridBagConstraints);
+
+        jPanel15.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel15.setLayout(new java.awt.GridBagLayout());
+
+        emailLabel.setBackground(new Color(255,255,255,190));
+        emailLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        emailLabel.setForeground(new java.awt.Color(51, 0, 255));
+        emailLabel.setText("Email:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 14;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
+        jPanel15.add(emailLabel, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 28;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        jPanel1.add(jPanel15, gridBagConstraints);
+
+        jPanel16.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel16.setLayout(new java.awt.GridBagLayout());
+
+        PhoneLabel.setBackground(new Color(255,255,255,190));
+        PhoneLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        PhoneLabel.setForeground(new java.awt.Color(51, 0, 255));
+        PhoneLabel.setText("Phone:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 16;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
+        jPanel16.add(PhoneLabel, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 32;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        jPanel1.add(jPanel16, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        jPanel2.add(jPanel1, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 10, 20, 0);
+        add(jPanel2, gridBagConstraints);
+
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/hitchguide42robot.jpg"))); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        add(Background, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
     public CreateAccountPanel(JPanel MainPanel, GUI mainGUI)
     {
@@ -265,13 +652,29 @@ public class CreateAccountPanel extends javax.swing.JPanel
         this.MainPanel = MainPanel;
         initComponents();
     }
+    
+    public void clearfields() {
+        phone.setText("");
+        email.setText("");
+        confirmPassword.setText("");
+        password.setText("");
+        username.setText("");
+        lastName.setText("");
+        firstName.setText("");
+    }
+    
+    public void clearerrors() {
+        FirstNameError.setText("");
+        LastNameError.setText("");
+        UsernameError.setText("");
+        PasswordError.setText("");
+        ConfirmPasswordError.setText("");
+        EmailError.setText("");
+        PhoneError.setText(""); 
+    }
 
     private void createUserAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserAccountActionPerformed
 
-        boolean operationSuccessful = false;
-
-        //know which field is incorrect
-        //make phone number more versatile
         errorMessage.setForeground(Color.red);
 
         String name1 = firstName.getText().trim();
@@ -279,191 +682,137 @@ public class CreateAccountPanel extends javax.swing.JPanel
         String user = username.getText().trim();
         String input3 = email.getText().trim();
         String phoneNumber = phone.getText().trim();
-        
+
         char[] input1 = password.getPassword();
         char[] input2 = confirmPassword.getPassword();
-                
+
         String pass1 = new String(input1);
-        String pass2 = new String(input2);      
+        String pass2 = new String(input2);
+
+        boolean account_accepted = true;
         
-        if ((name1.length() > 0) && (validateFirstName(name1) == true))
+        clearerrors();
+        
+        if (!((name1.length() > 0) && (validateFirstName(name1) == true))) {
+            FirstNameError.setText("Your first name was entered incorrectly.");
+            account_accepted = false;   
+        }
+        if (!((name2.length() > 0) && (validateLastName(name2) == true)))  {
+            LastNameError.setText("Your last name was entered incorrectly.");
+            account_accepted = false;
+        }
+        if (!((user.length() > 0) && (validate(user) == true))) {
+            UsernameError.setText("Your username was entered incorrectly.");
+            account_accepted = false;    
+        }
+        if (!(((pass1.length()) > 0) && (validatePassword(pass1) == true))) {
+            PasswordError.setText("Your password was invalid");
+            account_accepted = false;   
+        }
+        if (!(pass1.equals(pass2))) {
+            ConfirmPasswordError.setText("Your password doesn't match confirm password");
+            account_accepted = false; 
+        }
+        if (!((input3.length() > 0) && (isValidEmailAddress(input3)))) {
+            EmailError.setText("Your email was entered incorrectly.");
+            account_accepted = false;
+        }
+        if (!validatePhoneNumber(phoneNumber)) {
+            PhoneError.setText("Your phone number was entered incorrectly.");
+            account_accepted = false; 
+        }
+        
+        if(account_accepted==true)
         {
-            System.out.println("firstname");
-            if ((name2.length() > 0) && (validateLastName(name2) == true))
+            GUI.currentUserAccount = GUI.MasterTable.insertUserAccount(user, input3);
+            if (GUI.currentUserAccount != null)
             {
-                System.out.println("lastname");
-                if ((user.length() > 0) && (validate(user) == true))
-                {
-                    System.out.println("username");
+                GUI.currentUserAccount.setFirstName(name1);
+                GUI.currentUserAccount.setLastName(name2);
+                GUI.currentUserAccount.setUserName(user);
+                GUI.currentUserAccount.setPassword(pass1);
+                GUI.currentUserAccount.setEmail(input3);
+                GUI.currentUserAccount.setPhone(phoneNumber);
+                System.out.println("You have successfully created your user account!");
+                JOptionPane.showMessageDialog(null, "You have successfully created your user account!", "Success!",
+                        JOptionPane.INFORMATION_MESSAGE);
 
-                    // if (((password.getText().length()) > 0) && ((password.getText()).equals(confirmPassword.())))
-                    if (((pass1.length()) > 0) && (pass1.equals(pass2)) && (validatePassword(pass1) == true))
-                    {
-                        System.out.println("test1");
-                        if ((input3.length() > 0) && (isValidEmailAddress(input3)))
-                        {
-                            System.out.println("email");
-                            System.out.println("test2");
+                // Clear all text fields
+                phone.setText("");
+                email.setText("");
+                confirmPassword.setText("");
+                password.setText("");
+                username.setText("");
+                lastName.setText("");
+                firstName.setText("");
 
-                            if (validatePhoneNumber(phoneNumber))
-                            {
-                                System.out.println("phone");
-                                System.out.println("test3");
-                                System.out.println("test4");
-
-                                GUI.currentUserAccount = GUI.MasterTable.insertUserAccount(user, input3);
-                                if (GUI.currentUserAccount != null)
-                                {
-                                    GUI.currentUserAccount.setFirstName(name1);
-                                    GUI.currentUserAccount.setLastName(name2);
-                                    GUI.currentUserAccount.setUserName(user);
-                                    GUI.currentUserAccount.setPassword(pass1);
-                                    GUI.currentUserAccount.setEmail(input3);
-                                    GUI.currentUserAccount.setPhone(phoneNumber);
-                                    System.out.println("You have successfully created your user account!");
-                                    JOptionPane.showMessageDialog(null, "You have successfully created your user account!", "Success!",
-                                            JOptionPane.INFORMATION_MESSAGE);
-                                    operationSuccessful = true;
-                                    CardLayout layout = (CardLayout) (MainPanel.getLayout());
-                                    //send the layout of MainPanel to new display of JPanel "MainMenu"
-                                    layout.show(MainPanel, "Login");
-                                }
-
-                                /*else
-                                 {
-                                 //print a pop up error
-                                 System.out.println("Error creating an account!");
-                                 JOptionPane.showMessageDialog(null, "Error creating an account!", "IN USE",
-                                 JOptionPane.INFORMATION_MESSAGE);
-                                 }
-                                 UserAccount retVal = GUI.MasterTable.findUserAccount(username.getText());
-                                 if (retVal == null){
-
-                                 UserAccount newUser = new UserAccount();
-
-                                 newUser.setFirstName(firstName.getText());
-                                 newUser.setLastName(name2);
-                                 newUser.setUserName(user);
-                                 //newUser.setPassword(password.getText());
-                                 newUser.setPassword(pass1);
-                                 newUser.setEmail(input3);
-                                 newUser.setPhone(phone.getText());
-                                 newUser = GUI.MasterTable.insertUserAccount(user);*/
-                                //  System.out.print("\nnewUser pass inserting to MasterTable: " newUser.getPassword()+ "\n");
-                            }
-                            else
-                            {
-                                //phone wrong
-                                errorMessage.setText("Your phone number was entered incorrectly.");
-                            }
-
-                            //UserAccount currentUserAccount = new UserAccount(firstName.getText(),lastName.getText(),username.getText(),password.getText(),email.getText(), phone.getText(), "");
-                        }
-                        else
-                        {
-                            //email wrong
-                            errorMessage.setText("Your email was entered incorrectly.");
-                        }
-                    }
-                    else
-                    {
-                        //pass wrong
-                        errorMessage.setText("Your password was invalid or doesn't match confirm password");
-                    }
-                }
-                else
-                {
-                    //username wrong
-                    errorMessage.setText("Your username was entered incorrectly.");
-                }
+                CardLayout layout = (CardLayout) (MainPanel.getLayout());
+                //send the layout of MainPanel to new display of JPanel "MainMenu"
+                layout.show(MainPanel, "Login");
             }
             else
-            {
-                //last name wrong
-                errorMessage.setText("Your last name was entered incorrectly.");
-            }
+                JOptionPane.showMessageDialog(null, "ERROR! An account with that User Name or Email already exists.", "ERROR", JOptionPane.ERROR_MESSAGE);
+
+            //ANY TIME THERE's DATA CHANGING (viewing information doesn't count as changing) EXPORT!
+             /*
+             ImportExport dataout = new ImportExport();
+             if (dataout.exportDB(GUI.MasterTable))
+             {
+             System.out.println("\nExported file to local source file"
+             + " THROUGH CREATE ACCOUNT GUI\n");
+
+             }
+             else
+             {
+             System.err.println("\n\nCould not export THROUGH CREATE ACCOUNT GUI, ERROR\n\n");
+             }
+
+             }*/
         }
-        else
-        {
-            //first name wrong
-            errorMessage.setText("Your first name was entered incorrectly.");
-        }
-        //}
-
-        if (!operationSuccessful)
-        {
-            //NO NEED TO SHOW ERROR MESSAGE, LABEL UPDATES WITH THE SPECIFIC ERROR
-            System.out.println("Error with input format!");
-            //JOptionPane.showMessageDialog(null, "Error creating an account! INVALID FORMAT", "INVALID FORMAT", JOptionPane.INFORMATION_MESSAGE);
-        }
-
-        /*//If we reach here, user name was 100% successfully inserted into table.
-         //ANY TIME THERE's DATA CHANGING (viewing information doesn't count as changing EXPORT!
-         else
-         {
-         ImportExport dataout = new ImportExport();
-         if (dataout.exportDB(GUI.MasterTable))
-         {
-         System.out.println("\nExported file to local source file"
-         + " THROUGH CREATE ACCOUNT GUI\n");
-
-         }
-         else
-         {
-         System.err.println("\n\nCould not export THROUGH CREATE ACCOUNT GUI, ERROR\n\n");
-         }
-
-         }*/
     }//GEN-LAST:event_createUserAccountActionPerformed
-
-    private void dismissViewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dismissViewMouseClicked
-        CardLayout layout = (CardLayout) (MainPanel.getLayout());
-        layout.show(MainPanel, "Login");
-    }//GEN-LAST:event_dismissViewMouseClicked
 
     private void firstNameFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_firstNameFocusGained
     {//GEN-HEADEREND:event_firstNameFocusGained
-        firstName.setText("");
+      
     }//GEN-LAST:event_firstNameFocusGained
 
     private void lastNameFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_lastNameFocusGained
     {//GEN-HEADEREND:event_lastNameFocusGained
-        lastName.setText("");
+    
     }//GEN-LAST:event_lastNameFocusGained
 
     private void usernameFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_usernameFocusGained
     {//GEN-HEADEREND:event_usernameFocusGained
-        username.setText("");
+     
     }//GEN-LAST:event_usernameFocusGained
 
     private void passwordFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_passwordFocusGained
     {//GEN-HEADEREND:event_passwordFocusGained
-        password.setText("");
+     
     }//GEN-LAST:event_passwordFocusGained
 
     private void confirmPasswordFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_confirmPasswordFocusGained
     {//GEN-HEADEREND:event_confirmPasswordFocusGained
-        confirmPassword.setText("");
+     
     }//GEN-LAST:event_confirmPasswordFocusGained
 
     private void emailFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_emailFocusGained
     {//GEN-HEADEREND:event_emailFocusGained
-        email.setText("");
+   
     }//GEN-LAST:event_emailFocusGained
 
     private void phoneFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_phoneFocusGained
     {//GEN-HEADEREND:event_phoneFocusGained
-        phone.setText("");
+
     }//GEN-LAST:event_phoneFocusGained
 
-    private void phoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phoneActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_phoneActionPerformed
-
-    private void ERRORPOPActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ERRORPOPActionPerformed
-    {//GEN-HEADEREND:event_ERRORPOPActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ERRORPOPActionPerformed
+    private void BackButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BackButtonActionPerformed
+    {//GEN-HEADEREND:event_BackButtonActionPerformed
+        clearfields();
+        clearerrors();
+        CardLayout layout = (CardLayout) (MainPanel.getLayout());
+        layout.show(MainPanel, "Login");
+    }//GEN-LAST:event_BackButtonActionPerformed
 
     public static boolean validatePhoneNumber(String phoneNo)
     {
@@ -498,7 +847,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
     public static boolean validateFirstName(String firstName)
     {
-        return firstName.matches("[A-Z][a-zA-Z]*");
+        return firstName.matches("[a-zA-z]+([ '-][a-zA-Z]+)*");
     } // end method validateFirstName
 
     // validate last name
@@ -522,24 +871,60 @@ public class CreateAccountPanel extends javax.swing.JPanel
         return passwd.matches(pattern);
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.PopupMenu ERRORPOP;
+    private javax.swing.JButton BackButton;
+    private javax.swing.JLabel Background;
+    private javax.swing.JLabel Bank42;
+    private javax.swing.JLabel ConfirmPasswordError;
+    private javax.swing.JLabel ConfirmPasswordLabel;
+    private javax.swing.JLabel EmailError;
+    private javax.swing.JLabel FirstNameError;
+    private javax.swing.JLabel FirstNameLabel;
+    private javax.swing.JPanel HeaderPanel;
+    private javax.swing.JLabel LastNameError;
+    private javax.swing.JLabel LastNameLabel;
+    private javax.swing.JLabel PasswordError;
+    private javax.swing.JLabel PasswordLabel;
+    private javax.swing.JLabel PhoneError;
+    private javax.swing.JLabel PhoneLabel;
+    private javax.swing.JLabel UsernameError;
     private javax.swing.JPasswordField confirmPassword;
     private javax.swing.JButton createUserAccount;
-    private javax.swing.JButton dismissView;
     private javax.swing.JTextField email;
+    private javax.swing.JLabel emailLabel;
     private javax.swing.JLabel errorMessage;
+    private javax.swing.JLabel fillerlabellol;
     private javax.swing.JTextField firstName;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JTextField lastName;
     private javax.swing.JPasswordField password;
     private javax.swing.JTextField phone;
+    private javax.swing.JLabel spacinglabellol;
+    private javax.swing.JLabel spacinglabellol1;
     private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
 }

@@ -24,6 +24,7 @@ public class TellerAccountPage extends javax.swing.JPanel
     private UserAccountWrapper wrapper;
     private int total_accounts;
     private String[] accountlist;
+    private DefaultListSelectionModel SelectionModel;
 
     /**
      * Creates new form TellerAccountPage
@@ -60,7 +61,9 @@ public class TellerAccountPage extends javax.swing.JPanel
 
     public void update()
     {
+
         AccountsTable.setModel(new AccountsTableModel(GUI.currentUserAccount));
+        SelectionModel.clearSelection();
         CurrentUserAccountLabel.setText(GUI.currentUserAccount.getUserName());
         mainGUI.updateUserLabels();
     }
@@ -102,8 +105,7 @@ public class TellerAccountPage extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         SettingsButton = new javax.swing.JButton();
         BankNamePanel = new javax.swing.JPanel();
@@ -122,10 +124,8 @@ public class TellerAccountPage extends javax.swing.JPanel
         setPreferredSize(new java.awt.Dimension(800, 600));
 
         SettingsButton.setText("Settings");
-        SettingsButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        SettingsButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 SettingsButtonMouseClicked(evt);
             }
         });
@@ -155,15 +155,14 @@ public class TellerAccountPage extends javax.swing.JPanel
         CurrentUserAccountLabel.setText(PresentationLayer.GUI.currentBankAccount.getAccountName());
 
         LogoutButtton.setText("Logout");
-        LogoutButtton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        LogoutButtton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LogoutButttonMouseClicked(evt);
             }
         });
 
-        AccountsTable.setSelectionModel(new ForcedListSelectionModel());
+        AccountsTable.setSelectionModel(SelectionModel = new DefaultListSelectionModel());
+        SelectionModel.setSelectionMode(0);
         AccountsTable.setAutoCreateRowSorter(true);
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
         centerRenderer.setHorizontalAlignment( JLabel.CENTER );
@@ -176,37 +175,29 @@ public class TellerAccountPage extends javax.swing.JPanel
         AccountsTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         DepositButton.setText("Deposit");
-        DepositButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        DepositButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 DepositButtonMouseClicked(evt);
             }
         });
 
         WithdrawButton.setText("Withdraw");
-        WithdrawButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        WithdrawButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 WithdrawButtonMouseClicked(evt);
             }
         });
 
         DeleteUserAccountButton.setText("Delete User Account");
-        DeleteUserAccountButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        DeleteUserAccountButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 DeleteUserAccountButtonMouseClicked(evt);
             }
         });
 
         DeleteAccountButton.setText("Delete Highlighted Account");
-        DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 DeleteAccountButtonMouseClicked(evt);
             }
         });
@@ -296,7 +287,8 @@ public class TellerAccountPage extends javax.swing.JPanel
         double amount;
         String amountstring = JOptionPane.showInputDialog(
                 null, "Amount To Deposit: ");
-
+        if (amountstring == null)
+            return;
         if (isParsable(amountstring))
         {
             amount = Double.parseDouble(amountstring);
@@ -315,7 +307,7 @@ public class TellerAccountPage extends javax.swing.JPanel
 
         //first, retrieve the row index of selection
         int row = AccountsTable.getSelectedRow();
-        String user = (String) AccountsTable.getValueAt(row, 1);
+        String user = (String) AccountsTable.getValueAt(row, 0);
         System.out.print("\nTESTING retrieve selected row index: ");
         System.out.print(row);
         //next, retrieve the user account for the selection ( row , column0) = (x,y)
@@ -349,7 +341,8 @@ public class TellerAccountPage extends javax.swing.JPanel
         double amount;
         String amountstring = JOptionPane.showInputDialog(
                 null, "Amount To Withdraw: ");
-
+        if (amountstring == null)
+            return;
         if (isParsable(amountstring))
         {
             amount = Double.parseDouble(amountstring);
@@ -368,7 +361,7 @@ public class TellerAccountPage extends javax.swing.JPanel
 
         //first, retrieve the row index of selection
         int row = AccountsTable.getSelectedRow();
-        String user = (String) AccountsTable.getValueAt(row, 1);
+        String user = (String) AccountsTable.getValueAt(row, 0);
         System.out.print("\nTESTING retrieve selected row index: ");
         System.out.print(row);
         //next, retrieve the user account for the selection ( row , column0) = (x,y)
@@ -443,7 +436,7 @@ public class TellerAccountPage extends javax.swing.JPanel
             double amount_in_deleted_acc;
             String account_name;
             int row = AccountsTable.getSelectedRow();
-            String bankacc = (String) AccountsTable.getValueAt(row, 1);
+            String bankacc = (String) AccountsTable.getValueAt(row, 0);
 
             GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(bankacc);
             amount_in_deleted_acc = GUI.currentBankAccount.getBalance();

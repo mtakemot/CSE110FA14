@@ -96,8 +96,7 @@ public class ImportExport
         /**
          * *DEBUG***
          */
-        System.out.println("\n\nTable has " + MasterTable.occ
-                + " User accounts exported \n");
+        
         boolean result = false;
         try
         {
@@ -109,10 +108,15 @@ public class ImportExport
             out.close();
             fileOut.close();
             result = true;
+            System.out.println("\n\nTable has " + MasterTable.occ
+                + " User accounts exported \n");
         } catch (IOException i)
         {
+            //DEBUG! uncomment the bottom System.err.println when not using for DEBUG
+            i.printStackTrace();
             //error for bad or non existing output file
-            System.err.println("\n\n\nEXPORT FAILED!\n\n");
+          //  System.err.println("\n\n\nEXPORT FAILED!\n\n");
+            result = false;
 
         }
 

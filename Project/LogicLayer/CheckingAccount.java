@@ -21,16 +21,19 @@ public class CheckingAccount extends BankAccount
 
     public CheckingAccount()
     {
+        super();
     }
 
     public CheckingAccount(String name)
     {
+        super();
         this.accountName = name;
         dayWithdrawAmount = 0;
     }
 
     public CheckingAccount(double bal, String name)
     {
+        super();
         this.balance = bal;
         this.accountName = name;
         this.accountType = "Checking";
@@ -55,6 +58,7 @@ public class CheckingAccount extends BankAccount
                 // Perform withdraw and update threshold
                 this.balance -= amount;
                 dayWithdrawAmount += amount;
+                this.getTransactions().add(new Transaction("Withdraw", amount));
                 return true;
             }
         }
@@ -64,6 +68,7 @@ public class CheckingAccount extends BankAccount
             this.balance -= amount;
             lastWithdrawDateTime = currentDateTime;
             dayWithdrawAmount = amount;
+            this.getTransactions().add(new Transaction("Withdraw", amount));
             return true;
         }
         return false;
@@ -87,6 +92,7 @@ public class CheckingAccount extends BankAccount
                 // Update threshold and deposit the money
                 this.balance += amount;
                 dayDepositAmount += amount;
+                this.getTransactions().add(new Transaction("Deposit", amount));
                 return true;
             }
         }
@@ -96,6 +102,7 @@ public class CheckingAccount extends BankAccount
             this.balance += amount;
             lastDepositDateTime = currentDateTime;
             dayDepositAmount = amount;
+            this.getTransactions().add(new Transaction("Deposit", amount));
             return true;
         }
         return false;

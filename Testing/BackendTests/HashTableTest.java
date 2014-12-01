@@ -27,6 +27,7 @@ public class HashTableTest
 
             // creating 10000 test userAccounts each with different userName
             UserAccount testAccount = new UserAccount(testString + i);
+            testAccount.setEmail("email" + i);
 
             //Adding the 10000 userAccounts to the HashTable
             UserAccount result = testTable.insertUserAccount(testString + i, "email" + i);
