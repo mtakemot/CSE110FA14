@@ -214,32 +214,36 @@ public class GUI extends javax.swing.JFrame
         //days passed, subtract the number of daysleft in lastmonth
         Days d = Days.daysBetween(last, now);
         int dPassed = d.getDays();
+        int nowHour = now.getHourOfDay();
         int nowMin = now.getMinuteOfHour();
         int nowSec = now.getSecondOfMinute();
+        
+        /**debug, force to go into update statements**
+        System.out.println("forcing debug on lastinterestDateTime: " + last);
+        monthDiff = 0;
+        nowMin = 0;
+        nowSec = 0;
+        */
+        System.out.println("max hour: " + now.hourOfDay().getMaximumValue());
+        System.out.println("min hour: " + now.hourOfDay().getMinimumValue());
+        System.out.println("max min: " + now.minuteOfHour().getMaximumValue());
+        System.out.println("min min: " + now.minuteOfHour().getMinimumValue());
+        System.out.println("max sec: " + now.secondOfMinute().getMaximumValue());
+        System.out.println("min sec: " + now.secondOfMinute().getMinimumValue());
         //automatically, if monthDiff = 0 then, updateBalance x dPassed times
         if(monthDiff == 0){
-            
-            //if current min and sec == 0, update bal then interest
-            if (nowMin == 0 && nowSec == 0){
-                
-                updateInterest.run();
-                timer.scheduleAtFixedRate(updateBalance, 0, 1000 * 60*60);
-                timer.scheduleAtFixedRate(updateInterest, 0, 1000 * 60*60);
-            }
-            else{
-                for (int i = 0; i < dPassed; i++){
+
+            for (int i = 0; i < dPassed; i++){
                 updateBalance.run();
-                }
             }
+            int hourDiff = now.hourOfDay().getMaximumValue() - nowHour;
+            int minDiff = now.minuteOfHour().getMaximumValue() - nowMin;
+            int secDiff = now.secondOfDay().getMaximumValue()-nowSec;
+            //now that the updateBalance x dPassed is done, delay until the next day
+            //and schedule task from that delay for every hour
+            int delaySec = (hourDidd*60*60+ minDiff*60+secDiff+1) * 1000;
+            System.out.println("delaySec: " + delaySec);
         }
-      
-        
-        
-        Minutes m = Minutes.minutesBetween(last, now);
-        int mPassed = m.getMinutes();
-        System.out.println("TEST!!! Min from DateTime: " + mPassed);
-        
-        
         
        /* int daysInMonth = last.dayOfMonth().getMaximumValue();
         System.out.println("Days in this month: " + daysInMonth);
@@ -249,11 +253,11 @@ public class GUI extends javax.swing.JFrame
          * If the user has not been on for over a day, his current balance 
          * is added to his average total X amount of times 
          * transfers from other Users need to be implemented through Transfers
-         */
+         *
         while(dPassed > 0){
             updateBalance.run();
             dPassed--;
-        }
+        }*/
         
         /***CASE 2 ***
          * User has been on within the last 24 hours (a day has not passsed

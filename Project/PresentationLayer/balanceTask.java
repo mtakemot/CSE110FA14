@@ -11,6 +11,7 @@ import java.util.TimerTask;
  * @author Michio
  */
 public class balanceTask extends TimerTask {
+   // private int = 0
    /* private GUI mainGUI;
     
     public void setGUI(GUI mainGUI){
@@ -18,7 +19,8 @@ public class balanceTask extends TimerTask {
     }*/
     @Override
     public void run(){
-        GUI.MasterTable.updateAverageBalance();
         System.out.println("MSG balanceTask.java: calling updateAverageBalance()");
+        GUI.MasterTable.updateAverageBalance();
+       
     }
 }
