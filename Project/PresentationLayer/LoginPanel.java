@@ -79,7 +79,6 @@ public class LoginPanel extends javax.swing.JPanel
         UsernameLabel = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         PasswordLabel = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         Background = new javax.swing.JLabel();
 
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -129,12 +128,22 @@ public class LoginPanel extends javax.swing.JPanel
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         jPanel1.add(LoginButton, gridBagConstraints);
 
-        jPasswordField.setBackground(new Color(255,255,255,190));
+        jPasswordField.setBackground(new Color(255,255,255,150));
+        jPasswordField.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 3, 0, 0));
+        jPasswordField.setMinimumSize(new java.awt.Dimension(250, 25));
+        jPasswordField.setPreferredSize(new java.awt.Dimension(250, 25));
         jPasswordField.addFocusListener(new java.awt.event.FocusAdapter()
         {
             public void focusGained(java.awt.event.FocusEvent evt)
             {
                 jPasswordFieldFocusGained(evt);
+            }
+        });
+        jPasswordField.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                jPasswordFieldActionPerformed(evt);
             }
         });
         jPasswordField.addKeyListener(new java.awt.event.KeyAdapter()
@@ -151,7 +160,9 @@ public class LoginPanel extends javax.swing.JPanel
         gridBagConstraints.ipady = 15;
         jPanel1.add(jPasswordField, gridBagConstraints);
 
-        UsernameField.setBackground(new Color(255,255,255,190));
+        UsernameField.setBackground(new Color(255,255,255,150));
+        UsernameField.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 3, 0, 0));
+        UsernameField.setDisabledTextColor(new Color(255,255,255,150));
         UsernameField.setMinimumSize(new java.awt.Dimension(250, 25));
         UsernameField.setPreferredSize(new java.awt.Dimension(250, 25));
         UsernameField.addFocusListener(new java.awt.event.FocusAdapter()
@@ -182,7 +193,8 @@ public class LoginPanel extends javax.swing.JPanel
         gridBagConstraints.ipady = 15;
         jPanel1.add(UsernameField, gridBagConstraints);
 
-        jPanel2.setBackground(new Color(255,255,255,190));
+        jPanel2.setBackground(new Color(255,255,255,150));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.setMinimumSize(new java.awt.Dimension(90, 20));
         jPanel2.setPreferredSize(new java.awt.Dimension(90, 20));
         jPanel2.setLayout(new java.awt.GridBagLayout());
@@ -200,7 +212,8 @@ public class LoginPanel extends javax.swing.JPanel
         gridBagConstraints.gridy = 0;
         jPanel1.add(jPanel2, gridBagConstraints);
 
-        jPanel3.setBackground(new Color(255,255,255,190));
+        jPanel3.setBackground(new Color(255,255,255,150));
+        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel3.setMinimumSize(new java.awt.Dimension(90, 20));
         jPanel3.setPreferredSize(new java.awt.Dimension(90, 20));
         jPanel3.setLayout(new java.awt.GridBagLayout());
@@ -222,18 +235,10 @@ public class LoginPanel extends javax.swing.JPanel
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
+        gridBagConstraints.insets = new java.awt.Insets(300, 0, 0, 0);
         add(jPanel1, gridBagConstraints);
 
-        jLabel2.setFont(new java.awt.Font("DejaVu Sans", 1, 48)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(51, 0, 255));
-        jLabel2.setText("Bank 42");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-        add(jLabel2, gridBagConstraints);
-
-        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/Background2.jpg"))); // NOI18N
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/rsz_142galaxy Cropped.png"))); // NOI18N
         Background.setToolTipText("");
         Background.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Background.setFocusable(false);
@@ -350,6 +355,11 @@ public class LoginPanel extends javax.swing.JPanel
         // TODO add your handling code here:
     }//GEN-LAST:event_UsernameFieldActionPerformed
 
+    private void jPasswordFieldActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jPasswordFieldActionPerformed
+    {//GEN-HEADEREND:event_jPasswordFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordFieldActionPerformed
+
     public boolean validate(final String username)
     {
 
@@ -369,7 +379,6 @@ public class LoginPanel extends javax.swing.JPanel
     private javax.swing.JLabel PasswordLabel;
     private javax.swing.JTextField UsernameField;
     private javax.swing.JLabel UsernameLabel;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
