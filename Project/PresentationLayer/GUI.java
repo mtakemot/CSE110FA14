@@ -221,7 +221,7 @@ public class GUI extends javax.swing.JFrame
         //if the time isn't EXACTLY at the hour, run task to init. all bank account interests.
         task.run();
 
-        timer.scheduleAtFixedRate(task, 1000 * 3, 1000 * 5);
+        timer.scheduleAtFixedRate(task, 1000 * 5, 1000 * 15); 
         System.out.println("TaskTimer scheduled in main. Now initializing GUI");
     }
 
@@ -348,7 +348,6 @@ public class GUI extends javax.swing.JFrame
                 final GUI mainGUI = new GUI();
                 initDB();
                 initTask();
-
                 // This grabs the MainPanel and stores it in a variable so that
                 // we have easy access to it
                 JPanel cardHolder = mainGUI.getMainPanel();

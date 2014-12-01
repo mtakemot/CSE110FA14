@@ -265,6 +265,7 @@ public class HashTable implements Serializable
                         currentBA = currentUA.getBankAccHead();
                         while (currentBA != null)
                         {
+                            System.out.println("MSG HashTable.java: InterestAndPenalties calling helper");
                             InterestAndPenaltiesHelper(currentBA);
                             currentBA = currentBA.getNext();
                         }
@@ -286,6 +287,8 @@ public class HashTable implements Serializable
      */
     public void InterestAndPenaltiesHelper(BankAccount currentBA)
     {
+        System.out.println("MSG HashTable.java: getting interest for account " + currentBA.getAccountName()
+                            + " with initial balance: " + currentBA.getBalance());
         // Divide the running daily total by the total number of days in the
         // month to obtain the daily average
         double dailyAverage = ((currentBA.getThisMonthsDailyTotals()) / (lastInterestDateTime.dayOfMonth().getMaximumValue()));
@@ -315,6 +318,8 @@ public class HashTable implements Serializable
                 currentBA.setBalance(currentBA.getBalance() + (currentBA.getBalance() * SAVINGS_RATE_1000_TO_2000));
         }
         currentBA.setThisMonthsDailyTotals(0);
+        System.out.println("MSG HashTable.java: Calculated interest for account " + currentBA.getAccountName()
+                            + "with FINAL balance: " + currentBA.getBalance());
     }
 
     /////////////////////////////////////////
