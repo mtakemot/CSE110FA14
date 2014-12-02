@@ -39,7 +39,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 //import org.joda.time.DateTimeZone;
 import org.joda.time.*;
-import static java.lang.Math.abs;
+//import static java.lang.Math.abs
 
 
 public class GUI extends javax.swing.JFrame
@@ -204,32 +204,63 @@ public class GUI extends javax.swing.JFrame
         TimerTask updateInterest = new interestTask();
         //get the DateTime for the 
         DateTime last = MasterTable.getLastInterestDateTime();
-        DateTime now = new DateTime(DateTimeZone.forID("Etc/UTC"));
-        int numDaysInMonth = now.dayOfMonth().getMaximumValue();
-        
-        
-        //month difference
+        System.out.println("init Last: " + last);
+        int lastHour = last.getHourOfDay();
+        int lastMin = last.getMinuteOfHour();
+        int lastSec = last.getSecondOfMinute();
         int lastMonth = last.getMonthOfYear();
-        int nowMonth = now.getMonthOfYear();
-        int monthDiff = nowMonth - lastMonth;
+        int lastDay = last.getDayOfMonth();
         
-        //days passed, subtract the number of daysleft in lastmonth
-        Days d = Days.daysBetween(last, now);
-        int dPassed = d.getDays();
+        DateTime now = new DateTime(DateTimeZone.forID("Etc/UTC"));
+        System.out.println("init now: " + now);
         int nowHour = now.getHourOfDay();
         int nowMin = now.getMinuteOfHour();
         int nowSec = now.getSecondOfMinute();
+        int nowDay = now.getDayOfMonth();
+        int nowMonth = now.getMonthOfYear();
+        int numDaysInMonth = now.dayOfMonth().getMaximumValue();
         
-        //automatically, if monthDiff = 0 then, updateBalance x dPassed times
-        if(monthDiff == 0){
+        Seconds s = Seconds.secondsBetween(last, now);
+        int sPassed = s.getSeconds();
+        int hourDiff = sPassed/(60*60);
+            sPassed = sPassed - hourDiff * 3600;
+        int minDiff = sPassed/60;
+            sPassed = sPassed - minDiff*60;
+        int secDiff = sPassed;
 
-            for (int i = 0; i < dPassed; i++){
-                updateBalance.run();
-            }
+        System.out.println("Total sec passed: " + sPassed);
+        
+        //DateTime temp = MasterTable.getLastInterestDateTime();
+       // DateTime temp = last;
+        DateTime temp = last.plusSeconds(secDiff);
+        temp = last.plusMinutes(minDiff);
+        temp = last.plusHours(hourDiff);
+        System.out.println("temp is: "  + temp);
+        MasterTable.setLastInterestDateTime(temp);
+        last = MasterTable.getLastInterestDateTime();
+        System.out.println("new last should be same as now: "  + last);
+        
+        //month difference
+        int monthDiff = nowMonth - lastMonth; 
+        for(int i = 0; i < monthDiff ; i++){
+            last = MasterTable.getLastInterestDateTime();
+            //last.plusDays(dPassed);
+        }
+        
+        
             
-            int hourDiff = abs(Hours.hoursBetween(last, now).getHours());
-            int minDiff = abs(Minutes.minutesBetween(last,now).getMinutes());
-            int secDiff = abs(Seconds.secondsBetween(last,now).getSeconds());
+            
+            
+            
+            
+            
+            
+            
+       /*
+            int minDiff = abs(Minutes.minutesBetween(last, now).getMinutes());
+            int secDiff = abs(Seconds.secondsBetween(last, now).getSeconds());*/
+           System.out.println("DIFF: " + hourDiff + " " + minDiff + " " + secDiff);
+          //  System.out.println()
             //now that the updateBalance x dPassed is done, delay until the next day
             //and schedule task from that delay for every hour
             long delaySec = (hourDiff*60*60+ minDiff*60+secDiff+1)*1000;
@@ -240,13 +271,9 @@ public class GUI extends javax.swing.JFrame
 
             timer.scheduleAtFixedRate(updateBalance, delaySec, balanceInterval);
             timer.scheduleAtFixedRate(updateInterest, delaySec, interestInterval);
+          
             
-            DateTime temp = now.plusHours(hourDiff);
-            temp = now.plusMinutes(minDiff);
-            temp = now.plusSeconds(secDiff);
-            System.out.println("delay until: " + temp );
-            
-        }
+     
         
        /* int daysInMonth = last.dayOfMonth().getMaximumValue();
         System.out.println("Days in this month: " + daysInMonth);
