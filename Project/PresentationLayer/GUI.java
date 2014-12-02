@@ -280,6 +280,7 @@ public class GUI extends javax.swing.JFrame
 
     public void updateUserLabels()
     {
+        getAccList().updateUserLabel();
         getDelete().updateUserLabel();
         getSettings().updateUserLabel();
         getTellerAP().updateUserLabel();
