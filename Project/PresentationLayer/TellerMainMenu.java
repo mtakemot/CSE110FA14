@@ -42,66 +42,46 @@ public class TellerMainMenu extends javax.swing.JPanel
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents()
     {
+        java.awt.GridBagConstraints gridBagConstraints;
 
-        SettingsButton = new javax.swing.JButton();
-        BankNamePanel = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        LogoutButtton = new javax.swing.JButton();
-        SearchUserButton = new javax.swing.JButton();
+        BGPanel = new javax.swing.JPanel();
+        HeaderPanel = new javax.swing.JPanel();
+        Bank42 = new javax.swing.JLabel();
+        ButtonPanel = new javax.swing.JPanel();
         InterestPenaltyButton = new javax.swing.JButton();
+        SearchUserButton = new javax.swing.JButton();
+        ApplyPenIntButton = new javax.swing.JButton();
+        Logout = new javax.swing.JButton();
 
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
         setPreferredSize(new java.awt.Dimension(800, 600));
+        setLayout(new java.awt.GridBagLayout());
 
-        SettingsButton.setText("Settings");
-        SettingsButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                SettingsButtonMouseClicked(evt);
-            }
-        });
+        BGPanel.setLayout(new java.awt.GridBagLayout());
 
-        BankNamePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        HeaderPanel.setBackground(new java.awt.Color(255, 255, 255));
+        HeaderPanel.setOpaque(false);
+        HeaderPanel.setLayout(new java.awt.GridBagLayout());
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabel1.setText("             Bank 42");
-        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Bank42.setFont(new java.awt.Font("DejaVu Sans", 1, 48)); // NOI18N
+        Bank42.setForeground(new java.awt.Color(51, 0, 255));
+        Bank42.setText("Bank 42");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        HeaderPanel.add(Bank42, gridBagConstraints);
 
-        javax.swing.GroupLayout BankNamePanelLayout = new javax.swing.GroupLayout(BankNamePanel);
-        BankNamePanel.setLayout(BankNamePanelLayout);
-        BankNamePanelLayout.setHorizontalGroup(
-            BankNamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BankNamePanelLayout.createSequentialGroup()
-                .addContainerGap(157, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(136, 136, 136))
-        );
-        BankNamePanelLayout.setVerticalGroup(
-            BankNamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.PAGE_START;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 200, 0);
+        BGPanel.add(HeaderPanel, gridBagConstraints);
 
-        LogoutButtton.setText("Logout");
-        LogoutButtton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                LogoutButttonMouseClicked(evt);
-            }
-        });
+        ButtonPanel.setLayout(new java.awt.GridBagLayout());
 
-        SearchUserButton.setText("Search For User");
-        SearchUserButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                SearchUserButtonMouseClicked(evt);
-            }
-        });
-
-        InterestPenaltyButton.setText("Interest/Penalty");
+        InterestPenaltyButton.setText("Adjust Interest Rates and Penalties");
         InterestPenaltyButton.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -109,52 +89,74 @@ public class TellerMainMenu extends javax.swing.JPanel
                 InterestPenaltyButtonActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
+        ButtonPanel.add(InterestPenaltyButton, gridBagConstraints);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(SettingsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BankNamePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(LogoutButtton, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(SearchUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(InterestPenaltyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(310, 310, 310))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(BankNamePanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(LogoutButtton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(SettingsButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(100, 100, 100)
-                .addComponent(SearchUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(InterestPenaltyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 365, Short.MAX_VALUE))
-        );
+        SearchUserButton.setText("Search For A User");
+        SearchUserButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                SearchUserButtonMouseClicked(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        ButtonPanel.add(SearchUserButton, gridBagConstraints);
+
+        ApplyPenIntButton.setText("Apply Global Interest");
+        ApplyPenIntButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                ApplyPenIntButtonActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 70;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
+        ButtonPanel.add(ApplyPenIntButton, gridBagConstraints);
+
+        Logout.setBackground(new java.awt.Color(255, 255, 255));
+        Logout.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Logout.setForeground(new java.awt.Color(51, 0, 255));
+        Logout.setText("Logout");
+        Logout.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                LogoutMouseClicked(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
+        ButtonPanel.add(Logout, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 200, 0);
+        BGPanel.add(ButtonPanel, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        add(BGPanel, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void SettingsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingsButtonMouseClicked
-        CardLayout layout = (CardLayout) (MainPanel.getLayout());
-        layout.show(MainPanel, "Settings");
-    }//GEN-LAST:event_SettingsButtonMouseClicked
-
-    private void LogoutButttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoutButttonMouseClicked
-        GUI.currentBankAccount = null;
-        GUI.currentUserAccount = null;
-        CardLayout layout = (CardLayout) (MainPanel.getLayout());
-        layout.show(MainPanel, "Login");
-    }//GEN-LAST:event_LogoutButttonMouseClicked
 
     private void SearchUserButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SearchUserButtonMouseClicked
 
@@ -185,12 +187,28 @@ public class TellerMainMenu extends javax.swing.JPanel
         layout.show(MainPanel, "PenIntPanel");
     }//GEN-LAST:event_InterestPenaltyButtonActionPerformed
 
+    private void LogoutMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_LogoutMouseClicked
+    {//GEN-HEADEREND:event_LogoutMouseClicked
+        //retrieve MainPanel to transfer it's layout to AccountListPanel
+        CardLayout layout = (CardLayout) (MainPanel.getLayout());
+
+        //send the layout of MainPanel to new display of JPanel "Login"
+        layout.show(MainPanel, "Login");
+    }//GEN-LAST:event_LogoutMouseClicked
+
+    private void ApplyPenIntButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ApplyPenIntButtonActionPerformed
+    {//GEN-HEADEREND:event_ApplyPenIntButtonActionPerformed
+
+    }//GEN-LAST:event_ApplyPenIntButtonActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel BankNamePanel;
+    private javax.swing.JButton ApplyPenIntButton;
+    private javax.swing.JPanel BGPanel;
+    private javax.swing.JLabel Bank42;
+    private javax.swing.JPanel ButtonPanel;
+    private javax.swing.JPanel HeaderPanel;
     private javax.swing.JButton InterestPenaltyButton;
-    private javax.swing.JButton LogoutButtton;
+    private javax.swing.JButton Logout;
     private javax.swing.JButton SearchUserButton;
-    private javax.swing.JButton SettingsButton;
-    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
