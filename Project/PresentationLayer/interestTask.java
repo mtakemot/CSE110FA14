@@ -15,6 +15,14 @@ import java.util.TimerTask;
  * @author Michio
  */
 public class interestTask extends TimerTask {
+    public int interval;
+    public int counter;
+    
+        
+    public void interestTask(int daysInMonth){
+        this.interval = daysInMonth;
+        this.counter = 0;
+    }
     @Override
     public void run(){
         
@@ -30,10 +38,7 @@ public class interestTask extends TimerTask {
         int peakThreadCount = bean.getPeakThreadCount();
         System.out.println("Peak Thread Count: " + peakThreadCount);
         System.out.println("Number of active threads from the given thread: " + Thread.activeCount());*/
-        
-        
-        
-        
     }
+
     
 }
