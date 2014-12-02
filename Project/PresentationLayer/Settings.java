@@ -42,7 +42,7 @@ public class Settings extends javax.swing.JPanel
 
     public void updateUserLabel()
     {
-        BAUserNameLabel.setText("User " + GUI.currentUserAccount.getUserName());
+        BAUserNameLabel.setText("User: " + GUI.currentUserAccount.getUserName());
     }
 
     /**
@@ -801,7 +801,7 @@ public class Settings extends javax.swing.JPanel
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 132, 0);
+        gridBagConstraints.insets = new java.awt.Insets(8, 0, 135, 0);
         jPanel2.add(jPanel1, gridBagConstraints);
 
         HeaderPanel.setBackground(new java.awt.Color(255, 255, 255));
@@ -857,7 +857,7 @@ public class Settings extends javax.swing.JPanel
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.insets = new java.awt.Insets(16, 0, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(17, 0, 0, 0);
         HeaderPanel.add(BAUserNameLabel, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
