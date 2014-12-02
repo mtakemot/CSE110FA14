@@ -45,9 +45,7 @@ public class HashTable implements Serializable
         {
             Table[zod] = null;
         }
-        // Sets the creation time of the HashTable to the local time converted
-        // to UTC
-        lastInterestDateTime = new DateTime(DateTimeZone.forID("Etc/UTC"));
+        lastInterestDateTime = new DateTime();
     }
 
     /**
@@ -280,7 +278,7 @@ public class HashTable implements Serializable
         }
         /*
          DateTime last = this.getLastInterestDateTime();
-         DateTime now = new DateTime(DateTimeZone.forID("Etc/UTC"));
+         DateTime now = new DateTime();
          int yearPassed = now.getYear() - last.getYear();
          int daysPassed = now.getDayOfMonth()-last.getDayOfMonth();
          int hoursPassed = now.getHourOfDay()-last.getHourOfDay();
@@ -328,7 +326,6 @@ public class HashTable implements Serializable
                         currentBA = currentUA.getBankAccHead();
                         while (currentBA != null)
                         {
-
                             System.out.println("MSG HashTable.java: InterestAndPenalties calling helper");
                             InterestAndPenaltiesHelper(currentBA);
 
@@ -346,7 +343,6 @@ public class HashTable implements Serializable
         newDateTime = newDateTime.withSecondOfMinute(newDateTime.secondOfMinute().getMinimumValue());
         System.out.println("newDateTime after interest: " + newDateTime);
         lastInterestDateTime = newDateTime;
-
     }
 
     /**
@@ -364,28 +360,96 @@ public class HashTable implements Serializable
         double dailyAverage = ((currentBA.getThisMonthsDailyTotals()) / (lastInterestDateTime.dayOfMonth().getMaximumValue()));
         if (dailyAverage < 100)
         {
-            currentBA.subFromBalance(PENALTY_AMOUNT);
+            currentBA.subPenalty(PENALTY_AMOUNT);
         }
         else if (dailyAverage >= 3000)
         {
             if (currentBA instanceof CheckingAccount)
-                currentBA.addToBalance((currentBA.getBalance() * CHECKING_RATE_OVER_3000));
+                currentBA.addInterest((currentBA.getBalance() * CHECKING_RATE_OVER_3000));
             else
-                currentBA.addToBalance((currentBA.getBalance() * SAVINGS_RATE_OVER_3000));
+                currentBA.addInterest((currentBA.getBalance() * SAVINGS_RATE_OVER_3000));
         }
         else if (dailyAverage >= 2000 && dailyAverage < 3000)
         {
             if (currentBA instanceof CheckingAccount)
-                currentBA.addToBalance((currentBA.getBalance() * CHECKING_RATE_2000_TO_3000));
+                currentBA.addInterest((currentBA.getBalance() * CHECKING_RATE_2000_TO_3000));
             else
-                currentBA.addToBalance((currentBA.getBalance() * SAVINGS_RATE_2000_TO_3000));
+                currentBA.addInterest((currentBA.getBalance() * SAVINGS_RATE_2000_TO_3000));
         }
         else if (dailyAverage < 2000 && dailyAverage >= 1000)
         {
             if (currentBA instanceof CheckingAccount)
-                currentBA.addToBalance((currentBA.getBalance() * CHECKING_RATE_1000_TO_2000));
+                currentBA.addInterest((currentBA.getBalance() * CHECKING_RATE_1000_TO_2000));
             else
-                currentBA.addToBalance((currentBA.getBalance() * SAVINGS_RATE_1000_TO_2000));
+                currentBA.addInterest((currentBA.getBalance() * SAVINGS_RATE_1000_TO_2000));
+        }
+        currentBA.setThisMonthsDailyTotals(0);
+        System.out.println("MSG HashTable.java: Calculated interest for account " + currentBA.getAccountName()
+                + " with FINAL balance: " + currentBA.getBalance());
+    }
+
+    public void InterestAndPenaltiesTeller()
+    {
+        BankAccount currentBA;
+        UserAccount currentUA;
+        for (int zod = 0; zod < SIZE; zod++)
+        {
+            if (Table[zod] != null)
+            {
+                currentUA = Table[zod];
+                while (currentUA != null)
+                {
+                    if (currentUA.getBankAccHead() != null)
+                    {
+                        currentBA = currentUA.getBankAccHead();
+                        while (currentBA != null)
+                        {
+                            System.out.println("MSG HashTable.java: InterestAndPenalties calling helper");
+                            InterestAndPenaltiesTellerHelper(currentBA);
+
+                            currentBA = currentBA.getNext();
+                        }
+                    }
+                    currentUA = currentUA.getNext();
+                }
+            }
+        }
+    }
+
+    public void InterestAndPenaltiesTellerHelper(BankAccount currentBA)
+    {
+        System.out.println("MSG HashTable.java: getting interest for account " + currentBA.getAccountName()
+                + " with initial balance: " + currentBA.getBalance());
+        // Divide the running daily total by the total number of days in the
+        // month to obtain the daily average
+        DateTime currentTime = new DateTime();
+        double total = currentBA.getThisMonthsDailyTotals()
+                + (currentBA.getBalance() * (currentTime.dayOfMonth().getMaximumValue() - currentTime.getDayOfMonth() + 1));
+        double dailyAverage = (total / (currentTime.dayOfMonth().getMaximumValue()));
+        if (dailyAverage < 100)
+        {
+            currentBA.subPenalty(PENALTY_AMOUNT);
+        }
+        else if (dailyAverage >= 3000)
+        {
+            if (currentBA instanceof CheckingAccount)
+                currentBA.addInterest((currentBA.getBalance() * CHECKING_RATE_OVER_3000));
+            else
+                currentBA.addInterest((currentBA.getBalance() * SAVINGS_RATE_OVER_3000));
+        }
+        else if (dailyAverage >= 2000 && dailyAverage < 3000)
+        {
+            if (currentBA instanceof CheckingAccount)
+                currentBA.addInterest((currentBA.getBalance() * CHECKING_RATE_2000_TO_3000));
+            else
+                currentBA.addInterest((currentBA.getBalance() * SAVINGS_RATE_2000_TO_3000));
+        }
+        else if (dailyAverage < 2000 && dailyAverage >= 1000)
+        {
+            if (currentBA instanceof CheckingAccount)
+                currentBA.addInterest((currentBA.getBalance() * CHECKING_RATE_1000_TO_2000));
+            else
+                currentBA.addInterest((currentBA.getBalance() * SAVINGS_RATE_1000_TO_2000));
         }
         currentBA.setThisMonthsDailyTotals(0);
         System.out.println("MSG HashTable.java: Calculated interest for account " + currentBA.getAccountName()

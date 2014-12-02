@@ -52,6 +52,7 @@ public class TellerMainMenu extends javax.swing.JPanel
         SearchUserButton = new javax.swing.JButton();
         ApplyPenIntButton = new javax.swing.JButton();
         Logout = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
@@ -152,6 +153,12 @@ public class TellerMainMenu extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 200, 0);
         BGPanel.add(ButtonPanel, gridBagConstraints);
 
+        jLabel1.setText("Teller Main Menu");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        BGPanel.add(jLabel1, gridBagConstraints);
+
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
@@ -198,7 +205,7 @@ public class TellerMainMenu extends javax.swing.JPanel
 
     private void ApplyPenIntButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ApplyPenIntButtonActionPerformed
     {//GEN-HEADEREND:event_ApplyPenIntButtonActionPerformed
-
+        GUI.MasterTable.InterestAndPenaltiesTeller();
     }//GEN-LAST:event_ApplyPenIntButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -210,5 +217,6 @@ public class TellerMainMenu extends javax.swing.JPanel
     private javax.swing.JButton InterestPenaltyButton;
     private javax.swing.JButton Logout;
     private javax.swing.JButton SearchUserButton;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

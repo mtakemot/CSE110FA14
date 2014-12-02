@@ -96,7 +96,7 @@ public class UserAccount implements Serializable
     {
         // Get the current time so that DailyTotals can be calculated for the
         // new account
-        DateTime currentTime = new DateTime(DateTimeZone.forID("Etc/UTC"));
+        DateTime currentTime = new DateTime();
         // If the head of the linked list that hold BankAccount is null, then
         // we insert the new BankAccount at the head.
         if (BankAccHead == null)

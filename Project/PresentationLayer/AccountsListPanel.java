@@ -841,7 +841,7 @@ public class AccountsListPanel extends javax.swing.JPanel
                     JOptionPane.showMessageDialog(null, "You must enter a valid number of days.", "ERROR", JOptionPane.ERROR_MESSAGE);
                     return;
                 }
-                DateTime interestDate = new DateTime(DateTimeZone.forID("Etc/UTC"));
+                DateTime interestDate = new DateTime();
                 int row = AccountsTable.getSelectedRow();
                 String bankacc = (String) AccountsTable.getValueAt(row, NAMECOL);
                 GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(bankacc);
