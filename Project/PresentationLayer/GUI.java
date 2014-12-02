@@ -224,12 +224,12 @@ public class GUI extends javax.swing.JFrame
         nowMin = 0;
         nowSec = 0;
         */
-        System.out.println("max hour: " + now.hourOfDay().getMaximumValue());
+       /* System.out.println("max hour: " + now.hourOfDay().getMaximumValue());
         System.out.println("min hour: " + now.hourOfDay().getMinimumValue());
         System.out.println("max min: " + now.minuteOfHour().getMaximumValue());
         System.out.println("min min: " + now.minuteOfHour().getMinimumValue());
         System.out.println("max sec: " + now.secondOfMinute().getMaximumValue());
-        System.out.println("min sec: " + now.secondOfMinute().getMinimumValue());
+        System.out.println("min sec: " + now.secondOfMinute().getMinimumValue());*/
         //automatically, if monthDiff = 0 then, updateBalance x dPassed times
         if(monthDiff == 0){
 
@@ -238,11 +238,37 @@ public class GUI extends javax.swing.JFrame
             }
             int hourDiff = now.hourOfDay().getMaximumValue() - nowHour;
             int minDiff = now.minuteOfHour().getMaximumValue() - nowMin;
-            int secDiff = now.secondOfDay().getMaximumValue()-nowSec;
+            int secDiff = now.secondOfMinute().getMaximumValue()-nowSec;
             //now that the updateBalance x dPassed is done, delay until the next day
             //and schedule task from that delay for every hour
-            int delaySec = (hourDidd*60*60+ minDiff*60+secDiff+1) * 1000;
-            System.out.println("delaySec: " + delaySec);
+            long delaySec = (hourDiff*60*60+ minDiff*60+secDiff+1)*1000;
+            long balanceInterval = (23*60*60+59*60+59)*1000; //balance runs full day intervals
+            timer.scheduleAtFixedRate(updateBalance, delaySec, balanceInterval);
+            
+            
+            int numDaysInMonth = now.dayOfMonth().getMaximumValue();
+            System.out.println("                  number of days in month: " + numDaysInMonth);
+
+            long maxinterval;
+            //maxinterval = 24*(23*60*60+59*60+60)*1000;
+            maxinterval = now.dayOfMonth().getMaximumValue();
+            
+            System.out.println("max interval: " + maxinterval);
+            if(numDaysInMonth > 24){
+                int i = 0;
+                while(i < 24){
+                    
+                }
+            }
+            
+            /*DEBUG
+            System.out.println("                  DateTime now: " + now);
+            System.out.println("delaySec to run hourly off now: " + delaySec + " * 1000");
+            int maxinterval = (23*60*60+59*60+59+1)*1000;
+            System.out.println("Max delay: " + maxDelayNeeded);
+            int maxDelayNeeded = (23*60*60+59*60+59+1)*1000;
+            System.out.println("Max delay: " + maxDelayNeeded);
+            */
         }
         
        /* int daysInMonth = last.dayOfMonth().getMaximumValue();
