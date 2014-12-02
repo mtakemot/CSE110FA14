@@ -1,9 +1,9 @@
 /* TODO:      **please update todo's here if you are working on this file
  *  -11/8 (Michio Takemoto):
- runtime database will sync (IMPORT) to previously created 
+ runtime database will sync (IMPORT) to previously created
  *  database by importing from a Data.ser file that will
  *  be placed in your CSE110FA14 folder (where the README
- *  file that Ryan wrote is found. After user information is edited, AND while 
+ *  file that Ryan wrote is found. After user information is edited, AND while
  *  the user is still logged in, There is an option for the USER to export changes
  *  which will export the runtime database to Data.ser
  **1) What I want to do is, test efficiency of exporting database after every
@@ -16,7 +16,7 @@
  *     changes, then commit
  **3) Test flexibility of serialization for .exe file. If we just put a .exe file on
  *    random cpu and run it, will the Data.ser be inside the .exe, in a temporary
- *    windows folder, or will the program not work properly due to Data.ser not 
+ *    windows folder, or will the program not work properly due to Data.ser not
  *    working right in .exe form
  *
  */
@@ -85,8 +85,8 @@ public class ImportExport
     }
 
     /* We do NOT need to return a Hashtable, because once exporting will NOT
-     * change the runtime hashtable you have, but WILL change the Hashtable 
-     * being saved to file. 
+     * change the runtime hashtable you have, but WILL change the Hashtable
+     * being saved to file.
      * So basically, it will record any changes, and all we need to know if
      * if the export worked correctly or not (TRUE/FALSE)
      */
@@ -96,7 +96,6 @@ public class ImportExport
         /**
          * *DEBUG***
          */
-        
         boolean result = false;
         try
         {
@@ -109,13 +108,13 @@ public class ImportExport
             fileOut.close();
             result = true;
             System.out.println("\n\nTable has " + MasterTable.occ
-                + " User accounts exported \n");
+                    + " User accounts exported \n");
         } catch (IOException i)
         {
             //DEBUG! uncomment the bottom System.err.println when not using for DEBUG
             i.printStackTrace();
             //error for bad or non existing output file
-          //  System.err.println("\n\n\nEXPORT FAILED!\n\n");
+            //  System.err.println("\n\n\nEXPORT FAILED!\n\n");
             result = false;
 
         }

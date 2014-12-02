@@ -598,7 +598,8 @@ public class AccountsListPanel extends javax.swing.JPanel
 
     private void AmountFieldFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_AmountFieldFocusGained
     {//GEN-HEADEREND:event_AmountFieldFocusGained
-        if(AmountField.getText().equals("Amount")) {
+        if (AmountField.getText().equals("Amount"))
+        {
             AmountField.setText("");
         }
     }//GEN-LAST:event_AmountFieldFocusGained
@@ -615,9 +616,10 @@ public class AccountsListPanel extends javax.swing.JPanel
 
     private void EmailEntryFieldFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_EmailEntryFieldFocusGained
     {//GEN-HEADEREND:event_EmailEntryFieldFocusGained
-        if(EmailEntryField.getText().equals("Email Address")) {
+        if (EmailEntryField.getText().equals("Email Address"))
+        {
             EmailEntryField.setText("");
-        }        
+        }
     }//GEN-LAST:event_EmailEntryFieldFocusGained
 
     private void EmailEntryFieldActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EmailEntryFieldActionPerformed
@@ -712,11 +714,10 @@ public class AccountsListPanel extends javax.swing.JPanel
              * 11/30**export upon successful change of data BEGIN*
              */
             GUI.dataout.exportDB(GUI.MasterTable);
-            
+
             /**
              * ********************END*
              */
-
         }
         else
         {
@@ -742,10 +743,10 @@ public class AccountsListPanel extends javax.swing.JPanel
             String bankacc = (String) AccountsTable.getValueAt(row, NAMECOL);
 
             GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(bankacc);
-           /* if (GUI.currentBankAccount == null)
-            {
-                System.out.println("test2");
-            }*/
+            /* if (GUI.currentBankAccount == null)
+             {
+             System.out.println("test2");
+             }*/
             amount_in_deleted_acc = GUI.currentBankAccount.getBalance();
             //System.out.println("test3");
             account_type = GUI.currentBankAccount.getAccountType();

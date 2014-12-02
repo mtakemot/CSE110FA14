@@ -652,8 +652,9 @@ public class CreateAccountPanel extends javax.swing.JPanel
         this.MainPanel = MainPanel;
         initComponents();
     }
-    
-    public void clearfields() {
+
+    public void clearfields()
+    {
         phone.setText("");
         email.setText("");
         confirmPassword.setText("");
@@ -662,15 +663,16 @@ public class CreateAccountPanel extends javax.swing.JPanel
         lastName.setText("");
         firstName.setText("");
     }
-    
-    public void clearerrors() {
+
+    public void clearerrors()
+    {
         FirstNameError.setText("");
         LastNameError.setText("");
         UsernameError.setText("");
         PasswordError.setText("");
         ConfirmPasswordError.setText("");
         EmailError.setText("");
-        PhoneError.setText(""); 
+        PhoneError.setText("");
     }
 
     private void createUserAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserAccountActionPerformed
@@ -690,39 +692,46 @@ public class CreateAccountPanel extends javax.swing.JPanel
         String pass2 = new String(input2);
 
         boolean account_accepted = true;
-        
+
         clearerrors();
-        
-        if (!((name1.length() > 0) && (validateFirstName(name1) == true))) {
+
+        if (!((name1.length() > 0) && (validateFirstName(name1) == true)))
+        {
             FirstNameError.setText("Your first name was entered incorrectly.");
-            account_accepted = false;   
+            account_accepted = false;
         }
-        if (!((name2.length() > 0) && (validateLastName(name2) == true)))  {
+        if (!((name2.length() > 0) && (validateLastName(name2) == true)))
+        {
             LastNameError.setText("Your last name was entered incorrectly.");
             account_accepted = false;
         }
-        if (!((user.length() > 0) && (validate(user) == true))) {
+        if (!((user.length() > 0) && (validate(user) == true)))
+        {
             UsernameError.setText("Your username was entered incorrectly.");
-            account_accepted = false;    
+            account_accepted = false;
         }
-        if (!(((pass1.length()) > 0) && (validatePassword(pass1) == true))) {
+        if (!(((pass1.length()) > 0) && (validatePassword(pass1) == true)))
+        {
             PasswordError.setText("Your password was invalid");
-            account_accepted = false;   
+            account_accepted = false;
         }
-        if (!(pass1.equals(pass2))) {
+        if (!(pass1.equals(pass2)))
+        {
             ConfirmPasswordError.setText("Your password doesn't match confirm password");
-            account_accepted = false; 
+            account_accepted = false;
         }
-        if (!((input3.length() > 0) && (isValidEmailAddress(input3)))) {
+        if (!((input3.length() > 0) && (isValidEmailAddress(input3))))
+        {
             EmailError.setText("Your email was entered incorrectly.");
             account_accepted = false;
         }
-        if (!validatePhoneNumber(phoneNumber)) {
+        if (!validatePhoneNumber(phoneNumber))
+        {
             PhoneError.setText("Your phone number was entered incorrectly.");
-            account_accepted = false; 
+            account_accepted = false;
         }
-        
-        if(account_accepted==true)
+
+        if (account_accepted == true)
         {
             GUI.currentUserAccount = GUI.MasterTable.insertUserAccount(user, input3);
             if (GUI.currentUserAccount != null)
@@ -759,32 +768,32 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
     private void firstNameFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_firstNameFocusGained
     {//GEN-HEADEREND:event_firstNameFocusGained
-      
+
     }//GEN-LAST:event_firstNameFocusGained
 
     private void lastNameFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_lastNameFocusGained
     {//GEN-HEADEREND:event_lastNameFocusGained
-    
+
     }//GEN-LAST:event_lastNameFocusGained
 
     private void usernameFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_usernameFocusGained
     {//GEN-HEADEREND:event_usernameFocusGained
-     
+
     }//GEN-LAST:event_usernameFocusGained
 
     private void passwordFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_passwordFocusGained
     {//GEN-HEADEREND:event_passwordFocusGained
-     
+
     }//GEN-LAST:event_passwordFocusGained
 
     private void confirmPasswordFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_confirmPasswordFocusGained
     {//GEN-HEADEREND:event_confirmPasswordFocusGained
-     
+
     }//GEN-LAST:event_confirmPasswordFocusGained
 
     private void emailFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_emailFocusGained
     {//GEN-HEADEREND:event_emailFocusGained
-   
+
     }//GEN-LAST:event_emailFocusGained
 
     private void phoneFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_phoneFocusGained

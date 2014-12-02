@@ -31,6 +31,7 @@ public class LoginPanel extends javax.swing.JPanel
     private static int numberOfAttempts;
     private static int interval;
     private static Timer timer;
+
     public LoginPanel()
     {
         initComponents();
@@ -384,36 +385,40 @@ public class LoginPanel extends javax.swing.JPanel
         timer = new Timer();
         interval = 5;
 
-        timer.scheduleAtFixedRate(new TimerTask() {
+        timer.scheduleAtFixedRate(new TimerTask()
+        {
 
-            public void run() {
-              
+            public void run()
+            {
+
                 noAccess.setText("Time Remaining: " + Integer.toString(setInterval() + 1));
 
             }
         }, delay, period);
-                       
+
     }
-    
-    private int setInterval() {
-        if (interval == 0) {
+
+    private int setInterval()
+    {
+        if (interval == 0)
+        {
             noAccess.setText("");
             numberOfAttempts = 0;
             timer.cancel();
         }
         return --interval;
     }
-    
+
     private void ForgotPWButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ForgotPWButtonActionPerformed
-                
+
         if (numberOfAttempts == 3)
         {
             JOptionPane.showMessageDialog(this, "You've exceeded the number of attempts. Please try again later.");
             return;
         }
-        
+
         numberOfAttempts++;
-        
+
         String response = JOptionPane.showInputDialog(null, "Enter your email (Attempt " + numberOfAttempts + " of 3: ", "Bank 42", 1);
 
         if (response == null)
@@ -432,19 +437,19 @@ public class LoginPanel extends javax.swing.JPanel
                 newPassword = newPassword.trim();
                 if ((newPassword.length() > 0) && CreateAccountPanel.validatePassword(newPassword))
                 {
-                    GUI.currentUserAccount.setPassword(newPassword);        
+                    GUI.currentUserAccount.setPassword(newPassword);
                     GUI.dataout.exportDB(GUI.MasterTable);
                 }
             }
-            
+
         }
         else
         {
             JOptionPane.showMessageDialog(this, "Incorrect email, please try again.");
-            
+
             if (numberOfAttempts == 3)
             {
-                exceededAttempts();                
+                exceededAttempts();
             }
             return;
         }

@@ -16,12 +16,12 @@ import javax.swing.table.*;
 public class AccountsTableModel extends AbstractTableModel
 {
 
-    private  int colCount = 3;
+    private int colCount = 3;
     private UserAccount current;
     private UserAccountWrapper wrapper;
     Class[] columns = new Class[]
     {
-       String.class, String.class, Double.class
+        String.class, String.class, Double.class
     };
     private String[] columnNames =
     {
@@ -63,7 +63,7 @@ public class AccountsTableModel extends AbstractTableModel
                 wrapper.setAccountName((String) aValue, rowIndex);
                 break;
             //case 0:
-                //wrapper.setAccountNumber((int) aValue, rowIndex);
+            //wrapper.setAccountNumber((int) aValue, rowIndex);
         }
         fireTableCellUpdated(rowIndex, columnIndex);
     }
@@ -84,7 +84,7 @@ public class AccountsTableModel extends AbstractTableModel
                 returnMe = wrapper.getAccountName(rowIndex);
                 break;
             //case 0:
-               // returnMe = wrapper.getAccountNumber(rowIndex);
+            // returnMe = wrapper.getAccountNumber(rowIndex);
         }
         return returnMe;
     }

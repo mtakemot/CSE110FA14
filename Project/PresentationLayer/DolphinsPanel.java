@@ -20,6 +20,7 @@ public class DolphinsPanel extends javax.swing.JPanel
 
     private JPanel MainPanel;
     private GUI mainGUI;
+
     /**
      * Creates new form DolphinsPanel
      */
@@ -27,7 +28,7 @@ public class DolphinsPanel extends javax.swing.JPanel
     {
         initComponents();
     }
-    
+
     public DolphinsPanel(JPanel MainPanel, GUI mainGUI)
     {
         this.MainPanel = MainPanel;
@@ -35,15 +36,12 @@ public class DolphinsPanel extends javax.swing.JPanel
         initComponents();
     }
 
-    
-    
-    public void DolphinsCalled() throws InterruptedException {
+    public void DolphinsCalled() throws InterruptedException
+    {
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
         layout.show(MainPanel, "Login");
     }
-    
-    
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -64,7 +62,6 @@ public class DolphinsPanel extends javax.swing.JPanel
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         add(jLabel1, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
