@@ -242,7 +242,7 @@ public class HashTable implements Serializable
         // XOR the bitshifted value with the original value
         return (shiftedHash ^ hashValue);
     }
-    
+
     /* updates the thisMonthsDailyTotals of each bank account
      ***ARBITRARILY GOES OFF THE BALANCE AT 11:59PM
      * SHOULD BE CALLED IN THREAD
@@ -265,7 +265,7 @@ public class HashTable implements Serializable
                         currentBA = currentUA.getBankAccHead();
                         while (currentBA != null)
                         {
-                          
+
                             System.out.println("MSG HashTable.java: Adding current balance to daily total");
                             dailyTotal = currentBA.getThisMonthsDailyTotals();
                             dailyBalance = currentBA.getBalance();
@@ -279,33 +279,33 @@ public class HashTable implements Serializable
             }
         }
         /*
-        DateTime last = this.getLastInterestDateTime();
-        DateTime now = new DateTime(DateTimeZone.forID("Etc/UTC"));
-        int yearPassed = now.getYear() - last.getYear();
-        int daysPassed = now.getDayOfMonth()-last.getDayOfMonth();
-        int hoursPassed = now.getHourOfDay()-last.getHourOfDay();
-        //add the year passed * 365 days to get totalDays
-        int totalDaysPassed = (now.getDayOfYear()-last.getDayOfYear()) + yearPassed*365;
-        int totalHoursPassed = hoursPassed+totalDaysPassed*24;
-        
-        int daysInMonth = last.dayOfMonth().getMaximumValue(); 
-        int daysUntilMonth = daysInMonth - last.getDayOfMonth();
-        
-        //exit method if an hour did not pass
-        if (totalHoursPassed < 1)
-            return;*/
-        /**debug**
-        System.out.println("Checking num days passed: " + 
-                    now.getDayOfYear() + " - " + last.getDayOfYear() + " = " + daysPassed);
-        //testing if getDayOfYear will truncate min/sec from full day
-        DateTime test = now.plusDays(1);
-        test = test.plusHours(1);
-        test = test.plusSeconds(7);
-        System.out.println("Checking num days passed2222: " + 
-                    test.getDayOfYear() + " - " + now.getDayOfYear() + " = " + (test.getDayOfYear()-now.getDayOfYear()));*/
-        
- 
+         DateTime last = this.getLastInterestDateTime();
+         DateTime now = new DateTime(DateTimeZone.forID("Etc/UTC"));
+         int yearPassed = now.getYear() - last.getYear();
+         int daysPassed = now.getDayOfMonth()-last.getDayOfMonth();
+         int hoursPassed = now.getHourOfDay()-last.getHourOfDay();
+         //add the year passed * 365 days to get totalDays
+         int totalDaysPassed = (now.getDayOfYear()-last.getDayOfYear()) + yearPassed*365;
+         int totalHoursPassed = hoursPassed+totalDaysPassed*24;
+
+         int daysInMonth = last.dayOfMonth().getMaximumValue();
+         int daysUntilMonth = daysInMonth - last.getDayOfMonth();
+
+         //exit method if an hour did not pass
+         if (totalHoursPassed < 1)
+         return;*/
+        /**
+         * debug** System.out.println("Checking num days passed: " +
+         * now.getDayOfYear() + " - " + last.getDayOfYear() + " = " +
+         * daysPassed); //testing if getDayOfYear will truncate min/sec from
+         * full day DateTime test = now.plusDays(1); test = test.plusHours(1);
+         * test = test.plusSeconds(7); System.out.println("Checking num days
+         * passed2222: " + test.getDayOfYear() + " - " + now.getDayOfYear() + "
+         * = " + (test.getDayOfYear()-now.getDayOfYear()));
+         */
+
     }
+
     /**
      * This function will iterate through the entire HashTable and delegate to
      * InterestAndPenaltiesHelper to calculate the penalties and interest on all
@@ -331,8 +331,7 @@ public class HashTable implements Serializable
 
                             System.out.println("MSG HashTable.java: InterestAndPenalties calling helper");
                             InterestAndPenaltiesHelper(currentBA);
-                            
-                            
+
                             currentBA = currentBA.getNext();
                         }
                     }
@@ -347,7 +346,7 @@ public class HashTable implements Serializable
         newDateTime = newDateTime.withSecondOfMinute(newDateTime.secondOfMinute().getMinimumValue());
         System.out.println("newDateTime after interest: " + newDateTime);
         lastInterestDateTime = newDateTime;
-        
+
     }
 
     /**
@@ -359,38 +358,38 @@ public class HashTable implements Serializable
     public void InterestAndPenaltiesHelper(BankAccount currentBA)
     {
         System.out.println("MSG HashTable.java: getting interest for account " + currentBA.getAccountName()
-                            + " with initial balance: " + currentBA.getBalance());
+                + " with initial balance: " + currentBA.getBalance());
         // Divide the running daily total by the total number of days in the
         // month to obtain the daily average
         double dailyAverage = ((currentBA.getThisMonthsDailyTotals()) / (lastInterestDateTime.dayOfMonth().getMaximumValue()));
         if (dailyAverage < 100)
-        {   
-            currentBA.setBalance(currentBA.getBalance() - PENALTY_AMOUNT);
+        {
+            currentBA.subFromBalance(PENALTY_AMOUNT);
         }
         else if (dailyAverage >= 3000)
         {
             if (currentBA instanceof CheckingAccount)
-                currentBA.setBalance(currentBA.getBalance() + (currentBA.getBalance() * CHECKING_RATE_OVER_3000));
+                currentBA.addToBalance((currentBA.getBalance() * CHECKING_RATE_OVER_3000));
             else
-                currentBA.setBalance(currentBA.getBalance() + (currentBA.getBalance() * SAVINGS_RATE_OVER_3000));
+                currentBA.addToBalance((currentBA.getBalance() * SAVINGS_RATE_OVER_3000));
         }
         else if (dailyAverage >= 2000 && dailyAverage < 3000)
         {
             if (currentBA instanceof CheckingAccount)
-                currentBA.setBalance(currentBA.getBalance() + (currentBA.getBalance() * CHECKING_RATE_2000_TO_3000));
+                currentBA.addToBalance((currentBA.getBalance() * CHECKING_RATE_2000_TO_3000));
             else
-                currentBA.setBalance(currentBA.getBalance() + (currentBA.getBalance() * SAVINGS_RATE_2000_TO_3000));
+                currentBA.addToBalance((currentBA.getBalance() * SAVINGS_RATE_2000_TO_3000));
         }
         else if (dailyAverage < 2000 && dailyAverage >= 1000)
         {
             if (currentBA instanceof CheckingAccount)
-                currentBA.setBalance(currentBA.getBalance() + (currentBA.getBalance() * CHECKING_RATE_1000_TO_2000));
+                currentBA.addToBalance((currentBA.getBalance() * CHECKING_RATE_1000_TO_2000));
             else
-                currentBA.setBalance(currentBA.getBalance() + (currentBA.getBalance() * SAVINGS_RATE_1000_TO_2000));
+                currentBA.addToBalance((currentBA.getBalance() * SAVINGS_RATE_1000_TO_2000));
         }
         currentBA.setThisMonthsDailyTotals(0);
         System.out.println("MSG HashTable.java: Calculated interest for account " + currentBA.getAccountName()
-                            + " with FINAL balance: " + currentBA.getBalance());
+                + " with FINAL balance: " + currentBA.getBalance());
     }
 
     /////////////////////////////////////////
@@ -470,6 +469,5 @@ public class HashTable implements Serializable
     {
         return SIZE;
     }
-    
-   
+
 }

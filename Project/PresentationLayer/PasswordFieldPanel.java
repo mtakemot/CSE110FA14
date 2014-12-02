@@ -7,7 +7,6 @@ package PresentationLayer;
 
 import javax.swing.JPanel;
 
-
 /**
  *
  * @author Zack
@@ -17,15 +16,16 @@ public class PasswordFieldPanel extends javax.swing.JPanel
 
     private JPanel MainPanel;
     private GUI mainGUI;
+
     /**
      * Creates new form PasswordFieldPanel
      */
     public PasswordFieldPanel()
     {
         initComponents();
-        
+
     }
-    
+
     public PasswordFieldPanel(JPanel MainPanel, GUI mainGUI)
     {
         this.MainPanel = MainPanel;
@@ -33,16 +33,18 @@ public class PasswordFieldPanel extends javax.swing.JPanel
         initComponents();
     }
 
-    public javax.swing.JPanel GetPanel() {
+    public javax.swing.JPanel GetPanel()
+    {
         return this;
     }
-    
-    public String GetPassword() {
+
+    public String GetPassword()
+    {
         char[] passwordArray = jPasswordField.getPassword();
-            String password = new String(passwordArray);
-        return password; 
+        String password = new String(passwordArray);
+        return password;
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -105,7 +107,6 @@ public class PasswordFieldPanel extends javax.swing.JPanel
     {//GEN-HEADEREND:event_jPasswordFieldKeyPressed
 
     }//GEN-LAST:event_jPasswordFieldKeyPressed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel EnterPassword;

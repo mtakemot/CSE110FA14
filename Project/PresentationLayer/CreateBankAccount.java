@@ -99,37 +99,43 @@ public class CreateBankAccount extends javax.swing.JPanel
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    public javax.swing.JPanel getCreateBankAccountPanel() {
+    public javax.swing.JPanel getCreateBankAccountPanel()
+    {
         return this;
     }
-    
-    public void CreateAccount() {
-        
-        if (AccountNameField.getText().length() == 0) {
-            JOptionPane.showMessageDialog(null, "Please Enter An Account Name","Bank 42",1);
+
+    public void CreateAccount()
+    {
+
+        if (AccountNameField.getText().length() == 0)
+        {
+            JOptionPane.showMessageDialog(null, "Please Enter An Account Name", "Bank 42", 1);
         }
-            
-        else if(GUI.currentUserAccount.findBankAccount(AccountNameField.getText()) != null) {
+
+        else if (GUI.currentUserAccount.findBankAccount(AccountNameField.getText()) != null)
+        {
             JOptionPane.showMessageDialog(null, "You Have An Existing Bank Account With That Name"
-                    + "\n Please Choose A Valid Name","Bank 42",1);
+                    + "\n Please Choose A Valid Name", "Bank 42", 1);
             AccountNameField.setText("");
         }
-        
-        else if(nameIsValid(AccountNameField.getText())) {
+
+        else if (nameIsValid(AccountNameField.getText()))
+        {
             GUI.currentUserAccount.insertBankAccount(0, AccountNameField.getText(), TypeCombo.getSelectedItem().toString());
             CardLayout layout = (CardLayout) (MainPanel.getLayout());
             mainGUI.getAccList().update();
             JOptionPane.showMessageDialog(null, TypeCombo.getSelectedItem() + " Account: " + AccountNameField.getText() + " successfully created");
             layout.show(MainPanel, "AccList");
         }
-        
-        else {
-            JOptionPane.showMessageDialog(null, "Invalid input.\nOnly alphanumeric characters are allowed.\nNo spaces.","Bank 42",1);
+
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Invalid input.\nOnly alphanumeric characters are allowed.\nNo spaces.", "Bank 42", 1);
             AccountNameField.setText("");
         }
-       
+
     }
-    
+
     private void AccountNameFieldFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_AccountNameFieldFocusGained
     {//GEN-HEADEREND:event_AccountNameFieldFocusGained
         AccountNameField.setText("");
@@ -138,17 +144,18 @@ public class CreateBankAccount extends javax.swing.JPanel
     private void AccountNameFieldActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_AccountNameFieldActionPerformed
     {//GEN-HEADEREND:event_AccountNameFieldActionPerformed
         /*if (AccountNameField.getText().length() > 0 && GUI.currentUserAccount.findBankAccount(AccountNameField.getText()) == null)
-        {
-            GUI.currentUserAccount.insertBankAccount(0, AccountNameField.getText(), TypeCombo.getSelectedItem().toString());
-            CardLayout layout = (CardLayout) (MainPanel.getLayout());
-            layout.show(MainPanel, "AccList");
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(null, "Invalid input");
-            AccountNameField.setText("");
-        }*/
+         {
+         GUI.currentUserAccount.insertBankAccount(0, AccountNameField.getText(), TypeCombo.getSelectedItem().toString());
+         CardLayout layout = (CardLayout) (MainPanel.getLayout());
+         layout.show(MainPanel, "AccList");
+         }
+         else
+         {
+         JOptionPane.showMessageDialog(null, "Invalid input");
+         AccountNameField.setText("");
+         }*/
     }//GEN-LAST:event_AccountNameFieldActionPerformed
+
     private boolean nameIsValid(String n)
     {
         for (int i = 0; i < n.length(); i++)

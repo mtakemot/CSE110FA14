@@ -39,8 +39,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 //import org.joda.time.DateTimeZone;
 import org.joda.time.*;
-import static java.lang.Math.abs;
-
+//import static java.lang.Math.abs
 
 public class GUI extends javax.swing.JFrame
 {
@@ -184,8 +183,9 @@ public class GUI extends javax.swing.JFrame
             currentUserAccount = MasterTable.findUserAccount("ee");
             currentBankAccount = currentUserAccount.findBankAccount("ee1");
         }
-        
-        if(dataout.exportDB(MasterTable)){
+
+        if (dataout.exportDB(MasterTable))
+        {
             System.out.println("MSG GUI.JAVA: updated DB, proceed to set up TimerTask\n");
         }
         else
@@ -198,129 +198,72 @@ public class GUI extends javax.swing.JFrame
     public static void initTask()
     {
         Timer timer = new Timer();
-        
+
         //begin setup for balanceTask thread
         TimerTask updateBalance = new balanceTask();
+        int balanceInterval = (23 * 60 * 60 + 59 * 60 + 60) * 1000;
+        System.out.println("balanceInterval: " + balanceInterval);
         TimerTask updateInterest = new interestTask();
-        //get the DateTime for the 
+        int interestInterval = (23 * 60 * 60 + 59 * 60 + 60) * 1000; //multiply with current # day in month
+        System.out.println("interestInterval: " + balanceInterval);
+
+        //get the DateTime for the
         DateTime last = MasterTable.getLastInterestDateTime();
-        DateTime now = new DateTime(DateTimeZone.forID("Etc/UTC"));
-        int numDaysInMonth = now.dayOfMonth().getMaximumValue();
-        
-        
-        //month difference
+        System.out.println("init Last: " + last);
         int lastMonth = last.getMonthOfYear();
+
+        DateTime now = new DateTime(DateTimeZone.forID("Etc/UTC"));
+        System.out.println("init now: " + now);
         int nowMonth = now.getMonthOfYear();
+        Seconds s = Seconds.secondsBetween(last, now);
+        int sPassed = s.getSeconds();
+        System.out.println("Seconds passed: " + sPassed);
+        int taskdelay = sPassed;
+        int hourDiff = sPassed / (60 * 60);
+        sPassed = sPassed - hourDiff * 3600;
+        int minDiff = sPassed / 60;
+        sPassed = sPassed - minDiff * 60;
+        int secDiff = sPassed;
+
+        ///    timer.scheduleAtFixedRate(updateBalance, taskdelay, balanceInterval);
+        DateTime temp = last.withSecondOfMinute(last.plusSeconds(secDiff).getSecondOfMinute());
+        temp = temp.withMinuteOfHour(temp.plusMinutes(minDiff).getMinuteOfHour());
+        temp = temp.withHourOfDay(temp.plusHours(hourDiff).getHourOfDay());
+        MasterTable.setLastInterestDateTime(temp);
+        System.out.println("temp is: " + temp);
+        last = MasterTable.getLastInterestDateTime();
+        System.out.println("new last should be same as now: " + last);
+        //NOW we got rid of the smaller time variables we do not need to monitor
+        //HOWEVER, if adding the increments did increase day/time run the tasks
+
+        //month difference
         int monthDiff = nowMonth - lastMonth;
-        
-        //days passed, subtract the number of daysleft in lastmonth
-        Days d = Days.daysBetween(last, now);
-        int dPassed = d.getDays();
-        int nowHour = now.getHourOfDay();
-        int nowMin = now.getMinuteOfHour();
-        int nowSec = now.getSecondOfMinute();
-        
-        //automatically, if monthDiff = 0 then, updateBalance x dPassed times
-        if(monthDiff == 0){
 
-            for (int i = 0; i < dPassed; i++){
-                updateBalance.run();
-            }
-            
-            int hourDiff = abs(Hours.hoursBetween(last, now).getHours());
-            int minDiff = abs(Minutes.minutesBetween(last,now).getMinutes());
-            int secDiff = abs(Seconds.secondsBetween(last,now).getSeconds());
-            //now that the updateBalance x dPassed is done, delay until the next day
-            //and schedule task from that delay for every hour
-            long delaySec = (hourDiff*60*60+ minDiff*60+secDiff+1)*1000;
-            long balanceInterval = (23*60*60+59*60+60)*1000; //balance runs full day intervals
-            System.out.println(" balanceInterval: " + balanceInterval);
-            long interestInterval = numDaysInMonth * balanceInterval;
-            System.out.println("interestInterval: " + interestInterval);
+        int daysInMonth = last.dayOfMonth().getMaximumValue();
+        for (int i = 0; i < monthDiff; i++)
+        {
 
-            timer.scheduleAtFixedRate(updateBalance, delaySec, balanceInterval);
-            timer.scheduleAtFixedRate(updateInterest, delaySec, interestInterval);
-            
-            DateTime temp = now.plusHours(hourDiff);
-            temp = now.plusMinutes(minDiff);
-            temp = now.plusSeconds(secDiff);
-            System.out.println("delay until: " + temp );
-            
         }
-        
-       /* int daysInMonth = last.dayOfMonth().getMaximumValue();
-        System.out.println("Days in this month: " + daysInMonth);
-        //int daysLeft = daysInMonth - last.getDayOfMonth();
-        System.out.println("Days until next month: " + daysLeft);*/
-        /***CASE 1***
-         * If the user has not been on for over a day, his current balance 
-         * is added to his average total X amount of times 
-         * transfers from other Users need to be implemented through Transfers
-         *
-        while(dPassed > 0){
-            updateBalance.run();
-            dPassed--;
-        }*/
-        
-        /***CASE 2 ***
-         * User has been on within the last 24 hours (a day has not passsed
-         */
-        
+
+        timer.scheduleAtFixedRate(updateBalance, taskdelay, balanceInterval);
+        timer.scheduleAtFixedRate(updateInterest, taskdelay, interestInterval);
+
         /*
-        //compare LocalDate or LocalTime obj so we can call period class's LocalDat/Time comparators
-        LocalDate dateLast = last.toLocalDate();
-        LocalDate dateNow = now.toLocalDate();
-        
-        LocalTime timeLast = last.toLocalTime();
-        LocalTime timeNow = now.toLocalTime();
-        
-        Days days = Days.daysBetween(dateLast, dateNow);
-        int daysPassed = days.getDays();
-        System.out.println("Days passed: " + daysPassed);
-        Minutes min = Minutes.minutesBetween(last, now);
-        int minsPassed = min.getMinutes();
-        System.out.println("Min passed: " + minsPassed);
-        
-        LocalDateTime last1 = last.toLocalDateTime();
-        System.out.println ("TESTING localDateTime conversion: "+ last1);
-        LocalDate date = last1.toLocalDate();
-        LocalTime time = last1.toLocalTime();
-        System.out.println ("TESTING localDate conversion: " + date);
-        System.out.println ("TESTING localTime conversion: " + time);*/
-       
-        
-        
-                
-        
-        /********This comment block was for testing multithreads with interestAndPenalty ONLY (not using balanceUpdate********
-        TimerTask task = new interestTask();
-        Timer timer = new Timer();
-        DateTime initTime = new DateTime(DateTimeZone.forID("Etc/UTC"));
-        int initMin = initTime.getMinuteOfHour();
-        int initSec = initTime.getSecondOfMinute();
-        //increment values for sec/min. For sec, add 1 to carry over to min which will carry to hour
-        int incrementSec = initTime.minuteOfHour().getMaximumValue() - initSec + 1;
-        int incrementMin = initTime.minuteOfHour().getMaximumValue() - initMin;
-        int taskDelay = 60 * initMin + initSec;
+         int minDiff = abs(Minutes.minutesBetween(last, now).getMinutes());
+         int secDiff = abs(Seconds.secondsBetween(last, now).getSeconds());*/
+        //  System.out.println()
+        //now that the updateBalance x dPassed is done, delay until the next day
+        //and schedule task from that delay for every hour
+            /*long delaySec = (hourDiff*60*60+ minDiff*60+secDiff+1)*1000;
+         long balanceInterval = (23*60*60+59*60+60)*1000; //balance runs full day intervals
+         System.out.println(" balanceInterval: " + balanceInterval);
+         long interestInterval = numDaysInMonth * balanceInterval;
+         System.out.println("interestInterval: " + interestInterval);
 
-        //set next hour time to the initTime plus increment
-        DateTime nextHour = initTime;
-        //nextHour = nextHour.plusSeconds(incrementSec);
-        nextHour = nextHour.plusSeconds(incrementSec);
-        nextHour = nextHour.plusMinutes(incrementMin);
-        System.out.println("initial minutes is: " + initMin);
-        System.out.println("initial seconds is: " + initSec);
-        System.out.println("initial time: " + initTime);
-        System.out.println("next hour is at: " + nextHour);
-        System.out.println("delay for task schedule: 20sec");// + taskDelay);
-        System.out.println("Task will run every 30 secs from the delay");
+         timer.scheduleAtFixedRate(updateBalance, delaySec, balanceInterval);
+         timer.scheduleAtFixedRate(updateInterest, delaySec, interestInterval);*/
+        System.out.println("TaskTimer scheduled by main. Now initializing GUI");
 
-       //task.run();
-
-        timer.scheduleAtFixedRate(task, 1000 * 10, 1000 * 15); */
-        
-        System.out.println("TaskTimer scheduled in main. Now initializing GUI");
-      
         /* ***********************************************************************/
     }
 
@@ -445,11 +388,14 @@ public class GUI extends javax.swing.JFrame
             {
 
                 final GUI mainGUI = new GUI();
-                
-                /******initialize interestTask.java GUI object with mainGUI to use table change**/
+
+                /**
+                 * ****initialize interestTask.java GUI object with mainGUI to
+                 * use table change*
+                 */
                 initDB();
-                
-                //update daily total BEFORE interest. 
+
+                //update daily total BEFORE interest.
                 initTask();
                 // This grabs the MainPanel and stores it in a variable so that
                 // we have easy access to it
@@ -542,7 +488,7 @@ public class GUI extends javax.swing.JFrame
     {
         this.DolphinsPanel = DolphinsPanel;
     }
-    
+
     public TransactionHistoryPanel getTransPanel()
     {
         return TransPanel;
@@ -662,8 +608,6 @@ public class GUI extends javax.swing.JFrame
     {
         this.TellerAP = TellerAP;
     }
-    
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel MainPanel;

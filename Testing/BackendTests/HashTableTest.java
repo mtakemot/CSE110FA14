@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 /**
  *
  * @author Nishat rustagi
- * @author Tahereh Masoumi  Last Updated Nov. 30 2014
+ * @author Tahereh Masoumi Last Updated Nov. 30 2014
  */
 public class HashTableTest
 {
@@ -135,7 +135,7 @@ public class HashTableTest
         }
 
     }
-    
+
     @Test
     public void testFindUserAccountByEmail()
 

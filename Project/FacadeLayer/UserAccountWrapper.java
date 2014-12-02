@@ -60,10 +60,9 @@ public class UserAccountWrapper
     // BELOW ARE JUST SETTERS AND GETTERS ///
     /////////////////////////////////////////
     /*public int getAccountNumber(int index)
-    {
-        return accountNumbers[index];
-    }*/
-
+     {
+     return accountNumbers[index];
+     }*/
     public String getAccountName(int index)
     {
         return accountNames[index];
@@ -110,8 +109,7 @@ public class UserAccountWrapper
     }
 
     /*public void setAccountNumber(int newNumber, int rowIndex)
-    {
-        this.accountNumbers[rowIndex] = newNumber;
-    }*/
-
+     {
+     this.accountNumbers[rowIndex] = newNumber;
+     }*/
 }

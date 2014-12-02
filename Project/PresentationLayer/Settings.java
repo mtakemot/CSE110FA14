@@ -36,13 +36,13 @@ public class Settings extends javax.swing.JPanel
     {
         this.MainPanel = MainPanel;
         this.mainGUI = mainGUI;
-                        
+
         initComponents();
     }
 
     public void updateUserLabel()
     {
-        BAUserNameLabel.setText("User " + GUI.currentUserAccount.getUserName());        
+        BAUserNameLabel.setText("User " + GUI.currentUserAccount.getUserName());
     }
 
     /**
@@ -930,11 +930,11 @@ public class Settings extends javax.swing.JPanel
                     GUI.MasterTable.deleteUserAccount(GUI.currentUserAccount.getUserName());
                     GUI.currentBankAccount = null;
                     GUI.currentUserAccount = null;
-                    
+
                     CardLayout layout = (CardLayout) (MainPanel.getLayout());
                     layout.show(MainPanel, "Login");
                     //mainGUI.getDolphinsPanel().DolphinsCalled();
-                    
+
                 }
             }
         }
@@ -962,9 +962,9 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel3MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel3MouseEntered
     {//GEN-HEADEREND:event_jPanel3MouseEntered
-        jPanel3.setBackground(new Color(255,255,255));
-        jPanel9.setBackground(new Color(255,255,255));
-        jPanel15.setBackground(new Color(255,255,255));
+        jPanel3.setBackground(new Color(255, 255, 255));
+        jPanel9.setBackground(new Color(255, 255, 255));
+        jPanel15.setBackground(new Color(255, 255, 255));
         thefont = EditLabel.getFont();
         Font font = EditLabel.getFont();
         Map attributes = font.getAttributes();
@@ -974,25 +974,25 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel3MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel3MouseExited
     {//GEN-HEADEREND:event_jPanel3MouseExited
-        jPanel3.setBackground(new Color(0,255,255));
-        jPanel9.setBackground(new Color(0,255,255));
-        jPanel15.setBackground(new Color(0,255,255));
+        jPanel3.setBackground(new Color(0, 255, 255));
+        jPanel9.setBackground(new Color(0, 255, 255));
+        jPanel15.setBackground(new Color(0, 255, 255));
         EditLabel.setFont(thefont);
     }//GEN-LAST:event_jPanel3MouseExited
 
     private void EditLabelMouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabelMouseExited
     {//GEN-HEADEREND:event_EditLabelMouseExited
-        jPanel3.setBackground(new Color(0,255,255));
-        jPanel9.setBackground(new Color(0,255,255));
-        jPanel15.setBackground(new Color(0,255,255));
+        jPanel3.setBackground(new Color(0, 255, 255));
+        jPanel9.setBackground(new Color(0, 255, 255));
+        jPanel15.setBackground(new Color(0, 255, 255));
         EditLabel.setFont(thefont);
     }//GEN-LAST:event_EditLabelMouseExited
 
     private void EditLabelMouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabelMouseEntered
     {//GEN-HEADEREND:event_EditLabelMouseEntered
-        jPanel3.setBackground(new Color(255,255,255));
-        jPanel9.setBackground(new Color(255,255,255));
-        jPanel15.setBackground(new Color(255,255,255));
+        jPanel3.setBackground(new Color(255, 255, 255));
+        jPanel9.setBackground(new Color(255, 255, 255));
+        jPanel15.setBackground(new Color(255, 255, 255));
         thefont = EditLabel.getFont();
         Font font = EditLabel.getFont();
         Map attributes = font.getAttributes();
@@ -1002,9 +1002,9 @@ public class Settings extends javax.swing.JPanel
 
     private void EditLabel1MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel1MouseEntered
     {//GEN-HEADEREND:event_EditLabel1MouseEntered
-        jPanel4.setBackground(new Color(255,255,255));
-        jPanel10.setBackground(new Color(255,255,255));
-        jPanel16.setBackground(new Color(255,255,255));
+        jPanel4.setBackground(new Color(255, 255, 255));
+        jPanel10.setBackground(new Color(255, 255, 255));
+        jPanel16.setBackground(new Color(255, 255, 255));
         thefont = EditLabel.getFont();
         Font font = EditLabel.getFont();
         Map attributes = font.getAttributes();
@@ -1014,17 +1014,17 @@ public class Settings extends javax.swing.JPanel
 
     private void EditLabel1MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel1MouseExited
     {//GEN-HEADEREND:event_EditLabel1MouseExited
-        jPanel4.setBackground(new Color(0,255,255));
-        jPanel10.setBackground(new Color(0,255,255));
-        jPanel16.setBackground(new Color(0,255,255));
+        jPanel4.setBackground(new Color(0, 255, 255));
+        jPanel10.setBackground(new Color(0, 255, 255));
+        jPanel16.setBackground(new Color(0, 255, 255));
         EditLabel1.setFont(thefont);
     }//GEN-LAST:event_EditLabel1MouseExited
 
     private void EditLabel2MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel2MouseEntered
     {//GEN-HEADEREND:event_EditLabel2MouseEntered
-        jPanel5.setBackground(new Color(255,255,255));
-        jPanel12.setBackground(new Color(255,255,255));
-        jPanel17.setBackground(new Color(255,255,255));
+        jPanel5.setBackground(new Color(255, 255, 255));
+        jPanel12.setBackground(new Color(255, 255, 255));
+        jPanel17.setBackground(new Color(255, 255, 255));
         thefont = EditLabel.getFont();
         Font font = EditLabel.getFont();
         Map attributes = font.getAttributes();
@@ -1034,17 +1034,17 @@ public class Settings extends javax.swing.JPanel
 
     private void EditLabel2MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel2MouseExited
     {//GEN-HEADEREND:event_EditLabel2MouseExited
-        jPanel5.setBackground(new Color(0,255,255));
-        jPanel12.setBackground(new Color(0,255,255));
-        jPanel17.setBackground(new Color(0,255,255));
+        jPanel5.setBackground(new Color(0, 255, 255));
+        jPanel12.setBackground(new Color(0, 255, 255));
+        jPanel17.setBackground(new Color(0, 255, 255));
         EditLabel2.setFont(thefont);
     }//GEN-LAST:event_EditLabel2MouseExited
 
     private void EditLabel3MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel3MouseEntered
     {//GEN-HEADEREND:event_EditLabel3MouseEntered
-        jPanel6.setBackground(new Color(255,255,255));
-        jPanel13.setBackground(new Color(255,255,255));
-        jPanel18.setBackground(new Color(255,255,255));
+        jPanel6.setBackground(new Color(255, 255, 255));
+        jPanel13.setBackground(new Color(255, 255, 255));
+        jPanel18.setBackground(new Color(255, 255, 255));
         thefont = EditLabel.getFont();
         Font font = EditLabel.getFont();
         Map attributes = font.getAttributes();
@@ -1054,17 +1054,17 @@ public class Settings extends javax.swing.JPanel
 
     private void EditLabel3MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel3MouseExited
     {//GEN-HEADEREND:event_EditLabel3MouseExited
-        jPanel6.setBackground(new Color(0,255,255));
-        jPanel13.setBackground(new Color(0,255,255));
-        jPanel18.setBackground(new Color(0,255,255));
+        jPanel6.setBackground(new Color(0, 255, 255));
+        jPanel13.setBackground(new Color(0, 255, 255));
+        jPanel18.setBackground(new Color(0, 255, 255));
         EditLabel3.setFont(thefont);
     }//GEN-LAST:event_EditLabel3MouseExited
 
     private void EditLabel4MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel4MouseEntered
     {//GEN-HEADEREND:event_EditLabel4MouseEntered
-        jPanel7.setBackground(new Color(255,255,255));
-        jPanel11.setBackground(new Color(255,255,255));
-        jPanel19.setBackground(new Color(255,255,255));
+        jPanel7.setBackground(new Color(255, 255, 255));
+        jPanel11.setBackground(new Color(255, 255, 255));
+        jPanel19.setBackground(new Color(255, 255, 255));
         thefont = EditLabel.getFont();
         Font font = EditLabel.getFont();
         Map attributes = font.getAttributes();
@@ -1074,17 +1074,17 @@ public class Settings extends javax.swing.JPanel
 
     private void EditLabel4MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel4MouseExited
     {//GEN-HEADEREND:event_EditLabel4MouseExited
-        jPanel7.setBackground(new Color(0,255,255));
-        jPanel11.setBackground(new Color(0,255,255));
-        jPanel19.setBackground(new Color(0,255,255));
+        jPanel7.setBackground(new Color(0, 255, 255));
+        jPanel11.setBackground(new Color(0, 255, 255));
+        jPanel19.setBackground(new Color(0, 255, 255));
         EditLabel4.setFont(thefont);
     }//GEN-LAST:event_EditLabel4MouseExited
 
     private void EditLabel5MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel5MouseEntered
     {//GEN-HEADEREND:event_EditLabel5MouseEntered
-        jPanel8.setBackground(new Color(255,255,255));
-        jPanel14.setBackground(new Color(255,255,255));
-        jPanel20.setBackground(new Color(255,255,255));
+        jPanel8.setBackground(new Color(255, 255, 255));
+        jPanel14.setBackground(new Color(255, 255, 255));
+        jPanel20.setBackground(new Color(255, 255, 255));
         thefont = EditLabel.getFont();
         Font font = EditLabel.getFont();
         Map attributes = font.getAttributes();
@@ -1094,17 +1094,17 @@ public class Settings extends javax.swing.JPanel
 
     private void EditLabel5MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel5MouseExited
     {//GEN-HEADEREND:event_EditLabel5MouseExited
-        jPanel8.setBackground(new Color(0,255,255));
-        jPanel14.setBackground(new Color(0,255,255));
-        jPanel20.setBackground(new Color(0,255,255));
+        jPanel8.setBackground(new Color(0, 255, 255));
+        jPanel14.setBackground(new Color(0, 255, 255));
+        jPanel20.setBackground(new Color(0, 255, 255));
         EditLabel5.setFont(thefont);
     }//GEN-LAST:event_EditLabel5MouseExited
 
     private void jPanel9MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel9MouseEntered
     {//GEN-HEADEREND:event_jPanel9MouseEntered
-        jPanel3.setBackground(new Color(255,255,255));
-        jPanel9.setBackground(new Color(255,255,255));
-        jPanel15.setBackground(new Color(255,255,255));
+        jPanel3.setBackground(new Color(255, 255, 255));
+        jPanel9.setBackground(new Color(255, 255, 255));
+        jPanel15.setBackground(new Color(255, 255, 255));
         thefont = EditLabel.getFont();
         Font font = EditLabel.getFont();
         Map attributes = font.getAttributes();
@@ -1114,17 +1114,17 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel9MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel9MouseExited
     {//GEN-HEADEREND:event_jPanel9MouseExited
-        jPanel3.setBackground(new Color(0,255,255));
-        jPanel9.setBackground(new Color(0,255,255));
-        jPanel15.setBackground(new Color(0,255,255));
+        jPanel3.setBackground(new Color(0, 255, 255));
+        jPanel9.setBackground(new Color(0, 255, 255));
+        jPanel15.setBackground(new Color(0, 255, 255));
         EditLabel.setFont(thefont);
     }//GEN-LAST:event_jPanel9MouseExited
 
     private void jPanel4MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel4MouseEntered
     {//GEN-HEADEREND:event_jPanel4MouseEntered
-        jPanel4.setBackground(new Color(255,255,255));
-        jPanel10.setBackground(new Color(255,255,255));
-        jPanel16.setBackground(new Color(255,255,255));
+        jPanel4.setBackground(new Color(255, 255, 255));
+        jPanel10.setBackground(new Color(255, 255, 255));
+        jPanel16.setBackground(new Color(255, 255, 255));
         thefont = EditLabel.getFont();
         Font font = EditLabel.getFont();
         Map attributes = font.getAttributes();
@@ -1134,17 +1134,17 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel4MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel4MouseExited
     {//GEN-HEADEREND:event_jPanel4MouseExited
-        jPanel4.setBackground(new Color(0,255,255));
-        jPanel10.setBackground(new Color(0,255,255));
-        jPanel16.setBackground(new Color(0,255,255));
+        jPanel4.setBackground(new Color(0, 255, 255));
+        jPanel10.setBackground(new Color(0, 255, 255));
+        jPanel16.setBackground(new Color(0, 255, 255));
         EditLabel1.setFont(thefont);
     }//GEN-LAST:event_jPanel4MouseExited
 
     private void jPanel10MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel10MouseEntered
     {//GEN-HEADEREND:event_jPanel10MouseEntered
-        jPanel4.setBackground(new Color(255,255,255));
-        jPanel10.setBackground(new Color(255,255,255));
-        jPanel16.setBackground(new Color(255,255,255));
+        jPanel4.setBackground(new Color(255, 255, 255));
+        jPanel10.setBackground(new Color(255, 255, 255));
+        jPanel16.setBackground(new Color(255, 255, 255));
         thefont = EditLabel.getFont();
         Font font = EditLabel.getFont();
         Map attributes = font.getAttributes();
@@ -1154,9 +1154,9 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel10MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel10MouseExited
     {//GEN-HEADEREND:event_jPanel10MouseExited
-        jPanel4.setBackground(new Color(0,255,255));
-        jPanel10.setBackground(new Color(0,255,255));
-        jPanel16.setBackground(new Color(0,255,255));
+        jPanel4.setBackground(new Color(0, 255, 255));
+        jPanel10.setBackground(new Color(0, 255, 255));
+        jPanel16.setBackground(new Color(0, 255, 255));
         EditLabel1.setFont(thefont);
     }//GEN-LAST:event_jPanel10MouseExited
 
@@ -1219,9 +1219,9 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel7MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel7MouseEntered
     {//GEN-HEADEREND:event_jPanel7MouseEntered
-        jPanel7.setBackground(new Color(255,255,255));
-        jPanel11.setBackground(new Color(255,255,255));
-        jPanel19.setBackground(new Color(255,255,255));
+        jPanel7.setBackground(new Color(255, 255, 255));
+        jPanel11.setBackground(new Color(255, 255, 255));
+        jPanel19.setBackground(new Color(255, 255, 255));
         thefont = EditLabel.getFont();
         Font font = EditLabel.getFont();
         Map attributes = font.getAttributes();
@@ -1231,17 +1231,17 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel7MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel7MouseExited
     {//GEN-HEADEREND:event_jPanel7MouseExited
-        jPanel7.setBackground(new Color(0,255,255));
-        jPanel11.setBackground(new Color(0,255,255));
-        jPanel19.setBackground(new Color(0,255,255));
+        jPanel7.setBackground(new Color(0, 255, 255));
+        jPanel11.setBackground(new Color(0, 255, 255));
+        jPanel19.setBackground(new Color(0, 255, 255));
         EditLabel4.setFont(thefont);
     }//GEN-LAST:event_jPanel7MouseExited
 
     private void jPanel11MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel11MouseEntered
     {//GEN-HEADEREND:event_jPanel11MouseEntered
-        jPanel7.setBackground(new Color(255,255,255));
-        jPanel11.setBackground(new Color(255,255,255));
-        jPanel19.setBackground(new Color(255,255,255));
+        jPanel7.setBackground(new Color(255, 255, 255));
+        jPanel11.setBackground(new Color(255, 255, 255));
+        jPanel19.setBackground(new Color(255, 255, 255));
         thefont = EditLabel.getFont();
         Font font = EditLabel.getFont();
         Map attributes = font.getAttributes();
@@ -1251,17 +1251,17 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel11MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel11MouseExited
     {//GEN-HEADEREND:event_jPanel11MouseExited
-        jPanel7.setBackground(new Color(0,255,255));
-        jPanel11.setBackground(new Color(0,255,255));
-        jPanel19.setBackground(new Color(0,255,255));
+        jPanel7.setBackground(new Color(0, 255, 255));
+        jPanel11.setBackground(new Color(0, 255, 255));
+        jPanel19.setBackground(new Color(0, 255, 255));
         EditLabel4.setFont(thefont);
     }//GEN-LAST:event_jPanel11MouseExited
 
     private void jPanel5MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel5MouseEntered
     {//GEN-HEADEREND:event_jPanel5MouseEntered
-        jPanel5.setBackground(new Color(255,255,255));
-        jPanel12.setBackground(new Color(255,255,255));
-        jPanel17.setBackground(new Color(255,255,255));
+        jPanel5.setBackground(new Color(255, 255, 255));
+        jPanel12.setBackground(new Color(255, 255, 255));
+        jPanel17.setBackground(new Color(255, 255, 255));
         thefont = EditLabel.getFont();
         Font font = EditLabel.getFont();
         Map attributes = font.getAttributes();
@@ -1271,17 +1271,17 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel5MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel5MouseExited
     {//GEN-HEADEREND:event_jPanel5MouseExited
-        jPanel5.setBackground(new Color(0,255,255));
-        jPanel12.setBackground(new Color(0,255,255));
-        jPanel17.setBackground(new Color(0,255,255));
+        jPanel5.setBackground(new Color(0, 255, 255));
+        jPanel12.setBackground(new Color(0, 255, 255));
+        jPanel17.setBackground(new Color(0, 255, 255));
         EditLabel2.setFont(thefont);
     }//GEN-LAST:event_jPanel5MouseExited
 
     private void jPanel12MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel12MouseEntered
     {//GEN-HEADEREND:event_jPanel12MouseEntered
-        jPanel5.setBackground(new Color(255,255,255));
-        jPanel12.setBackground(new Color(255,255,255));
-        jPanel17.setBackground(new Color(255,255,255));
+        jPanel5.setBackground(new Color(255, 255, 255));
+        jPanel12.setBackground(new Color(255, 255, 255));
+        jPanel17.setBackground(new Color(255, 255, 255));
         thefont = EditLabel.getFont();
         Font font = EditLabel.getFont();
         Map attributes = font.getAttributes();
@@ -1291,17 +1291,17 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel12MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel12MouseExited
     {//GEN-HEADEREND:event_jPanel12MouseExited
-        jPanel5.setBackground(new Color(0,255,255));
-        jPanel12.setBackground(new Color(0,255,255));
-        jPanel17.setBackground(new Color(0,255,255));
+        jPanel5.setBackground(new Color(0, 255, 255));
+        jPanel12.setBackground(new Color(0, 255, 255));
+        jPanel17.setBackground(new Color(0, 255, 255));
         EditLabel2.setFont(thefont);
     }//GEN-LAST:event_jPanel12MouseExited
 
     private void jPanel6MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel6MouseEntered
     {//GEN-HEADEREND:event_jPanel6MouseEntered
-        jPanel6.setBackground(new Color(255,255,255));
-        jPanel13.setBackground(new Color(255,255,255));
-        jPanel18.setBackground(new Color(255,255,255));
+        jPanel6.setBackground(new Color(255, 255, 255));
+        jPanel13.setBackground(new Color(255, 255, 255));
+        jPanel18.setBackground(new Color(255, 255, 255));
         thefont = EditLabel.getFont();
         Font font = EditLabel.getFont();
         Map attributes = font.getAttributes();
@@ -1311,9 +1311,9 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel13MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel13MouseEntered
     {//GEN-HEADEREND:event_jPanel13MouseEntered
-        jPanel6.setBackground(new Color(255,255,255));
-        jPanel13.setBackground(new Color(255,255,255));
-        jPanel18.setBackground(new Color(255,255,255));
+        jPanel6.setBackground(new Color(255, 255, 255));
+        jPanel13.setBackground(new Color(255, 255, 255));
+        jPanel18.setBackground(new Color(255, 255, 255));
         thefont = EditLabel.getFont();
         Font font = EditLabel.getFont();
         Map attributes = font.getAttributes();
@@ -1323,25 +1323,25 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel6MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel6MouseExited
     {//GEN-HEADEREND:event_jPanel6MouseExited
-        jPanel6.setBackground(new Color(0,255,255));
-        jPanel13.setBackground(new Color(0,255,255));
-        jPanel18.setBackground(new Color(0,255,255));
+        jPanel6.setBackground(new Color(0, 255, 255));
+        jPanel13.setBackground(new Color(0, 255, 255));
+        jPanel18.setBackground(new Color(0, 255, 255));
         EditLabel3.setFont(thefont);
     }//GEN-LAST:event_jPanel6MouseExited
 
     private void jPanel13MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel13MouseExited
     {//GEN-HEADEREND:event_jPanel13MouseExited
-        jPanel6.setBackground(new Color(0,255,255));
-        jPanel13.setBackground(new Color(0,255,255));
-        jPanel18.setBackground(new Color(0,255,255));
+        jPanel6.setBackground(new Color(0, 255, 255));
+        jPanel13.setBackground(new Color(0, 255, 255));
+        jPanel18.setBackground(new Color(0, 255, 255));
         EditLabel3.setFont(thefont);
     }//GEN-LAST:event_jPanel13MouseExited
 
     private void jPanel8MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel8MouseEntered
     {//GEN-HEADEREND:event_jPanel8MouseEntered
-        jPanel8.setBackground(new Color(255,255,255));
-        jPanel14.setBackground(new Color(255,255,255));
-        jPanel20.setBackground(new Color(255,255,255));
+        jPanel8.setBackground(new Color(255, 255, 255));
+        jPanel14.setBackground(new Color(255, 255, 255));
+        jPanel20.setBackground(new Color(255, 255, 255));
         thefont = EditLabel.getFont();
         Font font = EditLabel.getFont();
         Map attributes = font.getAttributes();
@@ -1351,9 +1351,9 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel14MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel14MouseEntered
     {//GEN-HEADEREND:event_jPanel14MouseEntered
-        jPanel8.setBackground(new Color(255,255,255));
-        jPanel14.setBackground(new Color(255,255,255));
-        jPanel20.setBackground(new Color(255,255,255));
+        jPanel8.setBackground(new Color(255, 255, 255));
+        jPanel14.setBackground(new Color(255, 255, 255));
+        jPanel20.setBackground(new Color(255, 255, 255));
         thefont = EditLabel.getFont();
         Font font = EditLabel.getFont();
         Map attributes = font.getAttributes();
@@ -1363,25 +1363,25 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel8MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel8MouseExited
     {//GEN-HEADEREND:event_jPanel8MouseExited
-        jPanel8.setBackground(new Color(0,255,255));
-        jPanel14.setBackground(new Color(0,255,255));
-        jPanel20.setBackground(new Color(0,255,255));
+        jPanel8.setBackground(new Color(0, 255, 255));
+        jPanel14.setBackground(new Color(0, 255, 255));
+        jPanel20.setBackground(new Color(0, 255, 255));
         EditLabel5.setFont(thefont);
     }//GEN-LAST:event_jPanel8MouseExited
 
     private void jPanel14MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel14MouseExited
     {//GEN-HEADEREND:event_jPanel14MouseExited
-        jPanel8.setBackground(new Color(0,255,255));
-        jPanel14.setBackground(new Color(0,255,255));
-        jPanel20.setBackground(new Color(0,255,255));
+        jPanel8.setBackground(new Color(0, 255, 255));
+        jPanel14.setBackground(new Color(0, 255, 255));
+        jPanel20.setBackground(new Color(0, 255, 255));
         EditLabel5.setFont(thefont);
     }//GEN-LAST:event_jPanel14MouseExited
 
     private void jPanel15MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel15MouseEntered
     {//GEN-HEADEREND:event_jPanel15MouseEntered
-        jPanel3.setBackground(new Color(255,255,255));
-        jPanel9.setBackground(new Color(255,255,255));
-        jPanel15.setBackground(new Color(255,255,255));
+        jPanel3.setBackground(new Color(255, 255, 255));
+        jPanel9.setBackground(new Color(255, 255, 255));
+        jPanel15.setBackground(new Color(255, 255, 255));
         thefont = EditLabel.getFont();
         Font font = EditLabel.getFont();
         Map attributes = font.getAttributes();
@@ -1391,9 +1391,9 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel15MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel15MouseExited
     {//GEN-HEADEREND:event_jPanel15MouseExited
-        jPanel3.setBackground(new Color(0,255,255));
-        jPanel9.setBackground(new Color(0,255,255));
-        jPanel15.setBackground(new Color(0,255,255));
+        jPanel3.setBackground(new Color(0, 255, 255));
+        jPanel9.setBackground(new Color(0, 255, 255));
+        jPanel15.setBackground(new Color(0, 255, 255));
         EditLabel.setFont(thefont);
     }//GEN-LAST:event_jPanel15MouseExited
 
@@ -1418,9 +1418,9 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel16MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel16MouseEntered
     {//GEN-HEADEREND:event_jPanel16MouseEntered
-        jPanel4.setBackground(new Color(255,255,255));
-        jPanel10.setBackground(new Color(255,255,255));
-        jPanel16.setBackground(new Color(255,255,255));
+        jPanel4.setBackground(new Color(255, 255, 255));
+        jPanel10.setBackground(new Color(255, 255, 255));
+        jPanel16.setBackground(new Color(255, 255, 255));
         thefont = EditLabel.getFont();
         Font font = EditLabel.getFont();
         Map attributes = font.getAttributes();
@@ -1430,9 +1430,9 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel17MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel17MouseEntered
     {//GEN-HEADEREND:event_jPanel17MouseEntered
-        jPanel5.setBackground(new Color(255,255,255));
-        jPanel12.setBackground(new Color(255,255,255));
-        jPanel17.setBackground(new Color(255,255,255));
+        jPanel5.setBackground(new Color(255, 255, 255));
+        jPanel12.setBackground(new Color(255, 255, 255));
+        jPanel17.setBackground(new Color(255, 255, 255));
         thefont = EditLabel.getFont();
         Font font = EditLabel.getFont();
         Map attributes = font.getAttributes();
@@ -1442,17 +1442,17 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel17MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel17MouseExited
     {//GEN-HEADEREND:event_jPanel17MouseExited
-        jPanel5.setBackground(new Color(0,255,255));
-        jPanel12.setBackground(new Color(0,255,255));
-        jPanel17.setBackground(new Color(0,255,255));
+        jPanel5.setBackground(new Color(0, 255, 255));
+        jPanel12.setBackground(new Color(0, 255, 255));
+        jPanel17.setBackground(new Color(0, 255, 255));
         EditLabel2.setFont(thefont);
     }//GEN-LAST:event_jPanel17MouseExited
 
     private void jPanel20MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel20MouseEntered
     {//GEN-HEADEREND:event_jPanel20MouseEntered
-        jPanel8.setBackground(new Color(255,255,255));
-        jPanel14.setBackground(new Color(255,255,255));
-        jPanel20.setBackground(new Color(255,255,255));
+        jPanel8.setBackground(new Color(255, 255, 255));
+        jPanel14.setBackground(new Color(255, 255, 255));
+        jPanel20.setBackground(new Color(255, 255, 255));
         thefont = EditLabel.getFont();
         Font font = EditLabel.getFont();
         Map attributes = font.getAttributes();
@@ -1462,17 +1462,17 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel20MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel20MouseExited
     {//GEN-HEADEREND:event_jPanel20MouseExited
-        jPanel8.setBackground(new Color(0,255,255));
-        jPanel14.setBackground(new Color(0,255,255));
-        jPanel20.setBackground(new Color(0,255,255));
+        jPanel8.setBackground(new Color(0, 255, 255));
+        jPanel14.setBackground(new Color(0, 255, 255));
+        jPanel20.setBackground(new Color(0, 255, 255));
         EditLabel5.setFont(thefont);
     }//GEN-LAST:event_jPanel20MouseExited
 
     private void jPanel19MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel19MouseEntered
     {//GEN-HEADEREND:event_jPanel19MouseEntered
-        jPanel7.setBackground(new Color(255,255,255));
-        jPanel11.setBackground(new Color(255,255,255));
-        jPanel19.setBackground(new Color(255,255,255));
+        jPanel7.setBackground(new Color(255, 255, 255));
+        jPanel11.setBackground(new Color(255, 255, 255));
+        jPanel19.setBackground(new Color(255, 255, 255));
         thefont = EditLabel.getFont();
         Font font = EditLabel.getFont();
         Map attributes = font.getAttributes();
@@ -1482,17 +1482,17 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel19MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel19MouseExited
     {//GEN-HEADEREND:event_jPanel19MouseExited
-        jPanel7.setBackground(new Color(0,255,255));
-        jPanel11.setBackground(new Color(0,255,255));
-        jPanel19.setBackground(new Color(0,255,255));
+        jPanel7.setBackground(new Color(0, 255, 255));
+        jPanel11.setBackground(new Color(0, 255, 255));
+        jPanel19.setBackground(new Color(0, 255, 255));
         EditLabel4.setFont(thefont);
     }//GEN-LAST:event_jPanel19MouseExited
 
     private void jPanel18MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel18MouseEntered
     {//GEN-HEADEREND:event_jPanel18MouseEntered
-        jPanel6.setBackground(new Color(255,255,255));
-        jPanel13.setBackground(new Color(255,255,255));
-        jPanel18.setBackground(new Color(255,255,255));
+        jPanel6.setBackground(new Color(255, 255, 255));
+        jPanel13.setBackground(new Color(255, 255, 255));
+        jPanel18.setBackground(new Color(255, 255, 255));
         thefont = EditLabel.getFont();
         Font font = EditLabel.getFont();
         Map attributes = font.getAttributes();
@@ -1502,17 +1502,17 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel18MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel18MouseExited
     {//GEN-HEADEREND:event_jPanel18MouseExited
-        jPanel6.setBackground(new Color(0,255,255));
-        jPanel13.setBackground(new Color(0,255,255));
-        jPanel18.setBackground(new Color(0,255,255));
+        jPanel6.setBackground(new Color(0, 255, 255));
+        jPanel13.setBackground(new Color(0, 255, 255));
+        jPanel18.setBackground(new Color(0, 255, 255));
         EditLabel3.setFont(thefont);
     }//GEN-LAST:event_jPanel18MouseExited
 
     private void jPanel16MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel16MouseExited
     {//GEN-HEADEREND:event_jPanel16MouseExited
-        jPanel4.setBackground(new Color(0,255,255));
-        jPanel10.setBackground(new Color(0,255,255));
-        jPanel16.setBackground(new Color(0,255,255));
+        jPanel4.setBackground(new Color(0, 255, 255));
+        jPanel10.setBackground(new Color(0, 255, 255));
+        jPanel16.setBackground(new Color(0, 255, 255));
         EditLabel1.setFont(thefont);
     }//GEN-LAST:event_jPanel16MouseExited
 
@@ -1598,7 +1598,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel5MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel5MouseClicked
     {//GEN-HEADEREND:event_jPanel5MouseClicked
-         String response = JOptionPane.showInputDialog("Enter Your New Username:");
+        String response = JOptionPane.showInputDialog("Enter Your New Username:");
 
         if (response == null)
             return;
@@ -1617,7 +1617,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel17MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel17MouseClicked
     {//GEN-HEADEREND:event_jPanel17MouseClicked
-         String response = JOptionPane.showInputDialog("Enter Your New Username:");
+        String response = JOptionPane.showInputDialog("Enter Your New Username:");
 
         if (response == null)
             return;
@@ -1636,7 +1636,7 @@ public class Settings extends javax.swing.JPanel
 
     private void EditLabel2MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel2MouseClicked
     {//GEN-HEADEREND:event_EditLabel2MouseClicked
-         String response = JOptionPane.showInputDialog("Enter Your New Username:");
+        String response = JOptionPane.showInputDialog("Enter Your New Username:");
 
         if (response == null)
             return;
@@ -1655,7 +1655,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel12MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel12MouseClicked
     {//GEN-HEADEREND:event_jPanel12MouseClicked
-         String response = JOptionPane.showInputDialog("Enter Your New Username:");
+        String response = JOptionPane.showInputDialog("Enter Your New Username:");
 
         if (response == null)
             return;

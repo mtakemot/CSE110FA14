@@ -3,6 +3,7 @@ package LogicLayer;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 import java.io.Serializable;
+
 public class Transaction implements Comparable<Transaction>, Serializable
 {
 
