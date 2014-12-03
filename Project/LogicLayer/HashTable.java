@@ -358,7 +358,7 @@ public class HashTable implements Serializable
         // Divide the running daily total by the total number of days in the
         // month to obtain the daily average
         double dailyAverage = ((currentBA.getThisMonthsDailyTotals()) / (lastInterestDateTime.dayOfMonth().getMaximumValue()));
-        if (dailyAverage < 100)
+        if (dailyAverage <= 100)
         {
             currentBA.subPenalty(PENALTY_AMOUNT);
         }
@@ -421,30 +421,27 @@ public class HashTable implements Serializable
                 + " with initial balance: " + currentBA.getBalance());
         // Divide the running daily total by the total number of days in the
         // month to obtain the daily average
-        DateTime currentTime = new DateTime();
-        double total = currentBA.getThisMonthsDailyTotals()
-                + (currentBA.getBalance() * (currentTime.dayOfMonth().getMaximumValue() - currentTime.getDayOfMonth() + 1));
 
-        double dailyAverage = (total / (currentTime.dayOfMonth().getMaximumValue()));
-        if (dailyAverage < 100)
+        double bal = currentBA.getBalance();
+        if (bal <= 100)
         {
             currentBA.subPenalty(PENALTY_AMOUNT);
         }
-        else if (dailyAverage >= 3000)
+        else if (bal >= 3000)
         {
             if (currentBA instanceof CheckingAccount)
                 currentBA.addInterest((currentBA.getBalance() * CHECKING_RATE_OVER_3000));
             else
                 currentBA.addInterest((currentBA.getBalance() * SAVINGS_RATE_OVER_3000));
         }
-        else if (dailyAverage >= 2000 && dailyAverage < 3000)
+        else if (bal >= 2000 && bal < 3000)
         {
             if (currentBA instanceof CheckingAccount)
                 currentBA.addInterest((currentBA.getBalance() * CHECKING_RATE_2000_TO_3000));
             else
                 currentBA.addInterest((currentBA.getBalance() * SAVINGS_RATE_2000_TO_3000));
         }
-        else if (dailyAverage < 2000 && dailyAverage >= 1000)
+        else if (bal >= 1000 && bal < 2000)
         {
             if (currentBA instanceof CheckingAccount)
                 currentBA.addInterest((currentBA.getBalance() * CHECKING_RATE_1000_TO_2000));

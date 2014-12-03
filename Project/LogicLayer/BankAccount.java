@@ -42,7 +42,7 @@ public class BankAccount implements Serializable
     public static DateTimeFormatter dtf = DateTimeFormat.forPattern("MMMM d, yyyy");
     // Ordered set to hold all of this Bank Account's transactions.
     // Will be sorrted by date.
-    private List<Transaction> transactions;
+    protected List<Transaction> transactions;
 
     public BankAccount()
     {
@@ -56,7 +56,6 @@ public class BankAccount implements Serializable
         this.dayDepositAmount = 0;
 
         transactions = new ArrayList<Transaction>();
-        transactions.add(new Transaction("Account Created", 0));
     }
 
     // The following 3 methods will be overridden in

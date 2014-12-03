@@ -28,7 +28,7 @@ public class CheckingAccount extends BankAccount
     {
         super();
         this.accountName = name;
-        dayWithdrawAmount = 0;
+        this.accountType = "Checking";
     }
 
     public CheckingAccount(double bal, String name)
@@ -37,7 +37,9 @@ public class CheckingAccount extends BankAccount
         this.balance = bal;
         this.accountName = name;
         this.accountType = "Checking";
-        dayWithdrawAmount = 0;
+        this.transactions.add(new Transaction("Account Created", bal));
+        DateTime currentTime = new DateTime();
+        this.thisMonthsDailyTotals = bal * currentTime.getDayOfMonth();
     }
 
     @Override
