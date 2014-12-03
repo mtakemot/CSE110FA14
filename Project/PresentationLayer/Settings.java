@@ -1958,7 +1958,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel20MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel20MouseClicked
     {//GEN-HEADEREND:event_jPanel20MouseClicked
-           JPanel passpanel = mainGUI.getChangePasswordPanel().GetPanel();
+        JPanel passpanel = mainGUI.getChangePasswordPanel().GetPanel();
         int choice = JOptionPane.showConfirmDialog(
                 null,
                 passpanel,
@@ -1975,7 +1975,19 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel26MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel26MouseClicked
     {//GEN-HEADEREND:event_jPanel26MouseClicked
-        // TODO add your handling code here:
+        JPanel passpanel = mainGUI.getChangePasswordPanel().GetPanel();
+        int choice = JOptionPane.showConfirmDialog(
+                null,
+                passpanel,
+                "Bank 42",
+                JOptionPane.OK_CANCEL_OPTION,
+                JOptionPane.PLAIN_MESSAGE
+        );
+
+        if (choice == 0)
+        {
+            mainGUI.getChangePasswordPanel().SetPassword();
+        }
     }//GEN-LAST:event_jPanel26MouseClicked
 
     private void jPanel26MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel26MouseEntered
