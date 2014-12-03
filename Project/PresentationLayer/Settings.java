@@ -169,6 +169,7 @@ public class Settings extends javax.swing.JPanel
         jPanel3.setLayout(jPanel3Layout);
 
         FirstName1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        FirstName1.setForeground(new java.awt.Color(51, 0, 255));
         FirstName1.setText("Last Name");
         FirstName1.setMaximumSize(new java.awt.Dimension(91, 15));
         FirstName1.setMinimumSize(new java.awt.Dimension(91, 15));
@@ -605,6 +606,10 @@ public class Settings extends javax.swing.JPanel
         jPanel14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel14.addMouseListener(new java.awt.event.MouseAdapter()
         {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                jPanel14MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt)
             {
                 jPanel14MouseEntered(evt);
@@ -1834,6 +1839,25 @@ public class Settings extends javax.swing.JPanel
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
         layout.show(MainPanel, "AccList");
     }//GEN-LAST:event_HomeButtonMouseClicked
+
+    private void jPanel14MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel14MouseClicked
+    {//GEN-HEADEREND:event_jPanel14MouseClicked
+        String response = JOptionPane.showInputDialog("Enter Your New Password:");
+
+        if (response == null)
+            return;
+
+        response = response.trim();
+        if ((response.length() > 0) && (CreateAccountPanel.validatePassword(response)))
+        {
+            GUI.currentUserAccount.setPassword(response);
+            update();
+        }
+        else
+        {
+            errorMessage.setText("Your password was entered incorrectly.");
+        }
+    }//GEN-LAST:event_jPanel14MouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BAUserNameLabel;
