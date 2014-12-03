@@ -406,7 +406,6 @@ public class HashTable implements Serializable
                         {
                             System.out.println("MSG HashTable.java: InterestAndPenalties calling helper");
                             InterestAndPenaltiesTellerHelper(currentBA);
-
                             currentBA = currentBA.getNext();
                         }
                     }
@@ -425,6 +424,7 @@ public class HashTable implements Serializable
         DateTime currentTime = new DateTime();
         double total = currentBA.getThisMonthsDailyTotals()
                 + (currentBA.getBalance() * (currentTime.dayOfMonth().getMaximumValue() - currentTime.getDayOfMonth() + 1));
+
         double dailyAverage = (total / (currentTime.dayOfMonth().getMaximumValue()));
         if (dailyAverage < 100)
         {

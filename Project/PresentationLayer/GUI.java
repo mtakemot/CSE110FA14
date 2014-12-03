@@ -281,10 +281,8 @@ public class GUI extends javax.swing.JFrame
     public void updateUserLabels()
     {
         getAccList().updateUserLabel();
-        getDelete().updateUserLabel();
         getSettings().updateUserLabel();
         getTellerAP().updateUserLabel();
-        getTDelete().updateUserLabel();
         getCreateBA().updateUserLabel();
     }
 
@@ -397,7 +395,7 @@ public class GUI extends javax.swing.JFrame
                 initDB();
 
                 //update daily total BEFORE interest.
-                initTask();
+                // initTask();
                 // This grabs the MainPanel and stores it in a variable so that
                 // we have easy access to it
                 JPanel cardHolder = mainGUI.getMainPanel();
@@ -407,11 +405,9 @@ public class GUI extends javax.swing.JFrame
                 mainGUI.setAccList(new AccountsListPanel(cardHolder, mainGUI));
                 mainGUI.setSettings(new Settings(cardHolder, mainGUI));
                 mainGUI.setCreateAcc(new CreateAccountPanel(cardHolder, mainGUI));
-                mainGUI.setDelete(new DeleteAccountPanel(cardHolder, mainGUI));
                 mainGUI.setCreateBA(new CreateBankAccount(cardHolder, mainGUI));
                 mainGUI.setTellerAP(new TellerAccountPage(cardHolder, mainGUI));
                 mainGUI.setTellerMainMenu(new TellerMainMenu(cardHolder, mainGUI));
-                mainGUI.setTDelete(new TellerDeleteAccountPanel(cardHolder, mainGUI));
                 mainGUI.setPass(new PasswordFieldPanel(cardHolder, mainGUI));
                 mainGUI.setPenIntPanel(new PenaltyInterestPanel(cardHolder, mainGUI));
                 mainGUI.setTransPanel(new TransactionHistoryPanel(cardHolder, mainGUI));
@@ -427,10 +423,8 @@ public class GUI extends javax.swing.JFrame
                 cardHolder.add(mainGUI.getAccList(), "AccList");
                 cardHolder.add(mainGUI.getCreateAcc(), "CreateAcc");
                 cardHolder.add(mainGUI.getSettings(), "Settings");
-                cardHolder.add(mainGUI.getDelete(), "Delete");
                 cardHolder.add(mainGUI.getTellerMainMenu(), "TellerMainMenu");
                 cardHolder.add(mainGUI.getTellerAP(), "TellerAP");
-                cardHolder.add(mainGUI.getTDelete(), "TDelete");
                 cardHolder.add(mainGUI.getPenIntPanel(), "PenIntPanel");
                 cardHolder.add(mainGUI.getTransPanel(), "TransPanel");
                 cardHolder.add(mainGUI.getDolphinsPanel(), "DolphinsPanel");
@@ -473,8 +467,6 @@ public class GUI extends javax.swing.JFrame
     private TellerMainMenu TellerMainMenu;
     private CreateBankAccount CreateBA;
     private TellerAccountPage TellerAP;
-    private DeleteAccountPanel Delete;
-    private TellerDeleteAccountPanel TDelete;
     private PasswordFieldPanel pass;
     private PenaltyInterestPanel PenIntPanel;
     private TransactionHistoryPanel TransPanel;
@@ -518,26 +510,6 @@ public class GUI extends javax.swing.JFrame
     public void setPenIntPanel(PenaltyInterestPanel PenIntPanel)
     {
         this.PenIntPanel = PenIntPanel;
-    }
-
-    public TellerDeleteAccountPanel getTDelete()
-    {
-        return TDelete;
-    }
-
-    public void setTDelete(TellerDeleteAccountPanel TDelete)
-    {
-        this.TDelete = TDelete;
-    }
-
-    public DeleteAccountPanel getDelete()
-    {
-        return Delete;
-    }
-
-    public void setDelete(DeleteAccountPanel Delete)
-    {
-        this.Delete = Delete;
     }
 
     public LoginPanel getLogin()
