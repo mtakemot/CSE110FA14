@@ -9,6 +9,7 @@ import LogicLayer.BankAccount;
 import LogicLayer.Transaction;
 import java.util.*;
 import javax.swing.table.AbstractTableModel;
+import sun.org.mozilla.javascript.internal.Token;
 
 /**
  *
@@ -18,11 +19,11 @@ public class TransactionTableModel extends AbstractTableModel
 {
 
     private List<Transaction> transactions;
-    private static final int colCount = 3;
+    private static final int colCount = 4;
 
     private String[] columnNames =
     {
-        "Date", "Type", "Transaction Amount"
+        "Date", "Time", "Type", "Transaction Amount"
     };
 
     public TransactionTableModel(BankAccount current)
@@ -53,9 +54,12 @@ public class TransactionTableModel extends AbstractTableModel
                 returnMe = BankAccount.dtf.print(transactions.get(rowIndex).getTransTime());
                 break;
             case 1:
-                returnMe = transactions.get(rowIndex).getTransType();
+                returnMe = BankAccount.timeFormatter.print(transactions.get(rowIndex).getTransTime());
                 break;
             case 2:
+                returnMe = transactions.get(rowIndex).getTransType();
+                break;
+            case 3:
                 returnMe = ("$" + transactions.get(rowIndex).getTransAmount());
                 break;
         }

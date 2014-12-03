@@ -1,7 +1,6 @@
 package LogicLayer;
 
-import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
+import org.joda.time.*;
 import java.io.Serializable;
 
 public class Transaction implements Comparable<Transaction>, Serializable
@@ -12,13 +11,13 @@ public class Transaction implements Comparable<Transaction>, Serializable
     // Amount of transaction
     private double transAmount;
     // Time that the transaction took place
-    private DateTime transTime;
+    private LocalDateTime transTime;
 
     public Transaction(String transType, double transAmount)
     {
         this.transType = transType;
         this.transAmount = transAmount;
-        this.transTime = new DateTime();
+        this.transTime = new LocalDateTime();
     }
 
     @Override
@@ -47,12 +46,12 @@ public class Transaction implements Comparable<Transaction>, Serializable
         this.transAmount = transAmount;
     }
 
-    public DateTime getTransTime()
+    public LocalDateTime getTransTime()
     {
         return transTime;
     }
 
-    public void setTransTime(DateTime transTime)
+    public void setTransTime(LocalDateTime transTime)
     {
         this.transTime = transTime;
     }

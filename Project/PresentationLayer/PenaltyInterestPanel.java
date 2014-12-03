@@ -6,7 +6,10 @@
 package PresentationLayer;
 
 import java.awt.CardLayout;
+import java.awt.Font;
 import java.awt.LayoutManager;
+import java.awt.font.TextAttribute;
+import java.util.Map;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -30,6 +33,32 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         this.mainGUI = mainGUI;
         this.MainPanel = MainPanel;
         initComponents();
+
+        Font font = BalanceLabel.getFont();
+        Map attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        BalanceLabel.setFont(font.deriveFont(attributes));
+
+        font = CurrentSavingsRateLabel.getFont();
+        attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        CurrentSavingsRateLabel.setFont(font.deriveFont(attributes));
+
+        font = CurrentCheckingRateLabel.getFont();
+        attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        CurrentCheckingRateLabel.setFont(font.deriveFont(attributes));
+
+        font = SavingsNewRateLabel.getFont();
+        attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        SavingsNewRateLabel.setFont(font.deriveFont(attributes));
+
+        font = CheckingNewRateLabel.getFont();
+        attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        CheckingNewRateLabel.setFont(font.deriveFont(attributes));
+
     }
 
     public static boolean isParsable(String input)
@@ -124,8 +153,8 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(3, 5, 3, 5);
         CheckingAccountRatesPanel.add(BalanceLabelBot, gridBagConstraints);
 
+        BalanceLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         BalanceLabel.setText("Balance");
-        BalanceLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -153,16 +182,16 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(3, 5, 3, 5);
         CheckingAccountRatesPanel.add(Checking_More_Than_3000_Label, gridBagConstraints);
 
+        CurrentCheckingRateLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         CurrentCheckingRateLabel.setText("Current Rate");
-        CurrentCheckingRateLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.insets = new java.awt.Insets(3, 5, 3, 5);
         CheckingAccountRatesPanel.add(CurrentCheckingRateLabel, gridBagConstraints);
 
+        CheckingNewRateLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         CheckingNewRateLabel.setText("New Rate");
-        CheckingNewRateLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
@@ -268,16 +297,16 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(3, 5, 3, 5);
         SavingsAccountRatesPanel.add(Savings_More_Than_3000_Label, gridBagConstraints);
 
+        CurrentSavingsRateLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         CurrentSavingsRateLabel.setText("Current Rate");
-        CurrentSavingsRateLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.insets = new java.awt.Insets(3, 5, 3, 5);
         SavingsAccountRatesPanel.add(CurrentSavingsRateLabel, gridBagConstraints);
 
+        SavingsNewRateLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         SavingsNewRateLabel.setText("New Rate");
-        SavingsNewRateLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
@@ -583,6 +612,8 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         String amountstring = JOptionPane.showInputDialog(
                 null, "The current penalty is $" + GUI.MasterTable.PENALTY_AMOUNT
                 + "\n" + "Please enter a new penalty amount");
+        if (amountstring == null)
+            return;
 
         if (isParsable(amountstring))
             amount = Double.parseDouble(amountstring);

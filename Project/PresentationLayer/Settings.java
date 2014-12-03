@@ -2010,6 +2010,25 @@ public class Settings extends javax.swing.JPanel
         }
     }//GEN-LAST:event_jPanel14MouseClicked
 
+    private void jPanel14MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel14MouseClicked
+    {//GEN-HEADEREND:event_jPanel14MouseClicked
+        String response = JOptionPane.showInputDialog("Enter Your New Password:");
+
+        if (response == null)
+            return;
+
+        response = response.trim();
+        if ((response.length() > 0) && (CreateAccountPanel.validatePassword(response)))
+        {
+            GUI.currentUserAccount.setPassword(response);
+            update();
+        }
+        else
+        {
+            errorMessage.setText("Your password was entered incorrectly.");
+        }
+    }//GEN-LAST:event_jPanel14MouseClicked
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Background;
     private javax.swing.JButton DeleteAccountButton;

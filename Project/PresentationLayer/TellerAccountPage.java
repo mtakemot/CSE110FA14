@@ -64,7 +64,7 @@ public class TellerAccountPage extends javax.swing.JPanel
 
         AccountsTable.setModel(new AccountsTableModel(GUI.currentUserAccount));
         SelectionModel.clearSelection();
-        CurrentUserAccountLabel.setText(GUI.currentUserAccount.getUserName());
+        CurrentUserAccountLabel.setText(GUI.currentUserAccount.getUserName() + "'s Bank Accounts");
         mainGUI.updateUserLabels();
     }
 
@@ -107,72 +107,29 @@ public class TellerAccountPage extends javax.swing.JPanel
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents()
     {
+        java.awt.GridBagConstraints gridBagConstraints;
 
-        SettingsButton = new javax.swing.JButton();
-        BankNamePanel = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        CurrentUserAccountLabel = new javax.swing.JLabel();
-        LogoutButtton = new javax.swing.JButton();
+        Holder = new javax.swing.JPanel();
+        MainComponentsPanel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         AccountsTable = new javax.swing.JTable();
+        CurrentUserAccountLabel = new javax.swing.JLabel();
         DepositButton = new javax.swing.JButton();
         WithdrawButton = new javax.swing.JButton();
         DeleteUserAccountButton = new javax.swing.JButton();
         DeleteAccountButton = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        BackButton = new javax.swing.JButton();
 
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
         setPreferredSize(new java.awt.Dimension(800, 600));
+        setLayout(new java.awt.GridBagLayout());
 
-        SettingsButton.setText("Settings");
-        SettingsButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                SettingsButtonMouseClicked(evt);
-            }
-        });
+        Holder.setLayout(new java.awt.GridBagLayout());
 
-        BankNamePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        MainComponentsPanel.setLayout(new java.awt.GridBagLayout());
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabel1.setText("             Bank 42");
-        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        javax.swing.GroupLayout BankNamePanelLayout = new javax.swing.GroupLayout(BankNamePanel);
-        BankNamePanel.setLayout(BankNamePanelLayout);
-        BankNamePanelLayout.setHorizontalGroup(
-            BankNamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BankNamePanelLayout.createSequentialGroup()
-                .addContainerGap(157, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(136, 136, 136))
-        );
-        BankNamePanelLayout.setVerticalGroup(
-            BankNamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-
-        CurrentUserAccountLabel.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
-        CurrentUserAccountLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        CurrentUserAccountLabel.setText(PresentationLayer.GUI.currentBankAccount.getAccountName());
-
-        LogoutButtton.setText("Logout");
-        LogoutButtton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                LogoutButttonMouseClicked(evt);
-            }
-        });
-        LogoutButtton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                LogoutButttonActionPerformed(evt);
-            }
-        });
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(454, 300));
 
         AccountsTable.setSelectionModel(SelectionModel = new DefaultListSelectionModel());
         SelectionModel.setSelectionMode(0);
@@ -187,6 +144,20 @@ public class TellerAccountPage extends javax.swing.JPanel
         jScrollPane1.setViewportView(AccountsTable);
         AccountsTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        MainComponentsPanel.add(jScrollPane1, gridBagConstraints);
+
+        CurrentUserAccountLabel.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
+        CurrentUserAccountLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        CurrentUserAccountLabel.setText(GUI.currentUserAccount.getUserName() + "'s Bank Accounts");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 100, 0);
+        MainComponentsPanel.add(CurrentUserAccountLabel, gridBagConstraints);
+
         DepositButton.setText("Deposit");
         DepositButton.addMouseListener(new java.awt.event.MouseAdapter()
         {
@@ -195,6 +166,11 @@ public class TellerAccountPage extends javax.swing.JPanel
                 DepositButtonMouseClicked(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        MainComponentsPanel.add(DepositButton, gridBagConstraints);
 
         WithdrawButton.setText("Withdraw");
         WithdrawButton.addMouseListener(new java.awt.event.MouseAdapter()
@@ -204,8 +180,13 @@ public class TellerAccountPage extends javax.swing.JPanel
                 WithdrawButtonMouseClicked(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        MainComponentsPanel.add(WithdrawButton, gridBagConstraints);
 
-        DeleteUserAccountButton.setText("Delete User Account");
+        DeleteUserAccountButton.setText("Delete This User Account");
         DeleteUserAccountButton.addMouseListener(new java.awt.event.MouseAdapter()
         {
             public void mouseClicked(java.awt.event.MouseEvent evt)
@@ -213,8 +194,12 @@ public class TellerAccountPage extends javax.swing.JPanel
                 DeleteUserAccountButtonMouseClicked(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        MainComponentsPanel.add(DeleteUserAccountButton, gridBagConstraints);
 
-        DeleteAccountButton.setText("Delete Highlighted Account");
+        DeleteAccountButton.setText("Delete Highlighted Bank Account");
         DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter()
         {
             public void mouseClicked(java.awt.event.MouseEvent evt)
@@ -222,84 +207,28 @@ public class TellerAccountPage extends javax.swing.JPanel
                 DeleteAccountButtonMouseClicked(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        MainComponentsPanel.add(DeleteAccountButton, gridBagConstraints);
 
-        jButton1.setText("Back");
-        jButton1.addActionListener(new java.awt.event.ActionListener()
+        BackButton.setText("Back");
+        BackButton.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                jButton1ActionPerformed(evt);
+                BackButtonActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        MainComponentsPanel.add(BackButton, gridBagConstraints);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(SettingsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(BankNamePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(LogoutButtton, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(DepositButton)
-                                .addGap(87, 87, 87)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(CurrentUserAccountLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(10, 10, 10)
-                                        .addComponent(WithdrawButton)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(DeleteAccountButton))))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(DeleteUserAccountButton)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton1))
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(BankNamePanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(LogoutButtton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(SettingsButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(CurrentUserAccountLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(4, 4, 4)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(DepositButton)
-                    .addComponent(WithdrawButton)
-                    .addComponent(DeleteAccountButton))
-                .addGap(25, 25, 25)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(DeleteUserAccountButton)
-                    .addComponent(jButton1))
-                .addContainerGap(253, Short.MAX_VALUE))
-        );
+        Holder.add(MainComponentsPanel, new java.awt.GridBagConstraints());
+
+        add(Holder, new java.awt.GridBagConstraints());
     }// </editor-fold>//GEN-END:initComponents
-
-    private void SettingsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingsButtonMouseClicked
-        CardLayout layout = (CardLayout) (MainPanel.getLayout());
-        layout.show(MainPanel, "Settings");
-    }//GEN-LAST:event_SettingsButtonMouseClicked
-
-    private void LogoutButttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoutButttonMouseClicked
-        GUI.currentBankAccount = null;
-        GUI.currentUserAccount = null;
-        CardLayout layout = (CardLayout) (MainPanel.getLayout());
-        layout.show(MainPanel, "Login");
-    }//GEN-LAST:event_LogoutButttonMouseClicked
 
     public static boolean isParsable(String input)
     {
@@ -538,29 +467,22 @@ public class TellerAccountPage extends javax.swing.JPanel
             JOptionPane.showMessageDialog(null, "Please Select an Account");
     }//GEN-LAST:event_DeleteAccountButtonMouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1ActionPerformed
-    {//GEN-HEADEREND:event_jButton1ActionPerformed
+    private void BackButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BackButtonActionPerformed
+    {//GEN-HEADEREND:event_BackButtonActionPerformed
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
         layout.show(MainPanel, "TellerMainMenu");
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void LogoutButttonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_LogoutButttonActionPerformed
-    {//GEN-HEADEREND:event_LogoutButttonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_LogoutButttonActionPerformed
+    }//GEN-LAST:event_BackButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable AccountsTable;
-    private javax.swing.JPanel BankNamePanel;
+    private javax.swing.JButton BackButton;
     private javax.swing.JLabel CurrentUserAccountLabel;
     private javax.swing.JButton DeleteAccountButton;
     private javax.swing.JButton DeleteUserAccountButton;
     private javax.swing.JButton DepositButton;
-    private javax.swing.JButton LogoutButtton;
-    private javax.swing.JButton SettingsButton;
+    private javax.swing.JPanel Holder;
+    private javax.swing.JPanel MainComponentsPanel;
     private javax.swing.JButton WithdrawButton;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

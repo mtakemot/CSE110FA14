@@ -2,6 +2,7 @@ package LogicLayer;
 
 import java.io.Serializable;
 import static java.lang.Math.abs;
+import java.text.SimpleDateFormat;
 import java.util.*;
 import org.joda.time.*;
 import org.joda.time.format.*;
@@ -39,7 +40,9 @@ public class BankAccount implements Serializable
     // The last time a deposit was made on the account
     protected DateTime lastDepositDateTime;
     // Allows us to format dates so they look nice for the user
-    public static DateTimeFormatter dtf = DateTimeFormat.forPattern("MMMM d, yyyy");
+    public static DateTimeFormatter dtf = DateTimeFormat.forPattern("MM/dd/yyyy");
+    // Allows us to format time so they look nice for the user
+    public static DateTimeFormatter timeFormatter = DateTimeFormat.forPattern("HH:mm:ss a");
     // Ordered set to hold all of this Bank Account's transactions.
     // Will be sorrted by date.
     protected List<Transaction> transactions;
