@@ -26,6 +26,7 @@ public class Settings extends javax.swing.JPanel
     private JPanel MainPanel;
     private GUI mainGUI;
     private Font thefont;
+    private ImageIcon icon;
 
     public Settings()
     {
@@ -34,6 +35,7 @@ public class Settings extends javax.swing.JPanel
 
     public Settings(JPanel MainPanel, GUI mainGUI)
     {
+        icon = new javax.swing.ImageIcon(getClass().getResource("/Assets/rsz_2icon.png"));
         this.MainPanel = MainPanel;
         this.mainGUI = mainGUI;
 
@@ -42,7 +44,7 @@ public class Settings extends javax.swing.JPanel
 
     public void updateUserLabel()
     {
-        BAUserNameLabel.setText("User: " + GUI.currentUserAccount.getUserName());
+        UserLabel.setText(GUI.currentUserAccount.getUserName());
     }
 
     /**
@@ -96,11 +98,17 @@ public class Settings extends javax.swing.JPanel
         UserPhoneNumber = new javax.swing.JLabel();
         jPanel20 = new javax.swing.JPanel();
         UserPassword = new javax.swing.JLabel();
-        HeaderPanel = new javax.swing.JPanel();
-        Bank42 = new javax.swing.JLabel();
-        HomeButton = new javax.swing.JButton();
-        Logout = new javax.swing.JButton();
-        BAUserNameLabel = new javax.swing.JLabel();
+        jPanel21 = new javax.swing.JPanel();
+        jPanel22 = new javax.swing.JPanel();
+        jPanel23 = new javax.swing.JPanel();
+        UserLabel = new javax.swing.JLabel();
+        jPanel24 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jPanel25 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        option = new javax.swing.JLabel();
         Background = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(800, 600));
@@ -169,6 +177,7 @@ public class Settings extends javax.swing.JPanel
         jPanel3.setLayout(jPanel3Layout);
 
         FirstName1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        FirstName1.setForeground(new java.awt.Color(51, 0, 255));
         FirstName1.setText("Last Name");
         FirstName1.setMaximumSize(new java.awt.Dimension(91, 15));
         FirstName1.setMinimumSize(new java.awt.Dimension(91, 15));
@@ -342,6 +351,10 @@ public class Settings extends javax.swing.JPanel
         jPanel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel8.addMouseListener(new java.awt.event.MouseAdapter()
         {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                jPanel8MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt)
             {
                 jPanel8MouseEntered(evt);
@@ -605,6 +618,10 @@ public class Settings extends javax.swing.JPanel
         jPanel14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel14.addMouseListener(new java.awt.event.MouseAdapter()
         {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                jPanel14MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt)
             {
                 jPanel14MouseEntered(evt);
@@ -796,6 +813,10 @@ public class Settings extends javax.swing.JPanel
         jPanel20.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel20.addMouseListener(new java.awt.event.MouseAdapter()
         {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                jPanel20MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt)
             {
                 jPanel20MouseEntered(evt);
@@ -823,67 +844,150 @@ public class Settings extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(8, 0, 135, 0);
         jPanel2.add(jPanel1, gridBagConstraints);
 
-        HeaderPanel.setBackground(new java.awt.Color(255, 255, 255));
-        HeaderPanel.setOpaque(false);
-        HeaderPanel.setLayout(new java.awt.GridBagLayout());
+        jPanel21.setOpaque(false);
+        jPanel21.setLayout(new java.awt.GridBagLayout());
 
-        Bank42.setFont(new java.awt.Font("DejaVu Sans", 1, 48)); // NOI18N
-        Bank42.setForeground(new java.awt.Color(51, 0, 255));
-        Bank42.setText("Bank 42");
+        jPanel22.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel22.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 242, 0)));
+        java.awt.GridBagLayout jPanel22Layout = new java.awt.GridBagLayout();
+        jPanel22Layout.columnWidths = new int[] {0, 7, 0, 7, 0, 7, 0};
+        jPanel22Layout.rowHeights = new int[] {0};
+        jPanel22.setLayout(jPanel22Layout);
+
+        jPanel23.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel23.setLayout(new java.awt.GridBagLayout());
+
+        UserLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        UserLabel.setForeground(new java.awt.Color(14, 118, 188));
+        UserLabel.setText("userlabel");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
-        HeaderPanel.add(Bank42, gridBagConstraints);
+        jPanel23.add(UserLabel, gridBagConstraints);
 
-        HomeButton.setBackground(new java.awt.Color(255, 255, 255));
-        HomeButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        HomeButton.setForeground(new java.awt.Color(51, 0, 255));
-        HomeButton.setText("Home");
-        HomeButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                HomeButtonMouseClicked(evt);
-            }
-        });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 200);
-        HeaderPanel.add(HomeButton, gridBagConstraints);
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel22.add(jPanel23, gridBagConstraints);
 
-        Logout.setBackground(new java.awt.Color(255, 255, 255));
-        Logout.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Logout.setForeground(new java.awt.Color(51, 0, 255));
-        Logout.setText("Logout");
-        Logout.addMouseListener(new java.awt.event.MouseAdapter()
+        jPanel24.setBackground(new java.awt.Color(255, 255, 255));
+        java.awt.GridBagLayout jPanel24Layout = new java.awt.GridBagLayout();
+        jPanel24Layout.columnWidths = new int[] {0, 7, 0, 7, 0};
+        jPanel24Layout.rowHeights = new int[] {0, 7, 0, 7, 0};
+        jPanel24.setLayout(jPanel24Layout);
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/rsz_settingscolor2.png"))); // NOI18N
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter()
         {
             public void mouseClicked(java.awt.event.MouseEvent evt)
             {
-                LogoutMouseClicked(evt);
+                jLabel4MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
+                jLabel4MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
+                jLabel4MouseExited(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.insets = new java.awt.Insets(0, 200, 0, 0);
-        HeaderPanel.add(Logout, gridBagConstraints);
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel24.add(jLabel4, gridBagConstraints);
 
-        BAUserNameLabel.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
-        BAUserNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        BAUserNameLabel.setText("User Information");
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/rsz_logout2noborder2.png"))); // NOI18N
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                jLabel5MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
+                jLabel5MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
+                jLabel5MouseExited(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel24.add(jLabel5, gridBagConstraints);
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/rsz_homecolored.png"))); // NOI18N
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                jLabel6MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
+                jLabel6MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
+                jLabel6MouseExited(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        jPanel24.add(jLabel6, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel22.add(jPanel24, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.insets = new java.awt.Insets(17, 0, 0, 0);
-        HeaderPanel.add(BAUserNameLabel, gridBagConstraints);
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        jPanel21.add(jPanel22, gridBagConstraints);
+
+        jPanel25.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel25.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 242, 0)));
+        jPanel25.setLayout(new java.awt.GridBagLayout());
+
+        jLabel2.setBackground(new java.awt.Color(255, 242, 0));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/rsz_2icon.png"))); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        jPanel25.add(jLabel2, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 100, 0);
-        jPanel2.add(HeaderPanel, gridBagConstraints);
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        jPanel21.add(jPanel25, gridBagConstraints);
+
+        option.setBackground(new Color(255,255,255,150));
+        option.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        option.setForeground(new java.awt.Color(14, 118, 188));
+        option.setText(" ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        jPanel21.add(option, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel2.add(jPanel21, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -940,26 +1044,15 @@ public class Settings extends javax.swing.JPanel
 
             if (choice2 == 0)
             {
-                String passwrd = mainGUI.getPass().GetPassword();
-                if (!(GUI.currentUserAccount.validatePassword(passwrd)))
-                {
-                    JOptionPane.showMessageDialog(null, "Incorrect Password!", "Error!",
-                            JOptionPane.INFORMATION_MESSAGE);
-                }
-                else
-                {
-                    GUI.MasterTable.deleteUserAccount(GUI.currentUserAccount.getUserName());
-                    GUI.currentBankAccount = null;
-                    GUI.currentUserAccount = null;
+                GUI.MasterTable.deleteUserAccount(GUI.currentUserAccount.getUserName());
+                GUI.currentBankAccount = null;
+                GUI.currentUserAccount = null;
 
-                    CardLayout layout = (CardLayout) (MainPanel.getLayout());
-                    layout.show(MainPanel, "Login");
+                CardLayout layout = (CardLayout) (MainPanel.getLayout());
+                layout.show(MainPanel, "Login");
                     //mainGUI.getDolphinsPanel().DolphinsCalled();
-
-                }
             }
         }
-
     }//GEN-LAST:event_DeleteAccountButtonMouseClicked
 
     private void setMouseExitColors()
@@ -1803,42 +1896,122 @@ public class Settings extends javax.swing.JPanel
 
     private void EditLabel5MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel5MouseClicked
     {//GEN-HEADEREND:event_EditLabel5MouseClicked
-        String response = JOptionPane.showInputDialog("Enter Your New Password:");
+        JPanel passpanel = mainGUI.getChangePasswordPanel().GetPanel();
+        int choice = JOptionPane.showConfirmDialog(
+                null,
+                passpanel,
+                "Bank 42",
+                JOptionPane.OK_CANCEL_OPTION,
+                JOptionPane.PLAIN_MESSAGE
+        );
 
-        if (response == null)
-            return;
-
-        response = response.trim();
-        if ((response.length() > 0) && (CreateAccountPanel.validatePassword(response)))
+        if (choice == 0)
         {
-            GUI.currentUserAccount.setPassword(response);
-            update();
-        }
-        else
-        {
-            errorMessage.setText("Your password was entered incorrectly.");
+            mainGUI.getChangePasswordPanel().SetPassword();
         }
     }//GEN-LAST:event_EditLabel5MouseClicked
 
-    private void LogoutMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_LogoutMouseClicked
-    {//GEN-HEADEREND:event_LogoutMouseClicked
-        //retrieve MainPanel to transfer it's layout to AccountListPanel
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jLabel4MouseClicked
+    {//GEN-HEADEREND:event_jLabel4MouseClicked
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
+        layout.show(MainPanel, "Settings");
+    }//GEN-LAST:event_jLabel4MouseClicked
 
-        //send the layout of MainPanel to new display of JPanel "Login"
+    private void jLabel4MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jLabel4MouseEntered
+    {//GEN-HEADEREND:event_jLabel4MouseEntered
+        option.setText("Settings");
+    }//GEN-LAST:event_jLabel4MouseEntered
+
+    private void jLabel4MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jLabel4MouseExited
+    {//GEN-HEADEREND:event_jLabel4MouseExited
+        option.setText(" ");
+    }//GEN-LAST:event_jLabel4MouseExited
+
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jLabel5MouseClicked
+    {//GEN-HEADEREND:event_jLabel5MouseClicked
+        CardLayout layout = (CardLayout) (MainPanel.getLayout());
         layout.show(MainPanel, "Login");
-    }//GEN-LAST:event_LogoutMouseClicked
+    }//GEN-LAST:event_jLabel5MouseClicked
 
-    private void HomeButtonMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_HomeButtonMouseClicked
-    {//GEN-HEADEREND:event_HomeButtonMouseClicked
+    private void jLabel5MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jLabel5MouseEntered
+    {//GEN-HEADEREND:event_jLabel5MouseEntered
+        option.setText("Logout");
+    }//GEN-LAST:event_jLabel5MouseEntered
+
+    private void jLabel5MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jLabel5MouseExited
+    {//GEN-HEADEREND:event_jLabel5MouseExited
+        option.setText(" ");
+    }//GEN-LAST:event_jLabel5MouseExited
+
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jLabel6MouseClicked
+    {//GEN-HEADEREND:event_jLabel6MouseClicked
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
         layout.show(MainPanel, "AccList");
-    }//GEN-LAST:event_HomeButtonMouseClicked
+    }//GEN-LAST:event_jLabel6MouseClicked
+
+    private void jLabel6MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jLabel6MouseEntered
+    {//GEN-HEADEREND:event_jLabel6MouseEntered
+        option.setText("Home");
+    }//GEN-LAST:event_jLabel6MouseEntered
+
+    private void jLabel6MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jLabel6MouseExited
+    {//GEN-HEADEREND:event_jLabel6MouseExited
+        option.setText(" ");
+    }//GEN-LAST:event_jLabel6MouseExited
+
+    private void jPanel8MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel8MouseClicked
+    {//GEN-HEADEREND:event_jPanel8MouseClicked
+        JPanel passpanel = mainGUI.getChangePasswordPanel().GetPanel();
+        int choice = JOptionPane.showConfirmDialog(
+                null,
+                passpanel,
+                "Bank 42",
+                JOptionPane.OK_CANCEL_OPTION,
+                JOptionPane.PLAIN_MESSAGE
+        );
+
+        if (choice == 0)
+        {
+            mainGUI.getChangePasswordPanel().SetPassword();
+        }
+    }//GEN-LAST:event_jPanel8MouseClicked
+
+    private void jPanel20MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel20MouseClicked
+    {//GEN-HEADEREND:event_jPanel20MouseClicked
+           JPanel passpanel = mainGUI.getChangePasswordPanel().GetPanel();
+        int choice = JOptionPane.showConfirmDialog(
+                null,
+                passpanel,
+                "Bank 42",
+                JOptionPane.OK_CANCEL_OPTION,
+                JOptionPane.PLAIN_MESSAGE
+        );
+
+        if (choice == 0)
+        {
+            mainGUI.getChangePasswordPanel().SetPassword();
+        }
+    }//GEN-LAST:event_jPanel20MouseClicked
+
+    private void jPanel14MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel14MouseClicked
+    {//GEN-HEADEREND:event_jPanel14MouseClicked
+           JPanel passpanel = mainGUI.getChangePasswordPanel().GetPanel();
+        int choice = JOptionPane.showConfirmDialog(
+                null,
+                passpanel,
+                "Bank 42",
+                JOptionPane.OK_CANCEL_OPTION,
+                JOptionPane.PLAIN_MESSAGE
+        );
+
+        if (choice == 0)
+        {
+            mainGUI.getChangePasswordPanel().SetPassword();
+        }
+    }//GEN-LAST:event_jPanel14MouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel BAUserNameLabel;
     private javax.swing.JLabel Background;
-    private javax.swing.JLabel Bank42;
     private javax.swing.JButton DeleteAccountButton;
     private javax.swing.JLabel EditLabel;
     private javax.swing.JLabel EditLabel1;
@@ -1849,19 +2022,21 @@ public class Settings extends javax.swing.JPanel
     private javax.swing.JLabel Email;
     private javax.swing.JLabel FirstName;
     private javax.swing.JLabel FirstName1;
-    private javax.swing.JPanel HeaderPanel;
-    private javax.swing.JButton HomeButton;
-    private javax.swing.JButton Logout;
     private javax.swing.JLabel Password;
     private javax.swing.JLabel PhoneNumber;
     private javax.swing.JLabel UserEmail;
     private javax.swing.JLabel UserFirstName;
+    private javax.swing.JLabel UserLabel;
     private javax.swing.JLabel UserLastName;
     private javax.swing.JLabel UserPassword;
     private javax.swing.JLabel UserPhoneNumber;
     private javax.swing.JLabel UserUsername;
     private javax.swing.JLabel Username;
     private javax.swing.JLabel errorMessage;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -1875,6 +2050,11 @@ public class Settings extends javax.swing.JPanel
     private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel20;
+    private javax.swing.JPanel jPanel21;
+    private javax.swing.JPanel jPanel22;
+    private javax.swing.JPanel jPanel23;
+    private javax.swing.JPanel jPanel24;
+    private javax.swing.JPanel jPanel25;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -1882,5 +2062,6 @@ public class Settings extends javax.swing.JPanel
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JLabel option;
     // End of variables declaration//GEN-END:variables
 }

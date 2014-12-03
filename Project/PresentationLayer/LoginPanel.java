@@ -13,7 +13,9 @@ package PresentationLayer;
  */
 import javax.swing.*;
 import java.awt.*;
+import java.awt.font.TextAttribute;
 import java.io.File;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.Timer;
@@ -31,6 +33,7 @@ public class LoginPanel extends javax.swing.JPanel
     private static int interval;
     private static Timer timer;
     private ImageIcon icon;
+    private Font thefont;
     
     
     public LoginPanel()
@@ -65,7 +68,8 @@ public class LoginPanel extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
         java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel1 = new javax.swing.JPanel();
@@ -77,8 +81,8 @@ public class LoginPanel extends javax.swing.JPanel
         UsernameLabel = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         PasswordLabel = new javax.swing.JLabel();
-        ForgotPWButton = new javax.swing.JButton();
         noAccess = new javax.swing.JLabel();
+        ForgotPassword = new javax.swing.JLabel();
         Background = new javax.swing.JLabel();
 
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -89,43 +93,48 @@ public class LoginPanel extends javax.swing.JPanel
 
         jPanel1.setOpaque(false);
         java.awt.GridBagLayout jPanel1Layout = new java.awt.GridBagLayout();
-        jPanel1Layout.columnWidths = new int[] {0, 5, 0};
+        jPanel1Layout.columnWidths = new int[] {0, 5, 0, 5, 0};
         jPanel1Layout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0};
         jPanel1.setLayout(jPanel1Layout);
 
         CreateAccButton.setBackground(new Color (255,255,255,150));
         CreateAccButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        CreateAccButton.setForeground(new java.awt.Color(51, 0, 255));
+        CreateAccButton.setForeground(new java.awt.Color(14, 118, 188));
         CreateAccButton.setText("Create Account");
-        CreateAccButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        CreateAccButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 CreateAccButtonMouseClicked(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel1.add(CreateAccButton, gridBagConstraints);
 
         LoginButton.setBackground(new java.awt.Color(255, 255, 255));
         LoginButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        LoginButton.setForeground(new java.awt.Color(51, 0, 255));
+        LoginButton.setForeground(new java.awt.Color(14, 118, 188));
         LoginButton.setText("Login");
-        LoginButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        LoginButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 LoginButtonMouseClicked(evt);
             }
         });
-        LoginButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        LoginButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 LoginButtonActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 6;
         gridBagConstraints.ipadx = 50;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         jPanel1.add(LoginButton, gridBagConstraints);
@@ -134,23 +143,29 @@ public class LoginPanel extends javax.swing.JPanel
         jPasswordField.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 3, 0, 0));
         jPasswordField.setMinimumSize(new java.awt.Dimension(250, 25));
         jPasswordField.setPreferredSize(new java.awt.Dimension(250, 25));
-        jPasswordField.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
+        jPasswordField.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
                 jPasswordFieldFocusGained(evt);
             }
         });
-        jPasswordField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jPasswordField.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 jPasswordFieldActionPerformed(evt);
             }
         });
-        jPasswordField.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
+        jPasswordField.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
                 jPasswordFieldKeyPressed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 4;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.ipady = 15;
@@ -161,23 +176,29 @@ public class LoginPanel extends javax.swing.JPanel
         UsernameField.setDisabledTextColor(new Color(255,255,255,150));
         UsernameField.setMinimumSize(new java.awt.Dimension(250, 25));
         UsernameField.setPreferredSize(new java.awt.Dimension(250, 25));
-        UsernameField.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
+        UsernameField.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
                 UsernameFieldFocusGained(evt);
             }
         });
-        UsernameField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        UsernameField.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 UsernameFieldActionPerformed(evt);
             }
         });
-        UsernameField.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
+        UsernameField.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
                 UsernameFieldKeyPressed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.ipady = 15;
@@ -190,7 +211,7 @@ public class LoginPanel extends javax.swing.JPanel
         jPanel2.setLayout(new java.awt.GridBagLayout());
 
         UsernameLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        UsernameLabel.setForeground(new java.awt.Color(51, 0, 255));
+        UsernameLabel.setForeground(new java.awt.Color(14, 118, 188));
         UsernameLabel.setText("Username:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -210,7 +231,7 @@ public class LoginPanel extends javax.swing.JPanel
 
         PasswordLabel.setBackground(new Color(255,255,255,200));
         PasswordLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        PasswordLabel.setForeground(new java.awt.Color(51, 0, 255));
+        PasswordLabel.setForeground(new java.awt.Color(14, 118, 188));
         PasswordLabel.setText("Password:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -222,27 +243,38 @@ public class LoginPanel extends javax.swing.JPanel
         gridBagConstraints.gridy = 4;
         jPanel1.add(jPanel3, gridBagConstraints);
 
-        ForgotPWButton.setText("Forgot Password");
-        ForgotPWButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ForgotPWButtonActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
-        jPanel1.add(ForgotPWButton, gridBagConstraints);
-
         noAccess.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
         noAccess.setForeground(new java.awt.Color(255, 0, 0));
         noAccess.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 10;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.insets = new java.awt.Insets(7, 0, 7, 0);
         jPanel1.add(noAccess, gridBagConstraints);
+
+        ForgotPassword.setForeground(new java.awt.Color(14, 118, 188));
+        ForgotPassword.setText("Forgot Password?");
+        ForgotPassword.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                ForgotPasswordMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
+                ForgotPasswordMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
+                ForgotPasswordMouseExited(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel1.add(ForgotPassword, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -403,8 +435,26 @@ public class LoginPanel extends javax.swing.JPanel
         return --interval;
     }
 
-    private void ForgotPWButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ForgotPWButtonActionPerformed
+    private void LoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LoginButtonActionPerformed
 
+    private void ForgotPasswordMouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_ForgotPasswordMouseEntered
+    {//GEN-HEADEREND:event_ForgotPasswordMouseEntered
+        thefont = ForgotPassword.getFont();
+        Font font = ForgotPassword.getFont();
+        Map attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        ForgotPassword.setFont(font.deriveFont(attributes));
+    }//GEN-LAST:event_ForgotPasswordMouseEntered
+
+    private void ForgotPasswordMouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_ForgotPasswordMouseExited
+    {//GEN-HEADEREND:event_ForgotPasswordMouseExited
+        ForgotPassword.setFont(thefont);
+    }//GEN-LAST:event_ForgotPasswordMouseExited
+
+    private void ForgotPasswordMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_ForgotPasswordMouseClicked
+    {//GEN-HEADEREND:event_ForgotPasswordMouseClicked
         if (numberOfAttempts == 3)
         {
             JOptionPane.showMessageDialog(this, "You've exceeded the number of attempts. Please try again later.","Bank 42",1,icon);
@@ -447,11 +497,7 @@ public class LoginPanel extends javax.swing.JPanel
             }
             return;
         }
-    }//GEN-LAST:event_ForgotPWButtonActionPerformed
-
-    private void LoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_LoginButtonActionPerformed
+    }//GEN-LAST:event_ForgotPasswordMouseClicked
 
     public boolean validate(final String username)
     {
@@ -468,7 +514,7 @@ public class LoginPanel extends javax.swing.JPanel
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Background;
     private javax.swing.JButton CreateAccButton;
-    private javax.swing.JButton ForgotPWButton;
+    private javax.swing.JLabel ForgotPassword;
     private javax.swing.JButton LoginButton;
     private javax.swing.JLabel PasswordLabel;
     private javax.swing.JTextField UsernameField;
