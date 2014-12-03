@@ -27,11 +27,12 @@ public class LoginPanel extends javax.swing.JPanel
     private JPanel MainPanel;
     private GUI mainGUI;
     private static final String USERNAME_PATTERN = "^[a-z0-9_-]{1,15}$";
-    private Image image;
     private static int numberOfAttempts;
     private static int interval;
     private static Timer timer;
-
+    private ImageIcon icon;
+    
+    
     public LoginPanel()
     {
         initComponents();
@@ -44,17 +45,10 @@ public class LoginPanel extends javax.swing.JPanel
      the main panel where all of our GUI elements will eventually be located. */
     public LoginPanel(JPanel MainPanel, GUI mainGUI)
     {
+        icon = new javax.swing.ImageIcon(getClass().getResource("/Assets/rsz_2icon.png"));
         this.mainGUI = mainGUI;
         this.MainPanel = MainPanel;
         initComponents();
-        /*{
-         try
-         {
-         File image2 = new File("background-wallpapers-24");
-         image = javax.imageio.ImageIO.read(image2);
-         }
-         catch (Exception e) { /*handled in paintComponent()*/ //}
-        //}
     }
 
     /*@Override
@@ -289,8 +283,8 @@ public class LoginPanel extends javax.swing.JPanel
 
         if (GUI.currentUserAccount == null)
         {
-            JOptionPane.showMessageDialog(null, "Account Not found!", "Error!",
-                    JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Account Not found!", "Bank 42",
+                    JOptionPane.INFORMATION_MESSAGE,icon);
         }
         else
         {
@@ -316,7 +310,7 @@ public class LoginPanel extends javax.swing.JPanel
             }
             else
             {
-                JOptionPane.showMessageDialog(null, "Invalid Username Password Combination");
+                JOptionPane.showMessageDialog(null, "Invalid Username Password Combination","Bank 42",1,icon);
             }
             //move the following code in here, for demoing and when we're done testing.
         }
@@ -413,7 +407,7 @@ public class LoginPanel extends javax.swing.JPanel
 
         if (numberOfAttempts == 3)
         {
-            JOptionPane.showMessageDialog(this, "You've exceeded the number of attempts. Please try again later.");
+            JOptionPane.showMessageDialog(this, "You've exceeded the number of attempts. Please try again later.","Bank 42",1,icon);
             return;
         }
 
@@ -445,7 +439,7 @@ public class LoginPanel extends javax.swing.JPanel
         }
         else
         {
-            JOptionPane.showMessageDialog(this, "Incorrect email, please try again.");
+            JOptionPane.showMessageDialog(this, "Incorrect email, please try again.","Bank 42",1,icon);
 
             if (numberOfAttempts == 3)
             {
