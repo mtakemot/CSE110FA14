@@ -212,7 +212,7 @@ public class GUI extends javax.swing.JFrame
         System.out.println("init Last: " + last);
         int lastMonth = last.getMonthOfYear();
 
-        DateTime now = new DateTime(DateTimeZone.forID("Etc/UTC"));
+        DateTime now = new DateTime();
         System.out.println("init now: " + now);
         int nowMonth = now.getMonthOfYear();
         Seconds s = Seconds.secondsBetween(last, now);

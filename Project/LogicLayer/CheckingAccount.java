@@ -47,8 +47,8 @@ public class CheckingAccount extends BankAccount
         {
             return false;
         }
-        // Grab the current time in UTC
-        DateTime currentDateTime = new DateTime(DateTimeZone.forID("Etc/UTC"));
+        // Grab the current time
+        DateTime currentDateTime = new DateTime();
         // Check if this withdraw is less than 24 hours from the last withdraw
         if (abs(Hours.hoursBetween(currentDateTime, lastWithdrawDateTime).getHours()) <= 24)
         {
@@ -81,8 +81,8 @@ public class CheckingAccount extends BankAccount
         {
             return false;
         }
-        // Grab the current time in UTC
-        DateTime currentDateTime = new DateTime(DateTimeZone.forID("Etc/UTC"));
+        // Grab the current time
+        DateTime currentDateTime = new DateTime();
         // Check if this deposit is less than 24 hours from the last deposit
         if (abs(Hours.hoursBetween(currentDateTime, lastDepositDateTime).getHours()) <= 24)
         {

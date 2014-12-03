@@ -18,7 +18,7 @@ public class Transaction implements Comparable<Transaction>, Serializable
     {
         this.transType = transType;
         this.transAmount = transAmount;
-        this.transTime = new DateTime(DateTimeZone.forID("Etc/UTC"));
+        this.transTime = new DateTime();
     }
 
     @Override

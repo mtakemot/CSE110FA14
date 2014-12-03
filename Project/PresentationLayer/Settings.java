@@ -42,7 +42,7 @@ public class Settings extends javax.swing.JPanel
 
     public void updateUserLabel()
     {
-        BAUserNameLabel.setText("User " + GUI.currentUserAccount.getUserName());
+        BAUserNameLabel.setText("User: " + GUI.currentUserAccount.getUserName());
     }
 
     /**
@@ -56,17 +56,12 @@ public class Settings extends javax.swing.JPanel
     {
         java.awt.GridBagConstraints gridBagConstraints;
 
-        jLabel1 = new javax.swing.JLabel();
-        LogoutButtton = new javax.swing.JButton();
-        BackButton = new javax.swing.JButton();
-        errorMessage = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         DeleteAccountButton = new javax.swing.JButton();
-        BAUserNameLabel = new javax.swing.JLabel();
-        EditPassword = new javax.swing.JButton();
+        errorMessage = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        LastName = new javax.swing.JLabel();
+        FirstName1 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         FirstName = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
@@ -101,6 +96,11 @@ public class Settings extends javax.swing.JPanel
         UserPhoneNumber = new javax.swing.JLabel();
         jPanel20 = new javax.swing.JPanel();
         UserPassword = new javax.swing.JLabel();
+        HeaderPanel = new javax.swing.JPanel();
+        Bank42 = new javax.swing.JLabel();
+        HomeButton = new javax.swing.JButton();
+        Logout = new javax.swing.JButton();
+        BAUserNameLabel = new javax.swing.JLabel();
         Background = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(800, 600));
@@ -109,71 +109,14 @@ public class Settings extends javax.swing.JPanel
         setPreferredSize(new java.awt.Dimension(800, 600));
         setLayout(new java.awt.GridBagLayout());
 
-        jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(51, 0, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Bank 42");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-        add(jLabel1, gridBagConstraints);
-
-        LogoutButtton.setText("Logout");
-        LogoutButtton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                LogoutButttonMouseClicked(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHEAST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 10);
-        add(LogoutButtton, gridBagConstraints);
-
-        BackButton.setText("Back");
-        BackButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                BackButtonMouseClicked(evt);
-            }
-        });
-        BackButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                BackButtonActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 10, 0, 0);
-        add(BackButton, gridBagConstraints);
-
-        errorMessage.setForeground(new java.awt.Color(255, 102, 102));
-        errorMessage.setText("error message");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 10, 220, 0);
-        add(errorMessage, gridBagConstraints);
-
         jPanel2.setOpaque(false);
         jPanel2.setLayout(new java.awt.GridBagLayout());
 
         jPanel1.setBackground(new Color (0,255,255,150));
         jPanel1.setName(""); // NOI18N
         java.awt.GridBagLayout jPanel1Layout = new java.awt.GridBagLayout();
-        jPanel1Layout.columnWidths = new int[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-        jPanel1Layout.rowHeights = new int[] {0, 6, 0, 6, 0, 6, 0, 6, 0, 6, 0, 6, 0, 6, 0, 6, 0, 6, 0};
+        jPanel1Layout.columnWidths = new int[] {0, 0, 0, 0, 0};
+        jPanel1Layout.rowHeights = new int[] {0, 8, 0, 8, 0, 8, 0, 8, 0, 8, 0, 8, 0, 8, 0, 8, 0};
         jPanel1.setLayout(jPanel1Layout);
 
         DeleteAccountButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -188,31 +131,23 @@ public class Settings extends javax.swing.JPanel
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 18;
+        gridBagConstraints.gridy = 16;
+        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel1.add(DeleteAccountButton, gridBagConstraints);
 
-        BAUserNameLabel.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
-        BAUserNameLabel.setForeground(new java.awt.Color(51, 0, 255));
-        BAUserNameLabel.setText("User Information:");
+        errorMessage.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        errorMessage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        jPanel1.add(BAUserNameLabel, gridBagConstraints);
+        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel1.add(errorMessage, gridBagConstraints);
 
-        EditPassword.setText("Edit");
-        EditPassword.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                EditPasswordActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 8;
-        gridBagConstraints.gridy = 14;
-        jPanel1.add(EditPassword, gridBagConstraints);
-
-        jPanel3.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel3.setBackground(new java.awt.Color(255, 204, 153));
+        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel3.addMouseListener(new java.awt.event.MouseAdapter()
         {
             public void mouseClicked(java.awt.event.MouseEvent evt)
@@ -233,24 +168,26 @@ public class Settings extends javax.swing.JPanel
         jPanel3Layout.rowHeights = new int[] {0};
         jPanel3.setLayout(jPanel3Layout);
 
-        LastName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        LastName.setForeground(new java.awt.Color(51, 0, 255));
-        LastName.setText("Last Name       ");
-        LastName.setToolTipText("");
+        FirstName1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        FirstName1.setText("Last Name");
+        FirstName1.setMaximumSize(new java.awt.Dimension(91, 15));
+        FirstName1.setMinimumSize(new java.awt.Dimension(91, 15));
+        FirstName1.setPreferredSize(new java.awt.Dimension(91, 15));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
-        jPanel3.add(LastName, gridBagConstraints);
+        jPanel3.add(FirstName1, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel1.add(jPanel3, gridBagConstraints);
 
-        jPanel4.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel4.setBackground(new java.awt.Color(255, 204, 153));
+        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel4.addMouseListener(new java.awt.event.MouseAdapter()
         {
             public void mouseClicked(java.awt.event.MouseEvent evt)
@@ -282,11 +219,13 @@ public class Settings extends javax.swing.JPanel
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridy = 4;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel1.add(jPanel4, gridBagConstraints);
 
-        jPanel5.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel5.setBackground(new java.awt.Color(255, 204, 153));
+        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel5.addMouseListener(new java.awt.event.MouseAdapter()
         {
             public void mouseClicked(java.awt.event.MouseEvent evt)
@@ -318,11 +257,13 @@ public class Settings extends javax.swing.JPanel
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 8;
+        gridBagConstraints.gridy = 6;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel1.add(jPanel5, gridBagConstraints);
 
-        jPanel6.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel6.setBackground(new java.awt.Color(255, 204, 153));
+        jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel6.addMouseListener(new java.awt.event.MouseAdapter()
         {
             public void mouseClicked(java.awt.event.MouseEvent evt)
@@ -354,11 +295,13 @@ public class Settings extends javax.swing.JPanel
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 10;
+        gridBagConstraints.gridy = 8;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel1.add(jPanel6, gridBagConstraints);
 
-        jPanel7.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel7.setBackground(new java.awt.Color(255, 204, 153));
+        jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel7.addMouseListener(new java.awt.event.MouseAdapter()
         {
             public void mouseClicked(java.awt.event.MouseEvent evt)
@@ -390,11 +333,13 @@ public class Settings extends javax.swing.JPanel
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 12;
+        gridBagConstraints.gridy = 10;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel1.add(jPanel7, gridBagConstraints);
 
-        jPanel8.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel8.setBackground(new java.awt.Color(255, 204, 153));
+        jPanel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel8.addMouseListener(new java.awt.event.MouseAdapter()
         {
             public void mouseEntered(java.awt.event.MouseEvent evt)
@@ -422,11 +367,13 @@ public class Settings extends javax.swing.JPanel
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 14;
+        gridBagConstraints.gridy = 12;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel1.add(jPanel8, gridBagConstraints);
 
-        jPanel9.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel9.setBackground(new java.awt.Color(255, 204, 153));
+        jPanel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel9.addMouseListener(new java.awt.event.MouseAdapter()
         {
             public void mouseClicked(java.awt.event.MouseEvent evt)
@@ -469,11 +416,13 @@ public class Settings extends javax.swing.JPanel
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel1.add(jPanel9, gridBagConstraints);
 
-        jPanel10.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel10.setBackground(new java.awt.Color(255, 204, 153));
+        jPanel10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel10.addMouseListener(new java.awt.event.MouseAdapter()
         {
             public void mouseClicked(java.awt.event.MouseEvent evt)
@@ -512,11 +461,13 @@ public class Settings extends javax.swing.JPanel
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridy = 4;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel1.add(jPanel10, gridBagConstraints);
 
-        jPanel11.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel11.setBackground(new java.awt.Color(255, 204, 153));
+        jPanel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel11.addMouseListener(new java.awt.event.MouseAdapter()
         {
             public void mouseClicked(java.awt.event.MouseEvent evt)
@@ -555,11 +506,13 @@ public class Settings extends javax.swing.JPanel
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 12;
+        gridBagConstraints.gridy = 10;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel1.add(jPanel11, gridBagConstraints);
 
-        jPanel12.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel12.setBackground(new java.awt.Color(255, 204, 153));
+        jPanel12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel12.addMouseListener(new java.awt.event.MouseAdapter()
         {
             public void mouseClicked(java.awt.event.MouseEvent evt)
@@ -598,11 +551,13 @@ public class Settings extends javax.swing.JPanel
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 8;
+        gridBagConstraints.gridy = 6;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel1.add(jPanel12, gridBagConstraints);
 
-        jPanel13.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel13.setBackground(new java.awt.Color(255, 204, 153));
+        jPanel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel13.addMouseListener(new java.awt.event.MouseAdapter()
         {
             public void mouseClicked(java.awt.event.MouseEvent evt)
@@ -641,11 +596,13 @@ public class Settings extends javax.swing.JPanel
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 10;
+        gridBagConstraints.gridy = 8;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel1.add(jPanel13, gridBagConstraints);
 
-        jPanel14.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel14.setBackground(new java.awt.Color(255, 204, 153));
+        jPanel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel14.addMouseListener(new java.awt.event.MouseAdapter()
         {
             public void mouseEntered(java.awt.event.MouseEvent evt)
@@ -663,6 +620,10 @@ public class Settings extends javax.swing.JPanel
         EditLabel5.setFocusable(false);
         EditLabel5.addMouseListener(new java.awt.event.MouseAdapter()
         {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                EditLabel5MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt)
             {
                 EditLabel5MouseEntered(evt);
@@ -676,11 +637,13 @@ public class Settings extends javax.swing.JPanel
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 14;
+        gridBagConstraints.gridy = 12;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel1.add(jPanel14, gridBagConstraints);
 
-        jPanel15.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel15.setBackground(new java.awt.Color(255, 204, 153));
+        jPanel15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel15.addMouseListener(new java.awt.event.MouseAdapter()
         {
             public void mouseClicked(java.awt.event.MouseEvent evt)
@@ -704,11 +667,13 @@ public class Settings extends javax.swing.JPanel
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel1.add(jPanel15, gridBagConstraints);
 
-        jPanel16.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel16.setBackground(new java.awt.Color(255, 204, 153));
+        jPanel16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel16.addMouseListener(new java.awt.event.MouseAdapter()
         {
             public void mouseClicked(java.awt.event.MouseEvent evt)
@@ -732,11 +697,13 @@ public class Settings extends javax.swing.JPanel
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridy = 4;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel1.add(jPanel16, gridBagConstraints);
 
-        jPanel17.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel17.setBackground(new java.awt.Color(255, 204, 153));
+        jPanel17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel17.addMouseListener(new java.awt.event.MouseAdapter()
         {
             public void mouseClicked(java.awt.event.MouseEvent evt)
@@ -760,11 +727,13 @@ public class Settings extends javax.swing.JPanel
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 8;
+        gridBagConstraints.gridy = 6;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel1.add(jPanel17, gridBagConstraints);
 
-        jPanel18.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel18.setBackground(new java.awt.Color(255, 204, 153));
+        jPanel18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel18.addMouseListener(new java.awt.event.MouseAdapter()
         {
             public void mouseClicked(java.awt.event.MouseEvent evt)
@@ -788,11 +757,13 @@ public class Settings extends javax.swing.JPanel
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 10;
+        gridBagConstraints.gridy = 8;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel1.add(jPanel18, gridBagConstraints);
 
-        jPanel19.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel19.setBackground(new java.awt.Color(255, 204, 153));
+        jPanel19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel19.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel19.addMouseListener(new java.awt.event.MouseAdapter()
         {
             public void mouseClicked(java.awt.event.MouseEvent evt)
@@ -816,11 +787,13 @@ public class Settings extends javax.swing.JPanel
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 12;
+        gridBagConstraints.gridy = 10;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel1.add(jPanel19, gridBagConstraints);
 
-        jPanel20.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel20.setBackground(new java.awt.Color(255, 204, 153));
+        jPanel20.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel20.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel20.addMouseListener(new java.awt.event.MouseAdapter()
         {
             public void mouseEntered(java.awt.event.MouseEvent evt)
@@ -840,28 +813,90 @@ public class Settings extends javax.swing.JPanel
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 14;
+        gridBagConstraints.gridy = 12;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel1.add(jPanel20, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.insets = new java.awt.Insets(8, 0, 135, 0);
         jPanel2.add(jPanel1, gridBagConstraints);
+
+        HeaderPanel.setBackground(new java.awt.Color(255, 255, 255));
+        HeaderPanel.setOpaque(false);
+        HeaderPanel.setLayout(new java.awt.GridBagLayout());
+
+        Bank42.setFont(new java.awt.Font("DejaVu Sans", 1, 48)); // NOI18N
+        Bank42.setForeground(new java.awt.Color(51, 0, 255));
+        Bank42.setText("Bank 42");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        HeaderPanel.add(Bank42, gridBagConstraints);
+
+        HomeButton.setBackground(new java.awt.Color(255, 255, 255));
+        HomeButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        HomeButton.setForeground(new java.awt.Color(51, 0, 255));
+        HomeButton.setText("Home");
+        HomeButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                HomeButtonMouseClicked(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 200);
+        HeaderPanel.add(HomeButton, gridBagConstraints);
+
+        Logout.setBackground(new java.awt.Color(255, 255, 255));
+        Logout.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Logout.setForeground(new java.awt.Color(51, 0, 255));
+        Logout.setText("Logout");
+        Logout.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                LogoutMouseClicked(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.insets = new java.awt.Insets(0, 200, 0, 0);
+        HeaderPanel.add(Logout, gridBagConstraints);
+
+        BAUserNameLabel.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
+        BAUserNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        BAUserNameLabel.setText("User Information");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.insets = new java.awt.Insets(17, 0, 0, 0);
+        HeaderPanel.add(BAUserNameLabel, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 100, 0);
+        jPanel2.add(HeaderPanel, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
         gridBagConstraints.insets = new java.awt.Insets(0, 10, 0, 0);
         add(jPanel2, gridBagConstraints);
 
-        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/hitchguide42robot.jpg"))); // NOI18N
+        Background.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/wallhaven-95047.jpg"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 80, 313);
         add(Background, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -873,20 +908,6 @@ public class Settings extends javax.swing.JPanel
         UserEmail.setText(GUI.currentUserAccount.getEmail());
         UserPhoneNumber.setText(GUI.currentUserAccount.getPhone());
     }
-
-    private void BackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButtonMouseClicked
-        errorMessage.setText("");
-        CardLayout layout = (CardLayout) (MainPanel.getLayout());
-        layout.show(MainPanel, "AccList");
-    }//GEN-LAST:event_BackButtonMouseClicked
-
-    private void LogoutButttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoutButttonMouseClicked
-        GUI.currentBankAccount = null;
-        GUI.currentUserAccount = null;
-        errorMessage.setText("");
-        CardLayout layout = (CardLayout) (MainPanel.getLayout());
-        layout.show(MainPanel, "Login");
-    }//GEN-LAST:event_LogoutButttonMouseClicked
 
     private void DeleteAccountButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteAccountButtonMouseClicked
 
@@ -941,25 +962,28 @@ public class Settings extends javax.swing.JPanel
 
     }//GEN-LAST:event_DeleteAccountButtonMouseClicked
 
-    private void EditPasswordActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EditPasswordActionPerformed
-    {//GEN-HEADEREND:event_EditPasswordActionPerformed
-        String response = JOptionPane.showInputDialog("Enter Your New Password:");
-
-        if (response == null)
-            return;
-
-        response = response.trim();
-        if ((response.length() > 0) && (CreateAccountPanel.validatePassword(response)))
-        {
-            GUI.currentUserAccount.setPassword(response);
-            update();
-        }
-        else
-        {
-            errorMessage.setText("Your password was entered incorrectly.");
-        }
-    }//GEN-LAST:event_EditPasswordActionPerformed
-
+    private void setMouseExitColors()
+    {
+        Color newColor = new Color(255, 204, 153);
+        jPanel3.setBackground(newColor);
+        jPanel4.setBackground(newColor);
+        jPanel5.setBackground(newColor);
+        jPanel6.setBackground(newColor);
+        jPanel7.setBackground(newColor);
+        jPanel8.setBackground(newColor);
+        jPanel9.setBackground(newColor);
+        jPanel10.setBackground(newColor);
+        jPanel11.setBackground(newColor);
+        jPanel12.setBackground(newColor);
+        jPanel13.setBackground(newColor);
+        jPanel14.setBackground(newColor);
+        jPanel15.setBackground(newColor);
+        jPanel16.setBackground(newColor);
+        jPanel17.setBackground(newColor);
+        jPanel18.setBackground(newColor);
+        jPanel19.setBackground(newColor);
+        jPanel20.setBackground(newColor);
+    }
     private void jPanel3MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel3MouseEntered
     {//GEN-HEADEREND:event_jPanel3MouseEntered
         jPanel3.setBackground(new Color(255, 255, 255));
@@ -974,17 +998,13 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel3MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel3MouseExited
     {//GEN-HEADEREND:event_jPanel3MouseExited
-        jPanel3.setBackground(new Color(0, 255, 255));
-        jPanel9.setBackground(new Color(0, 255, 255));
-        jPanel15.setBackground(new Color(0, 255, 255));
+        setMouseExitColors();
         EditLabel.setFont(thefont);
     }//GEN-LAST:event_jPanel3MouseExited
 
     private void EditLabelMouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabelMouseExited
     {//GEN-HEADEREND:event_EditLabelMouseExited
-        jPanel3.setBackground(new Color(0, 255, 255));
-        jPanel9.setBackground(new Color(0, 255, 255));
-        jPanel15.setBackground(new Color(0, 255, 255));
+        setMouseExitColors();
         EditLabel.setFont(thefont);
     }//GEN-LAST:event_EditLabelMouseExited
 
@@ -1014,9 +1034,7 @@ public class Settings extends javax.swing.JPanel
 
     private void EditLabel1MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel1MouseExited
     {//GEN-HEADEREND:event_EditLabel1MouseExited
-        jPanel4.setBackground(new Color(0, 255, 255));
-        jPanel10.setBackground(new Color(0, 255, 255));
-        jPanel16.setBackground(new Color(0, 255, 255));
+        setMouseExitColors();
         EditLabel1.setFont(thefont);
     }//GEN-LAST:event_EditLabel1MouseExited
 
@@ -1034,9 +1052,7 @@ public class Settings extends javax.swing.JPanel
 
     private void EditLabel2MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel2MouseExited
     {//GEN-HEADEREND:event_EditLabel2MouseExited
-        jPanel5.setBackground(new Color(0, 255, 255));
-        jPanel12.setBackground(new Color(0, 255, 255));
-        jPanel17.setBackground(new Color(0, 255, 255));
+        setMouseExitColors();
         EditLabel2.setFont(thefont);
     }//GEN-LAST:event_EditLabel2MouseExited
 
@@ -1054,9 +1070,7 @@ public class Settings extends javax.swing.JPanel
 
     private void EditLabel3MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel3MouseExited
     {//GEN-HEADEREND:event_EditLabel3MouseExited
-        jPanel6.setBackground(new Color(0, 255, 255));
-        jPanel13.setBackground(new Color(0, 255, 255));
-        jPanel18.setBackground(new Color(0, 255, 255));
+        setMouseExitColors();
         EditLabel3.setFont(thefont);
     }//GEN-LAST:event_EditLabel3MouseExited
 
@@ -1074,9 +1088,7 @@ public class Settings extends javax.swing.JPanel
 
     private void EditLabel4MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel4MouseExited
     {//GEN-HEADEREND:event_EditLabel4MouseExited
-        jPanel7.setBackground(new Color(0, 255, 255));
-        jPanel11.setBackground(new Color(0, 255, 255));
-        jPanel19.setBackground(new Color(0, 255, 255));
+        setMouseExitColors();
         EditLabel4.setFont(thefont);
     }//GEN-LAST:event_EditLabel4MouseExited
 
@@ -1094,9 +1106,7 @@ public class Settings extends javax.swing.JPanel
 
     private void EditLabel5MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel5MouseExited
     {//GEN-HEADEREND:event_EditLabel5MouseExited
-        jPanel8.setBackground(new Color(0, 255, 255));
-        jPanel14.setBackground(new Color(0, 255, 255));
-        jPanel20.setBackground(new Color(0, 255, 255));
+        setMouseExitColors();
         EditLabel5.setFont(thefont);
     }//GEN-LAST:event_EditLabel5MouseExited
 
@@ -1114,9 +1124,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel9MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel9MouseExited
     {//GEN-HEADEREND:event_jPanel9MouseExited
-        jPanel3.setBackground(new Color(0, 255, 255));
-        jPanel9.setBackground(new Color(0, 255, 255));
-        jPanel15.setBackground(new Color(0, 255, 255));
+        setMouseExitColors();
         EditLabel.setFont(thefont);
     }//GEN-LAST:event_jPanel9MouseExited
 
@@ -1134,9 +1142,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel4MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel4MouseExited
     {//GEN-HEADEREND:event_jPanel4MouseExited
-        jPanel4.setBackground(new Color(0, 255, 255));
-        jPanel10.setBackground(new Color(0, 255, 255));
-        jPanel16.setBackground(new Color(0, 255, 255));
+        setMouseExitColors();
         EditLabel1.setFont(thefont);
     }//GEN-LAST:event_jPanel4MouseExited
 
@@ -1154,9 +1160,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel10MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel10MouseExited
     {//GEN-HEADEREND:event_jPanel10MouseExited
-        jPanel4.setBackground(new Color(0, 255, 255));
-        jPanel10.setBackground(new Color(0, 255, 255));
-        jPanel16.setBackground(new Color(0, 255, 255));
+        setMouseExitColors();
         EditLabel1.setFont(thefont);
     }//GEN-LAST:event_jPanel10MouseExited
 
@@ -1231,9 +1235,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel7MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel7MouseExited
     {//GEN-HEADEREND:event_jPanel7MouseExited
-        jPanel7.setBackground(new Color(0, 255, 255));
-        jPanel11.setBackground(new Color(0, 255, 255));
-        jPanel19.setBackground(new Color(0, 255, 255));
+        setMouseExitColors();
         EditLabel4.setFont(thefont);
     }//GEN-LAST:event_jPanel7MouseExited
 
@@ -1251,9 +1253,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel11MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel11MouseExited
     {//GEN-HEADEREND:event_jPanel11MouseExited
-        jPanel7.setBackground(new Color(0, 255, 255));
-        jPanel11.setBackground(new Color(0, 255, 255));
-        jPanel19.setBackground(new Color(0, 255, 255));
+        setMouseExitColors();
         EditLabel4.setFont(thefont);
     }//GEN-LAST:event_jPanel11MouseExited
 
@@ -1271,9 +1271,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel5MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel5MouseExited
     {//GEN-HEADEREND:event_jPanel5MouseExited
-        jPanel5.setBackground(new Color(0, 255, 255));
-        jPanel12.setBackground(new Color(0, 255, 255));
-        jPanel17.setBackground(new Color(0, 255, 255));
+        setMouseExitColors();
         EditLabel2.setFont(thefont);
     }//GEN-LAST:event_jPanel5MouseExited
 
@@ -1291,9 +1289,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel12MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel12MouseExited
     {//GEN-HEADEREND:event_jPanel12MouseExited
-        jPanel5.setBackground(new Color(0, 255, 255));
-        jPanel12.setBackground(new Color(0, 255, 255));
-        jPanel17.setBackground(new Color(0, 255, 255));
+        setMouseExitColors();
         EditLabel2.setFont(thefont);
     }//GEN-LAST:event_jPanel12MouseExited
 
@@ -1323,17 +1319,13 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel6MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel6MouseExited
     {//GEN-HEADEREND:event_jPanel6MouseExited
-        jPanel6.setBackground(new Color(0, 255, 255));
-        jPanel13.setBackground(new Color(0, 255, 255));
-        jPanel18.setBackground(new Color(0, 255, 255));
+        setMouseExitColors();
         EditLabel3.setFont(thefont);
     }//GEN-LAST:event_jPanel6MouseExited
 
     private void jPanel13MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel13MouseExited
     {//GEN-HEADEREND:event_jPanel13MouseExited
-        jPanel6.setBackground(new Color(0, 255, 255));
-        jPanel13.setBackground(new Color(0, 255, 255));
-        jPanel18.setBackground(new Color(0, 255, 255));
+        setMouseExitColors();
         EditLabel3.setFont(thefont);
     }//GEN-LAST:event_jPanel13MouseExited
 
@@ -1363,17 +1355,13 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel8MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel8MouseExited
     {//GEN-HEADEREND:event_jPanel8MouseExited
-        jPanel8.setBackground(new Color(0, 255, 255));
-        jPanel14.setBackground(new Color(0, 255, 255));
-        jPanel20.setBackground(new Color(0, 255, 255));
+        setMouseExitColors();
         EditLabel5.setFont(thefont);
     }//GEN-LAST:event_jPanel8MouseExited
 
     private void jPanel14MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel14MouseExited
     {//GEN-HEADEREND:event_jPanel14MouseExited
-        jPanel8.setBackground(new Color(0, 255, 255));
-        jPanel14.setBackground(new Color(0, 255, 255));
-        jPanel20.setBackground(new Color(0, 255, 255));
+        setMouseExitColors();
         EditLabel5.setFont(thefont);
     }//GEN-LAST:event_jPanel14MouseExited
 
@@ -1391,9 +1379,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel15MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel15MouseExited
     {//GEN-HEADEREND:event_jPanel15MouseExited
-        jPanel3.setBackground(new Color(0, 255, 255));
-        jPanel9.setBackground(new Color(0, 255, 255));
-        jPanel15.setBackground(new Color(0, 255, 255));
+        setMouseExitColors();
         EditLabel.setFont(thefont);
     }//GEN-LAST:event_jPanel15MouseExited
 
@@ -1442,9 +1428,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel17MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel17MouseExited
     {//GEN-HEADEREND:event_jPanel17MouseExited
-        jPanel5.setBackground(new Color(0, 255, 255));
-        jPanel12.setBackground(new Color(0, 255, 255));
-        jPanel17.setBackground(new Color(0, 255, 255));
+        setMouseExitColors();
         EditLabel2.setFont(thefont);
     }//GEN-LAST:event_jPanel17MouseExited
 
@@ -1462,14 +1446,13 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel20MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel20MouseExited
     {//GEN-HEADEREND:event_jPanel20MouseExited
-        jPanel8.setBackground(new Color(0, 255, 255));
-        jPanel14.setBackground(new Color(0, 255, 255));
-        jPanel20.setBackground(new Color(0, 255, 255));
+        setMouseExitColors();
         EditLabel5.setFont(thefont);
     }//GEN-LAST:event_jPanel20MouseExited
 
     private void jPanel19MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel19MouseEntered
     {//GEN-HEADEREND:event_jPanel19MouseEntered
+
         jPanel7.setBackground(new Color(255, 255, 255));
         jPanel11.setBackground(new Color(255, 255, 255));
         jPanel19.setBackground(new Color(255, 255, 255));
@@ -1482,9 +1465,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel19MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel19MouseExited
     {//GEN-HEADEREND:event_jPanel19MouseExited
-        jPanel7.setBackground(new Color(0, 255, 255));
-        jPanel11.setBackground(new Color(0, 255, 255));
-        jPanel19.setBackground(new Color(0, 255, 255));
+        setMouseExitColors();
         EditLabel4.setFont(thefont);
     }//GEN-LAST:event_jPanel19MouseExited
 
@@ -1502,17 +1483,13 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel18MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel18MouseExited
     {//GEN-HEADEREND:event_jPanel18MouseExited
-        jPanel6.setBackground(new Color(0, 255, 255));
-        jPanel13.setBackground(new Color(0, 255, 255));
-        jPanel18.setBackground(new Color(0, 255, 255));
+        setMouseExitColors();
         EditLabel3.setFont(thefont);
     }//GEN-LAST:event_jPanel18MouseExited
 
     private void jPanel16MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel16MouseExited
     {//GEN-HEADEREND:event_jPanel16MouseExited
-        jPanel4.setBackground(new Color(0, 255, 255));
-        jPanel10.setBackground(new Color(0, 255, 255));
-        jPanel16.setBackground(new Color(0, 255, 255));
+        setMouseExitColors();
         EditLabel1.setFont(thefont);
     }//GEN-LAST:event_jPanel16MouseExited
 
@@ -1824,15 +1801,44 @@ public class Settings extends javax.swing.JPanel
         }
     }//GEN-LAST:event_jPanel11MouseClicked
 
-    private void BackButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BackButtonActionPerformed
-    {//GEN-HEADEREND:event_BackButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BackButtonActionPerformed
+    private void EditLabel5MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel5MouseClicked
+    {//GEN-HEADEREND:event_EditLabel5MouseClicked
+        String response = JOptionPane.showInputDialog("Enter Your New Password:");
+
+        if (response == null)
+            return;
+
+        response = response.trim();
+        if ((response.length() > 0) && (CreateAccountPanel.validatePassword(response)))
+        {
+            GUI.currentUserAccount.setPassword(response);
+            update();
+        }
+        else
+        {
+            errorMessage.setText("Your password was entered incorrectly.");
+        }
+    }//GEN-LAST:event_EditLabel5MouseClicked
+
+    private void LogoutMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_LogoutMouseClicked
+    {//GEN-HEADEREND:event_LogoutMouseClicked
+        //retrieve MainPanel to transfer it's layout to AccountListPanel
+        CardLayout layout = (CardLayout) (MainPanel.getLayout());
+
+        //send the layout of MainPanel to new display of JPanel "Login"
+        layout.show(MainPanel, "Login");
+    }//GEN-LAST:event_LogoutMouseClicked
+
+    private void HomeButtonMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_HomeButtonMouseClicked
+    {//GEN-HEADEREND:event_HomeButtonMouseClicked
+        CardLayout layout = (CardLayout) (MainPanel.getLayout());
+        layout.show(MainPanel, "AccList");
+    }//GEN-LAST:event_HomeButtonMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BAUserNameLabel;
-    private javax.swing.JButton BackButton;
     private javax.swing.JLabel Background;
+    private javax.swing.JLabel Bank42;
     private javax.swing.JButton DeleteAccountButton;
     private javax.swing.JLabel EditLabel;
     private javax.swing.JLabel EditLabel1;
@@ -1840,11 +1846,12 @@ public class Settings extends javax.swing.JPanel
     private javax.swing.JLabel EditLabel3;
     private javax.swing.JLabel EditLabel4;
     private javax.swing.JLabel EditLabel5;
-    private javax.swing.JButton EditPassword;
     private javax.swing.JLabel Email;
     private javax.swing.JLabel FirstName;
-    private javax.swing.JLabel LastName;
-    private javax.swing.JButton LogoutButtton;
+    private javax.swing.JLabel FirstName1;
+    private javax.swing.JPanel HeaderPanel;
+    private javax.swing.JButton HomeButton;
+    private javax.swing.JButton Logout;
     private javax.swing.JLabel Password;
     private javax.swing.JLabel PhoneNumber;
     private javax.swing.JLabel UserEmail;
@@ -1855,7 +1862,6 @@ public class Settings extends javax.swing.JPanel
     private javax.swing.JLabel UserUsername;
     private javax.swing.JLabel Username;
     private javax.swing.JLabel errorMessage;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;

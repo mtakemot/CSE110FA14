@@ -46,7 +46,7 @@ public class BankAccount implements Serializable
 
     public BankAccount()
     {
-        DateTime currentTime = new DateTime(DateTimeZone.forID("Etc/UTC"));
+        DateTime currentTime = new DateTime();
         this.lastDepositDateTime = currentTime;
         this.lastWithdrawDateTime = currentTime;
 
@@ -71,6 +71,18 @@ public class BankAccount implements Serializable
         return false;
     }
 
+    public void addInterest(double amount)
+    {
+        this.balance += amount;
+        this.getTransactions().add(new Transaction("Add Interest", amount));
+    }
+
+    public void subPenalty(double amount)
+    {
+        this.balance -= amount;
+        this.getTransactions().add(new Transaction("Penalty", amount));
+    }
+
     /**
      * Call this function to calculate what the user's interest will be at a
      * certain date in the future.
@@ -81,7 +93,7 @@ public class BankAccount implements Serializable
      */
     public double getInterest(DateTime interestDate)
     {
-        DateTime startTime = new DateTime(DateTimeZone.forID("Etc/UTC"));
+        DateTime startTime = new DateTime();
         double tempTotal = thisMonthsDailyTotals;
         double tempAvg;
         double balanceAfterInterest = balance;
