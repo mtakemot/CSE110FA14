@@ -209,61 +209,80 @@ public class GUI extends javax.swing.JFrame
 
         //get the DateTime for the
         DateTime last = MasterTable.getLastInterestDateTime();
+        int millis = last.getMillisOfSecond();
+        last = last.withMillisOfSecond(last.minusMillis(millis).getMillisOfSecond());
         System.out.println("init Last: " + last);
         int lastMonth = last.getMonthOfYear();
 
-        DateTime now = new DateTime();
+        int lastDay = last.getDayOfMonth();
+        
+        DateTime now = new DateTime(DateTimeZone.forID("Etc/UTC"));
+        
+        millis = now.getMillisOfSecond();
+        now = now.withMillisOfSecond(now.minusMillis(millis).getMillisOfSecond());
+        int nowDay = now.getDayOfMonth();
+
         System.out.println("init now: " + now);
         int nowMonth = now.getMonthOfYear();
-        Seconds s = Seconds.secondsBetween(last, now);
+        Seconds s = Seconds.secondsBetween(last = last.withMillisOfSecond(last.minusMillis(millis).getMillisOfSecond()), now = now.withMillisOfSecond(now.minusMillis(millis).getMillisOfSecond()));
         int sPassed = s.getSeconds();
         System.out.println("Seconds passed: " + sPassed);
-        int taskdelay = sPassed;
-        int hourDiff = sPassed / (60 * 60);
-        sPassed = sPassed - hourDiff * 3600;
-        int minDiff = sPassed / 60;
-        sPassed = sPassed - minDiff * 60;
+       // int taskdelay = sPassed;
+        
+        int hourDiff = sPassed/(60*60);
+            sPassed = sPassed - hourDiff * 3600;
+        int minDiff = sPassed/60;
+            sPassed = sPassed - minDiff*60;
         int secDiff = sPassed;
-
-        ///    timer.scheduleAtFixedRate(updateBalance, taskdelay, balanceInterval);
+        System.out.println("DIFF: H-" + hourDiff + ": M-" + minDiff +": S-" + secDiff);
+    ///    timer.scheduleAtFixedRate(updateBalance, taskdelay, balanceInterval);
+        
+        //overwrite current hashtable lastInterestDateTime with incremented, sec
+        //min, and hour
+        millis = last.getMillisOfSecond();
+        last = last.withMillisOfSecond(last.minusMillis(millis).getMillisOfSecond());
         DateTime temp = last.withSecondOfMinute(last.plusSeconds(secDiff).getSecondOfMinute());
+        millis = temp.getMillisOfSecond();
+        temp = temp.withMillisOfSecond(temp.minusMillis(millis).getMillisOfSecond());
         temp = temp.withMinuteOfHour(temp.plusMinutes(minDiff).getMinuteOfHour());
         temp = temp.withHourOfDay(temp.plusHours(hourDiff).getHourOfDay());
+        
         MasterTable.setLastInterestDateTime(temp);
-        System.out.println("temp is: " + temp);
-        last = MasterTable.getLastInterestDateTime();
-        System.out.println("new last should be same as now: " + last);
+        System.out.println("SetLastinterestDateTime: "  + temp);
+        
+       
+       // System.out.println("new last should be same as now: "  + last);
         //NOW we got rid of the smaller time variables we do not need to monitor
         //HOWEVER, if adding the increments did increase day/time run the tasks
-
-        //month difference
-        int monthDiff = nowMonth - lastMonth;
-
-        int daysInMonth = last.dayOfMonth().getMaximumValue();
-        for (int i = 0; i < monthDiff; i++)
-        {
-
+        //System.out.println("min: " )
+        //days first 
+        int dayDiff = nowDay - lastDay;
+        int tempMonth = temp.getMonthOfYear();
+        for (int i = 0; i < dayDiff ; i++){
+            updateBalance.run();
         }
-
-        timer.scheduleAtFixedRate(updateBalance, taskdelay, balanceInterval);
-        timer.scheduleAtFixedRate(updateInterest, taskdelay, interestInterval);
-
-        /*
-         int minDiff = abs(Minutes.minutesBetween(last, now).getMinutes());
-         int secDiff = abs(Seconds.secondsBetween(last, now).getSeconds());*/
-        //  System.out.println()
-        //now that the updateBalance x dPassed is done, delay until the next day
-        //and schedule task from that delay for every hour
-            /*long delaySec = (hourDiff*60*60+ minDiff*60+secDiff+1)*1000;
-         long balanceInterval = (23*60*60+59*60+60)*1000; //balance runs full day intervals
-         System.out.println(" balanceInterval: " + balanceInterval);
-         long interestInterval = numDaysInMonth * balanceInterval;
-         System.out.println("interestInterval: " + interestInterval);
-
-         timer.scheduleAtFixedRate(updateBalance, delaySec, balanceInterval);
-         timer.scheduleAtFixedRate(updateInterest, delaySec, interestInterval);*/
-        System.out.println("TaskTimer scheduled by main. Now initializing GUI");
-
+        
+        //month difference
+        int monthDiff = nowMonth - lastMonth; 
+        int daysInMonth = last.dayOfMonth().getMaximumValue();
+        DateTime iterate;
+        for(int i = 0; i < monthDiff ; i++){
+            for(int j = 0; j < daysInMonth; j++ ){
+                updateBalance.run();
+            }
+            updateInterest.run();           
+            iterate = last.withMonthOfYear(last.plusMonths(i+1).getMonthOfYear());
+            daysInMonth = iterate.dayOfMonth().getMaximumValue();
+        }
+        
+       //add nowDay +1 to current Date
+        
+           
+       /*    timer.scheduleAtFixedRate(updateBalance, , balanceInterval);
+           timer.scheduleAtFixedRate(updateInterest, , interestInterval);*/
+        
+       // System.out.println("TaskTimer scheduled by main. Now initializing GUI");
+      
         /* ***********************************************************************/
     }
 
