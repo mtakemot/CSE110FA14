@@ -170,6 +170,7 @@ public class TellerAccountPage extends javax.swing.JPanel
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 10, 0);
         MainComponentsPanel.add(DepositButton, gridBagConstraints);
 
         WithdrawButton.setText("Withdraw");
@@ -184,6 +185,7 @@ public class TellerAccountPage extends javax.swing.JPanel
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 10, 0);
         MainComponentsPanel.add(WithdrawButton, gridBagConstraints);
 
         DeleteUserAccountButton.setText("Delete This User Account");
@@ -197,6 +199,8 @@ public class TellerAccountPage extends javax.swing.JPanel
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
         MainComponentsPanel.add(DeleteUserAccountButton, gridBagConstraints);
 
         DeleteAccountButton.setText("Delete Highlighted Bank Account");
@@ -210,6 +214,7 @@ public class TellerAccountPage extends javax.swing.JPanel
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 10, 0);
         MainComponentsPanel.add(DeleteAccountButton, gridBagConstraints);
 
         BackButton.setText("Back");
@@ -223,6 +228,8 @@ public class TellerAccountPage extends javax.swing.JPanel
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
         MainComponentsPanel.add(BackButton, gridBagConstraints);
 
         Holder.add(MainComponentsPanel, new java.awt.GridBagConstraints());
