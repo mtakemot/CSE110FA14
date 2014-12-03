@@ -57,6 +57,8 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
 
         jPanel1.setLayout(new java.awt.GridBagLayout());
 
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(675, 300));
+
         TransactionsTable.setModel(new PresentationLayer.TransactionTableModel(PresentationLayer.GUI.currentBankAccount));
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
         centerRenderer.setHorizontalAlignment( JLabel.CENTER );
