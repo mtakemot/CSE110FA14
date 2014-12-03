@@ -84,8 +84,6 @@ public class Settings extends javax.swing.JPanel
         EditLabel2 = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
         EditLabel3 = new javax.swing.JLabel();
-        jPanel14 = new javax.swing.JPanel();
-        EditLabel5 = new javax.swing.JLabel();
         jPanel15 = new javax.swing.JPanel();
         UserLastName = new javax.swing.JLabel();
         jPanel16 = new javax.swing.JPanel();
@@ -98,6 +96,8 @@ public class Settings extends javax.swing.JPanel
         UserPhoneNumber = new javax.swing.JLabel();
         jPanel20 = new javax.swing.JPanel();
         UserPassword = new javax.swing.JLabel();
+        jPanel26 = new javax.swing.JPanel();
+        EditLabel5 = new javax.swing.JLabel();
         jPanel21 = new javax.swing.JPanel();
         jPanel22 = new javax.swing.JPanel();
         jPanel23 = new javax.swing.JPanel();
@@ -123,7 +123,7 @@ public class Settings extends javax.swing.JPanel
         jPanel1.setBackground(new Color (0,255,255,150));
         jPanel1.setName(""); // NOI18N
         java.awt.GridBagLayout jPanel1Layout = new java.awt.GridBagLayout();
-        jPanel1Layout.columnWidths = new int[] {0, 0, 0, 0, 0};
+        jPanel1Layout.columnWidths = new int[] {0, 0, 0, 0, 0, 0, 0};
         jPanel1Layout.rowHeights = new int[] {0, 8, 0, 8, 0, 8, 0, 8, 0, 8, 0, 8, 0, 8, 0, 8, 0};
         jPanel1.setLayout(jPanel1Layout);
 
@@ -613,51 +613,6 @@ public class Settings extends javax.swing.JPanel
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel1.add(jPanel13, gridBagConstraints);
 
-        jPanel14.setBackground(new java.awt.Color(255, 204, 153));
-        jPanel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel14.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                jPanel14MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt)
-            {
-                jPanel14MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt)
-            {
-                jPanel14MouseExited(evt);
-            }
-        });
-
-        EditLabel5.setForeground(new java.awt.Color(51, 0, 255));
-        EditLabel5.setText("Edit");
-        EditLabel5.setFocusable(false);
-        EditLabel5.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                EditLabel5MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt)
-            {
-                EditLabel5MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt)
-            {
-                EditLabel5MouseExited(evt);
-            }
-        });
-        jPanel14.add(EditLabel5);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 12;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel1.add(jPanel14, gridBagConstraints);
-
         jPanel15.setBackground(new java.awt.Color(255, 204, 153));
         jPanel15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -837,6 +792,49 @@ public class Settings extends javax.swing.JPanel
         gridBagConstraints.gridy = 12;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel1.add(jPanel20, gridBagConstraints);
+
+        jPanel26.setBackground(new java.awt.Color(255, 204, 153));
+        jPanel26.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel26.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                jPanel26MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
+                jPanel26MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
+                jPanel26MouseExited(evt);
+            }
+        });
+
+        EditLabel5.setForeground(new java.awt.Color(51, 0, 255));
+        EditLabel5.setText("Edit");
+        EditLabel5.setFocusable(false);
+        EditLabel5.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                EditLabel5MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
+                EditLabel5MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
+                EditLabel5MouseExited(evt);
+            }
+        });
+        jPanel26.add(EditLabel5);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 12;
+        jPanel1.add(jPanel26, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -1069,7 +1067,7 @@ public class Settings extends javax.swing.JPanel
         jPanel11.setBackground(newColor);
         jPanel12.setBackground(newColor);
         jPanel13.setBackground(newColor);
-        jPanel14.setBackground(newColor);
+        jPanel26.setBackground(newColor);
         jPanel15.setBackground(newColor);
         jPanel16.setBackground(newColor);
         jPanel17.setBackground(newColor);
@@ -1188,7 +1186,7 @@ public class Settings extends javax.swing.JPanel
     private void EditLabel5MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel5MouseEntered
     {//GEN-HEADEREND:event_EditLabel5MouseEntered
         jPanel8.setBackground(new Color(255, 255, 255));
-        jPanel14.setBackground(new Color(255, 255, 255));
+        jPanel26.setBackground(new Color(255, 255, 255));
         jPanel20.setBackground(new Color(255, 255, 255));
         thefont = EditLabel.getFont();
         Font font = EditLabel.getFont();
@@ -1425,7 +1423,7 @@ public class Settings extends javax.swing.JPanel
     private void jPanel8MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel8MouseEntered
     {//GEN-HEADEREND:event_jPanel8MouseEntered
         jPanel8.setBackground(new Color(255, 255, 255));
-        jPanel14.setBackground(new Color(255, 255, 255));
+        jPanel26.setBackground(new Color(255, 255, 255));
         jPanel20.setBackground(new Color(255, 255, 255));
         thefont = EditLabel.getFont();
         Font font = EditLabel.getFont();
@@ -1434,29 +1432,11 @@ public class Settings extends javax.swing.JPanel
         EditLabel5.setFont(font.deriveFont(attributes));
     }//GEN-LAST:event_jPanel8MouseEntered
 
-    private void jPanel14MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel14MouseEntered
-    {//GEN-HEADEREND:event_jPanel14MouseEntered
-        jPanel8.setBackground(new Color(255, 255, 255));
-        jPanel14.setBackground(new Color(255, 255, 255));
-        jPanel20.setBackground(new Color(255, 255, 255));
-        thefont = EditLabel.getFont();
-        Font font = EditLabel.getFont();
-        Map attributes = font.getAttributes();
-        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
-        EditLabel5.setFont(font.deriveFont(attributes));
-    }//GEN-LAST:event_jPanel14MouseEntered
-
     private void jPanel8MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel8MouseExited
     {//GEN-HEADEREND:event_jPanel8MouseExited
         setMouseExitColors();
         EditLabel5.setFont(thefont);
     }//GEN-LAST:event_jPanel8MouseExited
-
-    private void jPanel14MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel14MouseExited
-    {//GEN-HEADEREND:event_jPanel14MouseExited
-        setMouseExitColors();
-        EditLabel5.setFont(thefont);
-    }//GEN-LAST:event_jPanel14MouseExited
 
     private void jPanel15MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel15MouseEntered
     {//GEN-HEADEREND:event_jPanel15MouseEntered
@@ -1528,7 +1508,7 @@ public class Settings extends javax.swing.JPanel
     private void jPanel20MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel20MouseEntered
     {//GEN-HEADEREND:event_jPanel20MouseEntered
         jPanel8.setBackground(new Color(255, 255, 255));
-        jPanel14.setBackground(new Color(255, 255, 255));
+        jPanel26.setBackground(new Color(255, 255, 255));
         jPanel20.setBackground(new Color(255, 255, 255));
         thefont = EditLabel.getFont();
         Font font = EditLabel.getFont();
@@ -1993,41 +1973,33 @@ public class Settings extends javax.swing.JPanel
         }
     }//GEN-LAST:event_jPanel20MouseClicked
 
-    private void jPanel14MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel14MouseClicked
-    {//GEN-HEADEREND:event_jPanel14MouseClicked
-           JPanel passpanel = mainGUI.getChangePasswordPanel().GetPanel();
-        int choice = JOptionPane.showConfirmDialog(
-                null,
-                passpanel,
-                "Bank 42",
-                JOptionPane.OK_CANCEL_OPTION,
-                JOptionPane.PLAIN_MESSAGE
-        );
+    private void jPanel26MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel26MouseClicked
+    {//GEN-HEADEREND:event_jPanel26MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel26MouseClicked
 
-        if (choice == 0)
-        {
-            mainGUI.getChangePasswordPanel().SetPassword();
-        }
-    }//GEN-LAST:event_jPanel14MouseClicked
+    private void jPanel26MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel26MouseEntered
+    {//GEN-HEADEREND:event_jPanel26MouseEntered
+        jPanel8.setBackground(new Color(255, 255, 255));
+        jPanel26.setBackground(new Color(255, 255, 255));
+        jPanel20.setBackground(new Color(255, 255, 255));
+        thefont = EditLabel.getFont();
+        Font font = EditLabel.getFont();
+        Map attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        EditLabel5.setFont(font.deriveFont(attributes));
+    }//GEN-LAST:event_jPanel26MouseEntered
 
-    private void jPanel14MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel14MouseClicked
-    {//GEN-HEADEREND:event_jPanel14MouseClicked
-        String response = JOptionPane.showInputDialog("Enter Your New Password:");
+    private void jPanel26MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel26MouseExited
+    {//GEN-HEADEREND:event_jPanel26MouseExited
+        setMouseExitColors();
+        EditLabel5.setFont(thefont);
+    }//GEN-LAST:event_jPanel26MouseExited
 
-        if (response == null)
-            return;
-
-        response = response.trim();
-        if ((response.length() > 0) && (CreateAccountPanel.validatePassword(response)))
-        {
-            GUI.currentUserAccount.setPassword(response);
-            update();
-        }
-        else
-        {
-            errorMessage.setText("Your password was entered incorrectly.");
-        }
-    }//GEN-LAST:event_jPanel14MouseClicked
+    private void jPanel14MouseClicked(java.awt.event.MouseEvent evt)                                      
+    {                                          
+        
+    }                                     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Background;
@@ -2061,7 +2033,6 @@ public class Settings extends javax.swing.JPanel
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
@@ -2074,6 +2045,7 @@ public class Settings extends javax.swing.JPanel
     private javax.swing.JPanel jPanel23;
     private javax.swing.JPanel jPanel24;
     private javax.swing.JPanel jPanel25;
+    private javax.swing.JPanel jPanel26;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
