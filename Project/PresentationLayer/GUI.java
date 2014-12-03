@@ -112,30 +112,22 @@ public class GUI extends javax.swing.JFrame
 
         //Puts some initial values in the table to prevent null pointer
         // exceptions
-        currentUserAccount = MasterTable.insertUserAccount("Customer_A", "Customer_A_Email");
+        currentUserAccount = MasterTable.insertUserAccount("Customer_A", "Customer_A@gmail.com");
         if (currentUserAccount != null)
         {
             currentUserAccount.setFirstName("first");
             currentUserAccount.setLastName("last");
             currentUserAccount.setPassword("foobar");
             currentUserAccount.setPhone("0123456789");
-            currentBankAccount = currentUserAccount.insertBankAccount(1000, "Checking_1A", "Checking");
-            currentBankAccount = currentUserAccount.insertBankAccount(2100, "Savings_1A", "Savings");
-            currentBankAccount = currentUserAccount.insertBankAccount(100, "Checking_2A", "Checking");
-            currentBankAccount = currentUserAccount.insertBankAccount(3100, "Checking_3A", "Checking");
         }
 
-        currentUserAccount = MasterTable.insertUserAccount("Customer_B", "Customer_B_Email");
+        currentUserAccount = MasterTable.insertUserAccount("Customer_B", "Customer_B@gmail.com");
         if (currentUserAccount != null)
         {
             currentUserAccount.setFirstName("first");
             currentUserAccount.setLastName("last");
             currentUserAccount.setPassword("foobar");
             currentUserAccount.setPhone("0123456789");
-            currentBankAccount = currentUserAccount.insertBankAccount(1100, "Checking_1B", "Checking");
-            currentBankAccount = currentUserAccount.insertBankAccount(2100, "Savings_1B", "Savings");
-            currentBankAccount = currentUserAccount.insertBankAccount(100, "Checking_2B", "Checking");
-            currentBankAccount = currentUserAccount.insertBankAccount(3100, "Checking_3B", "Checking");
         }
         currentUserAccount = MasterTable.insertUserAccount("qq", "email");
         if (currentUserAccount != null)
@@ -215,9 +207,9 @@ public class GUI extends javax.swing.JFrame
         int lastMonth = last.getMonthOfYear();
 
         int lastDay = last.getDayOfMonth();
-        
+
         DateTime now = new DateTime(DateTimeZone.forID("Etc/UTC"));
-        
+
         millis = now.getMillisOfSecond();
         now = now.withMillisOfSecond(now.minusMillis(millis).getMillisOfSecond());
         int nowDay = now.getDayOfMonth();
@@ -227,16 +219,16 @@ public class GUI extends javax.swing.JFrame
         Seconds s = Seconds.secondsBetween(last = last.withMillisOfSecond(last.minusMillis(millis).getMillisOfSecond()), now = now.withMillisOfSecond(now.minusMillis(millis).getMillisOfSecond()));
         int sPassed = s.getSeconds();
         System.out.println("Seconds passed: " + sPassed);
-       // int taskdelay = sPassed;
-        
-        int hourDiff = sPassed/(60*60);
-            sPassed = sPassed - hourDiff * 3600;
-        int minDiff = sPassed/60;
-            sPassed = sPassed - minDiff*60;
+        // int taskdelay = sPassed;
+
+        int hourDiff = sPassed / (60 * 60);
+        sPassed = sPassed - hourDiff * 3600;
+        int minDiff = sPassed / 60;
+        sPassed = sPassed - minDiff * 60;
         int secDiff = sPassed;
-        System.out.println("DIFF: H-" + hourDiff + ": M-" + minDiff +": S-" + secDiff);
+        System.out.println("DIFF: H-" + hourDiff + ": M-" + minDiff + ": S-" + secDiff);
     ///    timer.scheduleAtFixedRate(updateBalance, taskdelay, balanceInterval);
-        
+
         //overwrite current hashtable lastInterestDateTime with incremented, sec
         //min, and hour
         millis = last.getMillisOfSecond();
@@ -246,43 +238,41 @@ public class GUI extends javax.swing.JFrame
         temp = temp.withMillisOfSecond(temp.minusMillis(millis).getMillisOfSecond());
         temp = temp.withMinuteOfHour(temp.plusMinutes(minDiff).getMinuteOfHour());
         temp = temp.withHourOfDay(temp.plusHours(hourDiff).getHourOfDay());
-        
+
         MasterTable.setLastInterestDateTime(temp);
-        System.out.println("SetLastinterestDateTime: "  + temp);
-        
-       
-       // System.out.println("new last should be same as now: "  + last);
+        System.out.println("SetLastinterestDateTime: " + temp);
+
+        // System.out.println("new last should be same as now: "  + last);
         //NOW we got rid of the smaller time variables we do not need to monitor
         //HOWEVER, if adding the increments did increase day/time run the tasks
         //System.out.println("min: " )
-        //days first 
+        //days first
         int dayDiff = nowDay - lastDay;
         int tempMonth = temp.getMonthOfYear();
-        for (int i = 0; i < dayDiff ; i++){
+        for (int i = 0; i < dayDiff; i++)
+        {
             updateBalance.run();
         }
-        
+
         //month difference
-        int monthDiff = nowMonth - lastMonth; 
+        int monthDiff = nowMonth - lastMonth;
         int daysInMonth = last.dayOfMonth().getMaximumValue();
         DateTime iterate;
-        for(int i = 0; i < monthDiff ; i++){
-            for(int j = 0; j < daysInMonth; j++ ){
+        for (int i = 0; i < monthDiff; i++)
+        {
+            for (int j = 0; j < daysInMonth; j++)
+            {
                 updateBalance.run();
             }
-            updateInterest.run();           
-            iterate = last.withMonthOfYear(last.plusMonths(i+1).getMonthOfYear());
+            updateInterest.run();
+            iterate = last.withMonthOfYear(last.plusMonths(i + 1).getMonthOfYear());
             daysInMonth = iterate.dayOfMonth().getMaximumValue();
         }
-        
+
        //add nowDay +1 to current Date
-        
-           
-       /*    timer.scheduleAtFixedRate(updateBalance, , balanceInterval);
-           timer.scheduleAtFixedRate(updateInterest, , interestInterval);*/
-        
-       // System.out.println("TaskTimer scheduled by main. Now initializing GUI");
-      
+        /*    timer.scheduleAtFixedRate(updateBalance, , balanceInterval);
+         timer.scheduleAtFixedRate(updateInterest, , interestInterval);*/
+        // System.out.println("TaskTimer scheduled by main. Now initializing GUI");
         /* ***********************************************************************/
     }
 
@@ -300,10 +290,8 @@ public class GUI extends javax.swing.JFrame
     public void updateUserLabels()
     {
         getAccList().updateUserLabel();
-        getDelete().updateUserLabel();
         getSettings().updateUserLabel();
         getTellerAP().updateUserLabel();
-        getTDelete().updateUserLabel();
         getCreateBA().updateUserLabel();
     }
 
@@ -416,7 +404,7 @@ public class GUI extends javax.swing.JFrame
                 initDB();
 
                 //update daily total BEFORE interest.
-                initTask();
+                // initTask();
                 // This grabs the MainPanel and stores it in a variable so that
                 // we have easy access to it
                 JPanel cardHolder = mainGUI.getMainPanel();
@@ -426,11 +414,9 @@ public class GUI extends javax.swing.JFrame
                 mainGUI.setAccList(new AccountsListPanel(cardHolder, mainGUI));
                 mainGUI.setSettings(new Settings(cardHolder, mainGUI));
                 mainGUI.setCreateAcc(new CreateAccountPanel(cardHolder, mainGUI));
-                mainGUI.setDelete(new DeleteAccountPanel(cardHolder, mainGUI));
                 mainGUI.setCreateBA(new CreateBankAccount(cardHolder, mainGUI));
                 mainGUI.setTellerAP(new TellerAccountPage(cardHolder, mainGUI));
                 mainGUI.setTellerMainMenu(new TellerMainMenu(cardHolder, mainGUI));
-                mainGUI.setTDelete(new TellerDeleteAccountPanel(cardHolder, mainGUI));
                 mainGUI.setPass(new PasswordFieldPanel(cardHolder, mainGUI));
                 mainGUI.setPenIntPanel(new PenaltyInterestPanel(cardHolder, mainGUI));
                 mainGUI.setTransPanel(new TransactionHistoryPanel(cardHolder, mainGUI));
@@ -446,10 +432,8 @@ public class GUI extends javax.swing.JFrame
                 cardHolder.add(mainGUI.getAccList(), "AccList");
                 cardHolder.add(mainGUI.getCreateAcc(), "CreateAcc");
                 cardHolder.add(mainGUI.getSettings(), "Settings");
-                cardHolder.add(mainGUI.getDelete(), "Delete");
                 cardHolder.add(mainGUI.getTellerMainMenu(), "TellerMainMenu");
                 cardHolder.add(mainGUI.getTellerAP(), "TellerAP");
-                cardHolder.add(mainGUI.getTDelete(), "TDelete");
                 cardHolder.add(mainGUI.getPenIntPanel(), "PenIntPanel");
                 cardHolder.add(mainGUI.getTransPanel(), "TransPanel");
                 cardHolder.add(mainGUI.getDolphinsPanel(), "DolphinsPanel");
@@ -492,8 +476,6 @@ public class GUI extends javax.swing.JFrame
     private TellerMainMenu TellerMainMenu;
     private CreateBankAccount CreateBA;
     private TellerAccountPage TellerAP;
-    private DeleteAccountPanel Delete;
-    private TellerDeleteAccountPanel TDelete;
     private PasswordFieldPanel pass;
     private PenaltyInterestPanel PenIntPanel;
     private TransactionHistoryPanel TransPanel;
@@ -537,26 +519,6 @@ public class GUI extends javax.swing.JFrame
     public void setPenIntPanel(PenaltyInterestPanel PenIntPanel)
     {
         this.PenIntPanel = PenIntPanel;
-    }
-
-    public TellerDeleteAccountPanel getTDelete()
-    {
-        return TDelete;
-    }
-
-    public void setTDelete(TellerDeleteAccountPanel TDelete)
-    {
-        this.TDelete = TDelete;
-    }
-
-    public DeleteAccountPanel getDelete()
-    {
-        return Delete;
-    }
-
-    public void setDelete(DeleteAccountPanel Delete)
-    {
-        this.Delete = Delete;
     }
 
     public LoginPanel getLogin()

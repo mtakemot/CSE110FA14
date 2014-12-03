@@ -29,14 +29,19 @@ public class SavingsAccount extends BankAccount
     public SavingsAccount(String name)
     {
         super();
+        this.accountType = "Savings";
         this.accountName = name;
     }
 
     public SavingsAccount(double bal, String name)
     {
+        super();
         this.balance = bal;
         this.accountName = name;
         this.accountType = "Savings";
+        this.transactions.add(new Transaction("Account Created", bal));
+        DateTime currentTime = new DateTime();
+        this.thisMonthsDailyTotals = bal * currentTime.getDayOfMonth();
     }
 
     @Override
