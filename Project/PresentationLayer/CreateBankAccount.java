@@ -21,9 +21,11 @@ public class CreateBankAccount extends javax.swing.JPanel
     {
         "Checking", "Savings"
     };
+    private ImageIcon icon;
 
     public CreateBankAccount(JPanel MainPanel, GUI mainGUI)
     {
+        icon = new javax.swing.ImageIcon(getClass().getResource("/Assets/rsz_2icon.png"));
         this.mainGUI = mainGUI;
         this.MainPanel = MainPanel;
         initComponents();
@@ -115,7 +117,7 @@ public class CreateBankAccount extends javax.swing.JPanel
         else if (GUI.currentUserAccount.findBankAccount(AccountNameField.getText()) != null)
         {
             JOptionPane.showMessageDialog(null, "You Have An Existing Bank Account With That Name"
-                    + "\n Please Choose A Valid Name", "Bank 42", 1);
+                    + "\n Please Choose A Valid Name", "Bank 42", 1,icon);
             AccountNameField.setText("");
         }
 
@@ -124,7 +126,7 @@ public class CreateBankAccount extends javax.swing.JPanel
             GUI.currentUserAccount.insertBankAccount(0, AccountNameField.getText(), TypeCombo.getSelectedItem().toString());
             CardLayout layout = (CardLayout) (MainPanel.getLayout());
             mainGUI.getAccList().update();
-            JOptionPane.showMessageDialog(null, TypeCombo.getSelectedItem() + " Account: " + AccountNameField.getText() + " successfully created");
+            JOptionPane.showMessageDialog(null, TypeCombo.getSelectedItem() + " Account: " + AccountNameField.getText() + " successfully created","Bank 42",1,icon);
             layout.show(MainPanel, "AccList");
         }
 
