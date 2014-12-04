@@ -157,11 +157,11 @@ public class AccountsListPanel extends javax.swing.JPanel
         jPanel11 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
-        UserLabel = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        UserLabel = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         option = new javax.swing.JLabel();
@@ -518,6 +518,12 @@ public class AccountsListPanel extends javax.swing.JPanel
         gridBagConstraints.gridy = 0;
         jPanel3.add(jPanel10, gridBagConstraints);
 
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.insets = new java.awt.Insets(15, 0, 0, 0);
+        add(jPanel3, gridBagConstraints);
+
         jPanel11.setOpaque(false);
         jPanel11.setLayout(new java.awt.GridBagLayout());
 
@@ -530,15 +536,6 @@ public class AccountsListPanel extends javax.swing.JPanel
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
         jPanel7.setLayout(new java.awt.GridBagLayout());
-
-        UserLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        UserLabel.setForeground(new java.awt.Color(14, 118, 188));
-        UserLabel.setText("userlabel");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 0;
-        jPanel7.add(UserLabel, gridBagConstraints);
-
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
@@ -548,7 +545,7 @@ public class AccountsListPanel extends javax.swing.JPanel
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         java.awt.GridBagLayout jPanel6Layout = new java.awt.GridBagLayout();
-        jPanel6Layout.columnWidths = new int[] {0, 7, 0, 7, 0};
+        jPanel6Layout.columnWidths = new int[] {0, 10, 0, 10, 0, 10, 0};
         jPanel6Layout.rowHeights = new int[] {0, 7, 0, 7, 0};
         jPanel6.setLayout(jPanel6Layout);
 
@@ -569,7 +566,7 @@ public class AccountsListPanel extends javax.swing.JPanel
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel6.add(jLabel4, gridBagConstraints);
@@ -591,7 +588,7 @@ public class AccountsListPanel extends javax.swing.JPanel
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridx = 6;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel6.add(jLabel5, gridBagConstraints);
@@ -613,9 +610,17 @@ public class AccountsListPanel extends javax.swing.JPanel
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 2;
         jPanel6.add(jLabel6, gridBagConstraints);
+
+        UserLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        UserLabel.setForeground(new java.awt.Color(14, 118, 188));
+        UserLabel.setText("userlabel");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        jPanel6.add(UserLabel, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
@@ -660,18 +665,16 @@ public class AccountsListPanel extends javax.swing.JPanel
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        jPanel3.add(jPanel11, gridBagConstraints);
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(15, 10, 0, 0);
+        add(jPanel11, gridBagConstraints);
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.insets = new java.awt.Insets(15, 0, 0, 0);
-        add(jPanel3, gridBagConstraints);
-
-        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/rsz_inthebeginning Cropped.jpg"))); // NOI18N
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/wallhaven-15760.png"))); // NOI18N
         Background.setAlignmentY(0.0F);
+        Background.setMaximumSize(new java.awt.Dimension(800, 600));
+        Background.setMinimumSize(new java.awt.Dimension(800, 600));
         Background.setOpaque(true);
+        Background.setPreferredSize(new java.awt.Dimension(800, 600));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
