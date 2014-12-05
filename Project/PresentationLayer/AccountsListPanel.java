@@ -1023,7 +1023,7 @@ public class AccountsListPanel extends javax.swing.JPanel
 
     private void jLabel4MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jLabel4MouseEntered
     {//GEN-HEADEREND:event_jLabel4MouseEntered
-        option.setText("Settings");             
+        option.setText("          Settings");             
     }//GEN-LAST:event_jLabel4MouseEntered
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jLabel4MouseClicked
@@ -1039,7 +1039,7 @@ public class AccountsListPanel extends javax.swing.JPanel
 
     private void jLabel5MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jLabel5MouseEntered
     {//GEN-HEADEREND:event_jLabel5MouseEntered
-        option.setText("Logout");
+        option.setText("                        Logout");
     }//GEN-LAST:event_jLabel5MouseEntered
 
     private void jLabel5MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jLabel5MouseExited
@@ -1055,7 +1055,7 @@ public class AccountsListPanel extends javax.swing.JPanel
 
     private void jLabel6MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jLabel6MouseEntered
     {//GEN-HEADEREND:event_jLabel6MouseEntered
-        option.setText("Home");
+        option.setText("Home      ");
     }//GEN-LAST:event_jLabel6MouseEntered
 
     private void jLabel6MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jLabel6MouseExited
