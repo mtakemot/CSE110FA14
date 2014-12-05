@@ -191,6 +191,11 @@ public class GUI extends javax.swing.JFrame
     {
         Timer timer = new Timer();
 
+        /***IMPORTANT the following below is to calculate the balance/interest
+         * for the days that the program was off OR on. After this is done, then
+         * the tasks (threads) to update bal and interest are scheduled to run
+         * daily/monthly
+         */
         //begin setup for balanceTask thread
         TimerTask updateBalance = new balanceTask();
         int balanceInterval = (23 * 60 * 60 + 59 * 60 + 60) * 1000;
@@ -269,9 +274,11 @@ public class GUI extends javax.swing.JFrame
             daysInMonth = iterate.dayOfMonth().getMaximumValue();
         }
 
-       //add nowDay +1 to current Date
-        /*    timer.scheduleAtFixedRate(updateBalance, , balanceInterval);
-         timer.scheduleAtFixedRate(updateInterest, , interestInterval);*/
+      
+        /*    THIS IS SCHEDULING THE THREADS TO RUN. both are on separate threads.
+            timer.scheduleAtFixedRate(updateBalance, , balanceInterval); //daily
+            timer.scheduleAtFixedRate(updateInterest, , interestInterval); //monthly
+        */
         // System.out.println("TaskTimer scheduled by main. Now initializing GUI");
         /* ***********************************************************************/
     }
