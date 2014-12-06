@@ -60,6 +60,7 @@
                   <Color blue="ff" green="0" red="33" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Bank 42"/>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">

@@ -67,6 +67,7 @@ public class TellerMainMenu extends javax.swing.JPanel
         Bank42.setFont(new java.awt.Font("DejaVu Sans", 1, 48)); // NOI18N
         Bank42.setForeground(new java.awt.Color(51, 0, 255));
         Bank42.setText("Bank 42");
+        Bank42.setToolTipText("");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;

@@ -173,7 +173,7 @@ public class GUI extends javax.swing.JFrame
         if (currentUserAccount == null)
         {
             currentUserAccount = MasterTable.findUserAccount("ee");
-            currentBankAccount = currentUserAccount.findBankAccount("ee1");
+            currentBankAccount = currentUserAccount.findBankAccount("ee2");
         }
 
         if (dataout.exportDB(MasterTable))
