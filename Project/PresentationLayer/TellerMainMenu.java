@@ -40,8 +40,7 @@ public class TellerMainMenu extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
         BGPanel = new javax.swing.JPanel();
@@ -83,10 +82,8 @@ public class TellerMainMenu extends javax.swing.JPanel
         ButtonPanel.setLayout(new java.awt.GridBagLayout());
 
         InterestPenaltyButton.setText("Adjust Interest Rates and Penalties");
-        InterestPenaltyButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        InterestPenaltyButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 InterestPenaltyButtonActionPerformed(evt);
             }
         });
@@ -99,10 +96,8 @@ public class TellerMainMenu extends javax.swing.JPanel
         ButtonPanel.add(InterestPenaltyButton, gridBagConstraints);
 
         SearchUserButton.setText("Search For A User");
-        SearchUserButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        SearchUserButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 SearchUserButtonMouseClicked(evt);
             }
         });
@@ -113,10 +108,8 @@ public class TellerMainMenu extends javax.swing.JPanel
         ButtonPanel.add(SearchUserButton, gridBagConstraints);
 
         ApplyPenIntButton.setText("Apply Global Interest");
-        ApplyPenIntButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        ApplyPenIntButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ApplyPenIntButtonActionPerformed(evt);
             }
         });
@@ -133,10 +126,8 @@ public class TellerMainMenu extends javax.swing.JPanel
         Logout.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Logout.setForeground(new java.awt.Color(51, 0, 255));
         Logout.setText("Logout");
-        Logout.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        Logout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LogoutMouseClicked(evt);
             }
         });
