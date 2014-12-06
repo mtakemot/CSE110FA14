@@ -12,6 +12,7 @@ import javax.swing.table.DefaultTableCellRenderer;*/
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
+import java.awt.font.TextAttribute;
 
 /**
  *
@@ -91,6 +92,8 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         BusinessPanel.add(jScrollPane1, gridBagConstraints);
 
         Back.setBackground(new Color(255,255,255,150));
+        Back.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Back.setForeground(new java.awt.Color(14, 118, 188));
         Back.setText("Return To Account Selection");
         Back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,6 +108,8 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         BusinessPanel.add(Back, gridBagConstraints);
 
         Logout.setBackground(new java.awt.Color(255, 255, 255));
+        Logout.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Logout.setForeground(new java.awt.Color(14, 118, 188));
         Logout.setText("Log Out");
         Logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -124,10 +129,11 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 70, 0);
         ChildBG.add(BusinessPanel, gridBagConstraints);
 
+        TitlePanel.setOpaque(false);
         TitlePanel.setLayout(new java.awt.GridBagLayout());
 
         Title.setBackground(new java.awt.Color(255, 255, 255));
-        Title.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        Title.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 48)); // NOI18N
         Title.setForeground(new java.awt.Color(51, 0, 255));
         Title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Title.setText("Transaction History");
