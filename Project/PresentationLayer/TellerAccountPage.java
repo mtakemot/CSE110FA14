@@ -139,18 +139,31 @@ public class TellerAccountPage extends javax.swing.JPanel
 
         jScrollPane1.setPreferredSize(new java.awt.Dimension(454, 300));
 
+        AccountsTable.setAutoCreateRowSorter(true);
         AccountsTable.setSelectionModel(SelectionModel = new DefaultListSelectionModel());
         SelectionModel.setSelectionMode(0);
-        AccountsTable.setAutoCreateRowSorter(true);
+        AccountsTable.setBackground(new Color(255,255,255));
+        AccountsTable.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        AccountsTable.setForeground(new java.awt.Color(14, 118, 188));
+        AccountsTable.setModel(new PresentationLayer.AccountsTableModel(PresentationLayer.GUI.currentUserAccount));
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
         centerRenderer.setHorizontalAlignment( JLabel.CENTER );
         AccountsTable.setDefaultRenderer(String.class, centerRenderer);
         AccountsTable.setDefaultRenderer(Double.class, centerRenderer);
-        AccountsTable.setModel(new PresentationLayer.AccountsTableModel(PresentationLayer.GUI.currentUserAccount));
+        AccountsTable.setColumnSelectionAllowed(false);
         AccountsTable.getTableHeader().setResizingAllowed(false);
+        AccountsTable.getTableHeader().setFont(new Font("Tahoma", Font.BOLD, 12));
+        AccountsTable.setGridColor(new java.awt.Color(255, 255, 255));
+        AccountsTable.getTableHeader().setDefaultRenderer((new HeaderRenderer(AccountsTable)));
+        AccountsTable.setMaximumSize(new java.awt.Dimension(440, 390));
+        AccountsTable.getTableHeader().setForeground(new Color(0,0,204));
+        AccountsTable.setMinimumSize(new java.awt.Dimension(440, 390));
         AccountsTable.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(AccountsTable);
+        AccountsTable.setOpaque(false);
+        AccountsTable.setPreferredSize(new java.awt.Dimension(440, 390));
+        AccountsTable.setSelectionBackground(new java.awt.Color(14, 118, 188));
         AccountsTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane1.setViewportView(AccountsTable);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
