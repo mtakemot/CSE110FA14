@@ -796,6 +796,7 @@ public class Settings extends javax.swing.JPanel
 
         jPanel26.setBackground(new java.awt.Color(255, 204, 153));
         jPanel26.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel26.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel26.addMouseListener(new java.awt.event.MouseAdapter()
         {
             public void mouseClicked(java.awt.event.MouseEvent evt)
@@ -814,6 +815,7 @@ public class Settings extends javax.swing.JPanel
 
         EditLabel5.setForeground(new java.awt.Color(51, 0, 255));
         EditLabel5.setText("Edit");
+        EditLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         EditLabel5.setFocusable(false);
         EditLabel5.addMouseListener(new java.awt.event.MouseAdapter()
         {
