@@ -156,7 +156,6 @@ public class AccountsListPanel extends javax.swing.JPanel
         jPanel10 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
-        jPanel7 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         UserLabel = new javax.swing.JLabel();
         jPanel12 = new javax.swing.JPanel();
@@ -530,22 +529,14 @@ public class AccountsListPanel extends javax.swing.JPanel
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
         jPanel8.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(14, 118, 188), 1, true));
         java.awt.GridBagLayout jPanel8Layout = new java.awt.GridBagLayout();
-        jPanel8Layout.columnWidths = new int[] {0, 8, 0, 8, 0};
+        jPanel8Layout.columnWidths = new int[] {0, 10, 0, 10, 0};
         jPanel8Layout.rowHeights = new int[] {0};
         jPanel8.setLayout(jPanel8Layout);
 
-        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel7.setLayout(new java.awt.GridBagLayout());
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        jPanel8.add(jPanel7, gridBagConstraints);
-
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel6.setMinimumSize(new java.awt.Dimension(100, 115));
         java.awt.GridBagLayout jPanel6Layout = new java.awt.GridBagLayout();
-        jPanel6Layout.columnWidths = new int[] {0, 10, 0};
+        jPanel6Layout.columnWidths = new int[] {0, 12, 0};
         jPanel6Layout.rowHeights = new int[] {0, 7, 0, 7, 0};
         jPanel6.setLayout(jPanel6Layout);
 
@@ -557,6 +548,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         gridBagConstraints.gridy = 2;
         jPanel6.add(UserLabel, gridBagConstraints);
 
+        jPanel12.setBackground(new java.awt.Color(255, 255, 255));
         java.awt.GridBagLayout jPanel12Layout = new java.awt.GridBagLayout();
         jPanel12Layout.columnWidths = new int[] {0, 10, 0};
         jPanel12Layout.rowHeights = new int[] {0};
@@ -656,7 +648,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(15, 10, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(10, 10, 0, 0);
         add(jPanel11, gridBagConstraints);
 
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/wallhaven-15760.png"))); // NOI18N
@@ -1014,7 +1006,7 @@ public class AccountsListPanel extends javax.swing.JPanel
 
     private void jLabel4MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jLabel4MouseEntered
     {//GEN-HEADEREND:event_jLabel4MouseEntered
-        option.setText("          Settings");             
+        option.setText(" Settings");             
     }//GEN-LAST:event_jLabel4MouseEntered
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jLabel4MouseClicked
@@ -1030,7 +1022,7 @@ public class AccountsListPanel extends javax.swing.JPanel
 
     private void jLabel5MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jLabel5MouseEntered
     {//GEN-HEADEREND:event_jLabel5MouseEntered
-        option.setText("                        Logout");
+        option.setText("               Logout");
     }//GEN-LAST:event_jLabel5MouseEntered
 
     private void jLabel5MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jLabel5MouseExited
@@ -1076,7 +1068,6 @@ public class AccountsListPanel extends javax.swing.JPanel
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
