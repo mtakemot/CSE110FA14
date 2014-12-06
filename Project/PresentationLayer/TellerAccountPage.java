@@ -180,7 +180,7 @@ public class TellerAccountPage extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 100, 0);
         MainComponentsPanel.add(CurrentUserAccountLabel, gridBagConstraints);
 
-        DepositButton.setBackground(new Color (255,255,255,150));
+        DepositButton.setBackground(new java.awt.Color(255, 255, 255));
         DepositButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         DepositButton.setForeground(new java.awt.Color(14, 118, 188));
         DepositButton.setText("Deposit");
@@ -198,7 +198,7 @@ public class TellerAccountPage extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 10, 0);
         MainComponentsPanel.add(DepositButton, gridBagConstraints);
 
-        WithdrawButton.setBackground(new Color (255,255,255,150));
+        WithdrawButton.setBackground(new java.awt.Color(255, 255, 255));
         WithdrawButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         WithdrawButton.setForeground(new java.awt.Color(14, 118, 188));
         WithdrawButton.setText("Withdraw");
@@ -215,7 +215,7 @@ public class TellerAccountPage extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(0, 180, 10, 0);
         MainComponentsPanel.add(WithdrawButton, gridBagConstraints);
 
-        DeleteUserAccountButton.setBackground(new Color (255,255,255,150));
+        DeleteUserAccountButton.setBackground(new java.awt.Color(255, 255, 255));
         DeleteUserAccountButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         DeleteUserAccountButton.setForeground(new java.awt.Color(14, 118, 188));
         DeleteUserAccountButton.setText("Delete This User Account");
@@ -233,7 +233,7 @@ public class TellerAccountPage extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
         MainComponentsPanel.add(DeleteUserAccountButton, gridBagConstraints);
 
-        DeleteAccountButton.setBackground(new Color (255,255,255,150));
+        DeleteAccountButton.setBackground(new java.awt.Color(255, 255, 255));
         DeleteAccountButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         DeleteAccountButton.setForeground(new java.awt.Color(14, 118, 188));
         DeleteAccountButton.setText("Delete Highlighted Bank Account");
@@ -251,7 +251,7 @@ public class TellerAccountPage extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
         MainComponentsPanel.add(DeleteAccountButton, gridBagConstraints);
 
-        BackButton.setBackground(new Color (255,255,255,150));
+        BackButton.setBackground(new java.awt.Color(255, 255, 255));
         BackButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         BackButton.setForeground(new java.awt.Color(14, 118, 188));
         BackButton.setText("Back");

@@ -94,7 +94,7 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         gridBagConstraints.gridy = 0;
         BusinessPanel.add(jScrollPane1, gridBagConstraints);
 
-        Back.setBackground(new Color(255,255,255,150));
+        Back.setBackground(new java.awt.Color(255, 255, 255));
         Back.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Back.setForeground(new java.awt.Color(14, 118, 188));
         Back.setText("Return To Account Selection");
