@@ -137,6 +137,7 @@ public class TellerAccountPage extends javax.swing.JPanel
         centerRenderer.setHorizontalAlignment( JLabel.CENTER );
         AccountsTable.setDefaultRenderer(String.class, centerRenderer);
         AccountsTable.setDefaultRenderer(Double.class, centerRenderer);
+        AccountsTable.setBackground(new Color (255,255,255,150));
         AccountsTable.setModel(new PresentationLayer.AccountsTableModel(PresentationLayer.GUI.currentUserAccount));
         AccountsTable.getTableHeader().setResizingAllowed(false);
         AccountsTable.getTableHeader().setReorderingAllowed(false);
@@ -157,6 +158,7 @@ public class TellerAccountPage extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 100, 0);
         MainComponentsPanel.add(CurrentUserAccountLabel, gridBagConstraints);
 
+        DepositButton.setBackground(new Color (255,255,255,150));
         DepositButton.setText("Deposit");
         DepositButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -170,6 +172,7 @@ public class TellerAccountPage extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 10, 0);
         MainComponentsPanel.add(DepositButton, gridBagConstraints);
 
+        WithdrawButton.setBackground(new Color (255,255,255,150));
         WithdrawButton.setText("Withdraw");
         WithdrawButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -182,6 +185,7 @@ public class TellerAccountPage extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(0, 201, 10, 0);
         MainComponentsPanel.add(WithdrawButton, gridBagConstraints);
 
+        DeleteUserAccountButton.setBackground(new Color (255,255,255,150));
         DeleteUserAccountButton.setText("Delete This User Account");
         DeleteUserAccountButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -195,6 +199,7 @@ public class TellerAccountPage extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
         MainComponentsPanel.add(DeleteUserAccountButton, gridBagConstraints);
 
+        DeleteAccountButton.setBackground(new Color (255,255,255,150));
         DeleteAccountButton.setText("Delete Highlighted Bank Account");
         DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -208,6 +213,7 @@ public class TellerAccountPage extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
         MainComponentsPanel.add(DeleteAccountButton, gridBagConstraints);
 
+        BackButton.setBackground(new Color (255,255,255,150));
         BackButton.setText("Back");
         BackButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

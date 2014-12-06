@@ -65,6 +65,9 @@
                 <Component class="javax.swing.JTable" name="AccountsTable">
                   <Properties>
                     <Property name="autoCreateRowSorter" type="boolean" value="true" postCode="DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();&#xa;centerRenderer.setHorizontalAlignment( JLabel.CENTER );&#xa;AccountsTable.setDefaultRenderer(String.class, centerRenderer);&#xa;AccountsTable.setDefaultRenderer(Double.class, centerRenderer);"/>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="new Color (255,255,255,150)" type="code"/>
+                    </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" postCode="AccountsTable.getTableHeader().setResizingAllowed(false);">
                       <Connection code="new PresentationLayer.AccountsTableModel(PresentationLayer.GUI.currentUserAccount)" type="code"/>
                     </Property>
@@ -99,6 +102,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="DepositButton">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new Color (255,255,255,150)" type="code"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Deposit"/>
               </Properties>
               <Events>
@@ -112,6 +118,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="WithdrawButton">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new Color (255,255,255,150)" type="code"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Withdraw"/>
               </Properties>
               <Events>
@@ -125,6 +134,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="DeleteUserAccountButton">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new Color (255,255,255,150)" type="code"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Delete This User Account"/>
               </Properties>
               <Events>
@@ -138,6 +150,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="DeleteAccountButton">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new Color (255,255,255,150)" type="code"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Delete Highlighted Bank Account"/>
               </Properties>
               <Events>
@@ -151,6 +166,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="BackButton">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new Color (255,255,255,150)" type="code"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Back"/>
               </Properties>
               <Events>
