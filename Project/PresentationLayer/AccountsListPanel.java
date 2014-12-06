@@ -126,7 +126,8 @@ public class AccountsListPanel extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
         java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel3 = new javax.swing.JPanel();
@@ -157,10 +158,10 @@ public class AccountsListPanel extends javax.swing.JPanel
         jPanel8 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
+        UserLabel = new javax.swing.JLabel();
+        jPanel12 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        UserLabel = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         option = new javax.swing.JLabel();
@@ -239,13 +240,17 @@ public class AccountsListPanel extends javax.swing.JPanel
         TransferButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         TransferButton.setForeground(new java.awt.Color(14, 118, 188));
         TransferButton.setText("Transfer");
-        TransferButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        TransferButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 TransferButtonMouseClicked(evt);
             }
         });
-        TransferButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        TransferButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 TransferButtonActionPerformed(evt);
             }
         });
@@ -256,8 +261,10 @@ public class AccountsListPanel extends javax.swing.JPanel
 
         BankAccountsList1.setForeground(new java.awt.Color(255, 255, 255));
         BankAccountsList1.setModel(new javax.swing.DefaultComboBoxModel(accountlist));
-        BankAccountsList1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        BankAccountsList1.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 BankAccountsList1ActionPerformed(evt);
             }
         });
@@ -269,13 +276,17 @@ public class AccountsListPanel extends javax.swing.JPanel
 
         EmailEntryField.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         EmailEntryField.setText("Email Address");
-        EmailEntryField.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
+        EmailEntryField.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
                 EmailEntryFieldFocusGained(evt);
             }
         });
-        EmailEntryField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        EmailEntryField.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 EmailEntryFieldActionPerformed(evt);
             }
         });
@@ -290,8 +301,10 @@ public class AccountsListPanel extends javax.swing.JPanel
         TransferButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         TransferButton1.setForeground(new java.awt.Color(14, 118, 188));
         TransferButton1.setText("Transfer");
-        TransferButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        TransferButton1.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 TransferButton1MouseClicked(evt);
             }
         });
@@ -321,13 +334,17 @@ public class AccountsListPanel extends javax.swing.JPanel
         AmountField.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         AmountField.setText("Amount");
         AmountField.setMinimumSize(new java.awt.Dimension(100, 21));
-        AmountField.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
+        AmountField.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
                 AmountFieldFocusGained(evt);
             }
         });
-        AmountField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        AmountField.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 AmountFieldActionPerformed(evt);
             }
         });
@@ -348,8 +365,10 @@ public class AccountsListPanel extends javax.swing.JPanel
 
         BankAccountsList0.setForeground(new Color(255,255,255,255));
         BankAccountsList0.setModel(new javax.swing.DefaultComboBoxModel(accountlist));
-        BankAccountsList0.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        BankAccountsList0.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 BankAccountsList0ActionPerformed(evt);
             }
         });
@@ -429,8 +448,10 @@ public class AccountsListPanel extends javax.swing.JPanel
         DeleteAccountButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         DeleteAccountButton.setForeground(new java.awt.Color(14, 118, 188));
         DeleteAccountButton.setText("Delete Highlighted Account");
-        DeleteAccountButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        DeleteAccountButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 DeleteAccountButtonActionPerformed(evt);
             }
         });
@@ -444,8 +465,10 @@ public class AccountsListPanel extends javax.swing.JPanel
         CreateBAButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         CreateBAButton.setForeground(new java.awt.Color(14, 118, 188));
         CreateBAButton.setText("Create New Bank Account");
-        CreateBAButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        CreateBAButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 CreateBAButtonActionPerformed(evt);
             }
         });
@@ -459,8 +482,10 @@ public class AccountsListPanel extends javax.swing.JPanel
         FutureInterestButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         FutureInterestButton.setForeground(new java.awt.Color(14, 118, 188));
         FutureInterestButton.setText("Calculate Future Interest ");
-        FutureInterestButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        FutureInterestButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 FutureInterestButtonActionPerformed(evt);
             }
         });
@@ -474,8 +499,10 @@ public class AccountsListPanel extends javax.swing.JPanel
         TransactionHistoryButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         TransactionHistoryButton.setForeground(new java.awt.Color(14, 118, 188));
         TransactionHistoryButton.setText("Transaction History");
-        TransactionHistoryButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        TransactionHistoryButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 TransactionHistoryButtonActionPerformed(evt);
             }
         });
@@ -503,14 +530,14 @@ public class AccountsListPanel extends javax.swing.JPanel
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
         jPanel8.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(14, 118, 188), 1, true));
         java.awt.GridBagLayout jPanel8Layout = new java.awt.GridBagLayout();
-        jPanel8Layout.columnWidths = new int[] {0, 8, 0, 8, 0, 8, 0};
+        jPanel8Layout.columnWidths = new int[] {0, 8, 0, 8, 0};
         jPanel8Layout.rowHeights = new int[] {0};
         jPanel8.setLayout(jPanel8Layout);
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
         jPanel7.setLayout(new java.awt.GridBagLayout());
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
@@ -518,62 +545,9 @@ public class AccountsListPanel extends javax.swing.JPanel
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         java.awt.GridBagLayout jPanel6Layout = new java.awt.GridBagLayout();
-        jPanel6Layout.columnWidths = new int[] {0, 10, 0, 10, 0, 10, 0};
+        jPanel6Layout.columnWidths = new int[] {0, 10, 0};
         jPanel6Layout.rowHeights = new int[] {0, 7, 0, 7, 0};
         jPanel6.setLayout(jPanel6Layout);
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/rsz_settingscolor2.png"))); // NOI18N
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel4MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel4MouseExited(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel6.add(jLabel4, gridBagConstraints);
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/rsz_logout2noborder2.png"))); // NOI18N
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel5MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel5MouseExited(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 6;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel6.add(jLabel5, gridBagConstraints);
-
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/rsz_homecolored.png"))); // NOI18N
-        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel6MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel6MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel6MouseExited(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 2;
-        jPanel6.add(jLabel6, gridBagConstraints);
 
         UserLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         UserLabel.setForeground(new java.awt.Color(14, 118, 188));
@@ -583,8 +557,63 @@ public class AccountsListPanel extends javax.swing.JPanel
         gridBagConstraints.gridy = 2;
         jPanel6.add(UserLabel, gridBagConstraints);
 
+        java.awt.GridBagLayout jPanel12Layout = new java.awt.GridBagLayout();
+        jPanel12Layout.columnWidths = new int[] {0, 10, 0};
+        jPanel12Layout.rowHeights = new int[] {0};
+        jPanel12.setLayout(jPanel12Layout);
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/rsz_settingscolor2.png"))); // NOI18N
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                jLabel4MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
+                jLabel4MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
+                jLabel4MouseExited(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel12.add(jLabel4, gridBagConstraints);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/rsz_logout2noborder2.png"))); // NOI18N
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                jLabel5MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
+                jLabel5MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
+                jLabel5MouseExited(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel12.add(jLabel5, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jPanel6.add(jPanel12, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel8.add(jPanel6, gridBagConstraints);
@@ -1015,22 +1044,6 @@ public class AccountsListPanel extends javax.swing.JPanel
         layout.show(MainPanel, "Login");
     }//GEN-LAST:event_jLabel5MouseClicked
 
-    private void jLabel6MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jLabel6MouseEntered
-    {//GEN-HEADEREND:event_jLabel6MouseEntered
-        option.setText("Home      ");
-    }//GEN-LAST:event_jLabel6MouseEntered
-
-    private void jLabel6MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jLabel6MouseExited
-    {//GEN-HEADEREND:event_jLabel6MouseExited
-        option.setText(" ");
-    }//GEN-LAST:event_jLabel6MouseExited
-
-    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jLabel6MouseClicked
-    {//GEN-HEADEREND:event_jLabel6MouseClicked
-        CardLayout layout = (CardLayout) (MainPanel.getLayout());
-        layout.show(MainPanel, "AccList");
-    }//GEN-LAST:event_jLabel6MouseClicked
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable AccountsTable;
     private javax.swing.JTextField AmountField;
@@ -1054,10 +1067,10 @@ public class AccountsListPanel extends javax.swing.JPanel
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
