@@ -127,8 +127,9 @@ public class Settings extends javax.swing.JPanel
         jPanel1Layout.rowHeights = new int[] {0, 8, 0, 8, 0, 8, 0, 8, 0, 8, 0, 8, 0, 8, 0, 8, 0};
         jPanel1.setLayout(jPanel1Layout);
 
-        DeleteAccountButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        DeleteAccountButton.setForeground(new java.awt.Color(51, 0, 255));
+        DeleteAccountButton.setBackground(new java.awt.Color(255, 255, 255));
+        DeleteAccountButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        DeleteAccountButton.setForeground(new java.awt.Color(14, 118, 188));
         DeleteAccountButton.setText("Delete Main Account");
         DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter()
         {
@@ -1047,7 +1048,7 @@ public class Settings extends javax.swing.JPanel
 
                 CardLayout layout = (CardLayout) (MainPanel.getLayout());
                 layout.show(MainPanel, "Login");
-                    //mainGUI.getDolphinsPanel().DolphinsCalled();
+                //mainGUI.getDolphinsPanel().DolphinsCalled();
             }
         }
     }//GEN-LAST:event_DeleteAccountButtonMouseClicked
@@ -2007,10 +2008,10 @@ public class Settings extends javax.swing.JPanel
         option.setText(" ");
     }//GEN-LAST:event_jLabel6MouseExited
 
-    private void jPanel14MouseClicked(java.awt.event.MouseEvent evt)                                      
-    {                                          
-        
-    }                                     
+    private void jPanel14MouseClicked(java.awt.event.MouseEvent evt)
+    {
+
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Background;

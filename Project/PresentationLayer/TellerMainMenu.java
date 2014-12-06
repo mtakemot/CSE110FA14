@@ -40,7 +40,8 @@ public class TellerMainMenu extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
         java.awt.GridBagConstraints gridBagConstraints;
 
         BGPanel = new javax.swing.JPanel();
@@ -82,9 +83,14 @@ public class TellerMainMenu extends javax.swing.JPanel
 
         ButtonPanel.setLayout(new java.awt.GridBagLayout());
 
+        InterestPenaltyButton.setBackground(new java.awt.Color(255, 255, 255));
+        InterestPenaltyButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        InterestPenaltyButton.setForeground(new java.awt.Color(14, 118, 188));
         InterestPenaltyButton.setText("Adjust Interest Rates and Penalties");
-        InterestPenaltyButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        InterestPenaltyButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 InterestPenaltyButtonActionPerformed(evt);
             }
         });
@@ -96,9 +102,14 @@ public class TellerMainMenu extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
         ButtonPanel.add(InterestPenaltyButton, gridBagConstraints);
 
+        SearchUserButton.setBackground(new java.awt.Color(255, 255, 255));
+        SearchUserButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        SearchUserButton.setForeground(new java.awt.Color(14, 118, 188));
         SearchUserButton.setText("Search For A User");
-        SearchUserButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        SearchUserButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 SearchUserButtonMouseClicked(evt);
             }
         });
@@ -108,9 +119,14 @@ public class TellerMainMenu extends javax.swing.JPanel
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         ButtonPanel.add(SearchUserButton, gridBagConstraints);
 
+        ApplyPenIntButton.setBackground(new java.awt.Color(255, 255, 255));
+        ApplyPenIntButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ApplyPenIntButton.setForeground(new java.awt.Color(14, 118, 188));
         ApplyPenIntButton.setText("Apply Global Interest");
-        ApplyPenIntButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        ApplyPenIntButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 ApplyPenIntButtonActionPerformed(evt);
             }
         });
@@ -125,10 +141,12 @@ public class TellerMainMenu extends javax.swing.JPanel
 
         Logout.setBackground(new java.awt.Color(255, 255, 255));
         Logout.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Logout.setForeground(new java.awt.Color(51, 0, 255));
+        Logout.setForeground(new java.awt.Color(14, 118, 188));
         Logout.setText("Logout");
-        Logout.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        Logout.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 LogoutMouseClicked(evt);
             }
         });
