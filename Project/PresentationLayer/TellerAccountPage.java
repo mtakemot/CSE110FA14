@@ -105,8 +105,7 @@ public class TellerAccountPage extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
         Holder = new javax.swing.JPanel();
@@ -177,17 +176,15 @@ public class TellerAccountPage extends javax.swing.JPanel
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 100, 0);
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 60, 0);
         MainComponentsPanel.add(CurrentUserAccountLabel, gridBagConstraints);
 
         DepositButton.setBackground(new java.awt.Color(255, 255, 255));
         DepositButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         DepositButton.setForeground(new java.awt.Color(14, 118, 188));
         DepositButton.setText("Deposit");
-        DepositButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        DepositButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 DepositButtonMouseClicked(evt);
             }
         });
@@ -202,10 +199,8 @@ public class TellerAccountPage extends javax.swing.JPanel
         WithdrawButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         WithdrawButton.setForeground(new java.awt.Color(14, 118, 188));
         WithdrawButton.setText("Withdraw");
-        WithdrawButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        WithdrawButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 WithdrawButtonMouseClicked(evt);
             }
         });
@@ -219,10 +214,8 @@ public class TellerAccountPage extends javax.swing.JPanel
         DeleteUserAccountButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         DeleteUserAccountButton.setForeground(new java.awt.Color(14, 118, 188));
         DeleteUserAccountButton.setText("Delete This User Account");
-        DeleteUserAccountButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        DeleteUserAccountButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 DeleteUserAccountButtonMouseClicked(evt);
             }
         });
@@ -237,28 +230,24 @@ public class TellerAccountPage extends javax.swing.JPanel
         DeleteAccountButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         DeleteAccountButton.setForeground(new java.awt.Color(14, 118, 188));
         DeleteAccountButton.setText("Delete Highlighted Bank Account");
-        DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 DeleteAccountButtonMouseClicked(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridy = 4;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(10, 0, 10, 0);
         MainComponentsPanel.add(DeleteAccountButton, gridBagConstraints);
 
         BackButton.setBackground(new java.awt.Color(255, 255, 255));
         BackButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         BackButton.setForeground(new java.awt.Color(14, 118, 188));
         BackButton.setText("Back");
-        BackButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        BackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BackButtonActionPerformed(evt);
             }
         });

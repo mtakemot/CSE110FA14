@@ -46,8 +46,7 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
         ChildBG = new javax.swing.JPanel();
@@ -98,10 +97,8 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         Back.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Back.setForeground(new java.awt.Color(14, 118, 188));
         Back.setText("Return To Account Selection");
-        Back.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        Back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BackActionPerformed(evt);
             }
         });
@@ -110,16 +107,15 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
         BusinessPanel.add(Back, gridBagConstraints);
 
         Logout.setBackground(new java.awt.Color(255, 255, 255));
         Logout.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Logout.setForeground(new java.awt.Color(14, 118, 188));
         Logout.setText("Log Out");
-        Logout.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        Logout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LogoutActionPerformed(evt);
             }
         });
@@ -128,12 +124,13 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
         BusinessPanel.add(Logout, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 80, 0);
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 70, 0);
         ChildBG.add(BusinessPanel, gridBagConstraints);
 
         TitlePanel.setOpaque(false);
@@ -143,7 +140,7 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         Title.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         Title.setForeground(new java.awt.Color(14, 118, 188));
         Title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Title.setText("Transaction History");
+        Title.setText("Welcome To your account's Transaction History!");
         Title.setToolTipText("");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
