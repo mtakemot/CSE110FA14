@@ -118,6 +118,7 @@ public class TellerAccountPage extends javax.swing.JPanel
         DeleteUserAccountButton = new javax.swing.JButton();
         DeleteAccountButton = new javax.swing.JButton();
         BackButton = new javax.swing.JButton();
+        Background = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
@@ -137,7 +138,6 @@ public class TellerAccountPage extends javax.swing.JPanel
         centerRenderer.setHorizontalAlignment( JLabel.CENTER );
         AccountsTable.setDefaultRenderer(String.class, centerRenderer);
         AccountsTable.setDefaultRenderer(Double.class, centerRenderer);
-        AccountsTable.setBackground(new Color (255,255,255,150));
         AccountsTable.setModel(new PresentationLayer.AccountsTableModel(PresentationLayer.GUI.currentUserAccount));
         AccountsTable.getTableHeader().setResizingAllowed(false);
         AccountsTable.getTableHeader().setReorderingAllowed(false);
@@ -229,7 +229,20 @@ public class TellerAccountPage extends javax.swing.JPanel
 
         Holder.add(MainComponentsPanel, new java.awt.GridBagConstraints());
 
-        add(Holder, new java.awt.GridBagConstraints());
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        add(Holder, gridBagConstraints);
+
+        Background.setMaximumSize(new java.awt.Dimension(800, 600));
+        Background.setMinimumSize(new java.awt.Dimension(800, 600));
+        Background.setOpaque(true);
+        Background.setPreferredSize(new java.awt.Dimension(800, 600));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        add(Background, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
     public static boolean isParsable(String input)
@@ -478,6 +491,7 @@ public class TellerAccountPage extends javax.swing.JPanel
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable AccountsTable;
     private javax.swing.JButton BackButton;
+    private javax.swing.JLabel Background;
     private javax.swing.JLabel CurrentUserAccountLabel;
     private javax.swing.JButton DeleteAccountButton;
     private javax.swing.JButton DeleteUserAccountButton;
