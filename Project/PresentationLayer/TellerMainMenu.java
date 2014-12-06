@@ -127,7 +127,7 @@ public class TellerMainMenu extends javax.swing.JPanel
 
         Logout.setBackground(new java.awt.Color(255, 255, 255));
         Logout.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Logout.setForeground(new java.awt.Color(14, 118, 188));
+        Logout.setForeground(new java.awt.Color(51, 0, 255));
         Logout.setText("Logout");
         Logout.addMouseListener(new java.awt.event.MouseAdapter()
         {
