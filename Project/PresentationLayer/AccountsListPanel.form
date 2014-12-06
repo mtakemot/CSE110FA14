@@ -90,13 +90,13 @@
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                   <TableColumnModel selectionModel="1"/>
                 </Property>
-                <Property name="columnSelectionAllowed" type="boolean" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" postCode="AccountsTable.getTableHeader().setResizingAllowed(false);">
+                <Property name="columnSelectionAllowed" type="boolean" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" postCode="AccountsTable.getTableHeader().setResizingAllowed(false);&#xa;AccountsTable.getTableHeader().setFont(new Font(&quot;Tahoma&quot;, Font.BOLD, 12));">
                   <Connection code="false" type="code"/>
                 </Property>
                 <Property name="gridColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="AccountsTable.getTableHeader().setDefaultRenderer((new HeaderRenderer(AccountsTable)));">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor" postCode="AccountsTable.getTableHeader().setForeground(new Color(0,0,204));">
                   <Dimension value="[440, 390]"/>
                 </Property>
                 <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
