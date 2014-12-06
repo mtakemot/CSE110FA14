@@ -58,6 +58,7 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         Logout = new javax.swing.JButton();
         TitlePanel = new javax.swing.JPanel();
         Title = new javax.swing.JLabel();
+        Bank42 = new javax.swing.JLabel();
         Background = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(800, 600));
@@ -132,26 +133,36 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 70, 0);
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 80, 0);
         ChildBG.add(BusinessPanel, gridBagConstraints);
 
         TitlePanel.setOpaque(false);
         TitlePanel.setLayout(new java.awt.GridBagLayout());
 
-        Title.setBackground(new java.awt.Color(255, 255, 255));
-        Title.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 48)); // NOI18N
-        Title.setForeground(new java.awt.Color(51, 0, 255));
+        Title.setBackground(new java.awt.Color(250, 250, 250));
+        Title.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Title.setForeground(new java.awt.Color(14, 118, 188));
         Title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Title.setText("Transaction History");
         Title.setToolTipText("");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.insets = new java.awt.Insets(16, 0, 0, 0);
         TitlePanel.add(Title, gridBagConstraints);
 
+        Bank42.setFont(new java.awt.Font("DejaVu Sans", 1, 48)); // NOI18N
+        Bank42.setForeground(new java.awt.Color(51, 0, 255));
+        Bank42.setText("Bank 42");
+        Bank42.setToolTipText("");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 106, 0);
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 49, 0);
+        TitlePanel.add(Bank42, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 10, 0);
         ChildBG.add(TitlePanel, gridBagConstraints);
 
         add(ChildBG, new java.awt.GridBagConstraints());
@@ -186,6 +197,7 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Back;
     private javax.swing.JLabel Background;
+    private javax.swing.JLabel Bank42;
     private javax.swing.JPanel BusinessPanel;
     private javax.swing.JPanel ChildBG;
     private javax.swing.JButton Logout;
