@@ -45,17 +45,28 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
     {
         java.awt.GridBagConstraints gridBagConstraints;
 
-        jPanel1 = new javax.swing.JPanel();
+        ChildBG = new javax.swing.JPanel();
+        BusinessPanel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TransactionsTable = new javax.swing.JTable();
         Back = new javax.swing.JButton();
+        TitlePanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
+        setName("BackgroundPanel"); // NOI18N
         setPreferredSize(new java.awt.Dimension(800, 600));
         setLayout(new java.awt.GridBagLayout());
 
-        jPanel1.setLayout(new java.awt.GridBagLayout());
+        ChildBG.setMaximumSize(new java.awt.Dimension(800, 600));
+        ChildBG.setMinimumSize(new java.awt.Dimension(800, 600));
+        ChildBG.setOpaque(false);
+        ChildBG.setPreferredSize(new java.awt.Dimension(800, 600));
+        ChildBG.setLayout(new java.awt.GridBagLayout());
+
+        BusinessPanel.setLayout(new java.awt.GridBagLayout());
 
         jScrollPane1.setPreferredSize(new java.awt.Dimension(675, 300));
 
@@ -70,9 +81,10 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         TransactionsTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(TransactionsTable);
 
-        jPanel1.add(jScrollPane1, new java.awt.GridBagConstraints());
-
-        add(jPanel1, new java.awt.GridBagConstraints());
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        BusinessPanel.add(jScrollPane1, gridBagConstraints);
 
         Back.setText("Back");
         Back.addActionListener(new java.awt.event.ActionListener()
@@ -87,7 +99,40 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.insets = new java.awt.Insets(5, 0, 0, 0);
-        add(Back, gridBagConstraints);
+        BusinessPanel.add(Back, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 64, 0);
+        ChildBG.add(BusinessPanel, gridBagConstraints);
+
+        TitlePanel.setLayout(new java.awt.GridBagLayout());
+
+        jLabel1.setText("Title");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        TitlePanel.add(jLabel1, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 100, 0);
+        ChildBG.add(TitlePanel, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        add(ChildBG, gridBagConstraints);
+
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/wallhaven-95047.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        jLabel2.setOpaque(true);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        add(jLabel2, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
     private void BackActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BackActionPerformed
@@ -98,8 +143,12 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Back;
+    private javax.swing.JPanel BusinessPanel;
+    private javax.swing.JPanel ChildBG;
+    private javax.swing.JPanel TitlePanel;
     private javax.swing.JTable TransactionsTable;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
