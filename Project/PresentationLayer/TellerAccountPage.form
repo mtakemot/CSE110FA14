@@ -83,11 +83,13 @@
               <SubComponents>
                 <Component class="javax.swing.JTable" name="AccountsTable">
                   <Properties>
-                    <Property name="autoCreateRowSorter" type="boolean" value="true" postCode="DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();&#xa;centerRenderer.setHorizontalAlignment( JLabel.CENTER );&#xa;AccountsTable.setDefaultRenderer(String.class, centerRenderer);&#xa;AccountsTable.setDefaultRenderer(Double.class, centerRenderer);"/>
-                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" postCode="AccountsTable.getTableHeader().setResizingAllowed(false);">
+                    <Property name="autoCreateRowSorter" type="boolean" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" postCode="AccountsTable.setSelectionModel(SelectionModel = new DefaultListSelectionModel());&#xa;SelectionModel.setSelectionMode(0);&#xa;AccountsTable.setBackground(new Color(255,255,255));&#xa;AccountsTable.setFont(new java.awt.Font(&quot;Tahoma&quot;, 1, 11)); // NOI18N&#xa;AccountsTable.setForeground(new java.awt.Color(14, 118, 188));">
+                      <Connection code="true" type="code"/>
+                    </Property>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" postCode="DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();&#xa;centerRenderer.setHorizontalAlignment( JLabel.CENTER );&#xa;AccountsTable.setDefaultRenderer(String.class, centerRenderer);&#xa;AccountsTable.setDefaultRenderer(Double.class, centerRenderer);&#xa;AccountsTable.setColumnSelectionAllowed(false);&#xa;AccountsTable.getTableHeader().setResizingAllowed(false);&#xa;AccountsTable.getTableHeader().setFont(new Font(&quot;Tahoma&quot;, Font.BOLD, 12));&#xa;AccountsTable.setGridColor(new java.awt.Color(255, 255, 255));&#xa;AccountsTable.getTableHeader().setDefaultRenderer((new HeaderRenderer(AccountsTable)));&#xa;AccountsTable.setMaximumSize(new java.awt.Dimension(440, 390));&#xa;AccountsTable.getTableHeader().setForeground(new Color(0,0,204));&#xa;AccountsTable.setMinimumSize(new java.awt.Dimension(440, 390));">
                       <Connection code="new PresentationLayer.AccountsTableModel(PresentationLayer.GUI.currentUserAccount)" type="code"/>
                     </Property>
-                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor" preCode="AccountsTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);">
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                       <TableColumnModel selectionModel="0"/>
                     </Property>
                     <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
@@ -95,7 +97,7 @@
                     </Property>
                   </Properties>
                   <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="AccountsTable.setSelectionModel(SelectionModel = new DefaultListSelectionModel());&#xa;SelectionModel.setSelectionMode(0);"/>
+                    <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="AccountsTable.setOpaque(false);&#xa;AccountsTable.setPreferredSize(new java.awt.Dimension(440, 390));&#xa;AccountsTable.setSelectionBackground(new java.awt.Color(14, 118, 188));&#xa;AccountsTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);"/>
                   </AuxValues>
                 </Component>
               </SubComponents>
