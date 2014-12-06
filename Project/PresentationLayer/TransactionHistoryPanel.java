@@ -28,6 +28,7 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         TransactionsTable.clearSelection();
         TransactionsTable.getSelectionModel().clearSelection();
         TransactionsTable.setModel(new TransactionTableModel(GUI.currentBankAccount));
+        
     }
 
     public TransactionHistoryPanel(JPanel MainPanel, GUI mainGUI)
@@ -52,10 +53,10 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         jScrollPane1 = new javax.swing.JScrollPane();
         TransactionsTable = new javax.swing.JTable();
         Back = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        Logout = new javax.swing.JButton();
         TitlePanel = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        Title = new javax.swing.JLabel();
+        Background = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
@@ -89,7 +90,7 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         gridBagConstraints.gridy = 0;
         BusinessPanel.add(jScrollPane1, gridBagConstraints);
 
-        Back.setBackground(new java.awt.Color(255, 255, 255));
+        Back.setBackground(new Color(255,255,255,150));
         Back.setText("Return To Account Selection");
         Back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,11 +104,11 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         BusinessPanel.add(Back, gridBagConstraints);
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Log Out");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Logout.setBackground(new java.awt.Color(255, 255, 255));
+        Logout.setText("Log Out");
+        Logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                LogoutActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -115,28 +116,28 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
-        BusinessPanel.add(jButton1, gridBagConstraints);
+        BusinessPanel.add(Logout, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 64, 0);
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 70, 0);
         ChildBG.add(BusinessPanel, gridBagConstraints);
 
         TitlePanel.setLayout(new java.awt.GridBagLayout());
 
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(51, 0, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Transaction History");
-        jLabel1.setToolTipText("");
-        jLabel1.setOpaque(true);
+        Title.setBackground(new java.awt.Color(255, 255, 255));
+        Title.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        Title.setForeground(new java.awt.Color(51, 0, 255));
+        Title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Title.setText("Transaction History");
+        Title.setToolTipText("");
+        Title.setOpaque(true);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        TitlePanel.add(jLabel1, gridBagConstraints);
+        TitlePanel.add(Title, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 106, 0);
@@ -144,20 +145,20 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
 
         add(ChildBG, new java.awt.GridBagConstraints());
 
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/TransactionHistoryPic.jpg"))); // NOI18N
-        jLabel2.setText("jLabel2");
-        jLabel2.setFocusable(false);
-        jLabel2.setInheritsPopupMenu(false);
-        jLabel2.setRequestFocusEnabled(false);
-        jLabel2.setVerifyInputWhenFocusTarget(false);
+        Background.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/TransactionHistoryPic.jpg"))); // NOI18N
+        Background.setFocusable(false);
+        Background.setInheritsPopupMenu(false);
+        Background.setMaximumSize(new java.awt.Dimension(800, 600));
+        Background.setMinimumSize(new java.awt.Dimension(800, 600));
+        Background.setPreferredSize(new java.awt.Dimension(800, 600));
+        Background.setRequestFocusEnabled(false);
+        Background.setVerifyInputWhenFocusTarget(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 200);
-        add(jLabel2, gridBagConstraints);
+        add(Background, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
     private void BackActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BackActionPerformed
@@ -166,20 +167,20 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         layout.show(MainPanel, "AccList");
     }//GEN-LAST:event_BackActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void LogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutActionPerformed
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
         layout.show(MainPanel, "Login");
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_LogoutActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Back;
+    private javax.swing.JLabel Background;
     private javax.swing.JPanel BusinessPanel;
     private javax.swing.JPanel ChildBG;
+    private javax.swing.JButton Logout;
+    private javax.swing.JLabel Title;
     private javax.swing.JPanel TitlePanel;
     private javax.swing.JTable TransactionsTable;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
