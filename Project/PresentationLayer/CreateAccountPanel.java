@@ -248,7 +248,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
         createUserAccount.setBackground(new java.awt.Color(255, 255, 255));
         createUserAccount.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        createUserAccount.setForeground(new java.awt.Color(51, 0, 255));
+        createUserAccount.setForeground(new java.awt.Color(14, 118, 188));
         createUserAccount.setText("Create User Account");
         createUserAccount.addActionListener(new java.awt.event.ActionListener()
         {
@@ -273,7 +273,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
         BackButton.setBackground(new java.awt.Color(255, 255, 255));
         BackButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        BackButton.setForeground(new java.awt.Color(51, 0, 255));
+        BackButton.setForeground(new java.awt.Color(14, 118, 188));
         BackButton.setText("Back");
         BackButton.addActionListener(new java.awt.event.ActionListener()
         {
