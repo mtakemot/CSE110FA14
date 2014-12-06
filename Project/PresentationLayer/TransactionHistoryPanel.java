@@ -46,7 +46,8 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
         java.awt.GridBagConstraints gridBagConstraints;
 
         ChildBG = new javax.swing.JPanel();
@@ -75,6 +76,7 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         BusinessPanel.setOpaque(false);
         BusinessPanel.setLayout(new java.awt.GridBagLayout());
 
+        jScrollPane1.setMinimumSize(new java.awt.Dimension(675, 300));
         jScrollPane1.setPreferredSize(new java.awt.Dimension(675, 300));
 
         TransactionsTable.setModel(new PresentationLayer.TransactionTableModel(PresentationLayer.GUI.currentBankAccount));
@@ -97,8 +99,10 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         Back.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Back.setForeground(new java.awt.Color(14, 118, 188));
         Back.setText("Return To Account Selection");
-        Back.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        Back.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 BackActionPerformed(evt);
             }
         });
@@ -114,8 +118,10 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         Logout.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Logout.setForeground(new java.awt.Color(14, 118, 188));
         Logout.setText("Log Out");
-        Logout.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        Logout.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 LogoutActionPerformed(evt);
             }
         });
