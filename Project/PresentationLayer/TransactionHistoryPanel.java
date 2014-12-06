@@ -5,9 +5,12 @@
  */
 package PresentationLayer;
 
-import java.awt.CardLayout;
+/*mport java.awt.CardLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableCellRenderer;*/
+import java.awt.*;
+import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
 
 /**
@@ -110,6 +113,7 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         BusinessPanel.add(jButton1, gridBagConstraints);
 
