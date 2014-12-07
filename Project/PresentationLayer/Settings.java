@@ -1536,7 +1536,11 @@ public class Settings extends javax.swing.JPanel
         response_S = response_S.trim();
         if ((response_S.length() > 0) && (CreateAccountPanel.validate(response_S)))
         {
-            GUI.currentUserAccount.setUserName(response_S);
+            UserAccount temp = new UserAccount(GUI.currentUserAccount);
+            temp.setUserName(response_S);
+            GUI.MasterTable.deleteUserAccount(GUI.currentUserAccount.getUserName());
+            GUI.currentUserAccount = GUI.MasterTable.insertUserAccountCopy(temp);
+            System.out.println(GUI.currentUserAccount.getUserName());
             update();
         }
         else
@@ -1556,7 +1560,11 @@ public class Settings extends javax.swing.JPanel
         response_S = response_S.trim();
         if ((response_S.length() > 0) && (CreateAccountPanel.validate(response_S)))
         {
-            GUI.currentUserAccount.setUserName(response_S);
+            UserAccount temp = new UserAccount(GUI.currentUserAccount);
+            temp.setUserName(response_S);
+            GUI.MasterTable.deleteUserAccount(GUI.currentUserAccount.getUserName());
+            GUI.currentUserAccount = GUI.MasterTable.insertUserAccountCopy(temp);
+            System.out.println(GUI.currentUserAccount.getUserName());
             update();
         }
         else
@@ -1600,7 +1608,11 @@ public class Settings extends javax.swing.JPanel
         response_S = response_S.trim();
         if ((response_S.length() > 0) && (CreateAccountPanel.validate(response_S)))
         {
-            GUI.currentUserAccount.setUserName(response_S);
+            UserAccount temp = new UserAccount(GUI.currentUserAccount);
+            temp.setUserName(response_S);
+            GUI.MasterTable.deleteUserAccount(GUI.currentUserAccount.getUserName());
+            GUI.currentUserAccount = GUI.MasterTable.insertUserAccountCopy(temp);
+            System.out.println(GUI.currentUserAccount.getUserName());
             update();
         }
         else
@@ -1794,7 +1806,8 @@ public class Settings extends javax.swing.JPanel
                 passpanel,
                 "Bank 42",
                 JOptionPane.OK_CANCEL_OPTION,
-                JOptionPane.PLAIN_MESSAGE
+                JOptionPane.PLAIN_MESSAGE,
+                GUI.icon
         );
 
         if (choice == 0)
@@ -1811,7 +1824,8 @@ public class Settings extends javax.swing.JPanel
                 passpanel,
                 "Bank 42",
                 JOptionPane.OK_CANCEL_OPTION,
-                JOptionPane.PLAIN_MESSAGE
+                JOptionPane.PLAIN_MESSAGE,
+                GUI.icon
         );
 
         if (choice == 0)
@@ -1828,7 +1842,8 @@ public class Settings extends javax.swing.JPanel
                 passpanel,
                 "Bank 42",
                 JOptionPane.OK_CANCEL_OPTION,
-                JOptionPane.PLAIN_MESSAGE
+                JOptionPane.PLAIN_MESSAGE,
+                GUI.icon
         );
 
         if (choice == 0)
