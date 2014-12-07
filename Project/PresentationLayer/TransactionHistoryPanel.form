@@ -89,10 +89,13 @@
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                       <TableColumnModel selectionModel="0"/>
                     </Property>
-                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor" preCode="DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();&#xa;centerRenderer.setHorizontalAlignment( JLabel.CENTER );&#xa;TransactionsTable.setDefaultRenderer(String.class, centerRenderer);&#xa;TransactionsTable.setSelectionModel(new ForcedListSelectionModel());&#xa;TransactionsTable.getTableHeader().setReorderingAllowed(false);&#xa;TransactionsTable.getTableHeader().setDefaultRenderer((new HeaderRenderer(TransactionsTable)));" postCode="TransactionsTable.getTableHeader().setResizingAllowed(false);&#xa;TransactionsTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);">
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor" preCode="DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();&#xa;centerRenderer.setHorizontalAlignment( JLabel.CENTER );&#xa;TransactionsTable.setDefaultRenderer(String.class, centerRenderer);&#xa;TransactionsTable.setColumnSelectionAllowed(false);&#xa;TransactionsTable.getTableHeader().setResizingAllowed(false);&#xa;TransactionsTable.getTableHeader().setFont(new Font(&quot;Tahoma&quot;, Font.BOLD, 12));&#xa;TransactionsTable.setGridColor(new java.awt.Color(255, 255, 255));&#xa;TransactionsTable.getTableHeader().setDefaultRenderer((new HeaderRenderer(TransactionsTable)));&#xa;TransactionsTable.getTableHeader().setForeground(new Color(0,0,204));&#xa;TransactionsTable.setOpaque(false);&#xa;TransactionsTable.setSelectionBackground(new java.awt.Color(14, 118, 188));&#xa;TransactionsTable.getTableHeader().setReorderingAllowed(false);">
                       <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                     </Property>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="TransactionsTable.setSelectionModel(SelectionModel = new DefaultListSelectionModel());&#xa;SelectionModel.setSelectionMode(0);&#xa;TransactionsTable.setBackground(new Color(255,255,255));&#xa;TransactionsTable.setFont(new java.awt.Font(&quot;Tahoma&quot;, 1, 11)); // NOI18N&#xa;TransactionsTable.setForeground(new java.awt.Color(14, 118, 188));"/>
+                  </AuxValues>
                 </Component>
               </SubComponents>
             </Container>
@@ -163,10 +166,12 @@
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="bc" green="76" red="e" type="rgb"/>
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="Welcome To your account&apos;s Transaction History!"/>
+                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="&quot;This is the transaction history for &quot; + GUI.currentBankAccount.getAccountName()" type="code"/>
+                </Property>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
               <Constraints>
