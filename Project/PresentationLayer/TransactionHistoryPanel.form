@@ -176,7 +176,6 @@
                   <Connection code="GUI.currentBankAccount.getAccountName() + &quot;&apos;s Transaction History&quot;" type="code"/>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
-                <Property name="opaque" type="boolean" value="true"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">

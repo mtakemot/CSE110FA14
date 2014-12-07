@@ -81,7 +81,8 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
         java.awt.GridBagConstraints gridBagConstraints;
 
         jLabel2 = new javax.swing.JLabel();
@@ -210,13 +211,17 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
 
         Checking_1000_2000_Field.setMinimumSize(new java.awt.Dimension(59, 30));
         Checking_1000_2000_Field.setPreferredSize(new java.awt.Dimension(59, 30));
-        Checking_1000_2000_Field.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        Checking_1000_2000_Field.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 Checking_1000_2000_FieldActionPerformed(evt);
             }
         });
-        Checking_1000_2000_Field.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
+        Checking_1000_2000_Field.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
                 Checking_1000_2000_FieldFocusGained(evt);
             }
         });
@@ -228,13 +233,17 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
 
         Checking_2000_3000_Field.setMinimumSize(new java.awt.Dimension(59, 30));
         Checking_2000_3000_Field.setPreferredSize(new java.awt.Dimension(59, 30));
-        Checking_2000_3000_Field.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        Checking_2000_3000_Field.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 Checking_2000_3000_FieldActionPerformed(evt);
             }
         });
-        Checking_2000_3000_Field.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
+        Checking_2000_3000_Field.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
                 Checking_2000_3000_FieldFocusGained(evt);
             }
         });
@@ -246,13 +255,17 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
 
         Checking_More_Than_3000_Field.setMinimumSize(new java.awt.Dimension(59, 30));
         Checking_More_Than_3000_Field.setPreferredSize(new java.awt.Dimension(59, 30));
-        Checking_More_Than_3000_Field.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        Checking_More_Than_3000_Field.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 Checking_More_Than_3000_FieldActionPerformed(evt);
             }
         });
-        Checking_More_Than_3000_Field.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
+        Checking_More_Than_3000_Field.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
                 Checking_More_Than_3000_FieldFocusGained(evt);
             }
         });
@@ -314,13 +327,17 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
 
         Savings_1000_2000_Field.setMinimumSize(new java.awt.Dimension(59, 30));
         Savings_1000_2000_Field.setPreferredSize(new java.awt.Dimension(59, 30));
-        Savings_1000_2000_Field.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        Savings_1000_2000_Field.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 Savings_1000_2000_FieldActionPerformed(evt);
             }
         });
-        Savings_1000_2000_Field.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
+        Savings_1000_2000_Field.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
                 Savings_1000_2000_FieldFocusGained(evt);
             }
         });
@@ -332,13 +349,17 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
 
         Savings_2000_3000_Field.setMinimumSize(new java.awt.Dimension(59, 30));
         Savings_2000_3000_Field.setPreferredSize(new java.awt.Dimension(59, 30));
-        Savings_2000_3000_Field.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        Savings_2000_3000_Field.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 Savings_2000_3000_FieldActionPerformed(evt);
             }
         });
-        Savings_2000_3000_Field.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
+        Savings_2000_3000_Field.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
                 Savings_2000_3000_FieldFocusGained(evt);
             }
         });
@@ -350,13 +371,17 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
 
         Savings_More_Than_3000_Field.setMinimumSize(new java.awt.Dimension(59, 30));
         Savings_More_Than_3000_Field.setPreferredSize(new java.awt.Dimension(59, 30));
-        Savings_More_Than_3000_Field.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        Savings_More_Than_3000_Field.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 Savings_More_Than_3000_FieldActionPerformed(evt);
             }
         });
-        Savings_More_Than_3000_Field.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
+        Savings_More_Than_3000_Field.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
                 Savings_More_Than_3000_FieldFocusGained(evt);
             }
         });
@@ -373,11 +398,14 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 5, 0);
         jPanel1.add(SavingsAccountRatesPanel, gridBagConstraints);
 
+        ConfirmButton.setBackground(new java.awt.Color(255, 255, 255));
         ConfirmButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         ConfirmButton.setForeground(new java.awt.Color(14, 118, 188));
         ConfirmButton.setText("Confirm");
-        ConfirmButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        ConfirmButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 ConfirmButtonActionPerformed(evt);
             }
         });
@@ -389,11 +417,14 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(5, 0, 5, 0);
         jPanel1.add(ConfirmButton, gridBagConstraints);
 
+        BackButton.setBackground(new java.awt.Color(255, 255, 255));
         BackButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         BackButton.setForeground(new java.awt.Color(14, 118, 188));
         BackButton.setText("Back");
-        BackButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        BackButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 BackButtonActionPerformed(evt);
             }
         });
@@ -405,11 +436,14 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(5, 0, 10, 0);
         jPanel1.add(BackButton, gridBagConstraints);
 
+        PenaltyButton.setBackground(new java.awt.Color(255, 255, 255));
         PenaltyButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         PenaltyButton.setForeground(new java.awt.Color(14, 118, 188));
         PenaltyButton.setText("Change Penalty");
-        PenaltyButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        PenaltyButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 PenaltyButtonActionPerformed(evt);
             }
         });
@@ -427,7 +461,7 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         add(jPanel1, gridBagConstraints);
 
-        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/PenatlyInterestPanel.jpg"))); // NOI18N
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/wallpaper_abstract_wallpapers_00250_wallpapersuggest_com-HD.jpg"))); // NOI18N
         Background.setMaximumSize(new java.awt.Dimension(800, 600));
         Background.setMinimumSize(new java.awt.Dimension(800, 600));
         Background.setOpaque(true);
