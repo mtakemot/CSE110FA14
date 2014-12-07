@@ -835,6 +835,13 @@ public class Settings extends javax.swing.JPanel
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(14, 118, 188));
         jButton1.setText("Back");
+        jButton1.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                jButton1ActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 18;
@@ -1560,15 +1567,11 @@ public class Settings extends javax.swing.JPanel
         response = response.trim();
         if ((response.length() > 0) && (CreateAccountPanel.validate(response)))
         {
-            if (GUI.MasterTable.findUserAccount(response) != null)
-            {
-                errorMessage.setText("The User Name that you entered is already in use!");
-                return;
-            }
             UserAccount temp = new UserAccount(GUI.currentUserAccount);
             temp.setUserName(response);
             GUI.MasterTable.deleteUserAccount(GUI.currentUserAccount.getUserName());
-            GUI.MasterTable.insertUserAccountCopy(temp);
+            GUI.currentUserAccount = GUI.MasterTable.insertUserAccountCopy(temp);
+            System.out.println(GUI.currentUserAccount.getUserName());
             update();
         }
         else
@@ -1833,6 +1836,13 @@ public class Settings extends javax.swing.JPanel
         setMouseExitColors();
         EditLabel5.setFont(thefont);
     }//GEN-LAST:event_jPanel26MouseExited
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1ActionPerformed
+    {//GEN-HEADEREND:event_jButton1ActionPerformed
+        CardLayout layout = (CardLayout) (MainPanel.getLayout());
+        mainGUI.getAccList().update();
+        layout.show(MainPanel, "AccList");
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Background;

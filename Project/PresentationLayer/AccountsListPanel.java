@@ -21,9 +21,7 @@ import LogicLayer.UserAccount;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.Image;
 import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
 
 //for debug
 //import java.io.*;
@@ -47,15 +45,14 @@ public class AccountsListPanel extends javax.swing.JPanel
         initComponents();
     }
 
-    
     @Override
     protected void paintComponent(Graphics g)
     {
-        g.setColor( getBackground() );
+        g.setColor(getBackground());
         g.fillRect(0, 0, getWidth(), getHeight());
         super.paintComponent(g);
     }
-    
+
     /* THIS CONSTRUCTOR IS EXTREMELY IMPORTANT. WRITE A CONSTRUCTOR LIKE THIS
      FOR ALL OTHER PANELS
 
