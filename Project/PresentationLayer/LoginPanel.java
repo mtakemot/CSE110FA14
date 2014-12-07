@@ -30,6 +30,7 @@ public class LoginPanel extends javax.swing.JPanel
     private GUI mainGUI;
     private static final String USERNAME_PATTERN = "^[a-z0-9_-]{1,15}$";
     private static int numberOfAttempts;
+    private static int numberOfLoginAttempts;
     private static int interval;
     private static Timer timer;
     private ImageIcon icon;
@@ -67,8 +68,7 @@ public class LoginPanel extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel1 = new javax.swing.JPanel();
@@ -91,9 +91,9 @@ public class LoginPanel extends javax.swing.JPanel
         setLayout(new java.awt.GridBagLayout());
 
         jPanel1.setBackground(new Color(255,255,255,150));
-        jPanel1.setMinimumSize(new java.awt.Dimension(375, 159));
+        jPanel1.setMinimumSize(new java.awt.Dimension(375, 185));
         jPanel1.setOpaque(false);
-        jPanel1.setPreferredSize(new java.awt.Dimension(375, 159));
+        jPanel1.setPreferredSize(new java.awt.Dimension(375, 185));
         jPanel1.setLayout(new java.awt.GridBagLayout());
 
         LoginButton.setBackground(new java.awt.Color(255, 255, 255));
@@ -103,17 +103,13 @@ public class LoginPanel extends javax.swing.JPanel
         LoginButton.setMaximumSize(new java.awt.Dimension(130, 25));
         LoginButton.setMinimumSize(new java.awt.Dimension(130, 25));
         LoginButton.setPreferredSize(new java.awt.Dimension(130, 25));
-        LoginButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        LoginButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LoginButtonMouseClicked(evt);
             }
         });
-        LoginButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        LoginButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LoginButtonActionPerformed(evt);
             }
         });
@@ -131,17 +127,13 @@ public class LoginPanel extends javax.swing.JPanel
         CreateAccButton.setMaximumSize(new java.awt.Dimension(130, 25));
         CreateAccButton.setMinimumSize(new java.awt.Dimension(130, 25));
         CreateAccButton.setPreferredSize(new java.awt.Dimension(130, 25));
-        CreateAccButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        CreateAccButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 CreateAccButtonMouseClicked(evt);
             }
         });
-        CreateAccButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        CreateAccButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CreateAccButtonActionPerformed(evt);
             }
         });
@@ -156,24 +148,18 @@ public class LoginPanel extends javax.swing.JPanel
         jPasswordField.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 3, 0, 0));
         jPasswordField.setMinimumSize(new java.awt.Dimension(275, 25));
         jPasswordField.setPreferredSize(new java.awt.Dimension(275, 25));
-        jPasswordField.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusGained(java.awt.event.FocusEvent evt)
-            {
+        jPasswordField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
                 jPasswordFieldFocusGained(evt);
             }
         });
-        jPasswordField.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        jPasswordField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jPasswordFieldActionPerformed(evt);
             }
         });
-        jPasswordField.addKeyListener(new java.awt.event.KeyAdapter()
-        {
-            public void keyPressed(java.awt.event.KeyEvent evt)
-            {
+        jPasswordField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
                 jPasswordFieldKeyPressed(evt);
             }
         });
@@ -190,24 +176,18 @@ public class LoginPanel extends javax.swing.JPanel
         UsernameField.setDisabledTextColor(new Color(255,255,255,150));
         UsernameField.setMinimumSize(new java.awt.Dimension(275, 25));
         UsernameField.setPreferredSize(new java.awt.Dimension(275, 25));
-        UsernameField.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusGained(java.awt.event.FocusEvent evt)
-            {
+        UsernameField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
                 UsernameFieldFocusGained(evt);
             }
         });
-        UsernameField.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        UsernameField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UsernameFieldActionPerformed(evt);
             }
         });
-        UsernameField.addKeyListener(new java.awt.event.KeyAdapter()
-        {
-            public void keyPressed(java.awt.event.KeyEvent evt)
-            {
+        UsernameField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
                 UsernameFieldKeyPressed(evt);
             }
         });
@@ -277,18 +257,14 @@ public class LoginPanel extends javax.swing.JPanel
         ForgotPassword.setForeground(new java.awt.Color(14, 118, 188));
         ForgotPassword.setText("Forgot Password?");
         ForgotPassword.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        ForgotPassword.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        ForgotPassword.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ForgotPasswordMouseClicked(evt);
             }
-            public void mouseEntered(java.awt.event.MouseEvent evt)
-            {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
                 ForgotPasswordMouseEntered(evt);
             }
-            public void mouseExited(java.awt.event.MouseEvent evt)
-            {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
                 ForgotPasswordMouseExited(evt);
             }
         });
@@ -324,6 +300,7 @@ public class LoginPanel extends javax.swing.JPanel
         char[] passwordarray = jPasswordField.getPassword();
         String password = new String(passwordarray);
 
+        
         if ((username.equals("teller")) && (password.equals("teller")))
         {
             CardLayout layout = (CardLayout) (MainPanel.getLayout());
@@ -335,13 +312,23 @@ public class LoginPanel extends javax.swing.JPanel
 
         GUI.currentUserAccount = GUI.MasterTable.findUserAccount(UsernameField.getText());
 
+        numberOfLoginAttempts++;
         if (GUI.currentUserAccount == null)
-        {
-            JOptionPane.showMessageDialog(null, "Account Not found!", "Bank 42",
+        {   
+            if (numberOfLoginAttempts == 3)
+            {
+                JOptionPane.showMessageDialog(this, "You've exceeded the number of attempts. Please try again later.", "Bank 42", 1, icon);
+                exceededAttempts();
+                return;
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "Account Not found!", "Bank 42",
                     JOptionPane.INFORMATION_MESSAGE, icon);
+            }
         }
         else
-        {
+        {          
             if (password.compareTo(GUI.currentUserAccount.getPassword()) == 0)
             {
                 mainGUI.getAccList().update();
@@ -364,6 +351,14 @@ public class LoginPanel extends javax.swing.JPanel
             }
             else
             {
+                if (numberOfLoginAttempts == 3)
+                {
+                    JOptionPane.showMessageDialog(this, "You've exceeded the number of attempts. Please try again later.", "Bank 42", 1, icon);
+                    exceededAttempts();
+                    return;
+                }
+                
+                //call error thing here
                 JOptionPane.showMessageDialog(null, "Invalid Username Password Combination", "Bank 42", 1, icon);
             }
             //move the following code in here, for demoing and when we're done testing.
@@ -438,9 +433,8 @@ public class LoginPanel extends javax.swing.JPanel
 
             public void run()
             {
-
+                noAccess.setVisible(true);
                 noAccess.setText("Time Remaining: " + Integer.toString(setInterval() + 1));
-
             }
         }, delay, period);
 
@@ -450,8 +444,10 @@ public class LoginPanel extends javax.swing.JPanel
     {
         if (interval == 0)
         {
-            noAccess.setText("");
+            noAccess.setText(" ");
+            noAccess.setVisible(false);
             numberOfAttempts = 0;
+            numberOfLoginAttempts = 0;
             timer.cancel();
         }
         return --interval;
@@ -477,15 +473,11 @@ public class LoginPanel extends javax.swing.JPanel
 
     private void ForgotPasswordMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_ForgotPasswordMouseClicked
     {//GEN-HEADEREND:event_ForgotPasswordMouseClicked
-        if (numberOfAttempts == 3)
-        {
-            JOptionPane.showMessageDialog(this, "You've exceeded the number of attempts. Please try again later.", "Bank 42", 1, icon);
-            return;
-        }
+   
 
         numberOfAttempts++;
-
-        String response = JOptionPane.showInputDialog(null, "Enter your email (Attempt " + numberOfAttempts + " of 3: ", "Bank 42", 1);
+        
+        String response = JOptionPane.showInputDialog(null, "Enter your email (Attempt " + numberOfAttempts + " of 3): ", "Bank 42", 1);
 
         if (response == null)
             return;
