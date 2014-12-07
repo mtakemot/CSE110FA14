@@ -129,6 +129,9 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         Logout.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Logout.setForeground(new java.awt.Color(14, 118, 188));
         Logout.setText("Log Out");
+        Logout.setMaximumSize(new java.awt.Dimension(211, 25));
+        Logout.setMinimumSize(new java.awt.Dimension(211, 25));
+        Logout.setPreferredSize(new java.awt.Dimension(211, 25));
         Logout.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -174,7 +177,7 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         add(ChildBG, gridBagConstraints);
 
         Background.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/TransactionHistoryPic.jpg"))); // NOI18N
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/wallhaven-15760.png"))); // NOI18N
         Background.setFocusable(false);
         Background.setInheritsPopupMenu(false);
         Background.setMaximumSize(new java.awt.Dimension(800, 600));
