@@ -107,6 +107,45 @@ public class HashTable implements Serializable
         return null;
     }
 
+    public UserAccount insertUserAccountCopy(UserAccount copy)
+    {
+        int index = hashCode(copy.getUserName()) % SIZE;
+        // The bucket at index is not currently occupied, so we insert at
+        // Table[index]
+
+        if (Table[index] == null)
+        {
+            Table[index] = copy;
+            this.occ++;
+            return Table[index];
+        }
+        else // The bucket at index is occupied, so we insert into the linked
+        // list of UserAccounts that the bucket is holding
+        {
+            UserAccount current;
+            current = Table[index];
+            // Traverse the linked list to find the insertion point
+            while (current.getNext() != null
+                    && !((current.getUserName()).equals(copy.getUserName())))
+            {
+                current = current.getNext();
+            }
+            // Will return false if the userName is already in use
+            // Prompt the user to enter a different userName in main
+            // and then call insert again if this happens.
+            if (current.getUserName().equals(copy.getUserName()))
+                return null;
+            else // The end of the linked list was reached.
+            // This means that the userName that was entered is not in use
+            // so we insert here.
+            {
+                current.setNext(copy);
+                this.occ++;
+                return current.getNext();
+            }
+        }
+    }
+
     // When a user attempts to log in, this function will be called to see
     // if the username that they entered exists. If it does, then the
     // UserAccount that is associated with that username will be returned and

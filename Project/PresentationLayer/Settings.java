@@ -1,5 +1,6 @@
 package PresentationLayer;
 
+import LogicLayer.UserAccount;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.font.TextAttribute;
@@ -1559,7 +1560,15 @@ public class Settings extends javax.swing.JPanel
         response = response.trim();
         if ((response.length() > 0) && (CreateAccountPanel.validate(response)))
         {
-            GUI.currentUserAccount.setUserName(response);
+            if (GUI.MasterTable.findUserAccount(response) != null)
+            {
+                errorMessage.setText("The User Name that you entered is already in use!");
+                return;
+            }
+            UserAccount temp = new UserAccount(GUI.currentUserAccount);
+            temp.setUserName(response);
+            GUI.MasterTable.deleteUserAccount(GUI.currentUserAccount.getUserName());
+            GUI.MasterTable.insertUserAccountCopy(temp);
             update();
         }
         else
