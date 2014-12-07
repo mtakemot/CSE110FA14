@@ -44,7 +44,7 @@ public class Settings extends javax.swing.JPanel
 
     public void updateUserLabel()
     {
-       
+
     }
 
     /**
@@ -98,7 +98,7 @@ public class Settings extends javax.swing.JPanel
         UserPassword = new javax.swing.JLabel();
         jPanel26 = new javax.swing.JPanel();
         EditLabel5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        HomeButton = new javax.swing.JButton();
         Background = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -830,15 +830,23 @@ public class Settings extends javax.swing.JPanel
         gridBagConstraints.gridy = 12;
         jPanel1.add(jPanel26, gridBagConstraints);
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(14, 118, 188));
-        jButton1.setText("Back");
+        HomeButton.setBackground(new java.awt.Color(255, 255, 255));
+        HomeButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        HomeButton.setForeground(new java.awt.Color(14, 118, 188));
+        HomeButton.setText("Home");
+        HomeButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                HomeButtonActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 18;
         gridBagConstraints.gridwidth = 5;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel1.add(jButton1, gridBagConstraints);
+        jPanel1.add(HomeButton, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -1824,6 +1832,12 @@ public class Settings extends javax.swing.JPanel
         EditLabel5.setFont(thefont);
     }//GEN-LAST:event_jPanel26MouseExited
 
+    private void HomeButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_HomeButtonActionPerformed
+    {//GEN-HEADEREND:event_HomeButtonActionPerformed
+        CardLayout layout = (CardLayout) (MainPanel.getLayout());
+        layout.show(MainPanel, "AccList");
+    }//GEN-LAST:event_HomeButtonActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Background;
     private javax.swing.JButton DeleteAccountButton;
@@ -1836,6 +1850,7 @@ public class Settings extends javax.swing.JPanel
     private javax.swing.JLabel Email;
     private javax.swing.JLabel FirstName;
     private javax.swing.JLabel FirstName1;
+    private javax.swing.JButton HomeButton;
     private javax.swing.JLabel Password;
     private javax.swing.JLabel PhoneNumber;
     private javax.swing.JLabel UserEmail;
@@ -1846,7 +1861,6 @@ public class Settings extends javax.swing.JPanel
     private javax.swing.JLabel UserUsername;
     private javax.swing.JLabel Username;
     private javax.swing.JLabel errorMessage;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
