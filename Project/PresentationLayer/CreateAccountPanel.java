@@ -114,9 +114,9 @@ public class CreateAccountPanel extends javax.swing.JPanel
         HeaderPanel.setOpaque(false);
         HeaderPanel.setLayout(new java.awt.GridBagLayout());
 
-        Bank42.setFont(new java.awt.Font("DejaVu Sans", 1, 48)); // NOI18N
-        Bank42.setForeground(new java.awt.Color(51, 0, 255));
-        Bank42.setText("Bank 42");
+        Bank42.setFont(new java.awt.Font("DejaVu Sans", 1, 36)); // NOI18N
+        Bank42.setForeground(new java.awt.Color(204, 204, 255));
+        Bank42.setText("Create A User Account With Bank 42");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -125,6 +125,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 65, 0);
         jPanel2.add(HeaderPanel, gridBagConstraints);
 
         jPanel1.setOpaque(false);
@@ -491,17 +492,18 @@ public class CreateAccountPanel extends javax.swing.JPanel
         gridBagConstraints.gridy = 30;
         jPanel1.add(jLabel14, gridBagConstraints);
 
-        jPanel10.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel10.setBackground(new Color(145,228,253,100));
         jPanel10.setLayout(new java.awt.GridBagLayout());
 
         FirstNameLabel.setBackground(new Color(255,255,255,190));
         FirstNameLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        FirstNameLabel.setForeground(new java.awt.Color(51, 0, 255));
+        FirstNameLabel.setForeground(new java.awt.Color(204, 255, 255));
+        FirstNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         FirstNameLabel.setText("First Name:");
+        FirstNameLabel.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         jPanel10.add(FirstNameLabel, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -511,12 +513,13 @@ public class CreateAccountPanel extends javax.swing.JPanel
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         jPanel1.add(jPanel10, gridBagConstraints);
 
-        jPanel11.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel11.setBackground(new Color(145,228,253,100));
         jPanel11.setLayout(new java.awt.GridBagLayout());
 
         LastNameLabel.setBackground(new Color(255,255,255,190));
         LastNameLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        LastNameLabel.setForeground(new java.awt.Color(51, 0, 255));
+        LastNameLabel.setForeground(new java.awt.Color(204, 255, 255));
+        LastNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LastNameLabel.setText("Last Name:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -531,12 +534,13 @@ public class CreateAccountPanel extends javax.swing.JPanel
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         jPanel1.add(jPanel11, gridBagConstraints);
 
-        jPanel12.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel12.setBackground(new Color(145,228,253,100));
         jPanel12.setLayout(new java.awt.GridBagLayout());
 
         jLabel5.setBackground(new Color(255,255,255,190));
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(51, 0, 255));
+        jLabel5.setForeground(new java.awt.Color(204, 255, 255));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Username:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -551,11 +555,12 @@ public class CreateAccountPanel extends javax.swing.JPanel
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         jPanel1.add(jPanel12, gridBagConstraints);
 
-        jPanel13.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel13.setBackground(new Color(145,228,253,100));
         jPanel13.setLayout(new java.awt.GridBagLayout());
 
         PasswordLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        PasswordLabel.setForeground(new java.awt.Color(51, 0, 255));
+        PasswordLabel.setForeground(new java.awt.Color(204, 255, 255));
+        PasswordLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         PasswordLabel.setText("Password:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -570,12 +575,13 @@ public class CreateAccountPanel extends javax.swing.JPanel
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         jPanel1.add(jPanel13, gridBagConstraints);
 
-        jPanel14.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel14.setBackground(new Color(145,228,253,100));
         jPanel14.setLayout(new java.awt.GridBagLayout());
 
         ConfirmPasswordLabel.setBackground(new Color(255,255,255,190));
         ConfirmPasswordLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        ConfirmPasswordLabel.setForeground(new java.awt.Color(51, 0, 255));
+        ConfirmPasswordLabel.setForeground(new java.awt.Color(204, 255, 255));
+        ConfirmPasswordLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ConfirmPasswordLabel.setText("Confirm Password:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -590,12 +596,13 @@ public class CreateAccountPanel extends javax.swing.JPanel
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         jPanel1.add(jPanel14, gridBagConstraints);
 
-        jPanel15.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel15.setBackground(new Color(145,228,253,100));
         jPanel15.setLayout(new java.awt.GridBagLayout());
 
         emailLabel.setBackground(new Color(255,255,255,190));
         emailLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        emailLabel.setForeground(new java.awt.Color(51, 0, 255));
+        emailLabel.setForeground(new java.awt.Color(204, 255, 255));
+        emailLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         emailLabel.setText("Email:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -610,12 +617,13 @@ public class CreateAccountPanel extends javax.swing.JPanel
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         jPanel1.add(jPanel15, gridBagConstraints);
 
-        jPanel16.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel16.setBackground(new Color(145,228,253,100));
         jPanel16.setLayout(new java.awt.GridBagLayout());
 
         PhoneLabel.setBackground(new Color(255,255,255,190));
         PhoneLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        PhoneLabel.setForeground(new java.awt.Color(51, 0, 255));
+        PhoneLabel.setForeground(new java.awt.Color(204, 255, 255));
+        PhoneLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         PhoneLabel.setText("Phone:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -633,14 +641,12 @@ public class CreateAccountPanel extends javax.swing.JPanel
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 65, 0);
         jPanel2.add(jPanel1, gridBagConstraints);
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 10, 20, 0);
-        add(jPanel2, gridBagConstraints);
+        add(jPanel2, new java.awt.GridBagConstraints());
 
-        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/hitchguide42robot.jpg"))); // NOI18N
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/AbstractLines2.png"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
