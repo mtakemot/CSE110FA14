@@ -121,7 +121,7 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
         BusinessPanel.add(Back, gridBagConstraints);
 
@@ -140,7 +140,7 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
         BusinessPanel.add(Logout, gridBagConstraints);
 
@@ -155,7 +155,7 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
 
         Title.setBackground(new Color ( 0,0,0,100));
         Title.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 36)); // NOI18N
-        Title.setForeground(new java.awt.Color(14, 118, 188));
+        Title.setForeground(new java.awt.Color(204, 255, 255));
         Title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Title.setText(GUI.currentBankAccount.getAccountName() + "'s Transaction History");
         Title.setToolTipText("");
