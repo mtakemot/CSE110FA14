@@ -55,11 +55,10 @@ public class GUI extends javax.swing.JFrame
 
     // Static BankAccount allows us to store a UserAccount after a user selects
     // it so that we can manipulate it in other panels of our GUI
-
     /**
      *
      */
-        public static BankAccount currentBankAccount;
+    public static BankAccount currentBankAccount;
 
     //keyword to change the AccList table
     public static final String ACCTABLE = "account table";
@@ -195,7 +194,8 @@ public class GUI extends javax.swing.JFrame
     {
         Timer timer = new Timer();
 
-        /***IMPORTANT the following below is to calculate the balance/interest
+        /**
+         * *IMPORTANT the following below is to calculate the balance/interest
          * for the days that the program was off OR on. After this is done, then
          * the tasks (threads) to update bal and interest are scheduled to run
          * daily/monthly
@@ -278,11 +278,10 @@ public class GUI extends javax.swing.JFrame
             daysInMonth = iterate.dayOfMonth().getMaximumValue();
         }
 
-      
         /*    THIS IS SCHEDULING THE THREADS TO RUN. both are on separate threads.
-            timer.scheduleAtFixedRate(updateBalance, , balanceInterval); //daily
-            timer.scheduleAtFixedRate(updateInterest, , interestInterval); //monthly
-        */
+         timer.scheduleAtFixedRate(updateBalance, , balanceInterval); //daily
+         timer.scheduleAtFixedRate(updateInterest, , interestInterval); //monthly
+         */
         // System.out.println("TaskTimer scheduled by main. Now initializing GUI");
         /* ***********************************************************************/
     }
@@ -415,7 +414,7 @@ public class GUI extends javax.swing.JFrame
                 initDB();
 
                 icon = new javax.swing.ImageIcon(getClass().getResource("/Assets/rsz_2icon.png"));
-                
+
                 //update daily total BEFORE interest.
                 // initTask();
                 // This grabs the MainPanel and stores it in a variable so that
@@ -433,7 +432,6 @@ public class GUI extends javax.swing.JFrame
                 mainGUI.setPass(new PasswordFieldPanel(cardHolder, mainGUI));
                 mainGUI.setPenIntPanel(new PenaltyInterestPanel(cardHolder, mainGUI));
                 mainGUI.setTransPanel(new TransactionHistoryPanel(cardHolder, mainGUI));
-                mainGUI.setDolphinsPanel(new DolphinsPanel(cardHolder, mainGUI));
                 mainGUI.setChangePasswordPanel(new ChangePassword(cardHolder, mainGUI));
 
                 // This addes the LoginPanel and AccountsListPanel that we just
@@ -450,7 +448,6 @@ public class GUI extends javax.swing.JFrame
                 cardHolder.add(mainGUI.getTellerAP(), "TellerAP");
                 cardHolder.add(mainGUI.getPenIntPanel(), "PenIntPanel");
                 cardHolder.add(mainGUI.getTransPanel(), "TransPanel");
-                cardHolder.add(mainGUI.getDolphinsPanel(), "DolphinsPanel");
                 //cardHolder.add(mainGUI.getChangePasswordPanel(), "ChangePasswordPanel");
 
                 // These two lines show the MainPanel. Without these 2 lines
@@ -494,7 +491,6 @@ public class GUI extends javax.swing.JFrame
     private PasswordFieldPanel pass;
     private PenaltyInterestPanel PenIntPanel;
     private TransactionHistoryPanel TransPanel;
-    private DolphinsPanel DolphinsPanel;
     private ChangePassword ChangePasswordPanel;
 
     public ChangePassword getChangePasswordPanel()
@@ -505,16 +501,6 @@ public class GUI extends javax.swing.JFrame
     public void setChangePasswordPanel(ChangePassword ChangePasswordPannel)
     {
         this.ChangePasswordPanel = ChangePasswordPannel;
-    }
-
-    public DolphinsPanel getDolphinsPanel()
-    {
-        return DolphinsPanel;
-    }
-
-    public void setDolphinsPanel(DolphinsPanel DolphinsPanel)
-    {
-        this.DolphinsPanel = DolphinsPanel;
     }
 
     public TransactionHistoryPanel getTransPanel()
