@@ -33,6 +33,8 @@ import java.io.*;
 public class ImportExport
 {
 
+    //empty constructor, we don't need anything here, just need ImportExport
+    //for the database functions below
     public ImportExport()
     {
     }
@@ -48,6 +50,7 @@ public class ImportExport
     public HashTable importDB(HashTable MasterTable)
     {
 
+        //trying to read in file, if there's an error, an exception will be thrown.
         try
         {
             FileInputStream fileIn = new FileInputStream("Data.ser");
@@ -93,10 +96,10 @@ public class ImportExport
     public boolean exportDB(HashTable MasterTable)
     {
 
-        /**
-         * *DEBUG***
-         */
+        //returned boolean
         boolean result = false;
+        
+        //try to write to file, if there's an error, and exception will be thrown.
         try
         {
 
