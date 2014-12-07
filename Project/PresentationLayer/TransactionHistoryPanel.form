@@ -173,7 +173,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="&quot;Bank Account:  &quot; + GUI.currentBankAccount.getAccountName() + &quot;&apos;s Transaction History&quot;" type="code"/>
+                  <Connection code="GUI.currentBankAccount.getAccountName() + &quot;&apos;s Transaction History&quot;" type="code"/>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
                 <Property name="opaque" type="boolean" value="true"/>

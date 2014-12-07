@@ -29,6 +29,7 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
     {
         TransactionsTable.clearSelection();
         TransactionsTable.getSelectionModel().clearSelection();
+        Title.setText(GUI.currentBankAccount.getAccountName()+"'s Transaction History");
         TransactionsTable.setModel(new TransactionTableModel(GUI.currentBankAccount));
 
     }
@@ -151,7 +152,7 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         Title.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 36)); // NOI18N
         Title.setForeground(new java.awt.Color(14, 118, 188));
         Title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Title.setText("Bank Account:  " + GUI.currentBankAccount.getAccountName() + "'s Transaction History");
+        Title.setText(GUI.currentBankAccount.getAccountName() + "'s Transaction History");
         Title.setToolTipText("");
         Title.setOpaque(true);
         gridBagConstraints = new java.awt.GridBagConstraints();
