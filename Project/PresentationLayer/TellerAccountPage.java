@@ -291,122 +291,132 @@ public class TellerAccountPage extends javax.swing.JPanel
     }
 
     private void DepositButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DepositButtonMouseClicked
-        double amount;
-        String amountstring = JOptionPane.showInputDialog(
-                null, "Amount To Deposit: ");
-        if (amountstring == null)
-            return;
-        if (isParsable(amountstring))
+        if (AccountsTable.getSelectedRowCount() > 0)
         {
-            amount = Double.parseDouble(amountstring);
+            double amount;
+            String amountstring = JOptionPane.showInputDialog(
+                    null, "Amount To Deposit: ");
+            if (amountstring == null)
+                return;
+            if (isParsable(amountstring))
+            {
+                amount = Double.parseDouble(amountstring);
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "Please Enter a Valid number");
+                return;
+            }
+
+            if (amount < 0)
+            {
+                JOptionPane.showMessageDialog(null, "Please Enter a Valid number");
+                return;
+            }
+
+            //first, retrieve the row index of selection
+            int row = AccountsTable.getSelectedRow();
+            String user = (String) AccountsTable.getValueAt(row, 0);
+            System.out.print("\nTESTING retrieve selected row index: ");
+            System.out.print(row);
+            //next, retrieve the user account for the selection ( row , column0) = (x,y)
+            System.out.print("\n Value at index: " + row + ", 0 is: " + user + "\n");
+
+            //setting the current bank account
+            GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(user);
+
+            if (GUI.currentBankAccount == null)
+            {
+                JOptionPane.showMessageDialog(null, "Error! Bank Account Does Not Match");
+                return;
+            }
+            // need to check if addToBalance returns true or false here
+            if (GUI.currentBankAccount.addToBalance(amount))
+            {
+                setNewCellValue(GUI.currentBankAccount.getBalance(), GUI.currentBankAccount.getAccountName());
+                System.out.println("\n GUI.currentBankAcc Name:  " + GUI.currentBankAccount.getAccountName() + "\n");
+
+                JOptionPane.showMessageDialog(null, "$" + amount + " was deposited into "
+                        + GUI.currentBankAccount.getAccountName());
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "Error! You have either reached your daily limit, \n"
+                        + "or are attempting to deposit too much.");
+            }
         }
         else
-        {
-            JOptionPane.showMessageDialog(null, "Please Enter a Valid number");
-            return;
-        }
-
-        if (amount < 0)
-        {
-            JOptionPane.showMessageDialog(null, "Please Enter a Valid number");
-            return;
-        }
-
-        //first, retrieve the row index of selection
-        int row = AccountsTable.getSelectedRow();
-        String user = (String) AccountsTable.getValueAt(row, 0);
-        System.out.print("\nTESTING retrieve selected row index: ");
-        System.out.print(row);
-        //next, retrieve the user account for the selection ( row , column0) = (x,y)
-        System.out.print("\n Value at index: " + row + ", 0 is: " + user + "\n");
-
-        //setting the current bank account
-        GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(user);
-
-        if (GUI.currentBankAccount == null)
-        {
-            JOptionPane.showMessageDialog(null, "Error! Bank Account Does Not Match");
-            return;
-        }
-        // need to check if addToBalance returns true or false here
-        if (GUI.currentBankAccount.addToBalance(amount))
-        {
-            setNewCellValue(GUI.currentBankAccount.getBalance(), GUI.currentBankAccount.getAccountName());
-            System.out.println("\n GUI.currentBankAcc Name:  " + GUI.currentBankAccount.getAccountName() + "\n");
-
-            JOptionPane.showMessageDialog(null, "$" + amount + " was deposited into "
-                    + GUI.currentBankAccount.getAccountName());
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(null, "Error! You have either reached your daily limit, \n"
-                    + "or are attempting to deposit too much.");
-        }
+            JOptionPane.showMessageDialog(null, "Please select an account", "Bank 42", 1);
     }//GEN-LAST:event_DepositButtonMouseClicked
 
     private void WithdrawButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WithdrawButtonMouseClicked
-        double amount;
-        String amountstring = JOptionPane.showInputDialog(
-                null, "Amount To Withdraw: ");
-        if (amountstring == null)
-            return;
-        if (isParsable(amountstring))
+        if (AccountsTable.getSelectedRowCount() > 0)
         {
-            amount = Double.parseDouble(amountstring);
+            double amount;
+            String amountstring = JOptionPane.showInputDialog(
+                    null, "Amount To Withdraw: ");
+            if (amountstring == null)
+                return;
+            if (isParsable(amountstring))
+            {
+                amount = Double.parseDouble(amountstring);
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "Please Enter a Valid number");
+                return;
+            }
+
+            if (amount < 0)
+            {
+                JOptionPane.showMessageDialog(null, "Please Enter a Valid number");
+                return;
+            }
+
+            //first, retrieve the row index of selection
+            int row = AccountsTable.getSelectedRow();
+            String user = (String) AccountsTable.getValueAt(row, 0);
+            System.out.print("\nTESTING retrieve selected row index: ");
+            System.out.print(row);
+            //next, retrieve the user account for the selection ( row , column0) = (x,y)
+            System.out.print("\n Value at index: " + row + ", 0 is: " + user + "\n");
+
+            //setting the current bank account
+            GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(user);
+
+            if (GUI.currentBankAccount == null)
+            {
+                JOptionPane.showMessageDialog(null, "Error Bank Account Does Not Match");
+                return;
+            }
+
+            if (amount > GUI.currentBankAccount.getBalance())
+            {
+
+                JOptionPane.showMessageDialog(null, "Insufficient Funds"
+                        + "\nThere is $" + GUI.currentBankAccount.getBalance() + " available"
+                        + " in selected Bank Account");
+                return;
+            }
+
+            if (GUI.currentBankAccount.subFromBalance(amount))
+            {
+                setNewCellValue(GUI.currentBankAccount.getBalance(), GUI.currentBankAccount.getAccountName());
+                JOptionPane.showMessageDialog(null, "$" + amount + " was withdrawn from "
+                        + GUI.currentBankAccount.getAccountName());
+            }
+
+            else
+            {
+                JOptionPane.showMessageDialog(null, "Error! You have either reached your daily limit, \n"
+                        + "or are attempting to withdraw too much.");
+            }
+
+            System.out.print("\n GUI.currentBankAcc Name:  " + GUI.currentBankAccount.getAccountName() + "\n");
+            //GUI.currentBankAccount.addToBalance(amount
         }
         else
-        {
-            JOptionPane.showMessageDialog(null, "Please Enter a Valid number");
-            return;
-        }
-
-        if (amount < 0)
-        {
-            JOptionPane.showMessageDialog(null, "Please Enter a Valid number");
-            return;
-        }
-
-        //first, retrieve the row index of selection
-        int row = AccountsTable.getSelectedRow();
-        String user = (String) AccountsTable.getValueAt(row, 0);
-        System.out.print("\nTESTING retrieve selected row index: ");
-        System.out.print(row);
-        //next, retrieve the user account for the selection ( row , column0) = (x,y)
-        System.out.print("\n Value at index: " + row + ", 0 is: " + user + "\n");
-
-        //setting the current bank account
-        GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(user);
-
-        if (GUI.currentBankAccount == null)
-        {
-            JOptionPane.showMessageDialog(null, "Error Bank Account Does Not Match");
-            return;
-        }
-
-        if (amount > GUI.currentBankAccount.getBalance())
-        {
-
-            JOptionPane.showMessageDialog(null, "Insufficient Funds"
-                    + "\nThere is $" + GUI.currentBankAccount.getBalance() + " available"
-                    + " in selected Bank Account");
-            return;
-        }
-
-        if (GUI.currentBankAccount.subFromBalance(amount))
-        {
-            setNewCellValue(GUI.currentBankAccount.getBalance(), GUI.currentBankAccount.getAccountName());
-            JOptionPane.showMessageDialog(null, "$" + amount + " was withdrawn from "
-                    + GUI.currentBankAccount.getAccountName());
-        }
-
-        else
-        {
-            JOptionPane.showMessageDialog(null, "Error! You have either reached your daily limit, \n"
-                    + "or are attempting to withdraw too much.");
-        }
-
-        System.out.print("\n GUI.currentBankAcc Name:  " + GUI.currentBankAccount.getAccountName() + "\n");
-        //GUI.currentBankAccount.addToBalance(amount
+            JOptionPane.showMessageDialog(null, "Please select an account", "Bank 42", 1);
 
     }//GEN-LAST:event_WithdrawButtonMouseClicked
 

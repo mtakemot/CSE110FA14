@@ -23,11 +23,13 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
 
     private JPanel MainPanel;
     private GUI mainGUI;
+    private DefaultListSelectionModel SelectionModel;
 
     public void update()
     {
         TransactionsTable.clearSelection();
         TransactionsTable.getSelectionModel().clearSelection();
+        Title.setText("This is the transaction history for " + GUI.currentBankAccount.getAccountName());
         TransactionsTable.setModel(new TransactionTableModel(GUI.currentBankAccount));
 
     }
@@ -46,7 +48,8 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
         java.awt.GridBagConstraints gridBagConstraints;
 
         ChildBG = new javax.swing.JPanel();
@@ -75,17 +78,27 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         BusinessPanel.setOpaque(false);
         BusinessPanel.setLayout(new java.awt.GridBagLayout());
 
+        jScrollPane1.setMinimumSize(new java.awt.Dimension(675, 300));
         jScrollPane1.setPreferredSize(new java.awt.Dimension(675, 300));
 
+        TransactionsTable.setSelectionModel(SelectionModel = new DefaultListSelectionModel());
+        SelectionModel.setSelectionMode(0);
+        TransactionsTable.setBackground(new Color(255,255,255));
+        TransactionsTable.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        TransactionsTable.setForeground(new java.awt.Color(14, 118, 188));
         TransactionsTable.setModel(new PresentationLayer.TransactionTableModel(PresentationLayer.GUI.currentBankAccount));
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
         centerRenderer.setHorizontalAlignment( JLabel.CENTER );
         TransactionsTable.setDefaultRenderer(String.class, centerRenderer);
-        TransactionsTable.setSelectionModel(new ForcedListSelectionModel());
-        TransactionsTable.getTableHeader().setReorderingAllowed(false);
-        TransactionsTable.getTableHeader().setDefaultRenderer((new HeaderRenderer(TransactionsTable)));
+        TransactionsTable.setColumnSelectionAllowed(false);
         TransactionsTable.getTableHeader().setResizingAllowed(false);
-        TransactionsTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        TransactionsTable.getTableHeader().setFont(new Font("Tahoma", Font.BOLD, 12));
+        TransactionsTable.setGridColor(new java.awt.Color(255, 255, 255));
+        TransactionsTable.getTableHeader().setDefaultRenderer((new HeaderRenderer(TransactionsTable)));
+        TransactionsTable.getTableHeader().setForeground(new Color(0,0,204));
+        TransactionsTable.setOpaque(false);
+        TransactionsTable.setSelectionBackground(new java.awt.Color(14, 118, 188));
+        TransactionsTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(TransactionsTable);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -97,8 +110,10 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         Back.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Back.setForeground(new java.awt.Color(14, 118, 188));
         Back.setText("Return To Account Selection");
-        Back.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        Back.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 BackActionPerformed(evt);
             }
         });
@@ -114,8 +129,10 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         Logout.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Logout.setForeground(new java.awt.Color(14, 118, 188));
         Logout.setText("Log Out");
-        Logout.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        Logout.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 LogoutActionPerformed(evt);
             }
         });
@@ -137,9 +154,9 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         TitlePanel.setLayout(new java.awt.GridBagLayout());
 
         Title.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        Title.setForeground(new java.awt.Color(14, 118, 188));
+        Title.setForeground(new java.awt.Color(255, 255, 255));
         Title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Title.setText("Welcome To your account's Transaction History!");
+        Title.setText("This is the transaction history for " + GUI.currentBankAccount.getAccountName());
         Title.setToolTipText("");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
