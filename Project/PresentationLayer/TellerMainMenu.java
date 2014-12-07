@@ -100,6 +100,13 @@ public class TellerMainMenu extends javax.swing.JPanel
                 SearchUserButtonMouseClicked(evt);
             }
         });
+        SearchUserButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                SearchUserButtonActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -230,8 +237,30 @@ public class TellerMainMenu extends javax.swing.JPanel
     {//GEN-HEADEREND:event_ApplyPenIntButtonActionPerformed
         GUI.MasterTable.InterestAndPenaltiesTeller();
         JOptionPane.showMessageDialog(null, "Success! Interest and penalties have been applied \n"
-                + "globally to all existing Bank Accounts.", "Bank 42", 1);
+                + "globally to all existing Bank Accounts.", "Bank 42", 1,GUI.icon);
     }//GEN-LAST:event_ApplyPenIntButtonActionPerformed
+
+    private void SearchUserButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_SearchUserButtonActionPerformed
+    {//GEN-HEADEREND:event_SearchUserButtonActionPerformed
+        Object name = JOptionPane.showInputDialog(
+                null, "Please Enter User Account: ","Bank 42",JOptionPane.INFORMATION_MESSAGE,GUI.icon,null,null);
+
+        if (name != null)
+        {
+            GUI.currentUserAccount = GUI.MasterTable.findUserAccount(name.toString());
+
+            if (GUI.currentUserAccount != null)
+            {
+                mainGUI.getTellerAP().update();
+                CardLayout layout = (CardLayout) (MainPanel.getLayout());
+                layout.show(MainPanel, "TellerAP");
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "User Accout Not Found","Bank 42",1,GUI.icon);
+            }
+        }
+    }//GEN-LAST:event_SearchUserButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ApplyPenIntButton;

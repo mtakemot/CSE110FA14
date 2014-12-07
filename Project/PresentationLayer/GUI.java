@@ -78,7 +78,7 @@ public class GUI extends javax.swing.JFrame
     /**
      *
      */
-    public Image my_image;
+    public static ImageIcon icon;
     //my_image = Toolkit.getDefaultToolkit().createImage("background-wallpapers-24.jpg");
 
     /*@Override
@@ -414,6 +414,8 @@ public class GUI extends javax.swing.JFrame
                  */
                 initDB();
 
+                icon = new javax.swing.ImageIcon(getClass().getResource("/Assets/rsz_2icon.png"));
+                
                 //update daily total BEFORE interest.
                 // initTask();
                 // This grabs the MainPanel and stores it in a variable so that
