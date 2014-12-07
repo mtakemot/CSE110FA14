@@ -203,11 +203,8 @@ public class AccountsListPanel extends javax.swing.JPanel
         AccountsTable.getTableHeader().setFont(new Font("Tahoma", Font.BOLD, 12));
         AccountsTable.setGridColor(new java.awt.Color(255, 255, 255));
         AccountsTable.getTableHeader().setDefaultRenderer((new HeaderRenderer(AccountsTable)));
-        AccountsTable.setMaximumSize(new java.awt.Dimension(440, 390));
         AccountsTable.getTableHeader().setForeground(new Color(0,0,204));
-        AccountsTable.setMinimumSize(new java.awt.Dimension(440, 390));
         AccountsTable.setOpaque(false);
-        AccountsTable.setPreferredSize(new java.awt.Dimension(440, 390));
         AccountsTable.setSelectionBackground(new java.awt.Color(14, 118, 188));
         AccountsTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(AccountsTable);

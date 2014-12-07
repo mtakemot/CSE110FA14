@@ -23,6 +23,7 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
 
     private JPanel MainPanel;
     private GUI mainGUI;
+    private DefaultListSelectionModel SelectionModel;
 
     public void update()
     {
@@ -79,15 +80,24 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         jScrollPane1.setMinimumSize(new java.awt.Dimension(675, 300));
         jScrollPane1.setPreferredSize(new java.awt.Dimension(675, 300));
 
+        TransactionsTable.setSelectionModel(SelectionModel = new DefaultListSelectionModel());
+        SelectionModel.setSelectionMode(0);
+        TransactionsTable.setBackground(new Color(255,255,255));
+        TransactionsTable.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        TransactionsTable.setForeground(new java.awt.Color(14, 118, 188));
         TransactionsTable.setModel(new PresentationLayer.TransactionTableModel(PresentationLayer.GUI.currentBankAccount));
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
         centerRenderer.setHorizontalAlignment( JLabel.CENTER );
         TransactionsTable.setDefaultRenderer(String.class, centerRenderer);
-        TransactionsTable.setSelectionModel(new ForcedListSelectionModel());
-        TransactionsTable.getTableHeader().setReorderingAllowed(false);
-        TransactionsTable.getTableHeader().setDefaultRenderer((new HeaderRenderer(TransactionsTable)));
+        TransactionsTable.setColumnSelectionAllowed(false);
         TransactionsTable.getTableHeader().setResizingAllowed(false);
-        TransactionsTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        TransactionsTable.getTableHeader().setFont(new Font("Tahoma", Font.BOLD, 12));
+        TransactionsTable.setGridColor(new java.awt.Color(255, 255, 255));
+        TransactionsTable.getTableHeader().setDefaultRenderer((new HeaderRenderer(TransactionsTable)));
+        TransactionsTable.getTableHeader().setForeground(new Color(0,0,204));
+        TransactionsTable.setOpaque(false);
+        TransactionsTable.setSelectionBackground(new java.awt.Color(14, 118, 188));
+        TransactionsTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(TransactionsTable);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
