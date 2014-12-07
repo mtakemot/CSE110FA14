@@ -20,6 +20,7 @@ import javax.swing.table.DefaultTableCellRenderer;
 import LogicLayer.UserAccount;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.Image;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
@@ -46,6 +47,15 @@ public class AccountsListPanel extends javax.swing.JPanel
         initComponents();
     }
 
+    
+    @Override
+    protected void paintComponent(Graphics g)
+    {
+        g.setColor( getBackground() );
+        g.fillRect(0, 0, getWidth(), getHeight());
+        super.paintComponent(g);
+    }
+    
     /* THIS CONSTRUCTOR IS EXTREMELY IMPORTANT. WRITE A CONSTRUCTOR LIKE THIS
      FOR ALL OTHER PANELS
 
@@ -135,7 +145,15 @@ public class AccountsListPanel extends javax.swing.JPanel
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         AccountsTable = new javax.swing.JTable();
-        TransferFundsPanel = new javax.swing.JPanel();
+        TransferFundsPanel = new javax.swing.JPanel()
+        {
+            protected void paintComponent(Graphics g)
+            {
+                g.setColor( getBackground() );
+                g.fillRect(0, 0, getWidth(), getHeight());
+                super.paintComponent(g);
+            }
+        };
         jLabel3 = new javax.swing.JLabel();
         TransferButton = new javax.swing.JButton();
         BankAccountsList1 = new javax.swing.JComboBox();
@@ -148,7 +166,16 @@ public class AccountsListPanel extends javax.swing.JPanel
         BankAccountsList0 = new javax.swing.JComboBox();
         jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel()
+        {
+            protected void paintComponent(Graphics g)
+            {
+                g.setColor( getBackground() );
+                g.fillRect(0, 0, getWidth(), getHeight());
+                super.paintComponent(g);
+            }
+
+        };
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         DeleteAccountButton = new javax.swing.JButton();
@@ -221,6 +248,7 @@ public class AccountsListPanel extends javax.swing.JPanel
 
         TransferFundsPanel.setBackground(new Color(255,255,255,150));
         TransferFundsPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(14, 118, 188), 1, true), "Transfer Funds", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("DejaVu Sans", 1, 16), new Color(14,118,188))); // NOI18N
+        TransferFundsPanel.setOpaque(false);
         TransferFundsPanel.setPreferredSize(new java.awt.Dimension(300, 160));
         java.awt.GridBagLayout TransferFundsPanelLayout = new java.awt.GridBagLayout();
         TransferFundsPanelLayout.columnWidths = new int[] {0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0};
@@ -403,6 +431,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         jPanel5.setBackground(new Color(255,255,255,190));
         jPanel5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(14, 118, 188), 1, true));
         jPanel5.setForeground(new java.awt.Color(14, 118, 188));
+        jPanel5.setOpaque(false);
         java.awt.GridBagLayout jPanel5Layout = new java.awt.GridBagLayout();
         jPanel5Layout.columnWidths = new int[] {0, 5, 0};
         jPanel5Layout.rowHeights = new int[] {0, 10, 0};
