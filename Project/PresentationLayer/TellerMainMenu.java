@@ -45,47 +45,35 @@ public class TellerMainMenu extends javax.swing.JPanel
         java.awt.GridBagConstraints gridBagConstraints;
 
         BGPanel = new javax.swing.JPanel();
-        HeaderPanel = new javax.swing.JPanel();
-        Bank42 = new javax.swing.JLabel();
         ButtonPanel = new javax.swing.JPanel();
         InterestPenaltyButton = new javax.swing.JButton();
         SearchUserButton = new javax.swing.JButton();
         ApplyPenIntButton = new javax.swing.JButton();
         Logout = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        Bank42 = new javax.swing.JLabel();
+        Background = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
         setPreferredSize(new java.awt.Dimension(800, 600));
         setLayout(new java.awt.GridBagLayout());
 
-        BGPanel.setLayout(new java.awt.GridBagLayout());
+        java.awt.GridBagLayout BGPanelLayout = new java.awt.GridBagLayout();
+        BGPanelLayout.columnWidths = new int[] {0};
+        BGPanelLayout.rowHeights = new int[] {0};
+        BGPanel.setLayout(BGPanelLayout);
 
-        HeaderPanel.setBackground(new java.awt.Color(255, 255, 255));
-        HeaderPanel.setOpaque(false);
-        HeaderPanel.setLayout(new java.awt.GridBagLayout());
-
-        Bank42.setFont(new java.awt.Font("DejaVu Sans", 1, 48)); // NOI18N
-        Bank42.setForeground(new java.awt.Color(51, 0, 255));
-        Bank42.setText("Bank 42");
-        Bank42.setToolTipText("");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 0;
-        HeaderPanel.add(Bank42, gridBagConstraints);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.PAGE_START;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 200, 0);
-        BGPanel.add(HeaderPanel, gridBagConstraints);
-
-        ButtonPanel.setLayout(new java.awt.GridBagLayout());
+        ButtonPanel.setBackground(new Color(255,255,255,100));
+        java.awt.GridBagLayout ButtonPanelLayout = new java.awt.GridBagLayout();
+        ButtonPanelLayout.columnWidths = new int[] {0};
+        ButtonPanelLayout.rowHeights = new int[] {0, 10, 0, 10, 0, 10, 0};
+        ButtonPanel.setLayout(ButtonPanelLayout);
 
         InterestPenaltyButton.setBackground(new java.awt.Color(255, 255, 255));
         InterestPenaltyButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        InterestPenaltyButton.setForeground(new java.awt.Color(14, 118, 188));
+        InterestPenaltyButton.setForeground(new java.awt.Color(51, 0, 255));
         InterestPenaltyButton.setText("Adjust Interest Rates and Penalties");
         InterestPenaltyButton.addActionListener(new java.awt.event.ActionListener()
         {
@@ -96,15 +84,14 @@ public class TellerMainMenu extends javax.swing.JPanel
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
         ButtonPanel.add(InterestPenaltyButton, gridBagConstraints);
 
         SearchUserButton.setBackground(new java.awt.Color(255, 255, 255));
         SearchUserButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        SearchUserButton.setForeground(new java.awt.Color(14, 118, 188));
+        SearchUserButton.setForeground(new java.awt.Color(51, 0, 255));
         SearchUserButton.setText("Search For A User");
         SearchUserButton.addMouseListener(new java.awt.event.MouseAdapter()
         {
@@ -121,7 +108,7 @@ public class TellerMainMenu extends javax.swing.JPanel
 
         ApplyPenIntButton.setBackground(new java.awt.Color(255, 255, 255));
         ApplyPenIntButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        ApplyPenIntButton.setForeground(new java.awt.Color(14, 118, 188));
+        ApplyPenIntButton.setForeground(new java.awt.Color(51, 0, 255));
         ApplyPenIntButton.setText("Apply Global Interest");
         ApplyPenIntButton.addActionListener(new java.awt.event.ActionListener()
         {
@@ -132,16 +119,15 @@ public class TellerMainMenu extends javax.swing.JPanel
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridy = 4;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.ipadx = 70;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
         ButtonPanel.add(ApplyPenIntButton, gridBagConstraints);
 
         Logout.setBackground(new java.awt.Color(255, 255, 255));
         Logout.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Logout.setForeground(new java.awt.Color(14, 118, 188));
+        Logout.setForeground(new java.awt.Color(51, 0, 255));
         Logout.setText("Logout");
         Logout.addMouseListener(new java.awt.event.MouseAdapter()
         {
@@ -152,27 +138,54 @@ public class TellerMainMenu extends javax.swing.JPanel
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridy = 6;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
         ButtonPanel.add(Logout, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 200, 0);
+        gridBagConstraints.gridy = 0;
         BGPanel.add(ButtonPanel, gridBagConstraints);
 
-        jLabel1.setText("Teller Main Menu");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        BGPanel.add(jLabel1, gridBagConstraints);
+        add(BGPanel, gridBagConstraints);
+
+        jPanel1.setOpaque(false);
+        java.awt.GridBagLayout jPanel1Layout = new java.awt.GridBagLayout();
+        jPanel1Layout.columnWidths = new int[] {0};
+        jPanel1Layout.rowHeights = new int[] {0, 10, 0, 10, 0};
+        jPanel1.setLayout(jPanel1Layout);
+
+        jLabel1.setForeground(new java.awt.Color(51, 0, 255));
+        jLabel1.setText("Teller Main Menu");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
+        jPanel1.add(jLabel1, gridBagConstraints);
+
+        Bank42.setFont(new java.awt.Font("DejaVu Sans", 1, 48)); // NOI18N
+        Bank42.setForeground(new java.awt.Color(51, 0, 255));
+        Bank42.setText("Bank 42");
+        Bank42.setToolTipText("");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        jPanel1.add(Bank42, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        add(BGPanel, gridBagConstraints);
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+        add(jPanel1, gridBagConstraints);
+
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/rsz_3lgfnqn Cropped.jpg"))); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        add(Background, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
     private void SearchUserButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SearchUserButtonMouseClicked
@@ -223,12 +236,13 @@ public class TellerMainMenu extends javax.swing.JPanel
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ApplyPenIntButton;
     private javax.swing.JPanel BGPanel;
+    private javax.swing.JLabel Background;
     private javax.swing.JLabel Bank42;
     private javax.swing.JPanel ButtonPanel;
-    private javax.swing.JPanel HeaderPanel;
     private javax.swing.JButton InterestPenaltyButton;
     private javax.swing.JButton Logout;
     private javax.swing.JButton SearchUserButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
