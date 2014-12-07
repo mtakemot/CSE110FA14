@@ -54,7 +54,8 @@ public class Settings extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
         java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel14 = new javax.swing.JPanel();
@@ -133,14 +134,18 @@ public class Settings extends javax.swing.JPanel
         jPanel29.setLayout(jPanel29Layout);
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/rsz_logout2noborder2.png"))); // NOI18N
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 jLabel5MouseClicked(evt);
             }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
                 jLabel5MouseEntered(evt);
             }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
                 jLabel5MouseExited(evt);
             }
         });
@@ -151,14 +156,18 @@ public class Settings extends javax.swing.JPanel
         jPanel29.add(jLabel5, gridBagConstraints);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/rsz_homecolored.png"))); // NOI18N
-        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 jLabel6MouseClicked(evt);
             }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
                 jLabel6MouseEntered(evt);
             }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
                 jLabel6MouseExited(evt);
             }
         });
@@ -215,11 +224,12 @@ public class Settings extends javax.swing.JPanel
         jPanel2.setPreferredSize(new java.awt.Dimension(800, 600));
         jPanel2.setLayout(new java.awt.GridBagLayout());
 
-        jPanel1.setBackground(new Color ( 25,25,25,90));
+        jPanel1.setBackground(new Color ( 25,25,25));
         jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel1.setMinimumSize(new java.awt.Dimension(300, 300));
+        jPanel1.setMinimumSize(new java.awt.Dimension(750, 300));
         jPanel1.setName(""); // NOI18N
-        jPanel1.setPreferredSize(new java.awt.Dimension(300, 300));
+        jPanel1.setOpaque(false);
+        jPanel1.setPreferredSize(new java.awt.Dimension(700, 500));
         java.awt.GridBagLayout jPanel1Layout = new java.awt.GridBagLayout();
         jPanel1Layout.columnWidths = new int[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         jPanel1Layout.rowHeights = new int[] {0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0};
@@ -229,8 +239,10 @@ public class Settings extends javax.swing.JPanel
         DeleteAccountButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         DeleteAccountButton.setForeground(new java.awt.Color(14, 118, 188));
         DeleteAccountButton.setText("Delete Main Account");
-        DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 DeleteAccountButtonMouseClicked(evt);
             }
         });
@@ -253,8 +265,10 @@ public class Settings extends javax.swing.JPanel
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        jPanel3.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 jPanel3MouseClicked(evt);
             }
         });
@@ -264,15 +278,16 @@ public class Settings extends javax.swing.JPanel
         jPanel3.setLayout(jPanel3Layout);
 
         LastName.setBackground(new java.awt.Color(255, 255, 255));
-        LastName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        LastName.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         LastName.setForeground(new java.awt.Color(14, 118, 188));
         LastName.setText("Last Name: ");
-        LastName.setMaximumSize(new java.awt.Dimension(91, 15));
-        LastName.setMinimumSize(new java.awt.Dimension(91, 15));
-        LastName.setPreferredSize(new java.awt.Dimension(91, 15));
+        LastName.setMaximumSize(new java.awt.Dimension(120, 15));
+        LastName.setMinimumSize(new java.awt.Dimension(120, 15));
+        LastName.setPreferredSize(new java.awt.Dimension(120, 15));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         jPanel3.add(LastName, gridBagConstraints);
 
@@ -287,8 +302,10 @@ public class Settings extends javax.swing.JPanel
         jPanel4.setForeground(new java.awt.Color(14, 118, 188));
         jPanel4.setToolTipText("");
         jPanel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        jPanel4.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 jPanel4MouseClicked(evt);
             }
         });
@@ -298,12 +315,13 @@ public class Settings extends javax.swing.JPanel
         jPanel4.setLayout(jPanel4Layout);
 
         FirstName.setBackground(new java.awt.Color(255, 255, 255));
-        FirstName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        FirstName.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         FirstName.setForeground(new java.awt.Color(14, 118, 188));
         FirstName.setText("First Name:     ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         jPanel4.add(FirstName, gridBagConstraints);
 
@@ -316,8 +334,10 @@ public class Settings extends javax.swing.JPanel
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        jPanel5.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 jPanel5MouseClicked(evt);
             }
         });
@@ -327,12 +347,13 @@ public class Settings extends javax.swing.JPanel
         jPanel5.setLayout(jPanel5Layout);
 
         Username.setBackground(new java.awt.Color(255, 255, 255));
-        Username.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Username.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         Username.setForeground(new java.awt.Color(14, 118, 188));
         Username.setText("Username:       ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel5.add(Username, gridBagConstraints);
 
@@ -351,12 +372,15 @@ public class Settings extends javax.swing.JPanel
         jPanel6.setLayout(jPanel6Layout);
 
         Email.setBackground(new java.awt.Color(255, 255, 255));
-        Email.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Email.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         Email.setForeground(new java.awt.Color(14, 118, 188));
+        Email.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         Email.setText("Email:              ");
+        Email.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel6.add(Email, gridBagConstraints);
 
@@ -369,8 +393,10 @@ public class Settings extends javax.swing.JPanel
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
         jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel7.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        jPanel7.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 jPanel7MouseClicked(evt);
             }
         });
@@ -380,12 +406,16 @@ public class Settings extends javax.swing.JPanel
         jPanel7.setLayout(jPanel7Layout);
 
         PhoneNumber.setBackground(new java.awt.Color(255, 255, 255));
-        PhoneNumber.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        PhoneNumber.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         PhoneNumber.setForeground(new java.awt.Color(14, 118, 188));
         PhoneNumber.setText("Phone Number:");
+        PhoneNumber.setMaximumSize(new java.awt.Dimension(152, 24));
+        PhoneNumber.setMinimumSize(new java.awt.Dimension(152, 24));
+        PhoneNumber.setPreferredSize(new java.awt.Dimension(152, 24));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel7.add(PhoneNumber, gridBagConstraints);
 
@@ -398,8 +428,10 @@ public class Settings extends javax.swing.JPanel
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
         jPanel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel8.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        jPanel8.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 jPanel8MouseClicked(evt);
             }
         });
@@ -409,12 +441,16 @@ public class Settings extends javax.swing.JPanel
         jPanel8.setLayout(jPanel8Layout);
 
         Password.setBackground(new java.awt.Color(255, 255, 255));
-        Password.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Password.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         Password.setForeground(new java.awt.Color(14, 118, 188));
         Password.setText("Password:        ");
+        Password.setMaximumSize(new java.awt.Dimension(134, 24));
+        Password.setMinimumSize(new java.awt.Dimension(134, 24));
+        Password.setPreferredSize(new java.awt.Dimension(134, 24));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel8.add(Password, gridBagConstraints);
 
@@ -430,17 +466,22 @@ public class Settings extends javax.swing.JPanel
         jPanel9.setLayout(new java.awt.GridBagLayout());
 
         EditLabel.setBackground(new java.awt.Color(255, 255, 255));
+        EditLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         EditLabel.setForeground(new java.awt.Color(14, 118, 188));
         EditLabel.setText("Edit");
         EditLabel.setFocusable(false);
-        EditLabel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        EditLabel.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 EditLabelMouseClicked(evt);
             }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
                 EditLabelMouseEntered(evt);
             }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
                 EditLabelMouseExited(evt);
             }
         });
@@ -462,17 +503,22 @@ public class Settings extends javax.swing.JPanel
         jPanel10.setLayout(new java.awt.GridBagLayout());
 
         EditLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        EditLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         EditLabel1.setForeground(new java.awt.Color(14, 118, 188));
         EditLabel1.setText("Edit");
         EditLabel1.setFocusable(false);
-        EditLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        EditLabel1.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 EditLabel1MouseClicked(evt);
             }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
                 EditLabel1MouseEntered(evt);
             }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
                 EditLabel1MouseExited(evt);
             }
         });
@@ -491,17 +537,22 @@ public class Settings extends javax.swing.JPanel
         jPanel11.setLayout(new java.awt.GridBagLayout());
 
         EditLabel4.setBackground(new java.awt.Color(255, 255, 255));
+        EditLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         EditLabel4.setForeground(new java.awt.Color(14, 118, 188));
         EditLabel4.setText("Edit");
         EditLabel4.setFocusable(false);
-        EditLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        EditLabel4.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 EditLabel4MouseClicked(evt);
             }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
                 EditLabel4MouseEntered(evt);
             }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
                 EditLabel4MouseExited(evt);
             }
         });
@@ -520,17 +571,22 @@ public class Settings extends javax.swing.JPanel
         jPanel12.setLayout(new java.awt.GridBagLayout());
 
         EditLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        EditLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         EditLabel2.setForeground(new java.awt.Color(14, 118, 188));
         EditLabel2.setText("Edit");
         EditLabel2.setFocusable(false);
-        EditLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        EditLabel2.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 EditLabel2MouseClicked(evt);
             }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
                 EditLabel2MouseEntered(evt);
             }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
                 EditLabel2MouseExited(evt);
             }
         });
@@ -549,17 +605,22 @@ public class Settings extends javax.swing.JPanel
         jPanel13.setLayout(new java.awt.GridBagLayout());
 
         EditLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        EditLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         EditLabel3.setForeground(new java.awt.Color(14, 118, 188));
         EditLabel3.setText("Edit");
         EditLabel3.setFocusable(false);
-        EditLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        EditLabel3.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 EditLabel3MouseClicked(evt);
             }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
                 EditLabel3MouseEntered(evt);
             }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
                 EditLabel3MouseExited(evt);
             }
         });
@@ -574,19 +635,18 @@ public class Settings extends javax.swing.JPanel
 
         jPanel15.setBackground(new java.awt.Color(255, 255, 255));
         jPanel15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel15.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanel15MouseClicked(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
+        jPanel15.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel15.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
                 jPanel15MouseExited(evt);
             }
         });
         jPanel15.setLayout(new java.awt.GridBagLayout());
 
         UserLastName.setBackground(new java.awt.Color(255, 255, 255));
-        UserLastName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        UserLastName.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         UserLastName.setForeground(new java.awt.Color(14, 118, 188));
         UserLastName.setText("jLabel2");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -604,11 +664,13 @@ public class Settings extends javax.swing.JPanel
 
         jPanel16.setBackground(new java.awt.Color(255, 255, 255));
         jPanel16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel16.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel16.setMinimumSize(new java.awt.Dimension(83, 17));
+        jPanel16.setPreferredSize(new java.awt.Dimension(83, 17));
         jPanel16.setLayout(new java.awt.GridBagLayout());
 
         UserFirstName.setBackground(new java.awt.Color(255, 255, 255));
-        UserFirstName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        UserFirstName.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         UserFirstName.setForeground(new java.awt.Color(14, 118, 188));
         UserFirstName.setText("jLabel3");
         jPanel16.add(UserFirstName, new java.awt.GridBagConstraints());
@@ -622,11 +684,13 @@ public class Settings extends javax.swing.JPanel
 
         jPanel17.setBackground(new java.awt.Color(255, 255, 255));
         jPanel17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel17.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel17.setMinimumSize(new java.awt.Dimension(83, 17));
+        jPanel17.setPreferredSize(new java.awt.Dimension(83, 17));
         jPanel17.setLayout(new java.awt.GridBagLayout());
 
         UserUsername.setBackground(new java.awt.Color(255, 255, 255));
-        UserUsername.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        UserUsername.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         UserUsername.setForeground(new java.awt.Color(14, 118, 188));
         UserUsername.setText("jLabel4");
         jPanel17.add(UserUsername, new java.awt.GridBagConstraints());
@@ -640,11 +704,13 @@ public class Settings extends javax.swing.JPanel
 
         jPanel18.setBackground(new java.awt.Color(255, 255, 255));
         jPanel18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel18.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel18.setMinimumSize(new java.awt.Dimension(83, 17));
+        jPanel18.setPreferredSize(new java.awt.Dimension(83, 17));
         jPanel18.setLayout(new java.awt.GridBagLayout());
 
         UserEmail.setBackground(new java.awt.Color(255, 255, 255));
-        UserEmail.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        UserEmail.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         UserEmail.setForeground(new java.awt.Color(14, 118, 188));
         UserEmail.setText("jLabel5");
         jPanel18.add(UserEmail, new java.awt.GridBagConstraints());
@@ -658,11 +724,13 @@ public class Settings extends javax.swing.JPanel
 
         jPanel19.setBackground(new java.awt.Color(255, 255, 255));
         jPanel19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel19.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel19.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel19.setMinimumSize(new java.awt.Dimension(83, 17));
+        jPanel19.setPreferredSize(new java.awt.Dimension(83, 17));
         jPanel19.setLayout(new java.awt.GridBagLayout());
 
         UserPhoneNumber.setBackground(new java.awt.Color(255, 255, 255));
-        UserPhoneNumber.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        UserPhoneNumber.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         UserPhoneNumber.setForeground(new java.awt.Color(14, 118, 188));
         UserPhoneNumber.setText("jLabel6");
         jPanel19.add(UserPhoneNumber, new java.awt.GridBagConstraints());
@@ -676,11 +744,13 @@ public class Settings extends javax.swing.JPanel
 
         jPanel20.setBackground(new java.awt.Color(255, 255, 255));
         jPanel20.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel20.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel20.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel20.setMinimumSize(new java.awt.Dimension(83, 17));
+        jPanel20.setPreferredSize(new java.awt.Dimension(83, 17));
         jPanel20.setLayout(new java.awt.GridBagLayout());
 
         UserPassword.setBackground(new java.awt.Color(255, 255, 255));
-        UserPassword.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        UserPassword.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         UserPassword.setForeground(new java.awt.Color(14, 118, 188));
         UserPassword.setText("*****");
         jPanel20.add(UserPassword, new java.awt.GridBagConstraints());
@@ -698,18 +768,23 @@ public class Settings extends javax.swing.JPanel
         jPanel26.setLayout(new java.awt.GridBagLayout());
 
         EditLabel5.setBackground(new java.awt.Color(255, 255, 255));
+        EditLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         EditLabel5.setForeground(new java.awt.Color(14, 118, 188));
         EditLabel5.setText("Edit");
         EditLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         EditLabel5.setFocusable(false);
-        EditLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        EditLabel5.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 EditLabel5MouseClicked(evt);
             }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
                 EditLabel5MouseEntered(evt);
             }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
                 EditLabel5MouseExited(evt);
             }
         });
@@ -749,12 +824,13 @@ public class Settings extends javax.swing.JPanel
         add(jPanel14, new java.awt.GridBagConstraints());
 
         Background.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/Settings.jpg"))); // NOI18N
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/wallhaven-102781.jpg"))); // NOI18N
         Background.setOpaque(true);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(200, 200, 0, 0);
         add(Background, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -811,25 +887,25 @@ public class Settings extends javax.swing.JPanel
 
     private void setMouseExitColors()
     {
-       /* Color newColor = new Color(255, 204, 153);
-        jPanel3.setBackground(newColor);
-        jPanel4.setBackground(newColor);
-        jPanel5.setBackground(newColor);
-        jPanel6.setBackground(newColor);
-        jPanel7.setBackground(newColor);
-        jPanel8.setBackground(newColor);
-        jPanel9.setBackground(newColor);
-        jPanel10.setBackground(newColor);
-        jPanel11.setBackground(newColor);
-        jPanel12.setBackground(newColor);
-        jPanel13.setBackground(newColor);
-        jPanel26.setBackground(newColor);
-        jPanel15.setBackground(newColor);
-        jPanel16.setBackground(newColor);
-        jPanel17.setBackground(newColor);
-        jPanel18.setBackground(newColor);
-        jPanel19.setBackground(newColor);
-        jPanel20.setBackground(newColor);*/
+        /* Color newColor = new Color(255, 204, 153);
+         jPanel3.setBackground(newColor);
+         jPanel4.setBackground(newColor);
+         jPanel5.setBackground(newColor);
+         jPanel6.setBackground(newColor);
+         jPanel7.setBackground(newColor);
+         jPanel8.setBackground(newColor);
+         jPanel9.setBackground(newColor);
+         jPanel10.setBackground(newColor);
+         jPanel11.setBackground(newColor);
+         jPanel12.setBackground(newColor);
+         jPanel13.setBackground(newColor);
+         jPanel26.setBackground(newColor);
+         jPanel15.setBackground(newColor);
+         jPanel16.setBackground(newColor);
+         jPanel17.setBackground(newColor);
+         jPanel18.setBackground(newColor);
+         jPanel19.setBackground(newColor);
+         jPanel20.setBackground(newColor);*/
     }
     private void EditLabelMouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabelMouseExited
     {//GEN-HEADEREND:event_EditLabelMouseExited
@@ -982,25 +1058,6 @@ public class Settings extends javax.swing.JPanel
         setMouseExitColors();
         EditLabel.setFont(thefont);
     }//GEN-LAST:event_jPanel15MouseExited
-
-    private void jPanel15MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel15MouseClicked
-    {//GEN-HEADEREND:event_jPanel15MouseClicked
-        String response = JOptionPane.showInputDialog(null, "Enter Your New Last Name:", "Bank 42", 1);
-
-        if (response == null)
-            return;
-
-        response = response.trim();
-        if ((response.length() > 0) && CreateAccountPanel.validateLastName(response))
-        {
-            GUI.currentUserAccount.setLastName(response);
-            update();
-        }
-        else
-        {
-            errorMessage.setText("Your last name was entered incorrectly.");
-        }
-    }//GEN-LAST:event_jPanel15MouseClicked
 
     private void jPanel4MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel4MouseClicked
     {//GEN-HEADEREND:event_jPanel4MouseClicked
@@ -1176,7 +1233,7 @@ public class Settings extends javax.swing.JPanel
     }//GEN-LAST:event_jLabel6MouseExited
 
     private void jLabel6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseEntered
-       // option.setText("Home");
+        // option.setText("Home");
     }//GEN-LAST:event_jLabel6MouseEntered
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
@@ -1185,7 +1242,7 @@ public class Settings extends javax.swing.JPanel
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void jLabel5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseExited
-       // option.setText(" ");
+        // option.setText(" ");
     }//GEN-LAST:event_jLabel5MouseExited
 
     private void jLabel5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseEntered
