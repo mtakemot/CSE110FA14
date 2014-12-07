@@ -81,10 +81,10 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
+        jLabel2 = new javax.swing.JLabel();
         PanelDescLabel = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         CheckingAccountRatesPanel = new javax.swing.JPanel();
@@ -112,18 +112,28 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         ConfirmButton = new javax.swing.JButton();
         BackButton = new javax.swing.JButton();
         PenaltyButton = new javax.swing.JButton();
+        Background = new javax.swing.JLabel();
+
+        jLabel2.setText("jLabel2");
 
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
+        setOpaque(false);
         setLayout(new java.awt.GridBagLayout());
 
+        PanelDescLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 48)); // NOI18N
+        PanelDescLabel.setForeground(new java.awt.Color(14, 118, 188));
         PanelDescLabel.setText("Change Penalties and Interest");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 100, 0);
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+        gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
         add(PanelDescLabel, gridBagConstraints);
 
+        jPanel1.setMaximumSize(new java.awt.Dimension(800, 600));
+        jPanel1.setMinimumSize(new java.awt.Dimension(800, 600));
+        jPanel1.setName(""); // NOI18N
+        jPanel1.setOpaque(false);
+        jPanel1.setPreferredSize(new java.awt.Dimension(800, 600));
         jPanel1.setLayout(new java.awt.GridBagLayout());
 
         CheckingAccountRatesPanel.setBackground(new java.awt.Color(204, 255, 204));
@@ -200,17 +210,13 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
 
         Checking_1000_2000_Field.setMinimumSize(new java.awt.Dimension(59, 30));
         Checking_1000_2000_Field.setPreferredSize(new java.awt.Dimension(59, 30));
-        Checking_1000_2000_Field.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        Checking_1000_2000_Field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Checking_1000_2000_FieldActionPerformed(evt);
             }
         });
-        Checking_1000_2000_Field.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusGained(java.awt.event.FocusEvent evt)
-            {
+        Checking_1000_2000_Field.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
                 Checking_1000_2000_FieldFocusGained(evt);
             }
         });
@@ -222,17 +228,13 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
 
         Checking_2000_3000_Field.setMinimumSize(new java.awt.Dimension(59, 30));
         Checking_2000_3000_Field.setPreferredSize(new java.awt.Dimension(59, 30));
-        Checking_2000_3000_Field.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        Checking_2000_3000_Field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Checking_2000_3000_FieldActionPerformed(evt);
             }
         });
-        Checking_2000_3000_Field.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusGained(java.awt.event.FocusEvent evt)
-            {
+        Checking_2000_3000_Field.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
                 Checking_2000_3000_FieldFocusGained(evt);
             }
         });
@@ -244,17 +246,13 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
 
         Checking_More_Than_3000_Field.setMinimumSize(new java.awt.Dimension(59, 30));
         Checking_More_Than_3000_Field.setPreferredSize(new java.awt.Dimension(59, 30));
-        Checking_More_Than_3000_Field.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        Checking_More_Than_3000_Field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Checking_More_Than_3000_FieldActionPerformed(evt);
             }
         });
-        Checking_More_Than_3000_Field.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusGained(java.awt.event.FocusEvent evt)
-            {
+        Checking_More_Than_3000_Field.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
                 Checking_More_Than_3000_FieldFocusGained(evt);
             }
         });
@@ -268,6 +266,7 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 5, 0);
         jPanel1.add(CheckingAccountRatesPanel, gridBagConstraints);
 
         SavingsAccountRatesPanel.setBackground(new java.awt.Color(204, 255, 255));
@@ -315,17 +314,13 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
 
         Savings_1000_2000_Field.setMinimumSize(new java.awt.Dimension(59, 30));
         Savings_1000_2000_Field.setPreferredSize(new java.awt.Dimension(59, 30));
-        Savings_1000_2000_Field.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        Savings_1000_2000_Field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Savings_1000_2000_FieldActionPerformed(evt);
             }
         });
-        Savings_1000_2000_Field.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusGained(java.awt.event.FocusEvent evt)
-            {
+        Savings_1000_2000_Field.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
                 Savings_1000_2000_FieldFocusGained(evt);
             }
         });
@@ -337,17 +332,13 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
 
         Savings_2000_3000_Field.setMinimumSize(new java.awt.Dimension(59, 30));
         Savings_2000_3000_Field.setPreferredSize(new java.awt.Dimension(59, 30));
-        Savings_2000_3000_Field.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        Savings_2000_3000_Field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Savings_2000_3000_FieldActionPerformed(evt);
             }
         });
-        Savings_2000_3000_Field.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusGained(java.awt.event.FocusEvent evt)
-            {
+        Savings_2000_3000_Field.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
                 Savings_2000_3000_FieldFocusGained(evt);
             }
         });
@@ -359,17 +350,13 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
 
         Savings_More_Than_3000_Field.setMinimumSize(new java.awt.Dimension(59, 30));
         Savings_More_Than_3000_Field.setPreferredSize(new java.awt.Dimension(59, 30));
-        Savings_More_Than_3000_Field.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        Savings_More_Than_3000_Field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Savings_More_Than_3000_FieldActionPerformed(evt);
             }
         });
-        Savings_More_Than_3000_Field.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusGained(java.awt.event.FocusEvent evt)
-            {
+        Savings_More_Than_3000_Field.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
                 Savings_More_Than_3000_FieldFocusGained(evt);
             }
         });
@@ -383,13 +370,14 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 5, 0);
         jPanel1.add(SavingsAccountRatesPanel, gridBagConstraints);
 
+        ConfirmButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ConfirmButton.setForeground(new java.awt.Color(14, 118, 188));
         ConfirmButton.setText("Confirm");
-        ConfirmButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        ConfirmButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ConfirmButtonActionPerformed(evt);
             }
         });
@@ -398,14 +386,14 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         gridBagConstraints.gridy = 3;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.insets = new java.awt.Insets(5, 0, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(5, 0, 5, 0);
         jPanel1.add(ConfirmButton, gridBagConstraints);
 
+        BackButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        BackButton.setForeground(new java.awt.Color(14, 118, 188));
         BackButton.setText("Back");
-        BackButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        BackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BackButtonActionPerformed(evt);
             }
         });
@@ -414,14 +402,14 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         gridBagConstraints.gridy = 4;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.insets = new java.awt.Insets(5, 0, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(5, 0, 10, 0);
         jPanel1.add(BackButton, gridBagConstraints);
 
+        PenaltyButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        PenaltyButton.setForeground(new java.awt.Color(14, 118, 188));
         PenaltyButton.setText("Change Penalty");
-        PenaltyButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        PenaltyButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PenaltyButtonActionPerformed(evt);
             }
         });
@@ -430,14 +418,23 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         gridBagConstraints.gridy = 2;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.insets = new java.awt.Insets(5, 0, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(5, 0, 5, 0);
         jPanel1.add(PenaltyButton, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 100, 0);
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         add(jPanel1, gridBagConstraints);
+
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/PenatlyInterestPanel.jpg"))); // NOI18N
+        Background.setMaximumSize(new java.awt.Dimension(800, 600));
+        Background.setMinimumSize(new java.awt.Dimension(800, 600));
+        Background.setOpaque(true);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        add(Background, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
     private boolean changeRates()
@@ -635,6 +632,7 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackButton;
+    private javax.swing.JLabel Background;
     private javax.swing.JLabel BalanceLabel;
     private javax.swing.JLabel BalanceLabelBot;
     private javax.swing.JLabel BalanceLabelMid;
@@ -660,6 +658,7 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
     private javax.swing.JLabel Savings_2000_3000_Label;
     private javax.swing.JTextField Savings_More_Than_3000_Field;
     private javax.swing.JLabel Savings_More_Than_3000_Label;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
