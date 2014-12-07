@@ -6,6 +6,7 @@
 package PresentationLayer;
 
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.LayoutManager;
 import java.awt.font.TextAttribute;
@@ -123,8 +124,8 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         setLayout(new java.awt.GridBagLayout());
 
         PanelDescLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 48)); // NOI18N
-        PanelDescLabel.setForeground(new java.awt.Color(14, 118, 188));
-        PanelDescLabel.setText("Change Penalties and Interest");
+        PanelDescLabel.setForeground(new java.awt.Color(204, 255, 204));
+        PanelDescLabel.setText("Adjust Penalties and Interest");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
         gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
@@ -138,9 +139,13 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         jPanel1.setLayout(new java.awt.GridBagLayout());
 
         CheckingAccountRatesPanel.setBackground(new java.awt.Color(204, 255, 204));
-        CheckingAccountRatesPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Checking Account Rates", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP));
+        CheckingAccountRatesPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)), "Checking Account Rates", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
+        CheckingAccountRatesPanel.setForeground(new java.awt.Color(153, 204, 255));
+        CheckingAccountRatesPanel.setOpaque(false);
         CheckingAccountRatesPanel.setLayout(new java.awt.GridBagLayout());
 
+        BalanceLabelTop.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        BalanceLabelTop.setForeground(new java.awt.Color(153, 255, 153));
         BalanceLabelTop.setText("$1000-$2000");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -148,6 +153,8 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(3, 5, 3, 5);
         CheckingAccountRatesPanel.add(BalanceLabelTop, gridBagConstraints);
 
+        BalanceLabelMid.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        BalanceLabelMid.setForeground(new java.awt.Color(153, 255, 153));
         BalanceLabelMid.setText("$2000-$3000");
         BalanceLabelMid.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -157,6 +164,8 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         CheckingAccountRatesPanel.add(BalanceLabelMid, gridBagConstraints);
         BalanceLabelMid.getAccessibleContext().setAccessibleDescription("");
 
+        BalanceLabelBot.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        BalanceLabelBot.setForeground(new java.awt.Color(153, 255, 153));
         BalanceLabelBot.setText("More than $3000");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -164,7 +173,8 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(3, 5, 3, 5);
         CheckingAccountRatesPanel.add(BalanceLabelBot, gridBagConstraints);
 
-        BalanceLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        BalanceLabel.setFont(new java.awt.Font("Britannic Bold", 0, 16)); // NOI18N
+        BalanceLabel.setForeground(new java.awt.Color(187, 224, 240));
         BalanceLabel.setText("Balance");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -172,6 +182,8 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(3, 5, 3, 5);
         CheckingAccountRatesPanel.add(BalanceLabel, gridBagConstraints);
 
+        Checking_1000_2000_Label.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Checking_1000_2000_Label.setForeground(new java.awt.Color(153, 255, 153));
         Checking_1000_2000_Label.setText((String.valueOf(GUI.MasterTable.getCHECKING_RATE_1000_TO_2000()*100)) + "%");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
@@ -179,6 +191,8 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(3, 5, 3, 5);
         CheckingAccountRatesPanel.add(Checking_1000_2000_Label, gridBagConstraints);
 
+        Checking_2000_3000_Label.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Checking_2000_3000_Label.setForeground(new java.awt.Color(153, 255, 153));
         Checking_2000_3000_Label.setText((String.valueOf(GUI.MasterTable.getCHECKING_RATE_2000_TO_3000()*100)) + "%");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
@@ -186,6 +200,8 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(3, 5, 3, 5);
         CheckingAccountRatesPanel.add(Checking_2000_3000_Label, gridBagConstraints);
 
+        Checking_More_Than_3000_Label.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Checking_More_Than_3000_Label.setForeground(new java.awt.Color(153, 255, 153));
         Checking_More_Than_3000_Label.setText((String.valueOf(GUI.MasterTable.getCHECKING_RATE_OVER_3000()*100)) + "%");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
@@ -193,7 +209,8 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(3, 5, 3, 5);
         CheckingAccountRatesPanel.add(Checking_More_Than_3000_Label, gridBagConstraints);
 
-        CurrentCheckingRateLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        CurrentCheckingRateLabel.setFont(new java.awt.Font("Britannic Bold", 0, 16)); // NOI18N
+        CurrentCheckingRateLabel.setForeground(new java.awt.Color(187, 224, 240));
         CurrentCheckingRateLabel.setText("Current Rate");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
@@ -201,7 +218,8 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(3, 5, 3, 5);
         CheckingAccountRatesPanel.add(CurrentCheckingRateLabel, gridBagConstraints);
 
-        CheckingNewRateLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        CheckingNewRateLabel.setFont(new java.awt.Font("Britannic Bold", 0, 16)); // NOI18N
+        CheckingNewRateLabel.setForeground(new java.awt.Color(187, 224, 240));
         CheckingNewRateLabel.setText("New Rate");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
@@ -283,11 +301,14 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         jPanel1.add(CheckingAccountRatesPanel, gridBagConstraints);
 
         SavingsAccountRatesPanel.setBackground(new java.awt.Color(204, 255, 255));
-        SavingsAccountRatesPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Savings Account Rates", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP));
+        SavingsAccountRatesPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)), "Savings Account Rates", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
         SavingsAccountRatesPanel.setToolTipText("");
         SavingsAccountRatesPanel.setName(""); // NOI18N
+        SavingsAccountRatesPanel.setOpaque(false);
         SavingsAccountRatesPanel.setLayout(new java.awt.GridBagLayout());
 
+        Savings_1000_2000_Label.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Savings_1000_2000_Label.setForeground(new java.awt.Color(153, 255, 153));
         Savings_1000_2000_Label.setText((String.valueOf(GUI.MasterTable.getSAVINGS_RATE_1000_TO_2000()*100)) + "%");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -295,6 +316,8 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(3, 5, 3, 5);
         SavingsAccountRatesPanel.add(Savings_1000_2000_Label, gridBagConstraints);
 
+        Savings_2000_3000_Label.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Savings_2000_3000_Label.setForeground(new java.awt.Color(153, 255, 153));
         Savings_2000_3000_Label.setText((String.valueOf(GUI.MasterTable.getSAVINGS_RATE_2000_TO_3000()*100)) + "%");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -302,6 +325,8 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(3, 5, 3, 5);
         SavingsAccountRatesPanel.add(Savings_2000_3000_Label, gridBagConstraints);
 
+        Savings_More_Than_3000_Label.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Savings_More_Than_3000_Label.setForeground(new java.awt.Color(153, 255, 153));
         Savings_More_Than_3000_Label.setText((String.valueOf(GUI.MasterTable.getSAVINGS_RATE_OVER_3000()*100)) + "%");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -309,7 +334,8 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(3, 5, 3, 5);
         SavingsAccountRatesPanel.add(Savings_More_Than_3000_Label, gridBagConstraints);
 
-        CurrentSavingsRateLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        CurrentSavingsRateLabel.setFont(new java.awt.Font("Britannic Bold", 0, 16)); // NOI18N
+        CurrentSavingsRateLabel.setForeground(new java.awt.Color(187, 224, 240));
         CurrentSavingsRateLabel.setText("Current Rate");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -317,7 +343,8 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(3, 5, 3, 5);
         SavingsAccountRatesPanel.add(CurrentSavingsRateLabel, gridBagConstraints);
 
-        SavingsNewRateLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        SavingsNewRateLabel.setFont(new java.awt.Font("Britannic Bold", 0, 16)); // NOI18N
+        SavingsNewRateLabel.setForeground(new java.awt.Color(187, 224, 240));
         SavingsNewRateLabel.setText("New Rate");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
