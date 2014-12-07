@@ -704,7 +704,8 @@ public class AccountsListPanel extends javax.swing.JPanel
                 createBApanel,
                 "Bank 42",
                 JOptionPane.OK_CANCEL_OPTION,
-                JOptionPane.PLAIN_MESSAGE
+                JOptionPane.PLAIN_MESSAGE,
+                GUI.icon
         );
 
         if (choice == 0)
@@ -942,12 +943,12 @@ public class AccountsListPanel extends javax.swing.JPanel
         if (AccountsTable.getSelectedRowCount() > 0)
         {
             int amount;
-            String amountstring = JOptionPane.showInputDialog(
-                    null, "Please enter the time period, in days, that you would like to calculate interest over", "Bank 42", 1);
+            Object amountstring = JOptionPane.showInputDialog(
+                    null, "Please enter the time period, in days, that you would like to calculate interest over", "Bank 42", 1,GUI.icon,null,null);
             if (amountstring != null)
             {
-                if (isParsableInt(amountstring))
-                    amount = Integer.parseInt(amountstring);
+                if (isParsableInt(amountstring.toString()))
+                    amount = Integer.parseInt(amountstring.toString());
                 else
                 {
                     JOptionPane.showMessageDialog(null, "You must enter a valid number of days.", "ERROR", JOptionPane.ERROR_MESSAGE);
@@ -997,13 +998,13 @@ public class AccountsListPanel extends javax.swing.JPanel
 
         else
         {
-            JOptionPane.showMessageDialog(null, "Please Enter A Valid Amount To Transfer", "Bank 42", 1);
+            JOptionPane.showMessageDialog(null, "Please Enter A Valid Amount To Transfer", "Bank 42", 1,GUI.icon);
             return;
         }
 
         if (amount <= 0)
         {
-            JOptionPane.showMessageDialog(null, "Please Enter A Valid Amount To Transfer", "Bank 42", 1);
+            JOptionPane.showMessageDialog(null, "Please Enter A Valid Amount To Transfer", "Bank 42", 1,GUI.icon);
             return;
         }
 
@@ -1014,7 +1015,7 @@ public class AccountsListPanel extends javax.swing.JPanel
             AmountField.setText("Amount");
             JOptionPane.showMessageDialog(null, "Insufficient Funds"
                     + "\nYou have " + GUI.currentBankAccount.getBalance() + "$ available"
-                    + " in selected Bank Account", "Bank 42", 1);
+                    + " in selected Bank Account", "Bank 42", 1,GUI.icon);
         }
         else
         {
