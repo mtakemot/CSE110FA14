@@ -1,5 +1,6 @@
 package PresentationLayer;
 
+import LogicLayer.UserAccount;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.font.TextAttribute;
@@ -1576,6 +1577,11 @@ public class Settings extends javax.swing.JPanel
         if ((response_S.length() > 0) && (CreateAccountPanel.validate(response_S)))
         {
             GUI.currentUserAccount.setUserName(response_S);
+            UserAccount temp = new UserAccount(GUI.currentUserAccount);
+            temp.setUserName(response);
+            GUI.MasterTable.deleteUserAccount(GUI.currentUserAccount.getUserName());
+            GUI.currentUserAccount = GUI.MasterTable.insertUserAccountCopy(temp);
+            System.out.println(GUI.currentUserAccount.getUserName());
             update();
         }
         else
@@ -1853,6 +1859,7 @@ public class Settings extends javax.swing.JPanel
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1ActionPerformed
     {//GEN-HEADEREND:event_jButton1ActionPerformed
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
+        mainGUI.getAccList().update();
         layout.show(MainPanel, "AccList");
     }//GEN-LAST:event_jButton1ActionPerformed
 

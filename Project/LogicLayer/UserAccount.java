@@ -20,7 +20,6 @@ import java.io.Serializable;
 public class UserAccount implements Serializable
 {
 
-    private boolean admin = false;
     private String firstName;
     private String lastName;
     private String userName;
@@ -48,7 +47,6 @@ public class UserAccount implements Serializable
     public UserAccount(String first, String last, String user, String pass,
             String email, String phone, int loc)
     {
-        this.admin = false;
         this.firstName = first;
         this.lastName = last;
         this.userName = user;
@@ -67,6 +65,20 @@ public class UserAccount implements Serializable
     {
         this.userName = name;
         numOfBankAccounts = 0;
+    }
+
+    // copy ctor
+    public UserAccount(UserAccount user)
+    {
+        this.firstName = user.getFirstName();
+        this.lastName = user.getLastName();
+        this.userName = user.getUserName();
+        this.password = user.getPassword();
+        this.email = user.getEmail();
+        this.phone = user.getPhone();
+        this.next = user.getNext();
+        this.BankAccHead = user.getBankAccHead();
+        this.numOfBankAccounts = user.getNumOfBankAccounts();
     }
 
     // This will make sure that the password that the user enters when they
@@ -260,17 +272,6 @@ public class UserAccount implements Serializable
     /////////////////////////////////////////
     // BELOW ARE JUST SETTERS AND GETTERS ///
     /////////////////////////////////////////
-    public void allowAdmin()
-    {
-
-        this.admin = true;
-    }
-
-    public boolean getAdmin()
-    {
-        return admin;
-    }
-
     public void setFirstName(String firstName)
     {
         this.firstName = firstName;
