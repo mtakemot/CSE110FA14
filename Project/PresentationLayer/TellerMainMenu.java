@@ -6,6 +6,8 @@
 package PresentationLayer;
 
 import java.awt.*;
+import java.awt.font.TextAttribute;
+import java.util.Map;
 import javax.swing.*;
 
 /**
@@ -60,12 +62,14 @@ public class TellerMainMenu extends javax.swing.JPanel
         setPreferredSize(new java.awt.Dimension(800, 600));
         setLayout(new java.awt.GridBagLayout());
 
+        BGPanel.setOpaque(false);
         java.awt.GridBagLayout BGPanelLayout = new java.awt.GridBagLayout();
         BGPanelLayout.columnWidths = new int[] {0};
         BGPanelLayout.rowHeights = new int[] {0};
         BGPanel.setLayout(BGPanelLayout);
 
         ButtonPanel.setBackground(new Color(255,255,255,100));
+        ButtonPanel.setOpaque(false);
         java.awt.GridBagLayout ButtonPanelLayout = new java.awt.GridBagLayout();
         ButtonPanelLayout.columnWidths = new int[] {0};
         ButtonPanelLayout.rowHeights = new int[] {0, 10, 0, 10, 0, 10, 0};
@@ -160,21 +164,24 @@ public class TellerMainMenu extends javax.swing.JPanel
         add(BGPanel, gridBagConstraints);
 
         jPanel1.setOpaque(false);
-        java.awt.GridBagLayout jPanel1Layout = new java.awt.GridBagLayout();
-        jPanel1Layout.columnWidths = new int[] {0};
-        jPanel1Layout.rowHeights = new int[] {0, 10, 0, 10, 0};
-        jPanel1.setLayout(jPanel1Layout);
+        jPanel1.setLayout(new java.awt.GridBagLayout());
 
-        jLabel1.setForeground(new java.awt.Color(51, 0, 255));
-        jLabel1.setText("Teller Main Menu");
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 255, 255));
+        jLabel1.setText("Teller Home");
+        Font font = jLabel1.getFont();
+        Map attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        jLabel1.setFont(font.deriveFont(attributes));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
+        gridBagConstraints.insets = new java.awt.Insets(80, 0, 0, 0);
         jPanel1.add(jLabel1, gridBagConstraints);
 
         Bank42.setFont(new java.awt.Font("DejaVu Sans", 1, 48)); // NOI18N
-        Bank42.setForeground(new java.awt.Color(51, 0, 255));
+        Bank42.setForeground(new java.awt.Color(204, 204, 255));
         Bank42.setText("Bank 42");
         Bank42.setToolTipText("");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -237,13 +244,13 @@ public class TellerMainMenu extends javax.swing.JPanel
     {//GEN-HEADEREND:event_ApplyPenIntButtonActionPerformed
         GUI.MasterTable.InterestAndPenaltiesTeller();
         JOptionPane.showMessageDialog(null, "Success! Interest and penalties have been applied \n"
-                + "globally to all existing Bank Accounts.", "Bank 42", 1,GUI.icon);
+                + "globally to all existing Bank Accounts.", "Bank 42", 1, GUI.icon);
     }//GEN-LAST:event_ApplyPenIntButtonActionPerformed
 
     private void SearchUserButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_SearchUserButtonActionPerformed
     {//GEN-HEADEREND:event_SearchUserButtonActionPerformed
         Object name = JOptionPane.showInputDialog(
-                null, "Please Enter User Account: ","Bank 42",JOptionPane.INFORMATION_MESSAGE,GUI.icon,null,null);
+                null, "Please Enter User Account: ", "Bank 42", JOptionPane.INFORMATION_MESSAGE, GUI.icon, null, null);
 
         if (name != null)
         {
@@ -257,7 +264,7 @@ public class TellerMainMenu extends javax.swing.JPanel
             }
             else
             {
-                JOptionPane.showMessageDialog(null, "User Accout Not Found","Bank 42",1,GUI.icon);
+                JOptionPane.showMessageDialog(null, "User Accout Not Found", "Bank 42", 1, GUI.icon);
             }
         }
     }//GEN-LAST:event_SearchUserButtonActionPerformed
