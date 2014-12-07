@@ -22,7 +22,7 @@ import org.joda.time.format.*;
  */
 public class BankAccount implements Serializable
 {
-
+    //BankAccount class members
     protected double balance;
     protected String accountName;
     protected BankAccount next;
@@ -47,6 +47,10 @@ public class BankAccount implements Serializable
     // Will be sorrted by date.
     protected List<Transaction> transactions;
 
+    /**
+     * BankAccount class constructor. It instantiates the member fields for each
+     * new BankAccount objects created. 
+     */
     public BankAccount()
     {
         DateTime currentTime = new DateTime();
@@ -59,13 +63,16 @@ public class BankAccount implements Serializable
         transactions = new ArrayList<Transaction>();
     }
 
-    // The following 2 methods will be overridden in
-    // SavingsAccount.java and CheckingAccount.java
+    /**
+     * The following 2 methods are the super class methods that will respectively
+     * add or subtract a double amount from the bank account's current balance.
+     * They will be overridden SavingsAccount.java and CheckingAccount.java
+     */
     public boolean subFromBalance(double amount)
     {
         return false;
     }
-
+   
     public boolean addToBalance(double amount)
     {
         return false;
@@ -76,12 +83,14 @@ public class BankAccount implements Serializable
     // in the transaction history
     public void addInterest(double amount)
     {
+        //updating balance
         this.balance += amount;
         this.getTransactions().add(new Transaction("Add Interest", amount));
     }
 
     public void subPenalty(double amount)
     {
+        //updating balance
         this.balance -= amount;
         this.getTransactions().add(new Transaction("Penalty", amount));
     }
@@ -114,26 +123,32 @@ public class BankAccount implements Serializable
             tempAvg = ((tempTotal) / (startTime.dayOfMonth().getMaximumValue()));
             if (tempAvg < 100)
             {
-                balanceAfterInterest -= HashTable.PENALTY_AMOUNT;
+                balanceAfterInterest -= HashTable.PENALTY_AMOUNT; //update balance after deducting penalty
             }
             else if (tempAvg >= 3000)
             {
+                //update balance after adding cheking interest
                 if (this instanceof CheckingAccount)
                     balanceAfterInterest += (balanceAfterInterest * HashTable.CHECKING_RATE_OVER_3000);
+                //update balance after adding savings interest
                 else
                     balanceAfterInterest += (balanceAfterInterest * HashTable.SAVINGS_RATE_OVER_3000);
             }
             else if (tempAvg >= 2000 && tempAvg < 3000)
             {
+                //update balance after adding cheking interest
                 if (this instanceof CheckingAccount)
                     balanceAfterInterest += (balanceAfterInterest * HashTable.CHECKING_RATE_2000_TO_3000);
+                //update balance after adding savings interest
                 else
                     balanceAfterInterest += (balanceAfterInterest * HashTable.SAVINGS_RATE_2000_TO_3000);
             }
             else if (tempAvg >= 1000 && tempAvg < 2000)
             {
+                //update balance after adding cheking interest
                 if (this instanceof CheckingAccount)
                     balanceAfterInterest += (balanceAfterInterest * HashTable.CHECKING_RATE_1000_TO_2000);
+                //update balance after adding savings interest
                 else
                     balanceAfterInterest += (balanceAfterInterest * HashTable.SAVINGS_RATE_1000_TO_2000);
             }
@@ -155,7 +170,7 @@ public class BankAccount implements Serializable
     {
         this.balance = balance;
     }
-
+    
     public void setAccountName(String accountName)
     {
         this.accountName = accountName;
