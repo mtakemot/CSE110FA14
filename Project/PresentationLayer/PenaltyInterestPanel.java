@@ -1,22 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package PresentationLayer;
 
 import java.awt.CardLayout;
-import java.awt.Color;
 import java.awt.Font;
-import java.awt.LayoutManager;
 import java.awt.font.TextAttribute;
 import java.util.Map;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
+ * **************************************************************************
  *
- * @author Ryan
+ * Ryan Bridges CSE 110, Fall 2014 Last Updated: December 6, 2014
+ *
+ * Team 42
+ *
+ * File Name: This panel allows the teller to adjust the interest rates and
+ * penalties that will be applied when the press the "Apply Global Interest And
+ * Penalties" button
+ * **************************************************************************
  */
 public class PenaltyInterestPanel extends javax.swing.JPanel
 {
