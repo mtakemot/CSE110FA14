@@ -1,22 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package PresentationLayer;
 
 import java.awt.CardLayout;
-import java.awt.Color;
 import java.awt.Font;
-import java.awt.LayoutManager;
 import java.awt.font.TextAttribute;
 import java.util.Map;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
+ * **************************************************************************
  *
- * @author Ryan
+ * Ryan Bridges CSE 110, Fall 2014 Last Updated: December 6, 2014
+ *
+ * Team 42
+ *
+ * File Name: This panel allows the teller to adjust the interest rates and
+ * penalties that will be applied when the press the "Apply Global Interest And
+ * Penalties" button
+ * **************************************************************************
  */
 public class PenaltyInterestPanel extends javax.swing.JPanel
 {
@@ -29,12 +30,21 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         initComponents();
     }
 
+    /**
+     * Constructor for this panel. Calls initComponents to initialize all of the
+     * components on the panel. Also Underlines the appropriate JLabels
+     *
+     * @param MainPanel The main panel that all of our pages are stored on
+     * @param mainGUI A reference to the GUI which will allow us to have access
+     * to all of our other pages from right here
+     */
     public PenaltyInterestPanel(JPanel MainPanel, GUI mainGUI)
     {
         this.mainGUI = mainGUI;
         this.MainPanel = MainPanel;
         initComponents();
 
+        // Below just underlines the JLabels that need it
         Font font = BalanceLabel.getFont();
         Map attributes = font.getAttributes();
         attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
@@ -62,6 +72,7 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
 
     }
 
+    // Checks if a string can be parsed into a double
     public static boolean isParsable(String input)
     {
         boolean parsable = true;
@@ -498,20 +509,27 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         add(Background, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
+    // Updates the Current Rates when the user changes them via the textboxes
+    // on the page
     private boolean changeRates()
     {
         boolean wasCorrect = true;
+        /* THIS CHUNK OF CODE IS A TEMPLATE FOR ALL CHUNKS BELOW. THE ONLY THING
+         THAT CHANGES IS THE LABEL/FIELD THAT WE ARE EXAMINING */
         String input = Checking_1000_2000_Field.getText();
-        if (!input.equals(""))
+        if (!input.equals("")) // Check if the user has entered anything in this textfield
         {
-            if (isParsable(input))
+            if (isParsable(input)) // Make sure the user didnt enter invalid input
             {
+                // Update the value in the backend that the user changed
                 GUI.MasterTable.setCHECKING_RATE_1000_TO_2000((Double.parseDouble(input) / 100));
+                // update the JLabel
                 Checking_1000_2000_Label.setText(input + "%");
                 Checking_1000_2000_Field.setText(null);
             }
             else
             {
+                // Will print an error message
                 wasCorrect = false;
             }
         }
@@ -590,9 +608,12 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         {
             JOptionPane.showMessageDialog(null, "Please enter a valid number", "ERROR", JOptionPane.ERROR_MESSAGE);
         }
+        GUI.dataout.exportDB(GUI.MasterTable);
         return wasCorrect;
     }
 
+    /* The below action listeners all delegate to the above function to update
+     the JLabels and the backend */
     private void Checking_1000_2000_FieldActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_Checking_1000_2000_FieldActionPerformed
     {//GEN-HEADEREND:event_Checking_1000_2000_FieldActionPerformed
         changeRates();
@@ -620,6 +641,7 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
 
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BackButtonActionPerformed
     {//GEN-HEADEREND:event_BackButtonActionPerformed
+        // Go back to the teller home
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
         layout.show(MainPanel, "TellerMainMenu");
     }//GEN-LAST:event_BackButtonActionPerformed
@@ -634,6 +656,7 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         changeRates();
     }//GEN-LAST:event_Checking_More_Than_3000_FieldActionPerformed
 
+    // Reset the text fields when focus is gained
     private void Checking_1000_2000_FieldFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_Checking_1000_2000_FieldFocusGained
     {//GEN-HEADEREND:event_Checking_1000_2000_FieldFocusGained
         Checking_1000_2000_Field.setText(null);
@@ -664,28 +687,35 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         Savings_More_Than_3000_Field.setText(null);
     }//GEN-LAST:event_Savings_More_Than_3000_FieldFocusGained
 
+    // This function allows the user to update the current penalty through a
+    // popup box
     private void PenaltyButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_PenaltyButtonActionPerformed
     {//GEN-HEADEREND:event_PenaltyButtonActionPerformed
         double amount;
+        // Display initial popup box
         String amountstring = JOptionPane.showInputDialog(
                 null, "The current penalty is $" + GUI.MasterTable.PENALTY_AMOUNT
                 + "\n" + "Please enter a new penalty amount");
+        // Return if the user left the input field blank
         if (amountstring == null)
             return;
-
+        // Check fi the user entered valid input
         if (isParsable(amountstring))
             amount = Double.parseDouble(amountstring);
         else
         {
+            // Display an error message if they did not
             JOptionPane.showMessageDialog(null, "Please Enter a Valid number");
             return;
         }
 
         if (amount < 0)
         {
+            // Display an error message if the user tries to enter a negative number
             JOptionPane.showMessageDialog(null, "Please Enter a Valid number");
             return;
         }
+        // Update the new penalty and export it to the database
         GUI.MasterTable.PENALTY_AMOUNT = amount;
         GUI.dataout.exportDB(GUI.MasterTable);
         JOptionPane.showMessageDialog(null, "Success!\n $" + amount + " is the new penalty.");

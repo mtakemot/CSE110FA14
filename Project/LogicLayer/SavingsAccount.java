@@ -21,11 +21,13 @@ import org.joda.time.*;
 public class SavingsAccount extends BankAccount
 {
 
+    // Default ctor
     public SavingsAccount()
     {
         super();
     }
 
+    // Name ctor
     public SavingsAccount(String name)
     {
         super();
@@ -33,17 +35,32 @@ public class SavingsAccount extends BankAccount
         this.accountName = name;
     }
 
+    /**
+     * SavingsAccount Constructor
+     *
+     * @param bal Initial Balance for the new account
+     * @param name name for the new account
+     */
     public SavingsAccount(double bal, String name)
     {
         super();
         this.balance = bal;
         this.accountName = name;
         this.accountType = "Savings";
+        // Add the account creation to the Transaction History
         this.transactions.add(new Transaction("Account Created", bal));
         DateTime currentTime = new DateTime();
+        // Set the daily totals according to the current date
         this.thisMonthsDailyTotals = bal * currentTime.getDayOfMonth();
     }
 
+    /**
+     * subFromBalance is overridden from BankAccount.java. Allows us to subtract
+     * from a user's account. Also imposes daily withdraw limit of $5000
+     *
+     * @param amount amount to subtract
+     * @return whether or not the withdraw was successful
+     */
     @Override
     public boolean subFromBalance(double amount)
     {
@@ -78,13 +95,19 @@ public class SavingsAccount extends BankAccount
         return false;
     }
 
+    /**
+     * addToBalance is overridden from BankAccount.java. Allows us to add to a
+     * user's account. Also imposes daily deposit limit of $5000
+     *
+     * @param amount amount to subtract
+     * @return whether or not the deposit was successful
+     */
     @Override
     public boolean addToBalance(double amount)
     {
         if (amount > 5000)
-        {
             return false;
-        }
+
         // Grab the current time
         DateTime currentDateTime = new DateTime();
         // Check if this deposit is less than 24 hours from the last deposit

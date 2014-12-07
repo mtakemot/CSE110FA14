@@ -933,7 +933,7 @@ public class AccountsListPanel extends javax.swing.JPanel
                 int row = AccountsTable.getSelectedRow();
                 String bankacc = (String) AccountsTable.getValueAt(row, NAMECOL);
                 GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(bankacc);
-                double calcInt = GUI.currentBankAccount.getInterest(interestDate.plusDays(amount));
+                double calcInt = GUI.currentBankAccount.getInterestCustomer(interestDate.plusDays(amount));
                 JOptionPane.showMessageDialog(null, "Success! The balance of account "
                         + GUI.currentBankAccount.getAccountName() + " after " + amount + " days will be " + GUI.MoneyFormat.format(calcInt), "Bank 42", 1, icon);
             }

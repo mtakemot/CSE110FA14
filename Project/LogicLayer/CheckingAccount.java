@@ -6,7 +6,7 @@ import org.joda.time.*;
 /**
  * **************************************************************************
  *
- * Ryan Bridges CSE 110, Fall 2014 Last Updated: October 19, 2014
+ * Ryan Bridges CSE 110, Fall 2014 Last Updated: December 6, 2014
  *
  * Team 42
  *
@@ -19,11 +19,13 @@ import org.joda.time.*;
 public class CheckingAccount extends BankAccount
 {
 
+    // Default ctor
     public CheckingAccount()
     {
         super();
     }
 
+    // Name ctor
     public CheckingAccount(String name)
     {
         super();
@@ -31,24 +33,38 @@ public class CheckingAccount extends BankAccount
         this.accountType = "Checking";
     }
 
+    /**
+     * CheckingAccount Constructor
+     *
+     * @param bal Initial Balance for the new account
+     * @param name name for the new account
+     */
     public CheckingAccount(double bal, String name)
     {
         super();
         this.balance = bal;
         this.accountName = name;
         this.accountType = "Checking";
+        // Add the account creation into the transaction
         this.transactions.add(new Transaction("Account Created", bal));
+        // Set this month's daily totals
         DateTime currentTime = new DateTime();
         this.thisMonthsDailyTotals = bal * currentTime.getDayOfMonth();
     }
 
+    /**
+     * subFromBalance is overridden from BankAccount.java. Allows us to subtract
+     * from a user's account. Also imposes daily withdraw limit of $10000
+     *
+     * @param amount amount to subtract
+     * @return
+     */
     @Override
     public boolean subFromBalance(double amount)
     {
+        // Check if this transaction will take us over the limit
         if ((this.balance - amount < 0) || (amount > 10000))
-        {
             return false;
-        }
         // Grab the current time
         DateTime currentDateTime = new DateTime();
         // Check if this withdraw is less than 24 hours from the last withdraw
@@ -76,13 +92,18 @@ public class CheckingAccount extends BankAccount
         return false;
     }
 
+    /**
+     * addToBalance is overridden from BankAccount.java. Allows us to add to a
+     * user's account. Also imposes daily deposit limit of $10000
+     *
+     * @param amount amount to subtract
+     * @return
+     */
     @Override
     public boolean addToBalance(double amount)
     {
         if (amount > 10000)
-        {
             return false;
-        }
         // Grab the current time
         DateTime currentDateTime = new DateTime();
         // Check if this deposit is less than 24 hours from the last deposit

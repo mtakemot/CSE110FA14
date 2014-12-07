@@ -1,13 +1,11 @@
 package LogicLayer;
 
 import java.io.Serializable;
-import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
 
 /**
  * **************************************************************************
  *
- * Ryan Bridges CSE 110, Fall 2014 Last Updated: October 19, 2014
+ * Ryan Bridges CSE 110, Fall 2014 Last Updated: December 6, 2014
  *
  * Team 42
  *
@@ -262,9 +260,6 @@ public class UserAccount implements Serializable
     /////////////////////////////////////////
     // BELOW ARE JUST SETTERS AND GETTERS ///
     /////////////////////////////////////////
-    /**
-     * 11_15 testing admin account*
-     */
     public void allowAdmin()
     {
 
