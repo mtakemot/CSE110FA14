@@ -136,7 +136,6 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         TitlePanel.setOpaque(false);
         TitlePanel.setLayout(new java.awt.GridBagLayout());
 
-        Title.setBackground(new java.awt.Color(250, 250, 250));
         Title.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         Title.setForeground(new java.awt.Color(14, 118, 188));
         Title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
