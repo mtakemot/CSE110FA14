@@ -111,7 +111,7 @@ public class Settings extends javax.swing.JPanel
         jPanel2.setOpaque(false);
         jPanel2.setLayout(new java.awt.GridBagLayout());
 
-        jPanel1.setBackground(new Color (0,255,255,150));
+        jPanel1.setBackground(new Color (0,255,255,0));
         jPanel1.setName(""); // NOI18N
         java.awt.GridBagLayout jPanel1Layout = new java.awt.GridBagLayout();
         jPanel1Layout.columnWidths = new int[] {0, 0, 0, 0, 0, 0, 0};
@@ -830,6 +830,7 @@ public class Settings extends javax.swing.JPanel
         gridBagConstraints.gridy = 12;
         jPanel1.add(jPanel26, gridBagConstraints);
 
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(14, 118, 188));
         jButton1.setText("Back");

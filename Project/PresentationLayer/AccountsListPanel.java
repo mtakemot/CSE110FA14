@@ -535,7 +535,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         jPanel8.setLayout(jPanel8Layout);
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel6.setMinimumSize(new java.awt.Dimension(100, 115));
+        jPanel6.setMinimumSize(new java.awt.Dimension(200, 115));
         java.awt.GridBagLayout jPanel6Layout = new java.awt.GridBagLayout();
         jPanel6Layout.columnWidths = new int[] {0, 12, 0};
         jPanel6Layout.rowHeights = new int[] {0, 7, 0, 7, 0};
@@ -544,6 +544,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         UserLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         UserLabel.setForeground(new java.awt.Color(14, 118, 188));
         UserLabel.setText("userlabel");
+        UserLabel.setMaximumSize(new java.awt.Dimension(400, 15));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
