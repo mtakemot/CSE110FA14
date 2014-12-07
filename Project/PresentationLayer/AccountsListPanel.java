@@ -777,7 +777,7 @@ public class AccountsListPanel extends javax.swing.JPanel
 
         if (amount <= 0)
         {
-            JOptionPane.showMessageDialog(null, "Please Enter A Valid Amount To Transfer", "Bank 42", 1);
+            JOptionPane.showMessageDialog(null, "Please Enter A Valid Amount To Transfer", "Bank 42", 1, icon);
             return;
         }
 
@@ -787,7 +787,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         {
             JOptionPane.showMessageDialog(null, "Insufficient Funds"
                     + "\nYou have " + GUI.currentBankAccount.getBalance() + "$ available"
-                    + " in selected Bank Account", "Bank 42", 1);
+                    + " in selected Bank Account", "Bank 42", 1, icon);
             return;
         }
 
@@ -814,7 +814,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         }
         else
         {
-            JOptionPane.showMessageDialog(null, "Error, User Account Not Found", "Bank 42", 1);
+            JOptionPane.showMessageDialog(null, "Error, User Account Not Found", "Bank 42", 1, icon);
         }
     }//GEN-LAST:event_TransferButton1MouseClicked
 
@@ -926,7 +926,7 @@ public class AccountsListPanel extends javax.swing.JPanel
                     amount = Integer.parseInt(amountstring.toString());
                 else
                 {
-                    JOptionPane.showMessageDialog(null, "You must enter a valid number of days.", "ERROR", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "You must enter a valid number of days.", "Bank 42", JOptionPane.ERROR_MESSAGE);
                     return;
                 }
                 if (amount < 0)
@@ -959,7 +959,7 @@ public class AccountsListPanel extends javax.swing.JPanel
             layout.show(MainPanel, "TransPanel");
         }
         else
-            JOptionPane.showMessageDialog(null, "Please select an account", "Bank 42", 1);
+            JOptionPane.showMessageDialog(null, "Please select an account", "Bank 42", 1, icon);
     }//GEN-LAST:event_TransactionHistoryButtonActionPerformed
 
     private void TransferButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_TransferButtonActionPerformed

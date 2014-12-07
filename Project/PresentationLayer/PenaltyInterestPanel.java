@@ -606,7 +606,7 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         }
         if (!wasCorrect)
         {
-            JOptionPane.showMessageDialog(null, "Please enter a valid number", "ERROR", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Please enter a valid number", "Bank 42", JOptionPane.ERROR_MESSAGE);
         }
         GUI.dataout.exportDB(GUI.MasterTable);
         return wasCorrect;
@@ -693,32 +693,32 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
     {//GEN-HEADEREND:event_PenaltyButtonActionPerformed
         double amount;
         // Display initial popup box
-        String amountstring = JOptionPane.showInputDialog(
+        Object amountstring = JOptionPane.showInputDialog(
                 null, "The current penalty is $" + GUI.MasterTable.PENALTY_AMOUNT
-                + "\n" + "Please enter a new penalty amount");
+                + "\n" + "Please enter a new penalty amount", "Bank 42", 1, GUI.icon, null, null);
         // Return if the user left the input field blank
         if (amountstring == null)
             return;
         // Check fi the user entered valid input
-        if (isParsable(amountstring))
-            amount = Double.parseDouble(amountstring);
+        if (isParsable(amountstring.toString()))
+            amount = Double.parseDouble(amountstring.toString());
         else
         {
             // Display an error message if they did not
-            JOptionPane.showMessageDialog(null, "Please Enter a Valid number");
+            JOptionPane.showMessageDialog(null, "Please Enter a Valid number", "Bank 42", 1, GUI.icon);
             return;
         }
 
         if (amount < 0)
         {
             // Display an error message if the user tries to enter a negative number
-            JOptionPane.showMessageDialog(null, "Please Enter a Valid number");
+            JOptionPane.showMessageDialog(null, "Please Enter a Valid number", "Bank 42", 1, GUI.icon);
             return;
         }
         // Update the new penalty and export it to the database
         GUI.MasterTable.PENALTY_AMOUNT = amount;
         GUI.dataout.exportDB(GUI.MasterTable);
-        JOptionPane.showMessageDialog(null, "Success!\n $" + amount + " is the new penalty.");
+        JOptionPane.showMessageDialog(null, "Success!\n $" + amount + " is the new penalty.", "Bank 42", 1, GUI.icon);
     }//GEN-LAST:event_PenaltyButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

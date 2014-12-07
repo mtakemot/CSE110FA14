@@ -36,11 +36,11 @@
           <Connection code="new Color(255,255,255,150)" type="code"/>
         </Property>
         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[375, 159]"/>
+          <Dimension value="[375, 185]"/>
         </Property>
         <Property name="opaque" type="boolean" value="false"/>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[375, 159]"/>
+          <Dimension value="[375, 185]"/>
         </Property>
       </Properties>
       <Constraints>

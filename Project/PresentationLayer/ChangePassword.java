@@ -5,6 +5,7 @@
  */
 package PresentationLayer;
 
+import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -42,7 +43,7 @@ public class ChangePassword extends javax.swing.JPanel
         return this;
     }
 
-    public void SetPassword()
+    public boolean SetPassword()
     {
         char[] passwordArray = jCurrentPassword.getPassword();
         String current_password = new String(passwordArray);
@@ -58,9 +59,10 @@ public class ChangePassword extends javax.swing.JPanel
                 if(CreateAccountPanel.validatePassword(new_password)) {
                     GUI.currentUserAccount.setPassword(new_password);
                     JOptionPane.showMessageDialog(null,"Password Succesfully Changed!","Bank 42",1,icon);
-                    jCurrentPassword.setText("password");
-                    jNewPassword.setText("password");
-                    jReenterNewPassword.setText("password");
+                    jCurrentPassword.setText("pass");
+                    jNewPassword.setText("pass");
+                    jReenterNewPassword.setText("pass");
+                    return true;
                 }
                 else {
                     JOptionPane.showMessageDialog(null,"New Password Entry Not Valid, Please Try Again.","Bank 42",1,icon);
@@ -82,8 +84,7 @@ public class ChangePassword extends javax.swing.JPanel
             JOptionPane.showMessageDialog(null,"New Passwords Do Not Match, Please Try Again.","Bank 42",1,icon);
                 
         }
-                    
-            
+         return false; 
     }
 
     /**
