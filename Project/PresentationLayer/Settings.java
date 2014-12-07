@@ -48,6 +48,14 @@ public class Settings extends javax.swing.JPanel
 
     }
 
+    @Override
+    protected void paintComponent(Graphics g)
+    {
+        g.setColor( getBackground() );
+        g.fillRect(0, 0, getWidth(), getHeight());
+        super.paintComponent(g);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -59,10 +67,26 @@ public class Settings extends javax.swing.JPanel
     {
         java.awt.GridBagConstraints gridBagConstraints;
 
+        errorMessage = new javax.swing.JLabel()
+        {
+            protected void paintComponent(Graphics g)
+            {
+                g.setColor( getBackground() );
+                g.fillRect(0, 0, getWidth(), getHeight());
+                super.paintComponent(g);
+            }
+        };
         jPanel2 = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel()
+        {
+            protected void paintComponent(Graphics g)
+            {
+                g.setColor(getBackground());
+                g.fillRect(0, 0, getWidth(), getHeight());
+                super.paintComponent(g);
+            }
+        };
         DeleteAccountButton = new javax.swing.JButton();
-        errorMessage = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         FirstName1 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -100,8 +124,8 @@ public class Settings extends javax.swing.JPanel
         jPanel26 = new javax.swing.JPanel();
         EditLabel5 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         Background = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
@@ -109,11 +133,25 @@ public class Settings extends javax.swing.JPanel
         setPreferredSize(new java.awt.Dimension(800, 600));
         setLayout(new java.awt.GridBagLayout());
 
+        errorMessage.setBackground(new Color(255,255,255,0));
+        errorMessage.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        errorMessage.setForeground(new java.awt.Color(14, 118, 188));
+        errorMessage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        errorMessage.setText("Click Below to Edit Settings");
+        errorMessage.setToolTipText("");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+        gridBagConstraints.insets = new java.awt.Insets(125, 0, 0, 0);
+        add(errorMessage, gridBagConstraints);
+
         jPanel2.setOpaque(false);
         jPanel2.setLayout(new java.awt.GridBagLayout());
 
         jPanel1.setBackground(new Color (0,255,255,0));
         jPanel1.setName(""); // NOI18N
+        jPanel1.setOpaque(false);
         java.awt.GridBagLayout jPanel1Layout = new java.awt.GridBagLayout();
         jPanel1Layout.columnWidths = new int[] {0, 0, 0, 0, 0, 0, 0};
         jPanel1Layout.rowHeights = new int[] {0, 8, 0, 8, 0, 8, 0, 8, 0, 8, 0, 8, 0, 8, 0, 8, 0, 8, 0};
@@ -123,6 +161,7 @@ public class Settings extends javax.swing.JPanel
         DeleteAccountButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         DeleteAccountButton.setForeground(new java.awt.Color(14, 118, 188));
         DeleteAccountButton.setText("Delete Main Account");
+        DeleteAccountButton.setOpaque(false);
         DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter()
         {
             public void mouseClicked(java.awt.event.MouseEvent evt)
@@ -136,15 +175,6 @@ public class Settings extends javax.swing.JPanel
         gridBagConstraints.gridwidth = 5;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel1.add(DeleteAccountButton, gridBagConstraints);
-
-        errorMessage.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        errorMessage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 5;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel1.add(errorMessage, gridBagConstraints);
 
         jPanel3.setBackground(new java.awt.Color(255, 204, 153));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -829,12 +859,14 @@ public class Settings extends javax.swing.JPanel
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 12;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel1.add(jPanel26, gridBagConstraints);
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(14, 118, 188));
         jButton1.setText("Back");
+        jButton1.setOpaque(false);
         jButton1.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -857,22 +889,23 @@ public class Settings extends javax.swing.JPanel
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.insets = new java.awt.Insets(0, 10, 0, 0);
         add(jPanel2, gridBagConstraints);
 
-        Background.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/wallhaven-95047.jpg"))); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(14, 118, 188));
+        jLabel2.setText("Settings");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 80, 313);
-        add(Background, gridBagConstraints);
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+        add(jLabel2, gridBagConstraints);
 
-        jLabel1.setText("jLabel1");
+        Background.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/AbstractLines2.png"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        add(jLabel1, gridBagConstraints);
+        add(Background, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
     public void update()
@@ -1142,10 +1175,13 @@ public class Settings extends javax.swing.JPanel
         if ((response_S.length() > 0) && CreateAccountPanel.validateLastName(response_S))
         {
             GUI.currentUserAccount.setLastName(response_S);
+            errorMessage.setText("Success");
+            errorMessage.setForeground(Color.green);
             update();
         }
         else
         {
+            errorMessage.setForeground(Color.red);
             errorMessage.setText("Your last name was entered incorrectly.");
         }
     }//GEN-LAST:event_jPanel3MouseClicked
@@ -1162,10 +1198,13 @@ public class Settings extends javax.swing.JPanel
         if ((response_S.length() > 0) && CreateAccountPanel.validateLastName(response_S))
         {
             GUI.currentUserAccount.setLastName(response_S);
+            errorMessage.setText("Success");
+            errorMessage.setForeground(Color.green);
             update();
         }
         else
         {
+            errorMessage.setForeground(Color.red);
             errorMessage.setText("Your last name was entered incorrectly.");
         }
     }//GEN-LAST:event_jPanel9MouseClicked
@@ -1182,10 +1221,13 @@ public class Settings extends javax.swing.JPanel
         if ((response_S.length() > 0) && CreateAccountPanel.validateLastName(response_S))
         {
             GUI.currentUserAccount.setLastName(response_S);
+            errorMessage.setText("Success");
+            errorMessage.setForeground(Color.green);
             update();
         }
         else
         {
+            errorMessage.setForeground(Color.red);
             errorMessage.setText("Your last name was entered incorrectly.");
         }
     }//GEN-LAST:event_EditLabelMouseClicked
@@ -1346,10 +1388,13 @@ public class Settings extends javax.swing.JPanel
         if ((response_S.length() > 0) && CreateAccountPanel.validateLastName(response_S))
         {
             GUI.currentUserAccount.setLastName(response_S);
+            errorMessage.setText("Success");
+            errorMessage.setForeground(Color.green);
             update();
         }
         else
         {
+            errorMessage.setForeground(Color.red);
             errorMessage.setText("Your last name was entered incorrectly.");
         }
     }//GEN-LAST:event_jPanel15MouseClicked
@@ -1457,10 +1502,13 @@ public class Settings extends javax.swing.JPanel
         if ((response_S.length() > 0) && CreateAccountPanel.validateFirstName(response_S))
         {
             GUI.currentUserAccount.setFirstName(response_S);
+            errorMessage.setText("Success");
+            errorMessage.setForeground(Color.green);
             update();
         }
         else
         {
+            errorMessage.setForeground(Color.red);
             errorMessage.setText("Your first name was entered incorrectly.");
         }
     }//GEN-LAST:event_jPanel4MouseClicked
@@ -1477,10 +1525,13 @@ public class Settings extends javax.swing.JPanel
         if ((response_S.length() > 0) && CreateAccountPanel.validateFirstName(response_S))
         {
             GUI.currentUserAccount.setFirstName(response_S);
+            errorMessage.setText("Success");
+            errorMessage.setForeground(Color.green);
             update();
         }
         else
         {
+            errorMessage.setForeground(Color.red);
             errorMessage.setText("Your first name was entered incorrectly.");
         }
     }//GEN-LAST:event_jPanel16MouseClicked
@@ -1497,10 +1548,13 @@ public class Settings extends javax.swing.JPanel
         if ((response_S.length() > 0) && CreateAccountPanel.validateFirstName(response_S))
         {
             GUI.currentUserAccount.setFirstName(response_S);
+            errorMessage.setText("Success");
+            errorMessage.setForeground(Color.green);
             update();
         }
         else
         {
+            errorMessage.setForeground(Color.red);
             errorMessage.setText("Your first name was entered incorrectly.");
         }
     }//GEN-LAST:event_EditLabel1MouseClicked
@@ -1517,10 +1571,13 @@ public class Settings extends javax.swing.JPanel
         if ((response_S.length() > 0) && CreateAccountPanel.validateFirstName(response_S))
         {
             GUI.currentUserAccount.setFirstName(response_S);
+            errorMessage.setText("Success");
+            errorMessage.setForeground(Color.green);
             update();
         }
         else
         {
+            errorMessage.setForeground(Color.red);
             errorMessage.setText("Your first name was entered incorrectly.");
         }
     }//GEN-LAST:event_jPanel10MouseClicked
@@ -1541,10 +1598,13 @@ public class Settings extends javax.swing.JPanel
             GUI.MasterTable.deleteUserAccount(GUI.currentUserAccount.getUserName());
             GUI.currentUserAccount = GUI.MasterTable.insertUserAccountCopy(temp);
             System.out.println(GUI.currentUserAccount.getUserName());
+            errorMessage.setText("Success");
+            errorMessage.setForeground(Color.green);
             update();
         }
         else
         {
+            errorMessage.setForeground(Color.red);
             errorMessage.setText("Your username was entered incorrectly");
         }
     }//GEN-LAST:event_jPanel5MouseClicked
@@ -1565,10 +1625,13 @@ public class Settings extends javax.swing.JPanel
             GUI.MasterTable.deleteUserAccount(GUI.currentUserAccount.getUserName());
             GUI.currentUserAccount = GUI.MasterTable.insertUserAccountCopy(temp);
             System.out.println(GUI.currentUserAccount.getUserName());
+            errorMessage.setText("Success");
+            errorMessage.setForeground(Color.green);
             update();
         }
         else
         {
+            errorMessage.setForeground(Color.red);
             errorMessage.setText("Your username was entered incorrectly");
         }
     }//GEN-LAST:event_jPanel17MouseClicked
@@ -1589,10 +1652,13 @@ public class Settings extends javax.swing.JPanel
             GUI.MasterTable.deleteUserAccount(GUI.currentUserAccount.getUserName());
             GUI.currentUserAccount = GUI.MasterTable.insertUserAccountCopy(temp);
             System.out.println(GUI.currentUserAccount.getUserName());
+            errorMessage.setText("Success");
+            errorMessage.setForeground(Color.green);
             update();
         }
         else
         {
+            errorMessage.setForeground(Color.red);
             errorMessage.setText("Your username was entered incorrectly");
         }
     }//GEN-LAST:event_EditLabel2MouseClicked
@@ -1613,10 +1679,13 @@ public class Settings extends javax.swing.JPanel
             GUI.MasterTable.deleteUserAccount(GUI.currentUserAccount.getUserName());
             GUI.currentUserAccount = GUI.MasterTable.insertUserAccountCopy(temp);
             System.out.println(GUI.currentUserAccount.getUserName());
+            errorMessage.setText("Success");
+            errorMessage.setForeground(Color.green);
             update();
         }
         else
         {
+            errorMessage.setForeground(Color.red);
             errorMessage.setText("Your username was entered incorrectly");
         }
     }//GEN-LAST:event_jPanel12MouseClicked
@@ -1633,10 +1702,13 @@ public class Settings extends javax.swing.JPanel
         if ((response_S.length() > 0) && (CreateAccountPanel.isValidEmailAddress(response_S)))
         {
             GUI.currentUserAccount.setEmail(response_S);
+            errorMessage.setText("Success");
+            errorMessage.setForeground(Color.green);
             update();
         }
         else
         {
+            errorMessage.setForeground(Color.red);
             errorMessage.setText("Your email was entered incorrectly.");
         }
     }//GEN-LAST:event_jPanel6MouseClicked
@@ -1653,10 +1725,13 @@ public class Settings extends javax.swing.JPanel
         if ((response_S.length() > 0) && (CreateAccountPanel.isValidEmailAddress(response_S)))
         {
             GUI.currentUserAccount.setEmail(response_S);
+            errorMessage.setText("Success");
+            errorMessage.setForeground(Color.green);
             update();
         }
         else
         {
+            errorMessage.setForeground(Color.red);
             errorMessage.setText("Your email was entered incorrectly.");
         }
     }//GEN-LAST:event_jPanel18MouseClicked
@@ -1673,10 +1748,13 @@ public class Settings extends javax.swing.JPanel
         if ((response_S.length() > 0) && (CreateAccountPanel.isValidEmailAddress(response_S)))
         {
             GUI.currentUserAccount.setEmail(response_S);
+            errorMessage.setText("Success");
+            errorMessage.setForeground(Color.green);
             update();
         }
         else
         {
+            errorMessage.setForeground(Color.red);
             errorMessage.setText("Your email was entered incorrectly.");
         }
     }//GEN-LAST:event_EditLabel3MouseClicked
@@ -1693,10 +1771,13 @@ public class Settings extends javax.swing.JPanel
         if ((response_S.length() > 0) && (CreateAccountPanel.isValidEmailAddress(response_S)))
         {
             GUI.currentUserAccount.setEmail(response_S);
+            errorMessage.setText("Success");
+            errorMessage.setForeground(Color.green);
             update();
         }
         else
         {
+            errorMessage.setForeground(Color.red);
             errorMessage.setText("Your email was entered incorrectly.");
         }
     }//GEN-LAST:event_jPanel13MouseClicked
@@ -1713,10 +1794,13 @@ public class Settings extends javax.swing.JPanel
         if ((response_S.length() > 0) && (CreateAccountPanel.validatePhoneNumber(response_S)))
         {
             GUI.currentUserAccount.setPhone(response_S);
+            errorMessage.setText("Success");
+            errorMessage.setForeground(Color.green);
             update();
         }
         else
         {
+            errorMessage.setForeground(Color.red);
             errorMessage.setText("Your phone number was entered incorrectly.");
         }
     }//GEN-LAST:event_jPanel7MouseClicked
@@ -1733,10 +1817,13 @@ public class Settings extends javax.swing.JPanel
         if ((response_S.length() > 0) && (CreateAccountPanel.validatePhoneNumber(response_S)))
         {
             GUI.currentUserAccount.setPhone(response_S);
+            errorMessage.setText("Success");
+            errorMessage.setForeground(Color.green);
             update();
         }
         else
         {
+            errorMessage.setForeground(Color.red);
             errorMessage.setText("Your phone number was entered incorrectly.");
         }
     }//GEN-LAST:event_jPanel19MouseClicked
@@ -1753,10 +1840,13 @@ public class Settings extends javax.swing.JPanel
         if ((response_S.length() > 0) && (CreateAccountPanel.validatePhoneNumber(response_S)))
         {
             GUI.currentUserAccount.setPhone(response_S);
+            errorMessage.setText("Success");
+            errorMessage.setForeground(Color.green);
             update();
         }
         else
         {
+            errorMessage.setForeground(Color.red);
             errorMessage.setText("Your phone number was entered incorrectly.");
         }
     }//GEN-LAST:event_EditLabel4MouseClicked
@@ -1773,10 +1863,13 @@ public class Settings extends javax.swing.JPanel
         if ((response_S.length() > 0) && (CreateAccountPanel.validatePhoneNumber(response_S)))
         {
             GUI.currentUserAccount.setPhone(response_S);
+            errorMessage.setText("Success");
+            errorMessage.setForeground(Color.green);
             update();
         }
         else
         {
+            errorMessage.setForeground(Color.red);
             errorMessage.setText("Your phone number was entered incorrectly.");
         }
     }//GEN-LAST:event_jPanel11MouseClicked
@@ -1794,7 +1887,14 @@ public class Settings extends javax.swing.JPanel
 
         if (choice == 0)
         {
-            mainGUI.getChangePasswordPanel().SetPassword();
+            if(mainGUI.getChangePasswordPanel().SetPassword()) {
+                errorMessage.setText("Success");
+                errorMessage.setForeground(Color.green);      
+            }
+            else {          
+                errorMessage.setForeground(Color.green);
+                errorMessage.setText("Password Not Changed");
+            }
         }
     }//GEN-LAST:event_EditLabel5MouseClicked
 
@@ -1812,7 +1912,14 @@ public class Settings extends javax.swing.JPanel
 
         if (choice == 0)
         {
-            mainGUI.getChangePasswordPanel().SetPassword();
+            if(mainGUI.getChangePasswordPanel().SetPassword()) {
+                errorMessage.setText("Success");
+                errorMessage.setForeground(Color.green);            
+            }
+            else{
+                errorMessage.setText("Password Not Changed");
+                errorMessage.setForeground(Color.red);
+            }
         }
     }//GEN-LAST:event_jPanel8MouseClicked
 
@@ -1830,7 +1937,14 @@ public class Settings extends javax.swing.JPanel
 
         if (choice == 0)
         {
-            mainGUI.getChangePasswordPanel().SetPassword();
+            if(mainGUI.getChangePasswordPanel().SetPassword()){
+                errorMessage.setText("Success");
+                errorMessage.setForeground(Color.green);
+            }
+            else{
+                errorMessage.setText("Password Not Changed");
+                errorMessage.setForeground(Color.red);          
+            }
         }
     }//GEN-LAST:event_jPanel20MouseClicked
 
@@ -1848,7 +1962,14 @@ public class Settings extends javax.swing.JPanel
 
         if (choice == 0)
         {
-            mainGUI.getChangePasswordPanel().SetPassword();
+            if(mainGUI.getChangePasswordPanel().SetPassword()) {
+                errorMessage.setText("Success");
+                errorMessage.setForeground(Color.green);
+            }
+            else{
+                errorMessage.setText("Password Not Changed");
+                errorMessage.setForeground(Color.red);
+            }
         }
     }//GEN-LAST:event_jPanel26MouseClicked
 
@@ -1900,7 +2021,7 @@ public class Settings extends javax.swing.JPanel
     private javax.swing.JLabel Username;
     private javax.swing.JLabel errorMessage;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
