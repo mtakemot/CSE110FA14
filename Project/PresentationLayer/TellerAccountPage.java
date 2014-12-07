@@ -340,7 +340,7 @@ public class TellerAccountPage extends javax.swing.JPanel
 
             if (GUI.currentBankAccount == null)
             {
-                JOptionPane.showMessageDialog(null, "Error! Bank Account Does Not Match", "Bank 42", 1, GUI.icon);
+                JOptionPane.showMessageDialog(null, "Error! Bank Account Does Not Match", "Bank 42", 0);
                 return;
             }
             // need to check if addToBalance returns true or false here
@@ -355,7 +355,7 @@ public class TellerAccountPage extends javax.swing.JPanel
             else
             {
                 JOptionPane.showMessageDialog(null, "Error! You have either reached your daily limit, \n"
-                        + "or are attempting to deposit too much.", "Bank 42", 1, GUI.icon);
+                        + "or are attempting to deposit too much.", "Bank 42", 0);
             }
         }
         else
@@ -399,7 +399,7 @@ public class TellerAccountPage extends javax.swing.JPanel
 
             if (GUI.currentBankAccount == null)
             {
-                JOptionPane.showMessageDialog(null, "Error Bank Account Does Not Match", "Bank 42", 1, GUI.icon);
+                JOptionPane.showMessageDialog(null, "Error Bank Account Does Not Match", "Bank 42", 0);
                 return;
             }
 
@@ -408,7 +408,7 @@ public class TellerAccountPage extends javax.swing.JPanel
 
                 JOptionPane.showMessageDialog(null, "Insufficient Funds"
                         + "\nThere is $" + GUI.currentBankAccount.getBalance() + " available"
-                        + " in selected Bank Account", "Bank 42", 1, GUI.icon);
+                        + " in selected Bank Account", "Bank 42", 0);
                 return;
             }
 
@@ -422,7 +422,7 @@ public class TellerAccountPage extends javax.swing.JPanel
             else
             {
                 JOptionPane.showMessageDialog(null, "Error! You have either reached your daily limit, \n"
-                        + "or are attempting to withdraw too much.", "Bank 42", 1, GUI.icon);
+                        + "or are attempting to withdraw too much.", "Bank 42", 0);
             }
 
             System.out.print("\n GUI.currentBankAcc Name:  " + GUI.currentBankAccount.getAccountName() + "\n");
