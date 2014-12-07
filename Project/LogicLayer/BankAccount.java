@@ -10,7 +10,7 @@ import org.joda.time.format.*;
 /**
  * **************************************************************************
  *
- * Ryan Bridges CSE 110, Fall 2014 Last Updated: October 17, 2014
+ * Ryan Bridges CSE 110, Fall 2014 Last Updated: December 1, 2014
  *
  * Team 42
  *
@@ -53,15 +53,13 @@ public class BankAccount implements Serializable
         this.lastDepositDateTime = currentTime;
         this.lastWithdrawDateTime = currentTime;
 
-        this.thisMonthsDailyTotals = 0;
-
         this.dayWithdrawAmount = 0;
         this.dayDepositAmount = 0;
 
         transactions = new ArrayList<Transaction>();
     }
 
-    // The following 3 methods will be overridden in
+    // The following 2 methods will be overridden in
     // SavingsAccount.java and CheckingAccount.java
     public boolean subFromBalance(double amount)
     {
@@ -73,6 +71,9 @@ public class BankAccount implements Serializable
         return false;
     }
 
+    // The below 2 methods will be called when interest or penalties are
+    // applied to any bank account so that an accurate transaction will appear
+    // in the transaction history
     public void addInterest(double amount)
     {
         this.balance += amount;
@@ -93,7 +94,7 @@ public class BankAccount implements Serializable
      * user wants to know his interest on.
      * @return the user's balance after a set amount of time
      */
-    public double getInterest(DateTime interestDate)
+    public double getInterestCustomer(DateTime interestDate)
     {
         DateTime startTime = new DateTime();
         double tempTotal = thisMonthsDailyTotals;

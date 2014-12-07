@@ -6,7 +6,7 @@ import org.joda.time.*;
 /**
  * **************************************************************************
  *
- * Ryan Bridges CSE 110, Fall 2014 Last Updated: October 19, 2014
+ * Ryan Bridges CSE 110, Fall 2014 Last Updated: December 6, 2014
  *
  * Team 42
  *
@@ -67,8 +67,10 @@ public class HashTable implements Serializable
             if (Table[index] == null)
             {
                 Table[index] = new UserAccount(userName);
+                // Create a checking account and a savings account automatically for the user
                 Table[index].insertBankAccount(0, "Checking1", "Checking");
                 Table[index].insertBankAccount(0, "Savings1", "Savings");
+                // set email address
                 Table[index].setEmail(userEmail);
                 this.occ++;
                 return Table[index];
@@ -141,21 +143,33 @@ public class HashTable implements Serializable
         }
     }
 
+    /**
+     * Allows us to lookup a userAccount with just an email address
+     *
+     * @param email the email address to find
+     * @return the UserAccount with a matching email. Or null if not found
+     */
     public UserAccount findUserAccountEmail(String email)
     {
         int isEqual;
+        // Iterate through the entire table
         for (int i = 0; i < SIZE; i++)
         {
+            // Store the UserAccount in the current bucket if it is not empty
             if (Table[i] != null)
             {
+                // Store the current UserAccount and email address
                 UserAccount current = Table[i];
                 String currentEmail = current.getEmail();
                 if (currentEmail != null)
                 {
+                    // Compare the email addresses
                     isEqual = currentEmail.compareTo(email);
                     if (isEqual == 0)
                         return current;
                 }
+                // Iterate through the linked list of UserAccounts inside of
+                // each bucket and check their emails
                 while (current.getNext() != null)
                 {
                     current = current.getNext();
@@ -276,32 +290,6 @@ public class HashTable implements Serializable
                 }
             }
         }
-        /*
-         DateTime last = this.getLastInterestDateTime();
-         DateTime now = new DateTime();
-         int yearPassed = now.getYear() - last.getYear();
-         int daysPassed = now.getDayOfMonth()-last.getDayOfMonth();
-         int hoursPassed = now.getHourOfDay()-last.getHourOfDay();
-         //add the year passed * 365 days to get totalDays
-         int totalDaysPassed = (now.getDayOfYear()-last.getDayOfYear()) + yearPassed*365;
-         int totalHoursPassed = hoursPassed+totalDaysPassed*24;
-
-         int daysInMonth = last.dayOfMonth().getMaximumValue();
-         int daysUntilMonth = daysInMonth - last.getDayOfMonth();
-
-         //exit method if an hour did not pass
-         if (totalHoursPassed < 1)
-         return;*/
-        /**
-         * debug** System.out.println("Checking num days passed: " +
-         * now.getDayOfYear() + " - " + last.getDayOfYear() + " = " +
-         * daysPassed); //testing if getDayOfYear will truncate min/sec from
-         * full day DateTime test = now.plusDays(1); test = test.plusHours(1);
-         * test = test.plusSeconds(7); System.out.println("Checking num days
-         * passed2222: " + test.getDayOfYear() + " - " + now.getDayOfYear() + "
-         * = " + (test.getDayOfYear()-now.getDayOfYear()));
-         */
-
     }
 
     /**
@@ -314,21 +302,26 @@ public class HashTable implements Serializable
     {
         BankAccount currentBA;
         UserAccount currentUA;
+        // Iterate through every BankAccount in the entire table
         for (int zod = 0; zod < SIZE; zod++)
         {
+            // Check if the current bucket is empty
             if (Table[zod] != null)
             {
+                // Store the UserAccount in the current bucket
                 currentUA = Table[zod];
+                // Iterate through the linked list inside of the bucket
                 while (currentUA != null)
                 {
+                    // Iterate through the list of BankAccounts in each UserAccount
                     if (currentUA.getBankAccHead() != null)
                     {
                         currentBA = currentUA.getBankAccHead();
                         while (currentBA != null)
                         {
                             System.out.println("MSG HashTable.java: InterestAndPenalties calling helper");
+                            // Calculate Interest and Penalties on the current BankAccount
                             InterestAndPenaltiesHelper(currentBA);
-
                             currentBA = currentBA.getNext();
                         }
                     }
@@ -336,6 +329,8 @@ public class HashTable implements Serializable
                 }
             }
         }
+        // Time and date calculations for keeping track of the last time the
+        // interest/penalties were calculated
         DateTime newDateTime = lastInterestDateTime.withMonthOfYear((lastInterestDateTime.plusMonths(1).getMonthOfYear()));
         newDateTime = newDateTime.withDayOfMonth(1);
         newDateTime = newDateTime.withHourOfDay(newDateTime.hourOfDay().getMinimumValue());
@@ -349,7 +344,7 @@ public class HashTable implements Serializable
      * This function will perform interest/penalty calculations on the passed in
      * BankAccount
      *
-     * @param currentBA
+     * @param currentBA the BankAccount to calculate Interest and Penalties for
      */
     public void InterestAndPenaltiesHelper(BankAccount currentBA)
     {
@@ -358,6 +353,7 @@ public class HashTable implements Serializable
         // Divide the running daily total by the total number of days in the
         // month to obtain the daily average
         double dailyAverage = ((currentBA.getThisMonthsDailyTotals()) / (lastInterestDateTime.dayOfMonth().getMaximumValue()));
+        // Check the various thresholds to see how much interest/penalty to apply
         if (dailyAverage <= 100)
         {
             currentBA.subPenalty(PENALTY_AMOUNT);
@@ -383,11 +379,18 @@ public class HashTable implements Serializable
             else
                 currentBA.addInterest((currentBA.getBalance() * SAVINGS_RATE_1000_TO_2000));
         }
+        // Reset the daily totals
         currentBA.setThisMonthsDailyTotals(0);
         System.out.println("MSG HashTable.java: Calculated interest for account " + currentBA.getAccountName()
                 + " with FINAL balance: " + currentBA.getBalance());
     }
 
+    /**
+     * Exactly the same as InterestAndPenalties above except it delegates to a
+     * slightly different function to actually calculate the interest. This
+     * fucntion is used when the teller presses the "Apply Global Interest and
+     * Penalties" button
+     */
     public void InterestAndPenaltiesTeller()
     {
         BankAccount currentBA;
@@ -405,6 +408,7 @@ public class HashTable implements Serializable
                         while (currentBA != null)
                         {
                             System.out.println("MSG HashTable.java: InterestAndPenalties calling helper");
+                            // Delegate to teller function
                             InterestAndPenaltiesTellerHelper(currentBA);
                             currentBA = currentBA.getNext();
                         }
@@ -415,6 +419,13 @@ public class HashTable implements Serializable
         }
     }
 
+    /**
+     * This version of InterestAndPenaltiesHelper does not use the average daily
+     * totals since the calculation is done instantaneously. Instead is uses the
+     * current bank account balance
+     *
+     * @param currentBA
+     */
     public void InterestAndPenaltiesTellerHelper(BankAccount currentBA)
     {
         System.out.println("MSG HashTable.java: getting interest for account " + currentBA.getAccountName()
