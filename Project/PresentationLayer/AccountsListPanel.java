@@ -938,11 +938,11 @@ public class AccountsListPanel extends javax.swing.JPanel
                 {
                     return;
                 }
-
                 GUI.currentUserAccount.deleteBankAccount(bankacc);
 
                 GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(choice);
-                GUI.currentBankAccount.addToBalance(amount_in_deleted_acc);
+                GUI.currentBankAccount.setBalance(GUI.currentBankAccount.getBalance() + amount_in_deleted_acc);
+                GUI.currentBankAccount.addTransaction("Received funds from " + bankacc, amount_in_deleted_acc);
                 this.update();
                 GUI.dataout.exportDB(GUI.MasterTable);
 
