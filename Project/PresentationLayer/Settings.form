@@ -107,12 +107,7 @@
             <Container class="javax.swing.JPanel" name="jPanel3">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="cc" red="ff" type="rgb"/>
-                </Property>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder/>
-                  </Border>
+                  <Color blue="99" green="ff" red="99" type="rgb"/>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Hand Cursor"/>
@@ -289,12 +284,7 @@
             <Container class="javax.swing.JPanel" name="jPanel4">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="cc" red="ff" type="rgb"/>
-                </Property>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder/>
-                  </Border>
+                  <Color blue="99" green="ff" red="99" type="rgb"/>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Hand Cursor"/>
@@ -462,12 +452,7 @@
             <Container class="javax.swing.JPanel" name="jPanel5">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="cc" red="ff" type="rgb"/>
-                </Property>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder/>
-                  </Border>
+                  <Color blue="99" green="ff" red="99" type="rgb"/>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Hand Cursor"/>
@@ -635,12 +620,7 @@
             <Container class="javax.swing.JPanel" name="jPanel6">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="cc" red="ff" type="rgb"/>
-                </Property>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder/>
-                  </Border>
+                  <Color blue="99" green="ff" red="99" type="rgb"/>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Hand Cursor"/>
@@ -808,12 +788,7 @@
             <Container class="javax.swing.JPanel" name="jPanel7">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="cc" red="ff" type="rgb"/>
-                </Property>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder/>
-                  </Border>
+                  <Color blue="99" green="ff" red="99" type="rgb"/>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Hand Cursor"/>
@@ -981,12 +956,7 @@
             <Container class="javax.swing.JPanel" name="jPanel8">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="cc" red="ff" type="rgb"/>
-                </Property>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder/>
-                  </Border>
+                  <Color blue="99" green="ff" red="99" type="rgb"/>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Hand Cursor"/>
@@ -1154,12 +1124,7 @@
             <Container class="javax.swing.JPanel" name="jPanel9">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="cc" red="ff" type="rgb"/>
-                </Property>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder/>
-                  </Border>
+                  <Color blue="99" green="ff" red="99" type="rgb"/>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Hand Cursor"/>
@@ -1202,12 +1167,7 @@
             <Container class="javax.swing.JPanel" name="jPanel10">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="cc" red="ff" type="rgb"/>
-                </Property>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder/>
-                  </Border>
+                  <Color blue="99" green="ff" red="99" type="rgb"/>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Hand Cursor"/>
@@ -1245,12 +1205,7 @@
             <Container class="javax.swing.JPanel" name="jPanel11">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="cc" red="ff" type="rgb"/>
-                </Property>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder/>
-                  </Border>
+                  <Color blue="99" green="ff" red="99" type="rgb"/>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Hand Cursor"/>
@@ -1288,12 +1243,7 @@
             <Container class="javax.swing.JPanel" name="jPanel12">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="cc" red="ff" type="rgb"/>
-                </Property>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder/>
-                  </Border>
+                  <Color blue="99" green="ff" red="99" type="rgb"/>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Hand Cursor"/>
@@ -1331,12 +1281,7 @@
             <Container class="javax.swing.JPanel" name="jPanel13">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="cc" red="ff" type="rgb"/>
-                </Property>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder/>
-                  </Border>
+                  <Color blue="99" green="ff" red="99" type="rgb"/>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Hand Cursor"/>
@@ -1374,12 +1319,7 @@
             <Container class="javax.swing.JPanel" name="jPanel15">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="cc" red="ff" type="rgb"/>
-                </Property>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder/>
-                  </Border>
+                  <Color blue="99" green="ff" red="99" type="rgb"/>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Hand Cursor"/>
@@ -1414,12 +1354,7 @@
             <Container class="javax.swing.JPanel" name="jPanel16">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="cc" red="ff" type="rgb"/>
-                </Property>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder/>
-                  </Border>
+                  <Color blue="99" green="ff" red="99" type="rgb"/>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Hand Cursor"/>
@@ -1454,12 +1389,7 @@
             <Container class="javax.swing.JPanel" name="jPanel17">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="cc" red="ff" type="rgb"/>
-                </Property>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder/>
-                  </Border>
+                  <Color blue="99" green="ff" red="99" type="rgb"/>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Hand Cursor"/>
@@ -1494,12 +1424,7 @@
             <Container class="javax.swing.JPanel" name="jPanel18">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="cc" red="ff" type="rgb"/>
-                </Property>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder/>
-                  </Border>
+                  <Color blue="99" green="ff" red="99" type="rgb"/>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Hand Cursor"/>
@@ -1534,12 +1459,7 @@
             <Container class="javax.swing.JPanel" name="jPanel19">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="cc" red="ff" type="rgb"/>
-                </Property>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder/>
-                  </Border>
+                  <Color blue="99" green="ff" red="99" type="rgb"/>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Hand Cursor"/>
@@ -1574,12 +1494,7 @@
             <Container class="javax.swing.JPanel" name="jPanel20">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="cc" red="ff" type="rgb"/>
-                </Property>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder/>
-                  </Border>
+                  <Color blue="99" green="ff" red="99" type="rgb"/>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Hand Cursor"/>
@@ -1614,12 +1529,7 @@
             <Container class="javax.swing.JPanel" name="jPanel26">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="cc" red="ff" type="rgb"/>
-                </Property>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder/>
-                  </Border>
+                  <Color blue="99" green="ff" red="99" type="rgb"/>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Hand Cursor"/>
