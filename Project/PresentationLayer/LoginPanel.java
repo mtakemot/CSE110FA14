@@ -455,12 +455,14 @@ public class LoginPanel extends javax.swing.JPanel
     {
         int delay = 1000;
         int period = 1000;
-        timer = new Timer();
+        timer = new Timer();        
         interval = 5;
-
+        
+        ForgotPassword.setEnabled(false);
+        LoginButton.setEnabled(false);
+            
         timer.scheduleAtFixedRate(new TimerTask()
         {
-
             public void run()
             {
                 noAccess.setVisible(true);
@@ -472,12 +474,12 @@ public class LoginPanel extends javax.swing.JPanel
 
     private int setInterval()
     {
-        if (interval == 0)
+        if (interval <= 0)
         {
             noAccess.setText(" ");
             noAccess.setVisible(false);
             numberOfAttempts = 0;
-            numberOfLoginAttempts = 0;
+            numberOfLoginAttempts = 0;           
             timer.cancel();
             ForgotPassword.setEnabled(true);
             LoginButton.setEnabled(true);
