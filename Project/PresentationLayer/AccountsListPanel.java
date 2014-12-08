@@ -974,7 +974,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         {
             int amount;
             Object amountstring = JOptionPane.showInputDialog(
-                    null, "Please enter the time period, in days, that you would like to calculate interest over", "Bank 42", 1,GUI.icon,null,null);
+                    null, "Please enter the time period, in days, that you would like to calculate interest over.", "Bank 42", 1,GUI.icon,null,null);
             if (amountstring != null)
             {
                 if (isParsableInt(amountstring.toString()))

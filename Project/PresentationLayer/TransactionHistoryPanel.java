@@ -121,7 +121,7 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         Back.setBackground(new java.awt.Color(255, 255, 255));
         Back.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Back.setForeground(new java.awt.Color(14, 118, 188));
-        Back.setText("Return To Account Selection");
+        Back.setText("Back");
         Back.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -133,6 +133,7 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
+        gridBagConstraints.ipadx = 100;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
         BusinessPanel.add(Back, gridBagConstraints);
@@ -186,16 +187,16 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         add(Background, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void LogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutActionPerformed
+        CardLayout layout = (CardLayout) (MainPanel.getLayout());
+        layout.show(MainPanel, "Login");
+    }//GEN-LAST:event_LogoutActionPerformed
+
     private void BackActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BackActionPerformed
     {//GEN-HEADEREND:event_BackActionPerformed
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
         layout.show(MainPanel, "AccList");
     }//GEN-LAST:event_BackActionPerformed
-
-    private void LogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutActionPerformed
-        CardLayout layout = (CardLayout) (MainPanel.getLayout());
-        layout.show(MainPanel, "Login");
-    }//GEN-LAST:event_LogoutActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Back;
