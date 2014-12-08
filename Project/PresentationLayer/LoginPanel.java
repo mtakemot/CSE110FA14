@@ -396,7 +396,10 @@ public class LoginPanel extends javax.swing.JPanel
     // is clicked. This is just an example to get you started.
     private void LoginButtonMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_LoginButtonMouseClicked
     {//GEN-HEADEREND:event_LoginButtonMouseClicked
-        //Login();
+        
+        if (LoginButton.isEnabled() == false)
+            return;
+        Login();
     }//GEN-LAST:event_LoginButtonMouseClicked
 
     private void CreateAccButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CreateAccButtonMouseClicked
