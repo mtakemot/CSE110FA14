@@ -7,19 +7,6 @@ import javax.swing.JPanel;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/*
- * 11/9 Michio Takemoto
- * Uses import/export now, but we have a FEW issues
- ** 1) When invalid input, we have to reset all the buttons or reset the page itself
- that all the fields will reset as well. As of now, if we tried to submit something
- invalid, but we correct it and submit, it will still be invalid as the old data
- doesn't leave
-
- */
-/**
- *
- * @author asharda
- */
 public class CreateAccountPanel extends javax.swing.JPanel
 {
 
@@ -136,6 +123,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
         password.setBackground(new Color(255,255,255,190));
         password.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        password.setMaximumSize(new java.awt.Dimension(6, 21));
         password.addFocusListener(new java.awt.event.FocusAdapter()
         {
             public void focusGained(java.awt.event.FocusEvent evt)
@@ -152,6 +140,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
         email.setBackground(new Color(255,255,255,190));
         email.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        email.setMaximumSize(new java.awt.Dimension(6, 21));
         email.addFocusListener(new java.awt.event.FocusAdapter()
         {
             public void focusGained(java.awt.event.FocusEvent evt)
@@ -168,6 +157,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
         phone.setBackground(new Color(255,255,255,190));
         phone.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        phone.setMaximumSize(new java.awt.Dimension(6, 21));
         phone.addFocusListener(new java.awt.event.FocusAdapter()
         {
             public void focusGained(java.awt.event.FocusEvent evt)
@@ -184,7 +174,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
         lastName.setBackground(new Color(255,255,255,190));
         lastName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        lastName.setMaximumSize(new java.awt.Dimension(6, 20));
+        lastName.setMaximumSize(new java.awt.Dimension(6, 21));
         lastName.addFocusListener(new java.awt.event.FocusAdapter()
         {
             public void focusGained(java.awt.event.FocusEvent evt)
@@ -201,6 +191,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
         username.setBackground(new Color(255,255,255,190));
         username.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        username.setMaximumSize(new java.awt.Dimension(6, 21));
         username.addFocusListener(new java.awt.event.FocusAdapter()
         {
             public void focusGained(java.awt.event.FocusEvent evt)
@@ -217,8 +208,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
         firstName.setBackground(new Color(255,255,255,190));
         firstName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        firstName.setMinimumSize(new java.awt.Dimension(300, 21));
-        firstName.setPreferredSize(new java.awt.Dimension(300, 21));
+        firstName.setMaximumSize(new java.awt.Dimension(6, 21));
         firstName.addFocusListener(new java.awt.event.FocusAdapter()
         {
             public void focusGained(java.awt.event.FocusEvent evt)
@@ -235,6 +225,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
         confirmPassword.setBackground(new Color(255,255,255,190));
         confirmPassword.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        confirmPassword.setMaximumSize(new java.awt.Dimension(6, 21));
         confirmPassword.addFocusListener(new java.awt.event.FocusAdapter()
         {
             public void focusGained(java.awt.event.FocusEvent evt)
@@ -332,10 +323,10 @@ public class CreateAccountPanel extends javax.swing.JPanel
         gridBagConstraints.gridy = 6;
         jPanel1.add(jLabel9, gridBagConstraints);
 
-        jPanel3.setBackground(new java.awt.Color(255, 160, 122));
+        jPanel3.setBackground(new Color(255,102,102));
         jPanel3.setLayout(new java.awt.GridBagLayout());
 
-        FirstNameError.setForeground(new java.awt.Color(255, 102, 102));
+        FirstNameError.setForeground(new java.awt.Color(255, 255, 255));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 3;
@@ -350,10 +341,10 @@ public class CreateAccountPanel extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(0, 3, 0, 0);
         jPanel1.add(jPanel3, gridBagConstraints);
 
-        jPanel4.setBackground(new Color(255,160,122));
+        jPanel4.setBackground(new Color(255,102,102));
         jPanel4.setLayout(new java.awt.GridBagLayout());
 
-        LastNameError.setForeground(new java.awt.Color(255, 102, 102));
+        LastNameError.setForeground(new java.awt.Color(255, 255, 255));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 5;
@@ -368,10 +359,10 @@ public class CreateAccountPanel extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(0, 3, 0, 0);
         jPanel1.add(jPanel4, gridBagConstraints);
 
-        jPanel5.setBackground(new Color(255,160,122));
+        jPanel5.setBackground(new Color(255,102,102));
         jPanel5.setLayout(new java.awt.GridBagLayout());
 
-        UsernameError.setForeground(new java.awt.Color(255, 102, 102));
+        UsernameError.setForeground(new java.awt.Color(255, 255, 255));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 7;
@@ -386,10 +377,10 @@ public class CreateAccountPanel extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(0, 3, 0, 0);
         jPanel1.add(jPanel5, gridBagConstraints);
 
-        jPanel6.setBackground(new Color(255,160,122));
+        jPanel6.setBackground(new Color(255,102,102));
         jPanel6.setLayout(new java.awt.GridBagLayout());
 
-        PasswordError.setForeground(new java.awt.Color(255, 102, 102));
+        PasswordError.setForeground(new java.awt.Color(255, 255, 255));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 9;
@@ -404,10 +395,10 @@ public class CreateAccountPanel extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(0, 3, 0, 0);
         jPanel1.add(jPanel6, gridBagConstraints);
 
-        jPanel7.setBackground(new Color(255,160,122));
+        jPanel7.setBackground(new Color(255,102,102));
         jPanel7.setLayout(new java.awt.GridBagLayout());
 
-        ConfirmPasswordError.setForeground(new java.awt.Color(255, 102, 102));
+        ConfirmPasswordError.setForeground(new java.awt.Color(255, 255, 255));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 11;
@@ -422,10 +413,10 @@ public class CreateAccountPanel extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(0, 3, 0, 0);
         jPanel1.add(jPanel7, gridBagConstraints);
 
-        jPanel8.setBackground(new Color(255,160,122));
+        jPanel8.setBackground(new Color(255,102,102));
         jPanel8.setLayout(new java.awt.GridBagLayout());
 
-        EmailError.setForeground(new java.awt.Color(255, 102, 102));
+        EmailError.setForeground(new java.awt.Color(255, 255, 255));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 13;
@@ -440,10 +431,10 @@ public class CreateAccountPanel extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(0, 3, 0, 0);
         jPanel1.add(jPanel8, gridBagConstraints);
 
-        jPanel9.setBackground(new Color(255,160,122));
+        jPanel9.setBackground(new Color(255,102,102));
         jPanel9.setLayout(new java.awt.GridBagLayout());
 
-        PhoneError.setForeground(new java.awt.Color(255, 102, 102));
+        PhoneError.setForeground(new java.awt.Color(255, 255, 255));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 15;
@@ -809,37 +800,37 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
     private void firstNameFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_firstNameFocusGained
     {//GEN-HEADEREND:event_firstNameFocusGained
-
+        firstName.setText(null);
     }//GEN-LAST:event_firstNameFocusGained
 
     private void lastNameFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_lastNameFocusGained
     {//GEN-HEADEREND:event_lastNameFocusGained
-
+        lastName.setText(null);
     }//GEN-LAST:event_lastNameFocusGained
 
     private void usernameFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_usernameFocusGained
     {//GEN-HEADEREND:event_usernameFocusGained
-
+        username.setText(null);
     }//GEN-LAST:event_usernameFocusGained
 
     private void confirmPasswordFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_confirmPasswordFocusGained
     {//GEN-HEADEREND:event_confirmPasswordFocusGained
-
+        confirmPassword.setText(null);
     }//GEN-LAST:event_confirmPasswordFocusGained
 
     private void passwordFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_passwordFocusGained
     {//GEN-HEADEREND:event_passwordFocusGained
-
+        password.setText(null);
     }//GEN-LAST:event_passwordFocusGained
 
     private void emailFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_emailFocusGained
     {//GEN-HEADEREND:event_emailFocusGained
-
+        email.setText(null);
     }//GEN-LAST:event_emailFocusGained
 
     private void phoneFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_phoneFocusGained
     {//GEN-HEADEREND:event_phoneFocusGained
-
+        phone.setText(null);
     }//GEN-LAST:event_phoneFocusGained
 
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BackButtonActionPerformed

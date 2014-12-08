@@ -936,6 +936,7 @@ public class Settings extends javax.swing.JPanel
                 GUI.MasterTable.deleteUserAccount(GUI.currentUserAccount.getUserName());
                 GUI.currentBankAccount = null;
                 GUI.currentUserAccount = null;
+                GUI.dataout.exportDB(GUI.MasterTable);
 
                 CardLayout layout = (CardLayout) (MainPanel.getLayout());
                 layout.show(MainPanel, "Login");
@@ -1160,6 +1161,7 @@ public class Settings extends javax.swing.JPanel
         if ((response_S.length() > 0) && CreateAccountPanel.validateLastName(response_S))
         {
             GUI.currentUserAccount.setLastName(response_S);
+            GUI.dataout.exportDB(GUI.MasterTable);
             errorMessage.setText("Success");
             errorMessage.setForeground(Color.green);
             update();
@@ -1183,6 +1185,7 @@ public class Settings extends javax.swing.JPanel
         if ((response_S.length() > 0) && CreateAccountPanel.validateLastName(response_S))
         {
             GUI.currentUserAccount.setLastName(response_S);
+            GUI.dataout.exportDB(GUI.MasterTable);
             errorMessage.setText("Success");
             errorMessage.setForeground(Color.green);
             update();
@@ -1206,6 +1209,7 @@ public class Settings extends javax.swing.JPanel
         if ((response_S.length() > 0) && CreateAccountPanel.validateLastName(response_S))
         {
             GUI.currentUserAccount.setLastName(response_S);
+            GUI.dataout.exportDB(GUI.MasterTable);
             errorMessage.setText("Success");
             errorMessage.setForeground(Color.green);
             update();
@@ -1373,6 +1377,7 @@ public class Settings extends javax.swing.JPanel
         if ((response_S.length() > 0) && CreateAccountPanel.validateLastName(response_S))
         {
             GUI.currentUserAccount.setLastName(response_S);
+            GUI.dataout.exportDB(GUI.MasterTable);
             errorMessage.setText("Success");
             errorMessage.setForeground(Color.green);
             update();
@@ -1487,6 +1492,7 @@ public class Settings extends javax.swing.JPanel
         if ((response_S.length() > 0) && CreateAccountPanel.validateFirstName(response_S))
         {
             GUI.currentUserAccount.setFirstName(response_S);
+            GUI.dataout.exportDB(GUI.MasterTable);
             errorMessage.setText("Success");
             errorMessage.setForeground(Color.green);
             update();
@@ -1510,6 +1516,7 @@ public class Settings extends javax.swing.JPanel
         if ((response_S.length() > 0) && CreateAccountPanel.validateFirstName(response_S))
         {
             GUI.currentUserAccount.setFirstName(response_S);
+            GUI.dataout.exportDB(GUI.MasterTable);
             errorMessage.setText("Success");
             errorMessage.setForeground(Color.green);
             update();
@@ -1533,6 +1540,7 @@ public class Settings extends javax.swing.JPanel
         if ((response_S.length() > 0) && CreateAccountPanel.validateFirstName(response_S))
         {
             GUI.currentUserAccount.setFirstName(response_S);
+            GUI.dataout.exportDB(GUI.MasterTable);
             errorMessage.setText("Success");
             errorMessage.setForeground(Color.green);
             update();
@@ -1556,6 +1564,7 @@ public class Settings extends javax.swing.JPanel
         if ((response_S.length() > 0) && CreateAccountPanel.validateFirstName(response_S))
         {
             GUI.currentUserAccount.setFirstName(response_S);
+            GUI.dataout.exportDB(GUI.MasterTable);
             errorMessage.setText("Success");
             errorMessage.setForeground(Color.green);
             update();
@@ -1596,7 +1605,7 @@ public class Settings extends javax.swing.JPanel
                     temp.setUserName(response_S);
                     GUI.MasterTable.deleteUserAccount(GUI.currentUserAccount.getUserName());
                     GUI.currentUserAccount = GUI.MasterTable.insertUserAccountCopy(temp);
-                    System.out.println(GUI.currentUserAccount.getUserName());
+                    GUI.dataout.exportDB(GUI.MasterTable);
                     errorMessage.setText("Success");
                     errorMessage.setForeground(Color.green);
                     update();
@@ -1645,6 +1654,7 @@ public class Settings extends javax.swing.JPanel
                     GUI.MasterTable.deleteUserAccount(GUI.currentUserAccount.getUserName());
                     GUI.currentUserAccount = GUI.MasterTable.insertUserAccountCopy(temp);
                     System.out.println(GUI.currentUserAccount.getUserName());
+                    GUI.dataout.exportDB(GUI.MasterTable);
                     errorMessage.setText("Success");
                     errorMessage.setForeground(Color.green);
                     update();
@@ -1692,7 +1702,7 @@ public class Settings extends javax.swing.JPanel
                     temp.setUserName(response_S);
                     GUI.MasterTable.deleteUserAccount(GUI.currentUserAccount.getUserName());
                     GUI.currentUserAccount = GUI.MasterTable.insertUserAccountCopy(temp);
-                    System.out.println(GUI.currentUserAccount.getUserName());
+                    GUI.dataout.exportDB(GUI.MasterTable);
                     errorMessage.setText("Success");
                     errorMessage.setForeground(Color.green);
                     update();
@@ -1741,6 +1751,7 @@ public class Settings extends javax.swing.JPanel
                     GUI.MasterTable.deleteUserAccount(GUI.currentUserAccount.getUserName());
                     GUI.currentUserAccount = GUI.MasterTable.insertUserAccountCopy(temp);
                     System.out.println(GUI.currentUserAccount.getUserName());
+                    GUI.dataout.exportDB(GUI.MasterTable);
                     errorMessage.setText("Success");
                     errorMessage.setForeground(Color.green);
                     update();
@@ -1773,6 +1784,7 @@ public class Settings extends javax.swing.JPanel
             if (GUI.MasterTable.findUserAccountEmail(response_S) == null)
             {
                 GUI.currentUserAccount.setEmail(response_S);
+                GUI.dataout.exportDB(GUI.MasterTable);
                 errorMessage.setText("Success");
                 errorMessage.setForeground(Color.green);
                 update();
@@ -1804,6 +1816,7 @@ public class Settings extends javax.swing.JPanel
             if (GUI.MasterTable.findUserAccountEmail(response_S) == null)
             {
                 GUI.currentUserAccount.setEmail(response_S);
+                GUI.dataout.exportDB(GUI.MasterTable);
                 errorMessage.setText("Success");
                 errorMessage.setForeground(Color.green);
                 update();
@@ -1835,6 +1848,7 @@ public class Settings extends javax.swing.JPanel
             if (GUI.MasterTable.findUserAccountEmail(response_S) == null)
             {
                 GUI.currentUserAccount.setEmail(response_S);
+                GUI.dataout.exportDB(GUI.MasterTable);
                 errorMessage.setText("Success");
                 errorMessage.setForeground(Color.green);
                 update();
@@ -1866,6 +1880,7 @@ public class Settings extends javax.swing.JPanel
             if (GUI.MasterTable.findUserAccountEmail(response_S) == null)
             {
                 GUI.currentUserAccount.setEmail(response_S);
+                GUI.dataout.exportDB(GUI.MasterTable);
                 errorMessage.setText("Success");
                 errorMessage.setForeground(Color.green);
                 update();
@@ -1895,6 +1910,7 @@ public class Settings extends javax.swing.JPanel
         if ((response_S.length() > 0) && (CreateAccountPanel.validatePhoneNumber(response_S)))
         {
             GUI.currentUserAccount.setPhone(response_S);
+            GUI.dataout.exportDB(GUI.MasterTable);
             errorMessage.setText("Success");
             errorMessage.setForeground(Color.green);
             update();
@@ -1918,6 +1934,7 @@ public class Settings extends javax.swing.JPanel
         if ((response_S.length() > 0) && (CreateAccountPanel.validatePhoneNumber(response_S)))
         {
             GUI.currentUserAccount.setPhone(response_S);
+            GUI.dataout.exportDB(GUI.MasterTable);
             errorMessage.setText("Success");
             errorMessage.setForeground(Color.green);
             update();
@@ -1941,6 +1958,7 @@ public class Settings extends javax.swing.JPanel
         if ((response_S.length() > 0) && (CreateAccountPanel.validatePhoneNumber(response_S)))
         {
             GUI.currentUserAccount.setPhone(response_S);
+            GUI.dataout.exportDB(GUI.MasterTable);
             errorMessage.setText("Success");
             errorMessage.setForeground(Color.green);
             update();
@@ -1964,6 +1982,7 @@ public class Settings extends javax.swing.JPanel
         if ((response_S.length() > 0) && (CreateAccountPanel.validatePhoneNumber(response_S)))
         {
             GUI.currentUserAccount.setPhone(response_S);
+            GUI.dataout.exportDB(GUI.MasterTable);
             errorMessage.setText("Success");
             errorMessage.setForeground(Color.green);
             update();
@@ -2046,6 +2065,7 @@ public class Settings extends javax.swing.JPanel
             {
                 errorMessage.setText("Success");
                 errorMessage.setForeground(Color.green);
+                GUI.dataout.exportDB(GUI.MasterTable);
             }
             else
             {
@@ -2073,6 +2093,7 @@ public class Settings extends javax.swing.JPanel
             {
                 errorMessage.setText("Success");
                 errorMessage.setForeground(Color.green);
+                GUI.dataout.exportDB(GUI.MasterTable);
             }
             else
             {

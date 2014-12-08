@@ -124,14 +124,6 @@ public class GUI extends javax.swing.JFrame
             currentUserAccount.setPhone("0123456789");
         }
 
-        currentUserAccount = MasterTable.insertUserAccount("Customer_B", "Customer_B@gmail.com");
-        if (currentUserAccount != null)
-        {
-            currentUserAccount.setFirstName("first");
-            currentUserAccount.setLastName("last");
-            currentUserAccount.setPassword("foobar");
-            currentUserAccount.setPhone("0123456789");
-        }
         currentUserAccount = MasterTable.insertUserAccount("qq", "qq@q.com");
         if (currentUserAccount != null)
         {

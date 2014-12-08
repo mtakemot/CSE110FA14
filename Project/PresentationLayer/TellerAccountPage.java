@@ -137,10 +137,10 @@ public class TellerAccountPage extends javax.swing.JPanel
         add(CurrentUserAccountLabel, gridBagConstraints);
 
         Holder.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Holder.setMaximumSize(new java.awt.Dimension(800, 600));
-        Holder.setMinimumSize(new java.awt.Dimension(800, 600));
+        Holder.setMaximumSize(new java.awt.Dimension(600, 500));
+        Holder.setMinimumSize(new java.awt.Dimension(600, 500));
         Holder.setOpaque(false);
-        Holder.setPreferredSize(new java.awt.Dimension(800, 600));
+        Holder.setPreferredSize(new java.awt.Dimension(600, 500));
         Holder.setLayout(new java.awt.GridBagLayout());
 
         MainComponentsPanel.setOpaque(false);
@@ -278,7 +278,7 @@ public class TellerAccountPage extends javax.swing.JPanel
         gridBagConstraints.gridy = 0;
         add(Holder, gridBagConstraints);
 
-        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/AbstractLines.png"))); // NOI18N
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/wallpaper_abstract_wallpapers_00250_wallpapersuggest_com-HD.jpg"))); // NOI18N
         Background.setText("jLabel1");
         Background.setAlignmentY(0.0F);
         Background.setMaximumSize(new java.awt.Dimension(800, 600));
