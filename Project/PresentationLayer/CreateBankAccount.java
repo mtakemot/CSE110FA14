@@ -111,17 +111,18 @@ public class CreateBankAccount extends javax.swing.JPanel
 
         if (AccountNameField.getText().length() == 0)
         {
-            JOptionPane.showMessageDialog(null, "Please Enter An Account Name", "Bank 42", 1,GUI.icon);
+            JOptionPane.showMessageDialog(null, "Please Enter An Account Name", "Bank 42", 1, GUI.icon);
         }
 
-        else if(AccountNameField.getText().length()>15) {
-            JOptionPane.showMessageDialog(null, "Your Account Name Is Too Long\n Bank Account Names Must Be At Most 15 Characters", "Bank 42", 1,GUI.icon);
-        }           
-       
+        else if (AccountNameField.getText().length() > 15)
+        {
+            JOptionPane.showMessageDialog(null, "Your Account Name Is Too Long\n Bank Account Names Must Be At Most 15 Characters", "Bank 42", 1, GUI.icon);
+        }
+
         else if (GUI.currentUserAccount.findBankAccount(AccountNameField.getText()) != null)
         {
             JOptionPane.showMessageDialog(null, "You Have An Existing Bank Account With That Name"
-                    + "\n Please Choose A Valid Name", "Bank 42", 1,icon);
+                    + "\n Please Choose A Valid Name", "Bank 42", 1, icon);
             AccountNameField.setText("");
         }
 
@@ -130,7 +131,8 @@ public class CreateBankAccount extends javax.swing.JPanel
             GUI.currentUserAccount.insertBankAccount(0, AccountNameField.getText(), TypeCombo.getSelectedItem().toString());
             CardLayout layout = (CardLayout) (MainPanel.getLayout());
             mainGUI.getAccList().update();
-            JOptionPane.showMessageDialog(null, TypeCombo.getSelectedItem() + " Account: " + AccountNameField.getText() + " successfully created","Bank 42",1,icon);
+            GUI.dataout.exportDB(GUI.MasterTable);
+            JOptionPane.showMessageDialog(null, TypeCombo.getSelectedItem() + " Account: " + AccountNameField.getText() + " successfully created", "Bank 42", 1, icon);
             layout.show(MainPanel, "AccList");
         }
 

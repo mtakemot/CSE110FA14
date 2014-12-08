@@ -18,6 +18,7 @@ import static PresentationLayer.AccountsListPanel.NAMECOL;
  */
 public class TellerAccountPage extends javax.swing.JPanel
 {
+
     private JPanel MainPanel;
     private GUI mainGUI;
     private UserAccountWrapper wrapper;
@@ -60,10 +61,8 @@ public class TellerAccountPage extends javax.swing.JPanel
 
     public void update()
     {
-
         AccountsTable.setModel(new AccountsTableModel(GUI.currentUserAccount));
         SelectionModel.clearSelection();
-        CurrentUserAccountLabel.setText(GUI.currentUserAccount.getUserName() + "'s Bank Accounts");
         mainGUI.updateUserLabels();
     }
 
@@ -94,7 +93,7 @@ public class TellerAccountPage extends javax.swing.JPanel
 
     public void updateUserLabel()
     {
-        //CurrentUserAccountLabel.setText(GUI.currentUserAccount.getUserName());
+        CurrentUserAccountLabel.setText(GUI.currentUserAccount.getUserName() + "'s Bank Accounts");
     }
 
     /**

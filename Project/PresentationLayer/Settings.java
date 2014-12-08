@@ -43,11 +43,6 @@ public class Settings extends javax.swing.JPanel
         initComponents();
     }
 
-    public void updateUserLabel()
-    {
-
-    }
-
     @Override
     protected void paintComponent(Graphics g)
     {
