@@ -775,7 +775,7 @@ public class AccountsListPanel extends javax.swing.JPanel
             JOptionPane.showMessageDialog(null, "Please Enter A Valid Amount To Transfer", "Bank 42", 1, icon);
             return;
         }
-        
+
         GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount((String) BankAccountsList0.getSelectedItem());
 
         if (amount > GUI.currentBankAccount.getBalance())
@@ -788,45 +788,46 @@ public class AccountsListPanel extends javax.swing.JPanel
 
         String email = EmailEntryField.getText();
         UserAccount founduser = GUI.MasterTable.findUserAccountEmail(email);
-        
+
         if (founduser != null)
         {
-            
-            if(founduser==GUI.currentUserAccount) {
+
+            if (founduser == GUI.currentUserAccount)
+            {
                 JOptionPane.showMessageDialog(null, "You Cannot Send Funds To Yourself!", "Bank 42", 1, icon);
                 return;
             }
-            
+
             JPanel createBApanel = mainGUI.getCreateBA().getCreateBankAccountPanel();
-        int choice = JOptionPane.showConfirmDialog(
-                null,
-                "Are you Sure you want to send " + amount + "$ from\nBank Account:     " + GUI.currentBankAccount.getAccountName() + "\nto User Account: " + founduser.getUserName() + "\nwith Email:           " + email + "?",
-                "Bank 42",
-                JOptionPane.OK_CANCEL_OPTION,
-                JOptionPane.PLAIN_MESSAGE,
-                GUI.icon
-        );
-        
-            if (choice==0)
+            int choice = JOptionPane.showConfirmDialog(
+                    null,
+                    "Are you Sure you want to send " + amount + "$ from\nBank Account:     " + GUI.currentBankAccount.getAccountName() + "\nto User Account: " + founduser.getUserName() + "\nwith Email:           " + email + "?",
+                    "Bank 42",
+                    JOptionPane.OK_CANCEL_OPTION,
+                    JOptionPane.PLAIN_MESSAGE,
+                    GUI.icon
+            );
+
+            if (choice == 0)
             {
                 GUI.currentBankAccount.setBalance(GUI.currentBankAccount.getBalance() - amount);
                 mainGUI.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
-                GUI.currentBankAccount.addTransaction("Sent $" + amount + " to " +  email, amount);
+                GUI.currentBankAccount.addTransaction("Sent $" + amount + " to " + email, amount);
                 String email2 = GUI.currentUserAccount.getEmail();
                 GUI.currentBankAccount = founduser.getBankAccHead();
                 GUI.currentBankAccount.setBalance(GUI.currentBankAccount.getBalance() + amount);
-                GUI.currentBankAccount.addTransaction("Received $" + amount + " from " +  email2, amount);
+                GUI.currentBankAccount.addTransaction("Received $" + amount + " from " + email2, amount);
                 mainGUI.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
                 JOptionPane.showMessageDialog(null, "Funds Transfered Successfully!", "Bank 42", 1, icon);
 
-            /**
-             * 11/30**export upon successful change of data BEGIN*
-             */
+                /**
+                 * 11/30**export upon successful change of data BEGIN*
+                 */
                 GUI.dataout.exportDB(GUI.MasterTable);
 
-            /**
-             * ********************END*
-             */
+                /**
+                 * ********************END*
+                 */
             }
         }
         else
@@ -936,7 +937,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         {
             int amount;
             Object amountstring = JOptionPane.showInputDialog(
-                    null, "Please enter the time period, in days, that you would like to calculate interest over.", "Bank 42", 1,GUI.icon,null,null);
+                    null, "Please enter the time period, in days, that you would like to calculate interest over.", "Bank 42", 1, GUI.icon, null, null);
             if (amountstring != null)
             {
                 if (isParsableInt(amountstring.toString()))
@@ -976,7 +977,7 @@ public class AccountsListPanel extends javax.swing.JPanel
             AmountField.setText("Amount");
             EmailEntryField.setText("Email Address");
             layout.show(MainPanel, "TransPanel");
-            
+
         }
         else
             JOptionPane.showMessageDialog(null, "Please select an account", "Bank 42", 1, icon);
@@ -993,13 +994,13 @@ public class AccountsListPanel extends javax.swing.JPanel
 
         else
         {
-            JOptionPane.showMessageDialog(null, "Please Enter A Valid Amount To Transfer", "Bank 42", 1,GUI.icon);
+            JOptionPane.showMessageDialog(null, "Please Enter A Valid Amount To Transfer", "Bank 42", 1, GUI.icon);
             return;
         }
 
         if (amount <= 0)
         {
-            JOptionPane.showMessageDialog(null, "Please Enter A Valid Amount To Transfer", "Bank 42", 1,GUI.icon);
+            JOptionPane.showMessageDialog(null, "Please Enter A Valid Amount To Transfer", "Bank 42", 1, GUI.icon);
             return;
         }
 
@@ -1010,20 +1011,21 @@ public class AccountsListPanel extends javax.swing.JPanel
             AmountField.setText("Amount");
             JOptionPane.showMessageDialog(null, "Insufficient Funds"
                     + "\nYou have $" + GUI.currentBankAccount.getBalance() + " available"
-                    + " in selected Bank Account", "Bank 42", 1,GUI.icon);
+                    + " in selected Bank Account", "Bank 42", 1, GUI.icon);
         }
-        else if(GUI.currentBankAccount==GUI.currentUserAccount.findBankAccount((String)BankAccountsList1.getSelectedItem())) {
+        else if (GUI.currentBankAccount == GUI.currentUserAccount.findBankAccount((String) BankAccountsList1.getSelectedItem()))
+        {
             JOptionPane.showMessageDialog(null, "You cannot transfer funds to and from\nthe same bank account", "Bank 42", 1, icon);
-        }               
+        }
         else
         {
             GUI.currentBankAccount.setBalance(GUI.currentBankAccount.getBalance() - amount);
-            GUI.currentBankAccount.addTransaction("Sent $" + amount + " to " +  (String)BankAccountsList1.getSelectedItem(), amount);
+            GUI.currentBankAccount.addTransaction("Sent $" + amount + " to " + (String) BankAccountsList1.getSelectedItem(), amount);
             mainGUI.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
-            GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount((String)BankAccountsList1.getSelectedItem());
+            GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount((String) BankAccountsList1.getSelectedItem());
             GUI.currentBankAccount.setBalance(GUI.currentBankAccount.getBalance() + amount);
             mainGUI.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
-            GUI.currentBankAccount.addTransaction("Received $" + amount + " from " +  (String)BankAccountsList0.getSelectedItem(), amount);
+            GUI.currentBankAccount.addTransaction("Received $" + amount + " from " + (String) BankAccountsList0.getSelectedItem(), amount);
             JOptionPane.showMessageDialog(null, "Funds Transfered Successfully!", "Bank 42", 1, icon);
             GUI.dataout.exportDB(GUI.MasterTable);
             //GUI.MasterTable.findUserAccount();
