@@ -243,6 +243,7 @@ public class TellerMainMenu extends javax.swing.JPanel
     private void ApplyPenIntButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ApplyPenIntButtonActionPerformed
     {//GEN-HEADEREND:event_ApplyPenIntButtonActionPerformed
         GUI.MasterTable.InterestAndPenaltiesTeller();
+        GUI.dataout.exportDB(GUI.MasterTable);
         JOptionPane.showMessageDialog(null, "Success! Interest and penalties have been applied \n"
                 + "globally to all existing Bank Accounts.", "Bank 42", 1, GUI.icon);
     }//GEN-LAST:event_ApplyPenIntButtonActionPerformed
