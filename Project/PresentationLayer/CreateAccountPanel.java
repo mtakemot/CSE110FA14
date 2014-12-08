@@ -41,21 +41,20 @@ public class CreateAccountPanel extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel2 = new javax.swing.JPanel();
         HeaderPanel = new javax.swing.JPanel();
         Bank42 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        confirmPassword = new javax.swing.JPasswordField();
+        password = new javax.swing.JPasswordField();
         email = new javax.swing.JTextField();
         phone = new javax.swing.JTextField();
         lastName = new javax.swing.JTextField();
         username = new javax.swing.JTextField();
         firstName = new javax.swing.JTextField();
-        password = new javax.swing.JPasswordField();
+        confirmPassword = new javax.swing.JPasswordField();
         createUserAccount = new javax.swing.JButton();
         spacinglabellol = new javax.swing.JLabel();
         BackButton = new javax.swing.JButton();
@@ -134,13 +133,11 @@ public class CreateAccountPanel extends javax.swing.JPanel
         jPanel1Layout.rowHeights = new int[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         jPanel1.setLayout(jPanel1Layout);
 
-        confirmPassword.setBackground(new Color(255,255,255,190));
-        confirmPassword.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        confirmPassword.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusGained(java.awt.event.FocusEvent evt)
-            {
-                confirmPasswordFocusGained(evt);
+        password.setBackground(new Color(255,255,255,190));
+        password.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        password.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                passwordFocusGained(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -148,14 +145,12 @@ public class CreateAccountPanel extends javax.swing.JPanel
         gridBagConstraints.gridy = 20;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        jPanel1.add(confirmPassword, gridBagConstraints);
+        jPanel1.add(password, gridBagConstraints);
 
         email.setBackground(new Color(255,255,255,190));
         email.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        email.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusGained(java.awt.event.FocusEvent evt)
-            {
+        email.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
                 emailFocusGained(evt);
             }
         });
@@ -168,10 +163,8 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
         phone.setBackground(new Color(255,255,255,190));
         phone.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        phone.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusGained(java.awt.event.FocusEvent evt)
-            {
+        phone.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
                 phoneFocusGained(evt);
             }
         });
@@ -185,10 +178,8 @@ public class CreateAccountPanel extends javax.swing.JPanel
         lastName.setBackground(new Color(255,255,255,190));
         lastName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lastName.setMaximumSize(new java.awt.Dimension(6, 20));
-        lastName.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusGained(java.awt.event.FocusEvent evt)
-            {
+        lastName.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
                 lastNameFocusGained(evt);
             }
         });
@@ -201,10 +192,8 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
         username.setBackground(new Color(255,255,255,190));
         username.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        username.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusGained(java.awt.event.FocusEvent evt)
-            {
+        username.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
                 usernameFocusGained(evt);
             }
         });
@@ -217,10 +206,8 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
         firstName.setBackground(new Color(255,255,255,190));
         firstName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        firstName.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusGained(java.awt.event.FocusEvent evt)
-            {
+        firstName.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
                 firstNameFocusGained(evt);
             }
         });
@@ -231,13 +218,11 @@ public class CreateAccountPanel extends javax.swing.JPanel
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel1.add(firstName, gridBagConstraints);
 
-        password.setBackground(new Color(255,255,255,190));
-        password.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        password.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusGained(java.awt.event.FocusEvent evt)
-            {
-                passwordFocusGained(evt);
+        confirmPassword.setBackground(new Color(255,255,255,190));
+        confirmPassword.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        confirmPassword.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                confirmPasswordFocusGained(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -245,16 +230,14 @@ public class CreateAccountPanel extends javax.swing.JPanel
         gridBagConstraints.gridy = 24;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        jPanel1.add(password, gridBagConstraints);
+        jPanel1.add(confirmPassword, gridBagConstraints);
 
         createUserAccount.setBackground(new java.awt.Color(255, 255, 255));
         createUserAccount.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         createUserAccount.setForeground(new java.awt.Color(14, 118, 188));
         createUserAccount.setText("Create User Account");
-        createUserAccount.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        createUserAccount.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 createUserAccountActionPerformed(evt);
             }
         });
@@ -276,10 +259,8 @@ public class CreateAccountPanel extends javax.swing.JPanel
         BackButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         BackButton.setForeground(new java.awt.Color(14, 118, 188));
         BackButton.setText("Back");
-        BackButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        BackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BackButtonActionPerformed(evt);
             }
         });
@@ -663,8 +644,8 @@ public class CreateAccountPanel extends javax.swing.JPanel
     {
         phone.setText("");
         email.setText("");
-        confirmPassword.setText("");
         password.setText("");
+        confirmPassword.setText("");
         username.setText("");
         lastName.setText("");
         firstName.setText("");
@@ -696,44 +677,72 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
         String pass1 = new String(input1);
         String pass2 = new String(input2);
-
         boolean account_accepted = true;
 
         clearerrors();
 
         if (!((name1.length() > 0) && (validateFirstName(name1) == true)))
         {
-            FirstNameError.setText("Your first name was entered incorrectly.");
+            FirstNameError.setText("Your first name can only contain alphabet values and hyphens.");
             account_accepted = false;
         }
         if (!((name2.length() > 0) && (validateLastName(name2) == true)))
         {
-            LastNameError.setText("Your last name was entered incorrectly.");
+            LastNameError.setText("Your last name can only contain alphabet values and hyphens.");
             account_accepted = false;
         }
-        if (!((user.length() > 0) && (validate(user) == true)))
+        if ((validate(user) == true))
         {
-            UsernameError.setText("Your username was entered incorrectly.");
-            account_accepted = false;
+            if ((user.length() < 3) || (user.length() > 20))
+            {
+                UsernameError.setText("Your username must be between 3 and 20 characters.");
+                account_accepted = false;
+            }
+            else if (!user.equals(user.toLowerCase()))
+            {
+                UsernameError.setText("Your name must be strictly lowercase");
+                account_accepted = false;
+            }
         }
-        if (!(((pass1.length()) > 0) && (validatePassword(pass1) == true)))
+        else
         {
-            PasswordError.setText("Your password was invalid");
+            UsernameError.setText("Your username can only contain alphanumeric values, underscore, and dashes.");
             account_accepted = false;
         }
-        if (!(pass1.equals(pass2)))
+        
+        if ((pass1.length() >= 5) && (pass1.length() <= 15))
+        {
+            if (validatePassword(pass1) ==  false)
+            {
+                PasswordError.setText("Your password can only contain alphanumeric values and the following symbols - @#$%^&+=");
+                //PasswordError.setText("Your password must be between 5 and 15 characters");
+                account_accepted = false;
+            }
+            else
+            {
+                PasswordError.setText("");
+            }
+        }
+        else
+        {
+            PasswordError.setText("Your password must be between 5 and 15 characters");
+            //PasswordError.setText("Your password can only contain alphanumeric values and the following symbols - @#$%^&+=");
+            account_accepted = false;
+        }
+        
+        if (!(pass1.length() > 0 && pass1.equals(pass2)))
         {
             ConfirmPasswordError.setText("Your password doesn't match confirm password");
             account_accepted = false;
         }
         if (!((input3.length() > 0) && (isValidEmailAddress(input3))))
         {
-            EmailError.setText("Your email was entered incorrectly.");
+            EmailError.setText("Your email was entered incorrectly. (e.g. name@example.com)");
             account_accepted = false;
         }
-        if (!validatePhoneNumber(phoneNumber))
+        if (!((phoneNumber.length() > 0) && (validatePhoneNumber(phoneNumber))))
         {
-            PhoneError.setText("Your phone number was entered incorrectly.");
+            PhoneError.setText("Your phone number was entered incorrectly. (e.g. 6507879999)");
             account_accepted = false;
         }
 
@@ -787,15 +796,15 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
     }//GEN-LAST:event_usernameFocusGained
 
-    private void passwordFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_passwordFocusGained
-    {//GEN-HEADEREND:event_passwordFocusGained
-
-    }//GEN-LAST:event_passwordFocusGained
-
     private void confirmPasswordFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_confirmPasswordFocusGained
     {//GEN-HEADEREND:event_confirmPasswordFocusGained
 
     }//GEN-LAST:event_confirmPasswordFocusGained
+
+    private void passwordFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_passwordFocusGained
+    {//GEN-HEADEREND:event_passwordFocusGained
+
+    }//GEN-LAST:event_passwordFocusGained
 
     private void emailFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_emailFocusGained
     {//GEN-HEADEREND:event_emailFocusGained
@@ -859,10 +868,10 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
     public static boolean validate(final String username)
     {
-        String USERNAME_PATTERN = "^[a-z0-9_-]{3,20}$";
+        String USERNAME_PATTERN = "^[a-zA-z0-9_-]{0,100}$";
         Pattern pattern = Pattern.compile(USERNAME_PATTERN);
         Matcher matcher = pattern.matcher(username);
-        if(username.equals("teller"))
+	if(username.equals("teller"))
             return false;
         return matcher.matches();
     }
@@ -870,9 +879,10 @@ public class CreateAccountPanel extends javax.swing.JPanel
     public static boolean validatePassword(final String username)
     {
         String passwd = "aaZZa44@";
-        String pattern = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{5,10}";
+        String pattern = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{0,100}";
         return passwd.matches(pattern);
     }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackButton;
     private javax.swing.JLabel Background;
