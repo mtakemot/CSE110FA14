@@ -31,7 +31,6 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         TransactionsTable.getSelectionModel().clearSelection();
         Title.setText(GUI.currentBankAccount.getAccountName() + "'s Transaction History");
         TransactionsTable.setModel(new TransactionTableModel(GUI.currentBankAccount));
-
     }
 
     public TransactionHistoryPanel(JPanel MainPanel, GUI mainGUI)
@@ -48,8 +47,7 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
         Title = new javax.swing.JLabel();
@@ -103,7 +101,7 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         centerRenderer.setHorizontalAlignment( JLabel.CENTER );
         TransactionsTable.setDefaultRenderer(String.class, centerRenderer);
         TransactionsTable.setColumnSelectionAllowed(false);
-        TransactionsTable.getTableHeader().setResizingAllowed(false);
+        TransactionsTable.getTableHeader().setResizingAllowed(true);
         TransactionsTable.getTableHeader().setFont(new Font("Tahoma", Font.BOLD, 12));
         TransactionsTable.setGridColor(new java.awt.Color(255, 255, 255));
         TransactionsTable.getTableHeader().setDefaultRenderer((new HeaderRenderer(TransactionsTable)));
@@ -111,6 +109,7 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         TransactionsTable.setOpaque(false);
         TransactionsTable.setSelectionBackground(new java.awt.Color(14, 118, 188));
         TransactionsTable.getTableHeader().setReorderingAllowed(false);
+        TransactionsTable.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
         jScrollPane1.setViewportView(TransactionsTable);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -122,10 +121,8 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         Back.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Back.setForeground(new java.awt.Color(14, 118, 188));
         Back.setText("Back");
-        Back.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        Back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BackActionPerformed(evt);
             }
         });
@@ -145,10 +142,8 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         Logout.setMaximumSize(new java.awt.Dimension(211, 25));
         Logout.setMinimumSize(new java.awt.Dimension(211, 25));
         Logout.setPreferredSize(new java.awt.Dimension(211, 25));
-        Logout.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        Logout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LogoutActionPerformed(evt);
             }
         });
