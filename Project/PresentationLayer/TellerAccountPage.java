@@ -108,11 +108,11 @@ public class TellerAccountPage extends javax.swing.JPanel
     {
         java.awt.GridBagConstraints gridBagConstraints;
 
+        CurrentUserAccountLabel = new javax.swing.JLabel();
         Holder = new javax.swing.JPanel();
         MainComponentsPanel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         AccountsTable = new javax.swing.JTable();
-        CurrentUserAccountLabel = new javax.swing.JLabel();
         DepositButton = new javax.swing.JButton();
         WithdrawButton = new javax.swing.JButton();
         DeleteUserAccountButton = new javax.swing.JButton();
@@ -125,6 +125,17 @@ public class TellerAccountPage extends javax.swing.JPanel
         setOpaque(false);
         setPreferredSize(new java.awt.Dimension(800, 600));
         setLayout(new java.awt.GridBagLayout());
+
+        CurrentUserAccountLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 48)); // NOI18N
+        CurrentUserAccountLabel.setForeground(new java.awt.Color(204, 255, 255));
+        CurrentUserAccountLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        CurrentUserAccountLabel.setText(GUI.currentUserAccount.getUserName() + "'s Bank Accounts");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+        gridBagConstraints.insets = new java.awt.Insets(20, 0, 0, 0);
+        add(CurrentUserAccountLabel, gridBagConstraints);
 
         Holder.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Holder.setMaximumSize(new java.awt.Dimension(800, 600));
@@ -168,16 +179,6 @@ public class TellerAccountPage extends javax.swing.JPanel
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         MainComponentsPanel.add(jScrollPane1, gridBagConstraints);
-
-        CurrentUserAccountLabel.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 48)); // NOI18N
-        CurrentUserAccountLabel.setForeground(new java.awt.Color(204, 255, 255));
-        CurrentUserAccountLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        CurrentUserAccountLabel.setText(GUI.currentUserAccount.getUserName() + "'s Bank Accounts");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 60, 0);
-        MainComponentsPanel.add(CurrentUserAccountLabel, gridBagConstraints);
 
         DepositButton.setBackground(new java.awt.Color(255, 255, 255));
         DepositButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -273,7 +274,10 @@ public class TellerAccountPage extends javax.swing.JPanel
 
         Holder.add(MainComponentsPanel, new java.awt.GridBagConstraints());
 
-        add(Holder, new java.awt.GridBagConstraints());
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        add(Holder, gridBagConstraints);
 
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/AbstractLines.png"))); // NOI18N
         Background.setText("jLabel1");
