@@ -715,11 +715,6 @@ public class CreateAccountPanel extends javax.swing.JPanel
                 UsernameError.setText("Your username must be between 3 and 20 characters.");
                 account_accepted = false;
             }
-            else if (!user.equals(user.toLowerCase()))
-            {
-                UsernameError.setText("Your name must be strictly lowercase");
-                account_accepted = false;
-            }
         }
         else
         {
@@ -732,7 +727,6 @@ public class CreateAccountPanel extends javax.swing.JPanel
             if (validatePassword(pass1) == false)
             {
                 PasswordError.setText("Your password can only contain alphanumeric values and the following symbols - @#$%^&+=");
-                //PasswordError.setText("Your password must be between 5 and 15 characters");
                 account_accepted = false;
             }
             else
@@ -743,7 +737,6 @@ public class CreateAccountPanel extends javax.swing.JPanel
         else
         {
             PasswordError.setText("Your password must be between 5 and 15 characters");
-            //PasswordError.setText("Your password can only contain alphanumeric values and the following symbols - @#$%^&+=");
             account_accepted = false;
         }
 
@@ -759,7 +752,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
         }
         if (!((phoneNumber.length() > 0) && (validatePhoneNumber(phoneNumber))))
         {
-            PhoneError.setText("Your phone number was entered incorrectly. (e.g. 6507879999)");
+            PhoneError.setText("Your phone number was entered incorrectly. (e.g. 1234567890)");
             account_accepted = false;
         }
 
