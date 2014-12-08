@@ -63,22 +63,22 @@ public class ImportExport
             /**
              * *****DEBUG to see if the import/export user # matches****
              */
-            System.out.println("\n\nTable has " + MasterTable.occ
-                    + " users\n");
+            /*//System.out.println("\n\nTable has " + MasterTable.occ
+                    + " users\n");*/
 
         } catch (IOException i)
         {  //error for bad or non existing input file
 
-            System.err.println("Previous database doesn't exist. "
-                    + "Creating a new database");
+            /*System.err.println("Previous database doesn't exist. "
+                    + "Creating a new database");*/
             return null;
 
         } catch (ClassNotFoundException c)
         {
             /*error for possible error in the non existence of
              *methods being invoked*/
-            System.err.println("There are no previous records, "
-                    + "please enter first entry");
+            /*System.err.println("There are no previous records, "
+                    + "please enter first entry");*/
             return null;
 
         }
@@ -110,8 +110,8 @@ public class ImportExport
             out.close();
             fileOut.close();
             result = true;
-            System.out.println("\n\nTable has " + MasterTable.occ
-                    + " User accounts exported \n");
+            /*//System.out.println("\n\nTable has " + MasterTable.occ
+                    + " User accounts exported \n");*/
         } catch (IOException i)
         {
             //DEBUG! uncomment the bottom System.err.println when not using for DEBUG

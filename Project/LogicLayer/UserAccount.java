@@ -85,7 +85,7 @@ public class UserAccount implements Serializable
     // log in is correct
     public boolean validatePassword(String pass)
     {
-        //System.out.println("PASS ERROR");
+        ////System.out.println("PASS ERROR");
         return (this.password.equals(pass));
     }
 

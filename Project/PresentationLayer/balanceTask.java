@@ -23,7 +23,7 @@ public class balanceTask extends TimerTask
     @Override
     public void run()
     {
-        System.out.println("MSG balanceTask.java: calling updateAverageBalance()");
+        ////System.out.println("MSG balanceTask.java: calling updateAverageBalance()");
         GUI.MasterTable.updateAverageBalance();
 
     }

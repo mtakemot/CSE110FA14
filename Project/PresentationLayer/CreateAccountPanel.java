@@ -768,7 +768,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
                 GUI.currentUserAccount.setEmail(input3);
                 GUI.currentUserAccount.setPhone(phoneNumber);
                 GUI.dataout.exportDB(GUI.MasterTable);
-                System.out.println("You have successfully created your user account!");
+                ////System.out.println("You have successfully created your user account!");
                 JOptionPane.showMessageDialog(null, "You have successfully created your user account!", "Bank 42",
                         1, GUI.icon);
 
