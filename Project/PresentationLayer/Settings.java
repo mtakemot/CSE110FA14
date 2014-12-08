@@ -894,6 +894,9 @@ public class Settings extends javax.swing.JPanel
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(204, 204, 255));
         jLabel2.setText("Settings");
+        jLabel2.setMaximumSize(new java.awt.Dimension(199, 100));
+        jLabel2.setMinimumSize(new java.awt.Dimension(199, 100));
+        jLabel2.setPreferredSize(new java.awt.Dimension(199, 100));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -901,7 +904,10 @@ public class Settings extends javax.swing.JPanel
         add(jLabel2, gridBagConstraints);
 
         Background.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/AbstractLines2.png"))); // NOI18N
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/wallpaper_abstract_wallpapers_00250_wallpapersuggest_com-HD.jpg"))); // NOI18N
+        Background.setMaximumSize(new java.awt.Dimension(800, 600));
+        Background.setMinimumSize(new java.awt.Dimension(800, 600));
+        Background.setPreferredSize(new java.awt.Dimension(800, 600));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;

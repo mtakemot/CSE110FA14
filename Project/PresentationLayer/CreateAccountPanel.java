@@ -41,7 +41,8 @@ public class CreateAccountPanel extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
         java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel2 = new javax.swing.JPanel();
@@ -135,8 +136,10 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
         password.setBackground(new Color(255,255,255,190));
         password.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        password.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
+        password.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
                 passwordFocusGained(evt);
             }
         });
@@ -149,8 +152,10 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
         email.setBackground(new Color(255,255,255,190));
         email.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        email.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
+        email.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
                 emailFocusGained(evt);
             }
         });
@@ -163,8 +168,10 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
         phone.setBackground(new Color(255,255,255,190));
         phone.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        phone.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
+        phone.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
                 phoneFocusGained(evt);
             }
         });
@@ -178,8 +185,10 @@ public class CreateAccountPanel extends javax.swing.JPanel
         lastName.setBackground(new Color(255,255,255,190));
         lastName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lastName.setMaximumSize(new java.awt.Dimension(6, 20));
-        lastName.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
+        lastName.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
                 lastNameFocusGained(evt);
             }
         });
@@ -192,8 +201,10 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
         username.setBackground(new Color(255,255,255,190));
         username.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        username.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
+        username.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
                 usernameFocusGained(evt);
             }
         });
@@ -206,8 +217,12 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
         firstName.setBackground(new Color(255,255,255,190));
         firstName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        firstName.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
+        firstName.setMinimumSize(new java.awt.Dimension(300, 21));
+        firstName.setPreferredSize(new java.awt.Dimension(300, 21));
+        firstName.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
                 firstNameFocusGained(evt);
             }
         });
@@ -220,8 +235,10 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
         confirmPassword.setBackground(new Color(255,255,255,190));
         confirmPassword.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        confirmPassword.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
+        confirmPassword.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
                 confirmPasswordFocusGained(evt);
             }
         });
@@ -236,8 +253,10 @@ public class CreateAccountPanel extends javax.swing.JPanel
         createUserAccount.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         createUserAccount.setForeground(new java.awt.Color(14, 118, 188));
         createUserAccount.setText("Create User Account");
-        createUserAccount.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        createUserAccount.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 createUserAccountActionPerformed(evt);
             }
         });
@@ -259,8 +278,10 @@ public class CreateAccountPanel extends javax.swing.JPanel
         BackButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         BackButton.setForeground(new java.awt.Color(14, 118, 188));
         BackButton.setText("Back");
-        BackButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        BackButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 BackButtonActionPerformed(evt);
             }
         });
@@ -274,7 +295,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
         errorMessage.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         errorMessage.setForeground(new java.awt.Color(255, 102, 102));
         errorMessage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        errorMessage.setText("Please fill in the fields below to create an account.");
+        errorMessage.setText("     Please fill in the fields below to create an account.     ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 2;
@@ -627,7 +648,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
         add(jPanel2, new java.awt.GridBagConstraints());
 
-        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/AbstractLines2.png"))); // NOI18N
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/wallpaper_abstract_wallpapers_00250_wallpapersuggest_com-HD.jpg"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -759,8 +780,8 @@ public class CreateAccountPanel extends javax.swing.JPanel
                 GUI.currentUserAccount.setPhone(phoneNumber);
                 GUI.dataout.exportDB(GUI.MasterTable);
                 System.out.println("You have successfully created your user account!");
-                JOptionPane.showMessageDialog(null, "You have successfully created your user account!", "Success!",
-                        JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "You have successfully created your user account!", "Bank 42",
+                        1,GUI.icon);
 
                 // Clear all text fields
                 phone.setText("");
