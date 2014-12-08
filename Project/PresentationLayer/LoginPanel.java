@@ -68,7 +68,8 @@ public class LoginPanel extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
         java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel1 = new javax.swing.JPanel();
@@ -84,7 +85,9 @@ public class LoginPanel extends javax.swing.JPanel
         ForgotPassword = new javax.swing.JLabel();
         Background = new javax.swing.JLabel();
 
+        setToolTipText(null);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
         setPreferredSize(new java.awt.Dimension(800, 600));
@@ -103,13 +106,17 @@ public class LoginPanel extends javax.swing.JPanel
         LoginButton.setMaximumSize(new java.awt.Dimension(130, 25));
         LoginButton.setMinimumSize(new java.awt.Dimension(130, 25));
         LoginButton.setPreferredSize(new java.awt.Dimension(130, 25));
-        LoginButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        LoginButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 LoginButtonMouseClicked(evt);
             }
         });
-        LoginButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        LoginButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 LoginButtonActionPerformed(evt);
             }
         });
@@ -127,13 +134,17 @@ public class LoginPanel extends javax.swing.JPanel
         CreateAccButton.setMaximumSize(new java.awt.Dimension(130, 25));
         CreateAccButton.setMinimumSize(new java.awt.Dimension(130, 25));
         CreateAccButton.setPreferredSize(new java.awt.Dimension(130, 25));
-        CreateAccButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        CreateAccButton.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 CreateAccButtonMouseClicked(evt);
             }
         });
-        CreateAccButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        CreateAccButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 CreateAccButtonActionPerformed(evt);
             }
         });
@@ -148,18 +159,24 @@ public class LoginPanel extends javax.swing.JPanel
         jPasswordField.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 3, 0, 0));
         jPasswordField.setMinimumSize(new java.awt.Dimension(275, 25));
         jPasswordField.setPreferredSize(new java.awt.Dimension(275, 25));
-        jPasswordField.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
+        jPasswordField.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
                 jPasswordFieldFocusGained(evt);
             }
         });
-        jPasswordField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jPasswordField.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 jPasswordFieldActionPerformed(evt);
             }
         });
-        jPasswordField.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
+        jPasswordField.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
                 jPasswordFieldKeyPressed(evt);
             }
         });
@@ -176,18 +193,24 @@ public class LoginPanel extends javax.swing.JPanel
         UsernameField.setDisabledTextColor(new Color(255,255,255,150));
         UsernameField.setMinimumSize(new java.awt.Dimension(275, 25));
         UsernameField.setPreferredSize(new java.awt.Dimension(275, 25));
-        UsernameField.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
+        UsernameField.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusGained(java.awt.event.FocusEvent evt)
+            {
                 UsernameFieldFocusGained(evt);
             }
         });
-        UsernameField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        UsernameField.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 UsernameFieldActionPerformed(evt);
             }
         });
-        UsernameField.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
+        UsernameField.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
                 UsernameFieldKeyPressed(evt);
             }
         });
@@ -257,14 +280,18 @@ public class LoginPanel extends javax.swing.JPanel
         ForgotPassword.setForeground(new java.awt.Color(14, 118, 188));
         ForgotPassword.setText("Forgot Password?");
         ForgotPassword.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        ForgotPassword.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        ForgotPassword.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
                 ForgotPasswordMouseClicked(evt);
             }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
                 ForgotPasswordMouseEntered(evt);
             }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
+            public void mouseExited(java.awt.event.MouseEvent evt)
+            {
                 ForgotPasswordMouseExited(evt);
             }
         });
@@ -281,7 +308,7 @@ public class LoginPanel extends javax.swing.JPanel
         add(jPanel1, gridBagConstraints);
 
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/rsz_142galaxy Cropped.png"))); // NOI18N
-        Background.setToolTipText("");
+        Background.setToolTipText(null);
         Background.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Background.setFocusable(false);
         Background.setInheritsPopupMenu(false);
