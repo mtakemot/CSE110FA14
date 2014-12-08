@@ -51,11 +51,11 @@ public class Settings extends javax.swing.JPanel
     @Override
     protected void paintComponent(Graphics g)
     {
-        g.setColor( getBackground() );
+        g.setColor(getBackground());
         g.fillRect(0, 0, getWidth(), getHeight());
         super.paintComponent(g);
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -135,7 +135,7 @@ public class Settings extends javax.swing.JPanel
 
         errorMessage.setBackground(new Color(255,255,255,0));
         errorMessage.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        errorMessage.setForeground(new java.awt.Color(204, 204, 255));
+        errorMessage.setForeground(new java.awt.Color(204, 255, 204));
         errorMessage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         errorMessage.setText("Click Below to Edit Settings");
         errorMessage.setToolTipText("");
@@ -892,7 +892,7 @@ public class Settings extends javax.swing.JPanel
         add(jPanel2, gridBagConstraints);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(204, 204, 255));
+        jLabel2.setForeground(new java.awt.Color(204, 255, 204));
         jLabel2.setText("Settings");
         jLabel2.setMaximumSize(new java.awt.Dimension(199, 100));
         jLabel2.setMinimumSize(new java.awt.Dimension(199, 100));
@@ -941,7 +941,7 @@ public class Settings extends javax.swing.JPanel
             if (!(GUI.currentUserAccount.validatePassword(password)))
             {
                 JOptionPane.showMessageDialog(null, "Incorrect Password!", "Error!",
-                        0,GUI.icon);
+                        0, GUI.icon);
                 return;
             }
 
@@ -1171,14 +1171,14 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel3MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel3MouseClicked
     {//GEN-HEADEREND:event_jPanel3MouseClicked
-        Object response = JOptionPane.showInputDialog(null, "Enter Your New Last Name:","Bank 42",1,GUI.icon,null,null);
+        Object response = JOptionPane.showInputDialog(null, "Enter Your New Last Name:", "Bank 42", 1, GUI.icon, null, null);
 
         if (response == null)
             return;
 
         String response_S = response.toString();
         response_S = response_S.trim();
-        
+
         if ((response_S.length() > 0) && CreateAccountPanel.validateLastName(response_S))
         {
             GUI.currentUserAccount.setLastName(response_S);
@@ -1195,7 +1195,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel9MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel9MouseClicked
     {//GEN-HEADEREND:event_jPanel9MouseClicked
-        Object response = JOptionPane.showInputDialog(null, "Enter Your New Last Name:", "Bank 42", 1,GUI.icon,null,null);
+        Object response = JOptionPane.showInputDialog(null, "Enter Your New Last Name:", "Bank 42", 1, GUI.icon, null, null);
 
         if (response == null)
             return;
@@ -1218,7 +1218,7 @@ public class Settings extends javax.swing.JPanel
 
     private void EditLabelMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabelMouseClicked
     {//GEN-HEADEREND:event_EditLabelMouseClicked
-        Object response = JOptionPane.showInputDialog(null, "Enter Your New Last Name:", "Bank 42", 1,GUI.icon,null,null);
+        Object response = JOptionPane.showInputDialog(null, "Enter Your New Last Name:", "Bank 42", 1, GUI.icon, null, null);
 
         if (response == null)
             return;
@@ -1385,7 +1385,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel15MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel15MouseClicked
     {//GEN-HEADEREND:event_jPanel15MouseClicked
-        Object response = JOptionPane.showInputDialog(null, "Enter Your New Last Name:", "Bank 42", 1,GUI.icon,null,null);
+        Object response = JOptionPane.showInputDialog(null, "Enter Your New Last Name:", "Bank 42", 1, GUI.icon, null, null);
 
         if (response == null)
             return;
@@ -1499,7 +1499,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel4MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel4MouseClicked
     {//GEN-HEADEREND:event_jPanel4MouseClicked
-        Object response = JOptionPane.showInputDialog(null,"Enter Your New First:","Bank 42",1,GUI.icon,null,null);
+        Object response = JOptionPane.showInputDialog(null, "Enter Your New First:", "Bank 42", 1, GUI.icon, null, null);
 
         if (response == null)
             return;
@@ -1522,7 +1522,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel16MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel16MouseClicked
     {//GEN-HEADEREND:event_jPanel16MouseClicked
-        Object response = JOptionPane.showInputDialog(null,"Enter Your New First:","Bank 42",1,GUI.icon,null,null);
+        Object response = JOptionPane.showInputDialog(null, "Enter Your New First:", "Bank 42", 1, GUI.icon, null, null);
 
         if (response == null)
             return;
@@ -1545,7 +1545,7 @@ public class Settings extends javax.swing.JPanel
 
     private void EditLabel1MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel1MouseClicked
     {//GEN-HEADEREND:event_EditLabel1MouseClicked
-        Object response = JOptionPane.showInputDialog(null,"Enter Your New First:","Bank 42",1,GUI.icon,null,null);
+        Object response = JOptionPane.showInputDialog(null, "Enter Your New First:", "Bank 42", 1, GUI.icon, null, null);
 
         if (response == null)
             return;
@@ -1568,7 +1568,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel10MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel10MouseClicked
     {//GEN-HEADEREND:event_jPanel10MouseClicked
-        Object response = JOptionPane.showInputDialog(null,"Enter Your New First Name:","Bank 42",1,GUI.icon,null,null);
+        Object response = JOptionPane.showInputDialog(null, "Enter Your New First Name:", "Bank 42", 1, GUI.icon, null, null);
 
         if (response == null)
             return;
@@ -1591,7 +1591,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel5MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel5MouseClicked
     {//GEN-HEADEREND:event_jPanel5MouseClicked
-        Object response = JOptionPane.showInputDialog(null,"Enter Your New Username:","Bank 42",1,GUI.icon,null,null);
+        Object response = JOptionPane.showInputDialog(null, "Enter Your New Username:", "Bank 42", 1, GUI.icon, null, null);
 
         if (response == null)
             return;
@@ -1600,7 +1600,7 @@ public class Settings extends javax.swing.JPanel
         response_S = response_S.trim();
         if ((response_S.length() > 0) && (CreateAccountPanel.validate(response_S)))
         {
-            if(GUI.MasterTable.findUserAccount(response_S) == null)
+            if (GUI.MasterTable.findUserAccount(response_S) == null)
             {
                 if ((response_S.length() < 3) || (response_S.length() > 20))
                 {
@@ -1622,7 +1622,7 @@ public class Settings extends javax.swing.JPanel
                     errorMessage.setText("Success");
                     errorMessage.setForeground(Color.green);
                     update();
-                }        
+                }
             }
             else
             {
@@ -1639,7 +1639,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel17MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel17MouseClicked
     {//GEN-HEADEREND:event_jPanel17MouseClicked
-        Object response = JOptionPane.showInputDialog(null,"Enter Your New Username:","Bank 42",1,GUI.icon,null,null);
+        Object response = JOptionPane.showInputDialog(null, "Enter Your New Username:", "Bank 42", 1, GUI.icon, null, null);
 
         if (response == null)
             return;
@@ -1648,7 +1648,7 @@ public class Settings extends javax.swing.JPanel
         response_S = response_S.trim();
         if ((response_S.length() > 0) && (CreateAccountPanel.validate(response_S)))
         {
-            if(GUI.MasterTable.findUserAccount(response_S) == null)
+            if (GUI.MasterTable.findUserAccount(response_S) == null)
             {
                 if ((response_S.length() < 3) || (response_S.length() > 20))
                 {
@@ -1670,7 +1670,7 @@ public class Settings extends javax.swing.JPanel
                     errorMessage.setText("Success");
                     errorMessage.setForeground(Color.green);
                     update();
-                }        
+                }
             }
             else
             {
@@ -1687,7 +1687,7 @@ public class Settings extends javax.swing.JPanel
 
     private void EditLabel2MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel2MouseClicked
     {//GEN-HEADEREND:event_EditLabel2MouseClicked
-        Object response = JOptionPane.showInputDialog(null,"Enter Your New Username:","Bank 42",1,GUI.icon,null,null);
+        Object response = JOptionPane.showInputDialog(null, "Enter Your New Username:", "Bank 42", 1, GUI.icon, null, null);
 
         if (response == null)
             return;
@@ -1696,7 +1696,7 @@ public class Settings extends javax.swing.JPanel
         response_S = response_S.trim();
         if ((response_S.length() > 0) && (CreateAccountPanel.validate(response_S)))
         {
-            if(GUI.MasterTable.findUserAccount(response_S) == null)
+            if (GUI.MasterTable.findUserAccount(response_S) == null)
             {
                 if ((response_S.length() < 3) || (response_S.length() > 20))
                 {
@@ -1718,7 +1718,7 @@ public class Settings extends javax.swing.JPanel
                     errorMessage.setText("Success");
                     errorMessage.setForeground(Color.green);
                     update();
-                }        
+                }
             }
             else
             {
@@ -1735,7 +1735,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel12MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel12MouseClicked
     {//GEN-HEADEREND:event_jPanel12MouseClicked
-        Object response = JOptionPane.showInputDialog(null,"Enter Your New Username:","Bank 42",1,GUI.icon,null,null);
+        Object response = JOptionPane.showInputDialog(null, "Enter Your New Username:", "Bank 42", 1, GUI.icon, null, null);
 
         if (response == null)
             return;
@@ -1744,7 +1744,7 @@ public class Settings extends javax.swing.JPanel
         response_S = response_S.trim();
         if ((response_S.length() > 0) && (CreateAccountPanel.validate(response_S)))
         {
-            if(GUI.MasterTable.findUserAccount(response_S) == null)
+            if (GUI.MasterTable.findUserAccount(response_S) == null)
             {
                 if ((response_S.length() < 3) || (response_S.length() > 20))
                 {
@@ -1766,7 +1766,7 @@ public class Settings extends javax.swing.JPanel
                     errorMessage.setText("Success");
                     errorMessage.setForeground(Color.green);
                     update();
-                }        
+                }
             }
             else
             {
@@ -1783,7 +1783,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel6MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel6MouseClicked
     {//GEN-HEADEREND:event_jPanel6MouseClicked
-        Object response = JOptionPane.showInputDialog(null,"Enter Your New Email:","Bank 42",1,GUI.icon,null,null);
+        Object response = JOptionPane.showInputDialog(null, "Enter Your New Email:", "Bank 42", 1, GUI.icon, null, null);
 
         if (response == null)
             return;
@@ -1814,7 +1814,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel18MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel18MouseClicked
     {//GEN-HEADEREND:event_jPanel18MouseClicked
-        Object response = JOptionPane.showInputDialog(null,"Enter Your New Email:","Bank 42",1,GUI.icon,null,null);
+        Object response = JOptionPane.showInputDialog(null, "Enter Your New Email:", "Bank 42", 1, GUI.icon, null, null);
 
         if (response == null)
             return;
@@ -1845,7 +1845,7 @@ public class Settings extends javax.swing.JPanel
 
     private void EditLabel3MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel3MouseClicked
     {//GEN-HEADEREND:event_EditLabel3MouseClicked
-        Object response = JOptionPane.showInputDialog(null,"Enter Your New Email:","Bank 42",1,GUI.icon,null,null);
+        Object response = JOptionPane.showInputDialog(null, "Enter Your New Email:", "Bank 42", 1, GUI.icon, null, null);
 
         if (response == null)
             return;
@@ -1876,7 +1876,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel13MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel13MouseClicked
     {//GEN-HEADEREND:event_jPanel13MouseClicked
-        Object response = JOptionPane.showInputDialog(null,"Enter Your New Email:","Bank 42",1,GUI.icon,null,null);
+        Object response = JOptionPane.showInputDialog(null, "Enter Your New Email:", "Bank 42", 1, GUI.icon, null, null);
 
         if (response == null)
             return;
@@ -1907,7 +1907,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel7MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel7MouseClicked
     {//GEN-HEADEREND:event_jPanel7MouseClicked
-        Object response = JOptionPane.showInputDialog(null,"Enter Your New Phone Number:","Bank 42",1,GUI.icon,null,null);
+        Object response = JOptionPane.showInputDialog(null, "Enter Your New Phone Number:", "Bank 42", 1, GUI.icon, null, null);
 
         if (response == null)
             return;
@@ -1930,7 +1930,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel19MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel19MouseClicked
     {//GEN-HEADEREND:event_jPanel19MouseClicked
-        Object response = JOptionPane.showInputDialog(null,"Enter Your New Phone Number:","Bank 42",1,GUI.icon,null,null);
+        Object response = JOptionPane.showInputDialog(null, "Enter Your New Phone Number:", "Bank 42", 1, GUI.icon, null, null);
 
         if (response == null)
             return;
@@ -1953,7 +1953,7 @@ public class Settings extends javax.swing.JPanel
 
     private void EditLabel4MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel4MouseClicked
     {//GEN-HEADEREND:event_EditLabel4MouseClicked
-        Object response = JOptionPane.showInputDialog(null,"Enter Your New Phone Number:","Bank 42",1,GUI.icon,null,null);
+        Object response = JOptionPane.showInputDialog(null, "Enter Your New Phone Number:", "Bank 42", 1, GUI.icon, null, null);
 
         if (response == null)
             return;
@@ -1976,7 +1976,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel11MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel11MouseClicked
     {//GEN-HEADEREND:event_jPanel11MouseClicked
-        Object response = JOptionPane.showInputDialog(null,"Enter Your New Phone Number:","Bank 42",1,GUI.icon,null,null);
+        Object response = JOptionPane.showInputDialog(null, "Enter Your New Phone Number:", "Bank 42", 1, GUI.icon, null, null);
 
         if (response == null)
             return;
@@ -2010,11 +2010,13 @@ public class Settings extends javax.swing.JPanel
 
         if (choice == 0)
         {
-            if(mainGUI.getChangePasswordPanel().SetPassword()) {
+            if (mainGUI.getChangePasswordPanel().SetPassword())
+            {
                 errorMessage.setText("Success");
-                errorMessage.setForeground(Color.green);      
+                errorMessage.setForeground(Color.green);
             }
-            else {          
+            else
+            {
                 errorMessage.setForeground(Color.red);
                 errorMessage.setText("The password must have 5-15 characters and only contain alphanumeric values and these symbols - @#$%^&+=\\\"");
             }
@@ -2035,11 +2037,13 @@ public class Settings extends javax.swing.JPanel
 
         if (choice == 0)
         {
-            if(mainGUI.getChangePasswordPanel().SetPassword()) {
+            if (mainGUI.getChangePasswordPanel().SetPassword())
+            {
                 errorMessage.setText("Success");
-                errorMessage.setForeground(Color.green);            
+                errorMessage.setForeground(Color.green);
             }
-            else{
+            else
+            {
                 errorMessage.setText("The password must have 5-15 characters and only contain alphanumeric values and these symbols - @#$%^&+=\\\"");
                 errorMessage.setForeground(Color.red);
             }
@@ -2060,13 +2064,15 @@ public class Settings extends javax.swing.JPanel
 
         if (choice == 0)
         {
-            if(mainGUI.getChangePasswordPanel().SetPassword()){
+            if (mainGUI.getChangePasswordPanel().SetPassword())
+            {
                 errorMessage.setText("Success");
                 errorMessage.setForeground(Color.green);
             }
-            else{
+            else
+            {
                 errorMessage.setText("The password must have 5-15 characters and only contain alphanumeric values and these symbols - @#$%^&+=\\\"");
-                errorMessage.setForeground(Color.red);          
+                errorMessage.setForeground(Color.red);
             }
         }
     }//GEN-LAST:event_jPanel20MouseClicked
@@ -2085,11 +2091,13 @@ public class Settings extends javax.swing.JPanel
 
         if (choice == 0)
         {
-            if(mainGUI.getChangePasswordPanel().SetPassword()) {
+            if (mainGUI.getChangePasswordPanel().SetPassword())
+            {
                 errorMessage.setText("Success");
                 errorMessage.setForeground(Color.green);
             }
-            else{
+            else
+            {
                 errorMessage.setText("The password must have 5-15 characters and only contain alphanumeric values and these symbols - @#$%^&+=\\\"");
                 errorMessage.setForeground(Color.red);
             }
@@ -2118,7 +2126,7 @@ public class Settings extends javax.swing.JPanel
     {//GEN-HEADEREND:event_jButton1ActionPerformed
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
         mainGUI.getAccList().update();
-        errorMessage.setForeground(new Color(204,204,255));
+        errorMessage.setForeground(new Color(204, 255, 204));
         errorMessage.setText("Click Below to Edit Settings");
         layout.show(MainPanel, "AccList");
     }//GEN-LAST:event_jButton1ActionPerformed
