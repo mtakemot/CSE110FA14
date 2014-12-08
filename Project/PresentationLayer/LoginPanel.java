@@ -494,10 +494,13 @@ public class LoginPanel extends javax.swing.JPanel
         Object response = JOptionPane.showInputDialog(null, "Enter your email (Attempt " + numberOfAttempts + " of 3): ", "Bank 42", 1, GUI.icon,null,null);
 
         if (response == null)
+        {
+            System.out.println("Returning");
+            numberOfAttempts--;
             return;
-
+        }
         String response_S = response.toString();
-        
+              
         response = response_S.trim();
         if ((response_S.length() > 0) && CreateAccountPanel.isValidEmailAddress(response_S))
         {
