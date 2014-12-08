@@ -338,7 +338,7 @@ public class AccountsListPanel extends javax.swing.JPanel
 
         AmountToTransfer.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         AmountToTransfer.setForeground(new java.awt.Color(14, 118, 188));
-        AmountToTransfer.setText("Amount to Transfer:");
+        AmountToTransfer.setText("Amount to Transfer: $");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 4;
@@ -786,7 +786,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         if (amount > GUI.currentBankAccount.getBalance())
         {
             JOptionPane.showMessageDialog(null, "Insufficient Funds"
-                    + "\nYou have " + GUI.currentBankAccount.getBalance() + "$ available"
+                    + "\nYou have $" + GUI.currentBankAccount.getBalance() + " available"
                     + " in selected Bank Account", "Bank 42", 1, icon);
             return;
         }
@@ -989,7 +989,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         {
             AmountField.setText("Amount");
             JOptionPane.showMessageDialog(null, "Insufficient Funds"
-                    + "\nYou have " + GUI.currentBankAccount.getBalance() + "$ available"
+                    + "\nYou have $" + GUI.currentBankAccount.getBalance() + " available"
                     + " in selected Bank Account", "Bank 42", 1,GUI.icon);
         }
         else

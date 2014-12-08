@@ -26,7 +26,7 @@ public class AccountsTableModel extends AbstractTableModel
     private String[] columnNames =
     {
         "Account Name", "Account Type",
-        "Balance"
+        "Balance ($)"
     };
 
     public AccountsTableModel(UserAccount curr)
