@@ -43,33 +43,6 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         this.mainGUI = mainGUI;
         this.MainPanel = MainPanel;
         initComponents();
-
-        // Below just underlines the JLabels that need it
-        Font font = BalanceLabel.getFont();
-        Map attributes = font.getAttributes();
-        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
-        BalanceLabel.setFont(font.deriveFont(attributes));
-
-        font = CurrentSavingsRateLabel.getFont();
-        attributes = font.getAttributes();
-        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
-        CurrentSavingsRateLabel.setFont(font.deriveFont(attributes));
-
-        font = CurrentCheckingRateLabel.getFont();
-        attributes = font.getAttributes();
-        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
-        CurrentCheckingRateLabel.setFont(font.deriveFont(attributes));
-
-        font = SavingsNewRateLabel.getFont();
-        attributes = font.getAttributes();
-        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
-        SavingsNewRateLabel.setFont(font.deriveFont(attributes));
-
-        font = CheckingNewRateLabel.getFont();
-        attributes = font.getAttributes();
-        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
-        CheckingNewRateLabel.setFont(font.deriveFont(attributes));
-
     }
 
     // Checks if a string can be parsed into a double
@@ -186,7 +159,7 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
 
         BalanceLabel.setFont(new java.awt.Font("Britannic Bold", 0, 16)); // NOI18N
         BalanceLabel.setForeground(new java.awt.Color(187, 224, 240));
-        BalanceLabel.setText("Balance");
+        BalanceLabel.setText("<HTML><U>Balance</U></HTML>");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -222,7 +195,7 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
 
         CurrentCheckingRateLabel.setFont(new java.awt.Font("Britannic Bold", 0, 16)); // NOI18N
         CurrentCheckingRateLabel.setForeground(new java.awt.Color(187, 224, 240));
-        CurrentCheckingRateLabel.setText("Current Rate");
+        CurrentCheckingRateLabel.setText("<HTML><U>Current Rate</U></HTML>");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
@@ -231,7 +204,7 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
 
         CheckingNewRateLabel.setFont(new java.awt.Font("Britannic Bold", 0, 16)); // NOI18N
         CheckingNewRateLabel.setForeground(new java.awt.Color(187, 224, 240));
-        CheckingNewRateLabel.setText("New Rate");
+        CheckingNewRateLabel.setText("<HTML><U>New Rate</U></HTML>");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
@@ -347,7 +320,7 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
 
         CurrentSavingsRateLabel.setFont(new java.awt.Font("Britannic Bold", 0, 16)); // NOI18N
         CurrentSavingsRateLabel.setForeground(new java.awt.Color(187, 224, 240));
-        CurrentSavingsRateLabel.setText("Current Rate");
+        CurrentSavingsRateLabel.setText("<HTML><U>Current Rate</U></HTML>");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -356,7 +329,7 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
 
         SavingsNewRateLabel.setFont(new java.awt.Font("Britannic Bold", 0, 16)); // NOI18N
         SavingsNewRateLabel.setForeground(new java.awt.Color(187, 224, 240));
-        SavingsNewRateLabel.setText("New Rate");
+        SavingsNewRateLabel.setText("<HTML><U>New Rate</U></HTML>");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
