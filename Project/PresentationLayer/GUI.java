@@ -132,7 +132,7 @@ public class GUI extends javax.swing.JFrame
             currentUserAccount.setPassword("foobar");
             currentUserAccount.setPhone("0123456789");
         }
-        currentUserAccount = MasterTable.insertUserAccount("qq", "email");
+        currentUserAccount = MasterTable.insertUserAccount("qq", "qq@q.com");
         if (currentUserAccount != null)
         {
             currentUserAccount.setFirstName("first");
@@ -145,7 +145,7 @@ public class GUI extends javax.swing.JFrame
             currentBankAccount = currentUserAccount.insertBankAccount(3100, "qq4", "Checking");
         }
 
-        currentUserAccount = MasterTable.insertUserAccount("ww", "email2");
+        currentUserAccount = MasterTable.insertUserAccount("ww", "ww@w.com");
         if (currentUserAccount != null)
         {
             currentUserAccount.setFirstName("first2");
@@ -158,7 +158,7 @@ public class GUI extends javax.swing.JFrame
             currentBankAccount = currentUserAccount.insertBankAccount(30, "ww4", "Checking");
         }
 
-        currentUserAccount = MasterTable.insertUserAccount("ee", "emai3");
+        currentUserAccount = MasterTable.insertUserAccount("ee", "ee@e.com");
         if (currentUserAccount != null)
         {
             currentUserAccount.setFirstName("first2");
