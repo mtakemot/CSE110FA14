@@ -59,24 +59,24 @@ public class ChangePassword extends javax.swing.JPanel
                 if(CreateAccountPanel.validatePassword(new_password)) {
                     GUI.currentUserAccount.setPassword(new_password);
                     JOptionPane.showMessageDialog(null,"Password Succesfully Changed!","Bank 42",1,icon);
-                    jCurrentPassword.setText("pass");
-                    jNewPassword.setText("pass");
-                    jReenterNewPassword.setText("pass");
+                    jCurrentPassword.setText("passw");
+                    jNewPassword.setText("passw");
+                    jReenterNewPassword.setText("passw");
                     return true;
                 }
                 else {
                     JOptionPane.showMessageDialog(null,"New Password Entry Not Valid, Please Try Again.","Bank 42",1,icon);
-                        jCurrentPassword.setText("password");
-                        jNewPassword.setText("password");
-                        jReenterNewPassword.setText("password");
+                        jCurrentPassword.setText("passw");
+                        jNewPassword.setText("passw");
+                        jReenterNewPassword.setText("passw");
                 }
             }
             
             else {
                 JOptionPane.showMessageDialog(null,"New Passwords Do Not Match, Please Try Again.","Bank 42",1,icon);
-                jCurrentPassword.setText("password");
-                jNewPassword.setText("password");
-                jReenterNewPassword.setText("password");
+                jCurrentPassword.setText("passw");
+                jNewPassword.setText("passw");
+                jReenterNewPassword.setText("passw");
             }
             
         }
@@ -105,9 +105,9 @@ public class ChangePassword extends javax.swing.JPanel
         ReenterNewPassword = new javax.swing.JLabel();
         jReenterNewPassword = new javax.swing.JPasswordField();
 
-        setMaximumSize(new java.awt.Dimension(200, 100));
-        setMinimumSize(new java.awt.Dimension(0, 0));
-        setPreferredSize(new java.awt.Dimension(200, 100));
+        setMaximumSize(new java.awt.Dimension(225, 100));
+        setMinimumSize(new java.awt.Dimension(225, 100));
+        setPreferredSize(new java.awt.Dimension(225, 100));
         setLayout(new java.awt.GridBagLayout());
 
         CurrentPassword.setText("Current Password:");
@@ -119,7 +119,7 @@ public class ChangePassword extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(73, 9, 0, 0);
         add(CurrentPassword, gridBagConstraints);
 
-        jCurrentPassword.setText("password");
+        jCurrentPassword.setText("passw");
         jCurrentPassword.addFocusListener(new java.awt.event.FocusAdapter()
         {
             public void focusGained(java.awt.event.FocusEvent evt)
@@ -144,7 +144,7 @@ public class ChangePassword extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(3, 9, 0, 0);
         add(NewPassword, gridBagConstraints);
 
-        jNewPassword.setText("password");
+        jNewPassword.setText("passw");
         jNewPassword.addFocusListener(new java.awt.event.FocusAdapter()
         {
             public void focusGained(java.awt.event.FocusEvent evt)
@@ -170,7 +170,7 @@ public class ChangePassword extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(3, 9, 0, 0);
         add(ReenterNewPassword, gridBagConstraints);
 
-        jReenterNewPassword.setText("password");
+        jReenterNewPassword.setText("passw");
         jReenterNewPassword.addFocusListener(new java.awt.event.FocusAdapter()
         {
             public void focusGained(java.awt.event.FocusEvent evt)

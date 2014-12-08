@@ -1995,6 +1995,8 @@ public class Settings extends javax.swing.JPanel
     {//GEN-HEADEREND:event_jButton1ActionPerformed
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
         mainGUI.getAccList().update();
+        errorMessage.setForeground(new Color(14,118,188));
+        errorMessage.setText("Click Below to Edit Settings");
         layout.show(MainPanel, "AccList");
     }//GEN-LAST:event_jButton1ActionPerformed
 
