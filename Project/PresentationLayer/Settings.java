@@ -171,7 +171,7 @@ public class Settings extends javax.swing.JPanel
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel1.add(DeleteAccountButton, gridBagConstraints);
 
-        jPanel3.setBackground(new java.awt.Color(153, 255, 153));
+        jPanel3.setBackground(new java.awt.Color(204, 255, 153));
         jPanel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel3.addMouseListener(new java.awt.event.MouseAdapter()
         {
@@ -211,7 +211,7 @@ public class Settings extends javax.swing.JPanel
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel1.add(jPanel3, gridBagConstraints);
 
-        jPanel4.setBackground(new java.awt.Color(153, 255, 153));
+        jPanel4.setBackground(new java.awt.Color(204, 255, 153));
         jPanel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel4.addMouseListener(new java.awt.event.MouseAdapter()
         {
@@ -248,7 +248,7 @@ public class Settings extends javax.swing.JPanel
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel1.add(jPanel4, gridBagConstraints);
 
-        jPanel5.setBackground(new java.awt.Color(153, 255, 153));
+        jPanel5.setBackground(new java.awt.Color(204, 255, 153));
         jPanel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel5.addMouseListener(new java.awt.event.MouseAdapter()
         {
@@ -285,7 +285,7 @@ public class Settings extends javax.swing.JPanel
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel1.add(jPanel5, gridBagConstraints);
 
-        jPanel6.setBackground(new java.awt.Color(153, 255, 153));
+        jPanel6.setBackground(new java.awt.Color(204, 255, 153));
         jPanel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel6.addMouseListener(new java.awt.event.MouseAdapter()
         {
@@ -322,7 +322,7 @@ public class Settings extends javax.swing.JPanel
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel1.add(jPanel6, gridBagConstraints);
 
-        jPanel7.setBackground(new java.awt.Color(153, 255, 153));
+        jPanel7.setBackground(new java.awt.Color(204, 255, 153));
         jPanel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel7.addMouseListener(new java.awt.event.MouseAdapter()
         {
@@ -359,7 +359,7 @@ public class Settings extends javax.swing.JPanel
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel1.add(jPanel7, gridBagConstraints);
 
-        jPanel8.setBackground(new java.awt.Color(153, 255, 153));
+        jPanel8.setBackground(new java.awt.Color(204, 255, 153));
         jPanel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel8.addMouseListener(new java.awt.event.MouseAdapter()
         {
@@ -396,7 +396,7 @@ public class Settings extends javax.swing.JPanel
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel1.add(jPanel8, gridBagConstraints);
 
-        jPanel9.setBackground(new java.awt.Color(153, 255, 153));
+        jPanel9.setBackground(new java.awt.Color(204, 255, 153));
         jPanel9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel9.addMouseListener(new java.awt.event.MouseAdapter()
         {
@@ -444,7 +444,7 @@ public class Settings extends javax.swing.JPanel
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel1.add(jPanel9, gridBagConstraints);
 
-        jPanel10.setBackground(new java.awt.Color(153, 255, 153));
+        jPanel10.setBackground(new java.awt.Color(204, 255, 153));
         jPanel10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel10.addMouseListener(new java.awt.event.MouseAdapter()
         {
@@ -488,7 +488,7 @@ public class Settings extends javax.swing.JPanel
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel1.add(jPanel10, gridBagConstraints);
 
-        jPanel11.setBackground(new java.awt.Color(153, 255, 153));
+        jPanel11.setBackground(new java.awt.Color(204, 255, 153));
         jPanel11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel11.addMouseListener(new java.awt.event.MouseAdapter()
         {
@@ -532,7 +532,7 @@ public class Settings extends javax.swing.JPanel
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel1.add(jPanel11, gridBagConstraints);
 
-        jPanel12.setBackground(new java.awt.Color(153, 255, 153));
+        jPanel12.setBackground(new java.awt.Color(204, 255, 153));
         jPanel12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel12.addMouseListener(new java.awt.event.MouseAdapter()
         {
@@ -576,7 +576,7 @@ public class Settings extends javax.swing.JPanel
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel1.add(jPanel12, gridBagConstraints);
 
-        jPanel13.setBackground(new java.awt.Color(153, 255, 153));
+        jPanel13.setBackground(new java.awt.Color(204, 255, 153));
         jPanel13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel13.addMouseListener(new java.awt.event.MouseAdapter()
         {
@@ -620,7 +620,7 @@ public class Settings extends javax.swing.JPanel
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel1.add(jPanel13, gridBagConstraints);
 
-        jPanel15.setBackground(new java.awt.Color(153, 255, 153));
+        jPanel15.setBackground(new java.awt.Color(204, 255, 153));
         jPanel15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel15.addMouseListener(new java.awt.event.MouseAdapter()
         {
@@ -649,7 +649,7 @@ public class Settings extends javax.swing.JPanel
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel1.add(jPanel15, gridBagConstraints);
 
-        jPanel16.setBackground(new java.awt.Color(153, 255, 153));
+        jPanel16.setBackground(new java.awt.Color(204, 255, 153));
         jPanel16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel16.addMouseListener(new java.awt.event.MouseAdapter()
         {
@@ -678,7 +678,7 @@ public class Settings extends javax.swing.JPanel
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel1.add(jPanel16, gridBagConstraints);
 
-        jPanel17.setBackground(new java.awt.Color(153, 255, 153));
+        jPanel17.setBackground(new java.awt.Color(204, 255, 153));
         jPanel17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel17.addMouseListener(new java.awt.event.MouseAdapter()
         {
@@ -707,7 +707,7 @@ public class Settings extends javax.swing.JPanel
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel1.add(jPanel17, gridBagConstraints);
 
-        jPanel18.setBackground(new java.awt.Color(153, 255, 153));
+        jPanel18.setBackground(new java.awt.Color(204, 255, 153));
         jPanel18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel18.addMouseListener(new java.awt.event.MouseAdapter()
         {
@@ -736,7 +736,7 @@ public class Settings extends javax.swing.JPanel
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel1.add(jPanel18, gridBagConstraints);
 
-        jPanel19.setBackground(new java.awt.Color(153, 255, 153));
+        jPanel19.setBackground(new java.awt.Color(204, 255, 153));
         jPanel19.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel19.addMouseListener(new java.awt.event.MouseAdapter()
         {
@@ -765,7 +765,7 @@ public class Settings extends javax.swing.JPanel
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel1.add(jPanel19, gridBagConstraints);
 
-        jPanel20.setBackground(new java.awt.Color(153, 255, 153));
+        jPanel20.setBackground(new java.awt.Color(204, 255, 153));
         jPanel20.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel20.addMouseListener(new java.awt.event.MouseAdapter()
         {
@@ -794,7 +794,7 @@ public class Settings extends javax.swing.JPanel
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel1.add(jPanel20, gridBagConstraints);
 
-        jPanel26.setBackground(new java.awt.Color(153, 255, 153));
+        jPanel26.setBackground(new java.awt.Color(204, 255, 153));
         jPanel26.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel26.addMouseListener(new java.awt.event.MouseAdapter()
         {
@@ -946,7 +946,7 @@ public class Settings extends javax.swing.JPanel
 
     private void setMouseExitColors()
     {
-        Color newColor = new Color(153,255,153);
+        Color newColor = new Color(204, 255, 153);
         jPanel3.setBackground(newColor);
         jPanel4.setBackground(newColor);
         jPanel5.setBackground(newColor);
@@ -966,7 +966,7 @@ public class Settings extends javax.swing.JPanel
         jPanel19.setBackground(newColor);
         jPanel20.setBackground(newColor);
     }
-    
+
     private void jPanel3MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel3MouseEntered
     {//GEN-HEADEREND:event_jPanel3MouseEntered
         jPanel3.setBackground(new Color(255, 255, 255));
