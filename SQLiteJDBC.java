@@ -1,3 +1,4 @@
+
 import java.sql.*;
 
 public class SQLiteJDBC
@@ -37,7 +38,7 @@ public class SQLiteJDBC
             Class.forName("org.sqlite.JDBC");
             c = DriverManager.getConnection("jdbc:sqlite:members.db");
 
-            //i think this makes it so you manually commit      
+            //i think this makes it so you manually commit
             c.setAutoCommit(false);
             System.out.println("Opened database successfully_INSERT");
 

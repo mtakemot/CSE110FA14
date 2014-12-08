@@ -22,6 +22,7 @@ import org.joda.time.format.*;
  */
 public class BankAccount implements Serializable
 {
+
     //BankAccount class members
     protected double balance;
     protected String accountName;
@@ -49,7 +50,7 @@ public class BankAccount implements Serializable
 
     /**
      * BankAccount class constructor. It instantiates the member fields for each
-     * new BankAccount objects created. 
+     * new BankAccount objects created.
      */
     public BankAccount()
     {
@@ -64,15 +65,16 @@ public class BankAccount implements Serializable
     }
 
     /**
-     * The following 2 methods are the super class methods that will respectively
-     * add or subtract a double amount from the bank account's current balance.
-     * They will be overridden SavingsAccount.java and CheckingAccount.java
+     * The following 2 methods are the super class methods that will
+     * respectively add or subtract a double amount from the bank account's
+     * current balance. They will be overridden SavingsAccount.java and
+     * CheckingAccount.java
      */
     public boolean subFromBalance(double amount)
     {
         return false;
     }
-   
+
     public boolean addToBalance(double amount)
     {
         return false;
@@ -162,7 +164,7 @@ public class BankAccount implements Serializable
         }
         return balanceAfterInterest;
     }
-    
+
     public void addTransaction(String transType, double transAmount)
     {
         this.transactions.add(new Transaction(transType, transAmount));
@@ -175,7 +177,7 @@ public class BankAccount implements Serializable
     {
         this.balance = balance;
     }
-    
+
     public void setAccountName(String accountName)
     {
         this.accountName = accountName;

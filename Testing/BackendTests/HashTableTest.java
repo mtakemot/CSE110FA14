@@ -7,14 +7,11 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Nishat rustagi
- * Wrote and modified the following tests for 
- * 1. Insert User Account
- * 2. Reinserting User Accounts
- * 3. Finding User Accounts
- * 4. Deleting User Accounts
- * 
- * 
+ * @author Nishat rustagi Wrote and modified the following tests for 1. Insert
+ * User Account 2. Reinserting User Accounts 3. Finding User Accounts 4.
+ * Deleting User Accounts
+ *
+ *
  * @author Tahereh Masoumi Last Updated Nov. 30 2014
  */
 public class HashTableTest

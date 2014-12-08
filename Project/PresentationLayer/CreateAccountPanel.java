@@ -735,10 +735,10 @@ public class CreateAccountPanel extends javax.swing.JPanel
             UsernameError.setText("Your username can only contain alphanumeric values, underscore, and dashes.");
             account_accepted = false;
         }
-        
+
         if ((pass1.length() >= 5) && (pass1.length() <= 15))
         {
-            if (validatePassword(pass1) ==  false)
+            if (validatePassword(pass1) == false)
             {
                 PasswordError.setText("Your password can only contain alphanumeric values and the following symbols - @#$%^&+=");
                 //PasswordError.setText("Your password must be between 5 and 15 characters");
@@ -755,7 +755,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
             //PasswordError.setText("Your password can only contain alphanumeric values and the following symbols - @#$%^&+=");
             account_accepted = false;
         }
-        
+
         if (!(pass1.length() > 0 && pass1.equals(pass2)))
         {
             ConfirmPasswordError.setText("Your password doesn't match confirm password");
@@ -786,7 +786,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
                 GUI.dataout.exportDB(GUI.MasterTable);
                 System.out.println("You have successfully created your user account!");
                 JOptionPane.showMessageDialog(null, "You have successfully created your user account!", "Bank 42",
-                        1,GUI.icon);
+                        1, GUI.icon);
 
                 // Clear all text fields
                 phone.setText("");
@@ -897,7 +897,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
         String USERNAME_PATTERN = "^[a-zA-z0-9_-]{0,100}$";
         Pattern pattern = Pattern.compile(USERNAME_PATTERN);
         Matcher matcher = pattern.matcher(username);
-	if(username.equals("teller"))
+        if (username.equals("teller"))
             return false;
         return matcher.matches();
     }
@@ -908,7 +908,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
         String pattern = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{0,100}";
         return passwd.matches(pattern);
     }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackButton;
     private javax.swing.JLabel Background;

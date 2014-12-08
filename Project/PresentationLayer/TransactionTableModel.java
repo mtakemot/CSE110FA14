@@ -10,7 +10,6 @@ import LogicLayer.Transaction;
 import java.util.*;
 import javax.swing.table.AbstractTableModel;
 
-
 /**
  *
  * @author Ryan

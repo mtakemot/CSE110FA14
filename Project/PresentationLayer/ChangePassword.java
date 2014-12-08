@@ -20,24 +20,23 @@ public class ChangePassword extends javax.swing.JPanel
     /**
      * Creates new form ChangePassword
      */
-    
     private JPanel MainPanel;
     private GUI mainGUI;
     private ImageIcon icon;
-    
+
     public ChangePassword()
     {
         initComponents();
     }
-    
-    public ChangePassword(JPanel MainPanel,GUI mainGUI)
+
+    public ChangePassword(JPanel MainPanel, GUI mainGUI)
     {
         icon = new javax.swing.ImageIcon(getClass().getResource("/Assets/rsz_2icon.png"));
         this.MainPanel = MainPanel;
         this.mainGUI = mainGUI;
         initComponents();
     }
-    
+
     public javax.swing.JPanel GetPanel()
     {
         return this;
@@ -47,44 +46,50 @@ public class ChangePassword extends javax.swing.JPanel
     {
         char[] passwordArray = jCurrentPassword.getPassword();
         String current_password = new String(passwordArray);
-        
-        if(current_password.equals(GUI.currentUserAccount.getPassword())) {
+
+        if (current_password.equals(GUI.currentUserAccount.getPassword()))
+        {
             passwordArray = jNewPassword.getPassword();
             String new_password = new String(passwordArray);
-        
+
             passwordArray = jReenterNewPassword.getPassword();
             String reenter_new_password = new String(passwordArray);
-            
-            if(new_password.equals(reenter_new_password)) {
-                if(CreateAccountPanel.validatePassword(new_password)) {
+
+            if (new_password.equals(reenter_new_password))
+            {
+                if (CreateAccountPanel.validatePassword(new_password))
+                {
                     GUI.currentUserAccount.setPassword(new_password);
-                    JOptionPane.showMessageDialog(null,"Password Succesfully Changed!","Bank 42",1,icon);
+                    JOptionPane.showMessageDialog(null, "Password Succesfully Changed!", "Bank 42", 1, icon);
                     jCurrentPassword.setText("passw");
                     jNewPassword.setText("passw");
                     jReenterNewPassword.setText("passw");
                     return true;
                 }
-                else {
-                    JOptionPane.showMessageDialog(null,"New Password Entry Not Valid, Please Try Again.","Bank 42",1,icon);
-                        jCurrentPassword.setText("passw");
-                        jNewPassword.setText("passw");
-                        jReenterNewPassword.setText("passw");
+                else
+                {
+                    JOptionPane.showMessageDialog(null, "New Password Entry Not Valid, Please Try Again.", "Bank 42", 1, icon);
+                    jCurrentPassword.setText("passw");
+                    jNewPassword.setText("passw");
+                    jReenterNewPassword.setText("passw");
                 }
             }
-            
-            else {
-                JOptionPane.showMessageDialog(null,"New Passwords Do Not Match, Please Try Again.","Bank 42",1,icon);
+
+            else
+            {
+                JOptionPane.showMessageDialog(null, "New Passwords Do Not Match, Please Try Again.", "Bank 42", 1, icon);
                 jCurrentPassword.setText("passw");
                 jNewPassword.setText("passw");
                 jReenterNewPassword.setText("passw");
             }
-            
+
         }
-        else {
-            JOptionPane.showMessageDialog(null,"New Passwords Do Not Match, Please Try Again.","Bank 42",1,icon);
-                
+        else
+        {
+            JOptionPane.showMessageDialog(null, "New Passwords Do Not Match, Please Try Again.", "Bank 42", 1, icon);
+
         }
-         return false; 
+        return false;
     }
 
     /**
@@ -202,7 +207,6 @@ public class ChangePassword extends javax.swing.JPanel
     {//GEN-HEADEREND:event_jReenterNewPasswordFocusGained
         jReenterNewPassword.setText("");
     }//GEN-LAST:event_jReenterNewPasswordFocusGained
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CurrentPassword;

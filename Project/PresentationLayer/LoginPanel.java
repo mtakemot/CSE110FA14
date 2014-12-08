@@ -327,7 +327,6 @@ public class LoginPanel extends javax.swing.JPanel
         char[] passwordarray = jPasswordField.getPassword();
         String password = new String(passwordarray);
 
-        
         if ((username.equals("teller")) && (password.equals("teller")))
         {
             CardLayout layout = (CardLayout) (MainPanel.getLayout());
@@ -341,7 +340,7 @@ public class LoginPanel extends javax.swing.JPanel
 
         numberOfLoginAttempts++;
         if (GUI.currentUserAccount == null)
-        {   
+        {
             if (numberOfLoginAttempts == 3)
             {
                 JOptionPane.showMessageDialog(this, "You've exceeded the number of attempts. Please try again later.", "Bank 42", 1, icon);
@@ -351,11 +350,11 @@ public class LoginPanel extends javax.swing.JPanel
             else
             {
                 JOptionPane.showMessageDialog(null, "Account Not found!", "Bank 42",
-                    JOptionPane.INFORMATION_MESSAGE, icon);
+                        JOptionPane.INFORMATION_MESSAGE, icon);
             }
         }
         else
-        {          
+        {
             if (password.compareTo(GUI.currentUserAccount.getPassword()) == 0)
             {
                 mainGUI.getAccList().update();
@@ -375,11 +374,11 @@ public class LoginPanel extends javax.swing.JPanel
                 UsernameField.setText(null);
                 jPasswordField.setText(null);
                 layout.show(MainPanel, "AccList");
-                
-                 noAccess.setText(" ");
-                 noAccess.setVisible(false);
-                 numberOfAttempts = 0;
-                 numberOfLoginAttempts = 0;
+
+                noAccess.setText(" ");
+                noAccess.setVisible(false);
+                numberOfAttempts = 0;
+                numberOfLoginAttempts = 0;
             }
             else
             {
@@ -389,7 +388,7 @@ public class LoginPanel extends javax.swing.JPanel
                     exceededAttempts();
                     return;
                 }
-                
+
                 //call error thing here
                 JOptionPane.showMessageDialog(null, "Invalid Username Password Combination", "Bank 42", 1, icon);
             }
@@ -505,10 +504,9 @@ public class LoginPanel extends javax.swing.JPanel
 
     private void ForgotPasswordMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_ForgotPasswordMouseClicked
     {//GEN-HEADEREND:event_ForgotPasswordMouseClicked
-   
 
         numberOfAttempts++;
-        
+
         String response = JOptionPane.showInputDialog(null, "Enter your email (Attempt " + numberOfAttempts + " of 3): ", "Bank 42", 1);
 
         if (response == null)

@@ -1654,7 +1654,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JButton" name="FutureInterestButton">
+        <Component class="javax.swing.JButton" name="FutureBalancetButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1665,10 +1665,10 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="bc" green="76" red="e" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Calculate Future Interest "/>
+            <Property name="text" type="java.lang.String" value="Calculate Future Balance"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FutureInterestButtonActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FutureBalancetButtonActionPerformed"/>
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
@@ -2147,11 +2147,11 @@
             <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
           </StatementProvider>
           <Parameters>
-            <CodeExpression id="117_FutureInterestButton">
-              <CodeVariable name="FutureInterestButton" type="8194" declaredType="javax.swing.JButton"/>
+            <CodeExpression id="117_FutureBalancetButton">
+              <CodeVariable name="FutureBalancetButton" type="8194" declaredType="javax.swing.JButton"/>
               <ExpressionOrigin>
                 <ExpressionProvider type="ComponentRef">
-                  <ComponentRef name="FutureInterestButton"/>
+                  <ComponentRef name="FutureBalancetButton"/>
                 </ExpressionProvider>
               </ExpressionOrigin>
             </CodeExpression>
