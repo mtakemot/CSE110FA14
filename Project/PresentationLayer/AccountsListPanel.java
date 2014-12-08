@@ -846,11 +846,11 @@ public class AccountsListPanel extends javax.swing.JPanel
             {
                 GUI.currentBankAccount.setBalance(GUI.currentBankAccount.getBalance() - amount);
                 mainGUI.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
-                GUI.currentBankAccount.addTransaction("Sent $" + amount + " to " + email, amount);
+                GUI.currentBankAccount.addTransaction("Sent funds to " + email, amount);
                 String email2 = GUI.currentUserAccount.getEmail();
                 GUI.currentBankAccount = founduser.getBankAccHead();
                 GUI.currentBankAccount.setBalance(GUI.currentBankAccount.getBalance() + amount);
-                GUI.currentBankAccount.addTransaction("Received $" + amount + " from " + email2, amount);
+                GUI.currentBankAccount.addTransaction("Received funds from " + email2, amount);
                 mainGUI.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
                 JOptionPane.showMessageDialog(null, "Funds Transfered Successfully!", "Bank 42", 1, icon);
 
@@ -1054,16 +1054,14 @@ public class AccountsListPanel extends javax.swing.JPanel
         else
         {
             GUI.currentBankAccount.setBalance(GUI.currentBankAccount.getBalance() - amount);
-            GUI.currentBankAccount.addTransaction("Sent $" + amount + " to " + (String) BankAccountsList1.getSelectedItem(), amount);
+            GUI.currentBankAccount.addTransaction("Sent funds to " + (String) BankAccountsList1.getSelectedItem(), amount);
             mainGUI.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
             GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount((String) BankAccountsList1.getSelectedItem());
             GUI.currentBankAccount.setBalance(GUI.currentBankAccount.getBalance() + amount);
             mainGUI.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
-            GUI.currentBankAccount.addTransaction("Received $" + amount + " from " + (String) BankAccountsList0.getSelectedItem(), amount);
+            GUI.currentBankAccount.addTransaction("Received funds from " + (String) BankAccountsList0.getSelectedItem(), amount);
             JOptionPane.showMessageDialog(null, "Funds Transfered Successfully!", "Bank 42", 1, icon);
             GUI.dataout.exportDB(GUI.MasterTable);
-            //GUI.MasterTable.findUserAccount();
-            // test
         }
     }//GEN-LAST:event_TransferButtonActionPerformed
 
