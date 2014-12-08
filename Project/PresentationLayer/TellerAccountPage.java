@@ -333,10 +333,10 @@ public class TellerAccountPage extends javax.swing.JPanel
             //first, retrieve the row index of selection
             int row = AccountsTable.getSelectedRow();
             String user = (String) AccountsTable.getValueAt(row, 0);
-            System.out.print("\nTESTING retrieve selected row index: ");
-            System.out.print(row);
+           // //System.out.print("\nTESTING retrieve selected row index: ");
+            ////System.out.print(row);
             //next, retrieve the user account for the selection ( row , column0) = (x,y)
-            System.out.print("\n Value at index: " + row + ", 0 is: " + user + "\n");
+           // //System.out.print("\n Value at index: " + row + ", 0 is: " + user + "\n");
 
             //setting the current bank account
             GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(user);
@@ -350,7 +350,7 @@ public class TellerAccountPage extends javax.swing.JPanel
             if (GUI.currentBankAccount.addToBalance(amount))
             {
                 setNewCellValue(GUI.currentBankAccount.getBalance(), GUI.currentBankAccount.getAccountName());
-                System.out.println("\n GUI.currentBankAcc Name:  " + GUI.currentBankAccount.getAccountName() + "\n");
+                ////System.out.println("\n GUI.currentBankAcc Name:  " + GUI.currentBankAccount.getAccountName() + "\n");
 
                 JOptionPane.showMessageDialog(null, "$" + amount + " was deposited into "
                         + GUI.currentBankAccount.getAccountName(), "Bank 42", 1, GUI.icon);
@@ -393,10 +393,10 @@ public class TellerAccountPage extends javax.swing.JPanel
             //first, retrieve the row index of selection
             int row = AccountsTable.getSelectedRow();
             String user = (String) AccountsTable.getValueAt(row, 0);
-            System.out.print("\nTESTING retrieve selected row index: ");
-            System.out.print(row);
+            ////System.out.print("\nTESTING retrieve selected row index: ");
+            ////System.out.print(row);
             //next, retrieve the user account for the selection ( row , column0) = (x,y)
-            System.out.print("\n Value at index: " + row + ", 0 is: " + user + "\n");
+            ////System.out.print("\n Value at index: " + row + ", 0 is: " + user + "\n");
 
             //setting the current bank account
             GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(user);
@@ -430,7 +430,7 @@ public class TellerAccountPage extends javax.swing.JPanel
                         + "or are attempting to withdraw too much.", "Bank 42", 0);
             }
 
-            System.out.print("\n GUI.currentBankAcc Name:  " + GUI.currentBankAccount.getAccountName() + "\n");
+            ////System.out.print("\n GUI.currentBankAcc Name:  " + GUI.currentBankAccount.getAccountName() + "\n");
         }
         else
             JOptionPane.showMessageDialog(null, "Please select an account", "Bank 42", 1, GUI.icon);

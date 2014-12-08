@@ -89,7 +89,7 @@ public class AccountsListPanel extends javax.swing.JPanel
     public void update()
     {
         mainGUI.updateUserLabels();
-        System.out.println(AccountsTable.getSelectedRowCount());
+        //System.out.println(AccountsTable.getSelectedRowCount());
         SelectionModel.clearSelection();
         AccountsTable.setModel(new AccountsTableModel(GUI.currentUserAccount));
         wrapper = new UserAccountWrapper(GUI.currentUserAccount);
@@ -890,10 +890,10 @@ public class AccountsListPanel extends javax.swing.JPanel
             GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(bankacc);
             /* if (GUI.currentBankAccount == null)
              {
-             System.out.println("test2");
+             //System.out.println("test2");
              }*/
             amount_in_deleted_acc = GUI.currentBankAccount.getBalance();
-            //System.out.println("test3");
+            ////System.out.println("test3");
             account_type = GUI.currentBankAccount.getAccountType();
             account_name = GUI.currentBankAccount.getAccountName();
 

@@ -1653,7 +1653,7 @@ public class Settings extends javax.swing.JPanel
                     temp.setUserName(response_S);
                     GUI.MasterTable.deleteUserAccount(GUI.currentUserAccount.getUserName());
                     GUI.currentUserAccount = GUI.MasterTable.insertUserAccountCopy(temp);
-                    System.out.println(GUI.currentUserAccount.getUserName());
+                   // //System.out.println(GUI.currentUserAccount.getUserName());
                     GUI.dataout.exportDB(GUI.MasterTable);
                     errorMessage.setText("Success");
                     errorMessage.setForeground(Color.green);
@@ -1750,7 +1750,7 @@ public class Settings extends javax.swing.JPanel
                     temp.setUserName(response_S);
                     GUI.MasterTable.deleteUserAccount(GUI.currentUserAccount.getUserName());
                     GUI.currentUserAccount = GUI.MasterTable.insertUserAccountCopy(temp);
-                    System.out.println(GUI.currentUserAccount.getUserName());
+                    ////System.out.println(GUI.currentUserAccount.getUserName());
                     GUI.dataout.exportDB(GUI.MasterTable);
                     errorMessage.setText("Success");
                     errorMessage.setForeground(Color.green);

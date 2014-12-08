@@ -30,15 +30,15 @@ public class interestTask extends TimerTask
     public void run()
     {
 
-        System.out.println("MSG interestTask.java: calling InterestAndPenalties");
+        ////System.out.println("MSG interestTask.java: calling InterestAndPenalties");
         GUI.MasterTable.InterestAndPenalties();
-        System.out.println("MSG interestTask.java: done with interest");
+        ////System.out.println("MSG interestTask.java: done with interest");
 
-        /*System.out.println("task running, calculate # threads\n");
+        /*//System.out.println("task running, calculate # threads\n");
          ThreadMXBean bean = ManagementFactory.getThreadMXBean();
          int peakThreadCount = bean.getPeakThreadCount();
-         System.out.println("Peak Thread Count: " + peakThreadCount);
-         System.out.println("Number of active threads from the given thread: " + Thread.activeCount());*/
+         //System.out.println("Peak Thread Count: " + peakThreadCount);
+         //System.out.println("Number of active threads from the given thread: " + Thread.activeCount());*/
     }
 
 }

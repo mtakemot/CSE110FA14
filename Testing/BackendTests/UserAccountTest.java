@@ -43,7 +43,7 @@ public class UserAccountTest
     @Test
     public void testValidatePassword_empty()
     {
-        System.out.println("validatePassword");
+        ////System.out.println("validatePassword");
         String pass = "";
         instance = new UserAccount("first", "last", "user", "", "email", "phone", 1);
         boolean expResult = true;
@@ -58,7 +58,7 @@ public class UserAccountTest
     @Test
     public void testValidatePassword_long()
     {
-        System.out.println("validatePassword");
+        ////System.out.println("validatePassword");
         String pass = "0123456789abcdefghijklmnopqrstuvwxyz";
         instance = new UserAccount("first", "last", "user",
                 "0123456789abcdefghijklmnopqrstuvwxyz", "email", "phone", 1);
@@ -74,7 +74,7 @@ public class UserAccountTest
     @Test
     public void testInsertBankAccount_Checking()
     {
-        System.out.println("insertBankAccount");
+        ////System.out.println("insertBankAccount");
 
         String name = "c_test1";
         String type = "Checking";
@@ -101,7 +101,7 @@ public class UserAccountTest
     @Test
     public void testInsertBankAccount_Savings()
     {
-        System.out.println("insertBankAccount");
+        ////System.out.println("insertBankAccount");
 
         String name = "s_test";
         String type = "Savings";
@@ -126,7 +126,7 @@ public class UserAccountTest
     @Test
     public void testInsertBankAccount_Savings_reinsert()
     {
-        System.out.println("insertBankAccount");
+        ////System.out.println("insertBankAccount");
 
         String name = "s_test";
         String type = "Savings";
@@ -152,7 +152,7 @@ public class UserAccountTest
     @Test
     public void testInsertBankAccount_Checking_reinsert()
     {
-        System.out.println("insertBankAccount");
+       // //System.out.println("insertBankAccount");
 
         String name = "c_test";
         String type = "Checking";
@@ -178,7 +178,7 @@ public class UserAccountTest
     @Test
     public void testFindBankAccount()
     {
-        System.out.println("findBankAccount");
+        ////System.out.println("findBankAccount");
         String name = "find_test";
         String name2 = "duplicates_test";
 

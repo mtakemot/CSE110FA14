@@ -225,22 +225,22 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1ActionPerformed
     {//GEN-HEADEREND:event_jButton1ActionPerformed
-        System.out.println("Column 0 Widths: ");
-        System.out.println("MaxWidth: " + TransactionsTable.getColumnModel().getColumn(0).getMaxWidth());
-        System.out.println("MinWidth: " + TransactionsTable.getColumnModel().getColumn(0).getMinWidth());
-        System.out.println("PrefWidth: " + TransactionsTable.getColumnModel().getColumn(0).getPreferredWidth());
-        System.out.println("Column 1 Widths: ");
-        System.out.println("MaxWidth: " + TransactionsTable.getColumnModel().getColumn(1).getMaxWidth());
-        System.out.println("MinWidth: " + TransactionsTable.getColumnModel().getColumn(1).getMinWidth());
-        System.out.println("PrefWidth: " + TransactionsTable.getColumnModel().getColumn(1).getPreferredWidth());
-        System.out.println("Column 2 Widths: ");
-        System.out.println("MaxWidth: " + TransactionsTable.getColumnModel().getColumn(2).getMaxWidth());
-        System.out.println("MinWidth: " + TransactionsTable.getColumnModel().getColumn(2).getMinWidth());
-        System.out.println("PrefWidth: " + TransactionsTable.getColumnModel().getColumn(2).getPreferredWidth());
-        System.out.println("Column 3 Widths: ");
-        System.out.println("MaxWidth: " + TransactionsTable.getColumnModel().getColumn(3).getMaxWidth());
-        System.out.println("MinWidth: " + TransactionsTable.getColumnModel().getColumn(3).getMinWidth());
-        System.out.println("PrefWidth: " + TransactionsTable.getColumnModel().getColumn(3).getPreferredWidth());
+        //System.out.println("Column 0 Widths: ");
+        //System.out.println("MaxWidth: " + TransactionsTable.getColumnModel().getColumn(0).getMaxWidth());
+        //System.out.println("MinWidth: " + TransactionsTable.getColumnModel().getColumn(0).getMinWidth());
+        //System.out.println("PrefWidth: " + TransactionsTable.getColumnModel().getColumn(0).getPreferredWidth());
+        //System.out.println("Column 1 Widths: ");
+        //System.out.println("MaxWidth: " + TransactionsTable.getColumnModel().getColumn(1).getMaxWidth());
+        //System.out.println("MinWidth: " + TransactionsTable.getColumnModel().getColumn(1).getMinWidth());
+        //System.out.println("PrefWidth: " + TransactionsTable.getColumnModel().getColumn(1).getPreferredWidth());
+        //System.out.println("Column 2 Widths: ");
+        //System.out.println("MaxWidth: " + TransactionsTable.getColumnModel().getColumn(2).getMaxWidth());
+        //System.out.println("MinWidth: " + TransactionsTable.getColumnModel().getColumn(2).getMinWidth());
+        //System.out.println("PrefWidth: " + TransactionsTable.getColumnModel().getColumn(2).getPreferredWidth());
+        //System.out.println("Column 3 Widths: ");
+        //System.out.println("MaxWidth: " + TransactionsTable.getColumnModel().getColumn(3).getMaxWidth());
+        //System.out.println("MinWidth: " + TransactionsTable.getColumnModel().getColumn(3).getMinWidth());
+        //System.out.println("PrefWidth: " + TransactionsTable.getColumnModel().getColumn(3).getPreferredWidth());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
