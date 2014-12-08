@@ -162,6 +162,11 @@ public class BankAccount implements Serializable
         }
         return balanceAfterInterest;
     }
+    
+    public void addTransaction(String transType, double transAmount)
+    {
+        this.transactions.add(new Transaction(transType, transAmount));
+    }
 
 /////////////////////////////////////////
 // BELOW ARE JUST SETTERS AND GETTERS ///
