@@ -818,21 +818,34 @@ public class AccountsListPanel extends javax.swing.JPanel
 
         if (founduser != null)
         {
-            GUI.currentBankAccount.subFromBalance(amount);
-            mainGUI.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
-            GUI.currentBankAccount = founduser.getBankAccHead();
-            GUI.currentBankAccount.addToBalance(amount);
-            mainGUI.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
-            JOptionPane.showMessageDialog(null, "Funds Transfered Successfully!", "Bank 42", 1, icon);
+            JPanel createBApanel = mainGUI.getCreateBA().getCreateBankAccountPanel();
+        int choice = JOptionPane.showConfirmDialog(
+                null,
+                "Are you Sure you want to send " + amount + "$ from\nBank Account:     " + GUI.currentBankAccount.getAccountName() + "\nto User Account: " + founduser.getUserName() + "\nwith Email:           " + email + "?",
+                "Bank 42",
+                JOptionPane.OK_CANCEL_OPTION,
+                JOptionPane.PLAIN_MESSAGE,
+                GUI.icon
+        );
+        
+            if (choice==0)
+            {
+                GUI.currentBankAccount.subFromBalance(amount);
+                mainGUI.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
+                GUI.currentBankAccount = founduser.getBankAccHead();
+                GUI.currentBankAccount.addToBalance(amount);
+                mainGUI.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
+                JOptionPane.showMessageDialog(null, "Funds Transfered Successfully!", "Bank 42", 1, icon);
 
             /**
              * 11/30**export upon successful change of data BEGIN*
              */
-            GUI.dataout.exportDB(GUI.MasterTable);
+                GUI.dataout.exportDB(GUI.MasterTable);
 
             /**
              * ********************END*
              */
+            }
         }
         else
         {
