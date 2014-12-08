@@ -341,10 +341,12 @@ public class LoginPanel extends javax.swing.JPanel
         numberOfLoginAttempts++;
         if (GUI.currentUserAccount == null)
         {
-            if (numberOfLoginAttempts == 3)
+            
+            if (numberOfLoginAttempts == 4)
             {
                 JOptionPane.showMessageDialog(this, "You've exceeded the number of attempts. Please try again later.", "Bank 42", 1, icon);
                 exceededAttempts();
+                LoginButton.setEnabled(false);
                 return;
             }
             else
@@ -381,18 +383,19 @@ public class LoginPanel extends javax.swing.JPanel
                 numberOfLoginAttempts = 0;
             }
             else
-            {
-                if (numberOfLoginAttempts == 3)
-                {
-                    JOptionPane.showMessageDialog(this, "You've exceeded the number of attempts. Please try again later.", "Bank 42", 1, icon);
-                    exceededAttempts();
-                    return;
-                }
-
+            {               
                 //call error thing here
                 JOptionPane.showMessageDialog(null, "Invalid Username Password Combination", "Bank 42", 1, icon);
             }
             //move the following code in here, for demoing and when we're done testing.
+        }
+        
+        if (numberOfLoginAttempts == 3)
+        {
+            JOptionPane.showMessageDialog(this, "You've exceeded the number of attempts. Please try again later.", "Bank 42", 1, icon);
+            exceededAttempts();
+            LoginButton.setEnabled(false);
+            return;
         }
     }
 
@@ -400,7 +403,7 @@ public class LoginPanel extends javax.swing.JPanel
     // is clicked. This is just an example to get you started.
     private void LoginButtonMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_LoginButtonMouseClicked
     {//GEN-HEADEREND:event_LoginButtonMouseClicked
-        Login();
+        //Login();
     }//GEN-LAST:event_LoginButtonMouseClicked
 
     private void CreateAccButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CreateAccButtonMouseClicked
@@ -481,12 +484,14 @@ public class LoginPanel extends javax.swing.JPanel
             numberOfLoginAttempts = 0;
             timer.cancel();
             ForgotPassword.setEnabled(true);
+            LoginButton.setEnabled(true);
         }
         return --interval;
     }
 
     private void LoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButtonActionPerformed
         // TODO add your handling code here:
+        Login();
     }//GEN-LAST:event_LoginButtonActionPerformed
 
     private void ForgotPasswordMouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_ForgotPasswordMouseEntered
