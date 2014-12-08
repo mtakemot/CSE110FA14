@@ -168,7 +168,7 @@ public class TellerMainMenu extends javax.swing.JPanel
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 255, 255));
-        jLabel1.setText("Teller Home");
+        jLabel1.setText("<HTML><U>Teller Home</U></HTML>");
         Font font = jLabel1.getFont();
         Map attributes = font.getAttributes();
         attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
