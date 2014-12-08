@@ -862,6 +862,8 @@ public class CreateAccountPanel extends javax.swing.JPanel
         String USERNAME_PATTERN = "^[a-z0-9_-]{3,20}$";
         Pattern pattern = Pattern.compile(USERNAME_PATTERN);
         Matcher matcher = pattern.matcher(username);
+        if(username.equals("teller"))
+            return false;
         return matcher.matches();
     }
 
