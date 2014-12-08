@@ -22,7 +22,7 @@ public class TransactionTableModel extends AbstractTableModel
 
     private String[] columnNames =
     {
-        "Date", "Time", "Type", "Transaction Amount"
+        "Date", "Time", "Description", "Transaction Amount"
     };
 
     public TransactionTableModel(BankAccount current)

@@ -136,6 +136,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
         password.setBackground(new Color(255,255,255,190));
         password.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        password.setMaximumSize(new java.awt.Dimension(6, 21));
         password.addFocusListener(new java.awt.event.FocusAdapter()
         {
             public void focusGained(java.awt.event.FocusEvent evt)
@@ -152,6 +153,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
         email.setBackground(new Color(255,255,255,190));
         email.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        email.setMaximumSize(new java.awt.Dimension(6, 21));
         email.addFocusListener(new java.awt.event.FocusAdapter()
         {
             public void focusGained(java.awt.event.FocusEvent evt)
@@ -168,6 +170,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
         phone.setBackground(new Color(255,255,255,190));
         phone.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        phone.setMaximumSize(new java.awt.Dimension(6, 21));
         phone.addFocusListener(new java.awt.event.FocusAdapter()
         {
             public void focusGained(java.awt.event.FocusEvent evt)
@@ -184,7 +187,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
         lastName.setBackground(new Color(255,255,255,190));
         lastName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        lastName.setMaximumSize(new java.awt.Dimension(6, 20));
+        lastName.setMaximumSize(new java.awt.Dimension(6, 21));
         lastName.addFocusListener(new java.awt.event.FocusAdapter()
         {
             public void focusGained(java.awt.event.FocusEvent evt)
@@ -201,6 +204,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
         username.setBackground(new Color(255,255,255,190));
         username.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        username.setMaximumSize(new java.awt.Dimension(6, 21));
         username.addFocusListener(new java.awt.event.FocusAdapter()
         {
             public void focusGained(java.awt.event.FocusEvent evt)
@@ -217,8 +221,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
         firstName.setBackground(new Color(255,255,255,190));
         firstName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        firstName.setMinimumSize(new java.awt.Dimension(300, 21));
-        firstName.setPreferredSize(new java.awt.Dimension(300, 21));
+        firstName.setMaximumSize(new java.awt.Dimension(6, 21));
         firstName.addFocusListener(new java.awt.event.FocusAdapter()
         {
             public void focusGained(java.awt.event.FocusEvent evt)
@@ -235,6 +238,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
         confirmPassword.setBackground(new Color(255,255,255,190));
         confirmPassword.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        confirmPassword.setMaximumSize(new java.awt.Dimension(6, 21));
         confirmPassword.addFocusListener(new java.awt.event.FocusAdapter()
         {
             public void focusGained(java.awt.event.FocusEvent evt)
