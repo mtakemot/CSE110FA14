@@ -511,6 +511,11 @@ public class LoginPanel extends javax.swing.JPanel
     private void ForgotPasswordMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_ForgotPasswordMouseClicked
     {//GEN-HEADEREND:event_ForgotPasswordMouseClicked
   
+        if(ForgotPassword.isEnabled() == false)
+        {
+            return;
+        }
+        
         numberOfAttempts++;
         
         if (numberOfAttempts == 4)
@@ -518,6 +523,7 @@ public class LoginPanel extends javax.swing.JPanel
             JOptionPane.showMessageDialog(this, "You've exceeded the number of attempts. Please try again later.", "Bank 42", 1, icon);
             ForgotPassword.setEnabled(false);
             exceededAttempts();
+            return;
         }
         
         String response = JOptionPane.showInputDialog(null, "Enter your email (Attempt " + numberOfAttempts + " of 3): ", "Bank 42", 1);
@@ -554,6 +560,7 @@ public class LoginPanel extends javax.swing.JPanel
                 ForgotPassword.setEnabled(false);
                 exceededAttempt = true;
                 exceededAttempts();
+                return;
             }
             
             if(exceededAttempt == false)
