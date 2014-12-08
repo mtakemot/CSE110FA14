@@ -835,7 +835,7 @@ public class AccountsListPanel extends javax.swing.JPanel
             JPanel createBApanel = mainGUI.getCreateBA().getCreateBankAccountPanel();
             int choice = JOptionPane.showConfirmDialog(
                     null,
-                    "Are you Sure you want to send " + amount + "$ from\nBank Account:     " + GUI.currentBankAccount.getAccountName() + "\nto User Account: " + founduser.getUserName() + "\nwith Email:           " + email + "?",
+                    "Are you sure you want to send $" + amount + " from\nBank Account:     " + GUI.currentBankAccount.getAccountName() + "\nto User Account: " + founduser.getUserName() + "\nwith Email:           " + email + "?",
                     "Bank 42",
                     JOptionPane.OK_CANCEL_OPTION,
                     JOptionPane.PLAIN_MESSAGE,

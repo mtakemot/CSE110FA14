@@ -924,7 +924,7 @@ public class Settings extends javax.swing.JPanel
 
             int choice2 = JOptionPane.showConfirmDialog(
                     null,
-                    "Are You Sure You Want To Delete Your Account?",
+                    "Are you sure you want to delete your account?",
                     "Bank 42",
                     JOptionPane.YES_NO_OPTION,
                     JOptionPane.PLAIN_MESSAGE,
@@ -947,7 +947,7 @@ public class Settings extends javax.swing.JPanel
 
     private void setMouseExitColors()
     {
-        Color newColor = new Color(153,255,153);
+        Color newColor = new Color(153, 255, 153);
         jPanel3.setBackground(newColor);
         jPanel4.setBackground(newColor);
         jPanel5.setBackground(newColor);
@@ -967,7 +967,7 @@ public class Settings extends javax.swing.JPanel
         jPanel19.setBackground(newColor);
         jPanel20.setBackground(newColor);
     }
-    
+
     private void jPanel3MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel3MouseEntered
     {//GEN-HEADEREND:event_jPanel3MouseEntered
         jPanel3.setBackground(new Color(255, 255, 255));

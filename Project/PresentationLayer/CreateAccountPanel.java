@@ -752,7 +752,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
         }
         if (!((phoneNumber.length() > 0) && (validatePhoneNumber(phoneNumber))))
         {
-            PhoneError.setText("Your phone number was entered incorrectly. (e.g. 1234567890)");
+            PhoneError.setText("Your phone number was entered incorrectly. (e.g. 0123456789)");
             account_accepted = false;
         }
 

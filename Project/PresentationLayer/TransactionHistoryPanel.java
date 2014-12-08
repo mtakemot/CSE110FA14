@@ -31,6 +31,18 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         TransactionsTable.getSelectionModel().clearSelection();
         Title.setText(GUI.currentBankAccount.getAccountName() + "'s Transaction History");
         TransactionsTable.setModel(new TransactionTableModel(GUI.currentBankAccount));
+        TransactionsTable.getColumnModel().getColumn(0).setMaxWidth(2147483647);
+        TransactionsTable.getColumnModel().getColumn(0).setMinWidth(28);
+        TransactionsTable.getColumnModel().getColumn(0).setPreferredWidth(28);
+        TransactionsTable.getColumnModel().getColumn(1).setMaxWidth(2147483647);
+        TransactionsTable.getColumnModel().getColumn(1).setMinWidth(22);
+        TransactionsTable.getColumnModel().getColumn(1).setPreferredWidth(22);
+        TransactionsTable.getColumnModel().getColumn(2).setMaxWidth(2147483647);
+        TransactionsTable.getColumnModel().getColumn(2).setMinWidth(262);
+        TransactionsTable.getColumnModel().getColumn(2).setPreferredWidth(262);
+        TransactionsTable.getColumnModel().getColumn(3).setMaxWidth(2147483647);
+        TransactionsTable.getColumnModel().getColumn(3).setMinWidth(79);
+        TransactionsTable.getColumnModel().getColumn(3).setPreferredWidth(79);
     }
 
     public TransactionHistoryPanel(JPanel MainPanel, GUI mainGUI)
@@ -47,7 +59,8 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
         java.awt.GridBagConstraints gridBagConstraints;
 
         Title = new javax.swing.JLabel();
@@ -57,6 +70,7 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         TransactionsTable = new javax.swing.JTable();
         Back = new javax.swing.JButton();
         Logout = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         Background = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(800, 600));
@@ -101,7 +115,7 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         centerRenderer.setHorizontalAlignment( JLabel.CENTER );
         TransactionsTable.setDefaultRenderer(String.class, centerRenderer);
         TransactionsTable.setColumnSelectionAllowed(false);
-        TransactionsTable.getTableHeader().setResizingAllowed(true);
+        TransactionsTable.getTableHeader().setResizingAllowed(false);
         TransactionsTable.getTableHeader().setFont(new Font("Tahoma", Font.BOLD, 12));
         TransactionsTable.setGridColor(new java.awt.Color(255, 255, 255));
         TransactionsTable.getTableHeader().setDefaultRenderer((new HeaderRenderer(TransactionsTable)));
@@ -109,7 +123,6 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         TransactionsTable.setOpaque(false);
         TransactionsTable.setSelectionBackground(new java.awt.Color(14, 118, 188));
         TransactionsTable.getTableHeader().setReorderingAllowed(false);
-        TransactionsTable.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
         jScrollPane1.setViewportView(TransactionsTable);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -121,8 +134,10 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         Back.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Back.setForeground(new java.awt.Color(14, 118, 188));
         Back.setText("Back");
-        Back.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        Back.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 BackActionPerformed(evt);
             }
         });
@@ -142,8 +157,10 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         Logout.setMaximumSize(new java.awt.Dimension(211, 25));
         Logout.setMinimumSize(new java.awt.Dimension(211, 25));
         Logout.setPreferredSize(new java.awt.Dimension(211, 25));
-        Logout.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        Logout.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 LogoutActionPerformed(evt);
             }
         });
@@ -154,6 +171,19 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
         BusinessPanel.add(Logout, gridBagConstraints);
+
+        jButton1.setText("Column");
+        jButton1.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        BusinessPanel.add(jButton1, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -193,6 +223,26 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         layout.show(MainPanel, "AccList");
     }//GEN-LAST:event_BackActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1ActionPerformed
+    {//GEN-HEADEREND:event_jButton1ActionPerformed
+        System.out.println("Column 0 Widths: ");
+        System.out.println("MaxWidth: " + TransactionsTable.getColumnModel().getColumn(0).getMaxWidth());
+        System.out.println("MinWidth: " + TransactionsTable.getColumnModel().getColumn(0).getMinWidth());
+        System.out.println("PrefWidth: " + TransactionsTable.getColumnModel().getColumn(0).getPreferredWidth());
+        System.out.println("Column 1 Widths: ");
+        System.out.println("MaxWidth: " + TransactionsTable.getColumnModel().getColumn(1).getMaxWidth());
+        System.out.println("MinWidth: " + TransactionsTable.getColumnModel().getColumn(1).getMinWidth());
+        System.out.println("PrefWidth: " + TransactionsTable.getColumnModel().getColumn(1).getPreferredWidth());
+        System.out.println("Column 2 Widths: ");
+        System.out.println("MaxWidth: " + TransactionsTable.getColumnModel().getColumn(2).getMaxWidth());
+        System.out.println("MinWidth: " + TransactionsTable.getColumnModel().getColumn(2).getMinWidth());
+        System.out.println("PrefWidth: " + TransactionsTable.getColumnModel().getColumn(2).getPreferredWidth());
+        System.out.println("Column 3 Widths: ");
+        System.out.println("MaxWidth: " + TransactionsTable.getColumnModel().getColumn(3).getMaxWidth());
+        System.out.println("MinWidth: " + TransactionsTable.getColumnModel().getColumn(3).getMinWidth());
+        System.out.println("PrefWidth: " + TransactionsTable.getColumnModel().getColumn(3).getPreferredWidth());
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Back;
     private javax.swing.JLabel Background;
@@ -201,6 +251,7 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
     private javax.swing.JButton Logout;
     private javax.swing.JLabel Title;
     private javax.swing.JTable TransactionsTable;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
