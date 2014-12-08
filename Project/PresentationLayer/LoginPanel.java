@@ -411,11 +411,15 @@ public class LoginPanel extends javax.swing.JPanel
 
     private void UsernameFieldActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_UsernameFieldActionPerformed
     {//GEN-HEADEREND:event_UsernameFieldActionPerformed
+        if(ForgotPassword.isEnabled() == false || LoginButton.isEnabled() == false)
+            return;
         Login();
     }//GEN-LAST:event_UsernameFieldActionPerformed
 
     private void jPasswordFieldActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jPasswordFieldActionPerformed
     {//GEN-HEADEREND:event_jPasswordFieldActionPerformed
+        if(ForgotPassword.isEnabled() == false || LoginButton.isEnabled() == false)
+            return;
         Login();
     }//GEN-LAST:event_jPasswordFieldActionPerformed
 
