@@ -340,6 +340,8 @@ public class LoginPanel extends javax.swing.JPanel
             {
                 mainGUI.getAccList().update();
                 mainGUI.getSettings().update();
+                UsernameField.setText(null);
+                jPasswordField.setText(null);
                 // This line grabs the layout from MainPanel from the GUI class so that
                 // we can show a new panel on it
                 CardLayout layout = (CardLayout) (MainPanel.getLayout());
@@ -352,8 +354,6 @@ public class LoginPanel extends javax.swing.JPanel
                 // this name and adding that object to MainPanel has allowed us
                 // to access and show that panel from outside of the class as long
                 //  as we pass in MainPanel
-                UsernameField.setText(null);
-                jPasswordField.setText(null);
                 layout.show(MainPanel, "AccList");
 
                 noAccess.setText(" ");
@@ -411,14 +411,14 @@ public class LoginPanel extends javax.swing.JPanel
 
     private void UsernameFieldActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_UsernameFieldActionPerformed
     {//GEN-HEADEREND:event_UsernameFieldActionPerformed
-        if(ForgotPassword.isEnabled() == false || LoginButton.isEnabled() == false)
+        if (ForgotPassword.isEnabled() == false || LoginButton.isEnabled() == false)
             return;
         Login();
     }//GEN-LAST:event_UsernameFieldActionPerformed
 
     private void jPasswordFieldActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jPasswordFieldActionPerformed
     {//GEN-HEADEREND:event_jPasswordFieldActionPerformed
-        if(ForgotPassword.isEnabled() == false || LoginButton.isEnabled() == false)
+        if (ForgotPassword.isEnabled() == false || LoginButton.isEnabled() == false)
             return;
         Login();
     }//GEN-LAST:event_jPasswordFieldActionPerformed
@@ -491,42 +491,35 @@ public class LoginPanel extends javax.swing.JPanel
             return;
         }
 
-        Object response = JOptionPane.showInputDialog(null, "Enter your email (Attempt " + numberOfAttempts + " of 3): ", "Bank 42", 1, GUI.icon,null,null);
+        Object response = JOptionPane.showInputDialog(null, "Enter your email (Attempt " + numberOfAttempts + " of 3): ", "Bank 42", 1, GUI.icon, null, null);
 
         if (response == null)
         {
-            System.out.println("Returning");
             numberOfAttempts--;
             return;
         }
         String response_S = response.toString();
-              
+
         response = response_S.trim();
         if ((response_S.length() > 0) && CreateAccountPanel.isValidEmailAddress(response_S))
         {
-            if (response.equals(GUI.currentUserAccount.getEmail()))
+            LogicLayer.UserAccount current = GUI.MasterTable.findUserAccountEmail(response_S);
+            if (current != null)
             {
-                Object newPassword = JOptionPane.showInputDialog(null, "Enter your new password: ", "Bank 42", 1,GUI.icon,null,null);
-
-                String newPassword_S =newPassword.toString();
-                
-                if (newPassword_S == null)
-                    return;
-
-                newPassword = newPassword_S.trim();
-                if ((newPassword_S.length() > 0) && CreateAccountPanel.validatePassword(newPassword_S))
-                {
-                    GUI.currentUserAccount.setPassword(newPassword_S);
+                GUI.currentUserAccount = current;
+                if (mainGUI.getChangePasswordPanel().SetPassword())
                     GUI.dataout.exportDB(GUI.MasterTable);
-                }
             }
-
+            else
+            {
+                JOptionPane.showMessageDialog(this, "The email address that you entered was not found", "Bank 42", 1, icon);
+            }
         }
         else
         {
             boolean exceededAttempt = false;
 
-            if (numberOfAttempts == 3)
+            if (numberOfAttempts >= 3)
             {
                 JOptionPane.showMessageDialog(this, "You've exceeded the number of attempts. Please try again later.", "Bank 42", 1, icon);
                 ForgotPassword.setEnabled(false);

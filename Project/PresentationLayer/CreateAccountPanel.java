@@ -722,11 +722,11 @@ public class CreateAccountPanel extends javax.swing.JPanel
             account_accepted = false;
         }
 
-        if ((pass1.length() >= 5) && (pass1.length() <= 15))
+        if ((pass1.length() >= 6) && (pass1.length() <= 20))
         {
             if (validatePassword(pass1) == false)
             {
-                PasswordError.setText("Your password can only contain alphanumeric values and the following symbols - @#$%^&+=");
+                PasswordError.setText("Your password must contain at least one lowercase letter and one uppercase letter.");
                 account_accepted = false;
             }
             else
@@ -736,7 +736,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
         }
         else
         {
-            PasswordError.setText("Your password must be between 5 and 15 characters");
+            PasswordError.setText("Your password must be between 6 and 20 characters");
             account_accepted = false;
         }
 
@@ -878,18 +878,17 @@ public class CreateAccountPanel extends javax.swing.JPanel
 
     public static boolean validate(final String username)
     {
-        String USERNAME_PATTERN = "^[a-zA-z0-9_-]{0,100}$";
-        Pattern pattern = Pattern.compile(USERNAME_PATTERN);
-        Matcher matcher = pattern.matcher(username);
         if (username.equals("teller"))
             return false;
+        String USERNAME_PATTERN = "^[a-zA-z0-9_-]{3,20}$";
+        Pattern pattern = Pattern.compile(USERNAME_PATTERN);
+        Matcher matcher = pattern.matcher(username);
         return matcher.matches();
     }
 
-    public static boolean validatePassword(final String username)
+    public static boolean validatePassword(final String passwd)
     {
-        String passwd = "aaZZa44@";
-        String pattern = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{0,100}";
+        String pattern = ".*(?=.*[a-z])(?=.*[A-Z]).*";
         return passwd.matches(pattern);
     }
 

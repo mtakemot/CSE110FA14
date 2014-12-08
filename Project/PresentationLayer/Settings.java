@@ -195,7 +195,7 @@ public class Settings extends javax.swing.JPanel
 
         FirstName1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         FirstName1.setForeground(new java.awt.Color(51, 0, 255));
-        FirstName1.setText("Last Name");
+        FirstName1.setText("Last Name:");
         FirstName1.setMaximumSize(new java.awt.Dimension(91, 15));
         FirstName1.setMinimumSize(new java.awt.Dimension(91, 15));
         FirstName1.setPreferredSize(new java.awt.Dimension(91, 15));
@@ -235,7 +235,7 @@ public class Settings extends javax.swing.JPanel
 
         FirstName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         FirstName.setForeground(new java.awt.Color(51, 0, 255));
-        FirstName.setText("First Name       ");
+        FirstName.setText("First Name:      ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -272,7 +272,7 @@ public class Settings extends javax.swing.JPanel
 
         Username.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Username.setForeground(new java.awt.Color(51, 0, 255));
-        Username.setText("Username        ");
+        Username.setText("Username:       ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -309,7 +309,7 @@ public class Settings extends javax.swing.JPanel
 
         Email.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Email.setForeground(new java.awt.Color(51, 0, 255));
-        Email.setText("Email               ");
+        Email.setText("Email:              ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -346,7 +346,7 @@ public class Settings extends javax.swing.JPanel
 
         PhoneNumber.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         PhoneNumber.setForeground(new java.awt.Color(51, 0, 255));
-        PhoneNumber.setText("Phone Number");
+        PhoneNumber.setText("Phone Number:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -383,7 +383,7 @@ public class Settings extends javax.swing.JPanel
 
         Password.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Password.setForeground(new java.awt.Color(51, 0, 255));
-        Password.setText("Password         ");
+        Password.setText("Password:        ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -1594,11 +1594,6 @@ public class Settings extends javax.swing.JPanel
                     errorMessage.setForeground(Color.red);
                     errorMessage.setText("Your username must be between 3 and 20 characters.");
                 }
-                else if (!response_S.equals(response_S.toLowerCase()))
-                {
-                    errorMessage.setForeground(Color.red);
-                    errorMessage.setText("Your name must be strictly lowercase");
-                }
                 else
                 {
                     UserAccount temp = new UserAccount(GUI.currentUserAccount);
@@ -1641,11 +1636,6 @@ public class Settings extends javax.swing.JPanel
                 {
                     errorMessage.setForeground(Color.red);
                     errorMessage.setText("Your username must be between 3 and 20 characters.");
-                }
-                else if (!response_S.equals(response_S.toLowerCase()))
-                {
-                    errorMessage.setForeground(Color.red);
-                    errorMessage.setText("Your name must be strictly lowercase");
                 }
                 else
                 {
@@ -1691,11 +1681,6 @@ public class Settings extends javax.swing.JPanel
                     errorMessage.setForeground(Color.red);
                     errorMessage.setText("Your username must be between 3 and 20 characters.");
                 }
-                else if (!response_S.equals(response_S.toLowerCase()))
-                {
-                    errorMessage.setForeground(Color.red);
-                    errorMessage.setText("Your name must be strictly lowercase");
-                }
                 else
                 {
                     UserAccount temp = new UserAccount(GUI.currentUserAccount);
@@ -1738,11 +1723,6 @@ public class Settings extends javax.swing.JPanel
                 {
                     errorMessage.setForeground(Color.red);
                     errorMessage.setText("Your username must be between 3 and 20 characters.");
-                }
-                else if (!response_S.equals(response_S.toLowerCase()))
-                {
-                    errorMessage.setForeground(Color.red);
-                    errorMessage.setText("Your name must be strictly lowercase");
                 }
                 else
                 {
@@ -2015,7 +1995,7 @@ public class Settings extends javax.swing.JPanel
             else
             {
                 errorMessage.setForeground(Color.red);
-                errorMessage.setText("The password must have 5-15 characters and only contain alphanumeric values and these symbols - @#$%^&+=\\\"");
+                errorMessage.setText("The password must have 6-20 characters, at least one uppercase letter and one lowercase letter");
             }
         }
     }//GEN-LAST:event_EditLabel5MouseClicked
@@ -2041,7 +2021,7 @@ public class Settings extends javax.swing.JPanel
             }
             else
             {
-                errorMessage.setText("The password must have 5-15 characters and only contain alphanumeric values and these symbols - @#$%^&+=\\\"");
+                errorMessage.setText("The password must have 6-20 characters, at least one uppercase letter and one lowercase letter");
                 errorMessage.setForeground(Color.red);
             }
         }
@@ -2069,7 +2049,7 @@ public class Settings extends javax.swing.JPanel
             }
             else
             {
-                errorMessage.setText("The password must have 5-15 characters and only contain alphanumeric values and these symbols - @#$%^&+=\\\"");
+                errorMessage.setText("The password must have 6-20 characters, at least one uppercase letter and one lowercase letter");
                 errorMessage.setForeground(Color.red);
             }
         }
@@ -2097,7 +2077,7 @@ public class Settings extends javax.swing.JPanel
             }
             else
             {
-                errorMessage.setText("The password must have 5-15 characters and only contain alphanumeric values and these symbols - @#$%^&+=\\\"");
+                errorMessage.setText("The password must have 6-20 characters, at least one uppercase letter and one lowercase letter");
                 errorMessage.setForeground(Color.red);
             }
         }

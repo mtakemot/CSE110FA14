@@ -57,7 +57,7 @@ public class ChangePassword extends javax.swing.JPanel
 
             if (new_password.equals(reenter_new_password))
             {
-                if (CreateAccountPanel.validatePassword(new_password))
+                if (CreateAccountPanel.validatePassword(new_password) || (new_password.length() < 6 && new_password.length() > 20))
                 {
                     GUI.currentUserAccount.setPassword(new_password);
                     JOptionPane.showMessageDialog(null, "Password Succesfully Changed!", "Bank 42", 1, icon);
@@ -68,7 +68,7 @@ public class ChangePassword extends javax.swing.JPanel
                 }
                 else
                 {
-                    JOptionPane.showMessageDialog(null, "New Password Entry Not Valid, Please Try Again.", "Bank 42", 1, icon);
+                    JOptionPane.showMessageDialog(null, "The password must have 6-20 characters, at least one uppercase letter and one lowercase letter", "Bank 42", 1, icon);
                     jCurrentPassword.setText("passw");
                     jNewPassword.setText("passw");
                     jReenterNewPassword.setText("passw");
