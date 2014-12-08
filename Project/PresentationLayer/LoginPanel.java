@@ -348,6 +348,11 @@ public class LoginPanel extends javax.swing.JPanel
                 UsernameField.setText(null);
                 jPasswordField.setText(null);
                 layout.show(MainPanel, "AccList");
+                
+                 noAccess.setText(" ");
+                 noAccess.setVisible(false);
+                 numberOfAttempts = 0;
+                 numberOfLoginAttempts = 0;
             }
             else
             {
