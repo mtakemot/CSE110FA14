@@ -113,13 +113,6 @@ public class LoginPanel extends javax.swing.JPanel
                 LoginButtonMouseClicked(evt);
             }
         });
-        LoginButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                LoginButtonActionPerformed(evt);
-            }
-        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 2;
@@ -286,13 +279,13 @@ public class LoginPanel extends javax.swing.JPanel
             {
                 ForgotPasswordMouseClicked(evt);
             }
-            public void mouseEntered(java.awt.event.MouseEvent evt)
-            {
-                ForgotPasswordMouseEntered(evt);
-            }
             public void mouseExited(java.awt.event.MouseEvent evt)
             {
                 ForgotPasswordMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
+                ForgotPasswordMouseEntered(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -489,11 +482,6 @@ public class LoginPanel extends javax.swing.JPanel
         return --interval;
     }
 
-    private void LoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButtonActionPerformed
-        // TODO add your handling code here:
-        Login();
-    }//GEN-LAST:event_LoginButtonActionPerformed
-
     private void ForgotPasswordMouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_ForgotPasswordMouseEntered
     {//GEN-HEADEREND:event_ForgotPasswordMouseEntered
         thefont = ForgotPassword.getFont();
@@ -517,7 +505,7 @@ public class LoginPanel extends javax.swing.JPanel
         }
         
         numberOfAttempts++;
-        
+
         if (numberOfAttempts == 4)
         {
             JOptionPane.showMessageDialog(this, "You've exceeded the number of attempts. Please try again later.", "Bank 42", 1, icon);
@@ -525,7 +513,7 @@ public class LoginPanel extends javax.swing.JPanel
             exceededAttempts();
             return;
         }
-        
+
         String response = JOptionPane.showInputDialog(null, "Enter your email (Attempt " + numberOfAttempts + " of 3): ", "Bank 42", 1);
 
         if (response == null)
@@ -553,7 +541,7 @@ public class LoginPanel extends javax.swing.JPanel
         else
         {
             boolean exceededAttempt = false;
-            
+
             if (numberOfAttempts == 3)
             {
                 JOptionPane.showMessageDialog(this, "You've exceeded the number of attempts. Please try again later.", "Bank 42", 1, icon);
@@ -562,11 +550,11 @@ public class LoginPanel extends javax.swing.JPanel
                 exceededAttempts();
                 return;
             }
-            
-            if(exceededAttempt == false)
+
+            if (exceededAttempt == false)
             {
-              JOptionPane.showMessageDialog(this, "Incorrect email, please try again.", "Bank 42", 1, icon);            
-              return;
+                JOptionPane.showMessageDialog(this, "Incorrect email, please try again.", "Bank 42", 1, icon);
+                return;
             }
         }
     }//GEN-LAST:event_ForgotPasswordMouseClicked
