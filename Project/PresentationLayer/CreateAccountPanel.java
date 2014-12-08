@@ -286,7 +286,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
         errorMessage.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         errorMessage.setForeground(new java.awt.Color(255, 102, 102));
         errorMessage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        errorMessage.setText("     Please fill in the fields below to create an account.     ");
+        errorMessage.setText("                    Please fill in the fields below to create an account.                    ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 2;

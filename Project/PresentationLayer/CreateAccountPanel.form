@@ -292,7 +292,7 @@
                   <Color blue="66" green="66" red="ff" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="     Please fill in the fields below to create an account.     "/>
+                <Property name="text" type="java.lang.String" value="                    Please fill in the fields below to create an account.                    "/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
