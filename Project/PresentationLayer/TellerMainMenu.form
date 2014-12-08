@@ -649,7 +649,9 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="cc" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Teller Home"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;&lt;HTML&gt;&lt;U&gt;Teller Home&lt;/U&gt;&lt;/HTML&gt;&quot;" type="code"/>
+            </Property>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="Font font = jLabel1.getFont();&#xa;Map attributes = font.getAttributes();&#xa;attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);&#xa;jLabel1.setFont(font.deriveFont(attributes));"/>

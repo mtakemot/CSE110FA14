@@ -354,6 +354,7 @@ public class TellerAccountPage extends javax.swing.JPanel
 
                 JOptionPane.showMessageDialog(null, "$" + amount + " was deposited into "
                         + GUI.currentBankAccount.getAccountName(), "Bank 42", 1, GUI.icon);
+                GUI.dataout.exportDB(GUI.MasterTable);
             }
             else
             {
@@ -418,6 +419,7 @@ public class TellerAccountPage extends javax.swing.JPanel
             if (GUI.currentBankAccount.subFromBalance(amount))
             {
                 setNewCellValue(GUI.currentBankAccount.getBalance(), GUI.currentBankAccount.getAccountName());
+                GUI.dataout.exportDB(GUI.MasterTable);
                 JOptionPane.showMessageDialog(null, "$" + amount + " was withdrawn from "
                         + GUI.currentBankAccount.getAccountName(), "Bank 42", 1, GUI.icon);
             }
@@ -429,7 +431,6 @@ public class TellerAccountPage extends javax.swing.JPanel
             }
 
             System.out.print("\n GUI.currentBankAcc Name:  " + GUI.currentBankAccount.getAccountName() + "\n");
-            //GUI.currentBankAccount.addToBalance(amount
         }
         else
             JOptionPane.showMessageDialog(null, "Please select an account", "Bank 42", 1, GUI.icon);
@@ -448,6 +449,7 @@ public class TellerAccountPage extends javax.swing.JPanel
             GUI.MasterTable.deleteUserAccount(GUI.currentUserAccount.getUserName());
             GUI.currentBankAccount = null;
             GUI.currentUserAccount = null;
+            GUI.dataout.exportDB(GUI.MasterTable);
             JOptionPane.showMessageDialog(null, "User Account Deleted", "Bank 42", 1, GUI.icon);
             CardLayout layout = (CardLayout) (MainPanel.getLayout());
             layout.show(MainPanel, "TellerMainMenu");
@@ -481,6 +483,7 @@ public class TellerAccountPage extends javax.swing.JPanel
                 JOptionPane.showMessageDialog(null, bankacc + " has been Deleted", "Bank 42", 1, GUI.icon);
                 GUI.currentUserAccount.deleteBankAccount(bankacc);
                 this.update();
+                GUI.dataout.exportDB(GUI.MasterTable);
                 return;
             }
 
@@ -518,11 +521,10 @@ public class TellerAccountPage extends javax.swing.JPanel
                 }
 
                 GUI.currentUserAccount.deleteBankAccount(bankacc);
-
                 GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(choice);
                 GUI.currentBankAccount.addToBalance(amount_in_deleted_acc);
                 this.update();
-
+                GUI.dataout.exportDB(GUI.MasterTable);
                 JOptionPane.showMessageDialog(null, "Bank Account " + bankacc
                         + " has been Deleted" + "\nFunds have been transfered to " + choice, "Bank 42", 1, GUI.icon);
             }
@@ -531,7 +533,7 @@ public class TellerAccountPage extends javax.swing.JPanel
             {
                 GUI.currentUserAccount.deleteBankAccount(bankacc);
                 this.update();
-
+                GUI.dataout.exportDB(GUI.MasterTable);
                 JOptionPane.showMessageDialog(null, "Bank Account " + bankacc
                         + " has been Deleted" + "\nFunds have been emailed to " + GUI.currentUserAccount.getEmail(), "Bank 42", 1, GUI.icon);
             }

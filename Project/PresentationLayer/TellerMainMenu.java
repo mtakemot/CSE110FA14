@@ -168,7 +168,7 @@ public class TellerMainMenu extends javax.swing.JPanel
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 255, 255));
-        jLabel1.setText("Teller Home");
+        jLabel1.setText("<HTML><U>Teller Home</U></HTML>");
         Font font = jLabel1.getFont();
         Map attributes = font.getAttributes();
         attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
@@ -243,6 +243,7 @@ public class TellerMainMenu extends javax.swing.JPanel
     private void ApplyPenIntButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ApplyPenIntButtonActionPerformed
     {//GEN-HEADEREND:event_ApplyPenIntButtonActionPerformed
         GUI.MasterTable.InterestAndPenaltiesTeller();
+        GUI.dataout.exportDB(GUI.MasterTable);
         JOptionPane.showMessageDialog(null, "Success! Interest and penalties have been applied \n"
                 + "globally to all existing Bank Accounts.", "Bank 42", 1, GUI.icon);
     }//GEN-LAST:event_ApplyPenIntButtonActionPerformed
