@@ -45,9 +45,9 @@ public class CreateAccountPanel extends javax.swing.JPanel
     {
         java.awt.GridBagConstraints gridBagConstraints;
 
+        Bank42 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         HeaderPanel = new javax.swing.JPanel();
-        Bank42 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         password = new javax.swing.JPasswordField();
         email = new javax.swing.JTextField();
@@ -107,21 +107,21 @@ public class CreateAccountPanel extends javax.swing.JPanel
         setPreferredSize(new java.awt.Dimension(800, 600));
         setLayout(new java.awt.GridBagLayout());
 
-        jPanel2.setOpaque(false);
-        jPanel2.setLayout(new java.awt.GridBagLayout());
-
-        HeaderPanel.setBackground(new java.awt.Color(255, 255, 255));
-        HeaderPanel.setOpaque(false);
-        HeaderPanel.setLayout(new java.awt.GridBagLayout());
-
         Bank42.setFont(new java.awt.Font("DejaVu Sans", 1, 36)); // NOI18N
         Bank42.setForeground(new java.awt.Color(204, 204, 255));
         Bank42.setText("Create A User Account With Bank 42");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        HeaderPanel.add(Bank42, gridBagConstraints);
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+        add(Bank42, gridBagConstraints);
 
+        jPanel2.setOpaque(false);
+        jPanel2.setLayout(new java.awt.GridBagLayout());
+
+        HeaderPanel.setBackground(new java.awt.Color(255, 255, 255));
+        HeaderPanel.setOpaque(false);
+        HeaderPanel.setLayout(new java.awt.GridBagLayout());
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -646,9 +646,14 @@ public class CreateAccountPanel extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 65, 0);
         jPanel2.add(jPanel1, gridBagConstraints);
 
-        add(jPanel2, new java.awt.GridBagConstraints());
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        add(jPanel2, gridBagConstraints);
 
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/wallpaper_abstract_wallpapers_00250_wallpapersuggest_com-HD.jpg"))); // NOI18N
+        Background.setMaximumSize(new java.awt.Dimension(800, 600));
+        Background.setMinimumSize(new java.awt.Dimension(800, 600));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
