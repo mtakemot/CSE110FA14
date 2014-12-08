@@ -517,25 +517,29 @@ public class LoginPanel extends javax.swing.JPanel
             return;
         }
 
-        String response = JOptionPane.showInputDialog(null, "Enter your email (Attempt " + numberOfAttempts + " of 3): ", "Bank 42", 1);
+        Object response = JOptionPane.showInputDialog(null, "Enter your email (Attempt " + numberOfAttempts + " of 3): ", "Bank 42", 1, GUI.icon,null,null);
 
         if (response == null)
             return;
 
-        response = response.trim();
-        if ((response.length() > 0) && CreateAccountPanel.isValidEmailAddress(response))
+        String response_S = response.toString();
+        
+        response = response_S.trim();
+        if ((response_S.length() > 0) && CreateAccountPanel.isValidEmailAddress(response_S))
         {
             if (response.equals(GUI.currentUserAccount.getEmail()))
             {
-                String newPassword = JOptionPane.showInputDialog(null, "Enter your new password: ", "Bank 42", 1);
+                Object newPassword = JOptionPane.showInputDialog(null, "Enter your new password: ", "Bank 42", 1,GUI.icon,null,null);
 
-                if (newPassword == null)
+                String newPassword_S =newPassword.toString();
+                
+                if (newPassword_S == null)
                     return;
 
-                newPassword = newPassword.trim();
-                if ((newPassword.length() > 0) && CreateAccountPanel.validatePassword(newPassword))
+                newPassword = newPassword_S.trim();
+                if ((newPassword_S.length() > 0) && CreateAccountPanel.validatePassword(newPassword_S))
                 {
-                    GUI.currentUserAccount.setPassword(newPassword);
+                    GUI.currentUserAccount.setPassword(newPassword_S);
                     GUI.dataout.exportDB(GUI.MasterTable);
                 }
             }
