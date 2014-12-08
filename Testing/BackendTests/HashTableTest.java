@@ -8,6 +8,13 @@ import static org.junit.Assert.*;
 /**
  *
  * @author Nishat rustagi
+ * Wrote and modified the following tests for 
+ * 1. Insert User Account
+ * 2. Reinserting User Accounts
+ * 3. Finding User Accounts
+ * 4. Deleting User Accounts
+ * 
+ * 
  * @author Tahereh Masoumi Last Updated Nov. 30 2014
  */
 public class HashTableTest
@@ -92,17 +99,6 @@ public class HashTableTest
             UserAccount testAccount = new UserAccount(testString + i);
             UserAccount result = testTable.findUserAccount(testString + i);
             assertEquals(testAccount.getUserName(), result.getUserName());
-
-            //following not required right ?
-              /*  assertEquals(testAccount.getFirstName(),result.getFirstName());
-             assertEquals(testAccount.getLastName() , result.getLastName());
-             assertEquals(testAccount.getUserName(), result.getUserName());
-             assertEquals(testAccount.getPassword(), result.getPassword());
-             assertEquals(testAccount.getPhone(), result.getPhone());
-             assertEquals(testAccount.getEmail(), result.getEmail());
-             assertEquals(testAccount.getNumOfBankAccounts(), result.getNumOfBankAccounts());
-             assertEquals(testAccount.getLocation(), result.getLocation());
-             */
         }
 
     }
