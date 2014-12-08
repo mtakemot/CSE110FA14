@@ -60,7 +60,7 @@ public class ChangePassword extends javax.swing.JPanel
                 if (CreateAccountPanel.validatePassword(new_password) && (new_password.length() >= 6 && new_password.length() <= 20))
                 {
                     GUI.currentUserAccount.setPassword(new_password);
-                    JOptionPane.showMessageDialog(null, "Password Succesfully Changed!", "Bank 42", 1, icon);
+                    JOptionPane.showMessageDialog(null, "Password succesfully changed!", "Bank 42", 1, icon);
                     jCurrentPassword.setText("passw");
                     jNewPassword.setText("passw");
                     jReenterNewPassword.setText("passw");

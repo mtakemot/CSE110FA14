@@ -814,9 +814,9 @@ public class AccountsListPanel extends javax.swing.JPanel
 
         if (amount > GUI.currentBankAccount.getBalance())
         {
-            JOptionPane.showMessageDialog(null, "Insufficient Funds"
+            JOptionPane.showMessageDialog(null, "Insufficient funds"
                     + "\nYou have $" + GUI.currentBankAccount.getBalance() + " available"
-                    + " in selected Bank Account", "Bank 42", 1, icon);
+                    + " in selected bank account", "Bank 42", 1, icon);
             return;
         }
 
@@ -828,14 +828,14 @@ public class AccountsListPanel extends javax.swing.JPanel
 
             if (founduser == GUI.currentUserAccount)
             {
-                JOptionPane.showMessageDialog(null, "You Cannot Send Funds To Yourself!", "Bank 42", 1, icon);
+                JOptionPane.showMessageDialog(null, "You cannot send funds to yourself!", "Bank 42", 1, icon);
                 return;
             }
 
             JPanel createBApanel = mainGUI.getCreateBA().getCreateBankAccountPanel();
             int choice = JOptionPane.showConfirmDialog(
                     null,
-                    "Are you sure you want to send $" + amount + " from\nBank Account:     " + GUI.currentBankAccount.getAccountName() + "\nto User Account: " + founduser.getUserName() + "\nwith Email:           " + email + "?",
+                    "Are you sure you want to send $" + amount + " from\nbank account:     " + GUI.currentBankAccount.getAccountName() + "\nto User Account: " + founduser.getUserName() + "\nwith Email:           " + email + "?",
                     "Bank 42",
                     JOptionPane.OK_CANCEL_OPTION,
                     JOptionPane.PLAIN_MESSAGE,
@@ -852,7 +852,7 @@ public class AccountsListPanel extends javax.swing.JPanel
                 GUI.currentBankAccount.setBalance(GUI.currentBankAccount.getBalance() + amount);
                 GUI.currentBankAccount.addTransaction("Received funds from " + email2, amount);
                 mainGUI.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
-                JOptionPane.showMessageDialog(null, "Funds Transfered Successfully!", "Bank 42", 1, icon);
+                JOptionPane.showMessageDialog(null, "Funds transfered successfully!", "Bank 42", 1, icon);
 
                 /**
                  * 11/30**export upon successful change of data BEGIN*
@@ -866,7 +866,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         }
         else
         {
-            JOptionPane.showMessageDialog(null, "Error, User Account Not Found", "Bank 42", 1, icon);
+            JOptionPane.showMessageDialog(null, "Error, user account not found", "Bank 42", 1, icon);
         }
     }//GEN-LAST:event_TransferButton1MouseClicked
 
@@ -877,7 +877,7 @@ public class AccountsListPanel extends javax.swing.JPanel
             if (GUI.currentUserAccount.getNumOfBankAccounts() == 1)
             {
                 JOptionPane.showMessageDialog(null, "You must have at least one bank account.\n"
-                        + "You cannot delete this Bank Account without creating a new one first.", "Bank 42", 0);
+                        + "You cannot delete this bank account without creating a new one first.", "Bank 42", 0);
                 return;
             }
 
@@ -899,7 +899,7 @@ public class AccountsListPanel extends javax.swing.JPanel
 
             if (amount_in_deleted_acc == 0)
             {
-                JOptionPane.showMessageDialog(null, bankacc + " has been Deleted", "Bank 42", 1, icon);
+                JOptionPane.showMessageDialog(null, bankacc + " has been deleted", "Bank 42", 1, icon);
                 GUI.currentUserAccount.deleteBankAccount(bankacc);
                 GUI.dataout.exportDB(GUI.MasterTable);
                 this.update();
@@ -908,8 +908,8 @@ public class AccountsListPanel extends javax.swing.JPanel
 
             Object[] options =
             {
-                "To one of my other Bank Accounts",
-                "Email Me Funds"
+                "To one of my other bank accounts",
+                "Email me funds"
             };
             int n = JOptionPane.showOptionDialog(null,
                     "You have $" + amount_in_deleted_acc + " in account " + account_name
@@ -927,7 +927,7 @@ public class AccountsListPanel extends javax.swing.JPanel
             {
                 String choice = (String) JOptionPane.showInputDialog(
                         null,
-                        "Choose a Bank Account",
+                        "Choose a bank account",
                         "Bank 42",
                         JOptionPane.PLAIN_MESSAGE,
                         icon,
@@ -946,8 +946,8 @@ public class AccountsListPanel extends javax.swing.JPanel
                 this.update();
                 GUI.dataout.exportDB(GUI.MasterTable);
 
-                JOptionPane.showMessageDialog(null, "Bank Account " + bankacc
-                        + " has been Deleted" + "\nFunds have been transfered to " + choice, "Bank 42", 1, icon);
+                JOptionPane.showMessageDialog(null, "Bank account " + bankacc
+                        + " has been deleted" + "\nFunds have been transfered to " + choice, "Bank 42", 1, icon);
             }
 
             else if (n == 1)
@@ -956,13 +956,13 @@ public class AccountsListPanel extends javax.swing.JPanel
                 this.update();
                 GUI.dataout.exportDB(GUI.MasterTable);
 
-                JOptionPane.showMessageDialog(null, "Bank Account " + bankacc
-                        + " has been Deleted" + "\nFunds have been emailed to you at:\n"
+                JOptionPane.showMessageDialog(null, "Bank account " + bankacc
+                        + " has been deleted" + "\nFunds have been emailed to you at:\n"
                         + GUI.currentUserAccount.getEmail(), "Bank 42", 1, icon);
             }
         }
         else
-            JOptionPane.showMessageDialog(null, "Please Select an Account", "Bank 42", 1, icon);
+            JOptionPane.showMessageDialog(null, "Please select an account", "Bank 42", 1, icon);
     }//GEN-LAST:event_DeleteAccountButtonActionPerformed
 
     private void FutureBalancetButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_FutureBalancetButtonActionPerformed
@@ -996,7 +996,7 @@ public class AccountsListPanel extends javax.swing.JPanel
             }
         }
         else
-            JOptionPane.showMessageDialog(null, "Please Select an Account", "Bank 42", 1, icon);
+            JOptionPane.showMessageDialog(null, "Please select an account", "Bank 42", 1, icon);
     }//GEN-LAST:event_FutureBalancetButtonActionPerformed
 
     private void TransactionHistoryButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_TransactionHistoryButtonActionPerformed
@@ -1043,9 +1043,9 @@ public class AccountsListPanel extends javax.swing.JPanel
         if (amount > GUI.currentBankAccount.getBalance())
         {
             AmountField.setText("Amount");
-            JOptionPane.showMessageDialog(null, "Insufficient Funds"
+            JOptionPane.showMessageDialog(null, "Insufficient funds"
                     + "\nYou have $" + GUI.currentBankAccount.getBalance() + " available"
-                    + " in selected Bank Account", "Bank 42", 1, GUI.icon);
+                    + " in selected bank account", "Bank 42", 1, GUI.icon);
         }
         else if (GUI.currentBankAccount == GUI.currentUserAccount.findBankAccount((String) BankAccountsList1.getSelectedItem()))
         {
@@ -1060,7 +1060,7 @@ public class AccountsListPanel extends javax.swing.JPanel
             GUI.currentBankAccount.setBalance(GUI.currentBankAccount.getBalance() + amount);
             mainGUI.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
             GUI.currentBankAccount.addTransaction("Received funds from " + (String) BankAccountsList0.getSelectedItem(), amount);
-            JOptionPane.showMessageDialog(null, "Funds Transfered Successfully!", "Bank 42", 1, icon);
+            JOptionPane.showMessageDialog(null, "Funds transfered successfully!", "Bank 42", 1, icon);
             GUI.dataout.exportDB(GUI.MasterTable);
         }
     }//GEN-LAST:event_TransferButtonActionPerformed

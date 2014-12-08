@@ -311,7 +311,7 @@ public class TellerAccountPage extends javax.swing.JPanel
         {
             double amount;
             Object amountstring = JOptionPane.showInputDialog(
-                    null, "Amount To Deposit: ", "Bank 42", 1, GUI.icon, null, null);
+                    null, "Amount to deposit: ", "Bank 42", 1, GUI.icon, null, null);
             if (amountstring == null)
                 return;
             if (isParsable(amountstring.toString()))
@@ -343,7 +343,7 @@ public class TellerAccountPage extends javax.swing.JPanel
 
             if (GUI.currentBankAccount == null)
             {
-                JOptionPane.showMessageDialog(null, "Error! Bank Account Does Not Match", "Bank 42", 0);
+                JOptionPane.showMessageDialog(null, "Error! Bank account does not match", "Bank 42", 0);
                 return;
             }
             // need to check if addToBalance returns true or false here
@@ -371,7 +371,7 @@ public class TellerAccountPage extends javax.swing.JPanel
         {
             double amount;
             Object amountstring = JOptionPane.showInputDialog(
-                    null, "Amount To Withdraw: ", "Bank 42", 1, GUI.icon, null, null);
+                    null, "Amount to withdraw: ", "Bank 42", 1, GUI.icon, null, null);
             if (amountstring == null)
                 return;
             if (isParsable(amountstring.toString()))
@@ -403,16 +403,16 @@ public class TellerAccountPage extends javax.swing.JPanel
 
             if (GUI.currentBankAccount == null)
             {
-                JOptionPane.showMessageDialog(null, "Error Bank Account Does Not Match", "Bank 42", 0);
+                JOptionPane.showMessageDialog(null, "Error bank account does not match", "Bank 42", 0);
                 return;
             }
 
             if (amount > GUI.currentBankAccount.getBalance())
             {
 
-                JOptionPane.showMessageDialog(null, "Insufficient Funds"
+                JOptionPane.showMessageDialog(null, "Insufficient funds"
                         + "\nThere is $" + GUI.currentBankAccount.getBalance() + " available"
-                        + " in selected Bank Account", "Bank 42", 0);
+                        + " in selected bank account", "Bank 42", 0);
                 return;
             }
 
@@ -441,7 +441,7 @@ public class TellerAccountPage extends javax.swing.JPanel
     {//GEN-HEADEREND:event_DeleteUserAccountButtonMouseClicked
         int n = JOptionPane.showConfirmDialog(
                 null,
-                "Are you sure you would like to delete this User Account?",
+                "Are you sure you would like to delete this user account?",
                 "Bank 42",
                 JOptionPane.YES_NO_OPTION, 1, GUI.icon);
         if (n == 0)
@@ -450,7 +450,7 @@ public class TellerAccountPage extends javax.swing.JPanel
             GUI.currentBankAccount = null;
             GUI.currentUserAccount = null;
             GUI.dataout.exportDB(GUI.MasterTable);
-            JOptionPane.showMessageDialog(null, "User Account Deleted", "Bank 42", 1, GUI.icon);
+            JOptionPane.showMessageDialog(null, "User account deleted", "Bank 42", 1, GUI.icon);
             CardLayout layout = (CardLayout) (MainPanel.getLayout());
             layout.show(MainPanel, "TellerMainMenu");
         }
@@ -463,7 +463,7 @@ public class TellerAccountPage extends javax.swing.JPanel
             if (GUI.currentUserAccount.getNumOfBankAccounts() == 1)
             {
                 JOptionPane.showMessageDialog(null, "ERROR! You must have at least one bank account.\n"
-                        + "You cannot delete this Bank Account without creating a new one first.", "Bank 42", 1, GUI.icon);
+                        + "You cannot delete this bank account without creating a new one first.", "Bank 42", 1, GUI.icon);
                 return;
             }
 
@@ -480,7 +480,7 @@ public class TellerAccountPage extends javax.swing.JPanel
 
             if (amount_in_deleted_acc == 0)
             {
-                JOptionPane.showMessageDialog(null, bankacc + " has been Deleted", "Bank 42", 1, GUI.icon);
+                JOptionPane.showMessageDialog(null, bankacc + " has been deleted", "Bank 42", 1, GUI.icon);
                 GUI.currentUserAccount.deleteBankAccount(bankacc);
                 this.update();
                 GUI.dataout.exportDB(GUI.MasterTable);
@@ -489,8 +489,8 @@ public class TellerAccountPage extends javax.swing.JPanel
 
             Object[] options =
             {
-                "To another Bank Account",
-                "Email Funds"
+                "To another bank account",
+                "Email funds"
             };
             int n = JOptionPane.showOptionDialog(null,
                     "You have $" + amount_in_deleted_acc + " in account " + account_name
@@ -508,7 +508,7 @@ public class TellerAccountPage extends javax.swing.JPanel
             {
                 String choice = (String) JOptionPane.showInputDialog(
                         null,
-                        "Choose a Bank Account",
+                        "Choose a bank account",
                         "Bank 42",
                         JOptionPane.PLAIN_MESSAGE,
                         GUI.icon,
@@ -525,8 +525,8 @@ public class TellerAccountPage extends javax.swing.JPanel
                 GUI.currentBankAccount.addToBalance(amount_in_deleted_acc);
                 this.update();
                 GUI.dataout.exportDB(GUI.MasterTable);
-                JOptionPane.showMessageDialog(null, "Bank Account " + bankacc
-                        + " has been Deleted" + "\nFunds have been transfered to " + choice, "Bank 42", 1, GUI.icon);
+                JOptionPane.showMessageDialog(null, "Bank account " + bankacc
+                        + " has been deleted" + "\nFunds have been transfered to " + choice, "Bank 42", 1, GUI.icon);
             }
 
             else if (n == 1)
@@ -534,12 +534,12 @@ public class TellerAccountPage extends javax.swing.JPanel
                 GUI.currentUserAccount.deleteBankAccount(bankacc);
                 this.update();
                 GUI.dataout.exportDB(GUI.MasterTable);
-                JOptionPane.showMessageDialog(null, "Bank Account " + bankacc
-                        + " has been Deleted" + "\nFunds have been emailed to " + GUI.currentUserAccount.getEmail(), "Bank 42", 1, GUI.icon);
+                JOptionPane.showMessageDialog(null, "Bank account " + bankacc
+                        + " has been deleted" + "\nFunds have been emailed to " + GUI.currentUserAccount.getEmail(), "Bank 42", 1, GUI.icon);
             }
         }
         else
-            JOptionPane.showMessageDialog(null, "Please Select an Account", "Bank 42", 1, GUI.icon);
+            JOptionPane.showMessageDialog(null, "Please select an account", "Bank 42", 1, GUI.icon);
     }//GEN-LAST:event_DeleteAccountButtonMouseClicked
 
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BackButtonActionPerformed

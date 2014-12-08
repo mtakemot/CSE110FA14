@@ -786,7 +786,7 @@ public class CreateAccountPanel extends javax.swing.JPanel
                 layout.show(MainPanel, "Login");
             }
             else
-                JOptionPane.showMessageDialog(null, "ERROR! An account with that User Name or Email already exists.", "ERROR", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "ERROR! An account with that username or email already exists.", "ERROR", JOptionPane.ERROR_MESSAGE);
 
         }
     }//GEN-LAST:event_createUserAccountActionPerformed

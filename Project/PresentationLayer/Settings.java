@@ -917,7 +917,7 @@ public class Settings extends javax.swing.JPanel
             String password = mainGUI.getPass().GetPassword();
             if (!(GUI.currentUserAccount.validatePassword(password)))
             {
-                JOptionPane.showMessageDialog(null, "Incorrect Password!", "Error!",
+                JOptionPane.showMessageDialog(null, "Incorrect password!", "Error!",
                         0, GUI.icon);
                 return;
             }
@@ -1150,7 +1150,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel3MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel3MouseClicked
     {//GEN-HEADEREND:event_jPanel3MouseClicked
-        Object response = JOptionPane.showInputDialog(null, "Enter Your New Last Name:", "Bank 42", 1, GUI.icon, null, null);
+        Object response = JOptionPane.showInputDialog(null, "Enter your new last name:", "Bank 42", 1, GUI.icon, null, null);
 
         if (response == null)
             return;
@@ -1175,8 +1175,8 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel9MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel9MouseClicked
     {//GEN-HEADEREND:event_jPanel9MouseClicked
-        Object response = JOptionPane.showInputDialog(null, "Enter Your New Last Name:", "Bank 42", 1, GUI.icon, null, null);
-
+      
+        Object response = JOptionPane.showInputDialog(null, "Enter your new last name:", "Bank 42", 1, GUI.icon, null, null);
         if (response == null)
             return;
 
@@ -1199,7 +1199,7 @@ public class Settings extends javax.swing.JPanel
 
     private void EditLabelMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabelMouseClicked
     {//GEN-HEADEREND:event_EditLabelMouseClicked
-        Object response = JOptionPane.showInputDialog(null, "Enter Your New Last Name:", "Bank 42", 1, GUI.icon, null, null);
+        Object response = JOptionPane.showInputDialog(null, "Enter your new last name:", "Bank 42", 1, GUI.icon, null, null);
 
         if (response == null)
             return;
@@ -1367,7 +1367,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel15MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel15MouseClicked
     {//GEN-HEADEREND:event_jPanel15MouseClicked
-        Object response = JOptionPane.showInputDialog(null, "Enter Your New Last Name:", "Bank 42", 1, GUI.icon, null, null);
+        Object response = JOptionPane.showInputDialog(null, "Enter your new last name:", "Bank 42", 1, GUI.icon, null, null);
 
         if (response == null)
             return;
@@ -1482,7 +1482,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel4MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel4MouseClicked
     {//GEN-HEADEREND:event_jPanel4MouseClicked
-        Object response = JOptionPane.showInputDialog(null, "Enter Your New First:", "Bank 42", 1, GUI.icon, null, null);
+        Object response = JOptionPane.showInputDialog(null, "Enter your new first:", "Bank 42", 1, GUI.icon, null, null);
 
         if (response == null)
             return;
@@ -1506,7 +1506,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel16MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel16MouseClicked
     {//GEN-HEADEREND:event_jPanel16MouseClicked
-        Object response = JOptionPane.showInputDialog(null, "Enter Your New First:", "Bank 42", 1, GUI.icon, null, null);
+        Object response = JOptionPane.showInputDialog(null, "Enter your new first:", "Bank 42", 1, GUI.icon, null, null);
 
         if (response == null)
             return;
@@ -1530,7 +1530,7 @@ public class Settings extends javax.swing.JPanel
 
     private void EditLabel1MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel1MouseClicked
     {//GEN-HEADEREND:event_EditLabel1MouseClicked
-        Object response = JOptionPane.showInputDialog(null, "Enter Your New First:", "Bank 42", 1, GUI.icon, null, null);
+        Object response = JOptionPane.showInputDialog(null, "Enter your new first:", "Bank 42", 1, GUI.icon, null, null);
 
         if (response == null)
             return;
@@ -1554,7 +1554,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel10MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel10MouseClicked
     {//GEN-HEADEREND:event_jPanel10MouseClicked
-        Object response = JOptionPane.showInputDialog(null, "Enter Your New First Name:", "Bank 42", 1, GUI.icon, null, null);
+        Object response = JOptionPane.showInputDialog(null, "Enter your new first name:", "Bank 42", 1, GUI.icon, null, null);
 
         if (response == null)
             return;
@@ -1578,7 +1578,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel5MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel5MouseClicked
     {//GEN-HEADEREND:event_jPanel5MouseClicked
-        Object response = JOptionPane.showInputDialog(null, "Enter Your New Username:", "Bank 42", 1, GUI.icon, null, null);
+        Object response = JOptionPane.showInputDialog(null, "Enter your new username:", "Bank 42", 1, GUI.icon, null, null);
 
         if (response == null)
             return;
@@ -1621,7 +1621,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel17MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel17MouseClicked
     {//GEN-HEADEREND:event_jPanel17MouseClicked
-        Object response = JOptionPane.showInputDialog(null, "Enter Your New Username:", "Bank 42", 1, GUI.icon, null, null);
+        Object response = JOptionPane.showInputDialog(null, "Enter your new username:", "Bank 42", 1, GUI.icon, null, null);
 
         if (response == null)
             return;
@@ -1665,7 +1665,7 @@ public class Settings extends javax.swing.JPanel
 
     private void EditLabel2MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel2MouseClicked
     {//GEN-HEADEREND:event_EditLabel2MouseClicked
-        Object response = JOptionPane.showInputDialog(null, "Enter Your New Username:", "Bank 42", 1, GUI.icon, null, null);
+        Object response = JOptionPane.showInputDialog(null, "Enter your new username:", "Bank 42", 1, GUI.icon, null, null);
 
         if (response == null)
             return;
@@ -1708,7 +1708,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel12MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel12MouseClicked
     {//GEN-HEADEREND:event_jPanel12MouseClicked
-        Object response = JOptionPane.showInputDialog(null, "Enter Your New Username:", "Bank 42", 1, GUI.icon, null, null);
+        Object response = JOptionPane.showInputDialog(null, "Enter your new username:", "Bank 42", 1, GUI.icon, null, null);
 
         if (response == null)
             return;
@@ -1752,7 +1752,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel6MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel6MouseClicked
     {//GEN-HEADEREND:event_jPanel6MouseClicked
-        Object response = JOptionPane.showInputDialog(null, "Enter Your New Email:", "Bank 42", 1, GUI.icon, null, null);
+        Object response = JOptionPane.showInputDialog(null, "Enter your new email:", "Bank 42", 1, GUI.icon, null, null);
 
         if (response == null)
             return;
@@ -1784,7 +1784,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel18MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel18MouseClicked
     {//GEN-HEADEREND:event_jPanel18MouseClicked
-        Object response = JOptionPane.showInputDialog(null, "Enter Your New Email:", "Bank 42", 1, GUI.icon, null, null);
+        Object response = JOptionPane.showInputDialog(null, "Enter your new email:", "Bank 42", 1, GUI.icon, null, null);
 
         if (response == null)
             return;
@@ -1816,7 +1816,7 @@ public class Settings extends javax.swing.JPanel
 
     private void EditLabel3MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel3MouseClicked
     {//GEN-HEADEREND:event_EditLabel3MouseClicked
-        Object response = JOptionPane.showInputDialog(null, "Enter Your New Email:", "Bank 42", 1, GUI.icon, null, null);
+        Object response = JOptionPane.showInputDialog(null, "Enter your new email:", "Bank 42", 1, GUI.icon, null, null);
 
         if (response == null)
             return;
@@ -1848,7 +1848,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel13MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel13MouseClicked
     {//GEN-HEADEREND:event_jPanel13MouseClicked
-        Object response = JOptionPane.showInputDialog(null, "Enter Your New Email:", "Bank 42", 1, GUI.icon, null, null);
+        Object response = JOptionPane.showInputDialog(null, "Enter your new email:", "Bank 42", 1, GUI.icon, null, null);
 
         if (response == null)
             return;
@@ -1880,7 +1880,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel7MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel7MouseClicked
     {//GEN-HEADEREND:event_jPanel7MouseClicked
-        Object response = JOptionPane.showInputDialog(null, "Enter Your New Phone Number:", "Bank 42", 1, GUI.icon, null, null);
+        Object response = JOptionPane.showInputDialog(null, "Enter your new phone number:", "Bank 42", 1, GUI.icon, null, null);
 
         if (response == null)
             return;
@@ -1904,7 +1904,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel19MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel19MouseClicked
     {//GEN-HEADEREND:event_jPanel19MouseClicked
-        Object response = JOptionPane.showInputDialog(null, "Enter Your New Phone Number:", "Bank 42", 1, GUI.icon, null, null);
+        Object response = JOptionPane.showInputDialog(null, "Enter your new phone number:", "Bank 42", 1, GUI.icon, null, null);
 
         if (response == null)
             return;
@@ -1928,7 +1928,7 @@ public class Settings extends javax.swing.JPanel
 
     private void EditLabel4MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel4MouseClicked
     {//GEN-HEADEREND:event_EditLabel4MouseClicked
-        Object response = JOptionPane.showInputDialog(null, "Enter Your New Phone Number:", "Bank 42", 1, GUI.icon, null, null);
+        Object response = JOptionPane.showInputDialog(null, "Enter your new phone number:", "Bank 42", 1, GUI.icon, null, null);
 
         if (response == null)
             return;
@@ -1952,7 +1952,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel11MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel11MouseClicked
     {//GEN-HEADEREND:event_jPanel11MouseClicked
-        Object response = JOptionPane.showInputDialog(null, "Enter Your New Phone Number:", "Bank 42", 1, GUI.icon, null, null);
+        Object response = JOptionPane.showInputDialog(null, "Enter your new phone number:", "Bank 42", 1, GUI.icon, null, null);
 
         if (response == null)
             return;

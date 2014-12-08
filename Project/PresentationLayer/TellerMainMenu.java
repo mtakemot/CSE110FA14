@@ -203,7 +203,7 @@ public class TellerMainMenu extends javax.swing.JPanel
     private void SearchUserButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SearchUserButtonMouseClicked
 
         String name = JOptionPane.showInputDialog(
-                null, "Please enter a User Account: ");
+                null, "Please enter a user account: ");
 
         if (name != null)
         {
@@ -217,7 +217,7 @@ public class TellerMainMenu extends javax.swing.JPanel
             }
             else
             {
-                JOptionPane.showMessageDialog(null, "User Accout Not Found");
+                JOptionPane.showMessageDialog(null, "User accout not found");
             }
         }
     }//GEN-LAST:event_SearchUserButtonMouseClicked
@@ -243,13 +243,13 @@ public class TellerMainMenu extends javax.swing.JPanel
         GUI.MasterTable.InterestAndPenaltiesTeller();
         GUI.dataout.exportDB(GUI.MasterTable);
         JOptionPane.showMessageDialog(null, "Success! Interest and penalties have been applied \n"
-                + "globally to all existing Bank Accounts.", "Bank 42", 1, GUI.icon);
+                + "globally to all existing bank accounts.", "Bank 42", 1, GUI.icon);
     }//GEN-LAST:event_ApplyPenIntButtonActionPerformed
 
     private void SearchUserButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_SearchUserButtonActionPerformed
     {//GEN-HEADEREND:event_SearchUserButtonActionPerformed
         Object name = JOptionPane.showInputDialog(
-                null, "Please Enter User Account: ", "Bank 42", JOptionPane.INFORMATION_MESSAGE, GUI.icon, null, null);
+                null, "Please enter user account: ", "Bank 42", JOptionPane.INFORMATION_MESSAGE, GUI.icon, null, null);
 
         if (name != null)
         {
@@ -263,7 +263,7 @@ public class TellerMainMenu extends javax.swing.JPanel
             }
             else
             {
-                JOptionPane.showMessageDialog(null, "User Accout Not Found", "Bank 42", 1, GUI.icon);
+                JOptionPane.showMessageDialog(null, "User accout not found", "Bank 42", 1, GUI.icon);
             }
         }
     }//GEN-LAST:event_SearchUserButtonActionPerformed

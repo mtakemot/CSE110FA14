@@ -330,7 +330,7 @@ public class LoginPanel extends javax.swing.JPanel
             }
             else
             {
-                JOptionPane.showMessageDialog(null, "Account Not found!", "Bank 42",
+                JOptionPane.showMessageDialog(null, "Account not found!", "Bank 42",
                         JOptionPane.INFORMATION_MESSAGE, icon);
             }
         }
@@ -364,7 +364,7 @@ public class LoginPanel extends javax.swing.JPanel
             else
             {
                 //call error thing here
-                JOptionPane.showMessageDialog(null, "Invalid Username Password Combination", "Bank 42", 1, icon);
+                JOptionPane.showMessageDialog(null, "Invalid username password combination", "Bank 42", 1, icon);
             }
             //move the following code in here, for demoing and when we're done testing.
         }

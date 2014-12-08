@@ -116,12 +116,12 @@ public class CreateBankAccount extends javax.swing.JPanel
 
         else if (AccountNameField.getText().length() > 15)
         {
-            JOptionPane.showMessageDialog(null, "Your Account Name Is Too Long\n Bank Account Names Must Be At Most 15 Characters", "Bank 42", 1, GUI.icon);
+            JOptionPane.showMessageDialog(null, "Your account name is too long\n bank account names must be at most 15 characters", "Bank 42", 1, GUI.icon);
         }
 
         else if (GUI.currentUserAccount.findBankAccount(AccountNameField.getText()) != null)
         {
-            JOptionPane.showMessageDialog(null, "You Have An Existing Bank Account With That Name"
+            JOptionPane.showMessageDialog(null, "You have an existing bank account with that name"
                     + "\n Please Choose A Valid Name", "Bank 42", 1, icon);
             AccountNameField.setText("");
         }
