@@ -800,13 +800,13 @@ public class AccountsListPanel extends javax.swing.JPanel
         }
         else
         {
-            JOptionPane.showMessageDialog(null, "Please Enter A Valid Amount To Transfer", "Bank 42", 1, icon);
+            JOptionPane.showMessageDialog(null, "Please enter a valid amount to transfer", "Bank 42", 1, icon);
             return;
         }
 
         if (amount <= 0)
         {
-            JOptionPane.showMessageDialog(null, "Please Enter A Valid Amount To Transfer", "Bank 42", 1, icon);
+            JOptionPane.showMessageDialog(null, "Please enter a valid amount to transfer", "Bank 42", 1, icon);
             return;
         }
 
@@ -1028,13 +1028,13 @@ public class AccountsListPanel extends javax.swing.JPanel
 
         else
         {
-            JOptionPane.showMessageDialog(null, "Please Enter A Valid Amount To Transfer", "Bank 42", 1, GUI.icon);
+            JOptionPane.showMessageDialog(null, "Please enter a valid amount to transfer", "Bank 42", 1, GUI.icon);
             return;
         }
 
         if (amount <= 0)
         {
-            JOptionPane.showMessageDialog(null, "Please Enter A Valid Amount To Transfer", "Bank 42", 1, GUI.icon);
+            JOptionPane.showMessageDialog(null, "Please enter a valid amount to transfer", "Bank 42", 1, GUI.icon);
             return;
         }
 

@@ -11,7 +11,7 @@ import javax.swing.JPanel;
  *
  * @author Zack
  */
-public class PasswordFieldPanel extends javax.swing.JPanel
+public class DeleteAccountPasswordPanel extends javax.swing.JPanel
 {
 
     private JPanel MainPanel;
@@ -20,13 +20,12 @@ public class PasswordFieldPanel extends javax.swing.JPanel
     /**
      * Creates new form PasswordFieldPanel
      */
-    public PasswordFieldPanel()
+    public DeleteAccountPasswordPanel()
     {
         initComponents();
-
     }
 
-    public PasswordFieldPanel(JPanel MainPanel, GUI mainGUI)
+    public DeleteAccountPasswordPanel(JPanel MainPanel, GUI mainGUI)
     {
         this.MainPanel = MainPanel;
         this.mainGUI = mainGUI;
@@ -75,7 +74,7 @@ public class PasswordFieldPanel extends javax.swing.JPanel
         });
 
         EnterPassword.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        EnterPassword.setText("Please Enter Your Password To Delete Your Account:");
+        EnterPassword.setText("Please enter your password to delete your account:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

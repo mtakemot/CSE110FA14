@@ -506,9 +506,35 @@ public class LoginPanel extends javax.swing.JPanel
             LogicLayer.UserAccount current = GUI.MasterTable.findUserAccountEmail(response_S);
             if (current != null)
             {
-                GUI.currentUserAccount = current;
-                if (mainGUI.getChangePasswordPanel().SetPassword())
-                    GUI.dataout.exportDB(GUI.MasterTable);
+                JPanel passpanel = mainGUI.getForgotPassPanel().GetPanel();
+                int choice = JOptionPane.showConfirmDialog(
+                        null,
+                        passpanel,
+                        "Bank 42",
+                        JOptionPane.OK_CANCEL_OPTION,
+                        JOptionPane.PLAIN_MESSAGE,
+                        GUI.icon
+                );
+
+                if (choice == 0)
+                {
+                    String password = mainGUI.getForgotPassPanel().GetPassword();
+                    String newPassword = password.toString();
+
+                    if (newPassword == null)
+                        return;
+                    String newPassword_S = newPassword.trim();
+                    if ((newPassword_S.length() >= 6) && (newPassword_S.length() <= 20) && CreateAccountPanel.validatePassword(newPassword_S))
+                    {
+                        GUI.currentUserAccount.setPassword(newPassword_S);
+                        JOptionPane.showMessageDialog(null, "You have successfully reset your password", "Bank 42", 1, GUI.icon);
+                        GUI.dataout.exportDB(GUI.MasterTable);
+                    }
+                    else
+                    {
+                        JOptionPane.showMessageDialog(null, "The password must have 6-20 characters, at least one uppercase letter and one lowercase letter", "Bank 42", 1, icon);
+                    }
+                }
             }
             else
             {
@@ -530,7 +556,7 @@ public class LoginPanel extends javax.swing.JPanel
 
             if (exceededAttempt == false)
             {
-                JOptionPane.showMessageDialog(this, "Incorrect email, please try again.", "Bank 42", 1, icon);
+                JOptionPane.showMessageDialog(this, "Invalid email address format", "Bank 42", 1, icon);
                 return;
             }
         }

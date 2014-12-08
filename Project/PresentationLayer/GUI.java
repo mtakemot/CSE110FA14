@@ -208,13 +208,13 @@ public class GUI extends javax.swing.JFrame
         now = now.withMillisOfSecond(now.minusMillis(millis).getMillisOfSecond());
         int nowDay = now.getDayOfMonth();
 
-       // //System.out.println("init now: " + now);
+        // //System.out.println("init now: " + now);
         int nowMonth = now.getMonthOfYear();
         Seconds s = Seconds.secondsBetween(last = last.withMillisOfSecond(last.minusMillis(millis).getMillisOfSecond()), now = now.withMillisOfSecond(now.minusMillis(millis).getMillisOfSecond()));
         int sPassed = s.getSeconds();
        // //System.out.println("Seconds passed: " + sPassed);
         // int taskdelay = sPassed;
-        
+
         //hour/min/sec will not be set to the hour mark: x,0,0
         int hourDiff = sPassed / (60 * 60);
         sPassed = sPassed - hourDiff * 3600;
@@ -222,7 +222,7 @@ public class GUI extends javax.swing.JFrame
         sPassed = sPassed - minDiff * 60;
         int secDiff = sPassed;
         ////System.out.println("DIFF: H-" + hourDiff + ": M-" + minDiff + ": S-" + secDiff);
-    ///    timer.scheduleAtFixedRate(updateBalance, taskdelay, balanceInterval);
+        ///    timer.scheduleAtFixedRate(updateBalance, taskdelay, balanceInterval);
 
         //overwrite current hashtable lastInterestDateTime with incremented, sec
         //min, and hour
@@ -414,10 +414,11 @@ public class GUI extends javax.swing.JFrame
                 mainGUI.setCreateBA(new CreateBankAccount(cardHolder, mainGUI));
                 mainGUI.setTellerAP(new TellerAccountPage(cardHolder, mainGUI));
                 mainGUI.setTellerMainMenu(new TellerMainMenu(cardHolder, mainGUI));
-                mainGUI.setPass(new PasswordFieldPanel(cardHolder, mainGUI));
+                mainGUI.setPass(new DeleteAccountPasswordPanel(cardHolder, mainGUI));
                 mainGUI.setPenIntPanel(new PenaltyInterestPanel(cardHolder, mainGUI));
                 mainGUI.setTransPanel(new TransactionHistoryPanel(cardHolder, mainGUI));
                 mainGUI.setChangePasswordPanel(new ChangePassword(cardHolder, mainGUI));
+                mainGUI.setForgotPassPanel(new ForgotPasswordPanel(cardHolder, mainGUI));
 
                 // This addes the LoginPanel and AccountsListPanel that we just
                 // created to the MainPanel. It also assigns a name to each of
@@ -433,7 +434,6 @@ public class GUI extends javax.swing.JFrame
                 cardHolder.add(mainGUI.getTellerAP(), "TellerAP");
                 cardHolder.add(mainGUI.getPenIntPanel(), "PenIntPanel");
                 cardHolder.add(mainGUI.getTransPanel(), "TransPanel");
-                //cardHolder.add(mainGUI.getChangePasswordPanel(), "ChangePasswordPanel");
 
                 // These two lines show the MainPanel. Without these 2 lines
                 // the GUI would not show up at all. Just leave them alone.
@@ -473,10 +473,21 @@ public class GUI extends javax.swing.JFrame
     private TellerMainMenu TellerMainMenu;
     private CreateBankAccount CreateBA;
     private TellerAccountPage TellerAP;
-    private PasswordFieldPanel pass;
+    private DeleteAccountPasswordPanel pass;
     private PenaltyInterestPanel PenIntPanel;
     private TransactionHistoryPanel TransPanel;
     private ChangePassword ChangePasswordPanel;
+    private ForgotPasswordPanel ForgotPassPanel;
+
+    public ForgotPasswordPanel getForgotPassPanel()
+    {
+        return ForgotPassPanel;
+    }
+
+    public void setForgotPassPanel(ForgotPasswordPanel ForgotPassPanel)
+    {
+        this.ForgotPassPanel = ForgotPassPanel;
+    }
 
     public ChangePassword getChangePasswordPanel()
     {
@@ -498,12 +509,12 @@ public class GUI extends javax.swing.JFrame
         this.TransPanel = TransPanel;
     }
 
-    public PasswordFieldPanel getPass()
+    public DeleteAccountPasswordPanel getPass()
     {
         return pass;
     }
 
-    public void setPass(PasswordFieldPanel pass)
+    public void setPass(DeleteAccountPasswordPanel pass)
     {
         this.pass = pass;
     }

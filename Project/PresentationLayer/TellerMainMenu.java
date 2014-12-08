@@ -203,7 +203,7 @@ public class TellerMainMenu extends javax.swing.JPanel
     private void SearchUserButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SearchUserButtonMouseClicked
 
         String name = JOptionPane.showInputDialog(
-                null, "Please Enter User Account: ");
+                null, "Please enter a User Account: ");
 
         if (name != null)
         {

@@ -678,14 +678,14 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         else
         {
             // Display an error message if they did not
-            JOptionPane.showMessageDialog(null, "Please Enter a Valid number", "Bank 42", 1, GUI.icon);
+            JOptionPane.showMessageDialog(null, "Please enter a valid number", "Bank 42", 1, GUI.icon);
             return;
         }
 
         if (amount < 0)
         {
             // Display an error message if the user tries to enter a negative number
-            JOptionPane.showMessageDialog(null, "Please Enter a Valid number", "Bank 42", 1, GUI.icon);
+            JOptionPane.showMessageDialog(null, "Please enter a valid number", "Bank 42", 1, GUI.icon);
             return;
         }
         // Update the new penalty and export it to the database

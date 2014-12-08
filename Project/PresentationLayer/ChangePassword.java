@@ -57,13 +57,14 @@ public class ChangePassword extends javax.swing.JPanel
 
             if (new_password.equals(reenter_new_password))
             {
-                if (CreateAccountPanel.validatePassword(new_password) || (new_password.length() < 6 && new_password.length() > 20))
+                if (CreateAccountPanel.validatePassword(new_password) && (new_password.length() >= 6 && new_password.length() <= 20))
                 {
                     GUI.currentUserAccount.setPassword(new_password);
                     JOptionPane.showMessageDialog(null, "Password Succesfully Changed!", "Bank 42", 1, icon);
                     jCurrentPassword.setText("passw");
                     jNewPassword.setText("passw");
                     jReenterNewPassword.setText("passw");
+                    GUI.dataout.exportDB(GUI.MasterTable);
                     return true;
                 }
                 else
@@ -77,7 +78,7 @@ public class ChangePassword extends javax.swing.JPanel
 
             else
             {
-                JOptionPane.showMessageDialog(null, "New Passwords Do Not Match, Please Try Again.", "Bank 42", 1, icon);
+                JOptionPane.showMessageDialog(null, "New passwords do not match, please try again.", "Bank 42", 1, icon);
                 jCurrentPassword.setText("passw");
                 jNewPassword.setText("passw");
                 jReenterNewPassword.setText("passw");
@@ -86,7 +87,7 @@ public class ChangePassword extends javax.swing.JPanel
         }
         else
         {
-            JOptionPane.showMessageDialog(null, "New Passwords Do Not Match, Please Try Again.", "Bank 42", 1, icon);
+            JOptionPane.showMessageDialog(null, "New passwords do not match, please try again.", "Bank 42", 1, icon);
 
         }
         return false;

@@ -111,7 +111,7 @@ public class CreateBankAccount extends javax.swing.JPanel
 
         if (AccountNameField.getText().length() == 0)
         {
-            JOptionPane.showMessageDialog(null, "Please Enter An Account Name", "Bank 42", 1, GUI.icon);
+            JOptionPane.showMessageDialog(null, "Please enter an account name", "Bank 42", 1, GUI.icon);
         }
 
         else if (AccountNameField.getText().length() > 15)

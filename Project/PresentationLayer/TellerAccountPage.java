@@ -320,13 +320,13 @@ public class TellerAccountPage extends javax.swing.JPanel
             }
             else
             {
-                JOptionPane.showMessageDialog(null, "Please Enter a Valid number", "Bank 42", 1, GUI.icon);
+                JOptionPane.showMessageDialog(null, "Please enter a valid number", "Bank 42", 1, GUI.icon);
                 return;
             }
 
             if (amount < 0)
             {
-                JOptionPane.showMessageDialog(null, "Please Enter a Valid number", "Bank 42", 1, GUI.icon);
+                JOptionPane.showMessageDialog(null, "Please enter a valid number", "Bank 42", 1, GUI.icon);
                 return;
             }
 
@@ -336,7 +336,7 @@ public class TellerAccountPage extends javax.swing.JPanel
            // //System.out.print("\nTESTING retrieve selected row index: ");
             ////System.out.print(row);
             //next, retrieve the user account for the selection ( row , column0) = (x,y)
-           // //System.out.print("\n Value at index: " + row + ", 0 is: " + user + "\n");
+            // //System.out.print("\n Value at index: " + row + ", 0 is: " + user + "\n");
 
             //setting the current bank account
             GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(user);
@@ -380,13 +380,13 @@ public class TellerAccountPage extends javax.swing.JPanel
             }
             else
             {
-                JOptionPane.showMessageDialog(null, "Please Enter a Valid number", "Bank 42", 1, GUI.icon);
+                JOptionPane.showMessageDialog(null, "Please enter a valid number", "Bank 42", 1, GUI.icon);
                 return;
             }
 
             if (amount < 0)
             {
-                JOptionPane.showMessageDialog(null, "Please Enter a Valid number", "Bank 42", 1, GUI.icon);
+                JOptionPane.showMessageDialog(null, "Please enter a valid number", "Bank 42", 1, GUI.icon);
                 return;
             }
 
