@@ -76,7 +76,7 @@ public class CheckingAccountTest
     @Test
     public void testAddToBalance_DepositEqualToDailyLimit()
     {
-       // //System.out.println("Daily depositing equal to $10000 daily limit");
+        // //System.out.println("Daily depositing equal to $10000 daily limit");
         boolean res2 = instance.addToBalance(10000);
         boolean exp2 = true;
         assertEquals(exp2, res2);
@@ -89,7 +89,7 @@ public class CheckingAccountTest
     @Test
     public void testAddToBalance_DepositMoreThanDailyLimit()
     {
-       // //System.out.println("Daily depositing more than $10000 daily limit");
+        // //System.out.println("Daily depositing more than $10000 daily limit");
         boolean res3 = instance.addToBalance(15000);
         boolean exp3 = false;
         assertEquals(exp3, res3);
@@ -113,7 +113,6 @@ public class CheckingAccountTest
         boolean res4 = instance.addToBalance(5000);
 
         //.out.println("balance after 5000 deposit in next day");
-
         boolean exp4 = true;
         assertEquals(exp4, res4);
     }
@@ -127,7 +126,7 @@ public class CheckingAccountTest
     {
         instance.addToBalance(6000);
         DateTimeUtils.setCurrentMillisOffset(200000000);
-       // //System.out.println("depositing more than $10000 in several-days period ");
+        // //System.out.println("depositing more than $10000 in several-days period ");
         boolean res5 = instance.addToBalance(5000);
         boolean exp5 = true;
         assertEquals(exp5, res5);
@@ -142,7 +141,7 @@ public class CheckingAccountTest
     public void testSubFromBalance_DebitmMoreThanBalance()
     {
         instance.setBalance(0);
-       // //System.out.println("Debit more than balance");
+        // //System.out.println("Debit more than balance");
         boolean expResult1 = false;
         boolean result1 = instance.subFromBalance(200);
         assertEquals(expResult1, result1);
@@ -156,7 +155,7 @@ public class CheckingAccountTest
     public void testSubFromBalance_DebitLessThanDailyLimit()
     {
         instance.setBalance(20000);
-       // //System.out.println("Debit less than $10000 daily limit");
+        // //System.out.println("Debit less than $10000 daily limit");
         boolean expResult2 = true;
         boolean result2 = instance.subFromBalance(5000);
         assertEquals(expResult2, result2);
@@ -183,7 +182,7 @@ public class CheckingAccountTest
     @Test
     public void testSubFromBalance_debitMoreThanDailyLimit()
     {
-       // //System.out.println("Debit more than $10000 daily limit");
+        // //System.out.println("Debit more than $10000 daily limit");
         boolean expResult4 = false;
         boolean result4 = instance.subFromBalance(5000);
         assertEquals(expResult4, result4);

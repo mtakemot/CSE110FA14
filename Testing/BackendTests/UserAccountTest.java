@@ -152,7 +152,7 @@ public class UserAccountTest
     @Test
     public void testInsertBankAccount_Checking_reinsert()
     {
-       // //System.out.println("insertBankAccount");
+        // //System.out.println("insertBankAccount");
 
         String name = "c_test";
         String type = "Checking";

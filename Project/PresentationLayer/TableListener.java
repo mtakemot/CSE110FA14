@@ -14,7 +14,7 @@ public class TableListener implements TableModelListener
         int column = e.getColumn();
 
         /*//System.out.println("Row " + row);
-        //System.out.println("Column " + column);*/
+         //System.out.println("Column " + column);*/
     }
 
 }

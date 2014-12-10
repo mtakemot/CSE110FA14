@@ -72,7 +72,7 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
 
         jLabel2 = new javax.swing.JLabel();
         PanelDescLabel = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        HolderPanel = new javax.swing.JPanel();
         CheckingAccountRatesPanel = new javax.swing.JPanel();
         BalanceLabelTop = new javax.swing.JLabel();
         BalanceLabelMid = new javax.swing.JLabel();
@@ -104,6 +104,7 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
 
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
+        setName("BGPanel"); // NOI18N
         setOpaque(false);
         setLayout(new java.awt.GridBagLayout());
 
@@ -115,12 +116,12 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
         add(PanelDescLabel, gridBagConstraints);
 
-        jPanel1.setMaximumSize(new java.awt.Dimension(800, 600));
-        jPanel1.setMinimumSize(new java.awt.Dimension(800, 600));
-        jPanel1.setName(""); // NOI18N
-        jPanel1.setOpaque(false);
-        jPanel1.setPreferredSize(new java.awt.Dimension(800, 600));
-        jPanel1.setLayout(new java.awt.GridBagLayout());
+        HolderPanel.setMaximumSize(new java.awt.Dimension(800, 600));
+        HolderPanel.setMinimumSize(new java.awt.Dimension(800, 600));
+        HolderPanel.setName(""); // NOI18N
+        HolderPanel.setOpaque(false);
+        HolderPanel.setPreferredSize(new java.awt.Dimension(800, 600));
+        HolderPanel.setLayout(new java.awt.GridBagLayout());
 
         CheckingAccountRatesPanel.setBackground(new java.awt.Color(204, 255, 204));
         CheckingAccountRatesPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)), "Checking Account Rates", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -282,7 +283,7 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 5, 0);
-        jPanel1.add(CheckingAccountRatesPanel, gridBagConstraints);
+        HolderPanel.add(CheckingAccountRatesPanel, gridBagConstraints);
 
         SavingsAccountRatesPanel.setBackground(new java.awt.Color(204, 255, 255));
         SavingsAccountRatesPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)), "Savings Account Rates", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -407,7 +408,7 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 5, 0);
-        jPanel1.add(SavingsAccountRatesPanel, gridBagConstraints);
+        HolderPanel.add(SavingsAccountRatesPanel, gridBagConstraints);
 
         ConfirmButton.setBackground(new java.awt.Color(255, 255, 255));
         ConfirmButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -426,7 +427,7 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.insets = new java.awt.Insets(5, 0, 5, 0);
-        jPanel1.add(ConfirmButton, gridBagConstraints);
+        HolderPanel.add(ConfirmButton, gridBagConstraints);
 
         BackButton.setBackground(new java.awt.Color(255, 255, 255));
         BackButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -445,7 +446,7 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.insets = new java.awt.Insets(5, 0, 10, 0);
-        jPanel1.add(BackButton, gridBagConstraints);
+        HolderPanel.add(BackButton, gridBagConstraints);
 
         PenaltyButton.setBackground(new java.awt.Color(255, 255, 255));
         PenaltyButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -464,13 +465,13 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.insets = new java.awt.Insets(5, 0, 5, 0);
-        jPanel1.add(PenaltyButton, gridBagConstraints);
+        HolderPanel.add(PenaltyButton, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        add(jPanel1, gridBagConstraints);
+        add(HolderPanel, gridBagConstraints);
 
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/wallpaper_abstract_wallpapers_00250_wallpapersuggest_com-HD.jpg"))); // NOI18N
         Background.setMaximumSize(new java.awt.Dimension(800, 600));
@@ -712,6 +713,7 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
     private javax.swing.JButton ConfirmButton;
     private javax.swing.JLabel CurrentCheckingRateLabel;
     private javax.swing.JLabel CurrentSavingsRateLabel;
+    private javax.swing.JPanel HolderPanel;
     private javax.swing.JLabel PanelDescLabel;
     private javax.swing.JButton PenaltyButton;
     private javax.swing.JPanel SavingsAccountRatesPanel;
@@ -723,6 +725,5 @@ public class PenaltyInterestPanel extends javax.swing.JPanel
     private javax.swing.JTextField Savings_More_Than_3000_Field;
     private javax.swing.JLabel Savings_More_Than_3000_Label;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

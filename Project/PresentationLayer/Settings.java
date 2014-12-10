@@ -1175,7 +1175,7 @@ public class Settings extends javax.swing.JPanel
 
     private void jPanel9MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jPanel9MouseClicked
     {//GEN-HEADEREND:event_jPanel9MouseClicked
-      
+
         Object response = JOptionPane.showInputDialog(null, "Enter your new last name:", "Bank 42", 1, GUI.icon, null, null);
         if (response == null)
             return;

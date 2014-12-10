@@ -50,7 +50,7 @@ public class HashTableTest
     @Test
     public void testInsertUserAccount_reinsert()
     {
-       // //System.out.println("insertUserAccount");
+        // //System.out.println("insertUserAccount");
         HashTable testTable = new HashTable();
         String testString = "testUserName";
 
@@ -72,7 +72,7 @@ public class HashTableTest
     public void testFindUserAccount()
 
     {
-      //  //System.out.println("FindUserAccount");
+        //  //System.out.println("FindUserAccount");
         HashTable testTable = new HashTable();
         String testString = "testUserName";
 
@@ -133,7 +133,7 @@ public class HashTableTest
     public void testFindUserAccountByEmail()
 
     {
-       // //System.out.println("Find UserAccount by Email");
+        // //System.out.println("Find UserAccount by Email");
         HashTable testTable = new HashTable();
         String testString = "testUserName";
 

@@ -46,7 +46,7 @@ public class SQLiteJDBC
             //System.out.println("test1");
             String sql = "INSERT INTO workingDB (ID,SavingAcct, CheckingAcct) "
                     + "VALUES (1, 'mySavings', 'myChecking');";
-          //  //System.out.println("test2");
+            //  //System.out.println("test2");
             stmt.executeUpdate(sql);
             ////System.out.println("test3");
 
@@ -71,8 +71,7 @@ public class SQLiteJDBC
             System.exit(0);
         }
 
-      //  //System.out.println("Inserted into table database successfully");
-
+        //  //System.out.println("Inserted into table database successfully");
         /**
          * ********VIEW*********
          */
