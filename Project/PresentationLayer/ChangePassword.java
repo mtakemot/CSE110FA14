@@ -1,8 +1,13 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Team 42
+ * CSE 110, Fall 2014
+ *  
+ * Author(s):Zachary Preece-Scaringe
+ * 
+ * Summary:Panel which will be shown via popup when a user wants to change his
+ * password. Panel will handle input, verification, and setting the new password.
  */
+
 package PresentationLayer;
 
 import java.awt.Color;
@@ -10,10 +15,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-/**
- *
- * @author Zack
- */
 public class ChangePassword extends javax.swing.JPanel
 {
 
@@ -31,7 +32,6 @@ public class ChangePassword extends javax.swing.JPanel
 
     public ChangePassword(JPanel MainPanel, GUI mainGUI)
     {
-        icon = new javax.swing.ImageIcon(getClass().getResource("/Assets/rsz_2icon.png"));
         this.MainPanel = MainPanel;
         this.mainGUI = mainGUI;
         initComponents();
@@ -44,32 +44,47 @@ public class ChangePassword extends javax.swing.JPanel
 
     public boolean SetPassword()
     {
+        //gets old and new passwords from its jpassword fields and sets the new
+        //if old password matches, and new passwords are valid, and the same.
+        
+        //get the password as an array and convert it to a string
         char[] passwordArray = jCurrentPassword.getPassword();
         String current_password = new String(passwordArray);
 
+        //check for matching password
         if (current_password.equals(GUI.currentUserAccount.getPassword()))
         {
+            //store new passwords
             passwordArray = jNewPassword.getPassword();
             String new_password = new String(passwordArray);
-
+            
             passwordArray = jReenterNewPassword.getPassword();
             String reenter_new_password = new String(passwordArray);
-
+            
             if (new_password.equals(reenter_new_password))
             {
+                //set password, if it is valid, reset password fields
                 if (CreateAccountPanel.validatePassword(new_password) && (new_password.length() >= 6 && new_password.length() <= 20))
                 {
+                    //set password
                     GUI.currentUserAccount.setPassword(new_password);
-                    JOptionPane.showMessageDialog(null, "Password succesfully changed!", "Bank 42", 1, icon);
+                    
+                    //success popup
+                    JOptionPane.showMessageDialog(null, "Password succesfully changed!", "Bank 42", 1, GUI.icon);
+                    
+                    //reset password fields
                     jCurrentPassword.setText("passw");
                     jNewPassword.setText("passw");
                     jReenterNewPassword.setText("passw");
+                    
+                    //export data to database
                     GUI.dataout.exportDB(GUI.MasterTable);
                     return true;
                 }
                 else
                 {
-                    JOptionPane.showMessageDialog(null, "The password must have 6-20 characters, at least one uppercase letter and one lowercase letter", "Bank 42", 1, icon);
+                    //if pass isnt valid, output error messages, reset pass fields
+                    JOptionPane.showMessageDialog(null, "The password must have 6-20 characters, at least one uppercase letter and one lowercase letter", "Bank 42", 1, GUI.icon);
                     jCurrentPassword.setText("passw");
                     jNewPassword.setText("passw");
                     jReenterNewPassword.setText("passw");
@@ -78,7 +93,7 @@ public class ChangePassword extends javax.swing.JPanel
 
             else
             {
-                JOptionPane.showMessageDialog(null, "New passwords do not match, please try again.", "Bank 42", 1, icon);
+                JOptionPane.showMessageDialog(null, "New passwords do not match, please try again.", "Bank 42", 1, GUI.icon);
                 jCurrentPassword.setText("passw");
                 jNewPassword.setText("passw");
                 jReenterNewPassword.setText("passw");
@@ -87,7 +102,7 @@ public class ChangePassword extends javax.swing.JPanel
         }
         else
         {
-            JOptionPane.showMessageDialog(null, "New passwords do not match, please try again.", "Bank 42", 1, icon);
+            JOptionPane.showMessageDialog(null, "New passwords do not match, please try again.", "Bank 42", 1, GUI.icon);
 
         }
         return false;

@@ -1,30 +1,30 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Team 42
+ * CSE 110, Fall 2014
+ *  
+ * Author(s):Zachary Preece-Scaringe
+ * 
+ * Summary: Password Verification Panel for User Account Deletion.
  */
+
 package PresentationLayer;
 
 import javax.swing.JPanel;
 
-/**
- *
- * @author Zack
- */
+
 public class DeleteAccountPasswordPanel extends javax.swing.JPanel
 {
 
+    //access to gui and main panel methods and variables
     private JPanel MainPanel;
     private GUI mainGUI;
 
-    /**
-     * Creates new form PasswordFieldPanel
-     */
     public DeleteAccountPasswordPanel()
     {
         initComponents();
     }
 
+    //our constructor which includes mainPanel and GUI variables
     public DeleteAccountPasswordPanel(JPanel MainPanel, GUI mainGUI)
     {
         this.MainPanel = MainPanel;
@@ -37,6 +37,7 @@ public class DeleteAccountPasswordPanel extends javax.swing.JPanel
         return this;
     }
 
+    //getter for password
     public String GetPassword()
     {
         char[] passwordArray = jPasswordField.getPassword();
