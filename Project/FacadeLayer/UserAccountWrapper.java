@@ -34,7 +34,8 @@ public class UserAccountWrapper
      * and it's related bank accounts by delegating to the getAccountInfo getter
      * method defined below.
      *
-     * @param curr
+     * @param curr current user account that the wrapper is going to 
+     * retrieve information from.
      */
     public UserAccountWrapper(UserAccount curr)
     {

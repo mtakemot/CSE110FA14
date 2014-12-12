@@ -58,7 +58,7 @@ public class CheckingAccount extends BankAccount
      * from a user's account. Also imposes daily withdraw limit of $10000
      *
      * @param amount amount to subtract
-     * @return
+     * @return true/false
      */
     @Override
     public boolean subFromBalance(double amount)
@@ -98,7 +98,7 @@ public class CheckingAccount extends BankAccount
      * user's account. Also imposes daily deposit limit of $10000
      *
      * @param amount amount to subtract
-     * @return
+     * @return true/false
      */
     @Override
     public boolean addToBalance(double amount)

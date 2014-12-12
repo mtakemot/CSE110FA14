@@ -52,7 +52,7 @@ public class HashTable implements Serializable
      * This function will insert a new UserAccount into the table
      *
      * @param userEmail The user's email address
-     * @method insertUserAccount
+     * method: insertUserAccount
      * @param userName The UserAccount to be inserted
      * @return Returns the inserted UserAccount if insertion was successful.
      * Returns null if UserAccount with the given userName is found.
@@ -108,8 +108,8 @@ public class HashTable implements Serializable
     }
     /**
      * Will return true for successful creation, false if the user account already exists. 
-     * @param copy
-     * @return 
+     * @param copy the useraccount to copy
+     * @return null if duplicate entry (unsuccessful) other wise the user account
      */
     public UserAccount insertUserAccountCopy(UserAccount copy)
     {
@@ -157,7 +157,7 @@ public class HashTable implements Serializable
     /**
      * Attempts to find a UserAccount in the HashTable.
      *
-     * @method findUserAccount
+     * method: findUserAccount
      * @param userName The UserAccount to be found identified by the userName
      * @return Returns true if found. Returns false if not found
      */
@@ -232,7 +232,7 @@ public class HashTable implements Serializable
     /**
      * This function will delete a UserAccount from the HashTable
      *
-     * @method deleteUserAccount
+     * method deleteUserAccount
      * @param userName The userName that corresponds to the UserAccount to be
      * deleted
      * @return Returns true if deletion was successful, false if not successful
@@ -280,7 +280,7 @@ public class HashTable implements Serializable
      * values.
      *
      * @param userName The String to get the hashcode of
-     * @method hashCode
+     * method hashCode
      * @return returns the hashCode which will be % with the table size to find
      * the insertion point of the element.
      */
@@ -472,7 +472,7 @@ public class HashTable implements Serializable
      * totals since the calculation is done instantaneously. Instead is uses the
      * current bank account balance
      *
-     * @param currentBA
+     * @param currentBA the current bank account 
      */
     public void InterestAndPenaltiesTellerHelper(BankAccount currentBA)
     {

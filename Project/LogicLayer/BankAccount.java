@@ -70,6 +70,8 @@ public class BankAccount implements Serializable
      * respectively add or subtract a double amount from the bank account's
      * current balance. They will be overridden SavingsAccount.java and
      * CheckingAccount.java
+     * @param amount the double amount to subtract OR add from balance
+     * @return true/false
      */
     public boolean subFromBalance(double amount)
     {
