@@ -3,7 +3,7 @@ package PresentationLayer;
 /**
  * **************************************************************************
  *
- * Ryan Bridges CSE 110, Fall 2014 Last Updated: October 30, 2014
+ * Ryan Bridges CSE 110, Fall 2014 Last Updated: October 12, 2014
  *
  * Team 42
  *
@@ -21,8 +21,6 @@ import LogicLayer.UserAccount;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.font.TextAttribute;
-import java.util.Map;
 import org.joda.time.DateTime;
 
 //for debug
@@ -36,9 +34,12 @@ public class AccountsListPanel extends javax.swing.JPanel
     // YOU DECLARE A PRIVATE VARIABLE THAT WILL STORE THE MAIN PANEL FROM GUI
     private JPanel MainPanel;
     private GUI mainGUI;
+    // Reference to the FacadeLayer so that we have access to the backend in
+    // a format that we can use
     private UserAccountWrapper wrapper;
     private int total_accounts;
     private String[] accountlist;
+    // Selection model for table
     private DefaultListSelectionModel SelectionModel;
     private ImageIcon icon;
 
@@ -62,7 +63,10 @@ public class AccountsListPanel extends javax.swing.JPanel
      the main panel where all of our GUI elements will eventually be located. */
     public AccountsListPanel(JPanel MainPanel, GUI mainGUI)
     {
+        // Sets the background
         icon = new javax.swing.ImageIcon(getClass().getResource("/Assets/rsz_2icon.png"));
+        // Grabs all information for the currentUserAccount so that it can be
+        // put into the table
         wrapper = new UserAccountWrapper(GUI.currentUserAccount);
         total_accounts = wrapper.getTotalAccounts();
         accountlist = new String[total_accounts];
@@ -75,23 +79,29 @@ public class AccountsListPanel extends javax.swing.JPanel
         initComponents();
     }
 
+    // Allows us to update the table when data is changed
     public void setNewCellValue(double NewBalance, String accountName)
     {
         AccountsTable.setValueAt((Object) NewBalance,
                 findRowPositionByName(accountName), BALANCECOL);
     }
 
+    // Updates the label that displays the currentUserAccount
     public void updateUserLabel()
     {
         UserLabel.setText(GUI.currentUserAccount.getUserName());
     }
 
+    // Updates all elements on the entire page
     public void update()
     {
+        // Updates all JLabels across the program
         mainGUI.updateUserLabels();
         //System.out.println(AccountsTable.getSelectedRowCount());
         SelectionModel.clearSelection();
+        // Redraws the AccountsTable
         AccountsTable.setModel(new AccountsTableModel(GUI.currentUserAccount));
+        // Grabs the new info for the new account
         wrapper = new UserAccountWrapper(GUI.currentUserAccount);
         total_accounts = wrapper.getTotalAccounts();
         accountlist = new String[total_accounts];
@@ -99,12 +109,14 @@ public class AccountsListPanel extends javax.swing.JPanel
         {
             accountlist[i] = wrapper.getAccountName(i);
         }
+        // Draws new combo boxes
         DefaultComboBoxModel model1 = new DefaultComboBoxModel(accountlist);
         DefaultComboBoxModel model0 = new DefaultComboBoxModel(accountlist);
         this.BankAccountsList1.setModel(model1);
         this.BankAccountsList.setModel(model0);
     }
 
+    // ZACK COMMENT HERE
     public void deletecomboboxes(String bankacc)
     {
         wrapper = new UserAccountWrapper(GUI.currentUserAccount);
@@ -686,6 +698,7 @@ public class AccountsListPanel extends javax.swing.JPanel
     private void CreateBAButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_CreateBAButtonActionPerformed
     {//GEN-HEADEREND:event_CreateBAButtonActionPerformed
         JPanel createBApanel = mainGUI.getCreateBA().getCreateBankAccountPanel();
+        // Display a popup which will allow the user to create a new bank account
         int choice = JOptionPane.showConfirmDialog(
                 null,
                 createBApanel,
@@ -737,11 +750,13 @@ public class AccountsListPanel extends javax.swing.JPanel
         // TODO add your handling code here:
     }//GEN-LAST:event_BankAccountsList1ActionPerformed
 
+    // Checks if a valid double was entered
     public static boolean isParsableDouble(String input)
     {
         boolean parsable = true;
         try
         {
+            // parse the double and catch the exception if there is one
             Double.parseDouble(input);
         } catch (NumberFormatException e)
         {
@@ -750,11 +765,13 @@ public class AccountsListPanel extends javax.swing.JPanel
         return parsable;
     }
 
+    // Checks if a valid int was entered
     public static boolean isParsableInt(String input)
     {
         boolean parsable = true;
         try
         {
+            // parse the int and catch the exception if there is one
             Integer.parseInt(input);
         } catch (NumberFormatException e)
         {
@@ -763,10 +780,13 @@ public class AccountsListPanel extends javax.swing.JPanel
         return parsable;
     }
 
+    // This function will return the row in the table that belongs to the passed
+    // in accountName
     private int findRowPositionByName(String accountName)
     {
         int cRow = 0;
         int totalRows = AccountsTable.getRowCount();
+        // loop through the table until the accountName is found
         while (!accountName.equals(AccountsTable.getValueAt(cRow, NAMECOL))
                 || cRow == totalRows)
         {
@@ -774,6 +794,8 @@ public class AccountsListPanel extends javax.swing.JPanel
         }
         return cRow;
     }
+
+    // ZACK COMMENT HERE
     private void TransferToAnotherUserMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_TransferToAnotherUserMouseClicked
     {//GEN-HEADEREND:event_TransferToAnotherUserMouseClicked
         double amount;
@@ -853,10 +875,14 @@ public class AccountsListPanel extends javax.swing.JPanel
         }
     }//GEN-LAST:event_TransferToAnotherUserMouseClicked
 
+    // Allows the user to delete the highlighted account when they press the button
     private void DeleteAccountButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_DeleteAccountButtonActionPerformed
     {//GEN-HEADEREND:event_DeleteAccountButtonActionPerformed
+        // Make sure that the user has selected an account
         if (AccountsTable.getSelectedRowCount() > 0)
         {
+            // Do not allow the user to delete their last account, forcing them to
+            // always have at least one account open
             if (GUI.currentUserAccount.getNumOfBankAccounts() == 1)
             {
                 JOptionPane.showMessageDialog(null, "You must have at least one bank account.\n"
@@ -867,33 +893,37 @@ public class AccountsListPanel extends javax.swing.JPanel
             String account_type;
             double amount_in_deleted_acc;
             String account_name;
+            // The row with the account that the user wants to delete
             int row = AccountsTable.getSelectedRow();
+            // Get the name of the bankAccount that the user wants to delete
             String bankacc = (String) AccountsTable.getValueAt(row, NAMECOL);
-
+            // Set the currentBankAccount to the name of the bankAccount that
+            // the user wants to delete so that we can call delete on it
             GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(bankacc);
-            /* if (GUI.currentBankAccount == null)
-             {
-             //System.out.println("test2");
-             }*/
+            // Store the balance so that we can send it somewhere after deletion
             amount_in_deleted_acc = GUI.currentBankAccount.getBalance();
-            ////System.out.println("test3");
             account_type = GUI.currentBankAccount.getAccountType();
             account_name = GUI.currentBankAccount.getAccountName();
 
+            // Edge case for deleting empty accounts
             if (amount_in_deleted_acc == 0)
             {
+                // Show message for successful delete
                 JOptionPane.showMessageDialog(null, bankacc + " has been deleted", "Bank 42", 1, icon);
                 GUI.currentUserAccount.deleteBankAccount(bankacc);
+                // Export database and update the table
                 GUI.dataout.exportDB(GUI.MasterTable);
                 this.update();
                 return;
             }
 
+            // Options that a user has for the funds after deleting the account
             Object[] options =
             {
                 "To one of my other bank accounts",
                 "Email me funds"
             };
+            // Ask the user where they want to send the funds in that account
             int n = JOptionPane.showOptionDialog(null,
                     "You have $" + amount_in_deleted_acc + " in account " + account_name
                     + "\nWhere would you like the funds to go?",
@@ -904,8 +934,11 @@ public class AccountsListPanel extends javax.swing.JPanel
                     options, //the titles of buttons
                     options[0]); //default button title
 
+            // ZACK COMMENT HERE
             deletecomboboxes(bankacc);
 
+            // Allow the user to select one of their own accounts to send the money
+            // from the deleted account to
             if (n == 0)
             {
                 String choice = (String) JOptionPane.showInputDialog(
@@ -921,42 +954,53 @@ public class AccountsListPanel extends javax.swing.JPanel
                 {
                     return;
                 }
+                // Delete the bank account
                 GUI.currentUserAccount.deleteBankAccount(bankacc);
-
                 GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(choice);
+                // Add the balance of the deleted account to the account that the user
+                // selected
                 GUI.currentBankAccount.setBalance(GUI.currentBankAccount.getBalance() + amount_in_deleted_acc);
+                // Create a transaction in the transaction history for this
+                // bank account receiving funds
                 GUI.currentBankAccount.addTransaction("Received funds from " + bankacc, amount_in_deleted_acc);
+                // Update the view and the DB
                 this.update();
                 GUI.dataout.exportDB(GUI.MasterTable);
-
+                // Success message
                 JOptionPane.showMessageDialog(null, "Bank account " + bankacc
                         + " has been deleted" + "\nFunds have been transfered to " + choice, "Bank 42", 1, icon);
             }
-
+            // send funds from deleted account to email
             else if (n == 1)
             {
+                // delete the account and update the view/DB
                 GUI.currentUserAccount.deleteBankAccount(bankacc);
                 this.update();
                 GUI.dataout.exportDB(GUI.MasterTable);
-
+                // Success message
                 JOptionPane.showMessageDialog(null, "Bank account " + bankacc
                         + " has been deleted" + "\nFunds have been emailed to you at:\n"
                         + GUI.currentUserAccount.getEmail(), "Bank 42", 1, icon);
             }
         }
-        else
+        else // The user did not highlight an account. display error message
             JOptionPane.showMessageDialog(null, "Please select an account", "Bank 42", 1, icon);
     }//GEN-LAST:event_DeleteAccountButtonActionPerformed
 
+    // Allows the user to calculate their future balance after a number of days
+    // after interest/penalties
     private void FutureBalancetButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_FutureBalancetButtonActionPerformed
     {//GEN-HEADEREND:event_FutureBalancetButtonActionPerformed
+        // Make sure the user has selected an account
         if (AccountsTable.getSelectedRowCount() > 0)
         {
             int amount;
+            // Prompt the user to input the number of days
             Object amountstring = JOptionPane.showInputDialog(
                     null, "Please enter the time period, in days, that you would like to calculate interest over.", "Bank 42", 1, GUI.icon, null, null);
             if (amountstring != null)
             {
+                // Check valid input
                 if (isParsableInt(amountstring.toString()))
                     amount = Integer.parseInt(amountstring.toString());
                 else
@@ -969,26 +1013,34 @@ public class AccountsListPanel extends javax.swing.JPanel
                     JOptionPane.showMessageDialog(null, "You must enter a valid number of days.", "ERROR", JOptionPane.ERROR_MESSAGE);
                     return;
                 }
+                // grab the current date
                 DateTime interestDate = new DateTime();
+                // grab the account from the row that the user has selected
                 int row = AccountsTable.getSelectedRow();
                 String bankacc = (String) AccountsTable.getValueAt(row, NAMECOL);
                 GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(bankacc);
+                // calculate the interest and display it
                 double calcInt = GUI.currentBankAccount.getInterestCustomer(interestDate.plusDays(amount));
                 JOptionPane.showMessageDialog(null, "Success! The balance of account "
                         + GUI.currentBankAccount.getAccountName() + " after " + amount + " days will be " + GUI.MoneyFormat.format(calcInt), "Bank 42", 1, icon);
             }
         }
-        else
+        else // The user did not select ac account
             JOptionPane.showMessageDialog(null, "Please select an account", "Bank 42", 1, icon);
     }//GEN-LAST:event_FutureBalancetButtonActionPerformed
 
+    // This will take the user to the transaction hsitory page
     private void TransactionHistoryButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_TransactionHistoryButtonActionPerformed
     {//GEN-HEADEREND:event_TransactionHistoryButtonActionPerformed
+        // Make sure that the user has selected an account
         if (AccountsTable.getSelectedRowCount() > 0)
         {
+            // Find the account that the user selected
             int row = AccountsTable.getSelectedRow();
             String bankacc = (String) AccountsTable.getValueAt(row, NAMECOL);
             GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(bankacc);
+            // Update the view, draw the transactionHistoryTable and take the
+            // user to the TransactionHistory page
             CardLayout layout = (CardLayout) (MainPanel.getLayout());
             mainGUI.getTransPanel().update();
             AmountField.setText("Amount");
@@ -996,10 +1048,11 @@ public class AccountsListPanel extends javax.swing.JPanel
             layout.show(MainPanel, "TransPanel");
 
         }
-        else
+        else // User did not select an account
             JOptionPane.showMessageDialog(null, "Please select an account", "Bank 42", 1, icon);
     }//GEN-LAST:event_TransactionHistoryButtonActionPerformed
 
+    // ZACK COMMENT EVERYTHING BELOW HERE
     private void TransferBetweenMyAccountsActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_TransferBetweenMyAccountsActionPerformed
     {//GEN-HEADEREND:event_TransferBetweenMyAccountsActionPerformed
         double amount;
