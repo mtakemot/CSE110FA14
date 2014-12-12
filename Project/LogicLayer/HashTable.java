@@ -106,7 +106,11 @@ public class HashTable implements Serializable
         }
         return null;
     }
-
+    /**
+     * Will return true for successful creation, false if the user account already exists. 
+     * @param copy
+     * @return 
+     */
     public UserAccount insertUserAccountCopy(UserAccount copy)
     {
         int index = hashCode(copy.getUserName()) % SIZE;

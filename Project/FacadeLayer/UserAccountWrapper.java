@@ -1,5 +1,7 @@
 package FacadeLayer;
 
+//to access user account and it's bank account list
+//to store for use by Table's on our GUI.
 import LogicLayer.BankAccount;
 import LogicLayer.UserAccount;
 

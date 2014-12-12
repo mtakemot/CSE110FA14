@@ -25,7 +25,8 @@ public class CheckingAccount extends BankAccount
         super();
     }
 
-    // Name ctor
+    // Name ctor Sets ONLY the name of the account and the account type of this 
+    // accnt to checking. 
     public CheckingAccount(String name)
     {
         super();

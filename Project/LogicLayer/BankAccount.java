@@ -2,7 +2,6 @@ package LogicLayer;
 
 import java.io.Serializable;
 import static java.lang.Math.abs;
-import java.text.SimpleDateFormat;
 import java.util.*;
 import org.joda.time.*;
 import org.joda.time.format.*;
@@ -54,6 +53,8 @@ public class BankAccount implements Serializable
      */
     public BankAccount()
     {
+        //set date to currentTime upon creating, and initialize all
+        //member variables used for daily withdraw limits to 0
         DateTime currentTime = new DateTime();
         this.lastDepositDateTime = currentTime;
         this.lastWithdrawDateTime = currentTime;
@@ -164,7 +165,12 @@ public class BankAccount implements Serializable
         }
         return balanceAfterInterest;
     }
-
+    /**
+     * Adds a transaction to the transaction history container. 
+     * Will be updated and shown to user on transaction history panel
+     * @param transType: String indicating a withdrawal, deposit
+     * @param transAmount double representing the transaction amount in dollars
+     */
     public void addTransaction(String transType, double transAmount)
     {
         this.transactions.add(new Transaction(transType, transAmount));
