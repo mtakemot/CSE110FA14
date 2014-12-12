@@ -1,7 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * **************************************************************************
+ *
+ * Ryan Bridges CSE 110, Fall 2014 Last Updated: December 12, 2014
+ *
+ * Team 42
+ *
+ * File Name: TellerAccountPage.java Description: This class defines the page
+ * that allows the Teller to view a user's BankAccounts, make deposits and
+ * withdraws to a user's BankAccount, delete a user's BankAccount, and close an
+ * entire UserAccount.
+ * **************************************************************************
  */
 package PresentationLayer;
 
@@ -12,15 +20,15 @@ import FacadeLayer.UserAccountWrapper;
 import static PresentationLayer.AccountsListPanel.BALANCECOL;
 import static PresentationLayer.AccountsListPanel.NAMECOL;
 
-/**
- *
- * @author Zack
- */
 public class TellerAccountPage extends javax.swing.JPanel
 {
 
+    // References to the MainPanel and mainGUI which give us access to the
+    // rest of the pages in the GUI
     private JPanel MainPanel;
     private GUI mainGUI;
+    // Reference to the Facade so that we can have access to the data in the
+    // backend in a format that is easy to use with JTable
     private UserAccountWrapper wrapper;
     private int total_accounts;
     private String[] accountlist;
@@ -41,6 +49,8 @@ public class TellerAccountPage extends javax.swing.JPanel
         initComponents();
     }
 
+    // This function will return the row in the table that belongs to the passed
+    // in accountName
     private int findRowPositionByName(String accountName)
     {
         int cRow = 0;
@@ -53,19 +63,24 @@ public class TellerAccountPage extends javax.swing.JPanel
         return cRow;
     }
 
+    // Allows us to update the table when a deposit/withdraw is made
     public void setNewCellValue(double NewBalance, String accountName)
     {
         AccountsTable.setValueAt((Object) NewBalance,
                 findRowPositionByName(accountName), BALANCECOL);
     }
 
+    // Will update this page when it is shown by redrawing the table for the
+    // current user
     public void update()
     {
         AccountsTable.setModel(new AccountsTableModel(GUI.currentUserAccount));
         SelectionModel.clearSelection();
+        // Updates all JLabels on all pages
         mainGUI.updateUserLabels();
     }
 
+    // ZACK COMMENT HERE
     public void deletecomboboxes(String bankacc)
     {
         wrapper = new UserAccountWrapper(GUI.currentUserAccount);
@@ -91,6 +106,7 @@ public class TellerAccountPage extends javax.swing.JPanel
         }
     }
 
+    // Update the JLabel to show the correct UserAccount name
     public void updateUserLabel()
     {
         CurrentUserAccountLabel.setText(GUI.currentUserAccount.getUserName() + "'s Bank Accounts");
@@ -293,6 +309,7 @@ public class TellerAccountPage extends javax.swing.JPanel
         Background.getAccessibleContext().setAccessibleName("");
     }// </editor-fold>//GEN-END:initComponents
 
+    // Make sure that the user entered a valid double
     public static boolean isParsable(String input)
     {
         boolean parsable = true;
@@ -306,19 +323,22 @@ public class TellerAccountPage extends javax.swing.JPanel
         return parsable;
     }
 
+    // Allows the teller to deposit money into a BankAccount
     private void DepositButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DepositButtonMouseClicked
-        if (AccountsTable.getSelectedRowCount() > 0)
+        if (AccountsTable.getSelectedRowCount() > 0) // Make sure the Teller has selected an account
         {
             double amount;
+            // Display a dialog to get the amount to deposit
             Object amountstring = JOptionPane.showInputDialog(
                     null, "Amount to deposit: ", "Bank 42", 1, GUI.icon, null, null);
             if (amountstring == null)
                 return;
+            // Check valid input
             if (isParsable(amountstring.toString()))
             {
                 amount = Double.parseDouble(amountstring.toString());
             }
-            else
+            else // Error messages for invalid input
             {
                 JOptionPane.showMessageDialog(null, "Please enter a valid number", "Bank 42", 1, GUI.icon);
                 return;
@@ -332,49 +352,50 @@ public class TellerAccountPage extends javax.swing.JPanel
 
             //first, retrieve the row index of selection
             int row = AccountsTable.getSelectedRow();
+            // Get the BankAccount at the selected row
             String user = (String) AccountsTable.getValueAt(row, 0);
-           // //System.out.print("\nTESTING retrieve selected row index: ");
-            ////System.out.print(row);
-            //next, retrieve the user account for the selection ( row , column0) = (x,y)
-            // //System.out.print("\n Value at index: " + row + ", 0 is: " + user + "\n");
 
-            //setting the current bank account
+            // setting the current bank account
             GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(user);
 
+            // Error check to see if the bank account exists.
             if (GUI.currentBankAccount == null)
             {
                 JOptionPane.showMessageDialog(null, "Error! Bank account does not match", "Bank 42", 0);
                 return;
             }
-            // need to check if addToBalance returns true or false here
+            // Make sure that the deposit will not go over the limits
             if (GUI.currentBankAccount.addToBalance(amount))
             {
+                // Update the cell with the new balance
                 setNewCellValue(GUI.currentBankAccount.getBalance(), GUI.currentBankAccount.getAccountName());
-                ////System.out.println("\n GUI.currentBankAcc Name:  " + GUI.currentBankAccount.getAccountName() + "\n");
-
+                // show success message
                 JOptionPane.showMessageDialog(null, "$" + amount + " was deposited into "
                         + GUI.currentBankAccount.getAccountName(), "Bank 42", 1, GUI.icon);
+                // Update database
                 GUI.dataout.exportDB(GUI.MasterTable);
             }
-            else
+            else // Error message if deposit was invalid
             {
                 JOptionPane.showMessageDialog(null, "Error! You have either reached your daily limit, \n"
                         + "or are attempting to deposit too much.", "Bank 42", 0);
             }
         }
-        else
+        else // Error if the user didnt select an account
             JOptionPane.showMessageDialog(null, "Please select an account", "Bank 42", 1, GUI.icon);
     }//GEN-LAST:event_DepositButtonMouseClicked
 
+    // Allows the teller to deposit money into a BankAccount
     private void WithdrawButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WithdrawButtonMouseClicked
-        if (AccountsTable.getSelectedRowCount() > 0)
+        if (AccountsTable.getSelectedRowCount() > 0) // Make sure that the Teller selected a row
         {
             double amount;
+            // Display a prompt for withdraw amount
             Object amountstring = JOptionPane.showInputDialog(
                     null, "Amount to withdraw: ", "Bank 42", 1, GUI.icon, null, null);
             if (amountstring == null)
                 return;
-            if (isParsable(amountstring.toString()))
+            if (isParsable(amountstring.toString())) // Check if amount entered was valid
             {
                 amount = Double.parseDouble(amountstring.toString());
             }
@@ -392,21 +413,19 @@ public class TellerAccountPage extends javax.swing.JPanel
 
             //first, retrieve the row index of selection
             int row = AccountsTable.getSelectedRow();
+            // Get the account at the selected row
             String user = (String) AccountsTable.getValueAt(row, 0);
-            ////System.out.print("\nTESTING retrieve selected row index: ");
-            ////System.out.print(row);
-            //next, retrieve the user account for the selection ( row , column0) = (x,y)
-            ////System.out.print("\n Value at index: " + row + ", 0 is: " + user + "\n");
 
             //setting the current bank account
             GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(user);
 
-            if (GUI.currentBankAccount == null)
+            if (GUI.currentBankAccount == null) // Sanity check. Make sure the account exists
             {
                 JOptionPane.showMessageDialog(null, "Error bank account does not match", "Bank 42", 0);
                 return;
             }
 
+            // Don't allow the user to withdraw more than they have
             if (amount > GUI.currentBankAccount.getBalance())
             {
 
@@ -416,8 +435,10 @@ public class TellerAccountPage extends javax.swing.JPanel
                 return;
             }
 
+            // Make sure that this withdraw will not put them over the limit
             if (GUI.currentBankAccount.subFromBalance(amount))
             {
+                // Update the table and DB. show success message
                 setNewCellValue(GUI.currentBankAccount.getBalance(), GUI.currentBankAccount.getAccountName());
                 GUI.dataout.exportDB(GUI.MasterTable);
                 JOptionPane.showMessageDialog(null, "$" + amount + " was withdrawn from "
@@ -429,16 +450,16 @@ public class TellerAccountPage extends javax.swing.JPanel
                 JOptionPane.showMessageDialog(null, "Error! You have either reached your daily limit, \n"
                         + "or are attempting to withdraw too much.", "Bank 42", 0);
             }
-
-            ////System.out.print("\n GUI.currentBankAcc Name:  " + GUI.currentBankAccount.getAccountName() + "\n");
         }
         else
             JOptionPane.showMessageDialog(null, "Please select an account", "Bank 42", 1, GUI.icon);
 
     }//GEN-LAST:event_WithdrawButtonMouseClicked
 
+    // Allows Teller to delete an entire UserAccount
     private void DeleteUserAccountButtonMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_DeleteUserAccountButtonMouseClicked
     {//GEN-HEADEREND:event_DeleteUserAccountButtonMouseClicked
+        // Display confirmation dialogue
         int n = JOptionPane.showConfirmDialog(
                 null,
                 "Are you sure you would like to delete this user account?",
@@ -446,21 +467,24 @@ public class TellerAccountPage extends javax.swing.JPanel
                 JOptionPane.YES_NO_OPTION, 1, GUI.icon);
         if (n == 0)
         {
+            // Delete the UserAccount and update the DB
             GUI.MasterTable.deleteUserAccount(GUI.currentUserAccount.getUserName());
             GUI.currentBankAccount = null;
             GUI.currentUserAccount = null;
             GUI.dataout.exportDB(GUI.MasterTable);
+            // Show success message and return to TellerMainMenue
             JOptionPane.showMessageDialog(null, "User account deleted", "Bank 42", 1, GUI.icon);
             CardLayout layout = (CardLayout) (MainPanel.getLayout());
             layout.show(MainPanel, "TellerMainMenu");
         }
     }//GEN-LAST:event_DeleteUserAccountButtonMouseClicked
 
+    // Allows the teller to delete a BankAccount
     private void DeleteAccountButtonMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_DeleteAccountButtonMouseClicked
     {//GEN-HEADEREND:event_DeleteAccountButtonMouseClicked
-        if (AccountsTable.getSelectedRowCount() > 0)
+        if (AccountsTable.getSelectedRowCount() > 0) // Make sure a row was selected
         {
-            if (GUI.currentUserAccount.getNumOfBankAccounts() == 1)
+            if (GUI.currentUserAccount.getNumOfBankAccounts() == 1) // Don't allow deletion of the last BankAccount
             {
                 JOptionPane.showMessageDialog(null, "ERROR! You must have at least one bank account.\n"
                         + "You cannot delete this bank account without creating a new one first.", "Bank 42", 1, GUI.icon);
@@ -470,14 +494,16 @@ public class TellerAccountPage extends javax.swing.JPanel
             String account_type;
             double amount_in_deleted_acc;
             String account_name;
+            // Get the name of the BankAccount in the selected row
             int row = AccountsTable.getSelectedRow();
             String bankacc = (String) AccountsTable.getValueAt(row, 0);
-
+            // Store the balance of the account to be deleted so that we can send it somewhere
             GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(bankacc);
             amount_in_deleted_acc = GUI.currentBankAccount.getBalance();
             account_type = GUI.currentBankAccount.getAccountType();
             account_name = GUI.currentBankAccount.getAccountName();
 
+            // Do nothing if balance was less than 0
             if (amount_in_deleted_acc == 0)
             {
                 JOptionPane.showMessageDialog(null, bankacc + " has been deleted", "Bank 42", 1, GUI.icon);
@@ -487,6 +513,7 @@ public class TellerAccountPage extends javax.swing.JPanel
                 return;
             }
 
+            // Display options for what the user can do with the money in their deleted account
             Object[] options =
             {
                 "To another bank account",
@@ -502,8 +529,11 @@ public class TellerAccountPage extends javax.swing.JPanel
                     options, //the titles of buttons
                     options[0]); //default button title
 
+            // ZACK COMMENT HERE
             deletecomboboxes(bankacc);
 
+            // Show a popup that allows the user to select an account to send money to
+            // from the deleted account
             if (n == 0)
             {
                 String choice = (String) JOptionPane.showInputDialog(
@@ -520,20 +550,24 @@ public class TellerAccountPage extends javax.swing.JPanel
                     return;
                 }
 
+                // Delete the BankAccount and update the Table and DB
                 GUI.currentUserAccount.deleteBankAccount(bankacc);
                 GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount(choice);
                 GUI.currentBankAccount.addToBalance(amount_in_deleted_acc);
                 this.update();
                 GUI.dataout.exportDB(GUI.MasterTable);
+                // Show success messaage
                 JOptionPane.showMessageDialog(null, "Bank account " + bankacc
                         + " has been deleted" + "\nFunds have been transfered to " + choice, "Bank 42", 1, GUI.icon);
             }
 
-            else if (n == 1)
+            else if (n == 1) // Send money to email address
             {
+                // Delete the BankAccount and update the Table and the DB
                 GUI.currentUserAccount.deleteBankAccount(bankacc);
                 this.update();
                 GUI.dataout.exportDB(GUI.MasterTable);
+                // Success message
                 JOptionPane.showMessageDialog(null, "Bank account " + bankacc
                         + " has been deleted" + "\nFunds have been emailed to " + GUI.currentUserAccount.getEmail(), "Bank 42", 1, GUI.icon);
             }
@@ -542,6 +576,7 @@ public class TellerAccountPage extends javax.swing.JPanel
             JOptionPane.showMessageDialog(null, "Please select an account", "Bank 42", 1, GUI.icon);
     }//GEN-LAST:event_DeleteAccountButtonMouseClicked
 
+    // Take the Teller back to the MainMenue
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BackButtonActionPerformed
     {//GEN-HEADEREND:event_BackButtonActionPerformed
         CardLayout layout = (CardLayout) (MainPanel.getLayout());

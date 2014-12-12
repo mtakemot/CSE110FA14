@@ -1,13 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * **************************************************************************
+ *
+ * Ryan Bridges CSE 110, Fall 2014 Last Updated: December 12, 2014
+ *
+ * Team 42
+ *
+ * File Name: TellerMainMenu.java Description: This class defines the MainMenu
+ * for the teller which allows them to Apply Global Interest/Penalties, Adjust
+ * Interest/Penalty rates, Lookup a UserAccount, and Logout
+ * **************************************************************************
  */
 package PresentationLayer;
 
 import java.awt.*;
-import java.awt.font.TextAttribute;
-import java.util.Map;
 import javax.swing.*;
 
 /**
