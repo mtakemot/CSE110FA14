@@ -1,23 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * **************************************************************************
+ *
+ * Ryan Bridges CSE 110, Fall 2014 Last Updated: December 12, 2014
+ *
+ * Team 42
+ *
+ * File Name: TransactionHistoryPanel.java Description: Shows the user the
+ * Transaction history on the selected account
+ * **************************************************************************
  */
 package PresentationLayer;
 
-/*mport java.awt.CardLayout;
- import javax.swing.JLabel;
- import javax.swing.JPanel;
- import javax.swing.table.DefaultTableCellRenderer;*/
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
-import java.awt.font.TextAttribute;
 
-/**
- *
- * @author Ryan
- */
 public class TransactionHistoryPanel extends javax.swing.JPanel
 {
 
@@ -25,12 +22,15 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
     private GUI mainGUI;
     private DefaultListSelectionModel SelectionModel;
 
+    // Update the this page when the state changes
     public void update()
     {
+        // Draw a new table for the current bank account and update the JLabel
         TransactionsTable.clearSelection();
         TransactionsTable.getSelectionModel().clearSelection();
         Title.setText(GUI.currentBankAccount.getAccountName() + "'s Transaction History");
         TransactionsTable.setModel(new TransactionTableModel(GUI.currentBankAccount));
+        // Set custom widths for the columns in the table
         TransactionsTable.getColumnModel().getColumn(0).setMaxWidth(2147483647);
         TransactionsTable.getColumnModel().getColumn(0).setMinWidth(28);
         TransactionsTable.getColumnModel().getColumn(0).setPreferredWidth(28);
@@ -198,11 +198,13 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         add(Background, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
+    // Button which allows the user to logout
     private void LogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutActionPerformed
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
         layout.show(MainPanel, "Login");
     }//GEN-LAST:event_LogoutActionPerformed
 
+    // Button which allows the user to return home
     private void BackActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BackActionPerformed
     {//GEN-HEADEREND:event_BackActionPerformed
         CardLayout layout = (CardLayout) (MainPanel.getLayout());

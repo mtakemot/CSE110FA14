@@ -1,7 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * **************************************************************************
+ *
+ * Ryan Bridges CSE 110, Fall 2014 Last Updated: December 12, 2014
+ *
+ * Team 42
+ *
+ * File Name: TransactionTableModel.java Description: Custom TableModel for the
+ * transaction history table. Allows us to customize the data in the table and
+ * how the table is displayed
+ * **************************************************************************
  */
 package PresentationLayer;
 
@@ -10,27 +17,28 @@ import LogicLayer.Transaction;
 import java.util.*;
 import javax.swing.table.AbstractTableModel;
 
-/**
- *
- * @author Ryan
- */
 public class TransactionTableModel extends AbstractTableModel
 {
 
+    // User's list of Transactions that will be inserted into the table
     private List<Transaction> transactions;
     private static final int colCount = 4;
 
+    // Names of table columns
     private String[] columnNames =
     {
         "Date", "Time", "Description", "Transaction Amount"
     };
 
+    // ctor
     public TransactionTableModel(BankAccount current)
     {
+        // Get the Transactions from the BankAccount and sort them
         transactions = current.getTransactions();
         Collections.sort(transactions);
     }
 
+    // Set row and column count
     @Override
     public int getRowCount()
     {
@@ -43,6 +51,11 @@ public class TransactionTableModel extends AbstractTableModel
         return colCount;
     }
 
+    // Tells the table what values to put in each column
+    // Col 0 = Date of transaction
+    // Col 1 = Time of transaction
+    // Col 2 = A message specifying what the transaction was for
+    // Col 3 = Amount of the transaction
     @Override
     public Object getValueAt(int rowIndex, int columnIndex)
     {
@@ -65,12 +78,14 @@ public class TransactionTableModel extends AbstractTableModel
         return returnMe;
     }
 
+    // Do not allow cells to be editted
     @Override
     public boolean isCellEditable(int row, int col)
     {
         return false;
     }
 
+    // Set column name and class
     @Override
     public String getColumnName(int index)
     {
