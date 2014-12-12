@@ -1,7 +1,10 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Team 42
+ * CSE 110, Fall 2014
+ *  
+ * Author(s):Zachary Preece-Scaringe
+ * 
+ * Summary:Panel which will get the input for and create a new bank account.
  */
 package PresentationLayer;
 
@@ -21,19 +24,12 @@ public class CreateBankAccount extends javax.swing.JPanel
     {
         "Checking", "Savings"
     };
-    private ImageIcon icon;
 
     public CreateBankAccount(JPanel MainPanel, GUI mainGUI)
     {
-        icon = new javax.swing.ImageIcon(getClass().getResource("/Assets/rsz_2icon.png"));
         this.mainGUI = mainGUI;
         this.MainPanel = MainPanel;
         initComponents();
-    }
-
-    public void updateUserLabel()
-    {
-        //BAUserLabel.setText(GUI.currentUserAccount.getUserName());
     }
 
     /**
@@ -58,13 +54,6 @@ public class CreateBankAccount extends javax.swing.JPanel
             public void focusGained(java.awt.event.FocusEvent evt)
             {
                 AccountNameFieldFocusGained(evt);
-            }
-        });
-        AccountNameField.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                AccountNameFieldActionPerformed(evt);
             }
         });
 
@@ -108,36 +97,45 @@ public class CreateBankAccount extends javax.swing.JPanel
 
     public void CreateAccount()
     {
-
+        //if nothing entered, error message
         if (AccountNameField.getText().length() == 0)
         {
             JOptionPane.showMessageDialog(null, "Please enter an account name", "Bank 42", 1, GUI.icon);
         }
 
+        //name too long, error message
         else if (AccountNameField.getText().length() > 15)
         {
             JOptionPane.showMessageDialog(null, "Your account name is too long\n bank account names must be at most 15 characters", "Bank 42", 1, GUI.icon);
         }
 
+        //matching account, error message
         else if (GUI.currentUserAccount.findBankAccount(AccountNameField.getText()) != null)
         {
             JOptionPane.showMessageDialog(null, "You have an existing bank account with that name"
-                    + "\n Please Choose A Valid Name", "Bank 42", 1, icon);
+                    + "\n Please Choose A Valid Name", "Bank 42", 1, GUI.icon);
             AccountNameField.setText("");
         }
 
+        //name available, create account
         else if (nameIsValid(AccountNameField.getText()))
         {
-            GUI.currentUserAccount.insertBankAccount(0, AccountNameField.getText(), TypeCombo.getSelectedItem().toString());
-            CardLayout layout = (CardLayout) (MainPanel.getLayout());
+            GUI.currentUserAccount.insertBankAccount(0, AccountNameField.getText(), TypeCombo.getSelectedItem().toString());            
+            
+            //update table and database
             mainGUI.getAccList().update();
             GUI.dataout.exportDB(GUI.MasterTable);
-            JOptionPane.showMessageDialog(null, TypeCombo.getSelectedItem() + " Account: " + AccountNameField.getText() + " successfully created", "Bank 42", 1, icon);
-            layout.show(MainPanel, "AccList");
+            
+            //verification popup
+            JOptionPane.showMessageDialog(null, TypeCombo.getSelectedItem() + " Account: " + AccountNameField.getText() + " successfully created", "Bank 42", 1, GUI.icon);
+            
+            //reset account name field
+            AccountNameField.setText("");
         }
 
         else
         {
+            //invalid input error message;
             JOptionPane.showMessageDialog(null, "Invalid input.\nOnly alphanumeric characters are allowed.\nNo spaces.", "Bank 42", 1);
             AccountNameField.setText("");
         }
@@ -149,21 +147,7 @@ public class CreateBankAccount extends javax.swing.JPanel
         AccountNameField.setText("");
     }//GEN-LAST:event_AccountNameFieldFocusGained
 
-    private void AccountNameFieldActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_AccountNameFieldActionPerformed
-    {//GEN-HEADEREND:event_AccountNameFieldActionPerformed
-        /*if (AccountNameField.getText().length() > 0 && GUI.currentUserAccount.findBankAccount(AccountNameField.getText()) == null)
-         {
-         GUI.currentUserAccount.insertBankAccount(0, AccountNameField.getText(), TypeCombo.getSelectedItem().toString());
-         CardLayout layout = (CardLayout) (MainPanel.getLayout());
-         layout.show(MainPanel, "AccList");
-         }
-         else
-         {
-         JOptionPane.showMessageDialog(null, "Invalid input");
-         AccountNameField.setText("");
-         }*/
-    }//GEN-LAST:event_AccountNameFieldActionPerformed
-
+    //checks to see if the name is valid
     private boolean nameIsValid(String n)
     {
         for (int i = 0; i < n.length(); i++)

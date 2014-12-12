@@ -67,6 +67,7 @@ public class GUI extends javax.swing.JFrame
     public static final String TELTABLE = "teller table";
 
     public static final int BALANCECOL = 2;
+    
     // Format doubles in output so that they look like money
     public static final NumberFormat MoneyFormat = new DecimalFormat("$0.00");
 
@@ -74,18 +75,13 @@ public class GUI extends javax.swing.JFrame
     public static ImportExport datain = new ImportExport();
     public static ImportExport dataout = new ImportExport();
 
+    public static ImageIcon icon; //holds thumbs up icon for popups etc
+    
     /**
      *
      */
-    public static ImageIcon icon;
-    //my_image = Toolkit.getDefaultToolkit().createImage("background-wallpapers-24.jpg");
-
-    /*@Override
-     public void paint(Graphics g)
-     {
-     // Draws the img to the BackgroundPanel.
-     g.drawImage(img, 0, 0, null);
-     }*/
+    
+  
     public GUI()
     {
         initComponents();
@@ -287,7 +283,7 @@ public class GUI extends javax.swing.JFrame
     {
         getAccList().updateUserLabel();
         getTellerAP().updateUserLabel();
-        getCreateBA().updateUserLabel();
+        //getCreateBA().updateUserLabel();
     }
 
     public void setAccountBalance(String BankAccountName, double NewBalance)
