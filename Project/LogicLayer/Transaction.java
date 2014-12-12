@@ -49,6 +49,10 @@ public class Transaction implements Comparable<Transaction>, Serializable
         return transType;
     }
 
+    /**
+     *  Setter for Transaction class. Sets credit/debit type transaction
+     * @param transType is a String that sets the account to either Credit/debit
+     */
     public void setTransType(String transType)
     {
         this.transType = transType;

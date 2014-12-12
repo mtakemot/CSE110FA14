@@ -1,5 +1,7 @@
 package FacadeLayer;
 
+//to access user account and it's bank account list
+//to store for use by Table's on our GUI.
 import LogicLayer.BankAccount;
 import LogicLayer.UserAccount;
 
@@ -32,7 +34,8 @@ public class UserAccountWrapper
      * and it's related bank accounts by delegating to the getAccountInfo getter
      * method defined below.
      *
-     * @param curr
+     * @param curr current user account that the wrapper is going to 
+     * retrieve information from.
      */
     public UserAccountWrapper(UserAccount curr)
     {

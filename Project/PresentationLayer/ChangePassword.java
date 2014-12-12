@@ -10,11 +10,15 @@
 
 package PresentationLayer;
 
-import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+/**
+ * Class design to assist in changin the password of an account.
+ * 
+ * @author Michio Takemoto
+ */
 public class ChangePassword extends javax.swing.JPanel
 {
 
@@ -29,19 +33,32 @@ public class ChangePassword extends javax.swing.JPanel
     {
         initComponents();
     }
-
+    
+    /**
+     * Constructor
+     * @param MainPanel the main Jpanel 
+     * @param mainGUI main GUI.java generated object contains other panels. 
+     */
     public ChangePassword(JPanel MainPanel, GUI mainGUI)
     {
         this.MainPanel = MainPanel;
         this.mainGUI = mainGUI;
         initComponents();
     }
-
+    
+    /**
+     * parent's GetPanel() getter function. Returns a JPanel
+     * @return JPanel
+     */
     public javax.swing.JPanel GetPanel()
     {
         return this;
     }
 
+    /**
+     * sets password for the account.
+     * @return true if successful, otherwise false
+     */
     public boolean SetPassword()
     {
         //gets old and new passwords from its jpassword fields and sets the new
@@ -90,7 +107,7 @@ public class ChangePassword extends javax.swing.JPanel
                     jReenterNewPassword.setText("passw");
                 }
             }
-
+            //error statements
             else
             {
                 JOptionPane.showMessageDialog(null, "New passwords do not match, please try again.", "Bank 42", 1, GUI.icon);
@@ -100,6 +117,7 @@ public class ChangePassword extends javax.swing.JPanel
             }
 
         }
+        //mismatched password entry
         else
         {
             JOptionPane.showMessageDialog(null, "New passwords do not match, please try again.", "Bank 42", 1, GUI.icon);

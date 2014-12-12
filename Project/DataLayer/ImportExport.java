@@ -44,8 +44,8 @@ public class ImportExport
      * MUST return HasTable to update the existing table with the information
      * from the database.
      *
-     * @param MasterTable
-     * @return
+     * @param MasterTable table that will hold the database
+     * @return Returns the updated table
      */
     public HashTable importDB(HashTable MasterTable)
     {

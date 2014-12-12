@@ -95,7 +95,8 @@ public class UserAccount implements Serializable
      * the bank account into the linked list of BankAccounts inside of the
      * UserAccount
      *
-     * @method insertBankAccount
+     * insertBankAccount Inserts bank account into the database. Has validity checks
+     * and returns the bank account if inserted, returns null otherwise
      * @param bal Balance of the account
      * @param name name of the account
      * @param type type of account, either checking or savings
@@ -165,7 +166,7 @@ public class UserAccount implements Serializable
      * name of the bank account they wish to access, and it will be returned.
      * Once it is returned we can get the balance, name and other info.
      *
-     * @method findBankAccount
+     * method findBankAccount
      * @param name The name of the account
      * @return Returns the bank account if it is found. Returns null if not
      * found

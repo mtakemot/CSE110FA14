@@ -129,6 +129,8 @@ public class SavingsAccount extends BankAccount
             this.balance += amount;
             lastDepositDateTime = currentDateTime;
             dayDepositAmount = amount;
+            
+            //record this into transaction history
             this.getTransactions().add(new Transaction("Deposit", amount));
             return true;
         }
