@@ -1,7 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * **************************************************************************
+ *
+ * Ryan Bridges CSE 110, Fall 2014 Last Updated: December 12, 2014
+ *
+ * Team 42
+ *
+ * File Name: HeaderRenderer.java Description: This file simply defines a custom
+ * HeaderRenderer for our JTables which will allow the names of the columns to
+ * be centered
+ * **************************************************************************
  */
 package PresentationLayer;
 
@@ -20,13 +27,14 @@ public class HeaderRenderer implements TableCellRenderer
 
     DefaultTableCellRenderer renderer;
 
-    public HeaderRenderer(JTable table)
+    public HeaderRenderer(JTable table) // ctor
     {
         renderer = (DefaultTableCellRenderer) table.getTableHeader().getDefaultRenderer();
+        // Set the alignment of the column names in the JTable to CENTER
         renderer.setHorizontalAlignment(JLabel.CENTER);
     }
 
-    @Override
+    @Override // Does nothing, must be overridden for TableCellRenderer
     public Component getTableCellRendererComponent(
             JTable table, Object value, boolean isSelected,
             boolean hasFocus, int row, int col)

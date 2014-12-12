@@ -1,9 +1,6 @@
 package PresentationLayer;
 
 import java.awt.CardLayout;
-import java.awt.Font;
-import java.awt.font.TextAttribute;
-import java.util.Map;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -14,9 +11,9 @@ import javax.swing.JPanel;
  *
  * Team 42
  *
- * File Name: This panel allows the teller to adjust the interest rates and
- * penalties that will be applied when the press the "Apply Global Interest And
- * Penalties" button
+ * File Name: PenaltyInterestPanel.java Description: This panel allows the
+ * teller to adjust the interest rates and penalties that will be applied when
+ * the press they "Apply Global Interest And Penalties" button
  * **************************************************************************
  */
 public class PenaltyInterestPanel extends javax.swing.JPanel
