@@ -1,7 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * **************************************************************************
+ *
+ * Ryan Bridges CSE 110, Fall 2014 Last Updated: December 12, 2014
+ *
+ * Team 42
+ *
+ * File Name: AccountsTableModel.java Description: This class defines a custom
+ * TableModel for our AccountsListTable so that it will show the data from our
+ * backend. It also has various custom properties for selection, column names,
+ * resizing, etc.
+ * **************************************************************************
  */
 package PresentationLayer;
 
@@ -9,10 +17,6 @@ import LogicLayer.UserAccount;
 import FacadeLayer.UserAccountWrapper;
 import javax.swing.table.*;
 
-/**
- *
- * @author rbridges
- */
 public class AccountsTableModel extends AbstractTableModel
 {
 
