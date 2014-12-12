@@ -15,10 +15,6 @@ package PresentationLayer;
 import java.awt.*;
 import javax.swing.*;
 
-/**
- *
- * @author Zack
- */
 public class TellerMainMenu extends javax.swing.JPanel
 {
 
@@ -102,13 +98,6 @@ public class TellerMainMenu extends javax.swing.JPanel
         SearchUserButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         SearchUserButton.setForeground(new java.awt.Color(51, 0, 255));
         SearchUserButton.setText("Search For A User");
-        SearchUserButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                SearchUserButtonMouseClicked(evt);
-            }
-        });
         SearchUserButton.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -205,68 +194,56 @@ public class TellerMainMenu extends javax.swing.JPanel
         add(Background, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void SearchUserButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SearchUserButtonMouseClicked
-
-        String name = JOptionPane.showInputDialog(
-                null, "Please enter a user account: ");
-
-        if (name != null)
-        {
-            GUI.currentUserAccount = GUI.MasterTable.findUserAccount(name);
-
-            if (GUI.currentUserAccount != null)
-            {
-                mainGUI.getTellerAP().update();
-                CardLayout layout = (CardLayout) (MainPanel.getLayout());
-                layout.show(MainPanel, "TellerAP");
-            }
-            else
-            {
-                JOptionPane.showMessageDialog(null, "User accout not found");
-            }
-        }
-    }//GEN-LAST:event_SearchUserButtonMouseClicked
-
+    // Take the teller to the PenaltyInterestPanel so that they can adjust
+    // the interest and penalty rates
     private void InterestPenaltyButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_InterestPenaltyButtonActionPerformed
     {//GEN-HEADEREND:event_InterestPenaltyButtonActionPerformed
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
-        //layout.show(MainPanel, "IntPenPanel");
         layout.show(MainPanel, "PenIntPanel");
     }//GEN-LAST:event_InterestPenaltyButtonActionPerformed
 
+    // Logout the teller
     private void LogoutMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_LogoutMouseClicked
     {//GEN-HEADEREND:event_LogoutMouseClicked
-        //retrieve MainPanel to transfer it's layout to AccountListPanel
+        //retrieve MainPanel to cast it's layout to Cardlayout
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
 
         //send the layout of MainPanel to new display of JPanel "Login"
         layout.show(MainPanel, "Login");
     }//GEN-LAST:event_LogoutMouseClicked
 
+    // Apply global interest and penalties on all bank accounts in existence
     private void ApplyPenIntButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ApplyPenIntButtonActionPerformed
     {//GEN-HEADEREND:event_ApplyPenIntButtonActionPerformed
+        // Calls a function in the backend to do the math
         GUI.MasterTable.InterestAndPenaltiesTeller();
+        // Update DB and show success message
         GUI.dataout.exportDB(GUI.MasterTable);
         JOptionPane.showMessageDialog(null, "Success! Interest and penalties have been applied \n"
                 + "globally to all existing bank accounts.", "Bank 42", 1, GUI.icon);
     }//GEN-LAST:event_ApplyPenIntButtonActionPerformed
 
+    //
     private void SearchUserButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_SearchUserButtonActionPerformed
     {//GEN-HEADEREND:event_SearchUserButtonActionPerformed
+        // Prompt teller for a username
         Object name = JOptionPane.showInputDialog(
                 null, "Please enter user account: ", "Bank 42", JOptionPane.INFORMATION_MESSAGE, GUI.icon, null, null);
 
+        // Make sure there was an input
         if (name != null)
         {
+            // lookup the user in the backend and make sure it exists
             GUI.currentUserAccount = GUI.MasterTable.findUserAccount(name.toString());
 
             if (GUI.currentUserAccount != null)
             {
+                // Update the GUI with the User's info and go to Teller Account Page
                 mainGUI.getTellerAP().update();
                 CardLayout layout = (CardLayout) (MainPanel.getLayout());
                 layout.show(MainPanel, "TellerAP");
             }
-            else
+            else // UserAccount was not found in the backend
             {
                 JOptionPane.showMessageDialog(null, "User accout not found", "Bank 42", 1, GUI.icon);
             }
