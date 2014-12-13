@@ -1,3 +1,17 @@
+/**
+ * **************************************************************************
+ *
+ * Aryaman Sharda CSE 110, Fall 2014 Last Updated: December 6, 2014
+ *
+ * Team 42
+ *
+ * File Name: CreateAccountPanel.java Description: This file contains the 
+ * GUI and the functionality that allows a user to create an account and gain
+ * access to the program. 
+ * **************************************************************************
+ */
+
+
 package PresentationLayer;
 
 import java.awt.CardLayout;
@@ -650,6 +664,12 @@ public class CreateAccountPanel extends javax.swing.JPanel
         gridBagConstraints.gridy = 0;
         add(Background, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
+    
+    
+    /* 
+     This constructor takes in MainPanel from GUI.java which gives us access to
+     the main panel where all of our GUI elements will eventually be located. */
+    
     public CreateAccountPanel(JPanel MainPanel, GUI mainGUI)
     {
         this.mainGUI = mainGUI;
@@ -657,8 +677,14 @@ public class CreateAccountPanel extends javax.swing.JPanel
         initComponents();
     }
 
+    /**
+     * This function clears all of the text fields on the screen
+     *
+     * method: clearfields    
+     */
     public void clearfields()
     {
+        //Clear out the text in all of the text fields
         phone.setText("");
         email.setText("");
         password.setText("");
@@ -668,8 +694,14 @@ public class CreateAccountPanel extends javax.swing.JPanel
         firstName.setText("");
     }
 
+    /**
+     * This function clears all of the error messages on the screen
+     *
+     * method: clearerrors    
+     */
     public void clearerrors()
     {
+        //Clear out the text in all of the text fields
         FirstNameError.setText("");
         LastNameError.setText("");
         UsernameError.setText("");
@@ -679,86 +711,126 @@ public class CreateAccountPanel extends javax.swing.JPanel
         PhoneError.setText("");
     }
 
+    /**
+     * This function will attempt to create the account if successful 
+     * credentials were provided. 
+     *      
+     * method: createUserAccountActionPerformed
+     * @param evt an ActionEvent event object that triggers the execution of 
+     * this method
+     */
     private void createUserAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserAccountActionPerformed
 
+        //Setup styling for error messages
         errorMessage.setForeground(Color.red);
 
+        //Extract content from the text fields
         String name1 = firstName.getText().trim();
         String name2 = lastName.getText().trim();
         String user = username.getText().trim();
         String input3 = email.getText().trim();
         String phoneNumber = phone.getText().trim();
 
+        /*Password fields are slightly different, so retrieving their contents
+          through use of a char[] */
         char[] input1 = password.getPassword();
         char[] input2 = confirmPassword.getPassword();
 
+        //Converts the char[] back to normal text
         String pass1 = new String(input1);
         String pass2 = new String(input2);
+        
+        //Represents if any errors occured. 
         boolean account_accepted = true;
 
+        //Dismisses all error messages
         clearerrors();
 
+        //If a first name was not provided or invalid, display error message.
         if (!((name1.length() > 0) && (validateFirstName(name1) == true)))
         {
             FirstNameError.setText("Your first name can only contain alphabet values and hyphens.");
             account_accepted = false;
         }
+        
+        //If a last name was not provided or invalid, display error message.
         if (!((name2.length() > 0) && (validateLastName(name2) == true)))
         {
             LastNameError.setText("Your last name can only contain alphabet values and hyphens.");
             account_accepted = false;
         }
+        
+        //If a username was not provided or invalid, display error message.
         if ((validate(user) == true))
         {
             if ((user.length() < 3) || (user.length() > 20))
             {
+                //Notify user that username is invalid
                 UsernameError.setText("Your username must be between 3 and 20 characters.");
                 account_accepted = false;
             }
         }
+        
+        //Indicates a different type of error with the username
         else
         {
             UsernameError.setText("Your username can only contain alphanumeric values, underscore, and dashes.");
             account_accepted = false;
         }
 
+        //If the password is within bounds
         if ((pass1.length() >= 6) && (pass1.length() <= 20))
         {
+            //Checks if the password is valid
             if (validatePassword(pass1) == false)
             {
+                //Notify user that password is invalid
                 PasswordError.setText("Your password must contain at least one lowercase letter and one uppercase letter.");
                 account_accepted = false;
             }
+            //Indicates password is valid
             else
             {
                 PasswordError.setText("");
             }
         }
+        
+        /* The user is shown an error message that indicates their password
+           was out of bounds */
         else
         {
             PasswordError.setText("Your password must be between 6 and 20 characters");
             account_accepted = false;
         }
 
+        //If the passwords don't match, display error message
         if (!(pass1.length() > 0 && pass1.equals(pass2)))
         {
             ConfirmPasswordError.setText("Your password doesn't match confirm password");
             account_accepted = false;
         }
+        
+        //If an email was not provided or invalid, display error message.
         if (!((input3.length() > 0) && (isValidEmailAddress(input3))))
         {
             EmailError.setText("Your email was entered incorrectly. (e.g. name@example.com)");
             account_accepted = false;
         }
+        
+        //If a phone number was not provided or invalid, display error message.
         if (!((phoneNumber.length() > 0) && (validatePhoneNumber(phoneNumber))))
         {
             PhoneError.setText("Your phone number was entered incorrectly. (e.g. 0123456789)");
             account_accepted = false;
         }
 
+        //If all tests pass
         if (account_accepted == true)
         {
+            //Create and get the currentUserAccount object
             GUI.currentUserAccount = GUI.MasterTable.insertUserAccount(user, input3);
+            
+            //If the operation was successful, update the value in the object
             if (GUI.currentUserAccount != null)
             {
                 GUI.currentUserAccount.setFirstName(name1);
@@ -768,7 +840,8 @@ public class CreateAccountPanel extends javax.swing.JPanel
                 GUI.currentUserAccount.setEmail(input3);
                 GUI.currentUserAccount.setPhone(phoneNumber);
                 GUI.dataout.exportDB(GUI.MasterTable);
-                ////System.out.println("You have successfully created your user account!");
+                                               
+                //Notify the user that the operation was successful
                 JOptionPane.showMessageDialog(null, "You have successfully created your user account!", "Bank 42",
                         1, GUI.icon);
 
@@ -781,51 +854,109 @@ public class CreateAccountPanel extends javax.swing.JPanel
                 lastName.setText("");
                 firstName.setText("");
 
+                //Grab the layout from the main panel, so views can be changed
                 CardLayout layout = (CardLayout) (MainPanel.getLayout());
                 //send the layout of MainPanel to new display of JPanel "MainMenu"
                 layout.show(MainPanel, "Login");
             }
+            
             else
+                //Some other oerror occured when creating your account
                 JOptionPane.showMessageDialog(null, "ERROR! An account with that username or email already exists.", "ERROR", JOptionPane.ERROR_MESSAGE);
 
         }
     }//GEN-LAST:event_createUserAccountActionPerformed
 
+    /**
+     * This function will reset the specified field when the user
+     * clicks on the text box
+     *      
+     * method: firstNameFocusGained
+     * @param evt A focus event that triggers the reset of the text field          
+     */
     private void firstNameFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_firstNameFocusGained
     {//GEN-HEADEREND:event_firstNameFocusGained
         firstName.setText(null);
     }//GEN-LAST:event_firstNameFocusGained
 
+    /**
+     * This function will reset the specified field when the user
+     * clicks on the text box
+     *      
+     * method: lastNameFocusGained
+     * @param evt A focus event that triggers the reset of the text field          
+     */
     private void lastNameFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_lastNameFocusGained
     {//GEN-HEADEREND:event_lastNameFocusGained
         lastName.setText(null);
     }//GEN-LAST:event_lastNameFocusGained
 
+    /**
+     * This function will reset the specified field when the user
+     * clicks on the text box
+     *      
+     * method: usernameFocusGained
+     * @param evt A focus event that triggers the reset of the text field          
+     */
     private void usernameFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_usernameFocusGained
     {//GEN-HEADEREND:event_usernameFocusGained
         username.setText(null);
     }//GEN-LAST:event_usernameFocusGained
 
+    /**
+     * This function will reset the specified field when the user
+     * clicks on the text box
+     *      
+     * method: confirmPasswordFocusGained
+     * @param evt A focus event that triggers the reset of the text field          
+     */
     private void confirmPasswordFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_confirmPasswordFocusGained
     {//GEN-HEADEREND:event_confirmPasswordFocusGained
         confirmPassword.setText(null);
     }//GEN-LAST:event_confirmPasswordFocusGained
 
+    /**
+     * This function will reset the specified field when the user
+     * clicks on the text box
+     *      
+     * method: passwordFocusGained
+     * @param evt A focus event that triggers the reset of the text field          
+     */
     private void passwordFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_passwordFocusGained
     {//GEN-HEADEREND:event_passwordFocusGained
         password.setText(null);
     }//GEN-LAST:event_passwordFocusGained
 
+    /**
+     * This function will reset the specified field when the user
+     * clicks on the text box
+     *      
+     * method: emailFocusGained
+     * @param evt A focus event that triggers the reset of the text field          
+     */
     private void emailFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_emailFocusGained
     {//GEN-HEADEREND:event_emailFocusGained
         email.setText(null);
     }//GEN-LAST:event_emailFocusGained
 
+    /**
+     * This function will reset the specified field when the user
+     * clicks on the text box
+     *      
+     * method: phoneFocusGained
+     * @param evt A focus event that triggers the reset of the text field          
+     */
     private void phoneFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_phoneFocusGained
     {//GEN-HEADEREND:event_phoneFocusGained
         phone.setText(null);
     }//GEN-LAST:event_phoneFocusGained
 
+    /**
+     * This function will present the previous view
+     *      
+     * method: BackButtonActionPerformed
+     * @param evt A action event that prompts the display of the previous view
+     */
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BackButtonActionPerformed
     {//GEN-HEADEREND:event_BackButtonActionPerformed
         clearfields();
@@ -834,6 +965,13 @@ public class CreateAccountPanel extends javax.swing.JPanel
         layout.show(MainPanel, "Login");
     }//GEN-LAST:event_BackButtonActionPerformed
 
+    /**
+     * Attempts to find if a phone number is valid
+     *
+     * method: validatePhoneNumber
+     * @param phoneNo The phone number to validate
+     * @return Returns true if the phone number is valid
+     */
     public static boolean validatePhoneNumber(String phoneNo)
     {
         //validate phone numbers of format "1234567890"
@@ -857,35 +995,77 @@ public class CreateAccountPanel extends javax.swing.JPanel
             return false;
     }
 
+    /**
+     * Attempts to find if a email address is valid
+     *
+     * method: isValidEmailAddress
+     * @param email The email to validate
+     * @return Returns true if the email is valid
+     */
     public static boolean isValidEmailAddress(String email)
     {
+        //The pattern to test the email against
         String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
+        
+        //Checks if the email variable matches the above pattern
         java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
         java.util.regex.Matcher m = p.matcher(email);
+        
+        //Returns true, if it is within the pattern
         return m.matches();
     }
 
+    /**
+     * Attempts to find if a name is valid
+     *
+     * method: validateFirstName
+     * @param firstName The name to validate
+     * @return Returns true if the name is valid
+     */
     public static boolean validateFirstName(String firstName)
     {
         return firstName.matches("[a-zA-z]+([ '-][a-zA-Z]+)*");
     } // end method validateFirstName
 
-    // validate last name
+     /**
+     * Attempts to find if a name is valid
+     *
+     * method: validateLastName
+     * @param lastName The name to validate
+     * @return Returns true if the name is valid
+     */
     public static boolean validateLastName(String lastName)
     {
         return lastName.matches("[a-zA-z]+([ '-][a-zA-Z]+)*");
-    } // end method validateLastName
+    } 
 
+    /**
+     * Attempts to find if an username is valid
+     *
+     * method: validate
+     * @param username The username to validate
+     * @return Returns true if the username is valid
+     */
     public static boolean validate(final String username)
     {
+        //The word teller isn't allowed to be a username
         if (username.equals("teller"))
             return false;
+        
+        //Check if the username pattern matches the regex pattern defined
         String USERNAME_PATTERN = "^[a-zA-z0-9_-]{3,20}$";
         Pattern pattern = Pattern.compile(USERNAME_PATTERN);
         Matcher matcher = pattern.matcher(username);
         return matcher.matches();
     }
 
+    /**
+     * Attempts to find if a password is valid
+     *
+     * method: validatePassword
+     * @param passwd The password to validate
+     * @return Returns true if the password is valid
+     */
     public static boolean validatePassword(final String passwd)
     {
         String pattern = ".*(?=.*[a-z])(?=.*[A-Z]).*";
