@@ -116,13 +116,19 @@ public class AccountsListPanel extends javax.swing.JPanel
         this.BankAccountsList.setModel(model0);
     }
 
-    // ZACK COMMENT HERE
+    // Used to delete strings from the combo boxes.
     public void deletecomboboxes(String bankacc)
     {
+        //wrapper contains backend information related to the table for 
+        //current user
         wrapper = new UserAccountWrapper(GUI.currentUserAccount);
+        //# of bankaccounts for this user
         total_accounts = wrapper.getTotalAccounts();
+        //string array to hold account names
         accountlist = new String[total_accounts - 1];
         boolean accountfound = false;
+        //Cycle through list of AccountNames in the wrapper until
+        //the account to delete is found
         for (int i = 0; i < total_accounts; i++)
         {
             if (accountfound == false)
@@ -795,10 +801,13 @@ public class AccountsListPanel extends javax.swing.JPanel
         return cRow;
     }
 
-    // ZACK COMMENT HERE
+    //This button is used to send money from one of the current user's 
+    //bank accounts, to another user
     private void TransferToAnotherUserMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_TransferToAnotherUserMouseClicked
     {//GEN-HEADEREND:event_TransferToAnotherUserMouseClicked
+        //amount to send
         double amount;
+        //
         if (isParsableDouble(AmountField.getText()))
         {
             amount = Integer.parseInt(AmountField.getText());
@@ -934,7 +943,7 @@ public class AccountsListPanel extends javax.swing.JPanel
                     options, //the titles of buttons
                     options[0]); //default button title
 
-            // ZACK COMMENT HERE
+            // Remove the Bank Account's name from the comboboxes
             deletecomboboxes(bankacc);
 
             // Allow the user to select one of their own accounts to send the money
