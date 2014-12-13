@@ -20,11 +20,15 @@ public class CreateBankAccount extends javax.swing.JPanel
 
     private JPanel MainPanel;
     private GUI mainGUI;
+    
+    //types of accounts for account type selection comboboxes
     String[] accTypes =
     {
         "Checking", "Savings"
     };
 
+     /*This constructor takes in MainPanel and mainGUI from GUI.java which gives us access to
+     the main panel and ther panels public methods */
     public CreateBankAccount(JPanel MainPanel, GUI mainGUI)
     {
         this.mainGUI = mainGUI;
@@ -90,11 +94,16 @@ public class CreateBankAccount extends javax.swing.JPanel
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * parent's GetPanel() getter function. Returns a JPanel
+     * @return JPanel
+     */
     public javax.swing.JPanel getCreateBankAccountPanel()
     {
         return this;
     }
 
+    //Creates an account if its input fields hold valid input
     public void CreateAccount()
     {
         //if nothing entered, error message

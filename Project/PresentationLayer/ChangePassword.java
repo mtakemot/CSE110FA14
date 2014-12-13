@@ -14,11 +14,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-/**
- * Class design to assist in changin the password of an account.
- * 
- * @author Michio Takemoto
- */
+
 public class ChangePassword extends javax.swing.JPanel
 {
 
