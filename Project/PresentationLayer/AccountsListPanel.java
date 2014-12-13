@@ -807,17 +807,18 @@ public class AccountsListPanel extends javax.swing.JPanel
     {//GEN-HEADEREND:event_TransferToAnotherUserMouseClicked
         //amount to send
         double amount;
-        //
+        //Amount set to int placed in textbox
         if (isParsableDouble(AmountField.getText()))
         {
             amount = Integer.parseInt(AmountField.getText());
         }
+        //otherwise pop-up box asking for a valid amount
         else
         {
             JOptionPane.showMessageDialog(null, "Please enter a valid amount to transfer", "Bank 42", 1, icon);
             return;
         }
-
+        //positive number check
         if (amount <= 0)
         {
             JOptionPane.showMessageDialog(null, "Please enter a valid amount to transfer", "Bank 42", 1, icon);
@@ -825,7 +826,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         }
 
         GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount((String) BankAccountsList.getSelectedItem());
-
+        //Enough available funds check
         if (amount > GUI.currentBankAccount.getBalance())
         {
             JOptionPane.showMessageDialog(null, "Insufficient funds"
@@ -833,13 +834,14 @@ public class AccountsListPanel extends javax.swing.JPanel
                     + " in selected bank account", "Bank 42", 1, icon);
             return;
         }
-
+        //email of other user, as entered in text box
         String email = EmailEntryField.getText();
+        //find other userAccount by their email
         UserAccount founduser = GUI.MasterTable.findUserAccountEmail(email);
-
+        
         if (founduser != null)
         {
-
+            //checking if you entered your own email
             if (founduser == GUI.currentUserAccount)
             {
                 JOptionPane.showMessageDialog(null, "You cannot send funds to yourself!", "Bank 42", 1, icon);
@@ -847,6 +849,7 @@ public class AccountsListPanel extends javax.swing.JPanel
             }
 
             JPanel createBApanel = mainGUI.getCreateBA().getCreateBankAccountPanel();
+            //confirmation check
             int choice = JOptionPane.showConfirmDialog(
                     null,
                     "Are you sure you want to send $" + amount + " from\nbank account:     " + GUI.currentBankAccount.getAccountName() + "\nto User Account: " + founduser.getUserName() + "\nwith Email:           " + email + "?",
@@ -855,17 +858,23 @@ public class AccountsListPanel extends javax.swing.JPanel
                     JOptionPane.PLAIN_MESSAGE,
                     GUI.icon
             );
-
+            //if confirmed send the cash
             if (choice == 0)
             {
+                //remove funds from current user
                 GUI.currentBankAccount.setBalance(GUI.currentBankAccount.getBalance() - amount);
                 mainGUI.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
+                //document transaction in transaction history
                 GUI.currentBankAccount.addTransaction("Sent funds to " + email, amount);
+                //pull up user to send funds to
                 String email2 = GUI.currentUserAccount.getEmail();
                 GUI.currentBankAccount = founduser.getBankAccHead();
+                //add funds
                 GUI.currentBankAccount.setBalance(GUI.currentBankAccount.getBalance() + amount);
+                //document in transaction history
                 GUI.currentBankAccount.addTransaction("Received funds from " + email2, amount);
                 mainGUI.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
+                //success pop-up
                 JOptionPane.showMessageDialog(null, "Funds transfered successfully!", "Bank 42", 1, icon);
 
                 /**
@@ -878,6 +887,7 @@ public class AccountsListPanel extends javax.swing.JPanel
                  */
             }
         }
+        //account not found
         else
         {
             JOptionPane.showMessageDialog(null, "Error, user account not found", "Bank 42", 1, icon);
@@ -1061,30 +1071,33 @@ public class AccountsListPanel extends javax.swing.JPanel
             JOptionPane.showMessageDialog(null, "Please select an account", "Bank 42", 1, icon);
     }//GEN-LAST:event_TransactionHistoryButtonActionPerformed
 
-    // ZACK COMMENT EVERYTHING BELOW HERE
+    //Transfer money balances between a user's bank accounts (Action performed
+    //allows the enter key to trigger this method, isntead of exclusively
+    // mouse clicks.)
     private void TransferBetweenMyAccountsActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_TransferBetweenMyAccountsActionPerformed
     {//GEN-HEADEREND:event_TransferBetweenMyAccountsActionPerformed
+        //Amount we're going to send
         double amount;
-
+        //pull int amount from textbox
         if (isParsableDouble(AmountField.getText()))
         {
             amount = Double.parseDouble(AmountField.getText());
         }
-
+        //if not a valid amount/int then error message
         else
         {
             JOptionPane.showMessageDialog(null, "Please enter a valid amount to transfer", "Bank 42", 1, GUI.icon);
             return;
         }
-
+        //positive number check
         if (amount <= 0)
         {
             JOptionPane.showMessageDialog(null, "Please enter a valid amount to transfer", "Bank 42", 1, GUI.icon);
             return;
         }
-
+        //pull up selected bank account
         GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount((String) BankAccountsList.getSelectedItem());
-
+        //check if enough available funds
         if (amount > GUI.currentBankAccount.getBalance())
         {
             AmountField.setText("Amount");
@@ -1092,29 +1105,39 @@ public class AccountsListPanel extends javax.swing.JPanel
                     + "\nYou have $" + GUI.currentBankAccount.getBalance() + " available"
                     + " in selected bank account", "Bank 42", 1, GUI.icon);
         }
+        //same bank account check
         else if (GUI.currentBankAccount == GUI.currentUserAccount.findBankAccount((String) BankAccountsList1.getSelectedItem()))
         {
             JOptionPane.showMessageDialog(null, "You cannot transfer funds to and from\nthe same bank account", "Bank 42", 1, icon);
         }
+        //send the money!
         else
         {
+            //remove funds from desired bank account
             GUI.currentBankAccount.setBalance(GUI.currentBankAccount.getBalance() - amount);
+            //document in transaction history
             GUI.currentBankAccount.addTransaction("Sent funds to " + (String) BankAccountsList1.getSelectedItem(), amount);
             mainGUI.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
+            //account to send funds too
             GUI.currentBankAccount = GUI.currentUserAccount.findBankAccount((String) BankAccountsList1.getSelectedItem());
+            //add funds to desired bank account
             GUI.currentBankAccount.setBalance(GUI.currentBankAccount.getBalance() + amount);
+            //add funds
             mainGUI.setAccountBalance(GUI.currentBankAccount.getAccountName(), GUI.currentBankAccount.getBalance());
+            //document transaction
             GUI.currentBankAccount.addTransaction("Received funds from " + (String) BankAccountsList.getSelectedItem(), amount);
+            //success pop-up box
             JOptionPane.showMessageDialog(null, "Funds transfered successfully!", "Bank 42", 1, icon);
+            //set data
             GUI.dataout.exportDB(GUI.MasterTable);
         }
     }//GEN-LAST:event_TransferBetweenMyAccountsActionPerformed
-
+    //setting button text
     private void jLabel4MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jLabel4MouseEntered
     {//GEN-HEADEREND:event_jLabel4MouseEntered
         option.setText("  Settings");
     }//GEN-LAST:event_jLabel4MouseEntered
-
+    //settings button clicked
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jLabel4MouseClicked
     {//GEN-HEADEREND:event_jLabel4MouseClicked
         AmountField.setText("Amount");
@@ -1127,7 +1150,7 @@ public class AccountsListPanel extends javax.swing.JPanel
     {//GEN-HEADEREND:event_jLabel4MouseExited
         option.setText(" ");
     }//GEN-LAST:event_jLabel4MouseExited
-
+    //logout button text
     private void jLabel5MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jLabel5MouseEntered
     {//GEN-HEADEREND:event_jLabel5MouseEntered
         option.setText("               Logout");
@@ -1137,7 +1160,7 @@ public class AccountsListPanel extends javax.swing.JPanel
     {//GEN-HEADEREND:event_jLabel5MouseExited
         option.setText(" ");
     }//GEN-LAST:event_jLabel5MouseExited
-
+    //logout button clicked
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jLabel5MouseClicked
     {//GEN-HEADEREND:event_jLabel5MouseClicked
         AmountField.setText("Amount");

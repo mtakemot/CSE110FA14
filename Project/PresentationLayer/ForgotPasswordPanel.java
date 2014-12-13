@@ -1,20 +1,30 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * **************************************************************************
+ *
+ * Aryaman Sharda CSE 110, Fall 2014 Last Updated: December 6, 2014
+ *
+ * Team 42
+ *
+ * File Name: ForgotPasswordPanel.java Description: This file contains the
+ * implementation of a form that aids the user in resetting their password
+ * if forgotten.
+ * **************************************************************************
  */
+
 package PresentationLayer;
 
 import javax.swing.JPanel;
 
 /**
  *
- * @author Zack
+ * @author Aryaman Sharda
  */
 public class ForgotPasswordPanel extends javax.swing.JPanel
 {
-
+    //Stores a reference to the main panel from the GUI
     private JPanel MainPanel;
+    
+    //Stores a reference to the mainGUI object
     private GUI mainGUI;
 
     /**
@@ -25,6 +35,10 @@ public class ForgotPasswordPanel extends javax.swing.JPanel
         initComponents();
     }
 
+    /* 
+     This constructor takes in MainPanel from GUI.java which gives us access to
+     the main panel where all of our GUI elements will eventually be located. */
+    
     public ForgotPasswordPanel(JPanel MainPanel, GUI mainGUI)
     {
         this.MainPanel = MainPanel;
@@ -32,11 +46,25 @@ public class ForgotPasswordPanel extends javax.swing.JPanel
         initComponents();
     }
 
+    /**
+     * This function return this current panel
+     *
+     * method: GetPanel    
+     * @return Returns this panel so it can be shown on other screens
+     * Returns a JPanel object
+     */
     public javax.swing.JPanel GetPanel()
     {
         return this;
     }
 
+    /**
+     * This function return the password from the text field
+     *
+     * method: GetPassword    
+     * @return Returns the password from the text field
+     * Returns the password from the text field on the screen.
+     */
     public String GetPassword()
     {
         char[] passwordArray = jPasswordField.getPassword();
@@ -51,8 +79,7 @@ public class ForgotPasswordPanel extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
         jPasswordField = new javax.swing.JPasswordField();
@@ -63,18 +90,9 @@ public class ForgotPasswordPanel extends javax.swing.JPanel
         jPasswordField.setText("password");
         jPasswordField.setMinimumSize(new java.awt.Dimension(95, 25));
         jPasswordField.setPreferredSize(new java.awt.Dimension(95, 25));
-        jPasswordField.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusGained(java.awt.event.FocusEvent evt)
-            {
+        jPasswordField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
                 jPasswordFieldFocusGained(evt);
-            }
-        });
-        jPasswordField.addKeyListener(new java.awt.event.KeyAdapter()
-        {
-            public void keyPressed(java.awt.event.KeyEvent evt)
-            {
-                jPasswordFieldKeyPressed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -91,15 +109,18 @@ public class ForgotPasswordPanel extends javax.swing.JPanel
         add(EnterPassword, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * This function will reset the password field when the user
+     * clicks on the text box
+     *      
+     * method: jPasswordFieldFocusGained
+     * @param evt A focus event that triggers the reset of the text field          
+     */
     private void jPasswordFieldFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_jPasswordFieldFocusGained
     {//GEN-HEADEREND:event_jPasswordFieldFocusGained
+        //Clears the content in the text field
         jPasswordField.setText("");
     }//GEN-LAST:event_jPasswordFieldFocusGained
-
-    private void jPasswordFieldKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_jPasswordFieldKeyPressed
-    {//GEN-HEADEREND:event_jPasswordFieldKeyPressed
-
-    }//GEN-LAST:event_jPasswordFieldKeyPressed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel EnterPassword;
