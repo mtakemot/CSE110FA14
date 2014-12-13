@@ -27,7 +27,7 @@ import org.joda.time.DateTime;
 //import java.io.*;
 public class AccountsListPanel extends javax.swing.JPanel
 {
-
+    //Column # positions of Tables
     final static int NAMECOL = 0;
     final static int BALANCECOL = 2;
     // VERY IMPORTANT !! YOU MUST MAKE SURE THAT YOU GIVE EACH NEW PANEL THAT

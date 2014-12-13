@@ -19,27 +19,35 @@ import javax.swing.table.*;
 
 public class AccountsTableModel extends AbstractTableModel
 {
-
+    //Total Columns
     private int colCount = 3;
     private UserAccount current;
+    //wrapper will be used to hold data from backend
     private UserAccountWrapper wrapper;
+    //class for each type of information per column
     Class[] columns = new Class[]
     {
         String.class, String.class, Double.class
     };
+    //columns names
     private String[] columnNames =
     {
         "Account Name", "Account Type",
         "Balance ($)"
     };
-
+    //Constructor
     public AccountsTableModel(UserAccount curr)
     {
         this.current = curr;
         wrapper = new UserAccountWrapper(this.current);
         this.addTableModelListener(new TableListener());
     }
-
+    
+    /*
+    Setters and Getters
+    */
+    
+    
     @Override
     public int getRowCount()
     {
@@ -69,6 +77,7 @@ public class AccountsTableModel extends AbstractTableModel
             //case 0:
             //wrapper.setAccountNumber((int) aValue, rowIndex);
         }
+        //Update Table display with actual value
         fireTableCellUpdated(rowIndex, columnIndex);
     }
 
