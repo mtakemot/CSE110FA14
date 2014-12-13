@@ -15,6 +15,17 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
 
+/**
+ * Class TransactionHistory Panel
+ * Inherits from javax.swing.JPanel class. 
+ * member fields: Jpanel MainPanel will be initialized to reference the GUI.java
+ *                      MainPanel.
+ *                GUI mainGUI will be initialized to reference obj from GUI.java
+ *                DefaultListSelectionModel SelectionModel will represent the 
+ *                the class that allows user to get status of the table, or to set
+ *                certain options for the table.
+ * @author Michio Takemoto
+ */
 public class TransactionHistoryPanel extends javax.swing.JPanel
 {
 
@@ -45,6 +56,12 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         TransactionsTable.getColumnModel().getColumn(3).setPreferredWidth(79);
     }
 
+    /**
+     * TransactionHistoryPanel constructor. Initializes local MainPanel and mainGUI
+     * variables to that passed in from GUI.java 
+     * @param MainPanel represents the main working panel
+     * @param mainGUI represents the GUI.java object created in GUI.java
+     */
     public TransactionHistoryPanel(JPanel MainPanel, GUI mainGUI)
     {
         this.MainPanel = MainPanel;

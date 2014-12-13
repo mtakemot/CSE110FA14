@@ -222,7 +222,11 @@ public class ChangePassword extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 70, 9);
         add(jReenterNewPassword, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    /**--------------
+     * BELOW are getters and setters for this class
+     * --------------
+     */
     private void jCurrentPasswordFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_jCurrentPasswordFocusGained
     {//GEN-HEADEREND:event_jCurrentPasswordFocusGained
         jCurrentPassword.setText("");
