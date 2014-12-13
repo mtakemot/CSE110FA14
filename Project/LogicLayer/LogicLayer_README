@@ -34,5 +34,12 @@ UserAccount.java:       Implements Serializable. contains account log in informa
 Classes that implements Serializable:
 	BankAccount, HashTable, Transaction, UserAccount
 
+Joda-Time:              This is a third party library which was used for all of
+                        our time and date calculations. The built in Java
+                        counterparts are poorly designed, buggy, and not well
+                        maintained, which is why we made the decision to use
+                        this library. It worked out great. Documentation for
+                        joda time can be found here -> http://www.joda.org/joda-time/
+
 NOTE: FOR MORE DOCUMENTATION PLEASE SEE THE INDIVIDUAL CLASSES IN THIS LAYER
 
