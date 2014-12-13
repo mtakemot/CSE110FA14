@@ -1,0 +1,20 @@
+/*
+ * Filename: README
+ * Author: Michio Takemoto
+ * Date: 12/12/14
+ * Group: TEAM 42
+ */
+
+Location:
+	/CSE110FA14/Project/DataLayer
+
+ Description:
+ 	This is the DataLayer, and conatins a single class, ImportExport to
+store and retrieve our data. All possible errors in read/write will be checked in the
+methods written here so that other classes do not have to worry about it, and
+can freely call/delegate control to this class (Rule Object).
+
+Should ONLY be called from classes in Presentation Layer because the main driver
+is from the PresentationLayer -> GUI.java. The main driver is the only time when
+data access and manipulation occurs, so BOTH import and Export methods will be
+called from PresentationLayer. 

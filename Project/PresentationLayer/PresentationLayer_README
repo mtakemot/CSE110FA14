@@ -1,0 +1,24 @@
+/*
+ * Filename: README_LogicLayer
+ * Author: Michio Takemoto and Ryan Bridges
+ * Date: 12/12/14
+ * Group: TEAM 42
+ */
+
+Location:
+	/CSE110FA14/Project/PresentationLayer
+
+Description:
+	Contains the main driver in GUI.java. Uses
+javax.swing objects to create GUI elements. Communicates with the LogicLayer using
+accessor/mutator methods to manipulate/access data. Also
+accesses DataLayer to import / export database when necessary. We will
+import the database to a local HashTable() object and will export when any data
+has been manipulated or created. We use the Mediator pattern in this Layer to
+allow all of the different panels to communicate easily. The Mediator is GUI.java,
+and all of the colleagues are the different panels. We pass an object of GUI.java (the Mediator)
+into the constructor of all of our colleagues (the other panels). Then when we
+want to update something on another panel, we go through the GUI object that
+was passed into the constructor.
+
+NOTE: FOR MORE DOCUMENTATION PLEASE SEE THE INDIVIDUAL CLASSES IN THIS LAYER

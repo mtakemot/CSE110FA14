@@ -5,17 +5,20 @@ package FacadeLayer;
 import LogicLayer.BankAccount;
 import LogicLayer.UserAccount;
 
-/* this is the wrapper used by our table to collect information
- *  on the accounts that we need to display on our Tables.
- */
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 /**
+ * **************************************************************************
  *
- * @author rbridges
+ * Ryan Bridges CSE 110, Fall 2014 Last Updated: October 13, 2014
+ *
+ * Team 42
+ *
+ * File Name: UserAccountWrapper.java Description: This is a wrapper class for
+ * all of our data structures in the LogicLayer. It allows us to put the complex
+ * data structures in our backend into easy to user arrays that are pluggable
+ * with our GUI elements. The LogicLayer does not know that this class exists,
+ * and it is effectively encapsulating the functionality of a complex system
+ * which adheres to the definition of Facade Pattern.
+ * *************************************************************************
  */
 public class UserAccountWrapper
 {
@@ -34,8 +37,8 @@ public class UserAccountWrapper
      * and it's related bank accounts by delegating to the getAccountInfo getter
      * method defined below.
      *
-     * @param curr current user account that the wrapper is going to 
-     * retrieve information from.
+     * @param curr current user account that the wrapper is going to retrieve
+     * information from.
      */
     public UserAccountWrapper(UserAccount curr)
     {
