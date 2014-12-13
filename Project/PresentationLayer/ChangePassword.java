@@ -15,8 +15,11 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
- * Class design to assist in changin the password of an account.
- * 
+ * Class design to assist in changing the password of an account.
+ * Inherits from javax.swing.JPanel
+ * Member fields: JPanel MainPanel - reference to JPanel obj created in GUI.java
+ *                GUI mainGUI - reference to GUI obj created in GUI.java
+ *                ImageIcon icon - class is used to paint, get, set icons using an image
  * @author Michio Takemoto
  */
 public class ChangePassword extends javax.swing.JPanel
@@ -226,7 +229,11 @@ public class ChangePassword extends javax.swing.JPanel
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 70, 9);
         add(jReenterNewPassword, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    /**--------------
+     * BELOW are getters and setters for this class
+     * --------------
+     */
     private void jCurrentPasswordFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_jCurrentPasswordFocusGained
     {//GEN-HEADEREND:event_jCurrentPasswordFocusGained
         jCurrentPassword.setText("");
