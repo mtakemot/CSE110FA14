@@ -5,6 +5,14 @@
  * Group: TEAM 42
  */
 
+*************************** NOTE TO USERS ***************************
+
+Documentations can be found at various level of the code. This is the Project README
+file. There is a README file that you should read for each layer, and even
+a main README for developers in the main "/CSE110FA14/" directory which 
+has a few instructions on how to change parts of this application.
+*********************************************************************
+
 Description
 -----------
 	This program incorporates design patters and development tools
@@ -42,4 +50,12 @@ requirement. The following below is the customer's requirement/description of th
 
 https://sites.google.com/site/cse110fall2014/design-patterns
 
+-----------------
+Project contents:
 
+1) Assets layer
+2) DataLayer
+3) FacadeLayer
+4) LogicLayer
+5) PresentationLayer
+6) 

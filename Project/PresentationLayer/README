@@ -1,0 +1,22 @@
+/*
+ * Filename: README
+ * Author: Michio Takemoto
+ * Date: 12/12/14
+ * Group: TEAM 42
+ */
+
+Location:
+	/CSE110FA14/Project/PresentationLayer
+
+Description:
+	User interface layer. Contains the main driver in GUI.java. Uses 
+javax.swing objects to crete buttons, GUI panels. Controls the work flow of
+all UI, and accesses methods from LogicLayer to manipulate/access data. Also
+accesses DataLayer to import / export database when it is called for. We will
+import database to a local HashTable() object and will export when any data 
+has been manipulated or created.
+
+AcountsListPanel.java : Creates a panel for logged in users to view atheir
+	bank accounts inside a table. 
+AccountsTableModel.java: Extends AbstractTableModel. Extends java.swing.Abstract.
+Tableodel. 

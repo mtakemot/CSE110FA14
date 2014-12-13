@@ -1,0 +1,35 @@
+/*
+ * Filename: README
+ * Author: Michio Takemoto
+ * Date: 12/12/14
+ * Group: TEAM 42
+ */
+
+Location:
+	/CSE110FA14/Project/LogicLayer
+
+Description:
+	Contains various classes pertaining to Users of a Bank. These include:
+User log in accounts, back accounts (checking or savings), User's transactions,
+and a table that holds all the data of all users and transactions.
+The table from HashTable is what gets serialized (import / export). 
+
+BankAccount.java: General parent class defining various member data and constructor
+		  for what a bank account needs.
+		  Points to the next bank account in a list for each user. 
+CheckingAccount.java: extends BankAccount. Consists of checking account specific
+		  getters and setters.
+HashTable.java:   Table that will hold all data for Users. Has getters/setters for 
+		  Users. Also has methods for interest and penalties and for 
+		  adding up daily average totals (generally used when multithreading)
+SavingsAccount.java: Extends BankAccount. Consists of getters and setters specific to
+		  savings account. 
+Transaction.java: implments Comparable interface. Creates a Transaction object recording
+	          the type of transaction, amount (dollar amount), and time of 
+		  transaction. Has getters and setters for transaction details.
+UserAccount.java: Implements Serializable. contains account log in information. 
+		  Also contains a member field that points to the first bank account of 
+		  each user which can be iterated through BankAccounts getNext() method.
+		  User accounts can be iterated by using UserAccount's getNext() method.
+Classes that implements Serializable: 
+	BankAccount, HashTable, Transaction, UserAccount
