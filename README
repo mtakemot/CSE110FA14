@@ -9,7 +9,9 @@ Furthermore, each file in each of the layers has its own class header, function 
 
 Lastly, to view and evaluate our project, it is highly recommended that you download and install Netbeans and view the project within the IDE. All of our design becomes much more clear when viewed at that level and the software is very easy to build and run in that environment.
 
-******************** To Import Our Project Into Netbeans With Git (Best way to view, assess, and evaluate our project) ********************
+The best way to view and assess our project is by viewing it through the Netbeans IDE. Instructions are outlined directly below
+
+******************** To Import Our Project Into Netbeans With Git ********************
 
 1. Download and install Netbeans 8 (just google it)
 2. Open Netbeans. If you have any projects that you previously opened on the left hand side in the projects pane, rightclick on them and select "Close"
