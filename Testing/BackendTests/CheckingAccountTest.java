@@ -1,22 +1,24 @@
 package BackendTests;
 
-import LogicLayer.BankAccount;
 import LogicLayer.CheckingAccount;
-import LogicLayer.SavingsAccount;
-import LogicLayer.UserAccount;
-import org.joda.time.DateTime;
 import org.joda.time.DateTimeUtils;
-import org.joda.time.DateTimeZone;
-import static org.joda.time.Duration.millis;
 import org.junit.*;
 import static org.junit.Assert.*;
 
+
 /**
+ * **************************************************************************
  *
- * @author Tahereh Masoumi This class tests the CheckingAccount class
- * functionality.
+ * Tahereh Masoumi CSE 110, Fall 2014 Last Updated: Nov 30, 2014
+ * 
+ * Team 42
  *
+ * File Name: checkingAccountTest.java Description: This class tests the
+ * functionality of checkingAccount class which is also similar to savingAccount
+ * class.
+ * **************************************************************************
  */
+
 public class CheckingAccountTest
 {
 
@@ -44,8 +46,10 @@ public class CheckingAccountTest
     public void testAddToBalance_General()
     {
         instance.setBalance(0);
-        ////System.out.println("Balance reflects deposits");
-
+        
+        /*tests if the correct amount are added to the instance of checking
+        account  
+        */
         for (int i = 1; i < 10; i++)
         {
             double expResult = instance.getBalance() + (i * 10);
@@ -62,8 +66,8 @@ public class CheckingAccountTest
     @Test
     public void testAddToBalance_DepositlessThanDailyLimit()
     {
-        ////System.out.println("Daily depositing less than $10000 daily limit");
         instance.setBalance(0);
+        //adds $5000 to the instance checkingAccount
         boolean res1 = instance.addToBalance(5000);
         boolean exp1 = true;
         assertEquals(exp1, res1);
@@ -76,7 +80,6 @@ public class CheckingAccountTest
     @Test
     public void testAddToBalance_DepositEqualToDailyLimit()
     {
-        // //System.out.println("Daily depositing equal to $10000 daily limit");
         boolean res2 = instance.addToBalance(10000);
         boolean exp2 = true;
         assertEquals(exp2, res2);
@@ -88,8 +91,8 @@ public class CheckingAccountTest
      */
     @Test
     public void testAddToBalance_DepositMoreThanDailyLimit()
-    {
-        // //System.out.println("Daily depositing more than $10000 daily limit");
+    {  
+        //tries to add $15000 to the account which is more than daily limit
         boolean res3 = instance.addToBalance(15000);
         boolean exp3 = false;
         assertEquals(exp3, res3);
@@ -105,15 +108,13 @@ public class CheckingAccountTest
         DateTimeUtils.setCurrentMillisOffset(0);
 
         instance.addToBalance(9000);
-        ////System.out.println("balance after 9000 deposit in one day");
 
         //changing current time to one day after actual time
         DateTimeUtils.setCurrentMillisOffset(100000000);
 
         boolean res4 = instance.addToBalance(5000);
-
-        //.out.println("balance after 5000 deposit in next day");
         boolean exp4 = true;
+        //tests if the daily account limit has been reset in each day
         assertEquals(exp4, res4);
     }
 
@@ -125,8 +126,8 @@ public class CheckingAccountTest
     public void testAddToBalance_DepositMoreThanLimitSeveralDaysPeriod()
     {
         instance.addToBalance(6000);
+        //changes the time to 1 month after deposit time
         DateTimeUtils.setCurrentMillisOffset(200000000);
-        // //System.out.println("depositing more than $10000 in several-days period ");
         boolean res5 = instance.addToBalance(5000);
         boolean exp5 = true;
         assertEquals(exp5, res5);
@@ -141,8 +142,8 @@ public class CheckingAccountTest
     public void testSubFromBalance_DebitmMoreThanBalance()
     {
         instance.setBalance(0);
-        // //System.out.println("Debit more than balance");
         boolean expResult1 = false;
+        //tries to withdraw more than balance
         boolean result1 = instance.subFromBalance(200);
         assertEquals(expResult1, result1);
     }
@@ -155,8 +156,8 @@ public class CheckingAccountTest
     public void testSubFromBalance_DebitLessThanDailyLimit()
     {
         instance.setBalance(20000);
-        // //System.out.println("Debit less than $10000 daily limit");
         boolean expResult2 = true;
+        //withdraws below daily limit
         boolean result2 = instance.subFromBalance(5000);
         assertEquals(expResult2, result2);
     }
@@ -169,8 +170,8 @@ public class CheckingAccountTest
     public void testSubFromBalance_debitEqualToDailyLimit()
     {
         instance.setBalance(20000);
-        ////System.out.println("Debit equal to $10000 daily limit");
         boolean expResult3 = true;
+        //withdraws equal to daily limit
         boolean result3 = instance.subFromBalance(10000);
         assertEquals(expResult3, result3);
     }
@@ -182,8 +183,8 @@ public class CheckingAccountTest
     @Test
     public void testSubFromBalance_debitMoreThanDailyLimit()
     {
-        // //System.out.println("Debit more than $10000 daily limit");
         boolean expResult4 = false;
+        //tries to withdraw more than daily limit
         boolean result4 = instance.subFromBalance(5000);
         assertEquals(expResult4, result4);
     }
@@ -195,11 +196,12 @@ public class CheckingAccountTest
     @Test
     public void testSubFromBalance_debitMoreThanLimitInMultipleDays()
     {
+        //return the time to the actual time
         DateTimeUtils.setCurrentMillisOffset(0);
 
         instance.setBalance(20000);
-        ////System.out.println("Debit more than $10000 in multiple days period ");
         instance.subFromBalance(5000);
+        //changes the time to one day afer deposit time
         DateTimeUtils.setCurrentMillisOffset(100000000);
 
         boolean expResult5 = true;
