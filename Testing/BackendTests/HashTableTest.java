@@ -5,22 +5,28 @@ import LogicLayer.UserAccount;
 import org.junit.*;
 import static org.junit.Assert.*;
 
+
 /**
+ * **************************************************************************
  *
- * @author Nishat rustagi Wrote and modified the following tests for 1. Insert
- * User Account 2. Reinserting User Accounts 3. Finding User Accounts 4.
- * Deleting User Accounts
+ * Nishat Rustagi, Tahereh Masoumi CSE 110, Fall 2014 Last Updated: Nov 30, 2014
+ * 
+ * Team 42
  *
- *
- * @author Tahereh Masoumi Last Updated Nov. 30 2014
+ * File Name: HashTableTest.java Description: This file is contains tests for 
+ * HashTable class functions including insertUserAccount, findUserAccount,
+ * deleteUserAccount and findUserAccountByEmail.
+ * **************************************************************************
  */
 public class HashTableTest
 {
 
+    /*tests the InsertUserAccount function by creating and inserting 1000 
+    userAccounts*/
     @Test
     public void testInsertUserAccount()
     {
-        ////System.out.println("insertUserAccount");
+        //create a new test hashtable
         HashTable testTable = new HashTable();
 
         String testString = "testUserName";
@@ -46,11 +52,11 @@ public class HashTableTest
             assertEquals(2, result.getNumOfBankAccounts());
         }
     }
-
+    
+    //Test if the insertUserAccount accepts duplicates
     @Test
     public void testInsertUserAccount_reinsert()
     {
-        // //System.out.println("insertUserAccount");
         HashTable testTable = new HashTable();
         String testString = "testUserName";
 
@@ -68,6 +74,7 @@ public class HashTableTest
         }
     }
 
+    //tests if FindUserAccount() returns the correct userAccount
     @Test
     public void testFindUserAccount()
 
@@ -100,11 +107,13 @@ public class HashTableTest
 
     }
 
+    /*tests the DeleteUserAccount function by inserting 1000 userAccounts and 
+     deleting them one by one
+    */
     @Test
     public void testDeleteUserAccount()
     {
 
-        ////System.out.println("RemovingUserAccount");
         HashTable testTable = new HashTable();
         String testString = "testUserName";
 
@@ -129,11 +138,11 @@ public class HashTableTest
 
     }
 
+    //tests the FindUserAccountByEmail function
     @Test
     public void testFindUserAccountByEmail()
 
     {
-        // //System.out.println("Find UserAccount by Email");
         HashTable testTable = new HashTable();
         String testString = "testUserName";
 
