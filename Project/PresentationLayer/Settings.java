@@ -1,3 +1,12 @@
+/*
+ * Team 42
+ * CSE 110, Fall 2014
+ *  
+ * Author(s):Zachary Preece-Scaringe
+ * 
+ * Summary: Settings Panel
+ */
+
 package PresentationLayer;
 
 import LogicLayer.UserAccount;
@@ -9,15 +18,7 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- *
- * @author asharda
- */
+
 public class Settings extends javax.swing.JPanel
 {
 
@@ -34,6 +35,8 @@ public class Settings extends javax.swing.JPanel
         initComponents();
     }
 
+    /*This constructor takes in MainPanel and mainGUI from GUI.java which gives us access to
+     the main panel and ther panels public methods */
     public Settings(JPanel MainPanel, GUI mainGUI)
     {
         icon = new javax.swing.ImageIcon(getClass().getResource("/Assets/rsz_2icon.png"));
@@ -41,14 +44,6 @@ public class Settings extends javax.swing.JPanel
         this.mainGUI = mainGUI;
 
         initComponents();
-    }
-
-    @Override
-    protected void paintComponent(Graphics g)
-    {
-        g.setColor(getBackground());
-        g.fillRect(0, 0, getWidth(), getHeight());
-        super.paintComponent(g);
     }
 
     /**
@@ -882,6 +877,8 @@ public class Settings extends javax.swing.JPanel
         add(Background, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    //update labels on this page when user data is changed
     public void update()
     {
         UserLastName.setText(GUI.currentUserAccount.getLastName());
@@ -891,21 +888,29 @@ public class Settings extends javax.swing.JPanel
         UserPhoneNumber.setText(GUI.currentUserAccount.getPhone());
     }
 
+    //deletes a user account
     private void DeleteAccountButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteAccountButtonMouseClicked
 
+        //panel which will deal with input
         JPanel passpanel = mainGUI.getPass().GetPanel();
+        
+        //popup with password retrieval panel
         int choice = JOptionPane.showConfirmDialog(
                 null,
-                passpanel,
+                passpanel,    //show password panel in popup
                 "Bank 42",
                 JOptionPane.OK_CANCEL_OPTION,
                 JOptionPane.PLAIN_MESSAGE,
                 GUI.icon
         );
 
+        //if user did not cancel
         if (choice == 0)
         {
+            //get password from passwordpanel
             String password = mainGUI.getPass().GetPassword();
+            
+            //error popup for invalid password
             if (!(GUI.currentUserAccount.validatePassword(password)))
             {
                 JOptionPane.showMessageDialog(null, "Incorrect password!", "Error!",
@@ -913,6 +918,7 @@ public class Settings extends javax.swing.JPanel
                 return;
             }
 
+            //confirmation dialog (popup)
             int choice2 = JOptionPane.showConfirmDialog(
                     null,
                     "Are you sure you want to delete your account?",
@@ -922,20 +928,27 @@ public class Settings extends javax.swing.JPanel
                     GUI.icon
             );
 
+            //if user pressed yes, delete account
             if (choice2 == 0)
             {
+                
                 GUI.MasterTable.deleteUserAccount(GUI.currentUserAccount.getUserName());
+                
+                //reset static gui variables
                 GUI.currentBankAccount = null;
                 GUI.currentUserAccount = null;
+                
+                //tell database about change (export data)
                 GUI.dataout.exportDB(GUI.MasterTable);
 
+                //return to login screen
                 CardLayout layout = (CardLayout) (MainPanel.getLayout());
                 layout.show(MainPanel, "Login");
-                //mainGUI.getDolphinsPanel().DolphinsCalled();
             }
         }
     }//GEN-LAST:event_DeleteAccountButtonMouseClicked
 
+    //method for setting panel backgrounds after one is changed upon mouseentered
     private void setMouseExitColors()
     {
         Color newColor = new Color(153, 255, 153);
@@ -959,6 +972,7 @@ public class Settings extends javax.swing.JPanel
         UserPasswordPanel.setBackground(newColor);
     }
 
+    //sets appropriate label backgrounds to white to signal clickable upon mouse enter, underlines edit label
     private void FirstNameLabelPanelMouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_FirstNameLabelPanelMouseEntered
     {//GEN-HEADEREND:event_FirstNameLabelPanelMouseEntered
         FirstNameLabelPanel.setBackground(new Color(255, 255, 255));
@@ -971,18 +985,21 @@ public class Settings extends javax.swing.JPanel
         EditLabel.setFont(font.deriveFont(attributes));
     }//GEN-LAST:event_FirstNameLabelPanelMouseEntered
 
+    //changes its edit labels font to not underlined. call setmouse exit colors to reset selection
     private void FirstNameLabelPanelMouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_FirstNameLabelPanelMouseExited
     {//GEN-HEADEREND:event_FirstNameLabelPanelMouseExited
         setMouseExitColors();
         EditLabel.setFont(thefont);
     }//GEN-LAST:event_FirstNameLabelPanelMouseExited
 
+    //changes its edit labels font to not underlined. call setmouse exit colors to reset selection
     private void EditLabelMouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabelMouseExited
     {//GEN-HEADEREND:event_EditLabelMouseExited
         setMouseExitColors();
         EditLabel.setFont(thefont);
     }//GEN-LAST:event_EditLabelMouseExited
 
+    //sets appropriate label backgrounds to white to signal clickable upon mouse enter, underlines edit label
     private void EditLabelMouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabelMouseEntered
     {//GEN-HEADEREND:event_EditLabelMouseEntered
         FirstNameLabelPanel.setBackground(new Color(255, 255, 255));
@@ -995,6 +1012,7 @@ public class Settings extends javax.swing.JPanel
         EditLabel.setFont(font.deriveFont(attributes));
     }//GEN-LAST:event_EditLabelMouseEntered
 
+    //sets appropriate label backgrounds to white to signal clickable upon mouse enter, underlines edit label
     private void EditLabel1MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel1MouseEntered
     {//GEN-HEADEREND:event_EditLabel1MouseEntered
         LastNameLabelPanel.setBackground(new Color(255, 255, 255));
@@ -1007,12 +1025,14 @@ public class Settings extends javax.swing.JPanel
         EditLabel1.setFont(font.deriveFont(attributes));
     }//GEN-LAST:event_EditLabel1MouseEntered
 
+    //changes its edit labels font to not underlined. call setmouse exit colors to reset selection
     private void EditLabel1MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel1MouseExited
     {//GEN-HEADEREND:event_EditLabel1MouseExited
         setMouseExitColors();
         EditLabel1.setFont(thefont);
     }//GEN-LAST:event_EditLabel1MouseExited
 
+    //sets appropriate label backgrounds to white to signal clickable upon mouse enter, underlines edit label
     private void EditLabel2MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel2MouseEntered
     {//GEN-HEADEREND:event_EditLabel2MouseEntered
         UsernameLabelPanel.setBackground(new Color(255, 255, 255));
@@ -1025,12 +1045,14 @@ public class Settings extends javax.swing.JPanel
         EditLabel2.setFont(font.deriveFont(attributes));
     }//GEN-LAST:event_EditLabel2MouseEntered
 
+    //changes its edit labels font to not underlined. call setmouse exit colors to reset selection
     private void EditLabel2MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel2MouseExited
     {//GEN-HEADEREND:event_EditLabel2MouseExited
         setMouseExitColors();
         EditLabel2.setFont(thefont);
     }//GEN-LAST:event_EditLabel2MouseExited
 
+    //sets appropriate label backgrounds to white to signal clickable upon mouse enter, underlines edit label
     private void EditLabel3MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel3MouseEntered
     {//GEN-HEADEREND:event_EditLabel3MouseEntered
         EmailLabelPanel.setBackground(new Color(255, 255, 255));
@@ -1043,12 +1065,14 @@ public class Settings extends javax.swing.JPanel
         EditLabel3.setFont(font.deriveFont(attributes));
     }//GEN-LAST:event_EditLabel3MouseEntered
 
+    //changes its edit labels font to not underlined. call setmouse exit colors to reset selection
     private void EditLabel3MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel3MouseExited
     {//GEN-HEADEREND:event_EditLabel3MouseExited
         setMouseExitColors();
         EditLabel3.setFont(thefont);
     }//GEN-LAST:event_EditLabel3MouseExited
 
+    //sets appropriate label backgrounds to white to signal clickable upon mouse enter, underlines edit label
     private void EditLabel4MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel4MouseEntered
     {//GEN-HEADEREND:event_EditLabel4MouseEntered
         PhoneNumberLabelPanel.setBackground(new Color(255, 255, 255));
@@ -1061,12 +1085,14 @@ public class Settings extends javax.swing.JPanel
         EditLabel4.setFont(font.deriveFont(attributes));
     }//GEN-LAST:event_EditLabel4MouseEntered
 
+    //changes its edit labels font to not underlined. call setmouse exit colors to reset selection
     private void EditLabel4MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel4MouseExited
     {//GEN-HEADEREND:event_EditLabel4MouseExited
         setMouseExitColors();
         EditLabel4.setFont(thefont);
     }//GEN-LAST:event_EditLabel4MouseExited
 
+    //sets appropriate label backgrounds to white to signal clickable upon mouse enter, underlines edit label
     private void EditLabel5MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel5MouseEntered
     {//GEN-HEADEREND:event_EditLabel5MouseEntered
         PasswordLabelPanel.setBackground(new Color(255, 255, 255));
@@ -1079,12 +1105,14 @@ public class Settings extends javax.swing.JPanel
         EditLabel5.setFont(font.deriveFont(attributes));
     }//GEN-LAST:event_EditLabel5MouseEntered
 
+    //changes its edit labels font to not underlined. call setmouse exit colors to reset selection
     private void EditLabel5MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel5MouseExited
     {//GEN-HEADEREND:event_EditLabel5MouseExited
         setMouseExitColors();
         EditLabel5.setFont(thefont);
     }//GEN-LAST:event_EditLabel5MouseExited
 
+    //sets appropriate label backgrounds to white to signal clickable upon mouse enter, underlines edit label
     private void LastNameEditLabelPanelMouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_LastNameEditLabelPanelMouseEntered
     {//GEN-HEADEREND:event_LastNameEditLabelPanelMouseEntered
         FirstNameLabelPanel.setBackground(new Color(255, 255, 255));
@@ -1097,12 +1125,14 @@ public class Settings extends javax.swing.JPanel
         EditLabel.setFont(font.deriveFont(attributes));
     }//GEN-LAST:event_LastNameEditLabelPanelMouseEntered
 
+    //changes its edit labels font to not underlined. call setmouse exit colors to reset selection
     private void LastNameEditLabelPanelMouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_LastNameEditLabelPanelMouseExited
     {//GEN-HEADEREND:event_LastNameEditLabelPanelMouseExited
         setMouseExitColors();
         EditLabel.setFont(thefont);
     }//GEN-LAST:event_LastNameEditLabelPanelMouseExited
 
+    //sets appropriate label backgrounds to white to signal clickable upon mouse enter, underlines edit label
     private void LastNameLabelPanelMouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_LastNameLabelPanelMouseEntered
     {//GEN-HEADEREND:event_LastNameLabelPanelMouseEntered
         LastNameLabelPanel.setBackground(new Color(255, 255, 255));
@@ -1115,12 +1145,14 @@ public class Settings extends javax.swing.JPanel
         EditLabel1.setFont(font.deriveFont(attributes));
     }//GEN-LAST:event_LastNameLabelPanelMouseEntered
 
+    //changes its edit labels font to not underlined. call setmouse exit colors to reset selection
     private void LastNameLabelPanelMouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_LastNameLabelPanelMouseExited
     {//GEN-HEADEREND:event_LastNameLabelPanelMouseExited
         setMouseExitColors();
         EditLabel1.setFont(thefont);
     }//GEN-LAST:event_LastNameLabelPanelMouseExited
 
+    //sets appropriate label backgrounds to white to signal clickable upon mouse enter, underlines edit label
     private void FirstNameEditLabelPanelMouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_FirstNameEditLabelPanelMouseEntered
     {//GEN-HEADEREND:event_FirstNameEditLabelPanelMouseEntered
         LastNameLabelPanel.setBackground(new Color(255, 255, 255));
@@ -1133,37 +1165,51 @@ public class Settings extends javax.swing.JPanel
         EditLabel1.setFont(font.deriveFont(attributes));
     }//GEN-LAST:event_FirstNameEditLabelPanelMouseEntered
 
+    //changes its edit labels font to not underlined. call setmouse exit colors to reset selection
     private void FirstNameEditLabelPanelMouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_FirstNameEditLabelPanelMouseExited
     {//GEN-HEADEREND:event_FirstNameEditLabelPanelMouseExited
         setMouseExitColors();
         EditLabel1.setFont(thefont);
     }//GEN-LAST:event_FirstNameEditLabelPanelMouseExited
 
+    //shows input popup asking for new field, validates response,updates corresponding labels and database, gives success message.
     private void FirstNameLabelPanelMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_FirstNameLabelPanelMouseClicked
     {//GEN-HEADEREND:event_FirstNameLabelPanelMouseClicked
+        //popup which records response as an object
         Object response = JOptionPane.showInputDialog(null, "Enter your new last name:", "Bank 42", 1, GUI.icon, null, null);
 
         if (response == null)
             return;
 
+        //convert response to string
         String response_S = response.toString();
         response_S = response_S.trim();
 
+        //if response is valid
         if ((response_S.length() > 0) && CreateAccountPanel.validateLastName(response_S))
         {
+            //update backend
             GUI.currentUserAccount.setLastName(response_S);
+            
+            //update database
             GUI.dataout.exportDB(GUI.MasterTable);
+            
+            //set seuccess message
             errorMessage.setText("Success");
             errorMessage.setForeground(Color.green);
+            
+            //update this panels fields
             update();
         }
         else
         {
+            //if response is invalid, set error message
             errorMessage.setForeground(Color.red);
             errorMessage.setText("Your last name can only contain alphabet values and hyphens.");
         }
     }//GEN-LAST:event_FirstNameLabelPanelMouseClicked
 
+    //shows input popup asking for new field, validates response,updates corresponding labels and database, gives success message.
     private void LastNameEditLabelPanelMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_LastNameEditLabelPanelMouseClicked
     {//GEN-HEADEREND:event_LastNameEditLabelPanelMouseClicked
 
@@ -1188,6 +1234,7 @@ public class Settings extends javax.swing.JPanel
         }
     }//GEN-LAST:event_LastNameEditLabelPanelMouseClicked
 
+    //shows input popup asking for new field, validates response,updates corresponding labels and database, gives success message.
     private void EditLabelMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabelMouseClicked
     {//GEN-HEADEREND:event_EditLabelMouseClicked
         Object response = JOptionPane.showInputDialog(null, "Enter your new last name:", "Bank 42", 1, GUI.icon, null, null);
@@ -1212,6 +1259,7 @@ public class Settings extends javax.swing.JPanel
         }
     }//GEN-LAST:event_EditLabelMouseClicked
 
+    //sets appropriate label backgrounds to white to signal clickable upon mouse enter, underlines edit label
     private void PhoneNumberLabelPanelMouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_PhoneNumberLabelPanelMouseEntered
     {//GEN-HEADEREND:event_PhoneNumberLabelPanelMouseEntered
         PhoneNumberLabelPanel.setBackground(new Color(255, 255, 255));
@@ -1224,12 +1272,14 @@ public class Settings extends javax.swing.JPanel
         EditLabel4.setFont(font.deriveFont(attributes));
     }//GEN-LAST:event_PhoneNumberLabelPanelMouseEntered
 
+    //changes its edit labels font to not underlined. call setmouse exit colors to reset selection
     private void PhoneNumberLabelPanelMouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_PhoneNumberLabelPanelMouseExited
     {//GEN-HEADEREND:event_PhoneNumberLabelPanelMouseExited
         setMouseExitColors();
         EditLabel4.setFont(thefont);
     }//GEN-LAST:event_PhoneNumberLabelPanelMouseExited
 
+    //sets appropriate label backgrounds to white to signal clickable upon mouse enter, underlines edit label
     private void PhoneNumberEditLabelPanelMouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_PhoneNumberEditLabelPanelMouseEntered
     {//GEN-HEADEREND:event_PhoneNumberEditLabelPanelMouseEntered
         PhoneNumberLabelPanel.setBackground(new Color(255, 255, 255));
@@ -1242,12 +1292,14 @@ public class Settings extends javax.swing.JPanel
         EditLabel4.setFont(font.deriveFont(attributes));
     }//GEN-LAST:event_PhoneNumberEditLabelPanelMouseEntered
 
+    //changes its edit labels font to not underlined. call setmouse exit colors to reset selection
     private void PhoneNumberEditLabelPanelMouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_PhoneNumberEditLabelPanelMouseExited
     {//GEN-HEADEREND:event_PhoneNumberEditLabelPanelMouseExited
         setMouseExitColors();
         EditLabel4.setFont(thefont);
     }//GEN-LAST:event_PhoneNumberEditLabelPanelMouseExited
 
+    //sets appropriate label backgrounds to white to signal clickable upon mouse enter, underlines edit label
     private void UsernameLabelPanelMouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_UsernameLabelPanelMouseEntered
     {//GEN-HEADEREND:event_UsernameLabelPanelMouseEntered
         UsernameLabelPanel.setBackground(new Color(255, 255, 255));
@@ -1260,12 +1312,14 @@ public class Settings extends javax.swing.JPanel
         EditLabel2.setFont(font.deriveFont(attributes));
     }//GEN-LAST:event_UsernameLabelPanelMouseEntered
 
+    //changes its edit labels font to not underlined. call setmouse exit colors to reset selection
     private void UsernameLabelPanelMouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_UsernameLabelPanelMouseExited
     {//GEN-HEADEREND:event_UsernameLabelPanelMouseExited
         setMouseExitColors();
         EditLabel2.setFont(thefont);
     }//GEN-LAST:event_UsernameLabelPanelMouseExited
 
+    //sets appropriate label backgrounds to white to signal clickable upon mouse enter, underlines edit label
     private void UsernameEditLabelPanelMouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_UsernameEditLabelPanelMouseEntered
     {//GEN-HEADEREND:event_UsernameEditLabelPanelMouseEntered
         UsernameLabelPanel.setBackground(new Color(255, 255, 255));
@@ -1278,12 +1332,14 @@ public class Settings extends javax.swing.JPanel
         EditLabel2.setFont(font.deriveFont(attributes));
     }//GEN-LAST:event_UsernameEditLabelPanelMouseEntered
 
+    //changes its edit labels font to not underlined. call setmouse exit colors to reset selection
     private void UsernameEditLabelPanelMouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_UsernameEditLabelPanelMouseExited
     {//GEN-HEADEREND:event_UsernameEditLabelPanelMouseExited
         setMouseExitColors();
         EditLabel2.setFont(thefont);
     }//GEN-LAST:event_UsernameEditLabelPanelMouseExited
 
+    //sets appropriate label backgrounds to white to signal clickable upon mouse enter, underlines edit label
     private void EmailLabelPanelMouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EmailLabelPanelMouseEntered
     {//GEN-HEADEREND:event_EmailLabelPanelMouseEntered
         EmailLabelPanel.setBackground(new Color(255, 255, 255));
@@ -1296,6 +1352,7 @@ public class Settings extends javax.swing.JPanel
         EditLabel3.setFont(font.deriveFont(attributes));
     }//GEN-LAST:event_EmailLabelPanelMouseEntered
 
+    //sets appropriate label backgrounds to white to signal clickable upon mouse enter, underlines edit label
     private void EmailEditLabelPanelMouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EmailEditLabelPanelMouseEntered
     {//GEN-HEADEREND:event_EmailEditLabelPanelMouseEntered
         EmailLabelPanel.setBackground(new Color(255, 255, 255));
@@ -1308,18 +1365,21 @@ public class Settings extends javax.swing.JPanel
         EditLabel3.setFont(font.deriveFont(attributes));
     }//GEN-LAST:event_EmailEditLabelPanelMouseEntered
 
+    //changes its edit labels font to not underlined. call setmouse exit colors to reset selection
     private void EmailLabelPanelMouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EmailLabelPanelMouseExited
     {//GEN-HEADEREND:event_EmailLabelPanelMouseExited
         setMouseExitColors();
         EditLabel3.setFont(thefont);
     }//GEN-LAST:event_EmailLabelPanelMouseExited
 
+    //changes its edit labels font to not underlined. call setmouse exit colors to reset selection
     private void EmailEditLabelPanelMouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EmailEditLabelPanelMouseExited
     {//GEN-HEADEREND:event_EmailEditLabelPanelMouseExited
         setMouseExitColors();
         EditLabel3.setFont(thefont);
     }//GEN-LAST:event_EmailEditLabelPanelMouseExited
 
+    //sets appropriate label backgrounds to white to signal clickable upon mouse enter, underlines edit label
     private void PasswordLabelPanelMouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_PasswordLabelPanelMouseEntered
     {//GEN-HEADEREND:event_PasswordLabelPanelMouseEntered
         PasswordLabelPanel.setBackground(new Color(255, 255, 255));
@@ -1332,12 +1392,14 @@ public class Settings extends javax.swing.JPanel
         EditLabel5.setFont(font.deriveFont(attributes));
     }//GEN-LAST:event_PasswordLabelPanelMouseEntered
 
+    //changes its edit labels font to not underlined. call setmouse exit colors to reset selection
     private void PasswordLabelPanelMouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_PasswordLabelPanelMouseExited
     {//GEN-HEADEREND:event_PasswordLabelPanelMouseExited
         setMouseExitColors();
         EditLabel5.setFont(thefont);
     }//GEN-LAST:event_PasswordLabelPanelMouseExited
 
+    //sets appropriate label backgrounds to white to signal clickable upon mouse enter, underlines edit label
     private void UserLastNamePanelMouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_UserLastNamePanelMouseEntered
     {//GEN-HEADEREND:event_UserLastNamePanelMouseEntered
         FirstNameLabelPanel.setBackground(new Color(255, 255, 255));
@@ -1350,12 +1412,14 @@ public class Settings extends javax.swing.JPanel
         EditLabel.setFont(font.deriveFont(attributes));
     }//GEN-LAST:event_UserLastNamePanelMouseEntered
 
+    //changes its edit labels font to not underlined. call setmouse exit colors to reset selection
     private void UserLastNamePanelMouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_UserLastNamePanelMouseExited
     {//GEN-HEADEREND:event_UserLastNamePanelMouseExited
         setMouseExitColors();
         EditLabel.setFont(thefont);
     }//GEN-LAST:event_UserLastNamePanelMouseExited
 
+    //shows input popup asking for new field, validates response,updates corresponding labels and database, gives success message.
     private void UserLastNamePanelMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_UserLastNamePanelMouseClicked
     {//GEN-HEADEREND:event_UserLastNamePanelMouseClicked
         Object response = JOptionPane.showInputDialog(null, "Enter your new last name:", "Bank 42", 1, GUI.icon, null, null);
@@ -1380,6 +1444,7 @@ public class Settings extends javax.swing.JPanel
         }
     }//GEN-LAST:event_UserLastNamePanelMouseClicked
 
+    //sets appropriate label backgrounds to white to signal clickable upon mouse enter, underlines edit label
     private void UserFirstNamePanelMouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_UserFirstNamePanelMouseEntered
     {//GEN-HEADEREND:event_UserFirstNamePanelMouseEntered
         LastNameLabelPanel.setBackground(new Color(255, 255, 255));
@@ -1392,6 +1457,7 @@ public class Settings extends javax.swing.JPanel
         EditLabel1.setFont(font.deriveFont(attributes));
     }//GEN-LAST:event_UserFirstNamePanelMouseEntered
 
+    //sets appropriate label backgrounds to white to signal clickable upon mouse enter, underlines edit label
     private void UserUsernamePanelMouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_UserUsernamePanelMouseEntered
     {//GEN-HEADEREND:event_UserUsernamePanelMouseEntered
         UsernameLabelPanel.setBackground(new Color(255, 255, 255));
@@ -1404,12 +1470,14 @@ public class Settings extends javax.swing.JPanel
         EditLabel2.setFont(font.deriveFont(attributes));
     }//GEN-LAST:event_UserUsernamePanelMouseEntered
 
+    //changes its edit labels font to not underlined. call setmouse exit colors to reset selection
     private void UserUsernamePanelMouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_UserUsernamePanelMouseExited
     {//GEN-HEADEREND:event_UserUsernamePanelMouseExited
         setMouseExitColors();
         EditLabel2.setFont(thefont);
     }//GEN-LAST:event_UserUsernamePanelMouseExited
 
+    //sets appropriate label backgrounds to white to signal clickable upon mouse enter, underlines edit label
     private void UserPasswordPanelMouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_UserPasswordPanelMouseEntered
     {//GEN-HEADEREND:event_UserPasswordPanelMouseEntered
         PasswordLabelPanel.setBackground(new Color(255, 255, 255));
@@ -1422,12 +1490,14 @@ public class Settings extends javax.swing.JPanel
         EditLabel5.setFont(font.deriveFont(attributes));
     }//GEN-LAST:event_UserPasswordPanelMouseEntered
 
+    //changes its edit labels font to not underlined. call setmouse exit colors to reset selection
     private void UserPasswordPanelMouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_UserPasswordPanelMouseExited
     {//GEN-HEADEREND:event_UserPasswordPanelMouseExited
         setMouseExitColors();
         EditLabel5.setFont(thefont);
     }//GEN-LAST:event_UserPasswordPanelMouseExited
 
+    //sets appropriate label backgrounds to white to signal clickable upon mouse enter, underlines edit label
     private void UserPhoneNumberPanelMouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_UserPhoneNumberPanelMouseEntered
     {//GEN-HEADEREND:event_UserPhoneNumberPanelMouseEntered
 
@@ -1441,12 +1511,14 @@ public class Settings extends javax.swing.JPanel
         EditLabel4.setFont(font.deriveFont(attributes));
     }//GEN-LAST:event_UserPhoneNumberPanelMouseEntered
 
+    //changes its edit labels font to not underlined. call setmouse exit colors to reset selection
     private void UserPhoneNumberPanelMouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_UserPhoneNumberPanelMouseExited
     {//GEN-HEADEREND:event_UserPhoneNumberPanelMouseExited
         setMouseExitColors();
         EditLabel4.setFont(thefont);
     }//GEN-LAST:event_UserPhoneNumberPanelMouseExited
 
+    //sets appropriate label backgrounds to white to signal clickable upon mouse enter, underlines edit label
     private void UserEmailPanelMouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_UserEmailPanelMouseEntered
     {//GEN-HEADEREND:event_UserEmailPanelMouseEntered
         EmailLabelPanel.setBackground(new Color(255, 255, 255));
@@ -1459,18 +1531,21 @@ public class Settings extends javax.swing.JPanel
         EditLabel3.setFont(font.deriveFont(attributes));
     }//GEN-LAST:event_UserEmailPanelMouseEntered
 
+    //changes its edit labels font to not underlined. call setmouse exit colors to reset selection
     private void UserEmailPanelMouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_UserEmailPanelMouseExited
     {//GEN-HEADEREND:event_UserEmailPanelMouseExited
         setMouseExitColors();
         EditLabel3.setFont(thefont);
     }//GEN-LAST:event_UserEmailPanelMouseExited
 
+    //changes its edit labels font to not underlined. call setmouse exit colors to reset selection
     private void UserFirstNamePanelMouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_UserFirstNamePanelMouseExited
     {//GEN-HEADEREND:event_UserFirstNamePanelMouseExited
         setMouseExitColors();
         EditLabel1.setFont(thefont);
     }//GEN-LAST:event_UserFirstNamePanelMouseExited
 
+    //shows input popup asking for new field, validates response,updates corresponding labels and database, gives success message.
     private void LastNameLabelPanelMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_LastNameLabelPanelMouseClicked
     {//GEN-HEADEREND:event_LastNameLabelPanelMouseClicked
         Object response = JOptionPane.showInputDialog(null, "Enter your new first:", "Bank 42", 1, GUI.icon, null, null);
@@ -1495,6 +1570,7 @@ public class Settings extends javax.swing.JPanel
         }
     }//GEN-LAST:event_LastNameLabelPanelMouseClicked
 
+    //shows input popup asking for new field, validates response,updates corresponding labels and database, gives success message.
     private void UserFirstNamePanelMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_UserFirstNamePanelMouseClicked
     {//GEN-HEADEREND:event_UserFirstNamePanelMouseClicked
         Object response = JOptionPane.showInputDialog(null, "Enter your new first:", "Bank 42", 1, GUI.icon, null, null);
@@ -1519,6 +1595,7 @@ public class Settings extends javax.swing.JPanel
         }
     }//GEN-LAST:event_UserFirstNamePanelMouseClicked
 
+    //shows input popup asking for new field, validates response,updates corresponding labels and database, gives success message.
     private void EditLabel1MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel1MouseClicked
     {//GEN-HEADEREND:event_EditLabel1MouseClicked
         Object response = JOptionPane.showInputDialog(null, "Enter your new first:", "Bank 42", 1, GUI.icon, null, null);
@@ -1543,6 +1620,7 @@ public class Settings extends javax.swing.JPanel
         }
     }//GEN-LAST:event_EditLabel1MouseClicked
 
+    //shows input popup asking for new field, validates response,updates corresponding labels and database, gives success message.
     private void FirstNameEditLabelPanelMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_FirstNameEditLabelPanelMouseClicked
     {//GEN-HEADEREND:event_FirstNameEditLabelPanelMouseClicked
         Object response = JOptionPane.showInputDialog(null, "Enter your new first name:", "Bank 42", 1, GUI.icon, null, null);
@@ -1567,6 +1645,7 @@ public class Settings extends javax.swing.JPanel
         }
     }//GEN-LAST:event_FirstNameEditLabelPanelMouseClicked
 
+    //shows input popup asking for new field, validates response,updates corresponding labels and database, gives success message.
     private void UsernameLabelPanelMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_UsernameLabelPanelMouseClicked
     {//GEN-HEADEREND:event_UsernameLabelPanelMouseClicked
         Object response = JOptionPane.showInputDialog(null, "Enter your new username:", "Bank 42", 1, GUI.icon, null, null);
@@ -1610,6 +1689,7 @@ public class Settings extends javax.swing.JPanel
         }
     }//GEN-LAST:event_UsernameLabelPanelMouseClicked
 
+    //shows input popup asking for new field, validates response,updates corresponding labels and database, gives success message.
     private void UserUsernamePanelMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_UserUsernamePanelMouseClicked
     {//GEN-HEADEREND:event_UserUsernamePanelMouseClicked
         Object response = JOptionPane.showInputDialog(null, "Enter your new username:", "Bank 42", 1, GUI.icon, null, null);
@@ -1654,6 +1734,7 @@ public class Settings extends javax.swing.JPanel
         }
     }//GEN-LAST:event_UserUsernamePanelMouseClicked
 
+    //shows input popup asking for new field, validates response,updates corresponding labels and database, gives success message.
     private void EditLabel2MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel2MouseClicked
     {//GEN-HEADEREND:event_EditLabel2MouseClicked
         Object response = JOptionPane.showInputDialog(null, "Enter your new username:", "Bank 42", 1, GUI.icon, null, null);
@@ -1697,6 +1778,7 @@ public class Settings extends javax.swing.JPanel
         }
     }//GEN-LAST:event_EditLabel2MouseClicked
 
+    //shows input popup asking for new field, validates response,updates corresponding labels and database, gives success message.
     private void UsernameEditLabelPanelMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_UsernameEditLabelPanelMouseClicked
     {//GEN-HEADEREND:event_UsernameEditLabelPanelMouseClicked
         Object response = JOptionPane.showInputDialog(null, "Enter your new username:", "Bank 42", 1, GUI.icon, null, null);
@@ -1741,6 +1823,7 @@ public class Settings extends javax.swing.JPanel
         }
     }//GEN-LAST:event_UsernameEditLabelPanelMouseClicked
 
+    //shows input popup asking for new field, validates response,updates corresponding labels and database, gives success message.
     private void EmailLabelPanelMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EmailLabelPanelMouseClicked
     {//GEN-HEADEREND:event_EmailLabelPanelMouseClicked
         Object response = JOptionPane.showInputDialog(null, "Enter your new email:", "Bank 42", 1, GUI.icon, null, null);
@@ -1773,6 +1856,7 @@ public class Settings extends javax.swing.JPanel
         }
     }//GEN-LAST:event_EmailLabelPanelMouseClicked
 
+    //shows input popup asking for new field, validates response,updates corresponding labels and database, gives success message.
     private void UserEmailPanelMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_UserEmailPanelMouseClicked
     {//GEN-HEADEREND:event_UserEmailPanelMouseClicked
         Object response = JOptionPane.showInputDialog(null, "Enter your new email:", "Bank 42", 1, GUI.icon, null, null);
@@ -1805,6 +1889,7 @@ public class Settings extends javax.swing.JPanel
         }
     }//GEN-LAST:event_UserEmailPanelMouseClicked
 
+    //shows input popup asking for new field, validates response,updates corresponding labels and database, gives success message.
     private void EditLabel3MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel3MouseClicked
     {//GEN-HEADEREND:event_EditLabel3MouseClicked
         Object response = JOptionPane.showInputDialog(null, "Enter your new email:", "Bank 42", 1, GUI.icon, null, null);
@@ -1837,6 +1922,7 @@ public class Settings extends javax.swing.JPanel
         }
     }//GEN-LAST:event_EditLabel3MouseClicked
 
+    //shows input popup asking for new field, validates response,updates corresponding labels and database, gives success message.
     private void EmailEditLabelPanelMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EmailEditLabelPanelMouseClicked
     {//GEN-HEADEREND:event_EmailEditLabelPanelMouseClicked
         Object response = JOptionPane.showInputDialog(null, "Enter your new email:", "Bank 42", 1, GUI.icon, null, null);
@@ -1869,6 +1955,7 @@ public class Settings extends javax.swing.JPanel
         }
     }//GEN-LAST:event_EmailEditLabelPanelMouseClicked
 
+    //shows input popup asking for new field, validates response,updates corresponding labels and database, gives success message.
     private void PhoneNumberLabelPanelMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_PhoneNumberLabelPanelMouseClicked
     {//GEN-HEADEREND:event_PhoneNumberLabelPanelMouseClicked
         Object response = JOptionPane.showInputDialog(null, "Enter your new phone number:", "Bank 42", 1, GUI.icon, null, null);
@@ -1893,6 +1980,7 @@ public class Settings extends javax.swing.JPanel
         }
     }//GEN-LAST:event_PhoneNumberLabelPanelMouseClicked
 
+    //shows input popup asking for new field, validates response,updates corresponding labels and database, gives success message.
     private void UserPhoneNumberPanelMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_UserPhoneNumberPanelMouseClicked
     {//GEN-HEADEREND:event_UserPhoneNumberPanelMouseClicked
         Object response = JOptionPane.showInputDialog(null, "Enter your new phone number:", "Bank 42", 1, GUI.icon, null, null);
@@ -1917,6 +2005,7 @@ public class Settings extends javax.swing.JPanel
         }
     }//GEN-LAST:event_UserPhoneNumberPanelMouseClicked
 
+    //shows input popup asking for new field, validates response,updates corresponding labels and database, gives success message.
     private void EditLabel4MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel4MouseClicked
     {//GEN-HEADEREND:event_EditLabel4MouseClicked
         Object response = JOptionPane.showInputDialog(null, "Enter your new phone number:", "Bank 42", 1, GUI.icon, null, null);
@@ -1941,6 +2030,7 @@ public class Settings extends javax.swing.JPanel
         }
     }//GEN-LAST:event_EditLabel4MouseClicked
 
+    //shows input popup asking for new field, validates response,updates corresponding labels and database, gives success message.
     private void PhoneNumberEditLabelPanelMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_PhoneNumberEditLabelPanelMouseClicked
     {//GEN-HEADEREND:event_PhoneNumberEditLabelPanelMouseClicked
         Object response = JOptionPane.showInputDialog(null, "Enter your new phone number:", "Bank 42", 1, GUI.icon, null, null);
@@ -1965,6 +2055,7 @@ public class Settings extends javax.swing.JPanel
         }
     }//GEN-LAST:event_PhoneNumberEditLabelPanelMouseClicked
 
+    //shows input popup asking for new field, validates response,updates corresponding labels and database, gives success message.
     private void EditLabel5MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_EditLabel5MouseClicked
     {//GEN-HEADEREND:event_EditLabel5MouseClicked
         JPanel passpanel = mainGUI.getChangePasswordPanel().GetPanel();
@@ -1991,6 +2082,7 @@ public class Settings extends javax.swing.JPanel
         }
     }//GEN-LAST:event_EditLabel5MouseClicked
 
+    //shows input popup asking for new field, validates response,updates corresponding labels and database, gives success message.
     private void PasswordLabelPanelMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_PasswordLabelPanelMouseClicked
     {//GEN-HEADEREND:event_PasswordLabelPanelMouseClicked
         JPanel passpanel = mainGUI.getChangePasswordPanel().GetPanel();
@@ -2018,6 +2110,7 @@ public class Settings extends javax.swing.JPanel
         }
     }//GEN-LAST:event_PasswordLabelPanelMouseClicked
 
+    //shows input popup asking for new field, validates response,updates corresponding labels and database, gives success message.
     private void UserPasswordPanelMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_UserPasswordPanelMouseClicked
     {//GEN-HEADEREND:event_UserPasswordPanelMouseClicked
         JPanel passpanel = mainGUI.getChangePasswordPanel().GetPanel();
@@ -2046,6 +2139,7 @@ public class Settings extends javax.swing.JPanel
         }
     }//GEN-LAST:event_UserPasswordPanelMouseClicked
 
+    //shows input popup asking for new field, validates response,updates corresponding labels and database, gives success message.
     private void PasswordEditLabelPanelMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_PasswordEditLabelPanelMouseClicked
     {//GEN-HEADEREND:event_PasswordEditLabelPanelMouseClicked
         JPanel passpanel = mainGUI.getChangePasswordPanel().GetPanel();
@@ -2074,6 +2168,7 @@ public class Settings extends javax.swing.JPanel
         }
     }//GEN-LAST:event_PasswordEditLabelPanelMouseClicked
 
+    //sets appropriate label backgrounds to white to signal clickable upon mouse enter, underlines edit label
     private void PasswordEditLabelPanelMouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_PasswordEditLabelPanelMouseEntered
     {//GEN-HEADEREND:event_PasswordEditLabelPanelMouseEntered
         PasswordLabelPanel.setBackground(new Color(255, 255, 255));
@@ -2086,18 +2181,25 @@ public class Settings extends javax.swing.JPanel
         EditLabel5.setFont(font.deriveFont(attributes));
     }//GEN-LAST:event_PasswordEditLabelPanelMouseEntered
 
+    //changes its edit labels font to not underlined. call setmouse exit colors to reset selection
     private void PasswordEditLabelPanelMouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_PasswordEditLabelPanelMouseExited
     {//GEN-HEADEREND:event_PasswordEditLabelPanelMouseExited
         setMouseExitColors();
         EditLabel5.setFont(thefont);
     }//GEN-LAST:event_PasswordEditLabelPanelMouseExited
 
+    //resets settings panel, updates and shows home panel
     private void HomeButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_HomeButtonActionPerformed
     {//GEN-HEADEREND:event_HomeButtonActionPerformed
-        CardLayout layout = (CardLayout) (MainPanel.getLayout());
+        //update acclist(home) panel
         mainGUI.getAccList().update();
+        
+        //reset error message
         errorMessage.setForeground(new Color(204, 255, 204));
         errorMessage.setText("Click Below to Edit Settings");
+        
+        //show acclist panel
+        CardLayout layout = (CardLayout) (MainPanel.getLayout());
         layout.show(MainPanel, "AccList");
     }//GEN-LAST:event_HomeButtonActionPerformed
 
