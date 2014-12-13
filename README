@@ -1,10 +1,15 @@
 //////////////////////////////README//////////////////////////////
+******************** IMPORTANT NOTE ABOUT SOFTWARE DOCUMENTATION *******************
 
-******************** IMPORTANT INFORMATION FOR DEVELOPERS*******************
+Documentation for our software can be found in numerous places. There is a main documentation file called "Software Documentation" in the main project directory to get you started. That file will outline general information regarding the code and what patterns we used in our implementation.
 
-In the parent working folder (/CSE110FA14/), there will be a serialized output file called
-"Data.ser". Please note that github will flag this file as it's in binary, so for developing
-purposes, please delete your local Data.ser file before commit/push
+Each layer in our design also has its own individual README file which contains specific information pertaining to that layer. To find these READMEs, navigate to /Project/ and go into any of the Layers. Each one except for a couple of exceptions has its own README. These are also viewable in Netbeans by expanding a package.
+
+Furthermore, each file in each of the layers has its own class header, function headers, and inline comments. View these to get more detailed information about each class. 
+
+Lastly, to view and evaluate our project, it is highly recommended that you download and install Netbeans and view the project within the IDE. All of our design becomes much more clear when viewed at that level and the software is very easy to build and run in that environment.
+
+The best way to view and assess our project is by viewing it through the Netbeans IDE. Instructions are outlined directly below
 
 ******************** To Import Our Project Into Netbeans With Git ********************
 
@@ -12,7 +17,7 @@ purposes, please delete your local Data.ser file before commit/push
 2. Open Netbeans. If you have any projects that you previously opened on the left hand side in the projects pane, rightclick on them and select "Close"
 3. Now go to Team > Git > Clone in the top menu bar
 4. In the repository URL box, paste -> https://github.com/t4kmode/CSE110FA14.git
-5. Enter your user and password
+5. Enter your user and password (If you do not have one, just leave it blank)
 6. Specify the destination folder. This directory will be the parent directory of your project and will contain your main project folder
 7. Press next
 8. Check the box next to "master*"
@@ -38,7 +43,7 @@ purposes, please delete your local Data.ser file before commit/push
 14. Check the box next to master -> origin/master
 15. Finish
 
-******************** To Pull Changes from Git With Netbeans *********************
+******************** To Pull Changes From Git With Netbeans *********************
 
 1. To pull changes, right click on the project on the left hand side in the project pane
 2. Select Git > Commit if you have made any uncommitted changes. If you have not made any uncommitted changes, skip to #5
@@ -55,15 +60,16 @@ purposes, please delete your local Data.ser file before commit/push
 13. Press next
 14. Check the box next to master -> origin/master
 15. Finish
-****************************** To run our GUI in Netbeans ******************************
+
+****************************** To Run Our GUI In Netbeans ******************************
 
 1. Right click on GUI.java in the project pane on the left under Source Packages > GUI
 2. Select "run"
 
-******************** To run the terminal verion in Netbeans ********************
+******************** To Run The Executable JAR Version On Your Desktop ********************
 
-1. Right click on Main.java in the project pane on the left under Source Packages > Backend
-2. Select "run"
+1. Navigate to /dist/CSE\ 110\ Project.JAR
+2. Double click the executable.
 
 ******************** To run our JUnit Tests in Netbeans ********************
 
