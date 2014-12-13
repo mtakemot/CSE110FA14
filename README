@@ -1,5 +1,11 @@
 //////////////////////////////README//////////////////////////////
 
+******************** IMPORTANT INFORMATION FOR DEVELOPERS*******************
+
+In the parent working folder (/CSE110FA14/), there will be a serialized output file called
+"Data.ser". Please note that github will flag this file as it's in binary, so for developing
+purposes, please delete your local Data.ser file before commit/push
+
 ******************** To Import Our Project Into Netbeans With Git ********************
 
 1. Download and install Netbeans 8 (just google it)

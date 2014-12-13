@@ -1,0 +1,13 @@
+/*
+ * Filename: README
+ * Author: Michio Takemoto
+ * Date: 12/12/14
+ * Group: TEAM 42
+ */
+
+ /CSE110FA14/Project/Assets
+
+ You are currently in the Assets layer of this project. THere is absolutely no 
+ code in this folder that is used/called in this project. It is simply a tiered
+ layer design implementation and holds strictly the image files used for our 
+ GUI backgrounds.
