@@ -66,10 +66,14 @@ The best way to view and assess our project is by viewing it through the Netbean
 1. Right click on GUI.java in the project pane on the left under Source Packages > GUI
 2. Select "run"
 
-******************** To Run The Executable JAR Version On Your Desktop ********************
+******************** To Compile An Executable JAR Version For Desktop Use ********************
 
-1. Navigate to /dist/CSE\ 110\ Project.JAR
-2. Double click the executable.
+1. Open the project in Netbeans (Instructions above)
+2. Right click on the project node in the project pane on the left
+3. Select "Clean and Build"
+4. Navigate to the main project folder in your file explorer
+5. The executable JAR can be found in the dist/ folder and it is called CSE_110_Project
+6. Double click the executable JAR to run it
 
 ******************** To run our JUnit Tests in Netbeans ********************
 
