@@ -14,14 +14,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-/**
- * Class design to assist in changing the password of an account.
- * Inherits from javax.swing.JPanel
- * Member fields: JPanel MainPanel - reference to JPanel obj created in GUI.java
- *                GUI mainGUI - reference to GUI obj created in GUI.java
- *                ImageIcon icon - class is used to paint, get, set icons using an image
- * @author Michio Takemoto
- */
+
 public class ChangePassword extends javax.swing.JPanel
 {
 

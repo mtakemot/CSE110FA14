@@ -32,6 +32,10 @@ public class DeleteAccountPasswordPanel extends javax.swing.JPanel
         initComponents();
     }
 
+    /**
+     * parent's GetPanel() getter function. Returns a JPanel
+     * @return JPanel
+     */
     public javax.swing.JPanel GetPanel()
     {
         return this;
