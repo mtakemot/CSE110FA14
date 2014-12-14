@@ -2151,7 +2151,6 @@ public class Settings extends javax.swing.JPanel
                 JOptionPane.PLAIN_MESSAGE,
                 GUI.icon
         );
-
         if (choice == 0)
         {
             if (mainGUI.getChangePasswordPanel().SetPassword())
