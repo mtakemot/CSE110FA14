@@ -53,14 +53,6 @@ public class LoginPanel extends javax.swing.JPanel
         this.MainPanel = MainPanel;
         initComponents();
     }
-
-    /*@Override
-     protected void paintComponent(Graphics g)
-     {
-     super.paintComponent(g);
-     if (image != null)
-     g.drawImage(image, 0,0,this.getWidth(),this.getHeight(),this);
-     }*/
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -68,8 +60,7 @@ public class LoginPanel extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel1 = new javax.swing.JPanel();
@@ -106,10 +97,8 @@ public class LoginPanel extends javax.swing.JPanel
         LoginButton.setMaximumSize(new java.awt.Dimension(130, 25));
         LoginButton.setMinimumSize(new java.awt.Dimension(130, 25));
         LoginButton.setPreferredSize(new java.awt.Dimension(130, 25));
-        LoginButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        LoginButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LoginButtonMouseClicked(evt);
             }
         });
@@ -127,18 +116,9 @@ public class LoginPanel extends javax.swing.JPanel
         CreateAccButton.setMaximumSize(new java.awt.Dimension(130, 25));
         CreateAccButton.setMinimumSize(new java.awt.Dimension(130, 25));
         CreateAccButton.setPreferredSize(new java.awt.Dimension(130, 25));
-        CreateAccButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        CreateAccButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 CreateAccButtonMouseClicked(evt);
-            }
-        });
-        CreateAccButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                CreateAccButtonActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -152,17 +132,13 @@ public class LoginPanel extends javax.swing.JPanel
         jPasswordField.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 3, 0, 0));
         jPasswordField.setMinimumSize(new java.awt.Dimension(275, 25));
         jPasswordField.setPreferredSize(new java.awt.Dimension(275, 25));
-        jPasswordField.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        jPasswordField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jPasswordFieldActionPerformed(evt);
             }
         });
-        jPasswordField.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusGained(java.awt.event.FocusEvent evt)
-            {
+        jPasswordField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
                 jPasswordFieldFocusGained(evt);
             }
         });
@@ -179,18 +155,14 @@ public class LoginPanel extends javax.swing.JPanel
         UsernameField.setDisabledTextColor(new Color(255,255,255,150));
         UsernameField.setMinimumSize(new java.awt.Dimension(275, 25));
         UsernameField.setPreferredSize(new java.awt.Dimension(275, 25));
-        UsernameField.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                UsernameFieldActionPerformed(evt);
+        UsernameField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                UsernameFieldFocusGained(evt);
             }
         });
-        UsernameField.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusGained(java.awt.event.FocusEvent evt)
-            {
-                UsernameFieldFocusGained(evt);
+        UsernameField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UsernameFieldActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -259,19 +231,15 @@ public class LoginPanel extends javax.swing.JPanel
         ForgotPassword.setForeground(new java.awt.Color(14, 118, 188));
         ForgotPassword.setText("Forgot Password?");
         ForgotPassword.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        ForgotPassword.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        ForgotPassword.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ForgotPasswordMouseClicked(evt);
             }
-            public void mouseExited(java.awt.event.MouseEvent evt)
-            {
-                ForgotPasswordMouseExited(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt)
-            {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
                 ForgotPasswordMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                ForgotPasswordMouseExited(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -300,9 +268,13 @@ public class LoginPanel extends javax.swing.JPanel
         add(Background, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
     
-    // Fucntion which contains the logic for logging in. Abstracted into its own
-    // function so that we can call it from different elements of the GUI easily.
-    // This keeps our code DRY
+    /**
+     * Function which contains the logic for logging in. Abstracted into its own
+     * function so that we can call it from different elements of the GUI easily.
+     * This keeps our code DRY
+     * 
+     * method: Login    
+     */
     private void Login()
     {
         // Grab the uesr input in the textfields
@@ -353,9 +325,11 @@ public class LoginPanel extends javax.swing.JPanel
                 // reset fields on login page
                 UsernameField.setText(null);
                 jPasswordField.setText(null);
+                
                 // This line grabs the layout from MainPanel from the GUI class so that
                 // we can show a new panel on it
                 CardLayout layout = (CardLayout) (MainPanel.getLayout());
+                
                 // This will show the next panel when the button is clicked. Notice
                 // the parameters here. MainPanel is passed in, which is the panel from
                 // GUI.java with the CardLayout that our next panel will appear on,
@@ -368,7 +342,11 @@ public class LoginPanel extends javax.swing.JPanel
                 layout.show(MainPanel, "AccList");
                 // Reset number of login attempts
                 noAccess.setText(" ");
+                
+                //Hide the error label
                 noAccess.setVisible(false);
+                
+                //Reset number of attempts
                 numberOfAttempts = 0;
                 numberOfLoginAttempts = 0;
             }
@@ -383,14 +361,23 @@ public class LoginPanel extends javax.swing.JPanel
         if (numberOfLoginAttempts == 3) // User has reached max login attempts
         {
             JOptionPane.showMessageDialog(this, "You've exceeded the number of attempts. Please try again later.", "Bank 42", 1, icon);
+            
+            //Display the timer
             exceededAttempts();
+            
+            //Don't allow the user to login again
             LoginButton.setEnabled(false);
             return;
         }
     }
-
-    // Creates an event for the LoginButton that will fire any time the button
-    // is clicked. This is just an example to get you started.
+    
+    /**
+     * Creates an event for the LoginButton that will fire any time the button
+     * is clicked. If the button isn't disabled, the user is logged in.
+     * 
+     * method: LoginButtonMouseClicked    
+     * @param evt A mouse event that triggers the calling of Login()
+     */
     private void LoginButtonMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_LoginButtonMouseClicked
     {//GEN-HEADEREND:event_LoginButtonMouseClicked
         // Log the user in if they have not gone over the max login attempts
@@ -399,6 +386,13 @@ public class LoginPanel extends javax.swing.JPanel
         Login();
     }//GEN-LAST:event_LoginButtonMouseClicked
 
+    /**
+     * Transitions the user to a view where they can create an account. 
+     * 
+     * method: CreateAccButtonMouseClicked    
+     * @param evt A mouse event that triggers the form allowing account
+     * creation. 
+     */
     private void CreateAccButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CreateAccButtonMouseClicked
 
         // Take the user to the create account page
@@ -412,17 +406,33 @@ public class LoginPanel extends javax.swing.JPanel
 
     }//GEN-LAST:event_CreateAccButtonMouseClicked
 
-    // Reset text fields when user clicks them
+    /**
+     * Reset text field when user clicks them
+     * 
+     * method: UsernameFieldFocusGained    
+     * @param evt A focus event that resets the text field upon click
+     */
     private void UsernameFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_UsernameFieldFocusGained
         UsernameField.setText("");
     }//GEN-LAST:event_UsernameFieldFocusGained
 
+    /**
+     * Reset text fields when user clicks them
+     * 
+     * method: jPasswordFieldFocusGained    
+     * @param evt A focus event that resets the text fields upon click
+     */
     private void jPasswordFieldFocusGained(java.awt.event.FocusEvent evt)//GEN-FIRST:event_jPasswordFieldFocusGained
     {//GEN-HEADEREND:event_jPasswordFieldFocusGained
         jPasswordField.setText("");
     }//GEN-LAST:event_jPasswordFieldFocusGained
 
-    // Log the user in when they press enter on the username field or pw field
+    /**
+     * Log the user in when they press enter on the username field or pw field
+     * 
+     * method: UsernameFieldActionPerformed    
+     * @param evt A action event that attempts to login the user
+     */
     private void UsernameFieldActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_UsernameFieldActionPerformed
     {//GEN-HEADEREND:event_UsernameFieldActionPerformed
         if (ForgotPassword.isEnabled() == false || LoginButton.isEnabled() == false)
@@ -430,6 +440,12 @@ public class LoginPanel extends javax.swing.JPanel
         Login();
     }//GEN-LAST:event_UsernameFieldActionPerformed
 
+    /**
+     * Log the user in when they press enter on the username field or pw field
+     * 
+     * method: jPasswordFieldActionPerformed    
+     * @param evt A action event that attempts to login the user
+     */
     private void jPasswordFieldActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jPasswordFieldActionPerformed
     {//GEN-HEADEREND:event_jPasswordFieldActionPerformed
         if (ForgotPassword.isEnabled() == false || LoginButton.isEnabled() == false)
@@ -437,8 +453,12 @@ public class LoginPanel extends javax.swing.JPanel
         Login();
     }//GEN-LAST:event_jPasswordFieldActionPerformed
 
-    // This function creates a time that will display on the bottom of the page
-    // signifying how long the user will be locked out for
+    /**
+     * This function creates a time that will display on the bottom of the page
+     * signifying how long the user will be locked out for
+     * 
+     * method: exceededAttempts         
+     */
     private void exceededAttempts()
     {
         int delay = 1000;
@@ -454,6 +474,7 @@ public class LoginPanel extends javax.swing.JPanel
         {
             public void run()
             {
+                //Show the label and count down the remaining time
                 noAccess.setVisible(true);
                 noAccess.setText("Time Remaining: " + Integer.toString(setInterval() + 1));
             }
@@ -461,21 +482,40 @@ public class LoginPanel extends javax.swing.JPanel
 
     }
 
+    /**
+     * Helper function to count down the timer and reset values when needed
+     * 
+     * method: setInterval         
+     */
     private int setInterval()
     {
+        //If the timer's up, resets values
         if (interval <= 0)
         {
+            //Hides and resets the error message
             noAccess.setText(" ");
             noAccess.setVisible(false);
+            
+            //Resets the number of attempts
             numberOfAttempts = 0;
             numberOfLoginAttempts = 0;
+            
+            //Invalidates the timer
             timer.cancel();
+            
+            //Allows access to buttons again
             ForgotPassword.setEnabled(true);
             LoginButton.setEnabled(true);
         }
         return --interval;
     }
-
+    
+    /**
+     * Sets up the font and styling for the forgot password field
+     * 
+     * method: ForgotPasswordMouseEntered    
+     * @param evt A action event that triggers the setup of the text field
+     */
     private void ForgotPasswordMouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_ForgotPasswordMouseEntered
     {//GEN-HEADEREND:event_ForgotPasswordMouseEntered
         thefont = ForgotPassword.getFont();
@@ -485,14 +525,27 @@ public class LoginPanel extends javax.swing.JPanel
         ForgotPassword.setFont(font.deriveFont(attributes));
     }//GEN-LAST:event_ForgotPasswordMouseEntered
 
+    /**
+     * Resets for the forgot password field
+     * 
+     * method: ForgotPasswordMouseExited    
+     * @param evt A action event that resets the setup of the text field
+     */
     private void ForgotPasswordMouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_ForgotPasswordMouseExited
     {//GEN-HEADEREND:event_ForgotPasswordMouseExited
         ForgotPassword.setFont(thefont);
     }//GEN-LAST:event_ForgotPasswordMouseExited
 
+    /**
+     * Resets the user's password
+     * 
+     * method: ForgotPasswordMouseClicked    
+     * @param evt A action event that helps user reset their password
+     */
     private void ForgotPasswordMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_ForgotPasswordMouseClicked
     {//GEN-HEADEREND:event_ForgotPasswordMouseClicked
 
+        //If they haven't exceeded attempts
         if (ForgotPassword.isEnabled() == false)
         {
             return;
@@ -500,30 +553,42 @@ public class LoginPanel extends javax.swing.JPanel
 
         numberOfAttempts++;
 
+        //Checks that the attempts are within bounds
         if (numberOfAttempts == 4)
         {
+            //Displays error message
             JOptionPane.showMessageDialog(this, "You've exceeded the number of attempts. Please try again later.", "Bank 42", 1, icon);
             ForgotPassword.setEnabled(false);
             exceededAttempts();
             return;
         }
 
+        //Prompts user to enter email
         Object response = JOptionPane.showInputDialog(null, "Enter your email (Attempt " + numberOfAttempts + " of 3): ", "Bank 42", 1, GUI.icon, null, null);
 
+        //If no response, reset. 
         if (response == null)
         {
             numberOfAttempts--;
             return;
         }
+        
+        //Grab response from user input and process it
         String response_S = response.toString();
-
         response = response_S.trim();
+        
+        //If the email entered is a valid email address
         if ((response_S.length() > 0) && CreateAccountPanel.isValidEmailAddress(response_S))
         {
+            //Find a user matching that email
             GUI.currentUserAccount = GUI.MasterTable.findUserAccountEmail(response_S);
+            
+            //If the account exists
             if (GUI.currentUserAccount != null)
             {
                 JPanel passpanel = mainGUI.getForgotPassPanel().GetPanel();
+                
+                //Presents ForgotPasswordPanel view to the user
                 int choice = JOptionPane.showConfirmDialog(
                         null,
                         passpanel,
@@ -533,44 +598,56 @@ public class LoginPanel extends javax.swing.JPanel
                         GUI.icon
                 );
 
+                //If they choose to proceed
                 if (choice == 0)
                 {
+                    //Grab password
                     String password = mainGUI.getForgotPassPanel().GetPassword();
                     String newPassword = password.toString();
 
                     if (newPassword == null)
                         return;
+                    
+                    //Format password
                     String newPassword_S = newPassword.trim();
+                    
+                    //If the new password matches the requirements
                     if ((newPassword_S.length() >= 6) && (newPassword_S.length() <= 20) && CreateAccountPanel.validatePassword(newPassword_S))
                     {
+                        //Reset the password and update the database
                         GUI.currentUserAccount.setPassword(newPassword_S);
                         JOptionPane.showMessageDialog(null, "You have successfully reset your password", "Bank 42", 1, GUI.icon);
                         GUI.dataout.exportDB(GUI.MasterTable);
                     }
                     else
                     {
+                        //Notify the user of an invalid password
                         JOptionPane.showMessageDialog(null, "The password must have 6-20 characters, at least one uppercase letter and one lowercase letter", "Bank 42", 1, icon);
                     }
                 }
             }
             else
             {
+                //Notify the user of an invalid email lookup
                 JOptionPane.showMessageDialog(this, "The email address that you entered was not found", "Bank 42", 1, icon);
             }
         }
         else
         {
+            //Checks if the user has tried too many times
             boolean exceededAttempt = false;
 
             if (numberOfAttempts >= 3)
             {
+                //Shows error message upon too many attempts
                 JOptionPane.showMessageDialog(this, "You've exceeded the number of attempts. Please try again later.", "Bank 42", 1, icon);
                 ForgotPassword.setEnabled(false);
                 exceededAttempt = true;
                 exceededAttempts();
                 return;
             }
-
+            
+            //Shows error message if user attempts too many times
             if (exceededAttempt == false)
             {
                 JOptionPane.showMessageDialog(this, "Invalid email address format", "Bank 42", 1, icon);
@@ -579,16 +656,22 @@ public class LoginPanel extends javax.swing.JPanel
         }
     }//GEN-LAST:event_ForgotPasswordMouseClicked
 
-    private void CreateAccButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateAccButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CreateAccButtonActionPerformed
-
+    /**
+     * Checks that the username matches the regex pattern
+     * 
+     * method: validate    
+     * @param username The username to validate format
+     */
     public boolean validate(final String username)
     {
 
+        //Creates a Regex pattern
         Pattern pattern = Pattern.compile(USERNAME_PATTERN);
+        
+        //Matches the username against the pattern
         Matcher matcher = pattern.matcher(username);
 
+        //Checks if the username matches the regex pattern
         if (matcher.matches() == false)
             JOptionPane.showMessageDialog(null, "Your username contains illegal characters!", "Error!",
                     JOptionPane.INFORMATION_MESSAGE);
