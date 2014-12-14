@@ -1,6 +1,6 @@
 /*
  * Filename: README
- * Author: Michio Takemoto
+ * Author: Michio Takemoto and Ryan Bridges
  * Date: 12/12/14
  * Group: TEAM 42
  */
@@ -11,6 +11,7 @@ Documentation can be found at various level of the code. This is the Project
 README file. There is a README file that you should read for each layer, and even
 a main README for developers in the main "/CSE110FA14/" directory which
 has a few instructions on how to change parts of this application.
+
 *********************************************************************
 
 Description
@@ -42,7 +43,33 @@ requirement. The following below is the customer's requirement/description of th
 
 https://sites.google.com/site/cse110fall2014/design-patterns
 
------------------
+****************************** BASIC USAGE ******************************
+
+We have set up some hardcoded user accounts for testing which will allow
+basic usage of the software. They are as follows:
+
+----------
+Username: qq 
+Password: qq
+email: qq@q.com
+----------
+Username: ee 
+Password: ee
+email: ee@e.com
+----------
+Username: ww 
+Password: ww
+email: ww@w.com
+----------
+
+To log in to the teller, simply use the following log in info
+
+----------
+Username: teller
+Password: teller
+----------
+
+*************************************************************************
 Project contents:
 
 1) Assets layer

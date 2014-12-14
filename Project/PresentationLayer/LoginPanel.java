@@ -299,13 +299,18 @@ public class LoginPanel extends javax.swing.JPanel
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         add(Background, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    // Fucntion which contains the logic for logging in. Abstracted into its own
+    // function so that we can call it from different elements of the GUI easily.
+    // This keeps our code DRY
     private void Login()
     {
+        // Grab the uesr input in the textfields
         String username = UsernameField.getText();
         char[] passwordarray = jPasswordField.getPassword();
         String password = new String(passwordarray);
-
+        
+        // Login to the teller
         if ((username.equals("teller")) && (password.equals("teller")))
         {
             CardLayout layout = (CardLayout) (MainPanel.getLayout());
@@ -315,31 +320,37 @@ public class LoginPanel extends javax.swing.JPanel
             return;
         }
 
+        // Find the user account that corresponds with what the user typed in the username field
         GUI.currentUserAccount = GUI.MasterTable.findUserAccount(UsernameField.getText());
 
+        // Increment number of login attempts
         numberOfLoginAttempts++;
-        if (GUI.currentUserAccount == null)
+        if (GUI.currentUserAccount == null) // user not found
         {
-
+            // check if the user has exceeded max number of login attempts
             if (numberOfLoginAttempts == 4)
             {
+                // Display error message and lock the user out
                 JOptionPane.showMessageDialog(this, "You've exceeded the number of attempts. Please try again later.", "Bank 42", 1, icon);
                 exceededAttempts();
                 LoginButton.setEnabled(false);
                 return;
             }
-            else
+            else // Account was not found
             {
                 JOptionPane.showMessageDialog(null, "Account not found!", "Bank 42",
                         JOptionPane.INFORMATION_MESSAGE, icon);
             }
         }
-        else
+        else // Account was found
         {
+            // Check if password is correct
             if (password.compareTo(GUI.currentUserAccount.getPassword()) == 0)
             {
+                // Update the accountslist and settings for the new user
                 mainGUI.getAccList().update();
                 mainGUI.getSettings().update();
+                // reset fields on login page
                 UsernameField.setText(null);
                 jPasswordField.setText(null);
                 // This line grabs the layout from MainPanel from the GUI class so that
@@ -355,7 +366,7 @@ public class LoginPanel extends javax.swing.JPanel
                 // to access and show that panel from outside of the class as long
                 //  as we pass in MainPanel
                 layout.show(MainPanel, "AccList");
-
+                // Reset number of login attempts
                 noAccess.setText(" ");
                 noAccess.setVisible(false);
                 numberOfAttempts = 0;
@@ -369,7 +380,7 @@ public class LoginPanel extends javax.swing.JPanel
             //move the following code in here, for demoing and when we're done testing.
         }
 
-        if (numberOfLoginAttempts == 3)
+        if (numberOfLoginAttempts == 3) // User has reached max login attempts
         {
             JOptionPane.showMessageDialog(this, "You've exceeded the number of attempts. Please try again later.", "Bank 42", 1, icon);
             exceededAttempts();
@@ -382,7 +393,7 @@ public class LoginPanel extends javax.swing.JPanel
     // is clicked. This is just an example to get you started.
     private void LoginButtonMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_LoginButtonMouseClicked
     {//GEN-HEADEREND:event_LoginButtonMouseClicked
-
+        // Log the user in if they have not gone over the max login attempts
         if (LoginButton.isEnabled() == false)
             return;
         Login();
@@ -390,6 +401,7 @@ public class LoginPanel extends javax.swing.JPanel
 
     private void CreateAccButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CreateAccButtonMouseClicked
 
+        // Take the user to the create account page
         UsernameField.setText(null);
         jPasswordField.setText(null);
         //retrieve MainPanel to transfer it's layout to CreateAccountPanel
@@ -400,6 +412,7 @@ public class LoginPanel extends javax.swing.JPanel
 
     }//GEN-LAST:event_CreateAccButtonMouseClicked
 
+    // Reset text fields when user clicks them
     private void UsernameFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_UsernameFieldFocusGained
         UsernameField.setText("");
     }//GEN-LAST:event_UsernameFieldFocusGained
@@ -409,6 +422,7 @@ public class LoginPanel extends javax.swing.JPanel
         jPasswordField.setText("");
     }//GEN-LAST:event_jPasswordFieldFocusGained
 
+    // Log the user in when they press enter on the username field or pw field
     private void UsernameFieldActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_UsernameFieldActionPerformed
     {//GEN-HEADEREND:event_UsernameFieldActionPerformed
         if (ForgotPassword.isEnabled() == false || LoginButton.isEnabled() == false)
@@ -423,16 +437,19 @@ public class LoginPanel extends javax.swing.JPanel
         Login();
     }//GEN-LAST:event_jPasswordFieldActionPerformed
 
+    // This function creates a time that will display on the bottom of the page
+    // signifying how long the user will be locked out for
     private void exceededAttempts()
     {
         int delay = 1000;
         int period = 1000;
         timer = new Timer();
+        // Timer is 5 sec
         interval = 5;
-
+        // Disable the buttons
         ForgotPassword.setEnabled(false);
         LoginButton.setEnabled(false);
-
+        // Run the timer for 5 sec
         timer.scheduleAtFixedRate(new TimerTask()
         {
             public void run()

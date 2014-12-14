@@ -5,28 +5,32 @@ import LogicLayer.UserAccount;
 import org.junit.*;
 import static org.junit.Assert.*;
 
-
-/**
- * **************************************************************************
- *
- * Nishat Rustagi, Tahereh Masoumi CSE 110, Fall 2014 Last Updated: Nov 30, 2014
+/** @author Nishat rustagi
+ * Wrote and modified the following tests for 
+ * 1. Insert User Account
+ * 2. Reinserting User Accounts
+ * 3. Finding User Accounts
+ * 4. Deleting User Accounts
  * 
- * Team 42
- *
- * File Name: HashTableTest.java Description: This file is contains tests for 
- * HashTable class functions including insertUserAccount, findUserAccount,
- * deleteUserAccount and findUserAccountByEmail.
- * **************************************************************************
+ *  @author Tahereh Masoumi Last Updated Nov. 30 2014
+ *  Wrote the test for finding out the user account by email. 
  */
+
+
+
 public class HashTableTest
 {
-
-    /*tests the InsertUserAccount function by creating and inserting 1000 
-    userAccounts*/
+    /** The following is a test for checking if the insertion 
+     * of user account works successfully. 
+     * We create and insert 1000 user accounts,each with different userNames, and then add them
+     * to the hashtable. Finally we check if all the data fields - first name, last name, user name,
+     * password, phone, email and number of bank accounts - match. And thus 
+     * affirming that our method worked successfully. 
+     */
     @Test
     public void testInsertUserAccount()
     {
-        //create a new test hashtable
+        System.out.println("insertUserAccount");
         HashTable testTable = new HashTable();
 
         String testString = "testUserName";
@@ -52,11 +56,15 @@ public class HashTableTest
             assertEquals(2, result.getNumOfBankAccounts());
         }
     }
-    
-    //Test if the insertUserAccount accepts duplicates
+
+    /** The following is a test for making sure there are no duplicate inserts.
+     * We do this by first inserting 10000 user accounts in to the hashtable and then 
+     * try reinserting them again at the same index values. 
+     */
     @Test
     public void testInsertUserAccount_reinsert()
     {
+        System.out.println("insertUserAccount");
         HashTable testTable = new HashTable();
         String testString = "testUserName";
 
@@ -74,12 +82,17 @@ public class HashTableTest
         }
     }
 
-    //tests if FindUserAccount() returns the correct userAccount
+    /** The following is a test for checking if findUserAccount works successfully. 
+     * First we want to make sure that 
+     * there is no duplicate inserts. We then check if the username and the password match. 
+     * by using the findUserAccount function to make sure 
+     * the retrieval happened successfully. 
+     */
     @Test
     public void testFindUserAccount()
 
     {
-        //  //System.out.println("FindUserAccount");
+        System.out.println("FindUserAccount");
         HashTable testTable = new HashTable();
         String testString = "testUserName";
 
@@ -107,13 +120,16 @@ public class HashTableTest
 
     }
 
-    /*tests the DeleteUserAccount function by inserting 1000 userAccounts and 
-     deleting them one by one
-    */
+    /** The following test is for checking if the deletion operation
+     * for the bank account works fine. First we want to make sure that 
+     * there is no duplicate inserts. And then use the deleteUserAccount function to make sure 
+     * deletion happened successfully. 
+     */
     @Test
     public void testDeleteUserAccount()
     {
 
+        System.out.println("RemovingUserAccount");
         HashTable testTable = new HashTable();
         String testString = "testUserName";
 
@@ -130,7 +146,7 @@ public class HashTableTest
             assertEquals(check, null);
         }
 
-        //deleting useraccounts and checking if the deletion happened correctly.
+        //deleting useraccounts and checking if the deletion happened successfully.
         for (int i = 0; i < 10000; i++)
         {
             assertTrue(testTable.deleteUserAccount(testString + i));
@@ -138,11 +154,17 @@ public class HashTableTest
 
     }
 
-    //tests the FindUserAccountByEmail function
+    /** The following is a test for checking if we can find the user account with the given email. 
+     * First we want to make sure that 
+     * there is no duplicate inserts. We then check if the username and the email match,
+     * by using the findUserAccountEmail function to make sure 
+     * the retrieval happened successfully. 
+     */
     @Test
     public void testFindUserAccountByEmail()
 
     {
+        System.out.println("Find UserAccount by Email");
         HashTable testTable = new HashTable();
         String testString = "testUserName";
 

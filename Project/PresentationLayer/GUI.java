@@ -18,6 +18,9 @@ package PresentationLayer;
  * regardless of where they are defined because of the static definition near
  * the top of this class. To run the program and see the GUI, run this file,
  * GUI.java.
+ * This is also the Mediator for our entire GUI. All of our different panels 
+ * communicate with each other through this class. The other pages in the
+ * PresentationLayer are the colleagues
  * **************************************************************************
  */
 import LogicLayer.BankAccount;
@@ -105,7 +108,7 @@ public class GUI extends javax.swing.JFrame
             MasterTable = new HashTable();
         }
 
-        //Puts some initial values in the table to prevent null pointer
+        // Puts some initial values in the table to prevent null pointer
         // exceptions
         currentUserAccount = MasterTable.insertUserAccount("qq", "qq@q.com");
         if (currentUserAccount != null)
@@ -156,7 +159,7 @@ public class GUI extends javax.swing.JFrame
 
         if (dataout.exportDB(MasterTable))
         {
-            ////System.out.println("MSG GUI.JAVA: updated DB, proceed to set up TimerTask\n");
+            //System.out.println("MSG GUI.JAVA: updated DB, proceed to set up TimerTask\n");
         }
         else
         {
@@ -189,7 +192,7 @@ public class GUI extends javax.swing.JFrame
         DateTime last = MasterTable.getLastInterestDateTime();
         int millis = last.getMillisOfSecond();
         last = last.withMillisOfSecond(last.minusMillis(millis).getMillisOfSecond());
-        ////System.out.println("init Last: " + last);
+        //System.out.println("init Last: " + last);
         int lastMonth = last.getMonthOfYear();
 
         int lastDay = last.getDayOfMonth();
@@ -200,11 +203,11 @@ public class GUI extends javax.swing.JFrame
         now = now.withMillisOfSecond(now.minusMillis(millis).getMillisOfSecond());
         int nowDay = now.getDayOfMonth();
 
-        // //System.out.println("init now: " + now);
+        //System.out.println("init now: " + now);
         int nowMonth = now.getMonthOfYear();
         Seconds s = Seconds.secondsBetween(last = last.withMillisOfSecond(last.minusMillis(millis).getMillisOfSecond()), now = now.withMillisOfSecond(now.minusMillis(millis).getMillisOfSecond()));
         int sPassed = s.getSeconds();
-       // //System.out.println("Seconds passed: " + sPassed);
+        // System.out.println("Seconds passed: " + sPassed);
         // int taskdelay = sPassed;
 
         //hour/min/sec will not be set to the hour mark: x,0,0

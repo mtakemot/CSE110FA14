@@ -42,12 +42,8 @@ public class AccountsTableModel extends AbstractTableModel
         wrapper = new UserAccountWrapper(this.current);
         this.addTableModelListener(new TableListener());
     }
-    
-    /*
-    Setters and Getters
-    */
-    
-    
+  
+    // Sets the number of rows and cols in the table
     @Override
     public int getRowCount()
     {
@@ -60,6 +56,8 @@ public class AccountsTableModel extends AbstractTableModel
         return colCount;
     }
 
+    // Function that is called any time we want to update the values in the table
+    // Grabs data out of the facade to insert into the table 
     @Override
     public void setValueAt(Object aValue, int rowIndex, int columnIndex)
     {
@@ -81,6 +79,7 @@ public class AccountsTableModel extends AbstractTableModel
         fireTableCellUpdated(rowIndex, columnIndex);
     }
 
+    // Sets the initial info to be displayed in the table
     @Override
     public Object getValueAt(int rowIndex, int columnIndex)
     {
@@ -102,12 +101,14 @@ public class AccountsTableModel extends AbstractTableModel
         return returnMe;
     }
 
+    // Don't allow users to edit the cells
     @Override
     public boolean isCellEditable(int row, int col)
     {
         return false;
     }
 
+    // Below set column names and classes
     @Override
     public String getColumnName(int index)
     {
