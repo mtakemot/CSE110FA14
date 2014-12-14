@@ -56,25 +56,15 @@ public class DeleteAccountPasswordPanel extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         jPasswordField = new javax.swing.JPasswordField();
         EnterPassword = new javax.swing.JLabel();
 
         jPasswordField.setText("password");
-        jPasswordField.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusGained(java.awt.event.FocusEvent evt)
-            {
+        jPasswordField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
                 jPasswordFieldFocusGained(evt);
-            }
-        });
-        jPasswordField.addKeyListener(new java.awt.event.KeyAdapter()
-        {
-            public void keyPressed(java.awt.event.KeyEvent evt)
-            {
-                jPasswordFieldKeyPressed(evt);
             }
         });
 
@@ -106,11 +96,6 @@ public class DeleteAccountPasswordPanel extends javax.swing.JPanel
     {//GEN-HEADEREND:event_jPasswordFieldFocusGained
         jPasswordField.setText("");
     }//GEN-LAST:event_jPasswordFieldFocusGained
-
-    private void jPasswordFieldKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_jPasswordFieldKeyPressed
-    {//GEN-HEADEREND:event_jPasswordFieldKeyPressed
-
-    }//GEN-LAST:event_jPasswordFieldKeyPressed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel EnterPassword;

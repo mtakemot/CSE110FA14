@@ -13,11 +13,7 @@ import LogicLayer.UserAccount;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.font.TextAttribute;
-import static java.lang.Thread.sleep;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 
 public class Settings extends javax.swing.JPanel
 {
@@ -2151,7 +2147,6 @@ public class Settings extends javax.swing.JPanel
                 JOptionPane.PLAIN_MESSAGE,
                 GUI.icon
         );
-
         if (choice == 0)
         {
             if (mainGUI.getChangePasswordPanel().SetPassword())
