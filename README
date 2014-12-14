@@ -61,7 +61,7 @@ Lastly, to view and evaluate our project, it is highly recommended that you down
 14. Check the box next to master -> origin/master
 15. Finish
 
-******************** To Run Our GUI In Netbeans ********************
+******************** To Run Our Software In Netbeans ********************
 
 1. Right click on GUI.java in the project pane on the left under Source Packages > GUI
 2. Select "run"
