@@ -5,13 +5,11 @@ IMPORTANT NOTE ABOUT SOFTWARE DOCUMENTATION
 
 Documentation for our software can be found in numerous places. There is a main documentation file called "Software Documentation" in the main project directory to get you started. That file will outline general information regarding the code and what patterns we used in our implementation.
 
-Each layer in our design also has its own individual README file which contains specific information pertaining to that layer. To find these READMEs, navigate to /Project/ and go into any of the Layers. Each one except for a couple of exceptions has its own README. These are also viewable in Netbeans by expanding a package.
+Each layer in our design also has its own individual Documentation file which contains specific information pertaining to that layer. To find this documentatino, navigate to /Project/ and go into any of the Layers. Each one except for the FacadeLayer has its own documentation file. The documentation for the FacadeLayer can be found inside the source code in the File header and throught the class. The documentation is also viewable in Netbeans by expanding a package in the project pane on the left.
 
 Furthermore, each file in each of the layers has its own class header, function headers, and inline comments. View these to get more detailed information about each class. 
 
-Lastly, to view and evaluate our project, it is highly recommended that you download and install Netbeans and view the project within the IDE. All of our design becomes much more clear when viewed at that level and the software is very easy to build and run in that environment.
-
-The best way to view and assess our project is by viewing it through the Netbeans IDE. Instructions are outlined directly below
+Lastly, to view and evaluate our project, it is highly recommended that you download and install Netbeans and view the project within the IDE. All of our design becomes much more clear when viewed at that level and the software is very easy to build and run in that environment. Instructions for getting started with Netbeans are outlined below.
 
 ******************** To Import Our Project Into Netbeans With Git ********************
 
