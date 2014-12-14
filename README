@@ -1,17 +1,17 @@
 //////////////////////////////README//////////////////////////////
-******************** IMPORTANT NOTE ABOUT SOFTWARE DOCUMENTATION *******************
+
+IMPORTANT NOTE ABOUT SOFTWARE DOCUMENTATION
+********************************************
 
 Documentation for our software can be found in numerous places. There is a main documentation file called "Software Documentation" in the main project directory to get you started. That file will outline general information regarding the code and what patterns we used in our implementation.
 
-Each layer in our design also has its own individual README file which contains specific information pertaining to that layer. To find these READMEs, navigate to /Project/ and go into any of the Layers. Each one except for a couple of exceptions has its own README. These are also viewable in Netbeans by expanding a package.
+Each layer in our design also has its own individual Documentation file which contains specific information pertaining to that layer. To find this documentatino, navigate to /Project/ and go into any of the Layers. Each one except for the FacadeLayer has its own documentation file. The documentation for the FacadeLayer can be found inside the source code in the File header and throught the class. The documentation is also viewable in Netbeans by expanding a package in the project pane on the left.
 
 Furthermore, each file in each of the layers has its own class header, function headers, and inline comments. View these to get more detailed information about each class. 
 
-Lastly, to view and evaluate our project, it is highly recommended that you download and install Netbeans and view the project within the IDE. All of our design becomes much more clear when viewed at that level and the software is very easy to build and run in that environment.
+Lastly, to view and evaluate our project, it is highly recommended that you download and install Netbeans and view the project within the IDE. All of our design becomes much more clear when viewed at that level and the software is very easy to build and run in that environment. Instructions for getting started with Netbeans are outlined below.
 
-The best way to view and assess our project is by viewing it through the Netbeans IDE. Instructions are outlined directly below
-
-******************** To Import Our Project Into Netbeans With Git ********************
+********** To Import Our Project Into Netbeans With Git **********
 
 1. Download and install Netbeans 8 (just google it)
 2. Open Netbeans. If you have any projects that you previously opened on the left hand side in the projects pane, rightclick on them and select "Close"
@@ -25,7 +25,7 @@ The best way to view and assess our project is by viewing it through the Netbean
 10. Make sure that "Scan for Netbeans projects after clone" is checked on the next page, everything else should be fine as default.
 11. Press finish. The project has now been successfully imported.
 
-******************** To Push Changes to Git With Netbeans ********************
+********** To Push Changes to Git With Netbeans **********
 
 1. To push changes, right click on the project on the left hand side in the project pane
 2. Select Git > Commit
@@ -43,7 +43,7 @@ The best way to view and assess our project is by viewing it through the Netbean
 14. Check the box next to master -> origin/master
 15. Finish
 
-******************** To Pull Changes From Git With Netbeans *********************
+********** To Pull Changes From Git With Netbeans ***********
 
 1. To pull changes, right click on the project on the left hand side in the project pane
 2. Select Git > Commit if you have made any uncommitted changes. If you have not made any uncommitted changes, skip to #5
@@ -61,12 +61,12 @@ The best way to view and assess our project is by viewing it through the Netbean
 14. Check the box next to master -> origin/master
 15. Finish
 
-****************************** To Run Our GUI In Netbeans ******************************
+******************** To Run Our Software In Netbeans ********************
 
 1. Right click on GUI.java in the project pane on the left under Source Packages > GUI
 2. Select "run"
 
-******************** To Compile An Executable JAR Version For Desktop Use ********************
+********** To Compile An Executable JAR Version For Desktop Use **********
 
 1. Open the project in Netbeans (Instructions above)
 2. Right click on the project node in the project pane on the left
@@ -75,7 +75,7 @@ The best way to view and assess our project is by viewing it through the Netbean
 5. The executable JAR can be found in the dist/ folder and it is called CSE_110_Project
 6. Double click the executable JAR to run it
 
-******************** To run our JUnit Tests in Netbeans ********************
+********** To run our JUnit Tests in Netbeans **********
 
 1. Right click on UserAccountTest.java in the project pane on the left under Source Packages > Testing > Backend 
 2. Select "run"
