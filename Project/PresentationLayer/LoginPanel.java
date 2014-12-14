@@ -520,8 +520,8 @@ public class LoginPanel extends javax.swing.JPanel
         response = response_S.trim();
         if ((response_S.length() > 0) && CreateAccountPanel.isValidEmailAddress(response_S))
         {
-            LogicLayer.UserAccount current = GUI.MasterTable.findUserAccountEmail(response_S);
-            if (current != null)
+            GUI.currentUserAccount = GUI.MasterTable.findUserAccountEmail(response_S);
+            if (GUI.currentUserAccount != null)
             {
                 JPanel passpanel = mainGUI.getForgotPassPanel().GetPanel();
                 int choice = JOptionPane.showConfirmDialog(
