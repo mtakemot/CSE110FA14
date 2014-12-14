@@ -11,7 +11,7 @@ Furthermore, each file in each of the layers has its own class header, function 
 
 Lastly, to view and evaluate our project, it is highly recommended that you download and install Netbeans and view the project within the IDE. All of our design becomes much more clear when viewed at that level and the software is very easy to build and run in that environment. Instructions for getting started with Netbeans are outlined below.
 
-******************** To Import Our Project Into Netbeans With Git ********************
+********** To Import Our Project Into Netbeans With Git **********
 
 1. Download and install Netbeans 8 (just google it)
 2. Open Netbeans. If you have any projects that you previously opened on the left hand side in the projects pane, rightclick on them and select "Close"
@@ -25,7 +25,7 @@ Lastly, to view and evaluate our project, it is highly recommended that you down
 10. Make sure that "Scan for Netbeans projects after clone" is checked on the next page, everything else should be fine as default.
 11. Press finish. The project has now been successfully imported.
 
-******************** To Push Changes to Git With Netbeans ********************
+********** To Push Changes to Git With Netbeans **********
 
 1. To push changes, right click on the project on the left hand side in the project pane
 2. Select Git > Commit
@@ -43,7 +43,7 @@ Lastly, to view and evaluate our project, it is highly recommended that you down
 14. Check the box next to master -> origin/master
 15. Finish
 
-******************** To Pull Changes From Git With Netbeans *********************
+********** To Pull Changes From Git With Netbeans ***********
 
 1. To pull changes, right click on the project on the left hand side in the project pane
 2. Select Git > Commit if you have made any uncommitted changes. If you have not made any uncommitted changes, skip to #5
@@ -61,12 +61,12 @@ Lastly, to view and evaluate our project, it is highly recommended that you down
 14. Check the box next to master -> origin/master
 15. Finish
 
-****************************** To Run Our GUI In Netbeans ******************************
+******************** To Run Our GUI In Netbeans ********************
 
 1. Right click on GUI.java in the project pane on the left under Source Packages > GUI
 2. Select "run"
 
-******************** To Compile An Executable JAR Version For Desktop Use ********************
+********** To Compile An Executable JAR Version For Desktop Use **********
 
 1. Open the project in Netbeans (Instructions above)
 2. Right click on the project node in the project pane on the left
@@ -75,7 +75,7 @@ Lastly, to view and evaluate our project, it is highly recommended that you down
 5. The executable JAR can be found in the dist/ folder and it is called CSE_110_Project
 6. Double click the executable JAR to run it
 
-******************** To run our JUnit Tests in Netbeans ********************
+********** To run our JUnit Tests in Netbeans **********
 
 1. Right click on UserAccountTest.java in the project pane on the left under Source Packages > Testing > Backend 
 2. Select "run"
