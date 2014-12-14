@@ -61,21 +61,6 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout"/>
       <SubComponents>
-        <Container class="javax.swing.JPanel" name="HeaderPanel">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="opaque" type="boolean" value="false"/>
-          </Properties>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
-              <GridBagConstraints gridX="0" gridY="0" gridWidth="1" gridHeight="1" fill="0" ipadX="0" ipadY="0" insetsTop="0" insetsLeft="0" insetsBottom="65" insetsRight="0" anchor="10" weightX="0.0" weightY="0.0"/>
-            </Constraint>
-          </Constraints>
-
-          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout"/>
-        </Container>
         <Container class="javax.swing.JPanel" name="BusinessPanel">
           <Properties>
             <Property name="opaque" type="boolean" value="false"/>
@@ -326,7 +311,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel1">
+            <Component class="javax.swing.JLabel" name="SpacingLabel2">
               <Properties>
                 <Property name="text" type="java.lang.String" value=" "/>
               </Properties>
@@ -336,7 +321,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel8">
+            <Component class="javax.swing.JLabel" name="SpacingLabel3">
               <Properties>
                 <Property name="text" type="java.lang.String" value=" "/>
               </Properties>
@@ -346,7 +331,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel9">
+            <Component class="javax.swing.JLabel" name="SpacingLabel4">
               <Properties>
                 <Property name="text" type="java.lang.String" value=" "/>
               </Properties>
@@ -552,7 +537,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JLabel" name="jLabel10">
+            <Component class="javax.swing.JLabel" name="SpacingLabel5">
               <Properties>
                 <Property name="text" type="java.lang.String" value=" "/>
               </Properties>
@@ -562,7 +547,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel11">
+            <Component class="javax.swing.JLabel" name="SpacingLabel6">
               <Properties>
                 <Property name="text" type="java.lang.String" value=" "/>
               </Properties>
@@ -572,7 +557,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel12">
+            <Component class="javax.swing.JLabel" name="SpacingLabel7">
               <Properties>
                 <Property name="text" type="java.lang.String" value=" "/>
               </Properties>
@@ -582,7 +567,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel16">
+            <Component class="javax.swing.JLabel" name="SpacingLabel8">
               <Properties>
                 <Property name="text" type="java.lang.String" value=" "/>
               </Properties>
@@ -592,7 +577,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel13">
+            <Component class="javax.swing.JLabel" name="SpacingLabel9">
               <Properties>
                 <Property name="text" type="java.lang.String" value=" "/>
               </Properties>
@@ -602,7 +587,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel14">
+            <Component class="javax.swing.JLabel" name="SpacingLabel10">
               <Properties>
                 <Property name="text" type="java.lang.String" value=" "/>
               </Properties>
@@ -612,7 +597,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Container class="javax.swing.JPanel" name="jPanel10">
+            <Container class="javax.swing.JPanel" name="FirstNameLabelHolder">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="new Color(145,228,253,100)" type="code"/>
@@ -649,7 +634,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="jPanel11">
+            <Container class="javax.swing.JPanel" name="LastNameLabelHolder">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="new Color(145,228,253,100)" type="code"/>
@@ -685,7 +670,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="jPanel12">
+            <Container class="javax.swing.JPanel" name="UserNameLabelHolder">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="new Color(145,228,253,100)" type="code"/>
@@ -699,7 +684,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel5">
+                <Component class="javax.swing.JLabel" name="UserNameLabel">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                       <Connection code="new Color(255,255,255,190)" type="code"/>
@@ -721,7 +706,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="jPanel13">
+            <Container class="javax.swing.JPanel" name="PasswordLabelHolder">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="new Color(145,228,253,100)" type="code"/>
@@ -754,7 +739,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="jPanel14">
+            <Container class="javax.swing.JPanel" name="ConfirmPasswordLabelHolder">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="new Color(145,228,253,100)" type="code"/>
@@ -790,7 +775,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="jPanel15">
+            <Container class="javax.swing.JPanel" name="EmailLabelHolder">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="new Color(145,228,253,100)" type="code"/>
@@ -826,7 +811,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="jPanel16">
+            <Container class="javax.swing.JPanel" name="PhoneLabelHolder">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="new Color(145,228,253,100)" type="code"/>
@@ -1930,11 +1915,11 @@
                 <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
               </StatementProvider>
               <Parameters>
-                <CodeExpression id="78_jLabel1">
-                  <CodeVariable name="jLabel1" type="8194" declaredType="javax.swing.JLabel"/>
+                <CodeExpression id="78_SpacingLabel2">
+                  <CodeVariable name="SpacingLabel2" type="8194" declaredType="javax.swing.JLabel"/>
                   <ExpressionOrigin>
                     <ExpressionProvider type="ComponentRef">
-                      <ComponentRef name="jLabel1"/>
+                      <ComponentRef name="SpacingLabel2"/>
                     </ExpressionProvider>
                   </ExpressionOrigin>
                 </CodeExpression>
@@ -1986,11 +1971,11 @@
                 <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
               </StatementProvider>
               <Parameters>
-                <CodeExpression id="82_jLabel8">
-                  <CodeVariable name="jLabel8" type="8194" declaredType="javax.swing.JLabel"/>
+                <CodeExpression id="82_SpacingLabel3">
+                  <CodeVariable name="SpacingLabel3" type="8194" declaredType="javax.swing.JLabel"/>
                   <ExpressionOrigin>
                     <ExpressionProvider type="ComponentRef">
-                      <ComponentRef name="jLabel8"/>
+                      <ComponentRef name="SpacingLabel3"/>
                     </ExpressionProvider>
                   </ExpressionOrigin>
                 </CodeExpression>
@@ -2042,11 +2027,11 @@
                 <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
               </StatementProvider>
               <Parameters>
-                <CodeExpression id="86_jLabel9">
-                  <CodeVariable name="jLabel9" type="8194" declaredType="javax.swing.JLabel"/>
+                <CodeExpression id="86_SpacingLabel4">
+                  <CodeVariable name="SpacingLabel4" type="8194" declaredType="javax.swing.JLabel"/>
                   <ExpressionOrigin>
                     <ExpressionProvider type="ComponentRef">
-                      <ComponentRef name="jLabel9"/>
+                      <ComponentRef name="SpacingLabel4"/>
                     </ExpressionProvider>
                   </ExpressionOrigin>
                 </CodeExpression>
@@ -2686,11 +2671,11 @@
                 <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
               </StatementProvider>
               <Parameters>
-                <CodeExpression id="132_jLabel10">
-                  <CodeVariable name="jLabel10" type="8194" declaredType="javax.swing.JLabel"/>
+                <CodeExpression id="132_SpacingLabel5">
+                  <CodeVariable name="SpacingLabel5" type="8194" declaredType="javax.swing.JLabel"/>
                   <ExpressionOrigin>
                     <ExpressionProvider type="ComponentRef">
-                      <ComponentRef name="jLabel10"/>
+                      <ComponentRef name="SpacingLabel5"/>
                     </ExpressionProvider>
                   </ExpressionOrigin>
                 </CodeExpression>
@@ -2742,11 +2727,11 @@
                 <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
               </StatementProvider>
               <Parameters>
-                <CodeExpression id="136_jLabel11">
-                  <CodeVariable name="jLabel11" type="8194" declaredType="javax.swing.JLabel"/>
+                <CodeExpression id="136_SpacingLabel6">
+                  <CodeVariable name="SpacingLabel6" type="8194" declaredType="javax.swing.JLabel"/>
                   <ExpressionOrigin>
                     <ExpressionProvider type="ComponentRef">
-                      <ComponentRef name="jLabel11"/>
+                      <ComponentRef name="SpacingLabel6"/>
                     </ExpressionProvider>
                   </ExpressionOrigin>
                 </CodeExpression>
@@ -2798,11 +2783,11 @@
                 <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
               </StatementProvider>
               <Parameters>
-                <CodeExpression id="140_jLabel12">
-                  <CodeVariable name="jLabel12" type="8194" declaredType="javax.swing.JLabel"/>
+                <CodeExpression id="140_SpacingLabel7">
+                  <CodeVariable name="SpacingLabel7" type="8194" declaredType="javax.swing.JLabel"/>
                   <ExpressionOrigin>
                     <ExpressionProvider type="ComponentRef">
-                      <ComponentRef name="jLabel12"/>
+                      <ComponentRef name="SpacingLabel7"/>
                     </ExpressionProvider>
                   </ExpressionOrigin>
                 </CodeExpression>
@@ -2854,11 +2839,11 @@
                 <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
               </StatementProvider>
               <Parameters>
-                <CodeExpression id="144_jLabel16">
-                  <CodeVariable name="jLabel16" type="8194" declaredType="javax.swing.JLabel"/>
+                <CodeExpression id="144_SpacingLabel8">
+                  <CodeVariable name="SpacingLabel8" type="8194" declaredType="javax.swing.JLabel"/>
                   <ExpressionOrigin>
                     <ExpressionProvider type="ComponentRef">
-                      <ComponentRef name="jLabel16"/>
+                      <ComponentRef name="SpacingLabel8"/>
                     </ExpressionProvider>
                   </ExpressionOrigin>
                 </CodeExpression>
@@ -2910,11 +2895,11 @@
                 <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
               </StatementProvider>
               <Parameters>
-                <CodeExpression id="148_jLabel13">
-                  <CodeVariable name="jLabel13" type="8194" declaredType="javax.swing.JLabel"/>
+                <CodeExpression id="148_SpacingLabel9">
+                  <CodeVariable name="SpacingLabel9" type="8194" declaredType="javax.swing.JLabel"/>
                   <ExpressionOrigin>
                     <ExpressionProvider type="ComponentRef">
-                      <ComponentRef name="jLabel13"/>
+                      <ComponentRef name="SpacingLabel9"/>
                     </ExpressionProvider>
                   </ExpressionOrigin>
                 </CodeExpression>
@@ -2966,11 +2951,11 @@
                 <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
               </StatementProvider>
               <Parameters>
-                <CodeExpression id="152_jLabel14">
-                  <CodeVariable name="jLabel14" type="8194" declaredType="javax.swing.JLabel"/>
+                <CodeExpression id="152_SpacingLabel10">
+                  <CodeVariable name="SpacingLabel10" type="8194" declaredType="javax.swing.JLabel"/>
                   <ExpressionOrigin>
                     <ExpressionProvider type="ComponentRef">
-                      <ComponentRef name="jLabel14"/>
+                      <ComponentRef name="SpacingLabel10"/>
                     </ExpressionProvider>
                   </ExpressionOrigin>
                 </CodeExpression>
@@ -3048,11 +3033,11 @@
                 <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
               </StatementProvider>
               <Parameters>
-                <CodeExpression id="158_jPanel10">
-                  <CodeVariable name="jPanel10" type="8194" declaredType="javax.swing.JPanel"/>
+                <CodeExpression id="158_FirstNameLabelHolder">
+                  <CodeVariable name="FirstNameLabelHolder" type="8194" declaredType="javax.swing.JPanel"/>
                   <ExpressionOrigin>
                     <ExpressionProvider type="ComponentRef">
-                      <ComponentRef name="jPanel10"/>
+                      <ComponentRef name="FirstNameLabelHolder"/>
                     </ExpressionProvider>
                   </ExpressionOrigin>
                 </CodeExpression>
@@ -3130,11 +3115,11 @@
                 <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
               </StatementProvider>
               <Parameters>
-                <CodeExpression id="164_jPanel11">
-                  <CodeVariable name="jPanel11" type="8194" declaredType="javax.swing.JPanel"/>
+                <CodeExpression id="164_LastNameLabelHolder">
+                  <CodeVariable name="LastNameLabelHolder" type="8194" declaredType="javax.swing.JPanel"/>
                   <ExpressionOrigin>
                     <ExpressionProvider type="ComponentRef">
-                      <ComponentRef name="jPanel11"/>
+                      <ComponentRef name="LastNameLabelHolder"/>
                     </ExpressionProvider>
                   </ExpressionOrigin>
                 </CodeExpression>
@@ -3212,11 +3197,11 @@
                 <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
               </StatementProvider>
               <Parameters>
-                <CodeExpression id="170_jPanel12">
-                  <CodeVariable name="jPanel12" type="8194" declaredType="javax.swing.JPanel"/>
+                <CodeExpression id="170_UserNameLabelHolder">
+                  <CodeVariable name="UserNameLabelHolder" type="8194" declaredType="javax.swing.JPanel"/>
                   <ExpressionOrigin>
                     <ExpressionProvider type="ComponentRef">
-                      <ComponentRef name="jPanel12"/>
+                      <ComponentRef name="UserNameLabelHolder"/>
                     </ExpressionProvider>
                   </ExpressionOrigin>
                 </CodeExpression>
@@ -3294,11 +3279,11 @@
                 <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
               </StatementProvider>
               <Parameters>
-                <CodeExpression id="176_jPanel13">
-                  <CodeVariable name="jPanel13" type="8194" declaredType="javax.swing.JPanel"/>
+                <CodeExpression id="176_PasswordLabelHolder">
+                  <CodeVariable name="PasswordLabelHolder" type="8194" declaredType="javax.swing.JPanel"/>
                   <ExpressionOrigin>
                     <ExpressionProvider type="ComponentRef">
-                      <ComponentRef name="jPanel13"/>
+                      <ComponentRef name="PasswordLabelHolder"/>
                     </ExpressionProvider>
                   </ExpressionOrigin>
                 </CodeExpression>
@@ -3376,11 +3361,11 @@
                 <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
               </StatementProvider>
               <Parameters>
-                <CodeExpression id="182_jPanel14">
-                  <CodeVariable name="jPanel14" type="8194" declaredType="javax.swing.JPanel"/>
+                <CodeExpression id="182_ConfirmPasswordLabelHolder">
+                  <CodeVariable name="ConfirmPasswordLabelHolder" type="8194" declaredType="javax.swing.JPanel"/>
                   <ExpressionOrigin>
                     <ExpressionProvider type="ComponentRef">
-                      <ComponentRef name="jPanel14"/>
+                      <ComponentRef name="ConfirmPasswordLabelHolder"/>
                     </ExpressionProvider>
                   </ExpressionOrigin>
                 </CodeExpression>
@@ -3458,11 +3443,11 @@
                 <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
               </StatementProvider>
               <Parameters>
-                <CodeExpression id="188_jPanel15">
-                  <CodeVariable name="jPanel15" type="8194" declaredType="javax.swing.JPanel"/>
+                <CodeExpression id="188_EmailLabelHolder">
+                  <CodeVariable name="EmailLabelHolder" type="8194" declaredType="javax.swing.JPanel"/>
                   <ExpressionOrigin>
                     <ExpressionProvider type="ComponentRef">
-                      <ComponentRef name="jPanel15"/>
+                      <ComponentRef name="EmailLabelHolder"/>
                     </ExpressionProvider>
                   </ExpressionOrigin>
                 </CodeExpression>
@@ -3540,11 +3525,11 @@
                 <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
               </StatementProvider>
               <Parameters>
-                <CodeExpression id="194_jPanel16">
-                  <CodeVariable name="jPanel16" type="8194" declaredType="javax.swing.JPanel"/>
+                <CodeExpression id="194_PhoneLabelHolder">
+                  <CodeVariable name="PhoneLabelHolder" type="8194" declaredType="javax.swing.JPanel"/>
                   <ExpressionOrigin>
                     <ExpressionProvider type="ComponentRef">
-                      <ComponentRef name="jPanel16"/>
+                      <ComponentRef name="PhoneLabelHolder"/>
                     </ExpressionProvider>
                   </ExpressionOrigin>
                 </CodeExpression>

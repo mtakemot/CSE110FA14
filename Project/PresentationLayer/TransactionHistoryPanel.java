@@ -76,14 +76,13 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
         Title = new javax.swing.JLabel();
         ChildBG = new javax.swing.JPanel();
         BusinessPanel = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        TableHolder = new javax.swing.JScrollPane();
         TransactionsTable = new javax.swing.JTable();
         Back = new javax.swing.JButton();
         Logout = new javax.swing.JButton();
@@ -118,8 +117,8 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         BusinessPanel.setOpaque(false);
         BusinessPanel.setLayout(new java.awt.GridBagLayout());
 
-        jScrollPane1.setMinimumSize(new java.awt.Dimension(675, 300));
-        jScrollPane1.setPreferredSize(new java.awt.Dimension(675, 300));
+        TableHolder.setMinimumSize(new java.awt.Dimension(675, 300));
+        TableHolder.setPreferredSize(new java.awt.Dimension(675, 300));
 
         TransactionsTable.setSelectionModel(SelectionModel = new DefaultListSelectionModel());
         SelectionModel.setSelectionMode(0);
@@ -139,21 +138,19 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         TransactionsTable.setOpaque(false);
         TransactionsTable.setSelectionBackground(new java.awt.Color(14, 118, 188));
         TransactionsTable.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(TransactionsTable);
+        TableHolder.setViewportView(TransactionsTable);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        BusinessPanel.add(jScrollPane1, gridBagConstraints);
+        BusinessPanel.add(TableHolder, gridBagConstraints);
 
         Back.setBackground(new java.awt.Color(255, 255, 255));
         Back.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Back.setForeground(new java.awt.Color(14, 118, 188));
         Back.setText("Back");
-        Back.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        Back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BackActionPerformed(evt);
             }
         });
@@ -173,10 +170,8 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
         Logout.setMaximumSize(new java.awt.Dimension(211, 25));
         Logout.setMinimumSize(new java.awt.Dimension(211, 25));
         Logout.setPreferredSize(new java.awt.Dimension(211, 25));
-        Logout.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        Logout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LogoutActionPerformed(evt);
             }
         });
@@ -234,8 +229,8 @@ public class TransactionHistoryPanel extends javax.swing.JPanel
     private javax.swing.JPanel BusinessPanel;
     private javax.swing.JPanel ChildBG;
     private javax.swing.JButton Logout;
+    private javax.swing.JScrollPane TableHolder;
     private javax.swing.JLabel Title;
     private javax.swing.JTable TransactionsTable;
-    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

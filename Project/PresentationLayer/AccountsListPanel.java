@@ -158,8 +158,8 @@ public class AccountsListPanel extends javax.swing.JPanel
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
-        jPanel3 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        BusinessPanel = new javax.swing.JPanel();
+        TableHolder = new javax.swing.JScrollPane();
         AccountsTable = new javax.swing.JTable();
         TransferFundsPanel = new javax.swing.JPanel() {
             protected void paintComponent(Graphics g)
@@ -196,18 +196,17 @@ public class AccountsListPanel extends javax.swing.JPanel
         CreateBAButton = new javax.swing.JButton();
         FutureBalancetButton = new javax.swing.JButton();
         TransactionHistoryButton = new javax.swing.JButton();
-        jPanel10 = new javax.swing.JPanel();
-        jPanel11 = new javax.swing.JPanel();
-        jPanel8 = new javax.swing.JPanel();
-        jPanel6 = new javax.swing.JPanel();
+        IconPanel = new javax.swing.JPanel();
+        IconRight = new javax.swing.JPanel();
+        IconMiddleRight = new javax.swing.JPanel();
         UserLabel = new javax.swing.JLabel();
-        jPanel12 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jPanel9 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        SettingsLogoutIconHolder = new javax.swing.JPanel();
+        SettingsIcon = new javax.swing.JLabel();
+        LogoutIcon = new javax.swing.JLabel();
+        DontPanicIcon = new javax.swing.JPanel();
+        DontPanicPic = new javax.swing.JLabel();
         option = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        HomeLabel = new javax.swing.JLabel();
         Background = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(800, 600));
@@ -216,18 +215,18 @@ public class AccountsListPanel extends javax.swing.JPanel
         setPreferredSize(new java.awt.Dimension(800, 600));
         setLayout(new java.awt.GridBagLayout());
 
-        jPanel3.setOpaque(false);
+        BusinessPanel.setOpaque(false);
         java.awt.GridBagLayout jPanel3Layout = new java.awt.GridBagLayout();
         jPanel3Layout.columnWidths = new int[] {0, 8, 0};
         jPanel3Layout.rowHeights = new int[] {0, 8, 0, 8, 0, 8, 0};
-        jPanel3.setLayout(jPanel3Layout);
+        BusinessPanel.setLayout(jPanel3Layout);
 
-        jScrollPane1.setBackground(new Color(255,255,255,190));
-        jScrollPane1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(14, 118, 188), 1, true));
-        jScrollPane1.setMaximumSize(new java.awt.Dimension(440, 390));
-        jScrollPane1.setMinimumSize(new java.awt.Dimension(400, 300));
-        jScrollPane1.setOpaque(false);
-        jScrollPane1.setPreferredSize(new java.awt.Dimension(440, 390));
+        TableHolder.setBackground(new Color(255,255,255,190));
+        TableHolder.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(14, 118, 188), 1, true));
+        TableHolder.setMaximumSize(new java.awt.Dimension(440, 390));
+        TableHolder.setMinimumSize(new java.awt.Dimension(400, 300));
+        TableHolder.setOpaque(false);
+        TableHolder.setPreferredSize(new java.awt.Dimension(440, 390));
 
         AccountsTable.setAutoCreateRowSorter(true);
         AccountsTable.setSelectionModel(SelectionModel = new DefaultListSelectionModel());
@@ -249,7 +248,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         AccountsTable.setOpaque(false);
         AccountsTable.setSelectionBackground(new java.awt.Color(14, 118, 188));
         AccountsTable.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(AccountsTable);
+        TableHolder.setViewportView(AccountsTable);
         AccountsTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -259,7 +258,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanel3.add(jScrollPane1, gridBagConstraints);
+        BusinessPanel.add(TableHolder, gridBagConstraints);
 
         TransferFundsPanel.setBackground(new Color(255,255,255,150));
         TransferFundsPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(14, 118, 188), 1, true), "Transfer Funds", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("DejaVu Sans", 1, 16), new Color(14,118,188))); // NOI18N
@@ -427,7 +426,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         gridBagConstraints.gridy = 2;
         gridBagConstraints.gridheight = 5;
         gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
-        jPanel3.add(TransferFundsPanel, gridBagConstraints);
+        BusinessPanel.add(TransferFundsPanel, gridBagConstraints);
 
         DeleteAccountButton.setBackground(new java.awt.Color(255, 255, 255));
         DeleteAccountButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -442,7 +441,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
-        jPanel3.add(DeleteAccountButton, gridBagConstraints);
+        BusinessPanel.add(DeleteAccountButton, gridBagConstraints);
 
         CreateBAButton.setBackground(new java.awt.Color(255, 255, 255));
         CreateBAButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -457,7 +456,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        jPanel3.add(CreateBAButton, gridBagConstraints);
+        BusinessPanel.add(CreateBAButton, gridBagConstraints);
 
         FutureBalancetButton.setBackground(new java.awt.Color(255, 255, 255));
         FutureBalancetButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -472,7 +471,7 @@ public class AccountsListPanel extends javax.swing.JPanel
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        jPanel3.add(FutureBalancetButton, gridBagConstraints);
+        BusinessPanel.add(FutureBalancetButton, gridBagConstraints);
 
         TransactionHistoryButton.setBackground(new java.awt.Color(255, 255, 255));
         TransactionHistoryButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -487,36 +486,30 @@ public class AccountsListPanel extends javax.swing.JPanel
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
-        jPanel3.add(TransactionHistoryButton, gridBagConstraints);
-
-        jPanel10.setLayout(new java.awt.GridBagLayout());
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        jPanel3.add(jPanel10, gridBagConstraints);
+        BusinessPanel.add(TransactionHistoryButton, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.insets = new java.awt.Insets(15, 0, 0, 0);
-        add(jPanel3, gridBagConstraints);
+        add(BusinessPanel, gridBagConstraints);
 
-        jPanel11.setOpaque(false);
-        jPanel11.setLayout(new java.awt.GridBagLayout());
+        IconPanel.setOpaque(false);
+        IconPanel.setLayout(new java.awt.GridBagLayout());
 
-        jPanel8.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel8.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(14, 118, 188), 1, true));
+        IconRight.setBackground(new java.awt.Color(255, 255, 255));
+        IconRight.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(14, 118, 188), 1, true));
         java.awt.GridBagLayout jPanel8Layout = new java.awt.GridBagLayout();
         jPanel8Layout.columnWidths = new int[] {0, 10, 0, 10, 0};
         jPanel8Layout.rowHeights = new int[] {0};
-        jPanel8.setLayout(jPanel8Layout);
+        IconRight.setLayout(jPanel8Layout);
 
-        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel6.setMinimumSize(new java.awt.Dimension(200, 115));
+        IconMiddleRight.setBackground(new java.awt.Color(255, 255, 255));
+        IconMiddleRight.setMinimumSize(new java.awt.Dimension(200, 115));
         java.awt.GridBagLayout jPanel6Layout = new java.awt.GridBagLayout();
         jPanel6Layout.columnWidths = new int[] {0, 12, 0};
         jPanel6Layout.rowHeights = new int[] {0, 7, 0, 7, 0};
-        jPanel6.setLayout(jPanel6Layout);
+        IconMiddleRight.setLayout(jPanel6Layout);
 
         UserLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         UserLabel.setForeground(new java.awt.Color(14, 118, 188));
@@ -525,86 +518,86 @@ public class AccountsListPanel extends javax.swing.JPanel
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
-        jPanel6.add(UserLabel, gridBagConstraints);
+        IconMiddleRight.add(UserLabel, gridBagConstraints);
 
-        jPanel12.setBackground(new java.awt.Color(255, 255, 255));
+        SettingsLogoutIconHolder.setBackground(new java.awt.Color(255, 255, 255));
         java.awt.GridBagLayout jPanel12Layout = new java.awt.GridBagLayout();
         jPanel12Layout.columnWidths = new int[] {0, 10, 0};
         jPanel12Layout.rowHeights = new int[] {0};
-        jPanel12.setLayout(jPanel12Layout);
+        SettingsLogoutIconHolder.setLayout(jPanel12Layout);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/rsz_settingscolor2.png"))); // NOI18N
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+        SettingsIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/rsz_settingscolor2.png"))); // NOI18N
+        SettingsIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
+                SettingsIconMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel4MouseEntered(evt);
+                SettingsIconMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel4MouseExited(evt);
+                SettingsIconMouseExited(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel12.add(jLabel4, gridBagConstraints);
+        SettingsLogoutIconHolder.add(SettingsIcon, gridBagConstraints);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/rsz_logout2noborder2.png"))); // NOI18N
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+        LogoutIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/rsz_logout2noborder2.png"))); // NOI18N
+        LogoutIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
+                LogoutIconMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel5MouseEntered(evt);
+                LogoutIconMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel5MouseExited(evt);
+                LogoutIconMouseExited(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel12.add(jLabel5, gridBagConstraints);
+        SettingsLogoutIconHolder.add(LogoutIcon, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel6.add(jPanel12, gridBagConstraints);
+        IconMiddleRight.add(SettingsLogoutIconHolder, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel8.add(jPanel6, gridBagConstraints);
+        IconRight.add(IconMiddleRight, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        jPanel11.add(jPanel8, gridBagConstraints);
+        IconPanel.add(IconRight, gridBagConstraints);
 
-        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel9.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(14, 118, 188), 1, true));
-        jPanel9.setLayout(new java.awt.GridBagLayout());
+        DontPanicIcon.setBackground(new java.awt.Color(255, 255, 255));
+        DontPanicIcon.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(14, 118, 188), 1, true));
+        DontPanicIcon.setLayout(new java.awt.GridBagLayout());
 
-        jLabel2.setBackground(new java.awt.Color(255, 242, 0));
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/rsz_2icon.png"))); // NOI18N
+        DontPanicPic.setBackground(new java.awt.Color(255, 242, 0));
+        DontPanicPic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/rsz_2icon.png"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        jPanel9.add(jLabel2, gridBagConstraints);
+        DontPanicIcon.add(DontPanicPic, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        jPanel11.add(jPanel9, gridBagConstraints);
+        IconPanel.add(DontPanicIcon, gridBagConstraints);
 
         option.setBackground(new Color(255,255,255,150));
         option.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -613,25 +606,25 @@ public class AccountsListPanel extends javax.swing.JPanel
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
-        jPanel11.add(option, gridBagConstraints);
+        IconPanel.add(option, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(10, 10, 0, 0);
-        add(jPanel11, gridBagConstraints);
+        add(IconPanel, gridBagConstraints);
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(204, 204, 255));
-        jLabel6.setText("Home");
-        jLabel6.setText("<HTML><U>Home</U></HTML>");
+        HomeLabel.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        HomeLabel.setForeground(new java.awt.Color(204, 204, 255));
+        HomeLabel.setText("Home");
+        HomeLabel.setText("<HTML><U>Home</U></HTML>");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
         gridBagConstraints.insets = new java.awt.Insets(20, 0, 0, 0);
-        add(jLabel6, gridBagConstraints);
+        add(HomeLabel, gridBagConstraints);
 
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/wallhaven-15760.png"))); // NOI18N
         Background.setAlignmentY(0.0F);
@@ -1059,41 +1052,41 @@ public class AccountsListPanel extends javax.swing.JPanel
         }
     }//GEN-LAST:event_TransferBetweenMyAccountsActionPerformed
     //setting button text
-    private void jLabel4MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jLabel4MouseEntered
-    {//GEN-HEADEREND:event_jLabel4MouseEntered
+    private void SettingsIconMouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_SettingsIconMouseEntered
+    {//GEN-HEADEREND:event_SettingsIconMouseEntered
         option.setText("  Settings");
-    }//GEN-LAST:event_jLabel4MouseEntered
+    }//GEN-LAST:event_SettingsIconMouseEntered
     //settings button clicked
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jLabel4MouseClicked
-    {//GEN-HEADEREND:event_jLabel4MouseClicked
+    private void SettingsIconMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_SettingsIconMouseClicked
+    {//GEN-HEADEREND:event_SettingsIconMouseClicked
         AmountField.setText("Amount");
         EmailEntryField.setText("Email Address");
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
         layout.show(MainPanel, "Settings");
-    }//GEN-LAST:event_jLabel4MouseClicked
+    }//GEN-LAST:event_SettingsIconMouseClicked
 
-    private void jLabel4MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jLabel4MouseExited
-    {//GEN-HEADEREND:event_jLabel4MouseExited
+    private void SettingsIconMouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_SettingsIconMouseExited
+    {//GEN-HEADEREND:event_SettingsIconMouseExited
         option.setText(" ");
-    }//GEN-LAST:event_jLabel4MouseExited
+    }//GEN-LAST:event_SettingsIconMouseExited
     //logout button text
-    private void jLabel5MouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jLabel5MouseEntered
-    {//GEN-HEADEREND:event_jLabel5MouseEntered
+    private void LogoutIconMouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_LogoutIconMouseEntered
+    {//GEN-HEADEREND:event_LogoutIconMouseEntered
         option.setText("               Logout");
-    }//GEN-LAST:event_jLabel5MouseEntered
+    }//GEN-LAST:event_LogoutIconMouseEntered
 
-    private void jLabel5MouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jLabel5MouseExited
-    {//GEN-HEADEREND:event_jLabel5MouseExited
+    private void LogoutIconMouseExited(java.awt.event.MouseEvent evt)//GEN-FIRST:event_LogoutIconMouseExited
+    {//GEN-HEADEREND:event_LogoutIconMouseExited
         option.setText(" ");
-    }//GEN-LAST:event_jLabel5MouseExited
+    }//GEN-LAST:event_LogoutIconMouseExited
     //logout button clicked
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_jLabel5MouseClicked
-    {//GEN-HEADEREND:event_jLabel5MouseClicked
+    private void LogoutIconMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_LogoutIconMouseClicked
+    {//GEN-HEADEREND:event_LogoutIconMouseClicked
         AmountField.setText("Amount");
         EmailEntryField.setText("Email Address");
         CardLayout layout = (CardLayout) (MainPanel.getLayout());
         layout.show(MainPanel, "Login");
-    }//GEN-LAST:event_jLabel5MouseClicked
+    }//GEN-LAST:event_LogoutIconMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable AccountsTable;
@@ -1103,12 +1096,23 @@ public class AccountsListPanel extends javax.swing.JPanel
     private javax.swing.JLabel BankAccountToTransferFrom;
     private javax.swing.JComboBox BankAccountsList;
     private javax.swing.JComboBox BankAccountsList1;
+    private javax.swing.JPanel BusinessPanel;
     private javax.swing.JButton CreateBAButton;
     private javax.swing.JButton DeleteAccountButton;
+    private javax.swing.JPanel DontPanicIcon;
+    private javax.swing.JLabel DontPanicPic;
     private javax.swing.JTextField EmailEntryField;
     private javax.swing.JButton FutureBalancetButton;
+    private javax.swing.JLabel HomeLabel;
+    private javax.swing.JPanel IconMiddleRight;
+    private javax.swing.JPanel IconPanel;
+    private javax.swing.JPanel IconRight;
     private javax.swing.JLabel LabelForSize;
+    private javax.swing.JLabel LogoutIcon;
     private javax.swing.JPanel MyBankAccountTransfer;
+    private javax.swing.JLabel SettingsIcon;
+    private javax.swing.JPanel SettingsLogoutIconHolder;
+    private javax.swing.JScrollPane TableHolder;
     private javax.swing.JLabel ToYourAccountLabel;
     private javax.swing.JButton TransactionHistoryButton;
     private javax.swing.JButton TransferBetweenMyAccounts;
@@ -1118,18 +1122,6 @@ public class AccountsListPanel extends javax.swing.JPanel
     private javax.swing.JPanel TransferToAnotherUserP;
     private javax.swing.JLabel Transferanotheruser;
     private javax.swing.JLabel UserLabel;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel option;
     // End of variables declaration//GEN-END:variables
 

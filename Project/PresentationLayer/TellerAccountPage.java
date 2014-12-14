@@ -120,14 +120,13 @@ public class TellerAccountPage extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
         CurrentUserAccountLabel = new javax.swing.JLabel();
         Holder = new javax.swing.JPanel();
         MainComponentsPanel = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        TableHolder = new javax.swing.JScrollPane();
         AccountsTable = new javax.swing.JTable();
         DepositButton = new javax.swing.JButton();
         WithdrawButton = new javax.swing.JButton();
@@ -163,7 +162,7 @@ public class TellerAccountPage extends javax.swing.JPanel
         MainComponentsPanel.setOpaque(false);
         MainComponentsPanel.setLayout(new java.awt.GridBagLayout());
 
-        jScrollPane1.setPreferredSize(new java.awt.Dimension(454, 300));
+        TableHolder.setPreferredSize(new java.awt.Dimension(454, 300));
 
         AccountsTable.setAutoCreateRowSorter(true);
         AccountsTable.setSelectionModel(SelectionModel = new DefaultListSelectionModel());
@@ -189,21 +188,19 @@ public class TellerAccountPage extends javax.swing.JPanel
         AccountsTable.setPreferredSize(new java.awt.Dimension(440, 390));
         AccountsTable.setSelectionBackground(new java.awt.Color(14, 118, 188));
         AccountsTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jScrollPane1.setViewportView(AccountsTable);
+        TableHolder.setViewportView(AccountsTable);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
-        MainComponentsPanel.add(jScrollPane1, gridBagConstraints);
+        MainComponentsPanel.add(TableHolder, gridBagConstraints);
 
         DepositButton.setBackground(new java.awt.Color(255, 255, 255));
         DepositButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         DepositButton.setForeground(new java.awt.Color(14, 118, 188));
         DepositButton.setText("Deposit");
-        DepositButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        DepositButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 DepositButtonMouseClicked(evt);
             }
         });
@@ -218,10 +215,8 @@ public class TellerAccountPage extends javax.swing.JPanel
         WithdrawButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         WithdrawButton.setForeground(new java.awt.Color(14, 118, 188));
         WithdrawButton.setText("Withdraw");
-        WithdrawButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        WithdrawButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 WithdrawButtonMouseClicked(evt);
             }
         });
@@ -235,10 +230,8 @@ public class TellerAccountPage extends javax.swing.JPanel
         DeleteUserAccountButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         DeleteUserAccountButton.setForeground(new java.awt.Color(14, 118, 188));
         DeleteUserAccountButton.setText("Delete This User Account");
-        DeleteUserAccountButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        DeleteUserAccountButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 DeleteUserAccountButtonMouseClicked(evt);
             }
         });
@@ -253,10 +246,8 @@ public class TellerAccountPage extends javax.swing.JPanel
         DeleteAccountButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         DeleteAccountButton.setForeground(new java.awt.Color(14, 118, 188));
         DeleteAccountButton.setText("Delete Highlighted Bank Account");
-        DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        DeleteAccountButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 DeleteAccountButtonMouseClicked(evt);
             }
         });
@@ -274,10 +265,8 @@ public class TellerAccountPage extends javax.swing.JPanel
         BackButton.setMaximumSize(new java.awt.Dimension(80, 25));
         BackButton.setMinimumSize(new java.awt.Dimension(80, 25));
         BackButton.setPreferredSize(new java.awt.Dimension(80, 25));
-        BackButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        BackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BackButtonActionPerformed(evt);
             }
         });
@@ -594,7 +583,7 @@ public class TellerAccountPage extends javax.swing.JPanel
     private javax.swing.JButton DepositButton;
     private javax.swing.JPanel Holder;
     private javax.swing.JPanel MainComponentsPanel;
+    private javax.swing.JScrollPane TableHolder;
     private javax.swing.JButton WithdrawButton;
-    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

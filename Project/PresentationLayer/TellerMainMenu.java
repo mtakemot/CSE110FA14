@@ -43,8 +43,7 @@ public class TellerMainMenu extends javax.swing.JPanel
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
         BGPanel = new javax.swing.JPanel();
@@ -53,8 +52,8 @@ public class TellerMainMenu extends javax.swing.JPanel
         SearchUserButton = new javax.swing.JButton();
         ApplyPenIntButton = new javax.swing.JButton();
         Logout = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        TitleHolder = new javax.swing.JPanel();
+        TellerHomeLabel = new javax.swing.JLabel();
         Bank42 = new javax.swing.JLabel();
         Background = new javax.swing.JLabel();
 
@@ -80,10 +79,8 @@ public class TellerMainMenu extends javax.swing.JPanel
         InterestPenaltyButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         InterestPenaltyButton.setForeground(new java.awt.Color(51, 0, 255));
         InterestPenaltyButton.setText("Adjust Interest Rates and Penalties");
-        InterestPenaltyButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        InterestPenaltyButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 InterestPenaltyButtonActionPerformed(evt);
             }
         });
@@ -98,10 +95,8 @@ public class TellerMainMenu extends javax.swing.JPanel
         SearchUserButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         SearchUserButton.setForeground(new java.awt.Color(51, 0, 255));
         SearchUserButton.setText("Search For A User");
-        SearchUserButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        SearchUserButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SearchUserButtonActionPerformed(evt);
             }
         });
@@ -115,10 +110,8 @@ public class TellerMainMenu extends javax.swing.JPanel
         ApplyPenIntButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         ApplyPenIntButton.setForeground(new java.awt.Color(51, 0, 255));
         ApplyPenIntButton.setText("Apply Global Interest");
-        ApplyPenIntButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        ApplyPenIntButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ApplyPenIntButtonActionPerformed(evt);
             }
         });
@@ -134,10 +127,8 @@ public class TellerMainMenu extends javax.swing.JPanel
         Logout.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Logout.setForeground(new java.awt.Color(51, 0, 255));
         Logout.setText("Logout");
-        Logout.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        Logout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LogoutMouseClicked(evt);
             }
         });
@@ -157,20 +148,20 @@ public class TellerMainMenu extends javax.swing.JPanel
         gridBagConstraints.gridy = 0;
         add(BGPanel, gridBagConstraints);
 
-        jPanel1.setOpaque(false);
-        jPanel1.setLayout(new java.awt.GridBagLayout());
+        TitleHolder.setOpaque(false);
+        TitleHolder.setLayout(new java.awt.GridBagLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("<HTML><U>Teller Home</U></HTML>");
-        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        TellerHomeLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        TellerHomeLabel.setForeground(new java.awt.Color(204, 255, 255));
+        TellerHomeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        TellerHomeLabel.setText("<HTML><U>Teller Home</U></HTML>");
+        TellerHomeLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.insets = new java.awt.Insets(80, 0, 0, 0);
-        jPanel1.add(jLabel1, gridBagConstraints);
+        TitleHolder.add(TellerHomeLabel, gridBagConstraints);
 
         Bank42.setFont(new java.awt.Font("DejaVu Sans", 1, 48)); // NOI18N
         Bank42.setForeground(new java.awt.Color(204, 204, 255));
@@ -179,13 +170,13 @@ public class TellerMainMenu extends javax.swing.JPanel
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        jPanel1.add(Bank42, gridBagConstraints);
+        TitleHolder.add(Bank42, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-        add(jPanel1, gridBagConstraints);
+        add(TitleHolder, gridBagConstraints);
 
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/rsz_3lgfnqn Cropped.jpg"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -259,7 +250,7 @@ public class TellerMainMenu extends javax.swing.JPanel
     private javax.swing.JButton InterestPenaltyButton;
     private javax.swing.JButton Logout;
     private javax.swing.JButton SearchUserButton;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel TellerHomeLabel;
+    private javax.swing.JPanel TitleHolder;
     // End of variables declaration//GEN-END:variables
 }

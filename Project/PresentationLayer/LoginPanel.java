@@ -63,14 +63,14 @@ public class LoginPanel extends javax.swing.JPanel
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
-        jPanel1 = new javax.swing.JPanel();
+        BusinessPanel = new javax.swing.JPanel();
         LoginButton = new javax.swing.JButton();
         CreateAccButton = new javax.swing.JButton();
         jPasswordField = new javax.swing.JPasswordField();
         UsernameField = new javax.swing.JTextField();
-        jPanel2 = new javax.swing.JPanel();
+        UserNameLabelHolder = new javax.swing.JPanel();
         UsernameLabel = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
+        PasswordLabelHolder = new javax.swing.JPanel();
         PasswordLabel = new javax.swing.JLabel();
         noAccess = new javax.swing.JLabel();
         ForgotPassword = new javax.swing.JLabel();
@@ -84,11 +84,11 @@ public class LoginPanel extends javax.swing.JPanel
         setPreferredSize(new java.awt.Dimension(800, 600));
         setLayout(new java.awt.GridBagLayout());
 
-        jPanel1.setBackground(new Color(255,255,255,150));
-        jPanel1.setMinimumSize(new java.awt.Dimension(375, 185));
-        jPanel1.setOpaque(false);
-        jPanel1.setPreferredSize(new java.awt.Dimension(375, 185));
-        jPanel1.setLayout(new java.awt.GridBagLayout());
+        BusinessPanel.setBackground(new Color(255,255,255,150));
+        BusinessPanel.setMinimumSize(new java.awt.Dimension(375, 185));
+        BusinessPanel.setOpaque(false);
+        BusinessPanel.setPreferredSize(new java.awt.Dimension(375, 185));
+        BusinessPanel.setLayout(new java.awt.GridBagLayout());
 
         LoginButton.setBackground(new java.awt.Color(255, 255, 255));
         LoginButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -107,7 +107,7 @@ public class LoginPanel extends javax.swing.JPanel
         gridBagConstraints.gridy = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
-        jPanel1.add(LoginButton, gridBagConstraints);
+        BusinessPanel.add(LoginButton, gridBagConstraints);
 
         CreateAccButton.setBackground(new java.awt.Color(255, 255, 255));
         CreateAccButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -126,7 +126,7 @@ public class LoginPanel extends javax.swing.JPanel
         gridBagConstraints.gridy = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
-        jPanel1.add(CreateAccButton, gridBagConstraints);
+        BusinessPanel.add(CreateAccButton, gridBagConstraints);
 
         jPasswordField.setBackground(new Color(255,255,255,150));
         jPasswordField.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 3, 0, 0));
@@ -148,7 +148,7 @@ public class LoginPanel extends javax.swing.JPanel
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.ipady = 15;
         gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
-        jPanel1.add(jPasswordField, gridBagConstraints);
+        BusinessPanel.add(jPasswordField, gridBagConstraints);
 
         UsernameField.setBackground(new Color(255,255,255,150));
         UsernameField.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 3, 0, 0));
@@ -170,13 +170,13 @@ public class LoginPanel extends javax.swing.JPanel
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.ipady = 15;
-        jPanel1.add(UsernameField, gridBagConstraints);
+        BusinessPanel.add(UsernameField, gridBagConstraints);
 
-        jPanel2.setBackground(new java.awt.Color(250, 250, 250));
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel2.setMinimumSize(new java.awt.Dimension(90, 20));
-        jPanel2.setPreferredSize(new java.awt.Dimension(90, 20));
-        jPanel2.setLayout(new java.awt.GridBagLayout());
+        UserNameLabelHolder.setBackground(new java.awt.Color(250, 250, 250));
+        UserNameLabelHolder.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        UserNameLabelHolder.setMinimumSize(new java.awt.Dimension(90, 20));
+        UserNameLabelHolder.setPreferredSize(new java.awt.Dimension(90, 20));
+        UserNameLabelHolder.setLayout(new java.awt.GridBagLayout());
 
         UsernameLabel.setBackground(new Color ( 255,255,255,150));
         UsernameLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -186,20 +186,20 @@ public class LoginPanel extends javax.swing.JPanel
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel2.add(UsernameLabel, gridBagConstraints);
+        UserNameLabelHolder.add(UsernameLabel, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 5);
-        jPanel1.add(jPanel2, gridBagConstraints);
+        BusinessPanel.add(UserNameLabelHolder, gridBagConstraints);
 
-        jPanel3.setBackground(new java.awt.Color(250, 250, 250));
-        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel3.setMinimumSize(new java.awt.Dimension(90, 20));
-        jPanel3.setPreferredSize(new java.awt.Dimension(90, 20));
-        jPanel3.setLayout(new java.awt.GridBagLayout());
+        PasswordLabelHolder.setBackground(new java.awt.Color(250, 250, 250));
+        PasswordLabelHolder.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        PasswordLabelHolder.setMinimumSize(new java.awt.Dimension(90, 20));
+        PasswordLabelHolder.setPreferredSize(new java.awt.Dimension(90, 20));
+        PasswordLabelHolder.setLayout(new java.awt.GridBagLayout());
 
         PasswordLabel.setBackground(new Color(255,255,255,200));
         PasswordLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -209,14 +209,14 @@ public class LoginPanel extends javax.swing.JPanel
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel3.add(PasswordLabel, gridBagConstraints);
+        PasswordLabelHolder.add(PasswordLabel, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 5);
-        jPanel1.add(jPanel3, gridBagConstraints);
+        BusinessPanel.add(PasswordLabelHolder, gridBagConstraints);
 
         noAccess.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
         noAccess.setForeground(new java.awt.Color(255, 0, 0));
@@ -226,7 +226,7 @@ public class LoginPanel extends javax.swing.JPanel
         gridBagConstraints.gridy = 4;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
-        jPanel1.add(noAccess, gridBagConstraints);
+        BusinessPanel.add(noAccess, gridBagConstraints);
 
         ForgotPassword.setForeground(new java.awt.Color(14, 118, 188));
         ForgotPassword.setText("Forgot Password?");
@@ -246,13 +246,13 @@ public class LoginPanel extends javax.swing.JPanel
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 3;
         gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
-        jPanel1.add(ForgotPassword, gridBagConstraints);
+        BusinessPanel.add(ForgotPassword, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.insets = new java.awt.Insets(300, 0, 0, 0);
-        add(jPanel1, gridBagConstraints);
+        add(BusinessPanel, gridBagConstraints);
 
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/rsz_142galaxy Cropped.png"))); // NOI18N
         Background.setToolTipText(null);
@@ -680,15 +680,15 @@ public class LoginPanel extends javax.swing.JPanel
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Background;
+    private javax.swing.JPanel BusinessPanel;
     private javax.swing.JButton CreateAccButton;
     private javax.swing.JLabel ForgotPassword;
     private javax.swing.JButton LoginButton;
     private javax.swing.JLabel PasswordLabel;
+    private javax.swing.JPanel PasswordLabelHolder;
+    private javax.swing.JPanel UserNameLabelHolder;
     private javax.swing.JTextField UsernameField;
     private javax.swing.JLabel UsernameLabel;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPasswordField jPasswordField;
     private javax.swing.JLabel noAccess;
     // End of variables declaration//GEN-END:variables
