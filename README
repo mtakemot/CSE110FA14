@@ -9,6 +9,8 @@ Each layer in our design also has its own individual Documentation file which co
 
 Furthermore, each file in each of the layers has its own class header, function headers, and inline comments. View these to get more detailed information about each class. 
 
+The UML class diagram for the entire project is called "CSE 110 Team 42 UML.png" and can be found in the main project folder.
+
 Lastly, to view and evaluate our project, it is highly recommended that you download and install Netbeans and view the project within the IDE. All of our design becomes much more clear when viewed at that level and the software is very easy to build and run in that environment. Instructions for getting started with Netbeans are outlined below.
 
 ********** To Import Our Project Into Netbeans With Git **********
